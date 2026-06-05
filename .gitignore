@@ -14,3 +14,6 @@ __pycache__/
 # os
 .DS_Store
 Thumbs.db
+
+# packaged bundle (distributed via GitHub Releases, not committed)
+*.skill
