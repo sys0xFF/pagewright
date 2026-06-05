@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cortex — Product analytics for teams who ship</title>
+<meta name="description" content="Cortex is the product analytics platform for PMs and growth engineers. Build funnels, measure retention, replay sessions, and answer 'why' — without waiting on the data team." />
+<meta property="og:title" content="Cortex — Product analytics for teams who ship" />
+<meta property="og:description" content="Funnels, retention, dashboards, and session insights in one fast, queryable surface. Start free." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: {
+      paper:'#FBFAF7', card:'#FFFFFF', raised:'#F4F2EC', line:'#E7E3D8',
+      hairline:'#DAD5C8', ink:'#1A1A17', muted:'#6B6862', faint:'#9A968C',
+      accent:'#137A4F', accent2:'#0F6342', terra:'#C2410C', sky:'#1D5E8C',
+    },
+    fontFamily: {
+      display:['Fraunces','Georgia','serif'],
+      sans:['Geist','system-ui','sans-serif'],
+      mono:['"Geist Mono"','ui-monospace','monospace'],
+    },
+    letterSpacing:{ tightest:'-0.04em' },
+  } } }
+</script>
+
+<!-- Progressive enhancement: mark JS active before paint so reveal-hiding only applies with JS -->
+<script>document.documentElement.classList.add('js');</script>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231A1A17'/%3E%3Cpath d='M8 21l5-7 4 4 7-10' stroke='%2334D399' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+
+<style>
+  :root{ --accent:#137A4F; }
+  html,body{ background:#FBFAF7; color:#1A1A17; }
+  body{ font-feature-settings:"ss01","cv01"; -webkit-font-smoothing:antialiased; }
+  .tnum{ font-variant-numeric:tabular-nums lining-nums; }
+  .display{ font-optical-sizing:auto; }
+
+  /* Blueprint dot-grid */
+  .dotgrid{
+    background-image:radial-gradient(circle at 1px 1px, rgba(26,26,23,.10) 1px, transparent 0);
+    background-size:26px 26px;
+    -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 32%, #000 38%, transparent 78%);
+            mask-image:radial-gradient(ellipse 80% 70% at 50% 32%, #000 38%, transparent 78%);
+  }
+  .ruled{ background-image:linear-gradient(to right, rgba(26,26,23,.045) 1px, transparent 1px); background-size:64px 100%; }
+
+  /* Scroll progress */
+  .progress{ position:fixed; top:0; left:0; height:2px; width:100%; transform-origin:left; transform:scaleX(0); z-index:60; background:var(--accent); }
+  @media (prefers-reduced-motion: no-preference){
+    @supports (animation-timeline: scroll()){
+      .progress{ animation:grow linear both; animation-timeline:scroll(root block); }
+      @keyframes grow{ to{ transform:scaleX(1) } }
+    }
+  }
+
+  /* Blur-in reveal — only hide when JS is active (progressive enhancement; never an invisible page) */
+  @media (prefers-reduced-motion: no-preference){
+    html.js [data-reveal]{ opacity:0; filter:blur(12px); transform:translateY(20px);
+      transition:opacity .6s ease, filter .6s ease, transform .6s cubic-bezier(.2,.7,.2,1);
+      transition-delay:calc(var(--i,0)*70ms); }
+    html.js [data-reveal].is-visible{ opacity:1; filter:blur(0); transform:none; }
+  }
+
+  /* Funnel bar draw-in */
+  .fbar{ transform:scaleX(0); transform-origin:left; transition:transform 1s cubic-bezier(.2,.8,.2,1); transition-delay:calc(var(--d,0)*120ms); }
+  .dash-in .fbar{ transform:scaleX(1); }
+  @media (prefers-reduced-motion: reduce){ .fbar{ transform:none; } }
+
+  /* Retention curve / trend path draw */
+  .draw{ stroke-dasharray:var(--len,1200); stroke-dashoffset:var(--len,1200); transition:stroke-dashoffset 1.6s cubic-bezier(.3,.7,.2,1) .2s; }
+  .dash-in .draw{ stroke-dashoffset:0; }
+  @media (prefers-reduced-motion: reduce){ .draw{ stroke-dashoffset:0; } }
+
+  /* Cohort cell fill */
+  .cell{ opacity:0; transform:scale(.7); transition:opacity .5s ease, transform .5s cubic-bezier(.2,.8,.2,1); transition-delay:calc(var(--c,0)*22ms); }
+  .dash-in .cell{ opacity:1; transform:none; }
+  @media (prefers-reduced-motion: reduce){ .cell{ opacity:1; transform:none; } }
+
+  /* Live session pulse */
+  @media (prefers-reduced-motion: no-preference){
+    .pulse{ animation:pulse 2.4s ease-in-out infinite; }
+    @keyframes pulse{ 0%,100%{ opacity:.35 } 50%{ opacity:1 } }
+  }
+
+  .ghost-link{ position:relative; }
+  .ghost-link::after{ content:""; position:absolute; left:0; bottom:-2px; height:1px; width:100%; background:currentColor; transform:scaleX(0); transform-origin:right; transition:transform .35s cubic-bezier(.2,.7,.2,1); }
+  .ghost-link:hover::after{ transform:scaleX(1); transform-origin:left; }
+
+  [data-magnetic]{ transition:transform .3s cubic-bezier(.2,.7,.2,1), background-color .2s ease; }
+
+  details summary::-webkit-details-marker{ display:none; }
+  details[open] .faq-plus{ transform:rotate(45deg); }
+
+  .marquee{ overflow:hidden; -webkit-mask:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent); }
+  .track{ display:flex; gap:3.5rem; width:max-content; animation:marquee 36s linear infinite; }
+  .marquee:hover .track{ animation-play-state:paused; }
+  @keyframes marquee{ to{ transform:translateX(-50%) } }
+  @media (prefers-reduced-motion: reduce){ .track{ animation:none; } }
+
+  ::selection{ background:#137A4F; color:#FBFAF7; }
+</style>
+</head>
+
+<body class="font-sans antialiased selection:bg-accent">
+<div class="progress" aria-hidden="true"></div>
+
+<!-- Grain -->
+<svg class="pointer-events-none fixed inset-0 -z-10 h-full w-full opacity-[0.035]" aria-hidden="true"><filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(#grain)"/></svg>
+
+<!-- ============ NAV ============ -->
+<header id="nav" class="sticky top-0 z-50 border-b border-line/70 bg-paper/80 backdrop-blur-md">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
+    <a href="#" class="flex items-center gap-2.5" aria-label="Cortex home">
+      <span class="grid h-7 w-7 place-items-center rounded-[6px] bg-ink">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 16l4-6 3.2 3.2L19 5" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="font-display text-[20px] font-medium tracking-tightest">Cortex</span>
+    </a>
+
+    <nav class="hidden items-center gap-8 text-[14px] text-muted md:flex" aria-label="Primary">
+      <a href="#product" class="ghost-link transition-colors hover:text-ink">Product</a>
+      <a href="#funnels" class="ghost-link transition-colors hover:text-ink">Funnels</a>
+      <a href="#retention" class="ghost-link transition-colors hover:text-ink">Retention</a>
+      <a href="#pricing" class="ghost-link transition-colors hover:text-ink">Pricing</a>
+      <a href="#faq" class="ghost-link transition-colors hover:text-ink">Docs</a>
+    </nav>
+
+    <div class="flex items-center gap-2.5">
+      <a href="#" class="hidden text-[14px] text-muted transition-colors hover:text-ink sm:block">Sign in</a>
+      <a href="#cta" data-magnetic class="rounded-[7px] bg-ink px-4 py-2.5 text-[14px] font-medium text-paper transition-colors hover:bg-accent2">Start free</a>
+    </div>
+  </div>
+</header>
+
+<main>
+<!-- ============ HERO ============ -->
+<section class="relative overflow-hidden border-b border-line/70" aria-labelledby="hero-h">
+  <div class="pointer-events-none absolute inset-0 dotgrid" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute left-1/2 top-[-6rem] -z-0 h-[28rem] w-[44rem] -translate-x-1/2 rounded-full bg-accent/10 blur-[120px]" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-6xl px-5 pt-16 pb-10 text-center md:pt-24">
+    <a href="#product" data-reveal style="--i:0" class="group mx-auto mb-7 inline-flex items-center gap-2 rounded-full border border-hairline bg-card/70 py-1 pl-1.5 pr-3 text-[12.5px] text-muted backdrop-blur">
+      <span class="rounded-full bg-accent/12 px-2 py-0.5 font-mono text-[11px] font-medium text-accent2">NEW</span>
+      Ask Cortex — query your funnel in plain English
+      <span class="transition-transform group-hover:translate-x-0.5">→</span>
+    </a>
+
+    <h1 id="hero-h" data-reveal style="--i:1" class="display mx-auto max-w-4xl font-display font-light leading-[0.96] tracking-tightest text-ink" >
+      <span class="block text-[clamp(2.6rem,7vw,5.25rem)]">Know <span class="italic font-normal">why</span> users convert.</span>
+      <span class="block text-[clamp(2.6rem,7vw,5.25rem)]">Not just <span class="text-faint">that</span> they did.</span>
+    </h1>
+
+    <p data-reveal style="--i:2" class="mx-auto mt-6 max-w-xl text-[17px] leading-relaxed text-muted">
+      Cortex is the product analytics platform for PMs and growth engineers. Build funnels, track retention, and replay the exact session behind a drop-off — answers in seconds, no data team in the loop.
+    </p>
+
+    <div data-reveal style="--i:3" class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a href="#cta" data-magnetic class="w-full rounded-[8px] bg-accent px-6 py-3 text-[15px] font-medium text-paper shadow-[0_1px_0_#0F6342] transition-colors hover:bg-accent2 sm:w-auto">Start free — no card</a>
+      <a href="#product" class="group flex w-full items-center justify-center gap-2 rounded-[8px] border border-hairline bg-card px-6 py-3 text-[15px] font-medium text-ink transition-colors hover:bg-raised sm:w-auto">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 5l11 7-11 7V5z" fill="currentColor"/></svg>
+        Watch a 2-min tour
+      </a>
+    </div>
+    <p data-reveal style="--i:4" class="mt-4 font-mono text-[11.5px] tracking-wide text-faint">2,400+ product teams · SOC 2 Type II · ingest in &lt; 5 min</p>
+  </div>
+
+  <!-- ===== SIGNATURE: hand-built analytics dashboard ===== -->
+  <div data-reveal style="--i:5" class="relative mx-auto max-w-6xl px-5 pb-16 md:pb-24">
+    <div id="dashboard" class="overflow-hidden rounded-xl border border-hairline bg-card shadow-[0_20px_60px_-30px_rgba(26,26,23,.35)]">
+      <!-- App chrome -->
+      <div class="flex items-center gap-3 border-b border-line bg-raised px-4 py-2.5">
+        <div class="flex gap-1.5" aria-hidden="true">
+          <span class="h-3 w-3 rounded-full bg-[#E5E0D2]"></span>
+          <span class="h-3 w-3 rounded-full bg-[#E5E0D2]"></span>
+          <span class="h-3 w-3 rounded-full bg-[#E5E0D2]"></span>
+        </div>
+        <div class="ml-2 flex items-center gap-2 rounded-[6px] border border-line bg-card px-2.5 py-1 font-mono text-[11px] text-faint">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          app.cortex.io/acme/explore
+        </div>
+        <div class="ml-auto hidden items-center gap-1.5 sm:flex">
+          <span class="flex items-center gap-1.5 rounded-full bg-accent/10 px-2 py-0.5 font-mono text-[10.5px] text-accent2"><span class="h-1.5 w-1.5 rounded-full bg-accent pulse"></span>live</span>
+        </div>
+      </div>
+
+      <!-- Dashboard body: sidebar + content -->
+      <div class="grid grid-cols-1 md:grid-cols-[180px_1fr]">
+        <!-- Sidebar -->
+        <aside class="hidden flex-col gap-1 border-r border-line bg-raised/60 p-3 text-[12.5px] md:flex" aria-label="Workspace">
+          <div class="mb-2 flex items-center gap-2 rounded-[6px] px-2 py-1.5">
+            <span class="grid h-5 w-5 place-items-center rounded-[5px] bg-ink text-[10px] font-semibold text-paper">A</span>
+            <span class="font-medium">Acme</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" class="ml-auto text-faint" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <a class="flex items-center gap-2.5 rounded-[6px] bg-card px-2 py-1.5 font-medium text-ink shadow-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 13h6V4H4v9zm10 7h6V4h-6v16zM4 20h6v-4H4v4z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg> Explore
+          </a>
+          <a class="flex items-center gap-2.5 rounded-[6px] px-2 py-1.5 text-muted">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 18l5-6 4 3 7-9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg> Funnels
+          </a>
+          <a class="flex items-center gap-2.5 rounded-[6px] px-2 py-1.5 text-muted">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M4 9h16M9 9v11" stroke="currentColor" stroke-width="1.7"/></svg> Retention
+          </a>
+          <a class="flex items-center gap-2.5 rounded-[6px] px-2 py-1.5 text-muted">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/><path d="M12 8v4l3 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg> Sessions
+          </a>
+          <div class="mt-auto rounded-[7px] border border-line bg-card p-2.5 text-[11px] text-muted">
+            <p class="font-mono text-[10px] text-faint">EVENTS / DAY</p>
+            <p class="tnum mt-0.5 font-mono text-[15px] font-medium text-ink">4.82<span class="text-faint">M</span></p>
+          </div>
+        </aside>
+
+        <!-- Content -->
+        <div class="p-4 md:p-5">
+          <!-- toolbar -->
+          <div class="mb-4 flex flex-wrap items-center gap-2">
+            <h2 class="mr-1 font-display text-[18px] font-medium tracking-tight">Activation overview</h2>
+            <span class="rounded-[6px] border border-line bg-raised px-2 py-1 font-mono text-[11px] text-muted">Last 30 days</span>
+            <span class="rounded-[6px] border border-line bg-raised px-2 py-1 font-mono text-[11px] text-muted">Web + iOS</span>
+            <button class="ml-auto rounded-[6px] border border-line bg-card px-2.5 py-1 text-[12px] text-muted transition-colors hover:text-ink">Share</button>
+            <button class="rounded-[6px] bg-accent px-2.5 py-1 text-[12px] font-medium text-paper">Save view</button>
+          </div>
+
+          <!-- metric cards -->
+          <div class="grid grid-cols-2 gap-3 lg:grid-cols-4">
+            <div class="rounded-[8px] border border-line bg-card p-3">
+              <p class="font-mono text-[10.5px] uppercase tracking-wide text-faint">Activated users</p>
+              <p class="tnum mt-1 font-display text-[26px] font-medium leading-none">18,294</p>
+              <p class="mt-1.5 flex items-center gap-1 font-mono text-[11px] text-accent2"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 17l7-9 4 5 3-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+12.4%</p>
+            </div>
+            <div class="rounded-[8px] border border-line bg-card p-3">
+              <p class="font-mono text-[10.5px] uppercase tracking-wide text-faint">Activation rate</p>
+              <p class="tnum mt-1 font-display text-[26px] font-medium leading-none">41.7<span class="text-faint text-[18px]">%</span></p>
+              <p class="mt-1.5 flex items-center gap-1 font-mono text-[11px] text-accent2"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 17l7-9 4 5 3-4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>+3.1pt</p>
+            </div>
+            <div class="rounded-[8px] border border-line bg-card p-3">
+              <p class="font-mono text-[10.5px] uppercase tracking-wide text-faint">Median time</p>
+              <p class="tnum mt-1 font-display text-[26px] font-medium leading-none">7<span class="text-faint text-[18px]">m</span> 12<span class="text-faint text-[18px]">s</span></p>
+              <p class="mt-1.5 flex items-center gap-1 font-mono text-[11px] text-accent2"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 7l-7 9-4-5-3 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>−48s</p>
+            </div>
+            <div class="rounded-[8px] border border-line bg-card p-3">
+              <p class="font-mono text-[10.5px] uppercase tracking-wide text-faint">D30 retention</p>
+              <p class="tnum mt-1 font-display text-[26px] font-medium leading-none">34.2<span class="text-faint text-[18px]">%</span></p>
+              <p class="mt-1.5 flex items-center gap-1 font-mono text-[11px] text-terra"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 7l-7 9-4-5-3 4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>−1.8pt</p>
+            </div>
+          </div>
+
+          <!-- funnel + trend row -->
+          <div class="mt-3 grid grid-cols-1 gap-3 lg:grid-cols-5">
+            <!-- FUNNEL (3 cols) -->
+            <figure class="rounded-[8px] border border-line bg-card p-4 lg:col-span-3">
+              <figcaption class="mb-3 flex items-center justify-between">
+                <span class="font-display text-[14px] font-medium">Signup → Activation funnel</span>
+                <span class="font-mono text-[11px] text-faith text-faint">conv. <span class="tnum text-ink">23.6%</span></span>
+              </figcaption>
+              <div class="space-y-2.5">
+                <!-- step -->
+                <div>
+                  <div class="mb-1 flex items-baseline justify-between text-[12px]"><span class="text-muted">Visited site</span><span class="tnum font-mono text-ink">42,180 <span class="text-faint">100%</span></span></div>
+                  <div class="h-7 w-full overflow-hidden rounded-[5px] bg-raised"><div class="fbar h-full rounded-[5px] bg-ink" style="width:100%;--d:0"></div></div>
+                </div>
+                <div>
+                  <div class="mb-1 flex items-baseline justify-between text-[12px]"><span class="text-muted">Created account</span><span class="tnum font-mono text-ink">26,940 <span class="text-faint">63.9%</span></span></div>
+                  <div class="h-7 w-full overflow-hidden rounded-[5px] bg-raised"><div class="fbar h-full rounded-[5px] bg-accent/85" style="width:63.9%;--d:1"></div></div>
+                </div>
+                <div>
+                  <div class="mb-1 flex items-baseline justify-between text-[12px]"><span class="text-muted">Connected a source</span><span class="tnum font-mono text-ink">17,510 <span class="text-faint">41.5%</span></span></div>
+                  <div class="h-7 w-full overflow-hidden rounded-[5px] bg-raised"><div class="fbar h-full rounded-[5px] bg-accent/70" style="width:41.5%;--d:2"></div></div>
+                </div>
+                <!-- biggest drop highlighted -->
+                <div>
+                  <div class="mb-1 flex items-baseline justify-between text-[12px]"><span class="flex items-center gap-1.5 text-muted">Ran first query <span class="rounded bg-terra/12 px-1.5 py-0.5 font-mono text-[10px] text-terra">−42% drop</span></span><span class="tnum font-mono text-ink">10,160 <span class="text-faint">24.1%</span></span></div>
+                  <div class="h-7 w-full overflow-hidden rounded-[5px] bg-raised"><div class="fbar h-full rounded-[5px] bg-terra/70" style="width:24.1%;--d:3"></div></div>
+                </div>
+                <div>
+                  <div class="mb-1 flex items-baseline justify-between text-[12px]"><span class="text-muted">Activated</span><span class="tnum font-mono text-ink">9,940 <span class="text-faint">23.6%</span></span></div>
+                  <div class="h-7 w-full overflow-hidden rounded-[5px] bg-raised"><div class="fbar h-full rounded-[5px] bg-accent" style="width:23.6%;--d:4"></div></div>
+                </div>
+              </div>
+            </figure>
+
+            <!-- TREND (2 cols) -->
+            <figure class="rounded-[8px] border border-line bg-card p-4 lg:col-span-2">
+              <figcaption class="mb-1 flex items-center justify-between">
+                <span class="font-display text-[14px] font-medium">Daily active</span>
+                <span class="tnum font-mono text-[12px] text-accent2">▲ 6.2%</span>
+              </figcaption>
+              <p class="tnum font-display text-[28px] font-medium leading-none">5,841</p>
+              <svg viewBox="0 0 320 130" class="mt-2 w-full" preserveAspectRatio="none" aria-label="Daily active users trend, last 30 days, rising">
+                <defs>
+                  <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#137A4F" stop-opacity="0.22"/>
+                    <stop offset="100%" stop-color="#137A4F" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <!-- gridlines -->
+                <g stroke="#E7E3D8" stroke-width="1">
+                  <line x1="0" y1="32" x2="320" y2="32"/><line x1="0" y1="66" x2="320" y2="66"/><line x1="0" y1="100" x2="320" y2="100"/>
+                </g>
+                <path d="M0,104 L24,98 L48,108 L72,86 L96,92 L120,72 L144,80 L168,58 L192,64 L216,44 L240,52 L264,34 L288,40 L312,22 L320,20 L320,130 L0,130 Z" fill="url(#tg)"/>
+                <path class="draw" style="--len:430" d="M0,104 L24,98 L48,108 L72,86 L96,92 L120,72 L144,80 L168,58 L192,64 L216,44 L240,52 L264,34 L288,40 L312,22 L320,20" fill="none" stroke="#137A4F" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="320" cy="20" r="3.5" fill="#137A4F"/><circle cx="320" cy="20" r="6" fill="#137A4F" opacity="0.18"/>
+              </svg>
+              <div class="mt-1 flex justify-between font-mono text-[10px] text-faint"><span>Apr 1</span><span>Apr 15</span><span>Apr 30</span></div>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- floating session-insight card overlapping the dashboard -->
+    <div class="absolute -bottom-4 left-4 hidden w-[260px] rotate-[-1.5deg] rounded-[10px] border border-hairline bg-card p-3 shadow-[0_18px_40px_-20px_rgba(26,26,23,.4)] md:block" aria-hidden="true">
+      <div class="flex items-center gap-2">
+        <span class="grid h-6 w-6 place-items-center rounded-full bg-gradient-to-br from-accent to-sky text-[10px] font-semibold text-paper">JL</span>
+        <span class="text-[12px] font-medium">Session #8821</span>
+        <span class="ml-auto rounded bg-terra/12 px-1.5 py-0.5 font-mono text-[10px] text-terra">rage-click</span>
+      </div>
+      <p class="mt-2 font-mono text-[11px] leading-relaxed text-muted">user paused <span class="text-ink">38s</span> on <span class="text-ink">/connect</span> → clicked “Add source” <span class="text-terra">×4</span> → exited.</p>
+      <button class="mt-2 w-full rounded-[6px] border border-line py-1 text-[11px] font-medium text-ink transition-colors hover:bg-raised">Replay session →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGO / SOCIAL PROOF ============ -->
+<section class="border-b border-line/70 bg-paper py-10" aria-label="Trusted by">
+  <div class="mx-auto max-w-6xl px-5">
+    <p data-reveal class="mb-7 text-center font-mono text-[11.5px] uppercase tracking-[0.18em] text-faint">Product &amp; growth teams ship faster on Cortex</p>
+    <div class="marquee" data-reveal>
+      <div class="track items-center text-[19px] font-semibold tracking-tight text-ink/45">
+        <span>Loomwork</span><span class="font-display italic font-normal">Northsky</span><span>Paceboard</span><span class="font-mono text-[16px]">QUANTA·IO</span><span>Helia Health</span><span>Driftly</span><span>Meridian</span>
+        <span>Loomwork</span><span class="font-display italic font-normal">Northsky</span><span>Paceboard</span><span class="font-mono text-[16px]">QUANTA·IO</span><span>Helia Health</span><span>Driftly</span><span>Meridian</span>
+      </div>
+    </div>
+    <p class="mt-5 text-center text-[11px] text-faint">Logos shown are placeholders — swap for your real customers.</p>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="border-b border-line/70 bg-raised/40 py-20 md:py-28" aria-labelledby="prob-h">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="mx-auto max-w-2xl text-center">
+      <span data-reveal class="font-mono text-[12px] uppercase tracking-[0.16em] text-accent2">The gap</span>
+      <h2 id="prob-h" data-reveal style="--i:1" class="mt-3 font-display text-[clamp(1.9rem,4vw,2.9rem)] font-light leading-[1.05] tracking-tightest">
+        Your dashboards say <span class="italic">what</span>. They never say <span class="italic">why</span>.
+      </h2>
+      <p data-reveal style="--i:2" class="mx-auto mt-4 max-w-xl text-[16px] leading-relaxed text-muted">
+        A number drops. You file a ticket. Three days later analytics sends back a chart that raises two new questions. The decision shipped without you.
+      </p>
+    </div>
+
+    <div class="mt-12 grid gap-4 md:grid-cols-3">
+      <div data-reveal style="--i:0" class="rounded-[10px] border border-line bg-card p-6">
+        <span class="font-mono text-[12px] text-terra">01 — wait</span>
+        <h3 class="mt-2 font-display text-[19px] font-medium">SQL bottleneck</h3>
+        <p class="mt-1.5 text-[14.5px] leading-relaxed text-muted">Every “quick question” becomes a JIRA ticket in the data team’s queue. By the time it’s answered, the sprint is over.</p>
+      </div>
+      <div data-reveal style="--i:1" class="rounded-[10px] border border-line bg-card p-6">
+        <span class="font-mono text-[12px] text-terra">02 — guess</span>
+        <h3 class="mt-2 font-display text-[19px] font-medium">Charts without context</h3>
+        <p class="mt-1.5 text-[14.5px] leading-relaxed text-muted">A line went down. Which users? Which step? Which release? The dashboard shrugs — and so the roadmap runs on vibes.</p>
+      </div>
+      <div data-reveal style="--i:2" class="rounded-[10px] border border-line bg-card p-6">
+        <span class="font-mono text-[12px] text-terra">03 — silos</span>
+        <h3 class="mt-2 font-display text-[19px] font-medium">Five tools, one funnel</h3>
+        <p class="mt-1.5 text-[14.5px] leading-relaxed text-muted">Funnels here, session replay there, retention in a spreadsheet. Stitching them by hand is where insight goes to die.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FUNNELS FEATURE ============ -->
+<section id="product" class="scroll-mt-20"></section>
+<section id="funnels" class="border-b border-line/70 py-20 scroll-mt-20 md:py-28" aria-labelledby="fun-h">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-2">
+    <div>
+      <span data-reveal class="font-mono text-[12px] uppercase tracking-[0.16em] text-accent2">Funnels</span>
+      <h2 id="fun-h" data-reveal style="--i:1" class="mt-3 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-light leading-[1.06] tracking-tightest">
+        Find the exact step where users fall off.
+      </h2>
+      <p data-reveal style="--i:2" class="mt-4 max-w-md text-[16px] leading-relaxed text-muted">
+        Drag events into a funnel and Cortex computes conversion, drop-off, and median time between steps — across any breakdown. Click a leaking step to jump straight into the sessions that bailed.
+      </p>
+      <ul data-reveal style="--i:3" class="mt-6 space-y-3 text-[15px]">
+        <li class="flex gap-3"><span class="mt-1 text-accent2">✓</span><span><span class="font-medium">Breakdowns that don’t need SQL</span> — slice by plan, device, source, or any property you send.</span></li>
+        <li class="flex gap-3"><span class="mt-1 text-accent2">✓</span><span><span class="font-medium">Conversion windows</span> — 1 hour or 30 days; Cortex handles the attribution math.</span></li>
+        <li class="flex gap-3"><span class="mt-1 text-accent2">✓</span><span><span class="font-medium">From chart to cause</span> — every step links to the replays behind it.</span></li>
+      </ul>
+      <a href="#cta" class="mt-7 inline-flex items-center gap-2 text-[15px] font-medium text-accent2 ghost-link">Build your first funnel <span>→</span></a>
+    </div>
+
+    <!-- hand-built breakdown table -->
+    <div data-reveal style="--i:2" class="overflow-hidden rounded-xl border border-hairline bg-card shadow-[0_16px_50px_-30px_rgba(26,26,23,.4)]">
+      <div class="flex items-center gap-2 border-b border-line bg-raised px-4 py-2.5 text-[12px]">
+        <span class="font-display font-medium">Conversion by source</span>
+        <span class="ml-auto rounded-[5px] border border-line bg-card px-2 py-0.5 font-mono text-[11px] text-muted">7 days</span>
+      </div>
+      <table class="w-full text-[13px]">
+        <thead class="text-left font-mono text-[11px] text-faint">
+          <tr class="border-b border-line"><th class="px-4 py-2 font-normal">SOURCE</th><th class="px-2 py-2 text-right font-normal">USERS</th><th class="px-2 py-2 text-right font-normal">CONV</th><th class="px-4 py-2 font-normal">RATE</th></tr>
+        </thead>
+        <tbody class="tnum font-mono">
+          <tr class="border-b border-line/70"><td class="px-4 py-2.5">Organic search</td><td class="px-2 py-2.5 text-right">14,820</td><td class="px-2 py-2.5 text-right text-accent2">31.4%</td><td class="px-4 py-2.5"><div class="h-1.5 w-full rounded bg-raised"><div class="h-full rounded bg-accent" style="width:78%"></div></div></td></tr>
+          <tr class="border-b border-line/70"><td class="px-4 py-2.5">Product Hunt</td><td class="px-2 py-2.5 text-right">6,210</td><td class="px-2 py-2.5 text-right text-accent2">28.9%</td><td class="px-4 py-2.5"><div class="h-1.5 w-full rounded bg-raised"><div class="h-full rounded bg-accent/85" style="width:71%"></div></div></td></tr>
+          <tr class="border-b border-line/70"><td class="px-4 py-2.5">Paid social</td><td class="px-2 py-2.5 text-right">9,940</td><td class="px-2 py-2.5 text-right text-terra">11.2%</td><td class="px-4 py-2.5"><div class="h-1.5 w-full rounded bg-raised"><div class="h-full rounded bg-terra/70" style="width:27%"></div></div></td></tr>
+          <tr><td class="px-4 py-2.5">Referral</td><td class="px-2 py-2.5 text-right">3,480</td><td class="px-2 py-2.5 text-right text-accent2">36.7%</td><td class="px-4 py-2.5"><div class="h-1.5 w-full rounded bg-raised"><div class="h-full rounded bg-accent" style="width:91%"></div></div></td></tr>
+        </tbody>
+      </table>
+      <div class="flex items-center gap-2 border-t border-line bg-raised/50 px-4 py-2.5 text-[12px] text-muted">
+        <span class="h-2 w-2 rounded-full bg-terra"></span> Paid social converts <span class="font-medium text-ink">2.6× worse</span> — worth a look.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RETENTION FEATURE ============ -->
+<section id="retention" class="border-b border-line/70 bg-raised/40 py-20 scroll-mt-20 md:py-28" aria-labelledby="ret-h">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-2">
+    <!-- hand-built cohort grid + curve -->
+    <div data-reveal class="order-2 overflow-hidden rounded-xl border border-hairline bg-card shadow-[0_16px_50px_-30px_rgba(26,26,23,.4)] lg:order-1">
+      <div class="flex items-center gap-2 border-b border-line bg-raised px-4 py-2.5 text-[12px]">
+        <span class="font-display font-medium">Weekly retention — by signup cohort</span>
+        <span class="ml-auto font-mono text-[11px] text-muted">% returning</span>
+      </div>
+      <!-- cohort grid -->
+      <div class="overflow-x-auto p-4">
+        <table class="w-full border-separate border-spacing-1 text-center font-mono text-[11px]">
+          <thead class="text-faint">
+            <tr><th class="text-left font-normal">COHORT</th><th class="font-normal">W0</th><th class="font-normal">W1</th><th class="font-normal">W2</th><th class="font-normal">W3</th><th class="font-normal">W4</th><th class="font-normal">W5</th></tr>
+          </thead>
+          <tbody id="cohort" class="tnum text-ink">
+            <!-- rows injected below as static cells with heat -->
+          </tbody>
+        </table>
+      </div>
+      <!-- retention curve -->
+      <div class="border-t border-line p-4">
+        <div class="mb-1 flex items-center justify-between"><span class="font-display text-[13px] font-medium">Cohort decay curve</span><span class="tnum font-mono text-[11px] text-muted">stabilizes at ~34%</span></div>
+        <svg viewBox="0 0 320 110" class="w-full" preserveAspectRatio="none" aria-label="Retention decay curve flattening around 34 percent">
+          <g stroke="#E7E3D8" stroke-width="1"><line x1="0" y1="27" x2="320" y2="27"/><line x1="0" y1="55" x2="320" y2="55"/><line x1="0" y1="83" x2="320" y2="83"/></g>
+          <path class="draw" style="--len:360" d="M4,8 C40,46 60,64 96,74 C150,89 180,84 230,82 C270,81 300,82 316,82" fill="none" stroke="#137A4F" stroke-width="2.4" stroke-linecap="round"/>
+          <circle cx="316" cy="82" r="3.5" fill="#137A4F"/>
+        </svg>
+        <div class="mt-1 flex justify-between font-mono text-[10px] text-faint"><span>W0</span><span>W2</span><span>W4</span><span>W6</span></div>
+      </div>
+    </div>
+
+    <div class="order-1 lg:order-2">
+      <span data-reveal class="font-mono text-[12px] uppercase tracking-[0.16em] text-accent2">Retention</span>
+      <h2 id="ret-h" data-reveal style="--i:1" class="mt-3 font-display text-[clamp(1.9rem,3.6vw,2.7rem)] font-light leading-[1.06] tracking-tightest">
+        See which cohorts come back — and which quietly leave.
+      </h2>
+      <p data-reveal style="--i:2" class="mt-4 max-w-md text-[16px] leading-relaxed text-muted">
+        Cortex builds retention and cohort heatmaps from your raw events automatically. Spot the week activation stops sticking, then trace it to the feature, release, or campaign that caused it.
+      </p>
+      <div data-reveal style="--i:3" class="mt-6 grid grid-cols-2 gap-4">
+        <div class="rounded-[8px] border border-line bg-card p-4"><p class="tnum font-display text-[26px] font-medium">34.2%</p><p class="mt-0.5 text-[13px] text-muted">stabilized D30 retention</p></div>
+        <div class="rounded-[8px] border border-line bg-card p-4"><p class="tnum font-display text-[26px] font-medium">+8.1pt</p><p class="mt-0.5 text-[13px] text-muted">after fixing the W1 cliff</p></div>
+      </div>
+      <a href="#cta" class="mt-7 inline-flex items-center gap-2 text-[15px] font-medium text-accent2 ghost-link">Explore retention <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SESSIONS / ASK CORTEX (bento) ============ -->
+<section class="border-b border-line/70 py-20 md:py-28" aria-labelledby="more-h">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="mx-auto max-w-2xl text-center">
+      <span data-reveal class="font-mono text-[12px] uppercase tracking-[0.16em] text-accent2">One surface</span>
+      <h2 id="more-h" data-reveal style="--i:1" class="mt-3 font-display text-[clamp(1.9rem,4vw,2.9rem)] font-light leading-[1.05] tracking-tightest">From the number to the human behind it.</h2>
+    </div>
+
+    <div class="mt-12 grid gap-4 md:grid-cols-6 md:grid-rows-2">
+      <!-- Ask Cortex (wide) -->
+      <div data-reveal style="--i:0" class="md:col-span-4 md:row-span-1 overflow-hidden rounded-xl border border-hairline bg-card">
+        <div class="grid h-full gap-5 p-6 md:grid-cols-2 md:items-center">
+          <div>
+            <h3 class="font-display text-[20px] font-medium">Ask Cortex, in plain English</h3>
+            <p class="mt-2 text-[14.5px] leading-relaxed text-muted">Type a question, get a queryable chart back — not a paragraph. Every answer is a real funnel or breakdown you can pin to a dashboard.</p>
+          </div>
+          <div class="rounded-[10px] border border-line bg-raised/60 p-3">
+            <div class="flex items-center gap-2 rounded-[7px] border border-line bg-card px-3 py-2 font-mono text-[12px] text-muted">
+              <span class="text-accent2">›</span><span class="text-ink">why did mobile signups drop last week?</span><span class="ml-auto h-3.5 w-px bg-ink pulse"></span>
+            </div>
+            <div class="mt-2 rounded-[7px] border border-line bg-card p-3">
+              <p class="font-mono text-[10.5px] text-faint">CORTEX</p>
+              <p class="mt-1 text-[13px] leading-snug">Mobile signups fell <span class="tnum font-mono text-terra">−18%</span>. The drop is isolated to <span class="font-medium">iOS 17.4</span> on the <span class="font-medium">/connect</span> step.</p>
+              <div class="mt-2 flex gap-1.5">
+                <span class="rounded bg-raised px-1.5 py-0.5 font-mono text-[10px] text-muted">view funnel</span>
+                <span class="rounded bg-raised px-1.5 py-0.5 font-mono text-[10px] text-muted">12 sessions</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Session replay -->
+      <div data-reveal style="--i:1" class="md:col-span-2 md:row-span-2 flex flex-col rounded-xl border border-hairline bg-ink p-6 text-paper">
+        <h3 class="font-display text-[20px] font-medium">Session replay, attached to the data</h3>
+        <p class="mt-2 text-[14px] leading-relaxed text-paper/70">Click any anomaly and watch the exact sessions behind it — rage-clicks, dead-ends, and console errors, timestamped.</p>
+        <div class="mt-5 space-y-2 font-mono text-[11.5px]">
+          <div class="flex items-center gap-2 rounded-[6px] bg-white/5 px-2.5 py-2"><span class="h-1.5 w-1.5 rounded-full bg-terra"></span><span class="text-paper/80">00:38</span><span class="text-paper/55">rage-click · Add source</span></div>
+          <div class="flex items-center gap-2 rounded-[6px] bg-white/5 px-2.5 py-2"><span class="h-1.5 w-1.5 rounded-full bg-[#E2C044]"></span><span class="text-paper/80">01:12</span><span class="text-paper/55">console error · 500</span></div>
+          <div class="flex items-center gap-2 rounded-[6px] bg-white/5 px-2.5 py-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span><span class="text-paper/80">02:04</span><span class="text-paper/55">recovered · query ran</span></div>
+        </div>
+        <div class="mt-auto pt-5">
+          <div class="h-1.5 w-full overflow-hidden rounded-full bg-white/10"><div class="h-full w-2/3 rounded-full bg-accent"></div></div>
+          <p class="mt-2 font-mono text-[10.5px] text-paper/45">scrubbing 02:04 / 03:11</p>
+        </div>
+      </div>
+
+      <!-- Live counter -->
+      <div data-reveal style="--i:2" class="md:col-span-2 rounded-xl border border-hairline bg-card p-6">
+        <p class="font-mono text-[10.5px] uppercase tracking-wide text-faint">Live events</p>
+        <p class="tnum mt-1 font-display text-[34px] font-medium leading-none"><span id="live-count">312,488</span></p>
+        <p class="mt-1 text-[13px] text-muted">streaming in this hour</p>
+        <div class="mt-3 flex h-10 items-end gap-1">
+          <span class="w-full rounded-sm bg-accent/30" style="height:40%"></span><span class="w-full rounded-sm bg-accent/40" style="height:65%"></span><span class="w-full rounded-sm bg-accent/30" style="height:50%"></span><span class="w-full rounded-sm bg-accent/60" style="height:85%"></span><span class="w-full rounded-sm bg-accent/40" style="height:70%"></span><span class="w-full rounded-sm bg-accent" style="height:100%"></span><span class="w-full rounded-sm bg-accent/50" style="height:60%"></span>
+        </div>
+      </div>
+
+      <!-- Integrations -->
+      <div data-reveal style="--i:3" class="md:col-span-2 rounded-xl border border-hairline bg-card p-6">
+        <h3 class="font-display text-[17px] font-medium">Drop in your stack</h3>
+        <p class="mt-1.5 text-[13.5px] leading-relaxed text-muted">SDKs for web, iOS, Android, and server. Pipe in from Segment or your warehouse — reverse-ETL included.</p>
+        <div class="mt-3 flex flex-wrap gap-1.5 font-mono text-[11px] text-muted">
+          <span class="rounded border border-line bg-raised px-2 py-1">JavaScript</span><span class="rounded border border-line bg-raised px-2 py-1">Swift</span><span class="rounded border border-line bg-raised px-2 py-1">Segment</span><span class="rounded border border-line bg-raised px-2 py-1">Snowflake</span><span class="rounded border border-line bg-raised px-2 py-1">+24</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="border-b border-line/70 bg-raised/40 py-20 md:py-28" aria-labelledby="how-h">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="max-w-2xl">
+      <span data-reveal class="font-mono text-[12px] uppercase tracking-[0.16em] text-accent2">In an afternoon</span>
+      <h2 id="how-h" data-reveal style="--i:1" class="mt-3 font-display text-[clamp(1.9rem,4vw,2.7rem)] font-light leading-[1.05] tracking-tightest">From snippet to first insight before standup.</h2>
+    </div>
+    <div class="mt-12 grid gap-4 md:grid-cols-3">
+      <div data-reveal style="--i:0" class="rounded-[10px] border border-line bg-card p-6">
+        <span class="tnum font-display text-[40px] font-light leading-none text-accent/30">01</span>
+        <h3 class="mt-3 font-display text-[18px] font-medium">Send events</h3>
+        <p class="mt-1.5 text-[14px] leading-relaxed text-muted">Drop in one snippet or our SDK. Autocapture starts logging pageviews and clicks immediately.</p>
+        <pre class="mt-3 overflow-x-auto rounded-[7px] bg-ink p-3 font-mono text-[11px] leading-relaxed text-paper/90"><span class="text-accent">cortex</span>.track(<span class="text-[#E2C044]">'query_ran'</span>, {
+  source: <span class="text-[#E2C044]">'organic'</span>, plan: <span class="text-[#E2C044]">'pro'</span>
+})</pre>
+      </div>
+      <div data-reveal style="--i:1" class="rounded-[10px] border border-line bg-card p-6">
+        <span class="tnum font-display text-[40px] font-light leading-none text-accent/30">02</span>
+        <h3 class="mt-3 font-display text-[18px] font-medium">Build a funnel</h3>
+        <p class="mt-1.5 text-[14px] leading-relaxed text-muted">Drag steps in, pick a window, add a breakdown. No SQL, no waiting on a model to refresh.</p>
+        <div class="mt-3 space-y-1.5">
+          <div class="flex items-center gap-2 rounded-[6px] border border-line bg-raised px-2.5 py-1.5 font-mono text-[11px]"><span class="text-faint">1</span> Visited <span class="ml-auto text-accent2 tnum">100%</span></div>
+          <div class="flex items-center gap-2 rounded-[6px] border border-line bg-raised px-2.5 py-1.5 font-mono text-[11px]"><span class="text-faint">2</span> Signed up <span class="ml-auto text-accent2 tnum">63.9%</span></div>
+          <div class="flex items-center gap-2 rounded-[6px] border border-dashed border-faint/40 px-2.5 py-1.5 font-mono text-[11px] text-faint">＋ add step</div>
+        </div>
+      </div>
+      <div data-reveal style="--i:2" class="rounded-[10px] border border-line bg-card p-6">
+        <span class="tnum font-display text-[40px] font-light leading-none text-accent/30">03</span>
+        <h3 class="mt-3 font-display text-[18px] font-medium">Decide & ship</h3>
+        <p class="mt-1.5 text-[14px] leading-relaxed text-muted">Pin the chart, alert on the drop-off, and send the replay to the engineer who owns it — in one click.</p>
+        <div class="mt-3 rounded-[7px] border border-line bg-raised p-3">
+          <p class="font-mono text-[10.5px] text-faint">ALERT</p>
+          <p class="mt-1 text-[12.5px] leading-snug">/connect conversion below <span class="tnum font-mono">25%</span> → notify <span class="text-accent2">#growth</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIAL ============ -->
+<section class="border-b border-line/70 py-20 md:py-28" aria-labelledby="quote-h">
+  <div class="mx-auto max-w-4xl px-5 text-center">
+    <h2 id="quote-h" class="sr-only">What teams say</h2>
+    <span data-reveal class="text-accent2" aria-hidden="true">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" class="mx-auto"><path d="M10 7H6a2 2 0 00-2 2v4a2 2 0 002 2h2v2a2 2 0 01-2 2M20 7h-4a2 2 0 00-2 2v4a2 2 0 002 2h2v2a2 2 0 01-2 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </span>
+    <blockquote data-reveal style="--i:1" class="mt-6 font-display text-[clamp(1.5rem,3.4vw,2.25rem)] font-light leading-[1.18] tracking-tight">
+      “We killed our SQL ticket queue in a week. The funnel pointed at one broken step, the replay showed exactly why, and we shipped the fix the same day. Cortex paid for itself before the trial ended.”
+    </blockquote>
+    <div data-reveal style="--i:2" class="mt-7 flex items-center justify-center gap-3">
+      <span class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-accent to-sky text-[13px] font-semibold text-paper">PR</span>
+      <div class="text-left">
+        <p class="text-[14.5px] font-medium">Priya Raman</p>
+        <p class="text-[13px] text-muted">Head of Growth, Paceboard</p>
+      </div>
+    </div>
+    <div data-reveal style="--i:3" class="mx-auto mt-10 grid max-w-2xl grid-cols-3 gap-px overflow-hidden rounded-xl border border-line bg-line text-center">
+      <div class="bg-card p-5"><p class="tnum font-display text-[30px] font-medium">−74%</p><p class="mt-1 text-[12.5px] text-muted">time-to-answer</p></div>
+      <div class="bg-card p-5"><p class="tnum font-display text-[30px] font-medium">3.2×</p><p class="mt-1 text-[12.5px] text-muted">experiments / quarter</p></div>
+      <div class="bg-card p-5"><p class="tnum font-display text-[30px] font-medium">&lt;5min</p><p class="mt-1 text-[12.5px] text-muted">to first event</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section id="pricing" class="border-b border-line/70 bg-raised/40 py-20 scroll-mt-20 md:py-28" aria-labelledby="price-h">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="mx-auto max-w-2xl text-center">
+      <span data-reveal class="font-mono text-[12px] uppercase tracking-[0.16em] text-accent2">Pricing</span>
+      <h2 id="price-h" data-reveal style="--i:1" class="mt-3 font-display text-[clamp(1.9rem,4vw,2.7rem)] font-light leading-[1.05] tracking-tightest">Free to start. Priced on events, not seats.</h2>
+      <p data-reveal style="--i:2" class="mt-3 text-[15px] text-muted">Invite the whole team — you only pay for the data you send.</p>
+    </div>
+
+    <div class="mt-12 grid items-stretch gap-4 md:grid-cols-3">
+      <!-- Free -->
+      <div data-reveal style="--i:0" class="flex flex-col rounded-xl border border-line bg-card p-7">
+        <h3 class="font-display text-[20px] font-medium">Free</h3>
+        <p class="mt-1 text-[13.5px] text-muted">For side projects and first funnels.</p>
+        <p class="mt-5 font-display text-[40px] font-light leading-none tnum">$0</p>
+        <p class="mt-1 font-mono text-[12px] text-faint">1M events / mo</p>
+        <a href="#cta" class="mt-6 rounded-[8px] border border-hairline bg-card py-2.5 text-center text-[14px] font-medium text-ink transition-colors hover:bg-raised">Start free</a>
+        <ul class="mt-6 space-y-2.5 text-[13.5px] text-muted">
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>Unlimited team members</li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>Funnels &amp; retention</li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>30-day data history</li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>Community support</li>
+        </ul>
+      </div>
+
+      <!-- Pro (highlighted) -->
+      <div data-reveal style="--i:1" class="relative flex flex-col rounded-xl border-2 border-accent bg-card p-7 shadow-[0_24px_60px_-30px_rgba(19,122,79,.5)]">
+        <span class="absolute -top-3 left-7 rounded-full bg-accent px-2.5 py-1 font-mono text-[10.5px] font-medium uppercase tracking-wide text-paper">Most teams</span>
+        <h3 class="font-display text-[20px] font-medium">Pro</h3>
+        <p class="mt-1 text-[13.5px] text-muted">For product teams shipping weekly.</p>
+        <p class="mt-5 font-display text-[40px] font-light leading-none tnum">$0.<span class="text-[24px]">02</span><span class="font-sans text-[15px] text-muted"> / 1k events</span></p>
+        <p class="mt-1 font-mono text-[12px] text-faint">from $80 / mo</p>
+        <a href="#cta" data-magnetic class="mt-6 rounded-[8px] bg-accent py-2.5 text-center text-[14px] font-medium text-paper transition-colors hover:bg-accent2">Start free trial</a>
+        <ul class="mt-6 space-y-2.5 text-[13.5px] text-muted">
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span><span class="text-ink">Everything in Free, plus:</span></li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>Session replay &amp; Ask Cortex</li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>Unlimited history &amp; cohorts</li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>Alerts, Slack &amp; webhooks</li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>Warehouse sync</li>
+        </ul>
+      </div>
+
+      <!-- Enterprise -->
+      <div data-reveal style="--i:2" class="flex flex-col rounded-xl border border-line bg-card p-7">
+        <h3 class="font-display text-[20px] font-medium">Enterprise</h3>
+        <p class="mt-1 text-[13.5px] text-muted">For scale, security, and SLAs.</p>
+        <p class="mt-5 font-display text-[40px] font-light leading-none">Let’s talk</p>
+        <p class="mt-1 font-mono text-[12px] text-faint">volume pricing</p>
+        <a href="#cta" class="mt-6 rounded-[8px] border border-hairline bg-card py-2.5 text-center text-[14px] font-medium text-ink transition-colors hover:bg-raised">Talk to sales</a>
+        <ul class="mt-6 space-y-2.5 text-[13.5px] text-muted">
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span><span class="text-ink">Everything in Pro, plus:</span></li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>SSO/SAML &amp; audit logs</li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>SOC 2 &amp; data residency</li>
+          <li class="flex gap-2.5"><span class="text-accent2">✓</span>Dedicated CSM &amp; 99.99% SLA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq" class="border-b border-line/70 py-20 scroll-mt-20 md:py-28" aria-labelledby="faq-h">
+  <div class="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[0.8fr_1.2fr]">
+    <div>
+      <span data-reveal class="font-mono text-[12px] uppercase tracking-[0.16em] text-accent2">Answers</span>
+      <h2 id="faq-h" data-reveal style="--i:1" class="mt-3 font-display text-[clamp(1.9rem,4vw,2.6rem)] font-light leading-[1.05] tracking-tightest">Before you ask</h2>
+      <p data-reveal style="--i:2" class="mt-3 text-[15px] text-muted">Still curious? <a href="#cta" class="text-accent2 ghost-link">Talk to a human →</a></p>
+    </div>
+    <div data-reveal class="divide-y divide-line border-y border-line">
+      <details class="group py-4" open>
+        <summary class="flex cursor-pointer items-center justify-between gap-4 text-[16px] font-medium">How fast can we be live?<span class="faq-plus text-accent2 transition-transform text-[20px] leading-none">＋</span></summary>
+        <p class="mt-2.5 max-w-xl text-[14.5px] leading-relaxed text-muted">Most teams send their first events in under five minutes with autocapture, and have a working funnel before standup. No data model to design up front.</p>
+      </details>
+      <details class="group py-4">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 text-[16px] font-medium">Do I need to know SQL?<span class="faq-plus text-accent2 transition-transform text-[20px] leading-none">＋</span></summary>
+        <p class="mt-2.5 max-w-xl text-[14.5px] leading-relaxed text-muted">No. Funnels, retention, and breakdowns are point-and-click, and Ask Cortex turns plain-English questions into real charts. If you do want SQL, there’s a full query editor and warehouse sync.</p>
+      </details>
+      <details class="group py-4">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 text-[16px] font-medium">Is it secure and compliant?<span class="faq-plus text-accent2 transition-transform text-[20px] leading-none">＋</span></summary>
+        <p class="mt-2.5 max-w-xl text-[14.5px] leading-relaxed text-muted">Cortex is SOC 2 Type II and GDPR-ready, with SSO/SAML, granular roles, audit logs, and EU/US data residency on Enterprise. You control PII redaction at ingest.</p>
+      </details>
+      <details class="group py-4">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 text-[16px] font-medium">How is pricing calculated?<span class="faq-plus text-accent2 transition-transform text-[20px] leading-none">＋</span></summary>
+        <p class="mt-2.5 max-w-xl text-[14.5px] leading-relaxed text-muted">By events ingested, not seats — so you can invite the whole company without it getting expensive. The first 1M events every month are free, and you set a hard cap so there are no surprise bills.</p>
+      </details>
+      <details class="group py-4">
+        <summary class="flex cursor-pointer items-center justify-between gap-4 text-[16px] font-medium">Can we migrate off Amplitude or Mixpanel?<span class="faq-plus text-accent2 transition-transform text-[20px] leading-none">＋</span></summary>
+        <p class="mt-2.5 max-w-xl text-[14.5px] leading-relaxed text-muted">Yes. Keep your existing taxonomy via Segment, backfill history from your warehouse, and run both side-by-side during the switch. Our team helps map your events for free.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section id="cta" class="relative overflow-hidden bg-ink py-24 text-paper scroll-mt-20 md:py-32">
+  <div class="pointer-events-none absolute inset-0 opacity-[0.5]" aria-hidden="true" style="background:radial-gradient(60% 80% at 50% 0%, rgba(19,122,79,.45), transparent 70%)"></div>
+  <div class="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-accent to-transparent" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-3xl px-5 text-center">
+    <h2 data-reveal class="font-display text-[clamp(2.2rem,5.5vw,3.6rem)] font-light leading-[1.02] tracking-tightest">
+      Stop guessing why. <span class="block italic text-[#7FE0AE]">Start seeing.</span>
+    </h2>
+    <p data-reveal style="--i:1" class="mx-auto mt-5 max-w-lg text-[16.5px] leading-relaxed text-paper/65">
+      Spin up a workspace, send your first event, and ship a smarter decision today. Free forever for your first million events.
+    </p>
+    <div data-reveal style="--i:2" class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a href="#" data-magnetic class="w-full rounded-[8px] bg-accent px-7 py-3.5 text-[15px] font-medium text-paper transition-colors hover:bg-[#16915E] sm:w-auto">Start free — no card</a>
+      <a href="#" class="w-full rounded-[8px] border border-white/15 px-7 py-3.5 text-[15px] font-medium text-paper transition-colors hover:bg-white/5 sm:w-auto">Book a 20-min demo</a>
+    </div>
+    <p data-reveal style="--i:3" class="mt-5 font-mono text-[11.5px] text-paper/40">No credit card · cancel anytime · SOC 2 Type II</p>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="bg-paper py-14">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div>
+        <a href="#" class="flex items-center gap-2.5" aria-label="Cortex home">
+          <span class="grid h-7 w-7 place-items-center rounded-[6px] bg-ink"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 16l4-6 3.2 3.2L19 5" stroke="#34D399" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <span class="font-display text-[20px] font-medium tracking-tightest">Cortex</span>
+        </a>
+        <p class="mt-3 max-w-xs text-[13.5px] leading-relaxed text-muted">Product analytics for teams who’d rather know than guess.</p>
+        <p class="mt-4 font-mono text-[11px] text-faint">© 2026 Cortex Analytics, Inc.</p>
+      </div>
+      <nav aria-label="Product">
+        <p class="font-mono text-[11px] uppercase tracking-wider text-faint">Product</p>
+        <ul class="mt-3 space-y-2 text-[13.5px] text-muted">
+          <li><a href="#funnels" class="ghost-link transition-colors hover:text-ink">Funnels</a></li>
+          <li><a href="#retention" class="ghost-link transition-colors hover:text-ink">Retention</a></li>
+          <li><a href="#product" class="ghost-link transition-colors hover:text-ink">Session replay</a></li>
+          <li><a href="#pricing" class="ghost-link transition-colors hover:text-ink">Pricing</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Company">
+        <p class="font-mono text-[11px] uppercase tracking-wider text-faint">Company</p>
+        <ul class="mt-3 space-y-2 text-[13.5px] text-muted">
+          <li><a href="#" class="ghost-link transition-colors hover:text-ink">About</a></li>
+          <li><a href="#" class="ghost-link transition-colors hover:text-ink">Customers</a></li>
+          <li><a href="#" class="ghost-link transition-colors hover:text-ink">Careers</a></li>
+          <li><a href="#" class="ghost-link transition-colors hover:text-ink">Blog</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Resources">
+        <p class="font-mono text-[11px] uppercase tracking-wider text-faint">Resources</p>
+        <ul class="mt-3 space-y-2 text-[13.5px] text-muted">
+          <li><a href="#faq" class="ghost-link transition-colors hover:text-ink">Docs</a></li>
+          <li><a href="#" class="ghost-link transition-colors hover:text-ink">API reference</a></li>
+          <li><a href="#" class="ghost-link transition-colors hover:text-ink">Status</a></li>
+          <li><a href="#" class="ghost-link transition-colors hover:text-ink">Security</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="mt-10 flex flex-col items-start justify-between gap-3 border-t border-line pt-6 text-[12.5px] text-faint sm:flex-row sm:items-center">
+      <p>Built for PMs and growth engineers who ship.</p>
+      <div class="flex gap-5">
+        <a href="#" class="ghost-link transition-colors hover:text-ink">Privacy</a>
+        <a href="#" class="ghost-link transition-colors hover:text-ink">Terms</a>
+        <a href="#" class="ghost-link transition-colors hover:text-ink">SOC 2</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Build cohort grid with heat coloring (hand-built retention data)
+  (function(){
+    const data = [
+      { c:'Mar 04', n:'2,140', v:[100,52,41,37,35,34] },
+      { c:'Mar 11', n:'2,380', v:[100,55,43,38,36,34] },
+      { c:'Mar 18', n:'2,910', v:[100,49,38,34,33,null] },
+      { c:'Mar 25', n:'3,120', v:[100,58,46,40,null,null] },
+      { c:'Apr 01', n:'3,640', v:[100,61,49,null,null,null] },
+      { c:'Apr 08', n:'4,020', v:[100,57,null,null,null,null] },
+    ];
+    const tb = document.getElementById('cohort');
+    if(!tb) return;
+    let ci = 0;
+    data.forEach(row=>{
+      const tr = document.createElement('tr');
+      const th = document.createElement('td');
+      th.className = 'py-1 pr-2 text-left text-faint';
+      th.textContent = row.c;
+      tr.appendChild(th);
+      row.v.forEach(val=>{
+        const td = document.createElement('td');
+        if(val===null){ td.innerHTML = '<span class="block rounded-[4px] bg-raised/40 py-1.5 text-faint/30">·</span>'; tr.appendChild(td); return; }
+        // heat: emerald, opacity scales with value
+        const op = Math.max(0.10, Math.min(1, val/100));
+        const dark = val>55;
+        const cell = document.createElement('span');
+        cell.className = 'cell block rounded-[4px] py-1.5';
+        cell.style.setProperty('--c', ci++);
+        cell.style.background = `rgba(19,122,79,${op})`;
+        cell.style.color = dark ? '#FBFAF7' : '#1A1A17';
+        cell.textContent = val + (val===100?'':'');
+        td.appendChild(cell);
+        tr.appendChild(td);
+      });
+      tb.appendChild(tr);
+    });
+  })();
+
+  // Blur-in reveal
+  (function(){
+    const els = document.querySelectorAll('[data-reveal]');
+    if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      els.forEach(e=>e.classList.add('is-visible')); return;
+    }
+    const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target);} }),{threshold:.12});
+    // Reveal anything already in the viewport immediately (above-the-fold paints without waiting on IO's async tick)
+    const revealInView = ()=>els.forEach(el=>{ if(el.classList.contains('is-visible')) return; const r=el.getBoundingClientRect(); if(r.top < window.innerHeight && r.bottom > 0){ el.classList.add('is-visible'); io.unobserve(el);} else { io.observe(el); } });
+    revealInView();
+    // Safety net for any UA where IO never fires: force-reveal everything after 1.2s
+    setTimeout(()=>els.forEach(el=>el.classList.add('is-visible')), 1200);
+  })();
+
+  // Dashboard charts draw-in when scrolled into view
+  (function(){
+    const targets = ['#dashboard', '#cohort', '#retention svg', '#funnels'];
+    const seen = new WeakSet();
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const trigger = (el)=>{ const host = el.closest('section') || el; (el.id==='dashboard'?el:host).classList.add('dash-in'); };
+    // Use the parent that holds .fbar / .draw / .cell — add dash-in there
+    const armed = [
+      document.getElementById('dashboard'),
+      document.querySelector('#retention .grid'),
+    ].filter(Boolean);
+    if(reduce){ armed.forEach(a=>a.classList.add('dash-in')); return; }
+    const io = new IntersectionObserver((es)=>es.forEach(e=>{ if(e.isIntersecting && !seen.has(e.target)){ seen.add(e.target); e.target.classList.add('dash-in'); io.unobserve(e.target);} }),{threshold:.25});
+    armed.forEach(a=>io.observe(a));
+  })();
+
+  // Count-up for the hero metric numbers + live counter
+  (function(){
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // live events ticker
+    const live = document.getElementById('live-count');
+    if(live && !reduce){
+      let n = 312488;
+      setInterval(()=>{ n += Math.floor(Math.random()*40)+8; live.textContent = n.toLocaleString('en-US'); }, 1400);
+    }
+  })();
+
+  // Magnetic buttons
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if(window.matchMedia('(pointer: coarse)').matches) return;
+    document.querySelectorAll('[data-magnetic]').forEach(b=>{
+      b.addEventListener('mousemove',e=>{ const r=b.getBoundingClientRect();
+        b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px)`; });
+      b.addEventListener('mouseleave',()=>b.style.transform='');
+    });
+  })();
+
+  // Nav shadow on scroll
+  (function(){
+    const nav = document.getElementById('nav');
+    const onScroll = ()=>{ nav.classList.toggle('shadow-[0_1px_0_rgba(26,26,23,0.06)]', window.scrollY>8); };
+    window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  })();
+</script>
+</body>
+</html>

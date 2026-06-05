@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Relay — Reliable webhook & event delivery for developers</title>
+  <meta name="description" content="Relay delivers your webhooks and events with automatic retries, durable queues, a live request inspector, and payload transformations. Get an API key and ship delivery you can trust." />
+  <meta property="og:title" content="Relay — Reliable webhook & event delivery" />
+  <meta property="og:description" content="Retries, queues, a request inspector, and transformations. The delivery layer developers stop worrying about." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#0B0C0E" />
+  <link rel="icon" href="assets/favicon.svg" />
+
+  <!-- CURRENT fonts: Bricolage Grotesque (mechanical display) + Hanken Grotesk (body) + Geist Mono (technical) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Tinted graphite — stepped luminance, never pure black
+            bg:'#0B0C0E', surface:'#141619', raised:'#1C1F24', plate:'#22262C', line:'#2A2E35',
+            ink:'#F4F2ED', muted:'#9CA29E', faint:'#6A6F6B',
+            // Signal-amber departure-board accent (NOT indigo/violet) + mint reserved for "delivered"
+            accent:'#FF8A3D', amberdim:'#C96A2C', mint:'#5BE0B0', alert:'#FF5D5D',
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'Geist', 'system-ui', 'sans-serif'],
+            sans:    ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
+            mono:    ['"Geist Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+          },
+          letterSpacing: { tightest: '-0.045em' },
+          boxShadow: { plate: '0 1px 0 0 rgba(255,255,255,0.03) inset, 0 24px 60px -30px rgba(0,0,0,0.9)' },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    :root { --accent:#FF8A3D; }
+    html { scroll-behavior: smooth; }
+    body { background-color:#0B0C0E; }
+
+    /* Blueprint dot-grid texture */
+    .grid-dots {
+      background-image: radial-gradient(circle at 1px 1px, rgba(244,242,237,0.045) 1px, transparent 0);
+      background-size: 22px 22px;
+    }
+    .grid-lines {
+      background-image:
+        linear-gradient(to right, rgba(244,242,237,0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(244,242,237,0.035) 1px, transparent 1px);
+      background-size: 64px 64px;
+    }
+    .tabnum { font-variant-numeric: tabular-nums; }
+
+    /* ── Blur-in reveal (the 2025 signature) ── */
+    /* Gated behind .js so content is ALWAYS visible if JS/IO never runs */
+    @media (prefers-reduced-motion: no-preference) {
+      html.js [data-reveal]{
+        opacity:0; filter:blur(12px); transform:translateY(20px);
+        transition:opacity .65s ease, filter .65s ease, transform .65s cubic-bezier(.2,.7,.2,1);
+        transition-delay:calc(var(--i,0)*70ms);
+      }
+      html.js [data-reveal].is-visible{ opacity:1; filter:blur(0); transform:none; }
+    }
+
+    /* ── Signature motion: split-flap board flip ── */
+    @media (prefers-reduced-motion: no-preference) {
+      @keyframes flapdown {
+        0%   { transform: rotateX(0deg);   }
+        49%  { transform: rotateX(-90deg); }
+        50%  { transform: rotateX(90deg);  }
+        100% { transform: rotateX(0deg);   }
+      }
+      .flap.flip { animation: flapdown .42s cubic-bezier(.4,.1,.2,1); transform-origin: center; }
+    }
+
+    /* Scroll progress bar */
+    @media (prefers-reduced-motion: no-preference) {
+      .progress{ position:fixed; top:0; left:0; height:2px; width:100%; transform-origin:left; transform:scaleX(0);
+        background:linear-gradient(90deg,#FF8A3D,#5BE0B0); z-index:60; }
+      @supports (animation-timeline: scroll()) {
+        .progress{ animation:grow linear both; animation-timeline:scroll(root block); }
+        @keyframes grow{ to{ transform:scaleX(1) } }
+      }
+    }
+
+    /* Marquee event ticker */
+    .marquee{ overflow:hidden; -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent); }
+    .track{ display:flex; gap:2.5rem; width:max-content; }
+    @media (prefers-reduced-motion: no-preference) {
+      .track{ animation:marquee 38s linear infinite; }
+      .marquee:hover .track{ animation-play-state:paused; }
+      @keyframes marquee{ to{ transform:translateX(-50%) } }
+    }
+
+    /* Live pulse dot */
+    .pulse::before{ content:''; position:absolute; inset:0; border-radius:9999px; background:currentColor; opacity:.5; }
+    @media (prefers-reduced-motion: no-preference){
+      .pulse::before{ animation:ping 1.8s cubic-bezier(0,0,.2,1) infinite; }
+      @keyframes ping{ 75%,100%{ transform:scale(2.4); opacity:0 } }
+    }
+
+    /* Waterfall bar grow */
+    @media (prefers-reduced-motion: no-preference){
+      .wf-bar{ transform:scaleX(0); transform-origin:left; transition:transform .8s cubic-bezier(.2,.7,.2,1); }
+      .wf.is-visible .wf-bar{ transform:scaleX(1); }
+    }
+
+    a:focus-visible, button:focus-visible, summary:focus-visible {
+      outline:2px solid var(--accent); outline-offset:3px; border-radius:4px;
+    }
+    details > summary { list-style:none; cursor:pointer; }
+    details > summary::-webkit-details-marker { display:none; }
+    .sel-mint::selection{ background:#5BE0B0; color:#0B0C0E; }
+    ::selection{ background:#FF8A3D; color:#0B0C0E; }
+  </style>
+  <!-- Mark JS available synchronously so the blur-in initial state only applies when we can animate it out -->
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body class="bg-bg text-ink font-sans antialiased selection:bg-accent">
+  <div class="progress" aria-hidden="true"></div>
+
+  <!-- Fine grain overlay -->
+  <svg class="pointer-events-none fixed inset-0 -z-10 h-full w-full opacity-[0.035]" aria-hidden="true">
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" stitchTiles="stitch"/></filter>
+    <rect width="100%" height="100%" filter="url(#grain)"/>
+  </svg>
+  <!-- Ambient amber glow behind hero -->
+  <div class="pointer-events-none fixed top-[-12rem] right-[-6rem] -z-10 h-[40rem] w-[40rem] rounded-full bg-accent/10 blur-[140px]" aria-hidden="true"></div>
+
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:rounded focus:bg-accent focus:px-4 focus:py-2 focus:text-bg focus:font-semibold">Skip to content</a>
+
+  <!-- ───────────────────────── NAV ───────────────────────── -->
+  <header id="nav" class="sticky top-0 z-50 border-b border-line/0 transition-all duration-300">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-5 py-3.5 md:px-8">
+      <a href="#" class="group flex items-center gap-2.5" aria-label="Relay home">
+        <span class="relative grid h-8 w-8 place-items-center rounded-[5px] border border-line bg-surface">
+          <span class="absolute left-1.5 top-2 h-[5px] w-3.5 rounded-[1px] bg-accent"></span>
+          <span class="absolute left-1.5 bottom-2 h-[5px] w-2 rounded-[1px] bg-mint"></span>
+        </span>
+        <span class="font-display text-[1.35rem] font-700 tracking-tightest">Relay</span>
+        <span class="ml-1 hidden rounded-[4px] border border-line bg-surface px-1.5 py-0.5 font-mono text-[10px] text-muted sm:inline">v2</span>
+      </a>
+
+      <nav class="hidden items-center gap-7 text-[0.92rem] text-muted lg:flex" aria-label="Primary">
+        <a href="#how" class="transition-colors hover:text-ink">How it works</a>
+        <a href="#features" class="transition-colors hover:text-ink">Platform</a>
+        <a href="#pricing" class="transition-colors hover:text-ink">Pricing</a>
+        <a href="#faq" class="transition-colors hover:text-ink">FAQ</a>
+        <a href="#" class="transition-colors hover:text-ink">Docs</a>
+      </nav>
+
+      <div class="flex items-center gap-2.5">
+        <a href="#" class="hidden text-[0.92rem] text-muted transition-colors hover:text-ink sm:inline">Sign in</a>
+        <a href="#cta" data-magnetic class="inline-flex items-center gap-1.5 rounded-[6px] bg-accent px-4 py-2 text-[0.92rem] font-600 text-bg transition-[filter] hover:brightness-110">
+          Get an API key
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <button id="menuBtn" class="grid h-9 w-9 place-items-center rounded-[6px] border border-line text-muted lg:hidden" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="hidden border-t border-line bg-surface px-5 py-4 lg:hidden">
+      <div class="flex flex-col gap-1 text-[1rem]">
+        <a href="#how" class="rounded px-2 py-2.5 text-muted hover:bg-raised hover:text-ink">How it works</a>
+        <a href="#features" class="rounded px-2 py-2.5 text-muted hover:bg-raised hover:text-ink">Platform</a>
+        <a href="#pricing" class="rounded px-2 py-2.5 text-muted hover:bg-raised hover:text-ink">Pricing</a>
+        <a href="#faq" class="rounded px-2 py-2.5 text-muted hover:bg-raised hover:text-ink">FAQ</a>
+        <a href="#" class="rounded px-2 py-2.5 text-muted hover:bg-raised hover:text-ink">Docs</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ───────────────────────── HERO ───────────────────────── -->
+    <section aria-labelledby="hero-title" class="relative overflow-hidden">
+      <div class="grid-dots absolute inset-0 -z-10" aria-hidden="true"></div>
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-5 pb-16 pt-14 md:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-10 lg:pb-24 lg:pt-20">
+
+        <!-- Left: headline -->
+        <div class="flex max-w-xl flex-col justify-center">
+          <a href="#" data-reveal class="mb-7 inline-flex w-fit items-center gap-2 rounded-full border border-line bg-surface/70 py-1 pl-1.5 pr-3 text-[0.82rem] text-muted backdrop-blur transition-colors hover:border-accent/40">
+            <span class="rounded-full bg-accent/15 px-2 py-0.5 font-mono text-[0.72rem] font-500 text-accent">NEW</span>
+            Idempotency keys are live on every plan
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+          </a>
+
+          <h1 id="hero-title" data-reveal style="--i:1" class="font-display text-[clamp(2.7rem,7vw,4.6rem)] font-800 leading-[0.96] tracking-tightest text-ink">
+            Every event<br />
+            <span class="text-accent">arrives.</span> No matter<br class="hidden sm:block" /> what fails downstream.
+          </h1>
+
+          <p data-reveal style="--i:2" class="mt-6 max-w-md text-[1.06rem] leading-relaxed text-muted">
+            Relay is the delivery layer between your services and the world. Durable queues, automatic retries with backoff, a live request inspector, and payload transformations — so a flaky endpoint never costs you an event again.
+          </p>
+
+          <div data-reveal style="--i:3" class="mt-8 flex flex-wrap items-center gap-3">
+            <a href="#cta" data-magnetic class="inline-flex items-center gap-2 rounded-[7px] bg-accent px-5 py-3 text-[1rem] font-600 text-bg shadow-[0_0_0_1px_rgba(255,138,61,0.4),0_8px_24px_-8px_rgba(255,138,61,0.5)] transition-[filter] hover:brightness-110">
+              Get an API key
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#how" class="inline-flex items-center gap-2 rounded-[7px] border border-line bg-surface/50 px-5 py-3 text-[1rem] font-500 text-ink transition-colors hover:border-muted/50">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              See a delivery, end to end
+            </a>
+          </div>
+
+          <!-- Stat strip with split-flap counter -->
+          <dl data-reveal style="--i:4" class="mt-11 grid grid-cols-3 gap-px overflow-hidden rounded-[8px] border border-line bg-line">
+            <div class="bg-surface px-4 py-4">
+              <dt class="font-mono text-[0.7rem] uppercase tracking-wider text-faint">Delivered / mo</dt>
+              <dd class="mt-1.5 flex items-baseline gap-1">
+                <span id="flapStat" class="font-display text-[1.7rem] font-700 tabnum text-ink" aria-label="9.4 billion">9.4</span>
+                <span class="font-display text-[1.1rem] font-600 text-muted">B</span>
+              </dd>
+            </div>
+            <div class="bg-surface px-4 py-4">
+              <dt class="font-mono text-[0.7rem] uppercase tracking-wider text-faint">Delivery rate</dt>
+              <dd class="mt-1.5 font-display text-[1.7rem] font-700 tabnum text-mint">99.99%</dd>
+            </div>
+            <div class="bg-surface px-4 py-4">
+              <dt class="font-mono text-[0.7rem] uppercase tracking-wider text-faint">p50 dispatch</dt>
+              <dd class="mt-1.5 font-display text-[1.7rem] font-700 tabnum text-ink">38<span class="text-[1rem] font-600 text-muted">ms</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Right: THE SIGNATURE — split-flap event delivery board (hand-built) -->
+        <div data-reveal style="--i:2" class="flex items-center">
+          <div class="w-full overflow-hidden rounded-[12px] border border-line bg-surface shadow-plate">
+            <!-- Board chrome -->
+            <div class="flex items-center justify-between border-b border-line bg-raised/60 px-4 py-2.5">
+              <div class="flex items-center gap-2.5">
+                <span class="relative inline-flex h-2 w-2 text-mint"><span class="pulse"></span><span class="relative inline-block h-2 w-2 rounded-full bg-mint"></span></span>
+                <span class="font-mono text-[0.78rem] text-muted">relay://dispatch.live</span>
+              </div>
+              <div class="flex items-center gap-1.5 font-mono text-[0.72rem] text-faint">
+                <span class="rounded-[4px] border border-line bg-surface px-1.5 py-0.5">us-east</span>
+                <span class="hidden rounded-[4px] border border-line bg-surface px-1.5 py-0.5 sm:inline">eu-west</span>
+              </div>
+            </div>
+
+            <!-- Board header row -->
+            <div class="grid grid-cols-[auto_1fr_auto_auto] gap-3 border-b border-line bg-surface px-4 py-2 font-mono text-[0.66rem] uppercase tracking-wider text-faint">
+              <span>Time</span><span>Endpoint · Event</span><span class="text-right">Try</span><span class="text-right">Status</span>
+            </div>
+
+            <!-- Split-flap rows -->
+            <ul id="board" class="divide-y divide-line/70 font-mono text-[0.8rem]">
+              <!-- rows injected/animated by JS; static fallback below -->
+              <li class="grid grid-cols-[auto_1fr_auto_auto] items-center gap-3 px-4 py-2.5">
+                <span class="text-faint tabnum">10:42:07</span>
+                <span class="truncate text-muted"><span class="text-ink">api.acme.io</span> · order.paid</span>
+                <span class="text-right text-faint tabnum">1</span>
+                <span class="flapcell text-right"><span class="inline-block rounded-[4px] bg-mint/15 px-2 py-0.5 font-600 text-mint">200</span></span>
+              </li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto] items-center gap-3 px-4 py-2.5">
+                <span class="text-faint tabnum">10:42:06</span>
+                <span class="truncate text-muted"><span class="text-ink">hooks.shipd.co</span> · shipment.update</span>
+                <span class="text-right text-accent tabnum">3</span>
+                <span class="flapcell text-right"><span class="inline-block rounded-[4px] bg-accent/15 px-2 py-0.5 font-600 text-accent">retry</span></span>
+              </li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto] items-center gap-3 px-4 py-2.5">
+                <span class="text-faint tabnum">10:42:06</span>
+                <span class="truncate text-muted"><span class="text-ink">api.acme.io</span> · invoice.created</span>
+                <span class="text-right text-faint tabnum">1</span>
+                <span class="flapcell text-right"><span class="inline-block rounded-[4px] bg-mint/15 px-2 py-0.5 font-600 text-mint">200</span></span>
+              </li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto] items-center gap-3 px-4 py-2.5">
+                <span class="text-faint tabnum">10:42:05</span>
+                <span class="truncate text-muted"><span class="text-ink">webhook.fin.app</span> · payout.failed</span>
+                <span class="text-right text-faint tabnum">2</span>
+                <span class="flapcell text-right"><span class="inline-block rounded-[4px] bg-mint/15 px-2 py-0.5 font-600 text-mint">200</span></span>
+              </li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto] items-center gap-3 px-4 py-2.5">
+                <span class="text-faint tabnum">10:42:04</span>
+                <span class="truncate text-muted"><span class="text-ink">edge.legacy.net</span> · user.created</span>
+                <span class="text-right text-alert tabnum">6</span>
+                <span class="flapcell text-right"><span class="inline-block rounded-[4px] bg-alert/15 px-2 py-0.5 font-600 text-alert">DLQ</span></span>
+              </li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto] items-center gap-3 px-4 py-2.5">
+                <span class="text-faint tabnum">10:42:03</span>
+                <span class="truncate text-muted"><span class="text-ink">api.acme.io</span> · subscription.renewed</span>
+                <span class="text-right text-faint tabnum">1</span>
+                <span class="flapcell text-right"><span class="inline-block rounded-[4px] bg-mint/15 px-2 py-0.5 font-600 text-mint">200</span></span>
+              </li>
+            </ul>
+
+            <!-- Board footer -->
+            <div class="flex items-center justify-between border-t border-line bg-raised/60 px-4 py-2.5 font-mono text-[0.72rem]">
+              <span class="text-faint">in&nbsp;flight <span class="text-ink tabnum">12</span> · queued <span class="text-ink tabnum">348</span></span>
+              <span class="text-mint">all regions nominal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Event ticker marquee -->
+      <div class="border-y border-line/70 bg-surface/40 py-2.5">
+        <div class="marquee mx-auto max-w-7xl">
+          <div class="track font-mono text-[0.76rem] text-muted">
+            <div class="flex items-center gap-2.5"><span class="text-mint">●</span>order.paid → 200 OK<span class="text-faint">·</span><span class="text-accent">●</span>payment.disputed → retry (2/8)<span class="text-faint">·</span><span class="text-mint">●</span>account.updated → 200 OK<span class="text-faint">·</span><span class="text-mint">●</span>email.delivered → 200 OK<span class="text-faint">·</span><span class="text-accent">●</span>sync.requested → retry (1/8)<span class="text-faint">·</span><span class="text-mint">●</span>invoice.finalized → 200 OK<span class="text-faint">·</span></div>
+            <div class="flex items-center gap-2.5" aria-hidden="true"><span class="text-mint">●</span>order.paid → 200 OK<span class="text-faint">·</span><span class="text-accent">●</span>payment.disputed → retry (2/8)<span class="text-faint">·</span><span class="text-mint">●</span>account.updated → 200 OK<span class="text-faint">·</span><span class="text-mint">●</span>email.delivered → 200 OK<span class="text-faint">·</span><span class="text-accent">●</span>sync.requested → retry (1/8)<span class="text-faint">·</span><span class="text-mint">●</span>invoice.finalized → 200 OK<span class="text-faint">·</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── SOCIAL PROOF ───────────────────────── -->
+    <section aria-label="Teams building on Relay" class="border-b border-line/70">
+      <div class="mx-auto max-w-7xl px-5 py-10 md:px-8">
+        <p data-reveal class="mb-7 text-center font-mono text-[0.72rem] uppercase tracking-[0.2em] text-faint">Routing events for engineering teams at</p>
+        <div data-reveal style="--i:1" class="grid grid-cols-2 items-center gap-x-8 gap-y-6 text-muted sm:grid-cols-3 lg:grid-cols-6">
+          <!-- placeholder wordmark "logos" (swappable, not real companies) -->
+          <div class="flex items-center justify-center gap-2 opacity-70 transition-opacity hover:opacity-100"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l9 5v10l-9 5-9-5V7z"/></svg><span class="font-display text-[1.15rem] font-700 tracking-tight">Northwind</span></div>
+          <div class="flex items-center justify-center gap-2 opacity-70 transition-opacity hover:opacity-100"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg><span class="font-display text-[1.15rem] font-700 tracking-tight">Cadence</span></div>
+          <div class="flex items-center justify-center gap-2 opacity-70 transition-opacity hover:opacity-100"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/></svg><span class="font-display text-[1.15rem] font-700 tracking-tight">Ledgerly</span></div>
+          <div class="flex items-center justify-center gap-2 opacity-70 transition-opacity hover:opacity-100"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 7 7 .5-5.5 4.5L18 21l-6-4-6 4 1.5-7L2 9.5 9 9z"/></svg><span class="font-display text-[1.15rem] font-700 tracking-tight">Beacon</span></div>
+          <div class="flex items-center justify-center gap-2 opacity-70 transition-opacity hover:opacity-100"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12h7l2-5 4 10 2-5h3"/></svg><span class="font-display text-[1.15rem] font-700 tracking-tight">Pulsewire</span></div>
+          <div class="flex items-center justify-center gap-2 opacity-70 transition-opacity hover:opacity-100"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="9"/></svg><span class="font-display text-[1.15rem] font-700 tracking-tight">Orbital</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── PROBLEM ───────────────────────── -->
+    <section aria-labelledby="problem-title" class="relative border-b border-line/70">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="mx-auto max-w-2xl text-center">
+          <p data-reveal class="mb-4 font-mono text-[0.74rem] uppercase tracking-[0.2em] text-accent">The 3 AM problem</p>
+          <h2 data-reveal style="--i:1" id="problem-title" class="font-display text-[clamp(1.9rem,4.5vw,2.9rem)] font-700 leading-[1.05] tracking-tightest">
+            A webhook fired. Nobody caught it.
+          </h2>
+          <p data-reveal style="--i:2" class="mx-auto mt-5 max-w-xl text-[1.05rem] leading-relaxed text-muted">
+            Your service is fine. The receiver had a 30-second blip. But that one dropped event becomes a missing payment, a desynced inventory count, a support ticket you can't reproduce. Hand-rolled retry loops don't scale — and they hide the failures you most need to see.
+          </p>
+        </div>
+
+        <div class="mt-14 grid gap-5 md:grid-cols-2">
+          <!-- The old way -->
+          <div data-reveal class="rounded-[12px] border border-line bg-surface/60 p-6">
+            <div class="mb-4 flex items-center gap-2">
+              <span class="grid h-6 w-6 place-items-center rounded-[5px] border border-line text-faint"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>
+              <h3 class="font-display text-[1.1rem] font-600 text-muted">The hand-rolled way</h3>
+            </div>
+            <ul class="space-y-3 font-mono text-[0.84rem] leading-relaxed text-faint">
+              <li class="flex gap-3"><span class="text-alert">—</span> A <code class="text-muted">try/catch</code> with <code class="text-muted">sleep(5)</code> and a counter you forgot to cap</li>
+              <li class="flex gap-3"><span class="text-alert">—</span> Failed payloads vanish into log lines nobody greps</li>
+              <li class="flex gap-3"><span class="text-alert">—</span> No idempotency, so retries double-charge customers</li>
+              <li class="flex gap-3"><span class="text-alert">—</span> A receiver outage takes your whole worker queue down with it</li>
+              <li class="flex gap-3"><span class="text-alert">—</span> "Did it deliver?" is unanswerable after the fact</li>
+            </ul>
+          </div>
+          <!-- The Relay way -->
+          <div data-reveal style="--i:1" class="relative rounded-[12px] border border-accent/30 bg-gradient-to-b from-accent/[0.06] to-transparent p-6">
+            <span class="absolute right-5 top-5 font-mono text-[0.66rem] uppercase tracking-wider text-accent">with relay</span>
+            <div class="mb-4 flex items-center gap-2">
+              <span class="grid h-6 w-6 place-items-center rounded-[5px] border border-accent/40 bg-accent/10 text-accent"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="M5 12l5 5L20 7"/></svg></span>
+              <h3 class="font-display text-[1.1rem] font-600 text-ink">The delivery layer</h3>
+            </div>
+            <ul class="space-y-3 font-mono text-[0.84rem] leading-relaxed text-muted">
+              <li class="flex gap-3"><span class="text-mint">+</span> Exponential backoff with jitter, capped &amp; configurable per endpoint</li>
+              <li class="flex gap-3"><span class="text-mint">+</span> Every attempt stored, inspectable, and replayable for 30 days</li>
+              <li class="flex gap-3"><span class="text-mint">+</span> Idempotency keys dedupe retries automatically</li>
+              <li class="flex gap-3"><span class="text-mint">+</span> Durable queues absorb outages — events wait, they don't drop</li>
+              <li class="flex gap-3"><span class="text-mint">+</span> A dead-letter queue you can search, filter, and re-dispatch</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── HOW IT WORKS ───────────────────────── -->
+    <section id="how" aria-labelledby="how-title" class="relative border-b border-line/70">
+      <div class="grid-lines absolute inset-0 -z-10 opacity-60" aria-hidden="true"></div>
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="mb-14 max-w-2xl">
+          <p data-reveal class="mb-4 font-mono text-[0.74rem] uppercase tracking-[0.2em] text-accent">From send to delivered</p>
+          <h2 data-reveal style="--i:1" id="how-title" class="font-display text-[clamp(1.9rem,4.5vw,2.9rem)] font-700 leading-[1.05] tracking-tightest">
+            One POST. We take it from there.
+          </h2>
+        </div>
+
+        <div class="grid gap-8 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:items-center">
+          <!-- Steps -->
+          <ol class="relative space-y-2">
+            <div class="absolute left-[18px] top-3 bottom-3 w-px bg-line" aria-hidden="true"></div>
+            <li data-reveal class="relative flex gap-5 rounded-[10px] p-3">
+              <span class="z-10 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line bg-surface font-mono text-[0.82rem] font-600 text-accent">01</span>
+              <div>
+                <h3 class="font-display text-[1.18rem] font-600">Send us the event</h3>
+                <p class="mt-1.5 text-[0.96rem] leading-relaxed text-muted">One authenticated <code class="rounded bg-raised px-1.5 py-0.5 font-mono text-[0.8rem] text-ink">POST /v2/events</code>. We accept it in under 40ms and return a durable event ID. Your request is done.</p>
+              </div>
+            </li>
+            <li data-reveal style="--i:1" class="relative flex gap-5 rounded-[10px] p-3">
+              <span class="z-10 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line bg-surface font-mono text-[0.82rem] font-600 text-accent">02</span>
+              <div>
+                <h3 class="font-display text-[1.18rem] font-600">We route &amp; transform</h3>
+                <p class="mt-1.5 text-[0.96rem] leading-relaxed text-muted">Match the event to its subscriptions, run your transformation, sign the payload, and enqueue it on a durable per-endpoint queue.</p>
+              </div>
+            </li>
+            <li data-reveal style="--i:2" class="relative flex gap-5 rounded-[10px] p-3">
+              <span class="z-10 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-line bg-surface font-mono text-[0.82rem] font-600 text-accent">03</span>
+              <div>
+                <h3 class="font-display text-[1.18rem] font-600">Deliver &amp; retry until it sticks</h3>
+                <p class="mt-1.5 text-[0.96rem] leading-relaxed text-muted">Attempt delivery with backoff + jitter. On failure we keep trying for up to 24 hours; anything still failing lands in the dead-letter queue, not the void.</p>
+              </div>
+            </li>
+            <li data-reveal style="--i:3" class="relative flex gap-5 rounded-[10px] p-3">
+              <span class="z-10 grid h-9 w-9 shrink-0 place-items-center rounded-full border border-mint/40 bg-mint/10 font-mono text-[0.82rem] font-600 text-mint">✓</span>
+              <div>
+                <h3 class="font-display text-[1.18rem] font-600">You watch it happen</h3>
+                <p class="mt-1.5 text-[0.96rem] leading-relaxed text-muted">Every attempt — request, response headers, body, timing — is in the inspector. Replay any event with one click or one API call.</p>
+              </div>
+            </li>
+          </ol>
+
+          <!-- Hand-built code snippet with syntax coloring -->
+          <div data-reveal style="--i:1" class="overflow-hidden rounded-[12px] border border-line bg-surface shadow-plate sel-mint">
+            <div class="flex items-center justify-between border-b border-line bg-raised/60 px-4 py-2.5">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-line"></span>
+                <span class="ml-2 font-mono text-[0.74rem] text-faint">send-event.ts</span>
+              </div>
+              <button class="flex items-center gap-1.5 rounded-[5px] border border-line px-2 py-1 font-mono text-[0.7rem] text-muted transition-colors hover:border-muted/50 hover:text-ink">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>copy
+              </button>
+            </div>
+            <pre class="overflow-x-auto px-5 py-4 font-mono text-[0.82rem] leading-[1.7]"><code><span class="text-faint">// fire-and-forget — Relay owns delivery from here</span>
+<span class="text-[#7AA2F7]">const</span> <span class="text-ink">res</span> <span class="text-muted">=</span> <span class="text-[#7AA2F7]">await</span> <span class="text-ink">relay</span><span class="text-muted">.</span><span class="text-mint">events</span><span class="text-muted">.</span><span class="text-mint">send</span><span class="text-muted">({</span>
+  <span class="text-accent">endpoint</span><span class="text-muted">:</span> <span class="text-[#9ECE6A]">"ep_acme_orders"</span><span class="text-muted">,</span>
+  <span class="text-accent">event</span><span class="text-muted">:</span>    <span class="text-[#9ECE6A]">"order.paid"</span><span class="text-muted">,</span>
+  <span class="text-accent">idempotencyKey</span><span class="text-muted">:</span> <span class="text-ink">order</span><span class="text-muted">.</span><span class="text-ink">id</span><span class="text-muted">,</span>
+  <span class="text-accent">payload</span><span class="text-muted">:</span> <span class="text-muted">{</span>
+    <span class="text-accent">orderId</span><span class="text-muted">:</span> <span class="text-ink">order</span><span class="text-muted">.</span><span class="text-ink">id</span><span class="text-muted">,</span>
+    <span class="text-accent">amount</span><span class="text-muted">:</span>  <span class="text-[#FF9E64]">4200</span><span class="text-muted">,</span>
+    <span class="text-accent">currency</span><span class="text-muted">:</span> <span class="text-[#9ECE6A]">"usd"</span><span class="text-muted">,</span>
+  <span class="text-muted">},</span>
+<span class="text-muted">});</span>
+
+<span class="text-ink">res</span><span class="text-muted">.</span><span class="text-mint">id</span>       <span class="text-faint">// "evt_2Nf8…"  — durable, queryable</span>
+<span class="text-ink">res</span><span class="text-muted">.</span><span class="text-mint">status</span>   <span class="text-faint">// "queued"     — retries are automatic</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── FEATURES (alternating + bento) ───────────────────────── -->
+    <section id="features" aria-labelledby="features-title" class="border-b border-line/70">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="mb-16 max-w-2xl">
+          <p data-reveal class="mb-4 font-mono text-[0.74rem] uppercase tracking-[0.2em] text-accent">The platform</p>
+          <h2 data-reveal style="--i:1" id="features-title" class="font-display text-[clamp(1.9rem,4.5vw,2.9rem)] font-700 leading-[1.05] tracking-tightest">
+            Four parts. One reliable pipe.
+          </h2>
+        </div>
+
+        <!-- Beat 1: Request inspector (table) -->
+        <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <div data-reveal>
+            <span class="font-mono text-[0.72rem] uppercase tracking-wider text-faint">01 — Inspector</span>
+            <h3 class="mt-3 font-display text-[1.7rem] font-700 leading-tight tracking-tight">Every attempt, on the record</h3>
+            <p class="mt-4 text-[1.02rem] leading-relaxed text-muted">A live log of every request Relay made on your behalf: status code, latency, retry count, and the exact bytes we sent and received. Filter by endpoint, event type, or status. No more "it must have fired."</p>
+            <ul class="mt-6 space-y-2.5 text-[0.96rem] text-muted">
+              <li class="flex items-center gap-3"><span class="text-mint">✓</span> Full request &amp; response capture, headers included</li>
+              <li class="flex items-center gap-3"><span class="text-mint">✓</span> 30-day searchable history on every plan</li>
+              <li class="flex items-center gap-3"><span class="text-mint">✓</span> One-click replay, or <code class="font-mono text-[0.85rem] text-ink">POST /events/:id/replay</code></li>
+            </ul>
+          </div>
+          <!-- Hand-built request log table -->
+          <div data-reveal style="--i:1" class="overflow-hidden rounded-[12px] border border-line bg-surface shadow-plate">
+            <div class="flex items-center justify-between border-b border-line bg-raised/60 px-4 py-2.5">
+              <span class="font-mono text-[0.78rem] text-ink">Request inspector</span>
+              <div class="flex gap-1.5 font-mono text-[0.68rem]">
+                <span class="rounded-[4px] border border-accent/40 bg-accent/10 px-1.5 py-0.5 text-accent">all</span>
+                <span class="rounded-[4px] border border-line px-1.5 py-0.5 text-faint">failed</span>
+                <span class="rounded-[4px] border border-line px-1.5 py-0.5 text-faint">replayed</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-[auto_1fr_auto_auto_auto] gap-3 border-b border-line bg-surface px-4 py-2 font-mono text-[0.64rem] uppercase tracking-wide text-faint">
+              <span>Code</span><span>Event</span><span class="text-right">ms</span><span class="text-right">try</span><span class="text-right">age</span>
+            </div>
+            <ul class="divide-y divide-line/60 font-mono text-[0.78rem]">
+              <li class="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-3 px-4 py-2.5 transition-colors hover:bg-raised/40"><span class="rounded-[4px] bg-mint/15 px-1.5 py-0.5 font-600 text-mint">200</span><span class="truncate text-muted">order.paid</span><span class="text-right tabnum text-muted">128</span><span class="text-right tabnum text-faint">1</span><span class="text-right tabnum text-faint">2s</span></li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-3 px-4 py-2.5 transition-colors hover:bg-raised/40"><span class="rounded-[4px] bg-accent/15 px-1.5 py-0.5 font-600 text-accent">429</span><span class="truncate text-muted">sync.requested</span><span class="text-right tabnum text-muted">2103</span><span class="text-right tabnum text-accent">3</span><span class="text-right tabnum text-faint">9s</span></li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-3 px-4 py-2.5 transition-colors hover:bg-raised/40"><span class="rounded-[4px] bg-mint/15 px-1.5 py-0.5 font-600 text-mint">200</span><span class="truncate text-muted">invoice.created</span><span class="text-right tabnum text-muted">96</span><span class="text-right tabnum text-faint">1</span><span class="text-right tabnum text-faint">14s</span></li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-3 bg-alert/[0.05] px-4 py-2.5"><span class="rounded-[4px] bg-alert/15 px-1.5 py-0.5 font-600 text-alert">500</span><span class="truncate text-ink">payout.failed</span><span class="text-right tabnum text-muted">5012</span><span class="text-right tabnum text-alert">6</span><span class="text-right tabnum text-faint">31s</span></li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-3 px-4 py-2.5 transition-colors hover:bg-raised/40"><span class="rounded-[4px] bg-mint/15 px-1.5 py-0.5 font-600 text-mint">200</span><span class="truncate text-muted">user.created</span><span class="text-right tabnum text-muted">142</span><span class="text-right tabnum text-faint">2</span><span class="text-right tabnum text-faint">44s</span></li>
+              <li class="grid grid-cols-[auto_1fr_auto_auto_auto] items-center gap-3 px-4 py-2.5 transition-colors hover:bg-raised/40"><span class="rounded-[4px] bg-mint/15 px-1.5 py-0.5 font-600 text-mint">200</span><span class="truncate text-muted">subscription.renewed</span><span class="text-right tabnum text-muted">88</span><span class="text-right tabnum text-faint">1</span><span class="text-right tabnum text-faint">1m</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Beat 2: JSON payload inspector (reversed) -->
+        <div class="mt-24 grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+          <!-- Hand-built JSON inspector -->
+          <div data-reveal class="order-2 overflow-hidden rounded-[12px] border border-line bg-surface shadow-plate lg:order-1">
+            <div class="flex items-center justify-between border-b border-line bg-raised/60 px-4 py-2.5">
+              <div class="flex items-center gap-2.5">
+                <span class="font-mono text-[0.78rem] text-ink">evt_2Nf8kQ</span>
+                <span class="rounded-[4px] bg-accent/15 px-1.5 py-0.5 font-mono text-[0.66rem] font-600 text-accent">attempt 3 / 8</span>
+              </div>
+              <span class="font-mono text-[0.7rem] text-mint">● signed</span>
+            </div>
+            <div class="grid grid-cols-2 gap-px bg-line font-mono text-[0.78rem]">
+              <div class="bg-surface px-4 py-3">
+                <p class="mb-2 text-[0.64rem] uppercase tracking-wider text-faint">Request →</p>
+                <pre class="overflow-x-auto leading-[1.65]"><code><span class="text-muted">POST</span> <span class="text-ink">/hooks</span>
+<span class="text-accent">content-type</span><span class="text-muted">:</span> <span class="text-[#9ECE6A]">application/json</span>
+<span class="text-accent">relay-signature</span><span class="text-muted">:</span> <span class="text-[#9ECE6A]">t=171…,v1=…</span>
+<span class="text-accent">relay-attempt</span><span class="text-muted">:</span> <span class="text-[#FF9E64]">3</span></code></pre>
+              </div>
+              <div class="bg-surface px-4 py-3">
+                <p class="mb-2 text-[0.64rem] uppercase tracking-wider text-mint">← Response · 200</p>
+                <pre class="overflow-x-auto leading-[1.65]"><code><span class="text-accent">status</span><span class="text-muted">:</span> <span class="text-mint">200 OK</span>
+<span class="text-accent">x-served-by</span><span class="text-muted">:</span> <span class="text-[#9ECE6A]">acme-7</span>
+<span class="text-accent">latency</span><span class="text-muted">:</span> <span class="text-[#FF9E64]">128ms</span>
+<span class="text-accent">idempotent</span><span class="text-muted">:</span> <span class="text-[#7AA2F7]">true</span></code></pre>
+              </div>
+            </div>
+            <div class="border-t border-line bg-surface px-4 py-3">
+              <p class="mb-2 font-mono text-[0.64rem] uppercase tracking-wider text-faint">Payload</p>
+              <pre class="overflow-x-auto font-mono text-[0.78rem] leading-[1.7]"><code><span class="text-muted">{</span>
+  <span class="text-accent">"event"</span><span class="text-muted">:</span> <span class="text-[#9ECE6A]">"order.paid"</span><span class="text-muted">,</span>
+  <span class="text-accent">"data"</span><span class="text-muted">:</span> <span class="text-muted">{</span> <span class="text-accent">"orderId"</span><span class="text-muted">:</span> <span class="text-[#9ECE6A]">"ord_9Kx"</span><span class="text-muted">,</span> <span class="text-accent">"amount"</span><span class="text-muted">:</span> <span class="text-[#FF9E64]">4200</span> <span class="text-muted">},</span>
+  <span class="text-accent">"sentAt"</span><span class="text-muted">:</span> <span class="text-[#9ECE6A]">"2026-06-04T10:42:07Z"</span>
+<span class="text-muted">}</span></code></pre>
+            </div>
+          </div>
+          <div data-reveal style="--i:1" class="order-1 lg:order-2">
+            <span class="font-mono text-[0.72rem] uppercase tracking-wider text-faint">02 — Transformations</span>
+            <h3 class="mt-3 font-display text-[1.7rem] font-700 leading-tight tracking-tight">Reshape payloads before they land</h3>
+            <p class="mt-4 text-[1.02rem] leading-relaxed text-muted">Map, rename, filter, or enrich event bodies per endpoint with a sandboxed transform — no redeploys. Sign every request with HMAC so receivers can verify it came from you, and read the exact signed bytes right here.</p>
+            <ul class="mt-6 space-y-2.5 text-[0.96rem] text-muted">
+              <li class="flex items-center gap-3"><span class="text-mint">✓</span> JavaScript transforms, versioned and testable</li>
+              <li class="flex items-center gap-3"><span class="text-mint">✓</span> HMAC-SHA256 signatures &amp; timestamp tolerance</li>
+              <li class="flex items-center gap-3"><span class="text-mint">✓</span> Per-endpoint headers, secrets, and rate caps</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Beat 3: Bento grid (retry waterfall + queue + DLQ) -->
+        <div class="mt-24">
+          <div data-reveal class="mb-8">
+            <span class="font-mono text-[0.72rem] uppercase tracking-wider text-faint">03 &amp; 04 — Queues &amp; Retries</span>
+            <h3 class="mt-3 font-display text-[1.7rem] font-700 leading-tight tracking-tight">Durable by default, observable by design</h3>
+          </div>
+          <div class="grid gap-5 lg:grid-cols-3">
+            <!-- Retry waterfall (spans 2) -->
+            <div data-reveal class="wf overflow-hidden rounded-[12px] border border-line bg-surface p-5 lg:col-span-2">
+              <div class="mb-4 flex items-center justify-between">
+                <h4 class="font-display text-[1.05rem] font-600">Retry timeline · evt_2Nf8kQ</h4>
+                <span class="font-mono text-[0.7rem] text-mint">delivered on attempt 3</span>
+              </div>
+              <div class="space-y-2.5 font-mono text-[0.74rem]">
+                <div class="grid grid-cols-[5rem_1fr_auto] items-center gap-3">
+                  <span class="text-faint">+0s · try 1</span>
+                  <span class="h-2 rounded-full bg-line"><span class="wf-bar block h-2 w-[18%] rounded-full bg-alert"></span></span>
+                  <span class="text-alert">500</span>
+                </div>
+                <div class="grid grid-cols-[5rem_1fr_auto] items-center gap-3">
+                  <span class="text-faint">+2s · try 2</span>
+                  <span class="h-2 rounded-full bg-line"><span class="wf-bar block h-2 w-[34%] rounded-full bg-accent" style="transition-delay:.15s"></span></span>
+                  <span class="text-accent">429</span>
+                </div>
+                <div class="grid grid-cols-[5rem_1fr_auto] items-center gap-3">
+                  <span class="text-faint">+6s · try 3</span>
+                  <span class="h-2 rounded-full bg-line"><span class="wf-bar block h-2 w-[72%] rounded-full bg-mint" style="transition-delay:.3s"></span></span>
+                  <span class="text-mint">200</span>
+                </div>
+              </div>
+              <p class="mt-4 border-t border-line pt-3 font-mono text-[0.72rem] text-faint">backoff: <span class="text-muted">2s → 6s → 18s</span> · jitter <span class="text-muted">±20%</span> · cap <span class="text-muted">24h</span></p>
+            </div>
+            <!-- DLQ card -->
+            <div data-reveal style="--i:1" class="rounded-[12px] border border-line bg-surface p-5">
+              <div class="mb-3 flex items-center gap-2">
+                <span class="grid h-7 w-7 place-items-center rounded-[6px] border border-alert/30 bg-alert/10 text-alert"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 9v4M12 17h.01M10.3 3.9L2 18a2 2 0 001.7 3h16.6a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg></span>
+                <h4 class="font-display text-[1.05rem] font-600">Dead-letter queue</h4>
+              </div>
+              <p class="text-[0.92rem] leading-relaxed text-muted">Anything that can't be delivered is parked, not lost. Search it, fix the receiver, and re-dispatch in bulk.</p>
+              <div class="mt-4 flex items-baseline gap-2">
+                <span class="font-display text-[2rem] font-700 tabnum text-ink">24</span>
+                <span class="font-mono text-[0.74rem] text-faint">parked · 0 lost</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── TESTIMONIAL ───────────────────────── -->
+    <section aria-label="Customer proof" class="relative border-b border-line/70">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="grid gap-10 lg:grid-cols-[1.3fr_1fr] lg:gap-16">
+          <figure data-reveal class="flex flex-col justify-center">
+            <blockquote class="font-display text-[clamp(1.5rem,3.2vw,2.15rem)] font-600 leading-[1.2] tracking-tight text-ink">
+              "We ripped out 2,400 lines of retry glue and a Redis queue we babysat. <span class="text-accent">Relay's inspector found a malformed payload in our first hour</span> that had been silently failing for months."
+            </blockquote>
+            <figcaption class="mt-7 flex items-center gap-3.5">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-accent to-amberdim font-display text-[0.95rem] font-700 text-bg">DV</span>
+              <div>
+                <p class="font-600 text-ink">Dana Voss</p>
+                <p class="text-[0.9rem] text-muted">Staff Engineer, Ledgerly <span class="text-faint">· payments infra</span></p>
+              </div>
+            </figcaption>
+          </figure>
+
+          <!-- Stat cards -->
+          <div data-reveal style="--i:1" class="grid grid-cols-2 gap-px self-center overflow-hidden rounded-[12px] border border-line bg-line">
+            <div class="bg-surface p-6">
+              <p class="font-display text-[2.4rem] font-700 tabnum leading-none text-ink">0</p>
+              <p class="mt-2 text-[0.86rem] leading-snug text-muted">events dropped in 14 months on Relay</p>
+            </div>
+            <div class="bg-surface p-6">
+              <p class="font-display text-[2.4rem] font-700 tabnum leading-none text-mint">2,400</p>
+              <p class="mt-2 text-[0.86rem] leading-snug text-muted">lines of delivery code deleted</p>
+            </div>
+            <div class="bg-surface p-6">
+              <p class="font-display text-[2.4rem] font-700 tabnum leading-none text-accent">11&nbsp;min</p>
+              <p class="mt-2 text-[0.86rem] leading-snug text-muted">from API key to first delivered event</p>
+            </div>
+            <div class="bg-surface p-6">
+              <p class="font-display text-[2.4rem] font-700 tabnum leading-none text-ink">99.99<span class="text-[1.2rem] align-top">%</span></p>
+              <p class="mt-2 text-[0.86rem] leading-snug text-muted">delivery rate, retries included</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── PRICING ───────────────────────── -->
+    <section id="pricing" aria-labelledby="pricing-title" class="border-b border-line/70">
+      <div class="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div class="mx-auto mb-14 max-w-2xl text-center">
+          <p data-reveal class="mb-4 font-mono text-[0.74rem] uppercase tracking-[0.2em] text-accent">Pricing</p>
+          <h2 data-reveal style="--i:1" id="pricing-title" class="font-display text-[clamp(1.9rem,4.5vw,2.9rem)] font-700 leading-[1.05] tracking-tightest">Pay for events, not seats</h2>
+          <p data-reveal style="--i:2" class="mt-4 text-[1.02rem] text-muted">Usage-based and transparent. Every plan includes the inspector, retries, and a 30-day event history.</p>
+        </div>
+
+        <div class="grid gap-5 lg:grid-cols-3">
+          <!-- Free -->
+          <div data-reveal class="flex flex-col rounded-[14px] border border-line bg-surface/60 p-7">
+            <h3 class="font-display text-[1.25rem] font-600">Developer</h3>
+            <p class="mt-1.5 text-[0.9rem] text-muted">Build it, ship it, see if it sticks.</p>
+            <p class="mt-6 flex items-baseline gap-1.5"><span class="font-display text-[2.6rem] font-700 tracking-tight text-ink">$0</span><span class="text-[0.9rem] text-faint">/ forever</span></p>
+            <a href="#cta" class="mt-6 inline-flex items-center justify-center rounded-[7px] border border-line bg-raised px-4 py-2.5 text-[0.95rem] font-600 text-ink transition-colors hover:border-muted/50">Get an API key</a>
+            <ul class="mt-7 space-y-3 text-[0.92rem] text-muted">
+              <li class="flex gap-3"><span class="text-mint">✓</span> 100k events / month</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> Automatic retries &amp; backoff</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> 7-day request inspector history</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> 3 endpoints, community support</li>
+            </ul>
+          </div>
+
+          <!-- Pro (highlighted) -->
+          <div data-reveal style="--i:1" class="relative flex flex-col rounded-[14px] border border-accent/50 bg-gradient-to-b from-accent/[0.07] to-surface/60 p-7 shadow-[0_0_60px_-30px_rgba(255,138,61,0.6)]">
+            <span class="absolute right-6 top-6 rounded-full bg-accent px-2.5 py-0.5 font-mono text-[0.66rem] font-600 uppercase tracking-wide text-bg">popular</span>
+            <h3 class="font-display text-[1.25rem] font-600">Scale</h3>
+            <p class="mt-1.5 text-[0.9rem] text-muted">For production traffic you can't drop.</p>
+            <p class="mt-6 flex items-baseline gap-1.5"><span class="font-display text-[2.6rem] font-700 tracking-tight text-ink">$49</span><span class="text-[0.9rem] text-faint">/ mo + usage</span></p>
+            <a href="#cta" data-magnetic class="mt-6 inline-flex items-center justify-center rounded-[7px] bg-accent px-4 py-2.5 text-[0.95rem] font-600 text-bg transition-[filter] hover:brightness-110">Start with Scale</a>
+            <ul class="mt-7 space-y-3 text-[0.92rem] text-muted">
+              <li class="flex gap-3"><span class="text-mint">✓</span> 10M events included, then $0.40/M</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> 30-day inspector + dead-letter queue</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> Payload transformations &amp; HMAC signing</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> Unlimited endpoints, 99.99% SLA</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> Email &amp; Slack support</li>
+            </ul>
+          </div>
+
+          <!-- Enterprise -->
+          <div data-reveal style="--i:2" class="flex flex-col rounded-[14px] border border-line bg-surface/60 p-7">
+            <h3 class="font-display text-[1.25rem] font-600">Enterprise</h3>
+            <p class="mt-1.5 text-[0.9rem] text-muted">Dedicated throughput &amp; controls.</p>
+            <p class="mt-6 flex items-baseline gap-1.5"><span class="font-display text-[2.6rem] font-700 tracking-tight text-ink">Let's talk</span></p>
+            <a href="#cta" class="mt-6 inline-flex items-center justify-center rounded-[7px] border border-line bg-raised px-4 py-2.5 text-[0.95rem] font-600 text-ink transition-colors hover:border-muted/50">Book a call</a>
+            <ul class="mt-7 space-y-3 text-[0.92rem] text-muted">
+              <li class="flex gap-3"><span class="text-mint">✓</span> Volume pricing &amp; committed throughput</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> Single-tenant regions &amp; data residency</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> 90-day history, SAML SSO, audit logs</li>
+              <li class="flex gap-3"><span class="text-mint">✓</span> 99.99% SLA with credits &amp; on-call</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── FAQ ───────────────────────── -->
+    <section id="faq" aria-labelledby="faq-title" class="border-b border-line/70">
+      <div class="mx-auto max-w-4xl px-5 py-20 md:px-8 md:py-28">
+        <h2 data-reveal id="faq-title" class="mb-12 font-display text-[clamp(1.9rem,4.5vw,2.9rem)] font-700 leading-[1.05] tracking-tightest">Questions engineers actually ask</h2>
+        <div class="divide-y divide-line">
+          <details data-reveal class="group py-5" open>
+            <summary class="flex items-center justify-between gap-4 font-display text-[1.12rem] font-600 text-ink">
+              How is this different from just retrying in my own worker?
+              <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-muted transition-transform group-open:rotate-45"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <p class="mt-3 max-w-2xl text-[0.98rem] leading-relaxed text-muted">Your worker shares fate with your app — a deploy, a crash, or a receiver outage stalls the whole queue, and your retry state lives in memory you can't inspect. Relay is a durable, isolated layer: events survive your restarts, every attempt is recorded and replayable, and a slow receiver can't back-pressure your own request path.</p>
+          </details>
+          <details data-reveal class="group py-5">
+            <summary class="flex items-center justify-between gap-4 font-display text-[1.12rem] font-600 text-ink">
+              How do you prevent duplicate deliveries?
+              <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-muted transition-transform group-open:rotate-45"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <p class="mt-3 max-w-2xl text-[0.98rem] leading-relaxed text-muted">Pass an <code class="font-mono text-[0.88rem] text-ink">idempotencyKey</code> when you send an event. Relay dedupes on it for 24 hours, and we forward a stable <code class="font-mono text-[0.88rem] text-ink">relay-attempt</code> header so your receiver can be idempotent too. Retries never re-trigger the same side effect.</p>
+          </details>
+          <details data-reveal class="group py-5">
+            <summary class="flex items-center justify-between gap-4 font-display text-[1.12rem] font-600 text-ink">
+              What happens to events during a receiver outage?
+              <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-muted transition-transform group-open:rotate-45"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <p class="mt-3 max-w-2xl text-[0.98rem] leading-relaxed text-muted">They wait. Events sit durably in a per-endpoint queue and retry on a backoff schedule for up to 24 hours. Anything still failing after that lands in the dead-letter queue, where you can fix the receiver and re-dispatch in bulk — nothing is silently discarded.</p>
+          </details>
+          <details data-reveal class="group py-5">
+            <summary class="flex items-center justify-between gap-4 font-display text-[1.12rem] font-600 text-ink">
+              How do I verify a request really came from Relay?
+              <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-muted transition-transform group-open:rotate-45"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <p class="mt-3 max-w-2xl text-[0.98rem] leading-relaxed text-muted">Every delivery carries an HMAC-SHA256 <code class="font-mono text-[0.88rem] text-ink">relay-signature</code> header over the raw body plus a timestamp. Verify it with your endpoint secret and a small tolerance window — our SDKs ship a one-line helper, and the signing scheme is documented for any language.</p>
+          </details>
+          <details data-reveal class="group py-5">
+            <summary class="flex items-center justify-between gap-4 font-display text-[1.12rem] font-600 text-ink">
+              Where does my data run, and how long is it kept?
+              <span class="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-line text-muted transition-transform group-open:rotate-45"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>
+            </summary>
+            <p class="mt-3 max-w-2xl text-[0.98rem] leading-relaxed text-muted">Pick <code class="font-mono text-[0.88rem] text-ink">us-east</code> or <code class="font-mono text-[0.88rem] text-ink">eu-west</code> per project; Enterprise adds single-tenant regions and data residency. Payloads and attempt history are retained for your plan's window (7 to 90 days), then permanently deleted. We're SOC 2 Type II.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── FINAL CTA ───────────────────────── -->
+    <section id="cta" aria-labelledby="cta-title" class="relative overflow-hidden">
+      <div class="grid-dots absolute inset-0 -z-10 opacity-70" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute left-1/2 top-0 -z-10 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-accent/15 blur-[120px]" aria-hidden="true"></div>
+      <div class="mx-auto max-w-5xl px-5 py-24 text-center md:px-8 md:py-32">
+        <h2 data-reveal id="cta-title" class="mx-auto max-w-3xl font-display text-[clamp(2.2rem,5.5vw,3.6rem)] font-800 leading-[0.98] tracking-tightest">
+          Stop babysitting webhooks.<br /><span class="text-accent">Start shipping deliveries.</span>
+        </h2>
+        <p data-reveal style="--i:1" class="mx-auto mt-6 max-w-xl text-[1.08rem] leading-relaxed text-muted">
+          Create a free key, send your first event in the next ten minutes, and watch it land on the board. No card, no sales call.
+        </p>
+
+        <!-- Inline API-key field (hand-built) -->
+        <form data-reveal style="--i:2" class="mx-auto mt-9 flex max-w-md flex-col items-stretch gap-2.5 sm:flex-row" onsubmit="return false">
+          <label for="email" class="sr-only">Work email</label>
+          <input id="email" type="email" inputmode="email" placeholder="you@company.com" class="flex-1 rounded-[8px] border border-line bg-surface px-4 py-3 font-mono text-[0.92rem] text-ink placeholder:text-faint focus:border-accent/60 focus:outline-none" />
+          <button data-magnetic type="submit" class="inline-flex items-center justify-center gap-2 rounded-[8px] bg-accent px-5 py-3 font-600 text-bg transition-[filter] hover:brightness-110">
+            Get an API key
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </form>
+        <p data-reveal style="--i:3" class="mt-4 font-mono text-[0.76rem] text-faint">100k events / month free · npm i @relay/sdk · curl-friendly REST</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ───────────────────────── FOOTER ───────────────────────── -->
+  <footer class="border-t border-line bg-surface/40">
+    <div class="mx-auto max-w-7xl px-5 py-16 md:px-8">
+      <div class="grid gap-10 md:grid-cols-[1.4fr_repeat(3,1fr)]">
+        <div>
+          <div class="flex items-center gap-2.5">
+            <span class="relative grid h-8 w-8 place-items-center rounded-[5px] border border-line bg-raised">
+              <span class="absolute left-1.5 top-2 h-[5px] w-3.5 rounded-[1px] bg-accent"></span>
+              <span class="absolute left-1.5 bottom-2 h-[5px] w-2 rounded-[1px] bg-mint"></span>
+            </span>
+            <span class="font-display text-[1.3rem] font-700 tracking-tightest">Relay</span>
+          </div>
+          <p class="mt-4 max-w-xs text-[0.92rem] leading-relaxed text-muted">The delivery layer between your services and the world. Retries, queues, inspection, transformations.</p>
+          <div class="mt-5 inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1.5 font-mono text-[0.74rem]">
+            <span class="relative inline-flex h-2 w-2 text-mint"><span class="pulse"></span><span class="relative inline-block h-2 w-2 rounded-full bg-mint"></span></span>
+            <span class="text-muted">All systems operational</span>
+          </div>
+        </div>
+
+        <nav aria-label="Product">
+          <h3 class="font-mono text-[0.72rem] uppercase tracking-wider text-faint">Product</h3>
+          <ul class="mt-4 space-y-2.5 text-[0.92rem] text-muted">
+            <li><a href="#features" class="hover:text-ink">Inspector</a></li>
+            <li><a href="#features" class="hover:text-ink">Transformations</a></li>
+            <li><a href="#features" class="hover:text-ink">Queues &amp; retries</a></li>
+            <li><a href="#pricing" class="hover:text-ink">Pricing</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Developers">
+          <h3 class="font-mono text-[0.72rem] uppercase tracking-wider text-faint">Developers</h3>
+          <ul class="mt-4 space-y-2.5 text-[0.92rem] text-muted">
+            <li><a href="#" class="hover:text-ink">Documentation</a></li>
+            <li><a href="#" class="hover:text-ink">API reference</a></li>
+            <li><a href="#" class="hover:text-ink">SDKs &amp; quickstarts</a></li>
+            <li><a href="#" class="hover:text-ink">Status &amp; changelog</a></li>
+          </ul>
+        </nav>
+        <nav aria-label="Company">
+          <h3 class="font-mono text-[0.72rem] uppercase tracking-wider text-faint">Company</h3>
+          <ul class="mt-4 space-y-2.5 text-[0.92rem] text-muted">
+            <li><a href="#" class="hover:text-ink">About</a></li>
+            <li><a href="#" class="hover:text-ink">Security</a></li>
+            <li><a href="#" class="hover:text-ink">Privacy</a></li>
+            <li><a href="#" class="hover:text-ink">Terms</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="mt-12 flex flex-col items-start justify-between gap-4 border-t border-line pt-6 sm:flex-row sm:items-center">
+        <p class="font-mono text-[0.78rem] text-faint">© 2026 Relay, Inc. · Built for developers who hate dropped events.</p>
+        <div class="flex items-center gap-4 text-muted">
+          <a href="#" aria-label="Relay on GitHub" class="hover:text-ink"><svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.6.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.3-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1a9.3 9.3 0 015 0c1.9-1.3 2.7-1 2.7-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.3 4.7-4.6 5 .3.3.7 1 .7 2v3c0 .3.2.6.7.5 3.9-1.3 6.8-5.1 6.8-9.6C22 6.6 17.5 2 12 2z"/></svg></a>
+          <a href="#" aria-label="Relay on X" class="hover:text-ink"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.2 2H21l-6.6 7.5L22 22h-6.8l-4.7-6.2L4.9 22H2l7-8L1.7 2h6.9l4.3 5.7L18.2 2zm-2.4 18h1.7L7.3 3.7H5.5L15.8 20z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ── Nav: condense + border on scroll ──
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (window.scrollY > 12) nav.classList.add('border-line','bg-bg/80','backdrop-blur');
+      else nav.classList.remove('border-line','bg-bg/80','backdrop-blur');
+    };
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── Mobile menu ──
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('hidden') === false;
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden'); menuBtn.setAttribute('aria-expanded','false');
+    }));
+
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // ── Blur-in reveal ──
+    const reveals = document.querySelectorAll('[data-reveal]');
+    const showAll = () => reveals.forEach(el => el.classList.add('is-visible'));
+    if (reduce || !('IntersectionObserver' in window)) {
+      showAll();
+    } else {
+      const io = new IntersectionObserver((es) => es.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      }), { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      reveals.forEach((el, i) => { el.style.setProperty('--i', (i % 6)); io.observe(el); });
+      // Reveal anything already on screen at load (covers above-the-fold reliably)
+      requestAnimationFrame(() => reveals.forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) el.classList.add('is-visible');
+      }));
+      // Safety net: never leave content hidden
+      setTimeout(showAll, 2500);
+    }
+
+    // ── Waterfall trigger ──
+    const wfio = new IntersectionObserver((es) => es.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('is-visible'); wfio.unobserve(e.target); }
+    }), { threshold: 0.4 });
+    document.querySelectorAll('.wf').forEach(el => wfio.observe(el));
+
+    // ── Magnetic buttons ──
+    if (!reduce) {
+      document.querySelectorAll('[data-magnetic]').forEach(b => {
+        b.style.transition = 'transform .3s cubic-bezier(.2,.7,.2,1)';
+        b.addEventListener('mousemove', e => {
+          const r = b.getBoundingClientRect();
+          b.style.transform = `translate(${(e.clientX - r.left - r.width/2)*.18}px,${(e.clientY - r.top - r.height/2)*.18}px)`;
+        });
+        b.addEventListener('mouseleave', () => b.style.transform = '');
+      });
+    }
+
+    // ── Signature: split-flap hero stat counter ──
+    if (!reduce) {
+      const flap = document.getElementById('flapStat');
+      const seq = ['9.1','9.2','9.3','9.4'];
+      let idx = 0;
+      const board = document.getElementById('board');
+      const tickStat = () => {
+        flap.classList.add('flap','flip');
+        setTimeout(() => { flap.textContent = seq[idx % seq.length]; idx++; }, 210);
+        setTimeout(() => flap.classList.remove('flip'), 430);
+      };
+      // start once hero stat is visible
+      const sio = new IntersectionObserver((es) => es.forEach(e => {
+        if (e.isIntersecting) { setInterval(tickStat, 3200); sio.disconnect(); }
+      }), { threshold: 0.5 });
+      sio.observe(flap);
+
+      // ── Live board: occasionally flip the top status cell ──
+      const cells = board ? board.querySelectorAll('.flapcell') : [];
+      const statuses = [
+        '<span class="inline-block rounded-[4px] bg-mint/15 px-2 py-0.5 font-600 text-mint">200</span>',
+        '<span class="inline-block rounded-[4px] bg-accent/15 px-2 py-0.5 font-600 text-accent">retry</span>',
+        '<span class="inline-block rounded-[4px] bg-mint/15 px-2 py-0.5 font-600 text-mint">201</span>',
+      ];
+      let bi = 0;
+      const flipBoard = () => {
+        const cell = cells[bi % cells.length];
+        if (!cell) return;
+        cell.firstElementChild.classList.add('flap','flip');
+        setTimeout(() => { cell.innerHTML = statuses[(bi+1) % statuses.length]; }, 210);
+        bi++;
+      };
+      const bio = new IntersectionObserver((es) => es.forEach(e => {
+        if (e.isIntersecting) { setInterval(flipBoard, 2600); bio.disconnect(); }
+      }), { threshold: 0.4 });
+      if (board) bio.observe(board);
+    }
+  </script>
+</body>
+</html>

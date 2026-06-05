@@ -1,0 +1,16 @@
+# research / build pipeline — not part of the shipped skill
+_research/
+
+# raw demo builds (curated copies live in examples/)
+saas-landing-workspace/
+
+# local dev preview config
+.claude/
+
+# python
+__pycache__/
+*.pyc
+
+# os
+.DS_Store
+Thumbs.db
