@@ -76,7 +76,9 @@ def main() -> int:
     if not key:
         return fail("UNSPLASH_ACCESS_KEY not set (this feature is opt-in).")
 
-    if any(w in args.query.lower() for w in PEOPLE_HINT):
+    ql = args.query.lower()
+    negated = any(p in ql for p in ("no people", "without people", "no person", "no one", "empty room"))
+    if not negated and any(w in ql for w in PEOPLE_HINT):
         print("  ~ heads up: your query leans toward people/office imagery, which tends to read as stock.\n"
               "    Prefer place, object, or texture — or grade it hard. Proceeding anyway.", file=sys.stderr)
 
