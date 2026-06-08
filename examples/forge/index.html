@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Forge — a desktop CNC machine that cuts aluminium and stays quiet</title>
+<meta name="description" content="Forge is a desktop CNC mill built to cut 6061 aluminium to spec — a rigid cast-iron core, closed-loop servos, and a sound enclosure that keeps it under 62 dB. Reserve a Forge." />
+<meta property="og:title" content="Forge — desktop CNC for makers who cut metal" />
+<meta property="og:description" content="Aluminium-rated rigidity on a desk. Closed-loop, enclosed, and quiet enough to run next to you. Reserve a Forge." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: {
+      bg:'#0B0B0C', surface:'#141416', raised:'#1B1B1E', line:'#2A2A2E',
+      ink:'#F4F2EE', muted:'#9A9A9E', faint:'#6A6A6E',
+      accent:'#FF5C1A', steel:'#7C8EA0',
+    },
+    fontFamily: {
+      sans:['"Host Grotesk"','system-ui','sans-serif'],
+    },
+    letterSpacing:{ tightest:'-0.04em' },
+  } } }
+</script>
+<style>
+  :root{ --accent:#FF5C1A; }
+  html,body{ background:#0B0B0C; }
+  body{ font-feature-settings:"ss01","cv01"; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .tnum{ font-variant-numeric: tabular-nums; }
+
+  /* blueprint grid texture — restrained, spec-sheet motif */
+  .blueprint{
+    background-image:
+      linear-gradient(to right, rgba(124,142,160,.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(124,142,160,.05) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* scroll progress (signature motion, native) */
+  .progress{ position:fixed; top:0; left:0; height:2px; width:100%; transform-origin:left; transform:scaleX(0);
+    background:var(--accent); z-index:60; }
+  @media (prefers-reduced-motion: no-preference){
+    @supports (animation-timeline: scroll()){
+      .progress{ animation:grow linear both; animation-timeline:scroll(root block); }
+      @keyframes grow{ to{ transform:scaleX(1) } }
+    }
+  }
+
+  /* blur-in reveal */
+  @media (prefers-reduced-motion: no-preference){
+    [data-reveal]{ opacity:0; filter:blur(12px); transform:translateY(18px);
+      transition:opacity .6s ease, filter .6s ease, transform .6s cubic-bezier(.2,.7,.2,1);
+      transition-delay:calc(var(--i,0)*70ms); }
+    [data-reveal].is-visible{ opacity:1; filter:blur(0); transform:none; }
+  }
+
+  /* signature: the spindle bores a hole — a thin orange line that "machines" across section rules */
+  @media (prefers-reduced-motion: no-preference){
+    @supports (animation-timeline: view()){
+      .machine-rule::after{
+        content:""; position:absolute; left:0; top:-1px; height:2px; width:0%;
+        background:var(--accent);
+        animation: cut linear both; animation-timeline:view(); animation-range: entry 10% cover 30%;
+      }
+      @keyframes cut{ to{ width:100% } }
+    }
+  }
+  .machine-rule{ position:relative; }
+
+  .fig{ letter-spacing:.06em; }
+</style>
+</head>
+
+<body class="bg-bg text-ink font-sans antialiased selection:bg-accent/30">
+<div class="progress" aria-hidden="true"></div>
+
+<!-- ── NAV ─────────────────────────────────────────────────────────────── -->
+<header class="sticky top-0 z-50 border-b border-line/70 bg-bg/80 backdrop-blur supports-[backdrop-filter]:bg-bg/60">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 sm:px-6">
+    <a href="#top" class="flex items-center gap-2.5">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="2" stroke="#F4F2EE" stroke-width="1.5"/>
+        <path d="M12 2.5v19M2.5 12h19" stroke="#2A2A2E" stroke-width="1.5"/>
+        <circle cx="12" cy="12" r="2.4" fill="#FF5C1A"/>
+      </svg>
+      <span class="text-[17px] font-700 tracking-tightest">Forge</span>
+      <span class="ml-1 hidden text-[11px] font-500 uppercase tracking-[.14em] text-faint sm:inline">CNC&nbsp;01</span>
+    </a>
+
+    <nav class="hidden items-center gap-7 text-[13.5px] font-500 text-muted md:flex">
+      <a href="#machine" class="transition-colors hover:text-ink">The machine</a>
+      <a href="#specs" class="transition-colors hover:text-ink">Specs</a>
+      <a href="#tradeoff" class="transition-colors hover:text-ink">Why desktop</a>
+      <a href="#work" class="transition-colors hover:text-ink">What it cuts</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#specs" class="hidden text-[13.5px] font-500 text-muted transition-colors hover:text-ink sm:inline">Read the spec</a>
+      <a href="#reserve" data-magnetic
+         class="rounded-full bg-accent px-4 py-2 text-[13.5px] font-600 text-bg transition-colors hover:bg-[#ff6f38]">
+        Reserve a Forge
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ── HERO — product-diorama: photoreal machine + a wired status readout ── -->
+  <section class="relative overflow-hidden border-b border-line/70">
+    <div class="pointer-events-none absolute inset-0 blueprint opacity-60"></div>
+    <!-- ambient accent glow behind the object -->
+    <div class="pointer-events-none absolute -right-40 top-10 h-[34rem] w-[34rem] rounded-full bg-accent/10 blur-[120px]"></div>
+
+    <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-14 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-8 lg:pb-24 lg:pt-20">
+      <!-- copy column -->
+      <div>
+        <p class="fig mb-5 flex items-center gap-3 text-[11.5px] font-500 uppercase tracking-[.16em] text-faint" data-reveal>
+          <span class="inline-block h-px w-8 bg-accent"></span>
+          Fig.&nbsp;01 — Forge desktop mill
+        </p>
+        <h1 class="text-[2.45rem] font-700 leading-[0.98] tracking-tightest sm:text-6xl lg:text-[4.1rem]" data-reveal style="--i:1">
+          It cuts aluminium.<br class="hidden sm:block" /> On your desk. Quietly.
+        </h1>
+        <p class="mt-6 max-w-md text-[16.5px] leading-relaxed text-muted" data-reveal style="--i:2">
+          Most desktop CNCs flex, chatter, and give up at the edge of plastic. Forge has a cast-iron
+          core, closed-loop servos, and a sealed enclosure — so it holds tolerance in 6061 and runs
+          under <span class="text-ink tnum">62&nbsp;dB</span> in the same room as you.
+        </p>
+
+        <div class="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3" data-reveal style="--i:3">
+          <a href="#reserve" data-magnetic
+             class="rounded-full bg-accent px-6 py-3 text-[15px] font-600 text-bg transition-colors hover:bg-[#ff6f38]">
+            Reserve a Forge — $200 deposit
+          </a>
+          <span class="text-[13.5px] text-faint">Ships Q1 2027 · fully refundable</span>
+        </div>
+      </div>
+
+      <!-- product object: image slot + wired readout (UI built in code) -->
+      <div class="relative" data-reveal style="--i:2">
+        <!-- connector line wiring readout → machine (oxide trick) -->
+        <svg class="pointer-events-none absolute -left-2 top-16 z-20 hidden h-24 w-28 lg:block" viewBox="0 0 112 96" fill="none" aria-hidden="true">
+          <path d="M2 18 H46 V78 H92" stroke="#FF5C1A" stroke-width="1.25" stroke-opacity=".8"/>
+          <circle cx="2" cy="18" r="2.5" fill="#FF5C1A"/>
+          <circle cx="92" cy="78" r="2.5" fill="#FF5C1A"/>
+        </svg>
+
+        <!-- floating spindle readout — real product UI, no mono, tabular figures -->
+        <div class="absolute -left-3 top-3 z-30 w-[16.5rem] rounded-xl border border-line bg-surface/95 p-3.5 shadow-[0_24px_60px_-24px_rgba(0,0,0,.8)] backdrop-blur sm:-left-6">
+          <div class="flex items-center justify-between border-b border-line pb-2.5">
+            <div class="flex items-center gap-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+              <span class="text-[12px] font-600">Cutting · part_004.nc</span>
+            </div>
+            <span class="text-[11px] tnum text-faint">04:18</span>
+          </div>
+          <dl class="mt-2.5 grid grid-cols-3 gap-y-2 text-[11px]">
+            <div><dt class="text-faint">Spindle</dt><dd class="tnum text-[15px] font-600">18,000<span class="ml-0.5 text-[10px] text-faint">rpm</span></dd></div>
+            <div><dt class="text-faint">Feed</dt><dd class="tnum text-[15px] font-600">1,140<span class="ml-0.5 text-[10px] text-faint">mm/m</span></dd></div>
+            <div><dt class="text-faint">Loudness</dt><dd class="tnum text-[15px] font-600 text-accent">61<span class="ml-0.5 text-[10px] text-faint">dB</span></dd></div>
+          </dl>
+          <div class="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-raised">
+            <div class="h-full w-[63%] rounded-full bg-steel"></div>
+          </div>
+          <p class="mt-1.5 text-[10.5px] tnum text-faint">Toolpath 63% · est. 2:31 left</p>
+        </div>
+
+        <!-- IMAGE SLOT: hero machine render -->
+        <figure class="relative ml-auto aspect-[4/5] w-full max-w-[26rem] overflow-hidden rounded-2xl border border-line bg-raised">
+          <img src="assets/hero-machine.jpg"
+               width="1040" height="1300" loading="eager" decoding="async"
+               alt="Forge desktop CNC mill: a compact enclosed machine in cast iron and graphite-grey aluminium, lit on near-black, an aluminium part on the bed"
+               class="h-full w-full object-cover"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <!-- graded fallback -->
+          <div style="display:none"
+               class="absolute inset-0 flex-col items-center justify-center bg-[radial-gradient(120%_90%_at_70%_15%,#26262a_0%,#141416_55%,#0B0B0C_100%)] text-center">
+            <span class="text-[11px] uppercase tracking-[.18em] text-faint">render</span>
+            <span class="mt-2 px-6 text-[13px] text-muted">Forge mill — enclosed, cast-iron core, 4:5</span>
+          </div>
+          <figcaption class="fig absolute bottom-3 left-3 rounded bg-bg/70 px-2 py-1 text-[10.5px] uppercase tracking-[.12em] text-muted backdrop-blur">
+            Fig. 01 · Forge · 380 × 420 × 460&nbsp;mm
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TRUST STRIP — who's already cutting on prototypes ─────────────── -->
+  <section class="border-b border-line/70" aria-label="Used by">
+    <div class="mx-auto flex max-w-6xl flex-col gap-4 px-5 py-7 sm:flex-row sm:items-center sm:gap-8 sm:px-6">
+      <p class="shrink-0 text-[12px] font-500 uppercase tracking-[.14em] text-faint">In prototype shops at</p>
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-3 text-[15px] font-600 text-muted/80">
+        <span>Halden&nbsp;Robotics</span>
+        <span>Tinwork&nbsp;Studio</span>
+        <span>OakRidge&nbsp;Makerspace</span>
+        <span>Beacon&nbsp;Cycles</span>
+        <span class="hidden sm:inline">Field&nbsp;Optics</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MACHINE / FEATURE 1 — one integrated machine, shown not told ──── -->
+  <section id="machine" class="machine-rule border-b border-line/70">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:py-24">
+      <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+        <div data-reveal>
+          <p class="fig mb-4 text-[11.5px] font-500 uppercase tracking-[.16em] text-faint">The machine</p>
+          <h2 class="text-[2rem] font-700 leading-[1.02] tracking-tightest sm:text-[2.6rem]">
+            Rigidity is the whole product.
+          </h2>
+          <p class="mt-5 max-w-md text-[16px] leading-relaxed text-muted">
+            A mill is only as accurate as it is stiff. Forge starts from a <span class="text-ink">28&nbsp;kg
+            cast-iron base</span> with linear rails on every axis, then drives them with closed-loop servos
+            that catch and correct skipped steps before they ruin a part. The result is a desktop machine
+            that behaves like a small VMC — not a router with a Dremel taped on.
+          </p>
+
+          <ul class="mt-7 space-y-3.5 text-[15px]">
+            <li class="flex gap-3">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>
+              <span><span class="font-600">Cast-iron core, not extruded box.</span> <span class="text-muted">Mass kills chatter the cheap way.</span></span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>
+              <span><span class="font-600">Closed-loop servos on X/Y/Z.</span> <span class="text-muted">It knows when it loses a step. It doesn't.</span></span>
+            </li>
+            <li class="flex gap-3">
+              <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent"></span>
+              <span><span class="font-600">Sealed enclosure with chip tray.</span> <span class="text-muted">Coolant stays in; the noise stays down.</span></span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- IMAGE SLOT: cutaway / detail of the cast-iron core -->
+        <figure class="relative aspect-[5/4] overflow-hidden rounded-2xl border border-line bg-raised" data-reveal style="--i:1">
+          <img src="assets/core-detail.jpg"
+               width="1300" height="1040" loading="lazy" decoding="async"
+               alt="Detail of the Forge cast-iron base and linear rails, with a freshly milled 6061 aluminium part clamped to the bed"
+               class="h-full w-full object-cover"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+          <div style="display:none"
+               class="absolute inset-0 flex-col items-center justify-center bg-[radial-gradient(120%_90%_at_30%_20%,#26262a_0%,#141416_60%,#0B0B0C_100%)] text-center">
+            <span class="text-[11px] uppercase tracking-[.18em] text-faint">render</span>
+            <span class="mt-2 px-6 text-[13px] text-muted">Cast-iron core + linear rails, 5:4</span>
+          </div>
+          <figcaption class="fig absolute bottom-3 left-3 rounded bg-bg/70 px-2 py-1 text-[10.5px] uppercase tracking-[.12em] text-muted backdrop-blur">
+            Fig. 02 · Core detail
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SPEC SHEET — the dense engineering table (the archetype's centre) ── -->
+  <section id="specs" class="machine-rule border-b border-line/70 blueprint">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:py-24">
+      <div class="mb-10 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between" data-reveal>
+        <div>
+          <p class="fig mb-3 text-[11.5px] font-500 uppercase tracking-[.16em] text-faint">Specification</p>
+          <h2 class="text-[2rem] font-700 leading-[1.02] tracking-tightest sm:text-[2.6rem]">The full plate.</h2>
+        </div>
+        <p class="max-w-xs text-[14px] text-muted sm:text-right">Everything you'd read off a real datasheet before you trusted a part to it. Figures are typical, measured at the spindle.</p>
+      </div>
+
+      <!-- spec table: borderless hairline ledger, tabular numbers, no mono -->
+      <div class="overflow-hidden rounded-2xl border border-line bg-surface/60" data-reveal style="--i:1">
+        <table class="w-full text-[14px]">
+          <caption class="sr-only">Forge technical specification</caption>
+          <tbody class="[&>tr]:border-b [&>tr]:border-line/70 last:[&>tr]:border-0">
+            <tr class="hover:bg-white/[.02]">
+              <th scope="row" class="w-[42%] py-3.5 pl-5 pr-3 text-left font-500 text-muted">Work envelope (X · Y · Z)</th>
+              <td class="py-3.5 pr-5 tnum font-600">300 × 200 × 120&nbsp;mm</td>
+            </tr>
+            <tr class="hover:bg-white/[.02]">
+              <th scope="row" class="py-3.5 pl-5 pr-3 text-left font-500 text-muted">Frame</th>
+              <td class="py-3.5 pr-5 font-600">Cast-iron base · <span class="tnum">28 kg</span> · steel-welded gantry</td>
+            </tr>
+            <tr class="hover:bg-white/[.02]">
+              <th scope="row" class="py-3.5 pl-5 pr-3 text-left font-500 text-muted">Motion</th>
+              <td class="py-3.5 pr-5 font-600">Closed-loop NEMA 23 servos · <span class="tnum">20 mm</span> linear rails</td>
+            </tr>
+            <tr class="hover:bg-white/[.02]">
+              <th scope="row" class="py-3.5 pl-5 pr-3 text-left font-500 text-muted">Positioning accuracy</th>
+              <td class="py-3.5 pr-5 tnum font-600">± 0.01&nbsp;mm <span class="text-faint">repeatable</span></td>
+            </tr>
+            <tr class="hover:bg-white/[.02]">
+              <th scope="row" class="py-3.5 pl-5 pr-3 text-left font-500 text-muted">Spindle</th>
+              <td class="py-3.5 pr-5 font-600"><span class="tnum">800 W</span> brushless · <span class="tnum">3k–24k</span> rpm · ER11</td>
+            </tr>
+            <tr class="hover:bg-white/[.02]">
+              <th scope="row" class="py-3.5 pl-5 pr-3 text-left font-500 text-muted">Rated materials</th>
+              <td class="py-3.5 pr-5 font-600">6061 / 7075 aluminium · brass · steel*  ·  wood · plastics</td>
+            </tr>
+            <tr class="hover:bg-white/[.02]">
+              <th scope="row" class="py-3.5 pl-5 pr-3 text-left font-500 text-muted">Enclosure noise</th>
+              <td class="py-3.5 pr-5 tnum font-600 text-accent">≤ 62&nbsp;dB(A) <span class="font-500 text-faint">at 1 m, cutting aluminium</span></td>
+            </tr>
+            <tr class="hover:bg-white/[.02]">
+              <th scope="row" class="py-3.5 pl-5 pr-3 text-left font-500 text-muted">Control · power</th>
+              <td class="py-3.5 pr-5 font-600">USB-C + Ethernet · GRBL-compatible · <span class="tnum">110–240 V</span>, 6 A</td>
+            </tr>
+            <tr class="hover:bg-white/[.02]">
+              <th scope="row" class="py-3.5 pl-5 pr-3 text-left font-500 text-muted">Footprint · desk load</th>
+              <td class="py-3.5 pr-5 tnum font-600">380 × 460 mm · 34 kg total</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-3 pl-1 text-[12.5px] text-faint">* Mild steel in light finishing passes. Forge is built for aluminium first; steel is a bonus, not the headline.</p>
+    </div>
+  </section>
+
+  <!-- ── PROBLEM as TRADEOFF TABLE (oxide's two-column "both required compromise") ── -->
+  <section id="tradeoff" class="machine-rule border-b border-line/70">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:py-24">
+      <h2 class="max-w-2xl text-[2rem] font-700 leading-[1.04] tracking-tightest sm:text-[2.6rem]" data-reveal>
+        Until now, a maker had two bad options.
+      </h2>
+      <p class="mt-4 max-w-xl text-[16px] leading-relaxed text-muted" data-reveal style="--i:1">
+        Both cost you something you didn't want to spend.
+      </p>
+
+      <div class="mt-10 grid gap-5 lg:grid-cols-2">
+        <!-- option A -->
+        <div class="rounded-2xl border border-line bg-surface/50 p-7" data-reveal style="--i:1">
+          <div class="mb-5 flex items-baseline justify-between">
+            <h3 class="text-[1.35rem] font-700">A hobby router</h3>
+            <span class="text-[12px] font-500 uppercase tracking-[.14em] text-faint">Cheap, but…</span>
+          </div>
+          <p class="text-[14.5px] leading-relaxed text-muted">An aluminium-extrusion frame and open belts. Fine for plywood and signs.</p>
+          <ul class="mt-5 space-y-2.5 text-[14px] text-muted">
+            <li class="flex gap-2.5"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint"></span>Flexes and chatters the moment it touches metal</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint"></span>Open frame — chips and coolant go everywhere</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint"></span>Open steppers skip steps and scrap the part silently</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint"></span>Screams — you wear ear protection in your own room</li>
+          </ul>
+        </div>
+
+        <!-- option B -->
+        <div class="rounded-2xl border border-line bg-surface/50 p-7" data-reveal style="--i:2">
+          <div class="mb-5 flex items-baseline justify-between">
+            <h3 class="text-[1.35rem] font-700">A real VMC</h3>
+            <span class="text-[12px] font-500 uppercase tracking-[.14em] text-faint">Capable, but…</span>
+          </div>
+          <p class="text-[14.5px] leading-relaxed text-muted">A used Tormach or Haas mini. It will absolutely cut metal.</p>
+          <ul class="mt-5 space-y-2.5 text-[14px] text-muted">
+            <li class="flex gap-2.5"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint"></span>Weighs a third of a tonne — needs a shop, not a desk</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint"></span><span class="tnum">$12k–40k</span> before tooling and an enclosure</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint"></span>Wants 240 V single-phase you may not have</li>
+            <li class="flex gap-2.5"><span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-faint"></span>Loud enough that neighbours notice</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- resolution row — Forge sits between, no contrarian one-liner -->
+      <div class="mt-5 flex flex-col gap-4 rounded-2xl border border-accent/40 bg-accent/[.06] p-7 sm:flex-row sm:items-center sm:justify-between" data-reveal style="--i:3">
+        <div>
+          <p class="text-[12px] font-500 uppercase tracking-[.14em] text-accent">Forge sits in the gap</p>
+          <p class="mt-2 max-w-xl text-[16px] leading-relaxed">
+            Enough cast iron and closed-loop control to cut <span class="font-600">6061 to tolerance</span>,
+            in a sealed box quiet enough to run on a desk, on a normal wall outlet — for the price of a good 3D printer, not a mill.
+          </p>
+        </div>
+        <a href="#specs" class="shrink-0 self-start text-[14px] font-600 text-accent hover:underline sm:self-center">See the numbers →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FEATURE PAIR — quiet + closed-loop, each with its own surface ──── -->
+  <section class="machine-rule border-b border-line/70">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:py-24">
+      <div class="grid gap-5 lg:grid-cols-2">
+        <!-- quiet, with a dB readout viz -->
+        <article class="flex flex-col rounded-2xl border border-line bg-surface/50 p-7" data-reveal>
+          <h3 class="text-[1.5rem] font-700 tracking-tightest">Quiet enough to think next to</h3>
+          <p class="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
+            A double-walled enclosure and a vibration-isolated spindle keep Forge under a normal-conversation
+            volume — even mid-cut. You don't leave the room. You don't wear ear muffs to watch it work.
+          </p>
+
+          <!-- dB comparison bars (built in code, tabular numbers) -->
+          <div class="mt-7 space-y-3 text-[13px]">
+            <div>
+              <div class="mb-1 flex justify-between"><span class="text-muted">Forge, cutting 6061</span><span class="tnum font-600 text-accent">61 dB</span></div>
+              <div class="h-2 overflow-hidden rounded-full bg-raised"><div class="h-full rounded-full bg-accent" style="width:55%"></div></div>
+            </div>
+            <div>
+              <div class="mb-1 flex justify-between"><span class="text-muted">Open desktop router</span><span class="tnum font-600">84 dB</span></div>
+              <div class="h-2 overflow-hidden rounded-full bg-raised"><div class="h-full rounded-full bg-steel" style="width:80%"></div></div>
+            </div>
+            <div>
+              <div class="mb-1 flex justify-between"><span class="text-muted">Benchtop VMC</span><span class="tnum font-600">91 dB</span></div>
+              <div class="h-2 overflow-hidden rounded-full bg-raised"><div class="h-full rounded-full bg-steel" style="width:92%"></div></div>
+            </div>
+          </div>
+          <p class="mt-3 text-[11.5px] text-faint">Measured at 1 m, A-weighted, during an aluminium roughing pass.</p>
+        </article>
+
+        <!-- closed-loop, with a tiny toolpath-correction viz -->
+        <article class="flex flex-col rounded-2xl border border-line bg-surface/50 p-7" data-reveal style="--i:1">
+          <h3 class="text-[1.5rem] font-700 tracking-tightest">It refuses to ruin the part</h3>
+          <p class="mt-3 max-w-md text-[15px] leading-relaxed text-muted">
+            Open-loop steppers lose steps under load and you only find out when the part measures wrong.
+            Forge's servos read their own position <span class="text-ink tnum">1,000×</span> a second and
+            correct before the cut drifts — so the last pass matches the first.
+          </p>
+
+          <!-- toolpath correction sketch -->
+          <div class="mt-7 overflow-hidden rounded-xl border border-line bg-bg/60 p-4">
+            <svg viewBox="0 0 320 120" class="w-full" aria-hidden="true">
+              <defs>
+                <linearGradient id="band" x1="0" x2="0" y1="0" y2="1">
+                  <stop offset="0" stop-color="#FF5C1A" stop-opacity=".16"/>
+                  <stop offset="1" stop-color="#FF5C1A" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <!-- commanded path -->
+              <path d="M8 60 H312" stroke="#2A2A2E" stroke-width="1" stroke-dasharray="3 4"/>
+              <!-- open-loop drift (steel) -->
+              <path d="M8 60 C 90 58, 150 80, 230 96 S 300 110, 312 112" fill="none" stroke="#7C8EA0" stroke-width="1.5" stroke-opacity=".7"/>
+              <!-- closed-loop corrected (accent) hugging the line -->
+              <path d="M8 60 C 90 61, 160 58, 230 61 S 300 59, 312 60" fill="none" stroke="#FF5C1A" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="312" cy="60" r="3" fill="#FF5C1A"/>
+            </svg>
+            <div class="mt-2 flex justify-between text-[11px] text-faint">
+              <span class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span>Forge, corrected</span>
+              <span class="flex items-center gap-1.5"><span class="h-1.5 w-1.5 rounded-full bg-steel"></span>Open-loop drift</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── INLINE NEWSLETTER ROW (oxide's mid-page "get product updates") ── -->
+  <section class="border-b border-line/70 blueprint">
+    <div class="mx-auto flex max-w-6xl flex-col gap-5 px-5 py-9 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div data-reveal>
+        <p class="text-[15.5px] font-600">Cut logs, firmware notes, and ship dates — in your inbox.</p>
+        <p class="mt-1 text-[13.5px] text-muted">We post real feeds &amp; speeds for every material as we validate them. Roughly monthly. No marketing.</p>
+      </div>
+      <form class="flex w-full max-w-sm items-center gap-2 sm:w-auto" data-reveal style="--i:1" onsubmit="return false">
+        <label for="nl" class="sr-only">Email address</label>
+        <input id="nl" type="email" required placeholder="you@workshop.com"
+               class="w-full flex-1 rounded-full border border-line bg-bg px-4 py-2.5 text-[14px] text-ink placeholder:text-faint focus:border-accent focus:outline-none" />
+        <button class="shrink-0 rounded-full border border-line px-4 py-2.5 text-[14px] font-600 transition-colors hover:border-accent hover:text-accent">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── WHAT IT CUTS — dense use-case grid (oxide's "frontier workloads") ── -->
+  <section id="work" class="machine-rule border-b border-line/70">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:py-24">
+      <div class="mb-10 max-w-2xl" data-reveal>
+        <p class="fig mb-3 text-[11.5px] font-500 uppercase tracking-[.16em] text-faint">Built for real parts</p>
+        <h2 class="text-[2rem] font-700 leading-[1.04] tracking-tightest sm:text-[2.6rem]">What people are cutting on it</h2>
+      </div>
+
+      <div class="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+        <!-- card -->
+        <article class="bg-surface p-6" data-reveal>
+          <span class="fig text-[11px] uppercase tracking-[.14em] text-accent">01</span>
+          <h3 class="mt-3 text-[1.15rem] font-700">Drone &amp; RC frames</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-muted">Pocketed 6061 arms and motor mounts that come off the bed flight-ready, no filing.</p>
+          <p class="mt-4 text-[12px] tnum text-faint">6061-T6 · 3 mm endmill · 22 min/arm</p>
+        </article>
+        <article class="bg-surface p-6" data-reveal style="--i:1">
+          <span class="fig text-[11px] uppercase tracking-[.14em] text-accent">02</span>
+          <h3 class="mt-3 text-[1.15rem] font-700">Enclosures &amp; faceplates</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-muted">Brushed-aluminium front panels with engraved labels — the part that makes hardware look finished.</p>
+          <p class="mt-4 text-[12px] tnum text-faint">5052 · 0.1 mm depth engrave</p>
+        </article>
+        <article class="bg-surface p-6" data-reveal style="--i:2">
+          <span class="fig text-[11px] uppercase tracking-[.14em] text-accent">03</span>
+          <h3 class="mt-3 text-[1.15rem] font-700">Mould &amp; soft tooling</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-muted">Aluminium injection inserts and resin moulds — short runs without a tooling vendor.</p>
+          <p class="mt-4 text-[12px] tnum text-faint">7075 · ± 0.02 mm fit</p>
+        </article>
+        <article class="bg-surface p-6" data-reveal>
+          <span class="fig text-[11px] uppercase tracking-[.14em] text-accent">04</span>
+          <h3 class="mt-3 text-[1.15rem] font-700">PCB &amp; RF carriers</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-muted">Milled copper-clad boards and machined RF shields with the tolerance high-frequency needs.</p>
+          <p class="mt-4 text-[12px] tnum text-faint">FR-4 + brass · 0.2 mm trace</p>
+        </article>
+        <article class="bg-surface p-6" data-reveal style="--i:1">
+          <span class="fig text-[11px] uppercase tracking-[.14em] text-accent">05</span>
+          <h3 class="mt-3 text-[1.15rem] font-700">Jewellery &amp; small batch</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-muted">Brass and silver blanks cut clean enough to go straight to polishing — repeatably, by the dozen.</p>
+          <p class="mt-4 text-[12px] tnum text-faint">Brass · 1 mm ball · ×24 nesting</p>
+        </article>
+        <article class="bg-surface p-6" data-reveal style="--i:2">
+          <span class="fig text-[11px] uppercase tracking-[.14em] text-accent">06</span>
+          <h3 class="mt-3 text-[1.15rem] font-700">Bike &amp; moto brackets</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-muted">One-off mounts and adapters strong enough to trust on the road, made the same afternoon you design them.</p>
+          <p class="mt-4 text-[12px] tnum text-faint">6061 · 6 mm endmill</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDITORIAL BEAT (oxide's "2nd Gen platform" — left headline / right text) ── -->
+  <section class="border-b border-line/70 bg-surface/40">
+    <div class="mx-auto grid max-w-6xl gap-8 px-5 py-16 sm:px-6 lg:grid-cols-[1fr_1.1fr] lg:gap-14 lg:py-24">
+      <div data-reveal>
+        <p class="fig mb-4 text-[11.5px] font-500 uppercase tracking-[.16em] text-faint">A note from the bench</p>
+        <h2 class="text-[2rem] font-700 leading-[1.02] tracking-tightest sm:text-[2.7rem]">
+          We built the machine we couldn't buy.
+        </h2>
+      </div>
+      <div class="space-y-5 text-[16px] leading-relaxed text-muted" data-reveal style="--i:1">
+        <p>
+          We spent three years cutting aluminium on machines that were either too flimsy to hold tolerance
+          or too big and loud to live where we worked. Every weekend was a compromise: scrap a part, or
+          tear down a hobby router and rebuild it stiffer.
+        </p>
+        <p>
+          Forge is the result. Cast iron where it matters, closed-loop where it counts, sealed and quiet
+          so it earns a place on the bench instead of exile to a shed. It's the first one we've made that
+          we actually reach for first.
+        </p>
+        <p class="text-ink">— Mara &amp; Tomas, Forge. Hand-assembled in Lisbon.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── RESERVE / FINAL CTA — footer-adjacent, single action, no dark band ── -->
+  <section id="reserve" class="border-b border-line/70">
+    <div class="mx-auto max-w-6xl px-5 py-16 sm:px-6 lg:py-24">
+      <div class="grid items-center gap-10 lg:grid-cols-[1.1fr_1fr]">
+        <div data-reveal>
+          <h2 class="text-[2.2rem] font-700 leading-[1.0] tracking-tightest sm:text-[3rem]">
+            Reserve a Forge.
+          </h2>
+          <p class="mt-5 max-w-md text-[16.5px] leading-relaxed text-muted">
+            The first production run is <span class="text-ink tnum">200 machines</span>. A
+            <span class="text-ink tnum">$200</span> deposit holds your place in line and locks the
+            launch price — fully refundable until your unit ships in <span class="text-ink">Q1&nbsp;2027</span>.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4" data-reveal style="--i:1">
+            <a href="#" data-magnetic
+               class="rounded-full bg-accent px-7 py-3.5 text-[16px] font-600 text-bg transition-colors hover:bg-[#ff6f38]">
+              Reserve a Forge
+            </a>
+            <span class="text-[13.5px] text-faint">Deposit applies to the full price · cancel any time</span>
+          </div>
+
+          <dl class="mt-9 grid max-w-md grid-cols-3 gap-6 border-t border-line pt-7 text-[13px]">
+            <div><dt class="text-faint">Deposit</dt><dd class="tnum text-[1.4rem] font-700">$200</dd></div>
+            <div><dt class="text-faint">Run size</dt><dd class="tnum text-[1.4rem] font-700">200</dd></div>
+            <div><dt class="text-faint">Reserved</dt><dd class="tnum text-[1.4rem] font-700 text-accent">147</dd></div>
+          </dl>
+        </div>
+
+        <!-- order summary card (built in code) -->
+        <div class="rounded-2xl border border-line bg-surface/60 p-6 sm:p-7" data-reveal style="--i:1">
+          <div class="flex items-center justify-between border-b border-line pb-4">
+            <span class="text-[14px] font-600">Forge CNC 01 — reservation</span>
+            <span class="rounded-full bg-accent/15 px-2.5 py-1 text-[11px] font-600 text-accent">Founders run</span>
+          </div>
+          <dl class="mt-4 space-y-3 text-[14px]">
+            <div class="flex justify-between"><dt class="text-muted">Launch price</dt><dd class="tnum font-600">$3,490</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">Founders discount</dt><dd class="tnum font-600 text-accent">− $300</dd></div>
+            <div class="flex justify-between"><dt class="text-muted">Deposit today</dt><dd class="tnum font-600">$200</dd></div>
+            <div class="flex justify-between border-t border-line pt-3"><dt class="text-muted">Balance at ship</dt><dd class="tnum font-600">$2,990</dd></div>
+          </dl>
+          <ul class="mt-5 space-y-2 text-[13.5px] text-muted">
+            <li class="flex gap-2.5"><span class="text-accent">✓</span> Enclosure, chip tray &amp; starter endmill set</li>
+            <li class="flex gap-2.5"><span class="text-accent">✓</span> Validated feeds &amp; speeds for aluminium</li>
+            <li class="flex gap-2.5"><span class="text-accent">✓</span> 2-year mechanical warranty</li>
+          </ul>
+          <p class="mt-5 text-[12px] text-faint">Estimated ship: Q1 2027 · deposit fully refundable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GIANT CLOSING WORDMARK (oxide's "The cloud you own") ─────────── -->
+  <section aria-hidden="true" class="overflow-hidden border-b border-line/70 px-5 pb-10 pt-14 sm:px-6">
+    <p class="mx-auto max-w-6xl text-[20vw] font-800 leading-[0.82] tracking-tightest text-ink/90 lg:text-[15rem]">
+      Make it<br /><span class="text-accent">in metal.</span>
+    </p>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────── -->
+<footer class="bg-bg">
+  <div class="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-6 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <div>
+      <div class="flex items-center gap-2.5">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <rect x="2.5" y="2.5" width="19" height="19" rx="2" stroke="#F4F2EE" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="2.4" fill="#FF5C1A"/>
+        </svg>
+        <span class="text-[16px] font-700 tracking-tightest">Forge</span>
+      </div>
+      <p class="mt-4 max-w-xs text-[13.5px] leading-relaxed text-muted">A desktop CNC mill for people who cut aluminium. Hand-assembled in Lisbon.</p>
+      <p class="mt-5 text-[12px] tnum text-faint">© 2026 Forge Machine Works · CNC 01</p>
+    </div>
+
+    <nav aria-label="Machine">
+      <p class="mb-3 text-[12px] font-600 uppercase tracking-[.14em] text-faint">Machine</p>
+      <ul class="space-y-2.5 text-[13.5px] text-muted">
+        <li><a href="#machine" class="hover:text-ink">Overview</a></li>
+        <li><a href="#specs" class="hover:text-ink">Full spec</a></li>
+        <li><a href="#work" class="hover:text-ink">What it cuts</a></li>
+        <li><a href="#reserve" class="hover:text-ink">Reserve</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Workshop">
+      <p class="mb-3 text-[12px] font-600 uppercase tracking-[.14em] text-faint">Workshop</p>
+      <ul class="space-y-2.5 text-[13.5px] text-muted">
+        <li><a href="#" class="hover:text-ink">Feeds &amp; speeds</a></li>
+        <li><a href="#" class="hover:text-ink">Firmware</a></li>
+        <li><a href="#" class="hover:text-ink">Tooling guide</a></li>
+        <li><a href="#" class="hover:text-ink">Sample parts</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Company">
+      <p class="mb-3 text-[12px] font-600 uppercase tracking-[.14em] text-faint">Company</p>
+      <ul class="space-y-2.5 text-[13.5px] text-muted">
+        <li><a href="#" class="hover:text-ink">The bench</a></li>
+        <li><a href="#" class="hover:text-ink">Warranty</a></li>
+        <li><a href="#" class="hover:text-ink">Contact</a></li>
+        <li><a href="#" class="hover:text-ink">Press kit</a></li>
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // blur-in reveal
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('is-visible')); return;
+    }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold:.15 });
+    document.querySelectorAll('[data-reveal]').forEach(function(el){ io.observe(el); });
+  })();
+
+  // magnetic CTA (subtle)
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('[data-magnetic]').forEach(function(b){
+      b.style.transition='transform .3s cubic-bezier(.2,.7,.2,1)';
+      b.addEventListener('mousemove',function(e){
+        var r=b.getBoundingClientRect();
+        b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.18)+'px,'+((e.clientY-r.top-r.height/2)*.18)+'px)';
+      });
+      b.addEventListener('mouseleave',function(){ b.style.transform=''; });
+    });
+  })();
+</script>
+</body>
+</html>

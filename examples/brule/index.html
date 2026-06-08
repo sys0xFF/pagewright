@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brûle — Loud. Cheap. Good. Find the heat.</title>
+<meta name="description" content="Brûle is a hot sauce that refuses to be artisanal or small-batch. Loud, cheap, and stupidly good. Three heats. Find yours." />
+<meta property="og:title" content="Brûle — Loud. Cheap. Good." />
+<meta property="og:description" content="A hot sauce that refuses to be small-batch. Find the heat." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:ital,wght@0,400;0,500;0,600;0,800;1,500&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: {
+      bg:'#0B0907', ink:'#F4EFE6', muted:'#A39A8C', faint:'#6F665B',
+      bone:'#EDE6D8', char:'#16110D', line:'#2A231C',
+      ember:'#FF3B0F', flame:'#FF7A18', scorch:'#C71A00',
+    },
+    fontFamily: {
+      display:['Anton','system-ui','sans-serif'],
+      sans:['"Hanken Grotesk"','system-ui','sans-serif'],
+    },
+  } } }
+</script>
+
+<style>
+  :root{ --accent:#FF3B0F; }
+  html{ scroll-behavior:smooth; }
+  body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .tnum{ font-variant-numeric:tabular-nums; }
+  .display{ letter-spacing:.005em; }
+
+  /* condensed coverline tightening */
+  .coverline{ line-height:.86; letter-spacing:.01em; }
+  .stroke-flame{
+    -webkit-text-stroke:2px var(--accent); color:transparent;
+    paint-order:stroke fill;
+  }
+
+  /* blur-in reveal */
+  @media (prefers-reduced-motion: no-preference){
+    [data-reveal]{ opacity:0; filter:blur(12px); transform:translateY(20px);
+      transition:opacity .6s ease, filter .6s ease, transform .6s cubic-bezier(.2,.7,.2,1);
+      transition-delay:calc(var(--i,0)*70ms); }
+    [data-reveal].is-visible{ opacity:1; filter:blur(0); transform:none; }
+  }
+
+  /* signature: the heat-meter bottle wobble on hover + the scrolling hazard ticker */
+  .ticker-mask{ -webkit-mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+    mask:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent); }
+  .ticker-track{ display:flex; width:max-content; animation:ticker 26s linear infinite; }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{ animation:none; } }
+  @keyframes ticker{ to{ transform:translateX(-50%); } }
+
+  .bottle{ transition:transform .35s cubic-bezier(.2,.7,.2,1); }
+  @media (prefers-reduced-motion: no-preference){
+    .bottle:hover{ transform:translateY(-10px) rotate(-2.5deg); }
+  }
+
+  /* scroll progress */
+  .progress{ position:fixed; top:0; left:0; height:3px; width:100%; transform-origin:left;
+    transform:scaleX(0); background:var(--accent); z-index:60; }
+  @media (prefers-reduced-motion: no-preference){
+    @supports (animation-timeline: scroll()){
+      .progress{ animation:grow linear both; animation-timeline:scroll(root block); }
+      @keyframes grow{ to{ transform:scaleX(1); } }
+    }
+  }
+
+  .graded-photo{ position:relative; background:#1a120c; }
+  .graded-photo > img{ object-fit:cover; }
+
+  .heat-pips i{ display:inline-block; width:.5rem; height:1.05rem; border-radius:1px;
+    background:#3a2f25; }
+  .heat-pips i.on{ background:var(--accent); }
+</style>
+</head>
+
+<body class="bg-bg text-ink font-sans antialiased selection:bg-ember selection:text-char">
+
+<div class="progress" aria-hidden="true"></div>
+
+<!-- SVG grain -->
+<svg class="pointer-events-none fixed inset-0 -z-10 h-full w-full opacity-[0.05]" aria-hidden="true">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" /></filter>
+  <rect width="100%" height="100%" filter="url(#grain)" />
+</svg>
+
+<!-- ============ PROMO BAR (LD's top legal/promo microbar) ============ -->
+<div class="bg-ember text-char">
+  <div class="mx-auto flex max-w-7xl items-center justify-center gap-2 px-4 py-1.5 text-center text-[11px] font-600 uppercase tracking-[0.14em]">
+    <span>Free shipping over $25 · No oat milk · No mission statement · Just heat</span>
+  </div>
+</div>
+
+<!-- ============ NAV (logo · links · single CTA pill) ============ -->
+<header class="sticky top-0 z-50 border-b border-line/70 bg-bg/85 backdrop-blur-md">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6" aria-label="Primary">
+    <a href="#top" class="flex items-baseline gap-1.5">
+      <span class="font-display text-2xl leading-none tracking-wide text-ink">BRÛLE</span>
+      <span class="hidden text-[10px] font-600 uppercase tracking-[0.2em] text-ember sm:inline">hot sauce</span>
+    </a>
+    <div class="hidden items-center gap-7 text-[13px] font-500 text-muted md:flex">
+      <a href="#heats" class="transition-colors hover:text-ink">The heats</a>
+      <a href="#manifesto" class="transition-colors hover:text-ink">Why so loud</a>
+      <a href="#stuff" class="transition-colors hover:text-ink">Stuff</a>
+      <a href="#crowd" class="transition-colors hover:text-ink">The mob</a>
+    </div>
+    <a href="#heats" data-magnetic
+       class="inline-flex items-center gap-2 rounded-full bg-ember px-4 py-2 text-[13px] font-800 uppercase tracking-wide text-char transition-transform hover:bg-flame">
+      Find the heat
+    </a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO — full-bleed campaign takeover, coverline, single CTA ============ -->
+  <section class="relative overflow-hidden" aria-labelledby="hero-h">
+    <!-- graded photo bed (object/scene → generated) -->
+    <div class="graded-photo absolute inset-0 -z-0">
+      <!-- IMAGE: hero scene -->
+      <img src="assets/hero-counter.jpg"
+           alt="A glass Brûle hot sauce bottle slammed on a chrome diner counter under a buzzing red neon sign, sauce dripping down the label"
+           class="h-full w-full opacity-[0.55]"
+           width="1920" height="1280"
+           onerror="this.style.display='none'" />
+      <div class="absolute inset-0 bg-gradient-to-b from-bg/55 via-bg/70 to-bg"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(120%_80%_at_70%_15%,rgba(255,59,15,0.22),transparent_55%)]"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-4 pb-16 pt-20 sm:px-6 sm:pt-28 lg:pb-24 lg:pt-32">
+      <p data-reveal class="mb-5 text-[12px] font-600 uppercase tracking-[0.22em] text-ember">
+        Bottled in a factory. Proudly.
+      </p>
+
+      <h1 id="hero-h" data-reveal style="--i:1"
+          class="coverline font-display uppercase text-ink display
+                 text-[clamp(3.1rem,13vw,10.5rem)]">
+        Your salsa is<br />
+        <span class="text-ember">too polite.</span>
+      </h1>
+
+      <p data-reveal style="--i:2"
+         class="mt-7 max-w-xl text-[17px] leading-relaxed text-muted sm:text-[19px]">
+        Brûle is a hot sauce that refuses to be artisanal, small-batch, or
+        ethically foraged at dawn. It is loud, it is cheap, and it is stupidly
+        good on absolutely everything.
+      </p>
+
+      <div data-reveal style="--i:3" class="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a href="#heats" data-magnetic
+           class="inline-flex items-center gap-2 rounded-full bg-ember px-7 py-3.5 text-[15px] font-800 uppercase tracking-wide text-char transition-transform hover:bg-flame">
+          Find the heat
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9m0 0L8.5 4.5M12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <p class="text-[13px] font-500 text-faint">
+          <span class="tnum text-ink">3</span> heats · <span class="tnum text-ink">$6</span> a bottle · zero backstory
+        </p>
+      </div>
+    </div>
+
+    <!-- signature: hazard ticker bleeding off the hero -->
+    <div class="relative border-y border-line bg-char/80">
+      <div class="ticker-mask overflow-hidden py-2.5">
+        <div class="ticker-track text-[13px] font-800 uppercase tracking-[0.15em] text-ember">
+          <span class="flex shrink-0">
+            <span class="px-5">⚠ contents extremely opinionated</span><span class="px-5 text-faint">/</span>
+            <span class="px-5">not foraged · not fermented for 18 months</span><span class="px-5 text-faint">/</span>
+            <span class="px-5">no truffle · no honey · no apology</span><span class="px-5 text-faint">/</span>
+            <span class="px-5">will ruin lesser condiments</span><span class="px-5 text-faint">/</span>
+          </span>
+          <span class="flex shrink-0" aria-hidden="true">
+            <span class="px-5">⚠ contents extremely opinionated</span><span class="px-5 text-faint">/</span>
+            <span class="px-5">not foraged · not fermented for 18 months</span><span class="px-5 text-faint">/</span>
+            <span class="px-5">no truffle · no honey · no apology</span><span class="px-5 text-faint">/</span>
+            <span class="px-5">will ruin lesser condiments</span><span class="px-5 text-faint">/</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE HEATS — flavor grid (LD's delayed product reveal) ============ -->
+  <section id="heats" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:py-28" aria-labelledby="heats-h">
+    <div class="mb-12 flex flex-wrap items-end justify-between gap-4">
+      <h2 id="heats-h" data-reveal class="coverline font-display uppercase text-[clamp(2.4rem,8vw,5rem)] text-ink display">
+        Pick your<br class="sm:hidden" /> <span class="text-ember">poison.</span>
+      </h2>
+      <p data-reveal style="--i:1" class="max-w-xs text-[14px] leading-relaxed text-muted">
+        Three heats. Same loud bottle. No "limited drop," no waitlist — they're
+        on the shelf, go get one.
+      </p>
+    </div>
+
+    <ul class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- MILD -->
+      <li data-reveal class="group rounded-2xl border border-line bg-char p-6 sm:p-7">
+        <div class="graded-photo relative mb-6 grid h-64 place-items-center overflow-hidden rounded-xl bg-[#1a120c]">
+          <!-- IMAGE: bottle -->
+          <img src="assets/bottle-mild.jpg"
+               alt="Brûle Mild — a stubby glass hot sauce bottle with a bright orange wraparound label"
+               class="bottle h-56 w-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.5)]"
+               width="640" height="900" loading="lazy"
+               onerror="this.parentElement.classList.add('ph-mild')" />
+          <span class="ph-fallback pointer-events-none absolute inset-0 hidden place-items-center font-display text-7xl text-flame/30">01</span>
+        </div>
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-display text-3xl uppercase tracking-wide text-ink">Cowardly</h3>
+            <p class="mt-1 text-[13px] font-500 text-muted">Sweet smoke · jalapeño · barely a threat</p>
+          </div>
+          <span class="tnum shrink-0 rounded-full bg-flame/15 px-3 py-1 text-[13px] font-800 text-flame">$6</span>
+        </div>
+        <div class="heat-pips mt-5 flex items-center gap-1.5" aria-label="Heat level 1 of 3">
+          <i class="on"></i><i></i><i></i>
+          <span class="ml-2 text-[12px] font-600 uppercase tracking-wide text-faint">starter heat</span>
+        </div>
+      </li>
+
+      <!-- MEDIUM (loud one) -->
+      <li data-reveal style="--i:1" class="group rounded-2xl border-2 border-ember bg-char p-6 sm:p-7">
+        <div class="graded-photo relative mb-6 grid h-64 place-items-center overflow-hidden rounded-xl bg-[#1f0d08]">
+          <!-- IMAGE: bottle -->
+          <img src="assets/bottle-medium.jpg"
+               alt="Brûle Medium — a glass hot sauce bottle with a screaming red wraparound label, sauce on the glass"
+               class="bottle h-56 w-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.55)]"
+               width="640" height="900" loading="lazy"
+               onerror="this.parentElement.classList.add('ph-med')" />
+          <span class="ph-fallback pointer-events-none absolute inset-0 hidden place-items-center font-display text-7xl text-ember/30">02</span>
+        </div>
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-display text-3xl uppercase tracking-wide text-ink">House Heat</h3>
+            <p class="mt-1 text-[13px] font-500 text-muted">Habanero · garlic · the one you'll reorder</p>
+          </div>
+          <span class="tnum shrink-0 rounded-full bg-ember px-3 py-1 text-[13px] font-800 text-char">$6</span>
+        </div>
+        <div class="heat-pips mt-5 flex items-center gap-1.5" aria-label="Heat level 2 of 3">
+          <i class="on"></i><i class="on"></i><i></i>
+          <span class="ml-2 text-[12px] font-600 uppercase tracking-wide text-ember">most ordered</span>
+        </div>
+      </li>
+
+      <!-- HOT -->
+      <li data-reveal style="--i:2" class="group rounded-2xl border border-line bg-char p-6 sm:p-7">
+        <div class="graded-photo relative mb-6 grid h-64 place-items-center overflow-hidden rounded-xl bg-[#1a0a06]">
+          <!-- IMAGE: bottle -->
+          <img src="assets/bottle-hot.jpg"
+               alt="Brûle Hot — a glass hot sauce bottle with a charred near-black label and a single red flame, dripping sauce"
+               class="bottle h-56 w-auto drop-shadow-[0_20px_30px_rgba(0,0,0,0.6)]"
+               width="640" height="900" loading="lazy"
+               onerror="this.parentElement.classList.add('ph-hot')" />
+          <span class="ph-fallback pointer-events-none absolute inset-0 hidden place-items-center font-display text-7xl text-scorch/40">03</span>
+        </div>
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <h3 class="font-display text-3xl uppercase tracking-wide text-ink">Regrettable</h3>
+            <p class="mt-1 text-[13px] font-500 text-muted">Ghost · scorpion · a genuinely bad idea</p>
+          </div>
+          <span class="tnum shrink-0 rounded-full bg-scorch px-3 py-1 text-[13px] font-800 text-ink">$6</span>
+        </div>
+        <div class="heat-pips mt-5 flex items-center gap-1.5" aria-label="Heat level 3 of 3">
+          <i class="on"></i><i class="on"></i><i class="on"></i>
+          <span class="ml-2 text-[12px] font-600 uppercase tracking-wide text-faint">sign a waiver</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ MANIFESTO BAND — the argument (LD's "DEATH TO PLASTIC BOTTLES") ============ -->
+  <section id="manifesto" class="relative overflow-hidden border-y border-line" aria-labelledby="man-h">
+    <div class="graded-photo absolute inset-0">
+      <!-- IMAGE: manifesto scene -->
+      <img src="assets/manifesto-shelf.jpg"
+           alt="A wall of identical beige artisanal small-batch condiment jars, with one loud red Brûle bottle shoved to the front"
+           class="h-full w-full opacity-[0.34]"
+           width="1920" height="1080" loading="lazy"
+           onerror="this.style.display='none'" />
+      <div class="absolute inset-0 bg-gradient-to-r from-bg via-bg/85 to-bg/40"></div>
+    </div>
+
+    <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:py-32">
+      <div class="max-w-2xl">
+        <p data-reveal class="mb-4 text-[12px] font-800 uppercase tracking-[0.2em] text-ember">A short rant</p>
+        <h2 id="man-h" data-reveal style="--i:1"
+            class="coverline font-display uppercase text-ink display text-[clamp(2.6rem,9vw,6.5rem)]">
+          Artisanal is<br /><span class="stroke-flame">a markup.</span>
+        </h2>
+        <div data-reveal style="--i:2" class="mt-8 space-y-4 text-[16px] leading-relaxed text-muted sm:text-[18px]">
+          <p>
+            Somewhere a sauce is being aged in a numbered oak barrel by a guy named
+            Atticus, then sold to you for nineteen dollars with a story about his
+            grandmother. The story is not the flavor. The barrel is not the flavor.
+            <span class="text-ink">The chili is the flavor.</span>
+          </p>
+          <p>
+            We make ours in a real factory, on purpose, in volume, so it costs six
+            bucks and tastes like you'd actually want to put it on food more than once.
+            No founder's note. No mission. No mushroom adaptogens. Just heat that
+            shows up.
+          </p>
+        </div>
+        <a href="#heats" data-reveal style="--i:3"
+           class="mt-9 inline-flex items-center gap-2 text-[14px] font-800 uppercase tracking-wide text-ember transition-colors hover:text-flame">
+          Skip the lore, grab a bottle
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9m0 0L8.5 4.5M12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STUFF — cheap merch beat (LD's "KILLER MERCH") ============ -->
+  <section id="stuff" class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:py-28" aria-labelledby="stuff-h">
+    <div class="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
+      <div>
+        <h2 id="stuff-h" data-reveal class="coverline font-display uppercase text-[clamp(2.4rem,8vw,5.5rem)] text-ink display">
+          Cheap stuff,<br /><span class="text-ember">loudly.</span>
+        </h2>
+        <p data-reveal style="--i:1" class="mt-6 max-w-md text-[16px] leading-relaxed text-muted">
+          We put the logo on things. The things are not artisanal either. The
+          shirt is a shirt. It costs what a shirt costs.
+        </p>
+        <div data-reveal style="--i:2" class="mt-8 flex flex-wrap gap-3">
+          <a href="#crowd" class="inline-flex items-center gap-2 rounded-full bg-ember px-6 py-3 text-[14px] font-800 uppercase tracking-wide text-char transition-colors hover:bg-flame">
+            See the whole shelf
+          </a>
+        </div>
+      </div>
+
+      <!-- one product object, with price + add to cart (faithful to LD's single merch tile) -->
+      <div data-reveal style="--i:1" class="rounded-2xl border border-line bg-char p-5 sm:p-7">
+        <div class="graded-photo relative mb-5 grid aspect-[4/3] place-items-center overflow-hidden rounded-xl bg-[#1a120c]">
+          <!-- IMAGE: merch object -->
+          <img src="assets/merch-tee.jpg"
+               alt="A folded black t-shirt with the red Brûle wordmark and a small flame screen-printed on the chest"
+               class="h-full w-full object-cover"
+               width="1200" height="900" loading="lazy"
+               onerror="this.parentElement.classList.add('ph-merch')" />
+          <span class="ph-fallback pointer-events-none absolute inset-0 hidden place-items-center font-display text-6xl text-ember/30">TEE</span>
+        </div>
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h3 class="font-display text-2xl uppercase tracking-wide text-ink">The "no backstory" tee</h3>
+            <p class="mt-1 text-[13px] font-500 text-muted">Black · heavy cotton · screen-printed flame</p>
+          </div>
+          <span class="tnum shrink-0 font-display text-3xl text-ember">$24</span>
+        </div>
+        <button class="mt-5 w-full rounded-xl bg-ink py-3 text-[14px] font-800 uppercase tracking-wide text-char transition-colors hover:bg-bone">
+          Add to cart
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE MOB — huge social-proof numbers (LD's "FOR A GOOD TIME CALL") ============ -->
+  <section id="crowd" class="border-t border-line bg-char" aria-labelledby="crowd-h">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:py-28">
+      <h2 id="crowd-h" data-reveal class="coverline mb-12 font-display uppercase text-[clamp(2.2rem,7vw,4.5rem)] text-ink display">
+        For a good time,<br /><span class="text-ember">come yell with us.</span>
+      </h2>
+
+      <div class="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-3">
+        <div data-reveal class="bg-char p-7">
+          <p class="tnum font-display text-[clamp(2.8rem,8vw,4.5rem)] leading-none text-ember">1.2M</p>
+          <p class="mt-2 text-[14px] font-600 text-muted">bottles shipped, none aged in oak</p>
+        </div>
+        <div data-reveal style="--i:1" class="bg-char p-7">
+          <p class="tnum font-display text-[clamp(2.8rem,8vw,4.5rem)] leading-none text-ink">$6</p>
+          <p class="mt-2 text-[14px] font-600 text-muted">flat. every heat. forever, probably</p>
+        </div>
+        <div data-reveal style="--i:2" class="bg-char p-7">
+          <p class="tnum font-display text-[clamp(2.8rem,8vw,4.5rem)] leading-none text-ink">0</p>
+          <p class="mt-2 text-[14px] font-600 text-muted">grandmothers mentioned on the label</p>
+        </div>
+      </div>
+
+      <!-- a real-human pull-quote, not a fake testimonial wall -->
+      <figure data-reveal class="mt-12 max-w-3xl">
+        <blockquote class="font-display text-[clamp(1.6rem,4.5vw,2.6rem)] uppercase leading-[1.05] text-ink display">
+          "Tastes like it costs four times this and has none<br class="hidden sm:block" />
+          of the personality of the people who'd charge that."
+        </blockquote>
+        <figcaption class="mt-4 text-[13px] font-600 uppercase tracking-wide text-faint">
+          — a real review we did not pay for
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER with integrated quiet close (no separate dark CTA band) ============ -->
+<footer class="border-t border-line bg-bg">
+  <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+    <div class="flex flex-col gap-12 lg:flex-row lg:items-end lg:justify-between">
+      <div>
+        <p class="font-display text-[clamp(2.2rem,6vw,4rem)] uppercase leading-none text-ink display">
+          Go find<br /><span class="text-ember">the heat.</span>
+        </p>
+        <a href="#heats" data-magnetic
+           class="mt-7 inline-flex items-center gap-2 rounded-full bg-ember px-7 py-3.5 text-[15px] font-800 uppercase tracking-wide text-char transition-transform hover:bg-flame">
+          Find the heat
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h9m0 0L8.5 4.5M12 8l-3.5 3.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-x-12 gap-y-8 text-[14px] sm:grid-cols-3">
+        <div>
+          <p class="mb-3 text-[11px] font-800 uppercase tracking-[0.16em] text-faint">The sauce</p>
+          <ul class="space-y-2 text-muted">
+            <li><a href="#heats" class="transition-colors hover:text-ink">The three heats</a></li>
+            <li><a href="#manifesto" class="transition-colors hover:text-ink">Why so loud</a></li>
+            <li><a href="#stuff" class="transition-colors hover:text-ink">Stuff with the logo</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="mb-3 text-[11px] font-800 uppercase tracking-[0.16em] text-faint">The company</p>
+          <ul class="space-y-2 text-muted">
+            <li><a href="#" class="transition-colors hover:text-ink">Where to buy</a></li>
+            <li><a href="#" class="transition-colors hover:text-ink">Wholesale</a></li>
+            <li><a href="#" class="transition-colors hover:text-ink">Spill report</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="mb-3 text-[11px] font-800 uppercase tracking-[0.16em] text-faint">The mob</p>
+          <ul class="space-y-2 text-muted">
+            <li><a href="#" class="transition-colors hover:text-ink">Instagram</a></li>
+            <li><a href="#" class="transition-colors hover:text-ink">TikTok</a></li>
+            <li><a href="#" class="transition-colors hover:text-ink">Newsletter</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-14 flex flex-col gap-3 border-t border-line pt-6 text-[12px] text-faint sm:flex-row sm:items-center sm:justify-between">
+      <p class="font-display text-base uppercase tracking-wide text-muted">Brûle</p>
+      <p>© <span class="tnum">2026</span> Brûle Hot Sauce Co. Loud. Cheap. Good. No grandmother was involved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // blur-in reveal
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.querySelectorAll('[data-reveal]').forEach(el=>el.classList.add('is-visible'));
+      return;
+    }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold:.15 });
+    document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
+  })();
+
+  // magnetic CTAs
+  (function(){
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('[data-magnetic]').forEach(b=>{
+      b.addEventListener('mousemove', e=>{
+        const r=b.getBoundingClientRect();
+        b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.18}px)`;
+      });
+      b.addEventListener('mouseleave', ()=>{ b.style.transform=''; });
+    });
+  })();
+
+  // reveal the graded fallback glyph when a bottle/merch image fails to load
+  (function(){
+    document.querySelectorAll('img[onerror]').forEach(img=>{
+      const showFb=()=>{
+        const fb = img.parentElement && img.parentElement.querySelector('.ph-fallback');
+        if (fb){ fb.style.display='grid'; }
+      };
+      if (img.complete && img.naturalWidth===0) showFb();
+      img.addEventListener('error', showFb);
+    });
+  })();
+</script>
+</body>
+</html>

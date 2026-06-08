@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Atlas — One account for your whole balance sheet</title>
+<meta name="description" content="Atlas keeps operating cash, treasury yield, and corporate cards in one calm dashboard — built for founders and finance leads." />
+<meta property="og:title" content="Atlas — One account for your whole balance sheet" />
+<meta property="og:description" content="Operating cash, treasury yield, and corporate cards, in one calm dashboard." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          page:    '#171721',
+          surface: '#1E1E2A',
+          raised:  '#272735',
+          line:    'rgba(255,255,255,0.06)',
+          ink:     '#EDEDF3',
+          muted:   '#C3C3CC',
+          faint:   '#8A8A99',
+          bright:  '#F4F5F9',
+          accent:  '#5266EB',
+          'accent-soft': '#9CB4E8',
+          'accent-pale': '#AFB2CE',
+        },
+        fontFamily: {
+          sans: ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
+        },
+        fontWeight: {
+          '400': '400', '500': '500', '600': '600', '700': '700',
+        },
+        borderRadius: {
+          sm: '4px', DEFAULT: '8px', md: '8px', lg: '12px', xl: '16px', pill: '32px',
+        },
+        boxShadow: {
+          card: '0 1px 0 rgba(255,255,255,0.04) inset, 0 18px 40px -20px rgba(0,0,0,0.7), 0 4px 12px -6px rgba(0,0,0,0.5)',
+          float: '0 1px 0 rgba(255,255,255,0.05) inset, 0 32px 70px -24px rgba(0,0,0,0.8)',
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { --accent: #5266EB; }
+  html { background:#171721; }
+  body {
+    font-family:'Hanken Grotesk', system-ui, sans-serif;
+    letter-spacing:0.012em;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .tnum { font-variant-numeric: tabular-nums; }
+  .display { letter-spacing:-0.018em; }
+  .track-body { letter-spacing:0.012em; }
+
+  /* ---- Blur-in reveal ---- */
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal] {
+      opacity:0; filter:blur(12px); transform:translateY(20px);
+      transition:opacity .6s ease, filter .6s ease, transform .6s cubic-bezier(.2,.7,.2,1);
+      transition-delay:calc(var(--i,0)*70ms);
+    }
+    [data-reveal].is-visible { opacity:1; filter:blur(0); transform:none; }
+  }
+
+  /* ---- Scroll progress ---- */
+  .progress {
+    position:fixed; top:0; left:0; height:2px; width:100%; transform-origin:left;
+    transform:scaleX(0); background:var(--accent); z-index:60;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      .progress { animation:growbar linear both; animation-timeline:scroll(root block); }
+      @keyframes growbar { to { transform:scaleX(1); } }
+    }
+  }
+
+  /* ---- Logo marquee ---- */
+  .marquee { overflow:hidden; -webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+             mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); }
+  .track { display:flex; gap:4.5rem; width:max-content; animation:marquee 40s linear infinite; }
+  .marquee:hover .track { animation-play-state:paused; }
+  @keyframes marquee { to { transform:translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .track { animation:none; } }
+
+  /* ---- Sparkline draw ---- */
+  .spark-path { stroke-dasharray:1; stroke-dashoffset:1; }
+  @media (prefers-reduced-motion: no-preference) {
+    .spark-path.is-visible {
+      animation:draw 1.6s cubic-bezier(.4,0,.2,1) forwards;
+    }
+  }
+  @keyframes draw { to { stroke-dashoffset:0; } }
+
+  /* ---- Graded image fallback (shows until <img> loads) ---- */
+  .img-fallback {
+    background:
+      radial-gradient(120% 120% at 30% 20%, rgba(82,102,235,0.28), transparent 60%),
+      radial-gradient(120% 120% at 80% 90%, rgba(156,180,232,0.16), transparent 55%),
+      linear-gradient(135deg, #21222F 0%, #171721 100%);
+  }
+
+  /* ---- Carousel ---- */
+  .carousel-track { display:flex; transition:transform .5s cubic-bezier(.2,.7,.2,1); }
+  details > summary { list-style:none; cursor:pointer; }
+  details > summary::-webkit-details-marker { display:none; }
+  details[open] .acc-icon { transform:rotate(45deg); }
+
+  /* hide scrollbars on the offer scroller */
+  .no-sb::-webkit-scrollbar { display:none; }
+  .no-sb { -ms-overflow-style:none; scrollbar-width:none; }
+</style>
+</head>
+
+<body class="bg-page text-ink antialiased track-body">
+
+<!-- scroll progress -->
+<div class="progress" aria-hidden="true"></div>
+
+<!-- grain -->
+<svg class="pointer-events-none fixed inset-0 -z-10 h-full w-full opacity-[0.035]" aria-hidden="true">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" /></filter>
+  <rect width="100%" height="100%" filter="url(#grain)" />
+</svg>
+
+<!-- ====================================================== NAV -->
+<header class="absolute inset-x-0 top-0 z-50">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-5 sm:px-8" aria-label="Primary">
+    <a href="#top" class="flex items-center gap-2.5 text-[15px] font-600 tracking-[0.14em] text-white">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" stroke="white" stroke-opacity="0.85" stroke-width="1.4"/>
+        <path d="M12 2.5c2.6 2.4 4 5.7 4 9.5s-1.4 7.1-4 9.5c-2.6-2.4-4-5.7-4-9.5s1.4-7.1 4-9.5Z" stroke="white" stroke-opacity="0.7" stroke-width="1.2"/>
+        <path d="M2.5 12h19" stroke="white" stroke-opacity="0.7" stroke-width="1.2"/>
+      </svg>
+      <span>ATLAS</span>
+    </a>
+    <div class="hidden items-center gap-8 text-[14px] font-500 text-white/75 md:flex">
+      <a href="#dashboard" class="transition-colors hover:text-white">Product</a>
+      <a href="#treasury" class="transition-colors hover:text-white">Treasury</a>
+      <a href="#cards-grid" class="transition-colors hover:text-white">Cards</a>
+      <a href="#spotlight" class="transition-colors hover:text-white">Company</a>
+      <a href="#pricing" class="transition-colors hover:text-white">Pricing</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <a href="#close" class="hidden text-[14px] font-500 text-white/75 transition-colors hover:text-white sm:inline">Log in</a>
+      <a href="#close" data-magnetic
+         class="inline-flex items-center rounded-pill bg-accent px-5 py-2 text-[14px] font-500 text-white shadow-[0_8px_24px_-10px_rgba(82,102,235,0.9)] transition-[transform,background] hover:bg-[#5e72f5]">
+        Open Atlas
+      </a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- ============================================ 1 · CINEMATIC PHOTO HERO -->
+<section class="relative isolate min-h-[760px] overflow-hidden" aria-labelledby="hero-title">
+  <!-- full-bleed photo + graded fallback -->
+  <div class="img-fallback absolute inset-0 -z-10">
+    <img src="assets/hero-valley.jpg" alt=""
+         class="h-full w-full object-cover" fetchpriority="high" />
+  </div>
+  <!-- scrims for text legibility — kept light so the cinematic photo reads (Mercury shows its hero photo prominently) -->
+  <div class="absolute inset-0 -z-10 bg-gradient-to-b from-[#13131C]/55 via-[#13131C]/10 to-[#171721]" aria-hidden="true"></div>
+  <!-- focused readability pool behind the headline only -->
+  <div class="absolute inset-x-0 top-0 -z-10 h-[420px] bg-[radial-gradient(60%_70%_at_50%_38%,rgba(19,19,28,0.6),transparent_70%)]" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 bottom-0 -z-10 h-48 bg-gradient-to-t from-page to-transparent" aria-hidden="true"></div>
+
+  <div class="mx-auto flex max-w-3xl flex-col items-center px-5 pt-40 pb-28 text-center sm:pt-44">
+    <h1 id="hero-title" data-reveal style="--i:0"
+        class="display text-balance text-[34px] font-500 leading-[1.06] text-white sm:text-[44px] lg:text-[52px]">
+      One account for your whole balance sheet
+    </h1>
+    <p data-reveal style="--i:1"
+       class="mt-5 max-w-xl text-[17px] leading-relaxed text-white/80 sm:text-[19px]">
+      Operating cash, treasury yield, and corporate cards — held together in one calm dashboard,
+      built for the people who actually move the money.<sup class="text-white/55">1</sup>
+    </p>
+
+    <form data-reveal style="--i:2" onsubmit="return false"
+          class="mt-9 flex w-full max-w-md items-center gap-2 rounded-pill bg-white/10 p-1.5 ring-1 ring-white/15 backdrop-blur-md">
+      <label for="hero-email" class="sr-only">Work email</label>
+      <input id="hero-email" type="email" inputmode="email" placeholder="you@yourcompany.com"
+             class="min-w-0 flex-1 bg-transparent px-4 py-2 text-[15px] text-white placeholder:text-white/55 focus:outline-none" />
+      <a href="#close"
+         class="inline-flex shrink-0 items-center rounded-pill bg-accent px-5 py-2.5 text-[14px] font-500 text-white transition-colors hover:bg-[#5e72f5]">
+        Open Atlas
+      </a>
+    </form>
+    <p data-reveal style="--i:3" class="mt-4 text-[13px] text-white/55">Apply in 8 minutes · no minimum balance · no monthly fee</p>
+  </div>
+
+  <!-- bottom disclosure bar (Mercury pattern) -->
+  <div class="absolute inset-x-0 bottom-0">
+    <p class="mx-auto max-w-4xl px-5 pb-4 text-center text-[11px] leading-relaxed text-white/45">
+      Atlas is a financial technology company, not a bank. Banking services provided through partner banks, Members FDIC.
+    </p>
+  </div>
+</section>
+
+<!-- ============================================ 2 · PRODUCT DASHBOARD -->
+<section id="dashboard" class="relative px-4 pb-24 sm:px-6" aria-labelledby="dash-title">
+  <div class="mx-auto max-w-6xl">
+    <h2 id="dash-title" class="sr-only">The Atlas console</h2>
+
+    <!-- ambient glow -->
+    <div class="pointer-events-none absolute left-1/2 top-10 -z-0 h-72 w-[80%] -translate-x-1/2 rounded-full bg-accent/20 blur-[120px]" aria-hidden="true"></div>
+
+    <div data-reveal class="relative overflow-hidden rounded-xl bg-surface text-muted shadow-float ring-1 ring-white/[0.07]">
+      <!-- window chrome -->
+      <div class="flex items-center gap-2 border-b border-white/[0.06] px-4 py-2.5">
+        <span class="size-2.5 rounded-full bg-white/15"></span>
+        <span class="size-2.5 rounded-full bg-white/15"></span>
+        <span class="size-2.5 rounded-full bg-white/15"></span>
+        <span class="ml-3 text-[12px] text-faint">app.atlas.co</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-[200px_1fr]">
+        <!-- sidebar -->
+        <aside class="hidden border-r border-white/[0.06] bg-[#191926] p-3 text-[13px] lg:block">
+          <div class="flex items-center gap-2 px-2 py-1.5 font-600 text-ink">
+            <span class="grid size-5 place-items-center rounded bg-accent/90 text-[11px] font-700 text-white">N</span>
+            Northbeam Inc.
+          </div>
+          <nav class="mt-3 space-y-0.5">
+            <a class="flex items-center justify-between rounded-md bg-white/[0.06] px-2 py-1.5 text-ink">Overview <span class="tnum text-faint">⌘1</span></a>
+            <a class="block rounded-md px-2 py-1.5 text-muted/80 hover:bg-white/[0.04]">Accounts</a>
+            <a class="block rounded-md px-2 py-1.5 text-muted/80 hover:bg-white/[0.04]">Treasury</a>
+            <a class="block rounded-md px-2 py-1.5 text-muted/80 hover:bg-white/[0.04]">Cards</a>
+            <a class="block rounded-md px-2 py-1.5 text-muted/80 hover:bg-white/[0.04]">Bill pay</a>
+            <a class="block rounded-md px-2 py-1.5 text-muted/80 hover:bg-white/[0.04]">Payroll</a>
+          </nav>
+          <p class="px-2 pb-1 pt-5 text-[11px] uppercase tracking-wide text-faint/70">Insights</p>
+          <a class="block rounded-md px-2 py-1.5 text-muted/80 hover:bg-white/[0.04]">Runway</a>
+          <a class="block rounded-md px-2 py-1.5 text-muted/80 hover:bg-white/[0.04]">Reports</a>
+        </aside>
+
+        <!-- content -->
+        <div class="min-w-0 p-4 sm:p-6">
+          <!-- balance + tabs -->
+          <div class="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <p class="text-[13px] text-faint">Total balance · all accounts</p>
+              <p class="mt-1 flex items-baseline gap-2">
+                <span class="display text-[34px] font-600 leading-none text-ink tnum sm:text-[40px]" data-count="4612984.20" data-prefix="$">$0.00</span>
+                <span class="inline-flex items-center gap-1 rounded-pill bg-[#1f3a2b] px-2 py-0.5 text-[12px] font-500 text-emerald-300 tnum">
+                  <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 1.5 8.5 7H1.5L5 1.5Z" fill="currentColor"/></svg>
+                  3.1%
+                </span>
+              </p>
+            </div>
+            <div class="flex items-center gap-1 rounded-lg bg-[#191926] p-1 text-[12px]">
+              <button class="rounded-md bg-white/[0.07] px-2.5 py-1 text-ink">30D</button>
+              <button class="rounded-md px-2.5 py-1 text-muted/70 hover:text-ink">90D</button>
+              <button class="rounded-md px-2.5 py-1 text-muted/70 hover:text-ink">YTD</button>
+            </div>
+          </div>
+
+          <!-- chart -->
+          <div class="mt-5 rounded-lg bg-[#191926] p-4 ring-1 ring-white/[0.04]">
+            <svg viewBox="0 0 720 150" class="h-32 w-full" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#5266EB" stop-opacity="0.28"/>
+                  <stop offset="100%" stop-color="#5266EB" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <line x1="0" y1="112" x2="720" y2="112" stroke="#fff" stroke-opacity="0.05"/>
+              <line x1="0" y1="74"  x2="720" y2="74"  stroke="#fff" stroke-opacity="0.05"/>
+              <line x1="0" y1="36"  x2="720" y2="36"  stroke="#fff" stroke-opacity="0.05"/>
+              <path d="M0 118 L60 110 L120 116 L180 96 L240 102 L300 80 L360 86 L420 60 L480 70 L540 44 L600 52 L660 28 L720 24 L720 150 L0 150 Z" fill="url(#area)"/>
+              <path id="dash-spark" class="spark-path"
+                    d="M0 118 L60 110 L120 116 L180 96 L240 102 L300 80 L360 86 L420 60 L480 70 L540 44 L600 52 L660 28 L720 24"
+                    fill="none" stroke="#9CB4E8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    pathLength="1"/>
+              <circle cx="720" cy="24" r="3.5" fill="#9CB4E8"/>
+            </svg>
+            <div class="mt-1 flex justify-between text-[11px] text-faint tnum">
+              <span>May 09</span><span>May 18</span><span>May 27</span><span>Jun 05</span>
+            </div>
+          </div>
+
+          <!-- accounts panel + side cards -->
+          <div class="mt-5 grid gap-4 lg:grid-cols-[1.5fr_1fr]">
+            <!-- accounts ledger -->
+            <div class="rounded-lg bg-[#191926] ring-1 ring-white/[0.04]">
+              <div class="flex items-center justify-between border-b border-white/[0.06] px-4 py-3">
+                <span class="text-[13px] font-600 text-ink">Accounts</span>
+                <span class="text-[12px] text-faint tnum">4 active</span>
+              </div>
+              <ul class="text-[13px]">
+                <li class="flex items-center gap-3 px-4 py-3 hover:bg-white/[0.02]">
+                  <span class="size-1.5 rounded-full bg-accent-soft"></span>
+                  <span class="text-ink">Operating</span>
+                  <span class="text-faint">· USD</span>
+                  <span class="ml-auto tnum text-ink">$1,284,310.55</span>
+                </li>
+                <li class="flex items-center gap-3 border-t border-white/[0.04] px-4 py-3 hover:bg-white/[0.02]">
+                  <span class="size-1.5 rounded-full bg-emerald-400"></span>
+                  <span class="text-ink">Treasury</span>
+                  <span class="text-faint">· 4.32% APY</span>
+                  <span class="ml-auto tnum text-ink">$2,940,118.00</span>
+                </li>
+                <li class="flex items-center gap-3 border-t border-white/[0.04] px-4 py-3 hover:bg-white/[0.02]">
+                  <span class="size-1.5 rounded-full bg-amber-400"></span>
+                  <span class="text-ink">Payroll</span>
+                  <span class="text-faint">· reserved</span>
+                  <span class="ml-auto tnum text-ink">$318,540.65</span>
+                </li>
+                <li class="flex items-center gap-3 border-t border-white/[0.04] px-4 py-3 hover:bg-white/[0.02]">
+                  <span class="size-1.5 rounded-full bg-faint"></span>
+                  <span class="text-ink">Payable</span>
+                  <span class="text-faint">· scheduled</span>
+                  <span class="ml-auto tnum text-muted">$70,015.00</span>
+                </li>
+              </ul>
+            </div>
+
+            <!-- side: yield card + activity -->
+            <div class="flex flex-col gap-4">
+              <div class="rounded-lg bg-[#191926] p-4 ring-1 ring-white/[0.04]">
+                <p class="text-[12px] text-faint">30-day treasury yield earned</p>
+                <p class="mt-1 display text-[26px] font-600 text-ink tnum">$10,418.72</p>
+                <div class="mt-3 h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
+                  <div class="h-full w-[68%] rounded-full bg-gradient-to-r from-accent to-accent-soft"></div>
+                </div>
+                <p class="mt-2 text-[11px] text-faint tnum">68% of monthly target</p>
+              </div>
+              <div class="rounded-lg bg-[#191926] p-4 ring-1 ring-white/[0.04]">
+                <p class="text-[12px] text-faint">Latest activity</p>
+                <ul class="mt-2 space-y-2 text-[12.5px]">
+                  <li class="flex items-center justify-between">
+                    <span class="text-muted">AWS · invoice</span>
+                    <span class="tnum text-muted">−$3,902.16</span>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <span class="text-muted">Stripe · payout</span>
+                    <span class="tnum text-emerald-300/90">+$48,210.00</span>
+                  </li>
+                  <li class="flex items-center justify-between">
+                    <span class="text-muted">Card · Figma</span>
+                    <span class="tnum text-muted">−$540.00</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- product card row: Treasury / Corporate card / Bill pay -->
+          <div class="mt-4 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-lg bg-[#191926] p-4 ring-1 ring-white/[0.04]">
+              <div class="flex items-center gap-2 text-[13px] font-600 text-ink">
+                <span class="grid size-7 place-items-center rounded-md bg-accent/15 text-accent-soft">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M3 17l5-5 4 4 8-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                Treasury yield
+              </div>
+              <p class="mt-2 text-[20px] font-600 text-ink tnum">4.32% <span class="text-[12px] font-400 text-faint">APY</span></p>
+              <p class="mt-1 text-[12px] text-faint">Idle cash swept into T-bills, daily.</p>
+            </div>
+            <div class="rounded-lg bg-[#191926] p-4 ring-1 ring-white/[0.04]">
+              <div class="flex items-center gap-2 text-[13px] font-600 text-ink">
+                <span class="grid size-7 place-items-center rounded-md bg-accent/15 text-accent-soft">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="2"/><path d="M3 10h18" stroke="currentColor" stroke-width="2"/></svg>
+                </span>
+                Corporate card
+              </div>
+              <p class="mt-2 text-[20px] font-600 text-ink tnum">$84,200 <span class="text-[12px] font-400 text-faint">limit</span></p>
+              <p class="mt-1 text-[12px] text-faint">Issue virtual cards with per-vendor caps.</p>
+            </div>
+            <div class="rounded-lg bg-[#191926] p-4 ring-1 ring-white/[0.04]">
+              <div class="flex items-center gap-2 text-[13px] font-600 text-ink">
+                <span class="grid size-7 place-items-center rounded-md bg-accent/15 text-accent-soft">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                </span>
+                Bill pay
+              </div>
+              <p class="mt-2 text-[20px] font-600 text-ink tnum">12 <span class="text-[12px] font-400 text-faint">scheduled</span></p>
+              <p class="mt-1 text-[12px] text-faint">Approve and send, free, in two clicks.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ 3 · LOGO WALL -->
+<section class="px-5 py-16 sm:px-6" aria-labelledby="logos-title">
+  <div class="mx-auto max-w-6xl">
+    <h2 id="logos-title" data-reveal class="text-center text-[15px] font-500 text-faint">
+      Trusted by 1,200+ of the most disciplined teams building today
+    </h2>
+    <div class="marquee mt-9">
+      <div class="track items-center text-[19px] font-600 tracking-tight text-white/35">
+        <span>Partiful</span><span>Phantom</span><span>Bttrwrth</span><span>Northwind</span>
+        <span>Cadence</span><span>Loop</span><span>Sundial</span><span>Maven</span>
+        <!-- duplicate set for seamless loop -->
+        <span>Partiful</span><span>Phantom</span><span>Bttrwrth</span><span>Northwind</span>
+        <span>Cadence</span><span>Loop</span><span>Sundial</span><span>Maven</span>
+      </div>
+    </div>
+    <p class="mt-6 text-center text-[12px] text-faint/70">Logos shown are illustrative placeholders, swap for real customers.</p>
+  </div>
+</section>
+
+<!-- ============================================ 4 · TESTIMONIAL CAROUSEL -->
+<section class="px-4 py-12 sm:px-6" aria-labelledby="carousel-title">
+  <h2 id="carousel-title" class="sr-only">What founders say about Atlas</h2>
+  <div class="mx-auto max-w-5xl">
+    <div data-reveal class="relative overflow-hidden rounded-xl shadow-card ring-1 ring-white/[0.07]">
+      <!-- soft image bg + fallback -->
+      <div class="img-fallback absolute inset-0">
+        <img src="assets/carousel-bg.jpg" alt="" class="h-full w-full object-cover" loading="lazy" width="1280" height="520" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-page via-page/80 to-page/30" aria-hidden="true"></div>
+
+      <div class="carousel-track relative" id="carouselTrack">
+        <!-- slide 1 -->
+        <figure class="w-full shrink-0 px-7 py-16 sm:px-14 sm:py-20">
+          <blockquote class="max-w-xl text-[22px] font-500 leading-snug text-white sm:text-[27px]">
+            "We closed four accounts and three logins down to one Atlas tab. Our month-end close went from two days to an afternoon."
+          </blockquote>
+          <figcaption class="mt-7 text-[14px] text-white/70">
+            <span class="font-600 text-white">Priya Nayar</span> · Head of Finance, Cadence
+          </figcaption>
+        </figure>
+        <!-- slide 2 -->
+        <figure class="w-full shrink-0 px-7 py-16 sm:px-14 sm:py-20">
+          <blockquote class="max-w-xl text-[22px] font-500 leading-snug text-white sm:text-[27px]">
+            "The treasury sweep alone earns more than our old bank ever paid in interest, and I never had to think about it once."
+          </blockquote>
+          <figcaption class="mt-7 text-[14px] text-white/70">
+            <span class="font-600 text-white">Marcus Bell</span> · Founder &amp; CEO, Sundial
+          </figcaption>
+        </figure>
+        <!-- slide 3 -->
+        <figure class="w-full shrink-0 px-7 py-16 sm:px-14 sm:py-20">
+          <blockquote class="max-w-xl text-[22px] font-500 leading-snug text-white sm:text-[27px]">
+            "Every card, every vendor, every cent of runway in one view. Atlas is the first finance tool my whole team actually opens."
+          </blockquote>
+          <figcaption class="mt-7 text-[14px] text-white/70">
+            <span class="font-600 text-white">Dana Okafor</span> · COO, Loop
+          </figcaption>
+        </figure>
+      </div>
+
+      <!-- controls -->
+      <div class="absolute bottom-6 right-7 flex items-center gap-3">
+        <div class="flex items-center gap-1.5" id="carouselDots" aria-hidden="true">
+          <button class="size-2 rounded-full bg-white/80" data-dot="0" aria-label="Slide 1"></button>
+          <button class="size-2 rounded-full bg-white/30" data-dot="1" aria-label="Slide 2"></button>
+          <button class="size-2 rounded-full bg-white/30" data-dot="2" aria-label="Slide 3"></button>
+        </div>
+        <button id="carouselPrev" class="grid size-9 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/15 transition hover:bg-white/20" aria-label="Previous">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button id="carouselNext" class="grid size-9 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/15 transition hover:bg-white/20" aria-label="Next">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ 5 · 2×2 IMAGE-CARD GRID (FIVE TABS) -->
+<section class="px-5 py-20 sm:px-6 sm:py-28" aria-labelledby="fivetabs-title">
+  <div class="mx-auto max-w-6xl">
+    <h2 id="fivetabs-title" data-reveal class="display max-w-2xl text-[28px] font-500 leading-tight text-ink sm:text-[36px]">
+      Running money shouldn't take five tabs
+    </h2>
+    <p data-reveal style="--i:1" class="mt-4 max-w-xl text-[17px] text-muted">
+      The work that used to live in a bank portal, a spreadsheet, a brokerage, and three card apps now lives in one place.
+    </p>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2">
+      <!-- card 1 -->
+      <article data-reveal class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[16/9] overflow-hidden">
+          <img src="assets/card-move.jpg" alt="Funds routing between operating, treasury and payroll accounts"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="640" height="360" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">Move cash in seconds</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Route between operating, treasury, and payroll instantly. Same-day ACH and free wires keep money where it earns most.</p>
+        </div>
+      </article>
+      <!-- card 2 -->
+      <article data-reveal style="--i:1" class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[16/9] overflow-hidden">
+          <img src="assets/card-cards.jpg" alt="A stack of issued virtual and physical corporate cards"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="640" height="360" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">Issue a card on the spot</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Spin up a virtual card with a vendor cap in one click, or order metal for the team. Every swipe is categorized automatically.</p>
+        </div>
+      </article>
+      <!-- card 3 -->
+      <article data-reveal class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[16/9] overflow-hidden">
+          <img src="assets/card-bills.jpg" alt="An inbox of incoming bills being approved and scheduled"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="640" height="360" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">Pay bills without the chase</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Forward an invoice, set an approval rule, and Atlas does the rest. No per-payment fees, no five-day float.</p>
+        </div>
+      </article>
+      <!-- card 4 -->
+      <article data-reveal style="--i:1" class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[16/9] overflow-hidden">
+          <img src="assets/card-runway.jpg" alt="A runway projection chart trending across the months"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="640" height="360" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">See your runway live</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Burn, runway, and yield update with every transaction, so the number your board asks for is always one glance away.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ 6 · BIG PULL-QUOTE -->
+<section class="px-5 py-24 sm:px-6 sm:py-32" aria-labelledby="quote-title">
+  <div class="mx-auto max-w-3xl text-center">
+    <h2 id="quote-title" class="sr-only">Founder testimonial</h2>
+    <blockquote data-reveal class="display text-balance text-[26px] font-500 leading-snug text-ink sm:text-[34px]">
+      "Atlas completely changed what I expect a business account to do. The craft is so far beyond what a traditional bank has ever shown us."
+    </blockquote>
+    <figcaption data-reveal style="--i:1" class="mt-8 text-[15px] text-muted">
+      <span class="font-600 text-ink">Paul Copplestone</span> — Founder &amp; CEO, Northbeam
+    </figcaption>
+  </div>
+</section>
+
+<!-- ============================================ 7 · TREASURY FEATURE (visual + accordion) -->
+<section id="treasury" class="px-5 py-20 sm:px-6 sm:py-24" aria-labelledby="treasury-title">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+    <!-- accordion -->
+    <div>
+      <p class="text-[13px] font-600 uppercase tracking-[0.14em] text-accent-soft">Treasury</p>
+      <h2 id="treasury-title" data-reveal class="display mt-3 text-[28px] font-500 leading-tight text-ink sm:text-[36px]">
+        Get started fast. And never stop moving.
+      </h2>
+      <p data-reveal style="--i:1" class="mt-4 text-[17px] text-muted">
+        Your idle balance shouldn't sit still. Atlas sweeps it into a government money-market portfolio automatically, and you can move it back the moment you need it.
+      </p>
+
+      <div class="mt-8 divide-y divide-white/[0.07] border-y border-white/[0.07]">
+        <details open class="group py-4">
+          <summary class="flex items-center justify-between text-[16px] font-600 text-ink">
+            Apply in 10 minutes
+            <svg class="acc-icon size-5 text-faint transition-transform" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <p class="mt-3 text-[15px] leading-relaxed text-muted">No paperwork stack, no branch visit. Verify your entity, connect a funding source, and you're holding cash the same day.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="flex items-center justify-between text-[16px] font-600 text-ink">
+            Earn yield from day one
+            <svg class="acc-icon size-5 text-faint transition-transform" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <p class="mt-3 text-[15px] leading-relaxed text-muted">The treasury sweep starts the moment your first deposit clears. No minimum, no lockup, no tier you have to graduate into.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="flex items-center justify-between text-[16px] font-600 text-ink">
+            Settle bills in seconds
+            <svg class="acc-icon size-5 text-faint transition-transform" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <p class="mt-3 text-[15px] leading-relaxed text-muted">Pull cash out of treasury and into a vendor's account on the same business day, with full visibility on where every dollar is.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- visual: treasury sweep card -->
+    <div data-reveal class="relative rounded-xl bg-surface p-6 shadow-float ring-1 ring-white/[0.07]">
+      <div class="pointer-events-none absolute -right-10 -top-10 -z-0 h-48 w-48 rounded-full bg-accent/25 blur-[90px]" aria-hidden="true"></div>
+      <div class="relative">
+        <div class="flex items-center justify-between">
+          <p class="text-[13px] text-faint">Treasury portfolio</p>
+          <span class="rounded-pill bg-emerald-400/15 px-2 py-0.5 text-[12px] font-500 text-emerald-300">Sweeping</span>
+        </div>
+        <p class="mt-2 display text-[32px] font-600 text-ink tnum">$2,940,118.00</p>
+        <p class="text-[13px] text-faint tnum">Yielding <span class="text-accent-soft">4.32% APY</span> · +$10,418 this month</p>
+
+        <!-- allocation bars -->
+        <div class="mt-6 space-y-3.5">
+          <div>
+            <div class="flex justify-between text-[13px]"><span class="text-muted">3-month T-bills</span><span class="tnum text-ink">52%</span></div>
+            <div class="mt-1.5 h-2 overflow-hidden rounded-full bg-white/[0.06]"><div class="h-full w-[52%] rounded-full bg-accent"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-[13px]"><span class="text-muted">6-month T-bills</span><span class="tnum text-ink">31%</span></div>
+            <div class="mt-1.5 h-2 overflow-hidden rounded-full bg-white/[0.06]"><div class="h-full w-[31%] rounded-full bg-accent-soft"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-[13px]"><span class="text-muted">Money-market fund</span><span class="tnum text-ink">17%</span></div>
+            <div class="mt-1.5 h-2 overflow-hidden rounded-full bg-white/[0.06]"><div class="h-full w-[17%] rounded-full bg-accent-pale"></div></div>
+          </div>
+        </div>
+
+        <div class="mt-6 grid grid-cols-3 gap-3 border-t border-white/[0.07] pt-5 text-center">
+          <div><p class="display text-[20px] font-600 text-ink tnum">T+0</p><p class="text-[11px] text-faint">Liquidity</p></div>
+          <div><p class="display text-[20px] font-600 text-ink tnum">$0</p><p class="text-[11px] text-faint">Min. balance</p></div>
+          <div><p class="display text-[20px] font-600 text-ink tnum">100%</p><p class="text-[11px] text-faint">In your name</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ 8 · STOP LOSING CASH (visual + accordion + disclosures) -->
+<section class="px-5 py-20 sm:px-6 sm:py-24" aria-labelledby="idle-title">
+  <div class="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2">
+    <!-- visual first on desktop -->
+    <div data-reveal class="relative order-2 rounded-xl bg-surface p-6 shadow-float ring-1 ring-white/[0.07] lg:order-1">
+      <div class="pointer-events-none absolute -left-10 -bottom-10 -z-0 h-48 w-48 rounded-full bg-accent-soft/20 blur-[90px]" aria-hidden="true"></div>
+      <div class="relative">
+        <p class="text-[13px] text-faint">Idle vs. earning, last 12 months</p>
+        <p class="mt-2 display text-[30px] font-600 text-ink tnum">$127,400 <span class="text-[14px] font-400 text-emerald-300">earned</span></p>
+        <!-- comparison bars -->
+        <svg viewBox="0 0 320 150" class="mt-5 w-full" aria-hidden="true">
+          <g font-family="Hanken Grotesk" font-size="11" fill="#8A8A99">
+            <text x="0" y="34">Old bank</text>
+            <text x="0" y="92">Atlas</text>
+          </g>
+          <rect x="78" y="22" width="40" height="18" rx="4" fill="#3a3a4a"/>
+          <text x="124" y="35" font-family="Hanken Grotesk" font-size="11" fill="#C3C3CC" class="tnum">$1,900</text>
+          <rect x="78" y="80" width="210" height="18" rx="4" fill="url(#earnbar)"/>
+          <text x="296" y="93" text-anchor="end" font-family="Hanken Grotesk" font-size="11" fill="#171721" font-weight="600" class="tnum">$127,400</text>
+          <defs><linearGradient id="earnbar" x1="0" x2="1"><stop offset="0" stop-color="#5266EB"/><stop offset="1" stop-color="#9CB4E8"/></linearGradient></defs>
+          <line x1="78" y1="12" x2="78" y2="120" stroke="#fff" stroke-opacity="0.08"/>
+        </svg>
+        <p class="mt-3 text-[12px] leading-relaxed text-faint">Illustrative on a $3.0M average idle balance at prevailing rates.<sup>2</sup></p>
+      </div>
+    </div>
+
+    <!-- accordion -->
+    <div class="order-1 lg:order-2">
+      <p class="text-[13px] font-600 uppercase tracking-[0.14em] text-accent-soft">Yield</p>
+      <h2 id="idle-title" data-reveal class="display mt-3 text-[28px] font-500 leading-tight text-ink sm:text-[36px]">
+        Stop losing cash to idle balances
+      </h2>
+      <p data-reveal style="--i:1" class="mt-4 text-[17px] text-muted">
+        Most of a startup's bank balance earns nothing. Atlas puts that money to work the day it lands, without trading liquidity for yield.
+      </p>
+
+      <div class="mt-8 divide-y divide-white/[0.07] border-y border-white/[0.07]">
+        <details open class="group py-4">
+          <summary class="flex items-center justify-between text-[16px] font-600 text-ink">
+            Backed by US Treasuries<sup class="ml-0.5 text-[11px] text-faint">3</sup>
+            <svg class="acc-icon size-5 text-faint transition-transform" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <p class="mt-3 text-[15px] leading-relaxed text-muted">Your treasury balance is invested in a portfolio of short-dated government securities held in your company's name, not lent out on a bank's balance sheet.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="flex items-center justify-between text-[16px] font-600 text-ink">
+            Up to $5M in coverage<sup class="ml-0.5 text-[11px] text-faint">4</sup>
+            <svg class="acc-icon size-5 text-faint transition-transform" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <p class="mt-3 text-[15px] leading-relaxed text-muted">Operating deposits are swept across a network of program banks so eligible balances carry FDIC coverage well past the standard limit.</p>
+        </details>
+        <details class="group py-4">
+          <summary class="flex items-center justify-between text-[16px] font-600 text-ink">
+            Withdraw any business day
+            <svg class="acc-icon size-5 text-faint transition-transform" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </summary>
+          <p class="mt-3 text-[15px] leading-relaxed text-muted">No lockups and no penalty. Pull treasury cash back to operating same-day, so a payroll run or a surprise bill never waits on a settlement window.</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ 9 · SECOND 2×2 IMAGE-CARD GRID -->
+<section class="px-5 py-20 sm:px-6 sm:py-28" aria-labelledby="cfo-title">
+  <div class="mx-auto max-w-6xl">
+    <h2 id="cfo-title" data-reveal class="display max-w-2xl text-[28px] font-500 leading-tight text-ink sm:text-[36px]">
+      Run treasury like a CFO
+    </h2>
+    <p data-reveal style="--i:1" class="mt-4 max-w-xl text-[17px] text-muted">
+      The controls a finance team needs to sleep at night, without hiring one to set them up.
+    </p>
+
+    <div class="mt-12 grid gap-5 sm:grid-cols-2">
+      <article data-reveal class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[16/9] overflow-hidden">
+          <img src="assets/cfo-visibility.jpg" alt="A consolidated cash position across every account"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="640" height="360" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">Total visibility</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Every account, card, and held investment in a single position. Drill from the headline number to the underlying transaction in two clicks.</p>
+        </div>
+      </article>
+      <article data-reveal style="--i:1" class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[16/9] overflow-hidden">
+          <img src="assets/cfo-automation.jpg" alt="Automation rules routing and approving transactions"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="640" height="360" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">Automations</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Auto-sweep above a threshold, route approvals over a limit, and reconcile to your accounting tool without touching a spreadsheet.</p>
+        </div>
+      </article>
+      <article data-reveal class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[16/9] overflow-hidden">
+          <img src="assets/cfo-controls.jpg" alt="Role-based spend controls and approval limits"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="640" height="360" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">Spend controls</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Set per-card, per-vendor, and per-category limits. Freeze a card the instant something looks off, from your phone.</p>
+        </div>
+      </article>
+      <article data-reveal style="--i:1" class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[16/9] overflow-hidden">
+          <img src="assets/cfo-guidance.png" alt="A finance specialist available for dedicated guidance"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="640" height="360" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">Real guidance</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Talk to a finance specialist who has read your books, not a script. Dedicated support once you cross $250k held.<sup>5</sup></p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ 10 · STAT ROW -->
+<section class="px-5 py-16 sm:px-6 sm:py-20" aria-labelledby="stats-title">
+  <div class="mx-auto max-w-5xl text-center">
+    <h2 id="stats-title" data-reveal class="display text-[24px] font-500 leading-tight text-ink sm:text-[30px]">
+      You're building something to outlast the cycle. So are we.
+    </h2>
+    <dl class="mt-12 grid grid-cols-2 gap-y-10 sm:grid-cols-4">
+      <div data-reveal>
+        <dt class="display text-[36px] font-600 text-ink tnum sm:text-[44px]">$4.6B</dt>
+        <dd class="mt-1 text-[14px] text-muted">held on Atlas</dd>
+      </div>
+      <div data-reveal style="--i:1">
+        <dt class="display text-[36px] font-600 text-ink tnum sm:text-[44px]">1,200+</dt>
+        <dd class="mt-1 text-[14px] text-muted">companies banking</dd>
+      </div>
+      <div data-reveal style="--i:2">
+        <dt class="display text-[36px] font-600 text-ink tnum sm:text-[44px]">4.32%</dt>
+        <dd class="mt-1 text-[14px] text-muted">treasury APY</dd>
+      </div>
+      <div data-reveal style="--i:3">
+        <dt class="display text-[36px] font-600 text-ink tnum sm:text-[44px]">4.9</dt>
+        <dd class="mt-1 text-[14px] text-muted">app store rating</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- ============================================ 11 · SECURITY 3-CARD GRID -->
+<section class="px-5 py-20 sm:px-6 sm:py-24" aria-labelledby="security-title">
+  <div class="mx-auto max-w-6xl">
+    <h2 id="security-title" data-reveal class="display max-w-2xl text-[28px] font-500 leading-tight text-ink sm:text-[36px]">
+      Standard protection stops short. Atlas goes further.
+    </h2>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-3">
+      <article data-reveal class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[4/3] overflow-hidden">
+          <img src="assets/sec-coverage.jpg" alt="Deposits spread across a network of partner banks"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="520" height="390" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">20× the usual coverage</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Balances are swept across program banks for up to $5M in FDIC protection, more than 20× the standard limit on a single account.<sup>4</sup></p>
+        </div>
+      </article>
+      <article data-reveal style="--i:1" class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[4/3] overflow-hidden">
+          <img src="assets/sec-fraud.jpg" alt="Real-time fraud monitoring on every transaction"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="520" height="390" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">Account-level security</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Hardware-key and biometric sign-in, real-time fraud monitoring, and granular roles, so the wrong person never reaches the money.</p>
+        </div>
+      </article>
+      <article data-reveal style="--i:2" class="group overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06]">
+        <div class="img-fallback relative aspect-[4/3] overflow-hidden">
+          <img src="assets/sec-controls.jpg" alt="Granular spend and approval controls at your fingertips"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="520" height="390" />
+        </div>
+        <div class="p-6">
+          <h3 class="text-[18px] font-600 text-ink">Controls at your fingertips</h3>
+          <p class="mt-2 text-[15px] leading-relaxed text-muted">Set limits, lock cards, and require approvals from any device. Every action is logged to an immutable audit trail you can export.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ 12 · ATLAS IN THE SPOTLIGHT (news cards) -->
+<section id="spotlight" class="px-5 py-20 sm:px-6 sm:py-24" aria-labelledby="spotlight-title">
+  <div class="mx-auto max-w-6xl">
+    <h2 id="spotlight-title" data-reveal class="display text-[28px] font-500 leading-tight text-ink sm:text-[36px]">
+      Atlas in the spotlight
+    </h2>
+
+    <div class="mt-12 grid gap-5 md:grid-cols-3">
+      <a href="#close" data-reveal class="group block overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06] transition-shadow hover:ring-white/[0.12]">
+        <div class="img-fallback relative aspect-[16/10] overflow-hidden">
+          <img src="assets/news-revenue.jpg" alt="Atlas team in their headquarters"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="560" height="350" />
+        </div>
+        <div class="p-6">
+          <p class="text-[12px] font-500 uppercase tracking-wide text-accent-soft">Press release</p>
+          <h3 class="mt-2 text-[18px] font-600 leading-snug text-ink">$60M in annual revenue, and profitable</h3>
+          <p class="mt-3 inline-flex items-center gap-1.5 text-[13px] text-muted group-hover:text-ink">Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </p>
+        </div>
+      </a>
+      <a href="#close" data-reveal style="--i:1" class="group block overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06] transition-shadow hover:ring-white/[0.12]">
+        <div class="img-fallback relative aspect-[16/10] overflow-hidden">
+          <img src="assets/news-series.jpg" alt="Abstract growth chart representing a funding round"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="560" height="350" />
+        </div>
+        <div class="p-6">
+          <p class="text-[12px] font-500 uppercase tracking-wide text-accent-soft">Funding</p>
+          <h3 class="mt-2 text-[18px] font-600 leading-snug text-ink">Atlas raises a $120M Series C</h3>
+          <p class="mt-3 inline-flex items-center gap-1.5 text-[13px] text-muted group-hover:text-ink">Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </p>
+        </div>
+      </a>
+      <a href="#close" data-reveal style="--i:2" class="group block overflow-hidden rounded-xl bg-surface shadow-card ring-1 ring-white/[0.06] transition-shadow hover:ring-white/[0.12]">
+        <div class="img-fallback relative aspect-[16/10] overflow-hidden">
+          <img src="assets/news-award.jpg" alt="An award trophy on a dark studio backdrop"
+               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" width="560" height="350" />
+        </div>
+        <div class="p-6">
+          <p class="text-[12px] font-500 uppercase tracking-wide text-accent-soft">Recognition</p>
+          <h3 class="mt-2 text-[18px] font-600 leading-snug text-ink">Named to Fast Company's Most Innovative</h3>
+          <p class="mt-3 inline-flex items-center gap-1.5 text-[13px] text-muted group-hover:text-ink">Read more
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ 13 · CTA + 2 OFFER CARDS -->
+<section id="pricing" class="px-5 py-20 sm:px-6 sm:py-28" aria-labelledby="close-title">
+  <div class="mx-auto max-w-4xl text-center">
+    <h2 id="close-title" data-reveal class="display text-[30px] font-500 leading-tight text-ink sm:text-[42px]">
+      Your balance sheet, rebuilt from the ground up
+    </h2>
+    <div data-reveal style="--i:1" class="mt-7 flex flex-wrap items-center justify-center gap-3">
+      <a href="#close" data-magnetic class="inline-flex items-center rounded-pill bg-accent px-6 py-3 text-[15px] font-500 text-white shadow-[0_10px_30px_-10px_rgba(82,102,235,0.9)] transition-[transform,background] hover:bg-[#5e72f5]">
+        Open Atlas
+      </a>
+      <a href="#close" class="inline-flex items-center gap-1.5 rounded-pill px-5 py-3 text-[15px] font-500 text-muted ring-1 ring-white/12 transition-colors hover:text-ink hover:ring-white/25">
+        Talk to our team
+      </a>
+    </div>
+  </div>
+
+  <div id="cards-grid" class="mx-auto mt-14 grid max-w-5xl gap-5 sm:grid-cols-2">
+    <article data-reveal class="rounded-xl bg-surface p-7 shadow-card ring-1 ring-white/[0.06]">
+      <h3 class="text-[20px] font-600 text-ink">Atlas for startups</h3>
+      <p class="mt-2 text-[15px] leading-relaxed text-muted">For founders, get a calm account with treasury and cards on day one, no monthly fee and no minimum.</p>
+      <ul class="mt-5 space-y-2 text-[14px] text-muted">
+        <li class="flex gap-2"><span class="text-accent-soft">→</span> Operating, treasury &amp; payroll accounts</li>
+        <li class="flex gap-2"><span class="text-accent-soft">→</span> Unlimited cards with vendor caps</li>
+        <li class="flex gap-2"><span class="text-accent-soft">→</span> Free ACH &amp; domestic wires</li>
+      </ul>
+      <a href="#close" class="mt-6 inline-flex items-center gap-1.5 rounded-pill bg-accent px-5 py-2.5 text-[14px] font-500 text-white transition-colors hover:bg-[#5e72f5]">Open Atlas</a>
+    </article>
+    <article data-reveal style="--i:1" class="rounded-xl bg-raised p-7 shadow-card ring-1 ring-white/[0.08]">
+      <h3 class="text-[20px] font-600 text-ink">Atlas for funds</h3>
+      <p class="mt-2 text-[15px] leading-relaxed text-muted">For VCs and finance teams managing capital across entities, hold idle reserves at competitive yield with committed coverage.</p>
+      <ul class="mt-5 space-y-2 text-[14px] text-muted">
+        <li class="flex gap-2"><span class="text-accent-soft">→</span> Multi-entity treasury at scale</li>
+        <li class="flex gap-2"><span class="text-accent-soft">→</span> Up to $5M FDIC coverage<sup>4</sup></li>
+        <li class="flex gap-2"><span class="text-accent-soft">→</span> A dedicated finance specialist</li>
+      </ul>
+      <a href="#close" class="mt-6 inline-flex items-center gap-1.5 rounded-pill px-5 py-2.5 text-[14px] font-500 text-ink ring-1 ring-white/20 transition-colors hover:ring-white/40">Contact sales</a>
+    </article>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================================ 14 · FOOTER SITEMAP -->
+<footer class="border-t border-white/[0.07] bg-[#14141C] px-5 pb-12 pt-16 sm:px-8" id="close">
+  <div class="mx-auto max-w-7xl">
+    <div class="grid grid-cols-2 gap-10 sm:grid-cols-3 lg:grid-cols-5">
+      <!-- brand + final CTA integrated -->
+      <div class="col-span-2 sm:col-span-3 lg:col-span-1">
+        <a href="#top" class="flex items-center gap-2.5 text-[15px] font-600 tracking-[0.14em] text-white">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <circle cx="12" cy="12" r="10" stroke="white" stroke-opacity="0.85" stroke-width="1.4"/>
+            <path d="M12 2.5c2.6 2.4 4 5.7 4 9.5s-1.4 7.1-4 9.5c-2.6-2.4-4-5.7-4-9.5s1.4-7.1 4-9.5Z" stroke="white" stroke-opacity="0.7" stroke-width="1.2"/>
+            <path d="M2.5 12h19" stroke="white" stroke-opacity="0.7" stroke-width="1.2"/>
+          </svg>
+          ATLAS
+        </a>
+        <p class="mt-4 max-w-xs text-[14px] leading-relaxed text-faint">One account for operating cash, treasury yield, and corporate cards.</p>
+        <a href="#close" data-magnetic class="mt-5 inline-flex items-center rounded-pill bg-accent px-5 py-2.5 text-[14px] font-500 text-white transition-[transform,background] hover:bg-[#5e72f5]">Open Atlas</a>
+      </div>
+
+      <nav aria-label="Banking">
+        <p class="text-[13px] font-600 text-ink">Banking</p>
+        <ul class="mt-4 space-y-2.5 text-[14px] text-faint">
+          <li><a href="#" class="transition-colors hover:text-ink">Business checking</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Treasury</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Corporate cards</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Bill pay</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Payroll</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Platform">
+        <p class="text-[13px] font-600 text-ink">Platform</p>
+        <ul class="mt-4 space-y-2.5 text-[14px] text-faint">
+          <li><a href="#" class="transition-colors hover:text-ink">Automations</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Spend controls</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Accounting sync</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">API</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Mobile apps</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Resources">
+        <p class="text-[13px] font-600 text-ink">Resources</p>
+        <ul class="mt-4 space-y-2.5 text-[14px] text-faint">
+          <li><a href="#" class="transition-colors hover:text-ink">Help center</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Guides</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Runway calculator</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Status</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Changelog</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Company">
+        <p class="text-[13px] font-600 text-ink">Company</p>
+        <ul class="mt-4 space-y-2.5 text-[14px] text-faint">
+          <li><a href="#" class="transition-colors hover:text-ink">About</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Careers</a></li>
+          <li><a href="#spotlight" class="transition-colors hover:text-ink">Press</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Security</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Legal</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- disclosures -->
+    <div class="mt-14 space-y-3 border-t border-white/[0.07] pt-8 text-[11.5px] leading-relaxed text-faint/80">
+      <p>Atlas is a financial technology company, not a bank. Banking services are provided by partner banks, Members FDIC. The Atlas Visa® Debit Card is issued by a partner bank pursuant to a license from Visa U.S.A. Inc.</p>
+      <p><sup>1</sup> Eligibility and features vary by entity type and jurisdiction. <sup>2</sup> Illustrative figures based on a representative $3.0M average idle balance at prevailing money-market rates; actual yield varies and is not guaranteed. <sup>3</sup> Treasury balances are invested in a portfolio of US Treasury securities and money-market funds held in the customer's name; not FDIC-insured, not a deposit, may lose value. <sup>4</sup> FDIC coverage up to $5M is achieved by sweeping eligible deposits across a network of program banks, subject to program terms. <sup>5</sup> Dedicated support tiers apply above stated balance thresholds.</p>
+      <p class="text-faint/60">© 2026 Atlas Financial Technologies, Inc. All rights reserved. This is a fictional product page built for a design demonstration.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================================ SCRIPTS -->
+<script>
+  /* ----- Blur-in reveal ----- */
+  (function () {
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var els = document.querySelectorAll('[data-reveal]');
+    if (reduce) { els.forEach(function (e) { e.classList.add('is-visible'); }); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.14 });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+
+  /* ----- Sparkline draw on view ----- */
+  (function () {
+    var path = document.getElementById('dash-spark');
+    if (!path) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) { path.style.strokeDashoffset = 0; return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { path.classList.add('is-visible'); io.unobserve(path); } });
+    }, { threshold: 0.4 });
+    io.observe(path);
+  })();
+
+  /* ----- Balance count-up ----- */
+  (function () {
+    var el = document.querySelector('[data-count]');
+    if (!el) return;
+    var target = parseFloat(el.getAttribute('data-count'));
+    var prefix = el.getAttribute('data-prefix') || '';
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function fmt(n) { return prefix + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+    if (reduce) { el.textContent = fmt(target); return; }
+    var done = false;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && !done) {
+          done = true;
+          var start = null, dur = 1500;
+          function step(ts) {
+            if (!start) start = ts;
+            var p = Math.min((ts - start) / dur, 1);
+            var eased = 1 - Math.pow(1 - p, 3);
+            el.textContent = fmt(target * eased);
+            if (p < 1) requestAnimationFrame(step); else el.textContent = fmt(target);
+          }
+          requestAnimationFrame(step);
+          io.unobserve(el);
+        }
+      });
+    }, { threshold: 0.5 });
+    io.observe(el);
+  })();
+
+  /* ----- Testimonial carousel ----- */
+  (function () {
+    var track = document.getElementById('carouselTrack');
+    if (!track) return;
+    var slides = track.children.length;
+    var i = 0;
+    var dots = document.querySelectorAll('#carouselDots [data-dot]');
+    function render() {
+      track.style.transform = 'translateX(-' + (i * 100) + '%)';
+      dots.forEach(function (d, idx) {
+        d.className = 'size-2 rounded-full ' + (idx === i ? 'bg-white/80' : 'bg-white/30');
+      });
+    }
+    document.getElementById('carouselNext').addEventListener('click', function () { i = (i + 1) % slides; render(); });
+    document.getElementById('carouselPrev').addEventListener('click', function () { i = (i - 1 + slides) % slides; render(); });
+    dots.forEach(function (d) { d.addEventListener('click', function () { i = parseInt(d.getAttribute('data-dot'), 10); render(); }); });
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) { setInterval(function () { i = (i + 1) % slides; render(); }, 6000); }
+    render();
+  })();
+
+  /* ----- Magnetic buttons ----- */
+  (function () {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.matchMedia('(hover: none)').matches) return;
+    document.querySelectorAll('[data-magnetic]').forEach(function (b) {
+      b.style.transition = 'transform .3s cubic-bezier(.2,.7,.2,1)';
+      b.addEventListener('mousemove', function (e) {
+        var r = b.getBoundingClientRect();
+        b.style.transform = 'translate(' + (e.clientX - r.left - r.width / 2) * 0.18 + 'px,' + (e.clientY - r.top - r.height / 2) * 0.18 + 'px)';
+      });
+      b.addEventListener('mouseleave', function () { b.style.transform = ''; });
+    });
+  })();
+</script>
+</body>
+</html>

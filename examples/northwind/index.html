@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Northwind — Your helpdesk, finally measured</title>
+<meta name="description" content="Northwind turns your helpdesk into instruments: resolution time, CSAT, and backlog by team — read at a glance, the moment a queue goes wrong." />
+<meta property="og:title" content="Northwind — Your helpdesk, finally measured" />
+<meta property="og:description" content="A support-operations console: resolution time, CSAT, and backlog by team, live from your helpdesk." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700;800;900&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          bg:      '#0A0A0C',
+          surface: '#121214',
+          raised:  '#1A1A1E',
+          well:    '#08080A',
+          line:    '#2A2A30',
+          ink:     '#FAFAF9',
+          muted:   '#A7A7AE',
+          faint:   '#76767E',
+          accent:  '#FFB224',   /* signal amber — the north beacon. brand only, never a status. */
+          good:    '#4ADE80',   /* semantic emerald  */
+          warn:    '#FB923C',   /* semantic orange   */
+          bad:     '#F87171',   /* semantic rose     */
+          sky:     '#60C8FF',   /* one cool data line */
+        },
+        fontFamily: {
+          display: ['"Schibsted Grotesk"', 'system-ui', 'sans-serif'],
+          sans:    ['"Hanken Grotesk"', 'system-ui', 'sans-serif'],
+        },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { color-scheme: dark; }
+  body { font-feature-settings: 'ss01'; }
+  .tnum { font-variant-numeric: tabular-nums; }
+  .text-balance { text-wrap: balance; }
+
+  /* faint blueprint dot grid for the console section */
+  .grid-field {
+    background-image: radial-gradient(rgba(255,255,255,0.045) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* blur-in reveal */
+  @media (prefers-reduced-motion: no-preference) {
+    [data-reveal] {
+      opacity: 0; filter: blur(12px); transform: translateY(20px);
+      transition: opacity .6s ease, filter .6s ease, transform .6s cubic-bezier(.2,.7,.2,1);
+      transition-delay: calc(var(--i, 0) * 70ms);
+    }
+    [data-reveal].is-visible { opacity: 1; filter: blur(0); transform: none; }
+  }
+
+  /* signature motion: the console "boots up" — a sweep of light passes once across the metric canvas */
+  @media (prefers-reduced-motion: no-preference) {
+    .boot-sweep::after {
+      content: ""; position: absolute; inset: 0; pointer-events: none; border-radius: inherit;
+      background: linear-gradient(105deg, transparent 38%, rgba(255,178,36,0.12) 50%, transparent 62%);
+      transform: translateX(-130%);
+    }
+    .boot-sweep.is-visible::after { animation: sweep 1.5s cubic-bezier(.2,.7,.2,1) .25s both; }
+    @keyframes sweep { to { transform: translateX(130%); } }
+
+    /* the resolution-time line draws itself on reveal */
+    .draw-line { stroke-dasharray: 1; stroke-dashoffset: 1; }
+    .draw-line.is-visible { animation: draw 1.4s cubic-bezier(.4,0,.2,1) .35s both; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    /* CSAT gauge needle settles into place */
+    .gauge-arc { stroke-dasharray: var(--arc-len); stroke-dashoffset: var(--arc-len); }
+    .gauge-arc.is-visible { animation: fill-arc 1.2s cubic-bezier(.34,1.2,.4,1) .4s both; }
+    @keyframes fill-arc { to { stroke-dashoffset: var(--arc-rest); } }
+  }
+
+  /* scroll progress beacon */
+  .progress { position: fixed; top: 0; left: 0; height: 2px; width: 100%; transform-origin: left;
+    transform: scaleX(0); background: #FFB224; z-index: 60; }
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      .progress { animation: grow linear both; animation-timeline: scroll(root block); }
+      @keyframes grow { to { transform: scaleX(1); } }
+    }
+  }
+
+  /* nav blur on scroll */
+  #nav.scrolled { background: rgba(10,10,12,0.72); backdrop-filter: blur(12px);
+    border-bottom-color: rgba(255,255,255,0.07); }
+</style>
+</head>
+
+<body class="bg-bg text-ink font-sans antialiased selection:bg-accent/25">
+
+<div class="progress" aria-hidden="true"></div>
+
+<!-- grain overlay -->
+<svg class="pointer-events-none fixed inset-0 -z-10 h-full w-full opacity-[0.035]" aria-hidden="true">
+  <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="2" /></filter>
+  <rect width="100%" height="100%" filter="url(#grain)" />
+</svg>
+
+<!-- ============================== NAV ============================== -->
+<header id="nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-colors duration-300">
+  <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-6">
+    <a href="#top" class="flex items-center gap-2.5" aria-label="Northwind home">
+      <!-- compass-north beacon mark -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M12 2.5 14.4 9.6 21.5 12 14.4 14.4 12 21.5 9.6 14.4 2.5 12 9.6 9.6 12 2.5Z" fill="#FFB224"/>
+        <circle cx="12" cy="12" r="1.6" fill="#0A0A0C"/>
+      </svg>
+      <span class="text-[17px] font-semibold tracking-tight font-display">Northwind</span>
+    </a>
+
+    <nav class="hidden items-center gap-7 text-[14px] text-muted md:flex">
+      <a href="#console" class="transition-colors hover:text-ink">Console</a>
+      <a href="#triage" class="transition-colors hover:text-ink">Triage</a>
+      <a href="#connect" class="transition-colors hover:text-ink">Connect</a>
+      <a href="#pricing" class="transition-colors hover:text-ink">Pricing</a>
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a href="#" class="hidden text-[14px] text-muted transition-colors hover:text-ink sm:block">Sign in</a>
+      <a href="#connect" data-magnetic
+         class="rounded-full bg-ink px-4 py-2 text-[13.5px] font-semibold text-bg transition-colors hover:bg-white">
+        Connect your helpdesk
+      </a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ============================== HERO + CONSOLE (app-frame) ============================== -->
+<section class="relative overflow-hidden pt-28 pb-20 sm:pt-32 md:pt-36">
+  <!-- ambient amber glow behind the console -->
+  <div class="pointer-events-none absolute left-1/2 top-[42%] -z-0 h-[620px] w-[1100px] -translate-x-1/2 rounded-full
+              bg-[radial-gradient(ellipse_at_center,rgba(255,178,36,0.10),transparent_62%)] blur-2xl" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-6xl px-5 sm:px-6">
+
+    <!-- headline block: flat oversized, subhead + inline provocation link (Linear bones, re-skinned) -->
+    <div class="max-w-4xl" data-reveal>
+      <h1 class="font-display text-[clamp(2.6rem,7vw,5.1rem)] font-extrabold leading-[0.98] tracking-[-0.03em] text-balance">
+        Your helpdesk is full of<br class="hidden sm:block" />
+        answers. <span class="text-accent">Northwind reads them.</span>
+      </h1>
+
+      <div class="mt-7 flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+        <p class="max-w-xl text-[17px] leading-relaxed text-muted text-balance">
+          One console that turns every ticket into the three numbers a support leader actually steers by — resolution time, CSAT, and backlog by team.
+        </p>
+        <a href="#triage" class="group inline-flex shrink-0 items-center gap-2 text-[14px] text-muted transition-colors hover:text-ink">
+          <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+          Tickets aren't a metric yet
+          <span class="text-faint transition-transform group-hover:translate-x-0.5">&rarr;</span>
+        </a>
+      </div>
+
+      <div class="mt-9 flex flex-wrap items-center gap-3">
+        <a href="#connect" data-magnetic
+           class="rounded-full bg-accent px-5 py-3 text-[15px] font-semibold text-[#1A1304] transition-transform hover:brightness-105">
+          Connect your helpdesk
+        </a>
+        <a href="#console" class="rounded-full border border-line px-5 py-3 text-[15px] font-medium text-ink transition-colors hover:border-faint hover:bg-white/[0.03]">
+          See a live board
+        </a>
+        <span class="ml-1 text-[13px] text-faint">Read-only sync · live in ~4 minutes</span>
+      </div>
+    </div>
+
+    <!-- ===================== THE CONSOLE (the signature) ===================== -->
+    <!-- 3-pane support-operations frame: queue rail / metrics canvas / SLA detail rail. -->
+    <!-- Surfaces differ by lightness; only edge is an inset top highlight. No full box cage. -->
+    <div data-reveal style="--i:1" class="mt-14 sm:mt-16">
+      <div class="boot-sweep relative overflow-hidden rounded-2xl bg-[#0F0F12] text-zinc-300
+                  shadow-[inset_0_1px_0_rgba(255,255,255,0.05),0_40px_90px_-30px_rgba(0,0,0,0.85)]">
+
+        <!-- window chrome bar -->
+        <div class="flex items-center justify-between border-b border-white/[0.06] px-4 py-2.5">
+          <div class="flex items-center gap-3 text-[13px]">
+            <div class="flex items-center gap-1.5">
+              <span class="h-2.5 w-2.5 rounded-full bg-white/10"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-white/10"></span>
+              <span class="h-2.5 w-2.5 rounded-full bg-white/10"></span>
+            </div>
+            <span class="ml-2 hidden text-zinc-400 sm:inline">Northwind</span>
+            <span class="hidden text-zinc-600 sm:inline">/</span>
+            <span class="hidden text-zinc-300 sm:inline">Operations</span>
+          </div>
+          <div class="flex items-center gap-3 text-[12.5px] text-zinc-500">
+            <span class="inline-flex items-center gap-1.5">
+              <span class="h-1.5 w-1.5 rounded-full bg-good"></span>
+              Synced <span class="tnum text-zinc-400">2m</span> ago
+            </span>
+            <span class="tnum hidden sm:inline">Tue · 09:41</span>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-[210px_1fr_232px]">
+
+          <!-- ============ LEFT: queue rail (flat tinted nav, no borders, one tinted active row) ============ -->
+          <aside class="hidden border-r border-white/[0.06] bg-[#0B0B0E] p-2.5 text-[13px] lg:block">
+            <p class="px-2 pb-1.5 pt-1 text-[11px] uppercase tracking-wider text-zinc-600">Views</p>
+            <nav class="space-y-0.5">
+              <a class="flex items-center justify-between rounded-md bg-white/[0.06] px-2 py-1.5 text-zinc-100">
+                <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-accent"></span>Operations</span>
+              </a>
+              <a class="flex items-center justify-between rounded-md px-2 py-1.5 text-zinc-400 hover:bg-white/[0.04]">
+                <span>First response</span><span class="tnum text-zinc-600">SLA</span>
+              </a>
+              <a class="flex items-center justify-between rounded-md px-2 py-1.5 text-zinc-400 hover:bg-white/[0.04]">
+                <span>Reopened</span><span class="tnum text-zinc-600">14</span>
+              </a>
+              <a class="flex items-center justify-between rounded-md px-2 py-1.5 text-zinc-400 hover:bg-white/[0.04]">
+                <span>VIP accounts</span><span class="tnum text-zinc-600">31</span>
+              </a>
+            </nav>
+
+            <p class="px-2 pb-1.5 pt-5 text-[11px] uppercase tracking-wider text-zinc-600">Teams</p>
+            <nav class="space-y-0.5 text-zinc-400">
+              <a class="flex items-center justify-between rounded-md px-2 py-1.5 hover:bg-white/[0.04]">
+                <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-sky"></span>Billing</span>
+                <span class="tnum text-zinc-600">208</span>
+              </a>
+              <a class="flex items-center justify-between rounded-md px-2 py-1.5 hover:bg-white/[0.04]">
+                <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-good"></span>Onboarding</span>
+                <span class="tnum text-zinc-600">96</span>
+              </a>
+              <a class="flex items-center justify-between rounded-md px-2 py-1.5 hover:bg-white/[0.04]">
+                <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-bad"></span>Technical</span>
+                <span class="tnum text-zinc-300">341</span>
+              </a>
+              <a class="flex items-center justify-between rounded-md px-2 py-1.5 hover:bg-white/[0.04]">
+                <span class="flex items-center gap-2"><span class="h-1.5 w-1.5 rounded-full bg-warn"></span>Trust &amp; Safety</span>
+                <span class="tnum text-zinc-600">72</span>
+              </a>
+            </nav>
+          </aside>
+
+          <!-- ============ CENTER: metrics canvas (KPI line + CSAT gauge + backlog ledger) ============ -->
+          <section class="grid-field min-w-0 bg-[#101013]">
+
+            <!-- KPI strip: number leads, delta is the only colored thing -->
+            <div class="grid grid-cols-2 divide-x divide-white/[0.05] border-b border-white/[0.06] sm:grid-cols-4">
+              <div class="px-4 py-3.5">
+                <p class="text-[11px] uppercase tracking-wider text-zinc-500">Median resolution</p>
+                <p class="mt-1 flex items-baseline gap-1.5">
+                  <span class="tnum text-[26px] font-semibold leading-none text-zinc-50 font-display">4.2</span>
+                  <span class="text-[13px] text-zinc-500">h</span>
+                </p>
+                <p class="mt-1 inline-flex items-center gap-1 text-[12px] font-medium text-good">
+                  <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 8.5 1.5 3h7L5 8.5Z" fill="currentColor"/></svg>
+                  <span class="tnum">31%</span> <span class="text-zinc-600">vs last wk</span>
+                </p>
+              </div>
+              <div class="px-4 py-3.5">
+                <p class="text-[11px] uppercase tracking-wider text-zinc-500">CSAT</p>
+                <p class="mt-1 flex items-baseline gap-1.5">
+                  <span class="tnum text-[26px] font-semibold leading-none text-zinc-50 font-display">94.1</span>
+                  <span class="text-[13px] text-zinc-500">%</span>
+                </p>
+                <p class="mt-1 inline-flex items-center gap-1 text-[12px] font-medium text-good">
+                  <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 1.5 8.5 7h-7L5 1.5Z" fill="currentColor"/></svg>
+                  <span class="tnum">1.8 pts</span>
+                </p>
+              </div>
+              <div class="px-4 py-3.5">
+                <p class="text-[11px] uppercase tracking-wider text-zinc-500">Open backlog</p>
+                <p class="mt-1 flex items-baseline gap-1.5">
+                  <span class="tnum text-[26px] font-semibold leading-none text-zinc-50 font-display">717</span>
+                </p>
+                <p class="mt-1 inline-flex items-center gap-1 text-[12px] font-medium text-bad">
+                  <svg width="9" height="9" viewBox="0 0 10 10" aria-hidden="true"><path d="M5 8.5 1.5 3h7L5 8.5Z" fill="currentColor" transform="rotate(180 5 5)"/></svg>
+                  <span class="tnum">+58</span> <span class="text-zinc-600">today</span>
+                </p>
+              </div>
+              <div class="px-4 py-3.5">
+                <p class="text-[11px] uppercase tracking-wider text-zinc-500">SLA breach</p>
+                <p class="mt-1 flex items-baseline gap-1.5">
+                  <span class="tnum text-[26px] font-semibold leading-none text-zinc-50 font-display">6</span>
+                  <span class="text-[13px] text-zinc-500">open</span>
+                </p>
+                <p class="mt-1 inline-flex items-center gap-1 text-[12px] font-medium text-warn">
+                  <span class="h-1.5 w-1.5 rounded-full bg-warn"></span><span>2 at risk &lt; 30m</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- resolution-time line chart: no box, no y-axis, faint baseline, gradient fade, endpoint dot -->
+            <div class="border-b border-white/[0.06] px-4 py-4">
+              <div class="mb-3 flex items-center justify-between">
+                <div class="flex items-center gap-2 text-[13px]">
+                  <span class="font-medium text-zinc-200">Resolution time</span>
+                  <span class="text-zinc-600">·</span>
+                  <span class="text-zinc-500">14 days, median hours</span>
+                </div>
+                <div class="flex items-center gap-3 text-[12px] text-zinc-500">
+                  <span class="inline-flex items-center gap-1.5"><span class="h-2 w-3 rounded-sm" style="background:#60C8FF"></span>This release</span>
+                  <span class="hidden items-center gap-1.5 sm:inline-flex"><span class="h-px w-3 bg-zinc-600"></span>Prior</span>
+                </div>
+              </div>
+
+              <svg viewBox="0 0 560 130" class="w-full" preserveAspectRatio="none" role="img" aria-label="Median resolution time trending down from 7.9 to 4.2 hours over fourteen days">
+                <defs>
+                  <linearGradient id="resFade" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#60C8FF" stop-opacity="0.18" />
+                    <stop offset="100%" stop-color="#60C8FF" stop-opacity="0" />
+                  </linearGradient>
+                </defs>
+                <!-- faint baseline only -->
+                <line x1="0" y1="118" x2="560" y2="118" stroke="#fff" stroke-opacity="0.06" />
+                <line x1="0" y1="74" x2="560" y2="74" stroke="#fff" stroke-opacity="0.035" stroke-dasharray="3 5" />
+                <!-- prior period: muted dashed -->
+                <path d="M0 58 L43 60 L86 54 L129 62 L172 57 L215 64 L258 60 L301 66 L344 62 L387 68 L430 65 L473 70 L516 67 L560 72"
+                      fill="none" stroke="#71717A" stroke-width="1.25" stroke-dasharray="2 4" stroke-opacity="0.65" />
+                <!-- this release: filled fade + drawn line + endpoint dot -->
+                <path d="M0 40 L43 46 L86 52 L129 50 L172 60 L215 66 L258 72 L301 78 L344 82 L387 90 L430 96 L473 100 L516 104 L546 108 L546 130 L0 130 Z"
+                      fill="url(#resFade)" />
+                <path class="draw-line" pathLength="1"
+                      d="M0 40 L43 46 L86 52 L129 50 L172 60 L215 66 L258 72 L301 78 L344 82 L387 90 L430 96 L473 100 L516 104 L546 108"
+                      fill="none" stroke="#60C8FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <circle cx="546" cy="108" r="3.5" fill="#60C8FF" />
+              </svg>
+              <div class="mt-1.5 flex justify-between text-[11px] tnum text-zinc-600">
+                <span>May 26</span><span class="hidden sm:inline">Jun 02</span><span>Jun 08</span>
+              </div>
+            </div>
+
+            <!-- backlog-by-team ledger + CSAT gauge, side by side -->
+            <div class="grid grid-cols-1 md:grid-cols-[1fr_200px]">
+
+              <!-- backlog by team: borderless hairline ledger, horizontal bar = the data -->
+              <div class="border-b border-white/[0.06] px-4 py-4 md:border-b-0 md:border-r">
+                <div class="mb-2.5 flex items-center justify-between text-[13px]">
+                  <span class="font-medium text-zinc-200">Backlog by team</span>
+                  <span class="text-zinc-500">717 open</span>
+                </div>
+                <table class="w-full text-[12.5px]">
+                  <tbody class="[&>tr]:border-b [&>tr]:border-white/[0.04]">
+                    <tr class="group">
+                      <td class="py-2 pr-3 text-zinc-300">Technical</td>
+                      <td class="w-1/2 py-2">
+                        <span class="block h-1.5 rounded-full bg-bad/80" style="width:96%"></span>
+                      </td>
+                      <td class="tnum py-2 pl-3 text-right text-zinc-200">341</td>
+                      <td class="tnum hidden py-2 pl-3 text-right text-bad sm:table-cell">+22</td>
+                    </tr>
+                    <tr class="group">
+                      <td class="py-2 pr-3 text-zinc-300">Billing</td>
+                      <td class="py-2"><span class="block h-1.5 rounded-full bg-sky/70" style="width:58%"></span></td>
+                      <td class="tnum py-2 pl-3 text-right text-zinc-200">208</td>
+                      <td class="tnum hidden py-2 pl-3 text-right text-warn sm:table-cell">+9</td>
+                    </tr>
+                    <tr class="group">
+                      <td class="py-2 pr-3 text-zinc-300">Onboarding</td>
+                      <td class="py-2"><span class="block h-1.5 rounded-full bg-good/70" style="width:27%"></span></td>
+                      <td class="tnum py-2 pl-3 text-right text-zinc-200">96</td>
+                      <td class="tnum hidden py-2 pl-3 text-right text-good sm:table-cell">&minus;12</td>
+                    </tr>
+                    <tr>
+                      <td class="py-2 pr-3 text-zinc-300">Trust &amp; Safety</td>
+                      <td class="py-2"><span class="block h-1.5 rounded-full bg-warn/70" style="width:20%"></span></td>
+                      <td class="tnum py-2 pl-3 text-right text-zinc-200">72</td>
+                      <td class="tnum hidden py-2 pl-3 text-right text-zinc-500 sm:table-cell">+3</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- CSAT gauge: semicircular arc, number is the hero -->
+              <div class="flex flex-col items-center justify-center px-4 py-5">
+                <p class="mb-1 self-start text-[13px] font-medium text-zinc-200">CSAT this week</p>
+                <svg viewBox="0 0 120 70" class="mt-1 w-[160px]" role="img" aria-label="Customer satisfaction 94.1 percent, in the healthy band">
+                  <!-- track -->
+                  <path d="M10 64 A50 50 0 0 1 110 64" fill="none" stroke="#fff" stroke-opacity="0.08" stroke-width="9" stroke-linecap="round" />
+                  <!-- value arc (semicircle length ~157.1; rest = 157.1 * (1 - 0.941)) -->
+                  <path class="gauge-arc" style="--arc-len:157.1; --arc-rest:9.27;"
+                        d="M10 64 A50 50 0 0 1 110 64" fill="none" stroke="#4ADE80" stroke-width="9" stroke-linecap="round" />
+                </svg>
+                <p class="-mt-5 flex items-baseline gap-0.5">
+                  <span class="tnum text-[30px] font-semibold leading-none text-zinc-50 font-display">94.1</span>
+                  <span class="text-[14px] text-zinc-500">%</span>
+                </p>
+                <p class="mt-3 text-[11.5px] tnum text-zinc-500">2,488 responses</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- ============ RIGHT: SLA detail rail (quiet label/value, one accent marker) ============ -->
+          <aside class="hidden border-l border-white/[0.06] bg-[#0B0B0E] p-4 text-[13px] lg:block">
+            <p class="text-[11px] uppercase tracking-wider text-zinc-600">Watching</p>
+            <p class="mt-1.5 flex items-center gap-2 text-zinc-200">
+              <span class="h-2 w-2 rounded-full bg-warn"></span> SLA at risk
+            </p>
+
+            <div class="mt-4 space-y-3">
+              <div class="rounded-lg bg-white/[0.03] p-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-zinc-200">Acme Corp</span>
+                  <span class="tnum text-warn">28m</span>
+                </div>
+                <p class="mt-0.5 text-[11.5px] text-zinc-500">Technical · #48201 · P1</p>
+              </div>
+              <div class="rounded-lg bg-white/[0.03] p-2.5">
+                <div class="flex items-center justify-between">
+                  <span class="text-zinc-200">Northgate</span>
+                  <span class="tnum text-warn">41m</span>
+                </div>
+                <p class="mt-0.5 text-[11.5px] text-zinc-500">Billing · #48188 · P2</p>
+              </div>
+            </div>
+
+            <div class="mt-5 border-t border-white/[0.06] pt-4">
+              <p class="text-[11px] uppercase tracking-wider text-zinc-600">First response</p>
+              <p class="mt-1.5 flex items-baseline gap-1">
+                <span class="tnum text-[19px] font-semibold text-zinc-100 font-display">18</span>
+                <span class="text-zinc-500">min median</span>
+              </p>
+              <p class="mt-3 text-[11px] uppercase tracking-wider text-zinc-600">Reopen rate</p>
+              <p class="mt-1.5 flex items-baseline gap-1">
+                <span class="tnum text-[19px] font-semibold text-zinc-100 font-display">3.1</span>
+                <span class="text-zinc-500">%</span>
+              </p>
+            </div>
+
+            <div class="mt-5 border-t border-white/[0.06] pt-3 text-[12px] text-zinc-500">
+              Updated <span class="tnum text-zinc-400">just now</span>
+            </div>
+          </aside>
+        </div>
+
+        <!-- floating insight card overlapping the frame (Linear's floating-agent move, re-skinned as a "Pulse" alert) -->
+        <div class="pointer-events-none absolute -bottom-5 right-3 z-20 hidden w-[290px] sm:block md:right-6">
+          <div class="pointer-events-auto rounded-xl border border-white/[0.08] bg-[#17171B] p-3.5
+                      shadow-[0_24px_50px_-18px_rgba(0,0,0,0.8)]">
+            <div class="flex items-center justify-between">
+              <span class="flex items-center gap-2 text-[12.5px] font-medium text-zinc-100">
+                <span class="grid h-4 w-4 place-items-center rounded-full bg-accent/15">
+                  <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
+                </span>
+                Pulse
+              </span>
+              <span class="text-[11px] text-zinc-500">now</span>
+            </div>
+            <p class="mt-2 text-[12.5px] leading-snug text-zinc-300">
+              Billing first-response slipped to <span class="tnum font-medium text-zinc-100">26m</span> — refunds are the driver, up <span class="tnum text-warn">3&times;</span> since the price change.
+            </p>
+            <div class="mt-2.5 flex items-center gap-1.5 text-[11.5px] text-accent">
+              Open the breakdown <span aria-hidden="true">&rarr;</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================== LOGO STRIP (social proof) ============================== -->
+<section aria-label="Teams using Northwind" class="border-y border-line/60 bg-surface/40">
+  <div class="mx-auto max-w-6xl px-5 py-7 sm:px-6">
+    <div class="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+      <p class="shrink-0 text-[13px] text-faint">
+        Steering support at <span class="tnum text-muted">120+</span> teams
+      </p>
+      <div class="flex flex-1 flex-wrap items-center gap-x-8 gap-y-3 text-[15px] font-semibold tracking-tight text-muted/70 font-display">
+        <!-- placeholder wordmarks — swap for real customer logos -->
+        <span>Brightwell</span>
+        <span>Cargop, Inc.</span>
+        <span>Tendril</span>
+        <span>Marrow Health</span>
+        <span class="hidden sm:inline">Field &amp; Co.</span>
+        <span class="hidden md:inline">Northgate</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== TRIAGE FEATURE (problem → solution, spotlight) ============================== -->
+<section id="triage" class="relative py-24 md:py-32">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6">
+    <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+
+      <!-- copy -->
+      <div data-reveal>
+        <p class="text-[14px] font-medium text-accent">The end of the morning scramble</p>
+        <h2 class="mt-3 font-display text-[clamp(1.9rem,4vw,2.9rem)] font-bold leading-[1.05] tracking-[-0.02em] text-balance">
+          You don't have a ticket problem. You have a <span class="text-accent">visibility</span> problem.
+        </h2>
+        <p class="mt-5 max-w-lg text-[16.5px] leading-relaxed text-muted">
+          Every helpdesk shows you a list. None of them tell you the queue that's about to breach, the team quietly drowning, or why CSAT dipped on Thursday. Northwind watches the stream and surfaces the one thing worth acting on now.
+        </p>
+
+        <ul class="mt-8 space-y-4">
+          <li class="flex gap-3.5">
+            <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-md bg-bad/12">
+              <span class="h-1.5 w-1.5 rounded-full bg-bad"></span>
+            </span>
+            <p class="text-[15px] leading-snug text-zinc-300">
+              <span class="font-medium text-ink">Catches the breach before it lands.</span> A 30-minute warning beats a post-mortem.
+            </p>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-md bg-sky/12">
+              <span class="h-1.5 w-1.5 rounded-full bg-sky"></span>
+            </span>
+            <p class="text-[15px] leading-snug text-zinc-300">
+              <span class="font-medium text-ink">Names the driver, not just the spike.</span> "Refunds, up 3&times;" — not "volume increased."
+            </p>
+          </li>
+          <li class="flex gap-3.5">
+            <span class="mt-0.5 grid h-6 w-6 shrink-0 place-items-center rounded-md bg-good/12">
+              <span class="h-1.5 w-1.5 rounded-full bg-good"></span>
+            </span>
+            <p class="text-[15px] leading-snug text-zinc-300">
+              <span class="font-medium text-ink">Speaks leader, not log.</span> Resolution time, CSAT, backlog — the numbers your exec review already asks for.
+            </p>
+          </li>
+        </ul>
+      </div>
+
+      <!-- visual: a triage stream (activity feed component — icon gutter, spine, one accent) -->
+      <div data-reveal style="--i:1" class="relative">
+        <div class="rounded-2xl border border-line/70 bg-[#101013] p-2
+                    shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_30px_70px_-30px_rgba(0,0,0,0.7)]">
+          <div class="flex items-center justify-between px-3 py-2.5">
+            <h3 class="text-[13px] font-medium tracking-tight text-zinc-200">Pulse — today</h3>
+            <span class="text-[11.5px] text-zinc-500">Quietest in 9 days</span>
+          </div>
+
+          <ol class="relative px-1 pb-1">
+            <span class="absolute left-[27px] top-3 bottom-3 w-px bg-white/[0.07]" aria-hidden="true"></span>
+
+            <!-- active / important: the one accent on screen -->
+            <li class="relative flex gap-3 px-2.5 py-3">
+              <span class="z-10 mt-0.5 grid size-[19px] shrink-0 place-items-center rounded-full bg-accent/15 ring-2 ring-[#101013]">
+                <span class="size-1.5 rounded-full bg-accent"></span>
+              </span>
+              <div class="min-w-0 flex-1">
+                <p class="text-[13.5px] leading-snug text-zinc-200">
+                  Billing first-response slipped to <span class="tnum font-medium text-zinc-50">26m</span>. Refunds are the driver.
+                </p>
+                <p class="mt-0.5 text-[11.5px] text-zinc-500"><span class="tnum">now</span> · would breach SLA in <span class="tnum">28m</span></p>
+              </div>
+            </li>
+
+            <li class="relative flex gap-3 px-2.5 py-3">
+              <span class="z-10 mt-0.5 grid size-[19px] shrink-0 place-items-center rounded-full bg-white/[0.04] ring-2 ring-[#101013]">
+                <span class="size-1.5 rounded-full bg-good"></span>
+              </span>
+              <div class="min-w-0 flex-1">
+                <p class="text-[13.5px] leading-snug text-zinc-300">
+                  Onboarding cleared its backlog target — <span class="tnum text-zinc-100">96</span> open, down <span class="tnum text-good">12</span>.
+                </p>
+                <p class="mt-0.5 text-[11.5px] text-zinc-500"><span class="tnum">1h ago</span></p>
+              </div>
+            </li>
+
+            <li class="relative flex gap-3 px-2.5 py-3">
+              <span class="z-10 mt-0.5 grid size-[19px] shrink-0 place-items-center rounded-full bg-white/[0.04] ring-2 ring-[#101013]">
+                <span class="size-1.5 rounded-full bg-zinc-500"></span>
+              </span>
+              <div class="min-w-0 flex-1">
+                <p class="text-[13.5px] leading-snug text-zinc-300">
+                  CSAT held at <span class="tnum text-zinc-100">94.1%</span> across <span class="tnum">2,488</span> responses this week.
+                </p>
+                <p class="mt-0.5 text-[11.5px] text-zinc-500"><span class="tnum">3h ago</span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================== HOW IT WORKS (connect) ============================== -->
+<section id="connect" class="border-y border-line/60 bg-well py-24 md:py-28">
+  <div class="mx-auto max-w-6xl px-5 sm:px-6">
+    <div class="max-w-2xl" data-reveal>
+      <h2 class="font-display text-[clamp(1.8rem,3.6vw,2.6rem)] font-bold leading-[1.08] tracking-[-0.02em]">
+        Connect once. Watch it fill in.
+      </h2>
+      <p class="mt-4 text-[16.5px] leading-relaxed text-muted">
+        Read-only OAuth into the helpdesk you already run. No agent retraining, no migration, no new tab for your team to ignore.
+      </p>
+    </div>
+
+    <!-- three numbered steps — uneven, not three equal cards -->
+    <ol class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-line/70 bg-line/40 md:grid-cols-3">
+      <li class="bg-bg p-7" data-reveal>
+        <div class="flex items-baseline gap-3">
+          <span class="tnum font-display text-[15px] font-semibold text-accent">01</span>
+          <h3 class="text-[16px] font-semibold tracking-tight">Authorize your helpdesk</h3>
+        </div>
+        <p class="mt-3 text-[14.5px] leading-relaxed text-muted">
+          One click for Zendesk, Intercom, Freshdesk, HelpScout or Front. Read-only — Northwind never replies for you.
+        </p>
+        <div class="mt-5 flex flex-wrap gap-1.5 text-[12px] text-faint">
+          <span class="rounded-full border border-line px-2.5 py-1">Zendesk</span>
+          <span class="rounded-full border border-line px-2.5 py-1">Intercom</span>
+          <span class="rounded-full border border-line px-2.5 py-1">Front</span>
+          <span class="rounded-full border border-line px-2.5 py-1">+6</span>
+        </div>
+      </li>
+      <li class="bg-bg p-7" data-reveal style="--i:1">
+        <div class="flex items-baseline gap-3">
+          <span class="tnum font-display text-[15px] font-semibold text-accent">02</span>
+          <h3 class="text-[16px] font-semibold tracking-tight">We backfill 90 days</h3>
+        </div>
+        <p class="mt-3 text-[14.5px] leading-relaxed text-muted">
+          Northwind replays your history so trends exist on day one. Teams, tags and SLAs map themselves — confirm, don't configure.
+        </p>
+        <div class="mt-5 inline-flex items-center gap-2 rounded-lg bg-surface px-3 py-2 text-[12.5px] text-zinc-400">
+          <span class="h-1.5 w-1.5 rounded-full bg-good"></span>
+          <span class="tnum">128,400</span> tickets indexed
+        </div>
+      </li>
+      <li class="bg-bg p-7" data-reveal style="--i:2">
+        <div class="flex items-baseline gap-3">
+          <span class="tnum font-display text-[15px] font-semibold text-accent">03</span>
+          <h3 class="text-[16px] font-semibold tracking-tight">Pulse starts watching</h3>
+        </div>
+        <p class="mt-3 text-[14.5px] leading-relaxed text-muted">
+          The board goes live and the alerts route to Slack. You'll hear about the breach before your customer does.
+        </p>
+        <div class="mt-5 inline-flex items-center gap-2 rounded-lg bg-surface px-3 py-2 text-[12.5px] text-zinc-400">
+          <span class="tnum text-accent font-medium">~4 min</span> to first board
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================== TESTIMONIAL (proof) ============================== -->
+<section aria-label="Customer proof" class="py-24 md:py-28">
+  <div class="mx-auto max-w-4xl px-5 sm:px-6" data-reveal>
+    <figure class="text-balance">
+      <blockquote class="font-display text-[clamp(1.5rem,3vw,2.2rem)] font-medium leading-[1.18] tracking-[-0.015em]">
+        "We used to find out about a bad week in the Monday exec review. Now Northwind pings me Thursday at 2pm, names the queue, and I've fixed it before it touches CSAT."
+      </blockquote>
+      <figcaption class="mt-7 flex items-center gap-3.5">
+        <span class="grid h-11 w-11 place-items-center rounded-full bg-gradient-to-br from-accent/30 to-sky/20 text-[14px] font-semibold text-ink">DA</span>
+        <span class="text-[14.5px]">
+          <span class="block font-semibold">Dana Alves</span>
+          <span class="block text-muted">VP Support, Brightwell · 64-person team</span>
+        </span>
+      </figcaption>
+    </figure>
+
+    <!-- three case stats — tabular, no boxy cards, dividers -->
+    <div class="mt-14 grid grid-cols-1 divide-y divide-line/70 border-y border-line/70 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+      <div class="py-6 sm:pr-8">
+        <p class="tnum font-display text-[34px] font-bold leading-none tracking-tight">&minus;38<span class="text-[20px] text-muted">%</span></p>
+        <p class="mt-2 text-[13.5px] text-muted">median resolution time, first quarter</p>
+      </div>
+      <div class="py-6 sm:px-8">
+        <p class="tnum font-display text-[34px] font-bold leading-none tracking-tight">9<span class="text-[20px] text-muted">/10</span></p>
+        <p class="mt-2 text-[13.5px] text-muted">SLA breaches now caught pre-emptively</p>
+      </div>
+      <div class="py-6 sm:pl-8">
+        <p class="tnum font-display text-[34px] font-bold leading-none tracking-tight">4<span class="text-[20px] text-muted">min</span></p>
+        <p class="mt-2 text-[13.5px] text-muted">from connect to a live board</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== PRICING (objection: cost) ============================== -->
+<section id="pricing" class="border-t border-line/60 bg-surface/30 py-24 md:py-28">
+  <div class="mx-auto max-w-5xl px-5 sm:px-6">
+    <div class="mb-12 max-w-xl" data-reveal>
+      <h2 class="font-display text-[clamp(1.8rem,3.6vw,2.6rem)] font-bold leading-[1.08] tracking-[-0.02em]">
+        Priced per team, not per agent.
+      </h2>
+      <p class="mt-4 text-[16px] leading-relaxed text-muted">
+        Read-only means your seats stay where they are. Pay for the support org you're measuring, not every headcount.
+      </p>
+    </div>
+
+    <div class="grid gap-px overflow-hidden rounded-2xl border border-line/70 bg-line/40 md:grid-cols-3" data-reveal>
+      <!-- Tier -->
+      <div class="bg-bg p-7">
+        <p class="text-[14px] font-medium tracking-tight text-muted">Signal</p>
+        <p class="mt-4 flex items-baseline gap-1">
+          <span class="tnum font-display text-[40px] font-bold leading-none tracking-tight">$0</span>
+        </p>
+        <p class="mt-2 text-[13.5px] leading-relaxed text-muted">One board, one helpdesk. For a single team finding its feet.</p>
+        <a href="#" class="mt-6 block rounded-lg border border-line py-2.5 text-center text-[14px] font-medium transition-colors hover:border-faint hover:bg-white/[0.03]">Start free</a>
+        <ul class="mt-6 space-y-2.5 text-[13.5px] text-zinc-400">
+          <li class="flex gap-2.5"><span class="text-faint">&check;</span> Live resolution &amp; CSAT board</li>
+          <li class="flex gap-2.5"><span class="text-faint">&check;</span> 14-day history</li>
+          <li class="flex gap-2.5"><span class="text-faint">&check;</span> Weekly email digest</li>
+        </ul>
+      </div>
+
+      <!-- Recommended: one lever — tonal tint + accent dot -->
+      <div class="relative bg-raised p-7">
+        <span class="absolute right-7 top-7 inline-flex items-center gap-1.5 text-[11px] font-semibold tracking-tight text-accent">
+          <span class="h-1.5 w-1.5 rounded-full bg-accent"></span> Most teams
+        </span>
+        <p class="text-[14px] font-medium tracking-tight text-muted">Operations</p>
+        <p class="mt-4 flex items-baseline gap-1.5">
+          <span class="tnum font-display text-[40px] font-bold leading-none tracking-tight">$240</span>
+          <span class="text-[13.5px] text-muted">/mo</span>
+        </p>
+        <p class="mt-2 text-[13.5px] leading-relaxed text-muted">Up to 6 teams, full Pulse alerting, SLA watch.</p>
+        <a href="#connect" class="mt-6 block rounded-lg bg-accent py-2.5 text-center text-[14px] font-semibold text-[#1A1304] transition-colors hover:brightness-105">Connect your helpdesk</a>
+        <ul class="mt-6 space-y-2.5 text-[13.5px] text-zinc-300">
+          <li class="flex gap-2.5"><span class="text-accent">&check;</span> Everything in Signal</li>
+          <li class="flex gap-2.5"><span class="text-accent">&check;</span> Backlog-by-team &amp; SLA watch</li>
+          <li class="flex gap-2.5"><span class="text-accent">&check;</span> Pulse alerts to Slack</li>
+          <li class="flex gap-2.5"><span class="text-accent">&check;</span> 90-day backfill &amp; trends</li>
+        </ul>
+      </div>
+
+      <!-- Tier -->
+      <div class="bg-bg p-7">
+        <p class="text-[14px] font-medium tracking-tight text-muted">Command</p>
+        <p class="mt-4 flex items-baseline gap-1">
+          <span class="tnum font-display text-[40px] font-bold leading-none tracking-tight">Talk</span>
+        </p>
+        <p class="mt-2 text-[13.5px] leading-relaxed text-muted">Unlimited teams, multiple helpdesks, audit log &amp; SSO.</p>
+        <a href="#" class="mt-6 block rounded-lg border border-line py-2.5 text-center text-[14px] font-medium transition-colors hover:border-faint hover:bg-white/[0.03]">Contact sales</a>
+        <ul class="mt-6 space-y-2.5 text-[13.5px] text-zinc-400">
+          <li class="flex gap-2.5"><span class="text-faint">&check;</span> Everything in Operations</li>
+          <li class="flex gap-2.5"><span class="text-faint">&check;</span> Multi-helpdesk &amp; regions</li>
+          <li class="flex gap-2.5"><span class="text-faint">&check;</span> SSO, SAML &amp; audit log</li>
+          <li class="flex gap-2.5"><span class="text-faint">&check;</span> Data residency &amp; SLA</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== FINAL CTA (the close) ============================== -->
+<section class="relative overflow-hidden py-28 md:py-36">
+  <div class="pointer-events-none absolute left-1/2 top-1/2 -z-0 h-[460px] w-[860px] -translate-x-1/2 -translate-y-1/2 rounded-full
+              bg-[radial-gradient(ellipse_at_center,rgba(255,178,36,0.12),transparent_64%)] blur-2xl" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-3xl px-5 text-center sm:px-6" data-reveal>
+    <svg width="30" height="30" viewBox="0 0 24 24" fill="none" class="mx-auto mb-6" aria-hidden="true">
+      <path d="M12 2.5 14.4 9.6 21.5 12 14.4 14.4 12 21.5 9.6 14.4 2.5 12 9.6 9.6 12 2.5Z" fill="#FFB224"/>
+      <circle cx="12" cy="12" r="1.6" fill="#0A0A0C"/>
+    </svg>
+    <h2 class="font-display text-[clamp(2rem,5vw,3.4rem)] font-extrabold leading-[1.02] tracking-[-0.025em] text-balance">
+      See your support the way your customers feel it.
+    </h2>
+    <p class="mx-auto mt-5 max-w-xl text-[17px] leading-relaxed text-muted">
+      Connect a read-only helpdesk and watch the first board fill in. No card, no migration, no risk to the queue.
+    </p>
+    <div class="mt-9 flex flex-wrap items-center justify-center gap-3">
+      <a href="#" data-magnetic class="rounded-full bg-accent px-6 py-3.5 text-[15px] font-semibold text-[#1A1304] transition-transform hover:brightness-105">
+        Connect your helpdesk
+      </a>
+      <a href="#console" class="rounded-full border border-line px-6 py-3.5 text-[15px] font-medium transition-colors hover:border-faint hover:bg-white/[0.03]">
+        Book a 20-min walkthrough
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="border-t border-line/60 bg-well">
+  <div class="mx-auto max-w-6xl px-5 py-14 sm:px-6">
+    <div class="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+      <div>
+        <a href="#top" class="flex items-center gap-2.5">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 2.5 14.4 9.6 21.5 12 14.4 14.4 12 21.5 9.6 14.4 2.5 12 9.6 9.6 12 2.5Z" fill="#FFB224"/>
+            <circle cx="12" cy="12" r="1.6" fill="#08080A"/>
+          </svg>
+          <span class="text-[16px] font-semibold tracking-tight font-display">Northwind</span>
+        </a>
+        <p class="mt-4 max-w-xs text-[13.5px] leading-relaxed text-faint">
+          The support-operations console. Resolution time, CSAT and backlog — read at a glance.
+        </p>
+      </div>
+
+      <nav aria-label="Product">
+        <p class="text-[12px] uppercase tracking-wider text-faint">Product</p>
+        <ul class="mt-4 space-y-2.5 text-[14px] text-muted">
+          <li><a href="#console" class="transition-colors hover:text-ink">Console</a></li>
+          <li><a href="#triage" class="transition-colors hover:text-ink">Pulse alerts</a></li>
+          <li><a href="#connect" class="transition-colors hover:text-ink">Integrations</a></li>
+          <li><a href="#pricing" class="transition-colors hover:text-ink">Pricing</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Company">
+        <p class="text-[12px] uppercase tracking-wider text-faint">Company</p>
+        <ul class="mt-4 space-y-2.5 text-[14px] text-muted">
+          <li><a href="#" class="transition-colors hover:text-ink">About</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Customers</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Changelog</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Careers</a></li>
+        </ul>
+      </nav>
+
+      <nav aria-label="Resources">
+        <p class="text-[12px] uppercase tracking-wider text-faint">Resources</p>
+        <ul class="mt-4 space-y-2.5 text-[14px] text-muted">
+          <li><a href="#" class="transition-colors hover:text-ink">Docs</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Security</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Status</a></li>
+          <li><a href="#" class="transition-colors hover:text-ink">Privacy</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="mt-12 flex flex-col items-start justify-between gap-3 border-t border-line/60 pt-6 text-[13px] text-faint sm:flex-row sm:items-center">
+      <p>&copy; <span class="tnum">2026</span> Northwind Labs, Inc. All rights reserved.</p>
+      <p class="flex items-center gap-2">
+        <span class="h-1.5 w-1.5 rounded-full bg-good"></span>
+        All systems operational
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // nav blur on scroll
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 12);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // blur-in reveal + boot-sweep / draw-line / gauge triggers
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('[data-reveal], .boot-sweep, .draw-line, .gauge-arc')
+      .forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll('.draw-line, .gauge-arc').forEach((el) => el.classList.add('is-visible'));
+  }
+
+  // magnetic primary buttons
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.matchMedia('(hover: hover)').matches) {
+    document.querySelectorAll('[data-magnetic]').forEach((b) => {
+      b.style.transition = 'transform .3s cubic-bezier(.2,.7,.2,1)';
+      b.addEventListener('mousemove', (e) => {
+        const r = b.getBoundingClientRect();
+        b.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.18}px,${(e.clientY - r.top - r.height / 2) * 0.18}px)`;
+      });
+      b.addEventListener('mouseleave', () => { b.style.transform = ''; });
+    });
+  }
+</script>
+</body>
+</html>

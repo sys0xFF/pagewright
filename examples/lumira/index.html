@@ -1,0 +1,624 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lumira — The Hour Serum, a small-batch botanical ritual</title>
+<meta name="description" content="Lumira is a single small-batch botanical serum, pressed in fifty-litre runs and finished by hand. Not a routine — an hour kept for yourself." />
+<meta property="og:title" content="Lumira — The Hour Serum" />
+<meta property="og:description" content="One serum. Pressed in small batches, decanted by hand, made to be a ritual rather than a routine." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: {
+      paper:'#F4F1E9', card:'#EEEADE', sand:'#E5DFCE',
+      ink:'#26271F', mute:'#5C5C4E', faint:'#8A8A78',
+      olive:'#3C4327', clay:'#9A6A4B', line:'#D7D0BE',
+      dark:'#23271B', darkink:'#E9E6D8',
+    },
+    fontFamily: {
+      serif:['Newsreader','Georgia','serif'],
+      sans:['"Hanken Grotesk"','system-ui','sans-serif'],
+    },
+    letterSpacing: { tightish:'-0.015em', editorial:'0.18em' },
+  } } }
+</script>
+
+<style>
+  :root{ --olive:#3C4327; }
+  html{ font-feature-settings:"tnum"; }
+  body{ -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .tnum{ font-variant-numeric: tabular-nums; }
+
+  /* scroll-progress hairline (signature, off main thread) */
+  .progress{ position:fixed; top:0; left:0; height:2px; width:100%; transform-origin:left;
+    transform:scaleX(0); background:var(--olive); z-index:60; }
+  @media (prefers-reduced-motion: no-preference){
+    @supports (animation-timeline: scroll(root)){
+      .progress{ animation:grow linear both; animation-timeline:scroll(root block); }
+      @keyframes grow{ to{ transform:scaleX(1) } }
+    }
+  }
+
+  /* blur-in reveal */
+  @media (prefers-reduced-motion: no-preference){
+    [data-reveal]{ opacity:0; filter:blur(12px); transform:translateY(20px);
+      transition:opacity .7s ease, filter .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);
+      transition-delay:calc(var(--i,0)*80ms); }
+    [data-reveal].is-visible{ opacity:1; filter:blur(0); transform:none; }
+  }
+
+  /* the specimen rail — horizontal scroll-snap, custom scrollbar */
+  .rail{ scrollbar-width:thin; scrollbar-color:#C9C1AD transparent; }
+  .rail::-webkit-scrollbar{ height:6px; }
+  .rail::-webkit-scrollbar-thumb{ background:#C9C1AD; border-radius:999px; }
+  .rail::-webkit-scrollbar-track{ background:transparent; }
+
+  .grain{ background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+  .link-underline{ background-image:linear-gradient(currentColor,currentColor);
+    background-size:0% 1px; background-position:0 100%; background-repeat:no-repeat;
+    transition:background-size .4s cubic-bezier(.2,.7,.2,1); padding-bottom:2px; }
+  .link-underline:hover{ background-size:100% 1px; }
+
+  .drop-cap::first-letter{ font-family:'Newsreader',serif; font-weight:400; float:left;
+    font-size:4.4rem; line-height:.78; padding:.32rem .6rem .1rem 0; color:var(--olive); }
+</style>
+</head>
+
+<body class="bg-paper text-ink font-sans antialiased selection:bg-olive/15">
+
+<!-- paper grain -->
+<div class="grain pointer-events-none fixed inset-0 -z-10 opacity-[0.05]" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"></div>
+
+<a href="#serum" class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[70] focus:bg-ink focus:px-4 focus:py-2 focus:text-paper">Skip to the serum</a>
+
+<!-- ───────────────────────── HERO (full-bleed botanical, headline on the dark heart) ───────────────────────── -->
+<header class="relative isolate min-h-[100svh] overflow-hidden bg-dark text-darkink">
+
+  <!-- hero photograph: dim botanical still-life, the bottle amid foliage; falls off to near-black in the centre -->
+  <!-- IMAGE SLOT: hero-botanical.png — graded fallback below -->
+  <img
+    src="assets/hero-botanical.jpg"
+    width="2000" height="2400"
+    alt="A single amber-glass Lumira serum bottle resting on a thin dark rail amid living botanical leaves, lit low against deep shadow"
+    class="absolute inset-0 -z-10 h-full w-full object-cover"
+    style="background:radial-gradient(120% 90% at 50% 30%, #34381f 0%, #262a18 42%, #181b10 100%);"
+    onerror="this.style.opacity=0;"
+    fetchpriority="high" />
+  <!-- darken the centre so the serif headline reads with no card or scrim panel -->
+  <div class="absolute inset-0 -z-10 bg-[radial-gradient(120%_85%_at_50%_46%,rgba(13,15,8,0.72)_0%,rgba(13,15,8,0.30)_55%,rgba(13,15,8,0.62)_100%)]" aria-hidden="true"></div>
+
+  <!-- nav, over the photo, no container -->
+  <nav class="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+    <a href="#" class="font-serif text-2xl tracking-tightish text-darkink">Lumira</a>
+    <ul class="hidden items-center gap-9 text-[13px] text-darkink/75 md:flex">
+      <li><a href="#serum" class="link-underline hover:text-darkink">The serum</a></li>
+      <li><a href="#ritual" class="link-underline hover:text-darkink">The ritual</a></li>
+      <li><a href="#specimens" class="link-underline hover:text-darkink">Botanicals</a></li>
+      <li><a href="#field" class="link-underline hover:text-darkink">Field notes</a></li>
+    </ul>
+    <a href="#buy" class="text-[13px] text-darkink/80 hover:text-darkink">
+      <span class="link-underline">Shop the serum</span>
+    </a>
+  </nav>
+
+  <!-- headline set directly on the dim heart of the image: no panel, no scrim card -->
+  <div class="relative z-10 mx-auto flex min-h-[calc(100svh-92px)] max-w-3xl flex-col items-center justify-center px-6 pb-20 text-center">
+    <p data-reveal class="text-[12px] uppercase tracking-editorial text-darkink/65">Pressed in small batches · No. 01</p>
+    <h1 data-reveal style="--i:1" class="mt-6 font-serif text-[clamp(2.6rem,8vw,5.2rem)] font-light leading-[0.98] tracking-tightish text-darkink">
+      An hour kept<br />for yourself.
+    </h1>
+    <p data-reveal style="--i:2" class="mt-7 max-w-xl font-serif text-lg font-light leading-relaxed text-darkink/85 sm:text-xl">
+      Lumira is one serum, pressed fifty litres at a time from cold-extracted botanicals and
+      decanted by hand. It asks for the slow minutes most evenings forget.
+    </p>
+    <a data-reveal style="--i:3" href="#buy" class="group mt-9 inline-flex items-center gap-3 text-[13px] uppercase tracking-[0.16em] text-darkink">
+      <span class="link-underline">Shop the serum</span>
+      <span aria-hidden="true" class="transition-transform duration-300 group-hover:translate-x-1">→</span>
+    </a>
+  </div>
+
+  <!-- a faint vertical line + word, like a printed margin note -->
+  <div class="absolute bottom-7 left-1/2 z-10 -translate-x-1/2 text-center">
+    <span class="mx-auto block h-10 w-px bg-darkink/30"></span>
+    <span class="mt-2 block text-[11px] uppercase tracking-[0.2em] text-darkink/55">Read on</span>
+  </div>
+</header>
+
+<main id="serum">
+
+  <!-- ───────────────────────── RANGE NOTE — "Newly decanted" (Aesop's "New & notable", one product) ───────────────────────── -->
+  <section aria-labelledby="decant-h" class="border-b border-line">
+    <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div class="mx-auto max-w-2xl text-center">
+        <p data-reveal class="text-[12px] uppercase tracking-editorial text-faint">Newly decanted</p>
+        <h2 id="decant-h" data-reveal style="--i:1" class="mt-5 font-serif text-[clamp(1.9rem,4vw,3rem)] font-light leading-tight tracking-tightish">
+          One formula, finished four times by hand.
+        </h2>
+        <p data-reveal style="--i:2" class="mx-auto mt-5 max-w-xl text-[15px] leading-relaxed text-mute">
+          We make a single thing well. Each batch is pressed, rested, filtered and bottled in the same
+          room — so what reaches you is closer to the plant than the shelf.
+        </p>
+      </div>
+
+      <!-- three plates of the same serum at four batch stages — uneven, editorial, not three equal cards -->
+      <div class="mt-14 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+
+        <figure data-reveal class="group">
+          <div class="overflow-hidden rounded-[2px] bg-card">
+            <!-- IMAGE SLOT: plate-press.png -->
+            <img src="assets/plate-press.jpg" width="900" height="1100"
+              alt="Cold-pressed botanical oil being poured, amber light against shadow"
+              class="aspect-[9/11] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              style="background:linear-gradient(150deg,#6b5a3a,#3a3322 70%);" loading="lazy" onerror="this.style.opacity=0;" />
+          </div>
+          <figcaption class="mt-4">
+            <h3 class="font-serif text-xl font-normal tracking-tightish">The press</h3>
+            <p class="mt-1.5 text-[14px] leading-relaxed text-mute">Botanicals cold-extracted at low heat, so the volatile notes survive.</p>
+            <p class="mt-3 text-[12px] uppercase tracking-[0.12em] text-faint tnum">Stage 01 / 04</p>
+          </figcaption>
+        </figure>
+
+        <figure data-reveal style="--i:1" class="group sm:mt-12">
+          <div class="overflow-hidden rounded-[2px] bg-card">
+            <!-- IMAGE SLOT: plate-rest.png -->
+            <img src="assets/plate-rest.jpg" width="900" height="1100"
+              alt="Glass vessels of resting serum on a dark steel rail, soft daylight"
+              class="aspect-[9/11] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              style="background:linear-gradient(150deg,#4a4d33,#272a1a 70%);" loading="lazy" onerror="this.style.opacity=0;" />
+          </div>
+          <figcaption class="mt-4">
+            <h3 class="font-serif text-xl font-normal tracking-tightish">The rest</h3>
+            <p class="mt-1.5 text-[14px] leading-relaxed text-mute">Six weeks in dark glass to let the oils marry and clarify.</p>
+            <p class="mt-3 text-[12px] uppercase tracking-[0.12em] text-faint tnum">Stage 02 / 04</p>
+          </figcaption>
+        </figure>
+
+        <figure data-reveal style="--i:2" class="group">
+          <div class="overflow-hidden rounded-[2px] bg-card">
+            <!-- IMAGE SLOT: plate-bottle.png -->
+            <img src="assets/plate-bottle.jpg" width="900" height="1100"
+              alt="A finished Lumira serum bottle, amber glass with a dropper, in low botanical light"
+              class="aspect-[9/11] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              style="background:linear-gradient(150deg,#7a5238,#33271b 70%);" loading="lazy" onerror="this.style.opacity=0;" />
+          </div>
+          <figcaption class="mt-4">
+            <h3 class="font-serif text-xl font-normal tracking-tightish">The Hour Serum</h3>
+            <p class="mt-1.5 text-[14px] leading-relaxed text-mute">30&nbsp;ml, sealed, numbered. Decanted by hand the week it ships.</p>
+            <p class="mt-3 text-[12px] uppercase tracking-[0.12em] text-faint tnum">Stage 04 / 04 · <span class="text-ink">$68</span></p>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── EDITORIAL FEATURE — "Many considered gestures" (Aesop) ───────────────────────── -->
+  <section aria-labelledby="gesture-h" class="bg-olive text-paper">
+    <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-12 md:py-28">
+      <div data-reveal class="md:col-span-5">
+        <p class="text-[12px] uppercase tracking-editorial text-paper/55">A few considered minutes</p>
+        <h2 id="gesture-h" class="mt-5 font-serif text-[clamp(2rem,4vw,3.2rem)] font-light leading-[1.06] tracking-tightish">
+          A serum you slow down to use.
+        </h2>
+        <p class="mt-6 text-[15px] leading-relaxed text-paper/80">
+          Three drops, warmed between the palms, pressed into the skin rather than rubbed. It is a small
+          ceremony — the kind that turns the end of a day into a doorway, not a deadline.
+        </p>
+        <a href="#ritual" class="mt-8 inline-flex items-center gap-3 text-[13px] uppercase tracking-[0.16em] text-paper">
+          <span class="link-underline">Read the ritual</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+      <figure data-reveal style="--i:1" class="md:col-span-7">
+        <div class="overflow-hidden rounded-[2px]">
+          <!-- IMAGE SLOT: gesture-hands.png -->
+          <img src="assets/gesture-hands.jpg" width="1400" height="980"
+            alt="Hands warming a few drops of serum between the palms in soft directional light"
+            class="aspect-[7/5] w-full object-cover"
+            style="background:linear-gradient(140deg,#535738,#2c3020 75%);" loading="lazy" onerror="this.style.opacity=0;" />
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── THE RITUAL (Aesop's how-to-use / finder beat) ───────────────────────── -->
+  <section id="ritual" aria-labelledby="ritual-h" class="border-b border-line">
+    <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div class="grid gap-14 md:grid-cols-12">
+        <div data-reveal class="md:col-span-4">
+          <p class="text-[12px] uppercase tracking-editorial text-faint">How it is kept</p>
+          <h2 id="ritual-h" class="mt-5 font-serif text-[clamp(1.9rem,4vw,2.8rem)] font-light leading-tight tracking-tightish">
+            The hour, in four steps.
+          </h2>
+          <p class="mt-5 max-w-sm text-[15px] leading-relaxed text-mute">
+            No ten-step regimen. Four unhurried movements, most evenings — the practice is the point.
+          </p>
+        </div>
+
+        <ol class="md:col-span-8 md:border-l md:border-line md:pl-12">
+          <li data-reveal class="flex gap-6 border-b border-line py-6 first:pt-0">
+            <span class="font-serif text-2xl font-light text-clay tnum">01</span>
+            <div>
+              <h3 class="font-serif text-xl font-normal tracking-tightish">Cleanse, then wait</h3>
+              <p class="mt-1.5 text-[14px] leading-relaxed text-mute">Leave the skin barely damp. The serum draws that water in rather than sealing it out.</p>
+            </div>
+          </li>
+          <li data-reveal style="--i:1" class="flex gap-6 border-b border-line py-6">
+            <span class="font-serif text-2xl font-light text-clay tnum">02</span>
+            <div>
+              <h3 class="font-serif text-xl font-normal tracking-tightish">Warm three drops</h3>
+              <p class="mt-1.5 text-[14px] leading-relaxed text-mute">Between the palms, until the oil loosens and the botanicals open. Breathe once.</p>
+            </div>
+          </li>
+          <li data-reveal style="--i:2" class="flex gap-6 border-b border-line py-6">
+            <span class="font-serif text-2xl font-light text-clay tnum">03</span>
+            <div>
+              <h3 class="font-serif text-xl font-normal tracking-tightish">Press, don't rub</h3>
+              <p class="mt-1.5 text-[14px] leading-relaxed text-mute">Cheeks, jaw, throat — palms flat. A slower hand leaves the skin calmer.</p>
+            </div>
+          </li>
+          <li data-reveal style="--i:3" class="flex gap-6 py-6 pb-0">
+            <span class="font-serif text-2xl font-light text-clay tnum">04</span>
+            <div>
+              <h3 class="font-serif text-xl font-normal tracking-tightish">Leave it be</h3>
+              <p class="mt-1.5 text-[14px] leading-relaxed text-mute">No follow-up cream needed. Let the room go quiet. The hour is yours now.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── THE SPECIMEN RAIL (Aesop's "Compare our fragrances" horizontal scroller) ───────────────────────── -->
+  <section id="specimens" aria-labelledby="spec-h" class="bg-sand">
+    <div class="mx-auto max-w-6xl px-6 pt-20 md:pt-28">
+      <div class="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-end">
+        <div data-reveal class="max-w-xl">
+          <p class="text-[12px] uppercase tracking-editorial text-faint">Pressed from six</p>
+          <h2 id="spec-h" class="mt-5 font-serif text-[clamp(1.9rem,4vw,2.8rem)] font-light leading-tight tracking-tightish">
+            The botanicals, named.
+          </h2>
+          <p class="mt-4 text-[15px] leading-relaxed text-mute">Nothing hidden behind &ldquo;fragrance.&rdquo; Six plants, where each is grown, and what it does. Drag to read across.</p>
+        </div>
+        <p data-reveal style="--i:1" class="text-[12px] uppercase tracking-[0.14em] text-faint tnum">06 specimens · 100% disclosed</p>
+      </div>
+    </div>
+
+    <!-- horizontal scroll-snap specimen cards — the signature interaction -->
+    <div data-reveal class="rail mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-6 pb-20 md:pb-28 [scroll-padding-left:1.5rem]">
+      <!-- each card -->
+      <article class="w-[260px] shrink-0 snap-start sm:w-[300px]">
+        <div class="overflow-hidden rounded-[2px] bg-card">
+          <!-- IMAGE SLOT: botanical-blue-tansy.png -->
+          <img src="assets/botanical-blue-tansy.jpg" width="600" height="760"
+            alt="Sprig of blue tansy, a botanical specimen against soft paper"
+            class="aspect-[5/6] w-full object-cover" style="background:linear-gradient(160deg,#3f5563,#222b2f 80%);" loading="lazy" onerror="this.style.opacity=0;" />
+        </div>
+        <div class="mt-4">
+          <div class="flex items-baseline justify-between">
+            <h3 class="font-serif text-lg font-normal tracking-tightish">Blue Tansy</h3>
+            <span class="text-[11px] uppercase tracking-[0.12em] text-faint tnum">No. 01</span>
+          </div>
+          <p class="mt-1 text-[13px] italic text-clay">Tanacetum annuum · Morocco</p>
+          <p class="mt-2 text-[13px] leading-relaxed text-mute">Calms reactive, flushed skin; the indigo note that gives the oil its dusk.</p>
+        </div>
+      </article>
+
+      <article class="w-[260px] shrink-0 snap-start sm:w-[300px]">
+        <div class="overflow-hidden rounded-[2px] bg-card">
+          <!-- IMAGE SLOT: botanical-rosehip.png -->
+          <img src="assets/botanical-rosehip.jpg" width="600" height="760"
+            alt="Rosehip seeds and a split hip, a botanical specimen"
+            class="aspect-[5/6] w-full object-cover" style="background:linear-gradient(160deg,#8a4a36,#3a201a 80%);" loading="lazy" onerror="this.style.opacity=0;" />
+        </div>
+        <div class="mt-4">
+          <div class="flex items-baseline justify-between">
+            <h3 class="font-serif text-lg font-normal tracking-tightish">Rosehip</h3>
+            <span class="text-[11px] uppercase tracking-[0.12em] text-faint tnum">No. 02</span>
+          </div>
+          <p class="mt-1 text-[13px] italic text-clay">Rosa canina · Chilean Andes</p>
+          <p class="mt-2 text-[13px] leading-relaxed text-mute">Cold-pressed for retinoic acid &mdash; the base, and most of the renewal.</p>
+        </div>
+      </article>
+
+      <article class="w-[260px] shrink-0 snap-start sm:w-[300px]">
+        <div class="overflow-hidden rounded-[2px] bg-card">
+          <!-- IMAGE SLOT: botanical-helichrysum.png -->
+          <img src="assets/botanical-helichrysum.jpg" width="600" height="760"
+            alt="Helichrysum everlasting flowers, dried golden, a botanical specimen"
+            class="aspect-[5/6] w-full object-cover" style="background:linear-gradient(160deg,#8f7a35,#39301a 80%);" loading="lazy" onerror="this.style.opacity=0;" />
+        </div>
+        <div class="mt-4">
+          <div class="flex items-baseline justify-between">
+            <h3 class="font-serif text-lg font-normal tracking-tightish">Helichrysum</h3>
+            <span class="text-[11px] uppercase tracking-[0.12em] text-faint tnum">No. 03</span>
+          </div>
+          <p class="mt-1 text-[13px] italic text-clay">H. italicum · Corsica</p>
+          <p class="mt-2 text-[13px] leading-relaxed text-mute">The everlasting flower; quiets redness and softens the look of fine lines.</p>
+        </div>
+      </article>
+
+      <article class="w-[260px] shrink-0 snap-start sm:w-[300px]">
+        <div class="overflow-hidden rounded-[2px] bg-card">
+          <!-- IMAGE SLOT: botanical-sea-buckthorn.png -->
+          <img src="assets/botanical-sea-buckthorn.jpg" width="600" height="760"
+            alt="Sea buckthorn berries, vivid orange, a botanical specimen"
+            class="aspect-[5/6] w-full object-cover" style="background:linear-gradient(160deg,#b3611f,#3a2412 80%);" loading="lazy" onerror="this.style.opacity=0;" />
+        </div>
+        <div class="mt-4">
+          <div class="flex items-baseline justify-between">
+            <h3 class="font-serif text-lg font-normal tracking-tightish">Sea Buckthorn</h3>
+            <span class="text-[11px] uppercase tracking-[0.12em] text-faint tnum">No. 04</span>
+          </div>
+          <p class="mt-1 text-[13px] italic text-clay">Hippophae · Baltic coast</p>
+          <p class="mt-2 text-[13px] leading-relaxed text-mute">Omega-7 and carotenoids; the amber warmth, and the glow people ask about.</p>
+        </div>
+      </article>
+
+      <article class="w-[260px] shrink-0 snap-start sm:w-[300px]">
+        <div class="overflow-hidden rounded-[2px] bg-card">
+          <!-- IMAGE SLOT: botanical-evening-primrose.png -->
+          <img src="assets/botanical-evening-primrose.jpg" width="600" height="760"
+            alt="Evening primrose flower, pale yellow, a botanical specimen"
+            class="aspect-[5/6] w-full object-cover" style="background:linear-gradient(160deg,#9a9242,#363219 80%);" loading="lazy" onerror="this.style.opacity=0;" />
+        </div>
+        <div class="mt-4">
+          <div class="flex items-baseline justify-between">
+            <h3 class="font-serif text-lg font-normal tracking-tightish">Evening Primrose</h3>
+            <span class="text-[11px] uppercase tracking-[0.12em] text-faint tnum">No. 05</span>
+          </div>
+          <p class="mt-1 text-[13px] italic text-clay">Oenothera · Oregon</p>
+          <p class="mt-2 text-[13px] leading-relaxed text-mute">Gamma-linolenic acid for suppleness; it blooms at dusk, like the ritual.</p>
+        </div>
+      </article>
+
+      <article class="w-[260px] shrink-0 snap-start sm:w-[300px]">
+        <div class="overflow-hidden rounded-[2px] bg-card">
+          <!-- IMAGE SLOT: botanical-frankincense.png -->
+          <img src="assets/botanical-frankincense.jpg" width="600" height="760"
+            alt="Frankincense resin tears, pale amber, a botanical specimen"
+            class="aspect-[5/6] w-full object-cover" style="background:linear-gradient(160deg,#8a7355,#352b1f 80%);" loading="lazy" onerror="this.style.opacity=0;" />
+        </div>
+        <div class="mt-4">
+          <div class="flex items-baseline justify-between">
+            <h3 class="font-serif text-lg font-normal tracking-tightish">Frankincense</h3>
+            <span class="text-[11px] uppercase tracking-[0.12em] text-faint tnum">No. 06</span>
+          </div>
+          <p class="mt-1 text-[13px] italic text-clay">Boswellia sacra · Oman</p>
+          <p class="mt-2 text-[13px] leading-relaxed text-mute">Resinous and grounding; the long note that lingers after the rest fade.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── VALUES BAND (Aesop's B Corp / Leaping Bunny two-up) ───────────────────────── -->
+  <section aria-labelledby="values-h" class="bg-card">
+    <h2 id="values-h" class="sr-only">Our commitments</h2>
+    <div class="mx-auto grid max-w-6xl grid-cols-1 divide-y divide-line px-6 py-16 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+      <div data-reveal class="px-0 py-8 sm:px-10 sm:py-0">
+        <p class="font-serif text-lg tracking-tightish">Small by design</p>
+        <p class="mt-2 text-[14px] leading-relaxed text-mute">Fifty-litre batches, four a season. We would rather sell out than scale the recipe up.</p>
+      </div>
+      <div data-reveal style="--i:1" class="px-0 py-8 sm:px-10 sm:py-0">
+        <p class="font-serif text-lg tracking-tightish">Never on animals</p>
+        <p class="mt-2 text-[14px] leading-relaxed text-mute">Leaping Bunny certified, and vegan to the wax seal. No exceptions, no markets excluded.</p>
+      </div>
+      <div data-reveal style="--i:2" class="px-0 py-8 sm:px-10 sm:py-0">
+        <p class="font-serif text-lg tracking-tightish">Refilled, not rebought</p>
+        <p class="mt-2 text-[14px] leading-relaxed text-mute">Return the dark-glass bottle for your next decant; the first one is the only one you buy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FIELD NOTES — editorial reading beat (Aesop's "Recommended reading") ───────────────────────── -->
+  <section id="field" aria-labelledby="field-h" class="border-b border-line">
+    <div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+      <div data-reveal class="mb-12 flex items-end justify-between">
+        <h2 id="field-h" class="font-serif text-[clamp(1.8rem,4vw,2.6rem)] font-light tracking-tightish">Field notes</h2>
+        <a href="#" class="hidden text-[13px] uppercase tracking-[0.14em] text-mute hover:text-ink sm:inline-flex">
+          <span class="link-underline">All notes →</span>
+        </a>
+      </div>
+
+      <div class="grid gap-10 md:grid-cols-3">
+        <article data-reveal class="group">
+          <div class="overflow-hidden rounded-[2px] bg-card">
+            <!-- IMAGE SLOT: note-dusk.png -->
+            <img src="assets/note-dusk.jpg" width="900" height="640"
+              alt="A dim windowsill at dusk with the serum bottle and a single lit candle"
+              class="aspect-[9/6] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              style="background:linear-gradient(150deg,#5a4a30,#2a2418 80%);" loading="lazy" onerror="this.style.opacity=0;" />
+          </div>
+          <p class="mt-4 text-[11px] uppercase tracking-[0.14em] text-clay">On ritual · 4 min read</p>
+          <h3 class="mt-2 font-serif text-xl font-normal leading-snug tracking-tightish">Why we sell an hour, not a routine</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-mute">The case against the ten-step regimen, and for the one slow gesture that survives a hard week.</p>
+        </article>
+
+        <article data-reveal style="--i:1" class="group">
+          <div class="overflow-hidden rounded-[2px] bg-card">
+            <!-- IMAGE SLOT: note-press.png -->
+            <img src="assets/note-press.jpg" width="900" height="640"
+              alt="Botanical oil being cold-pressed, amber light on dark steel"
+              class="aspect-[9/6] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              style="background:linear-gradient(150deg,#6b5530,#2c2316 80%);" loading="lazy" onerror="this.style.opacity=0;" />
+          </div>
+          <p class="mt-4 text-[11px] uppercase tracking-[0.14em] text-clay">On making · 6 min read</p>
+          <h3 class="mt-2 font-serif text-xl font-normal leading-snug tracking-tightish">The fifty-litre rule</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-mute">What small-batch actually costs us, and why the number on the bottle never changes.</p>
+        </article>
+
+        <article data-reveal style="--i:2" class="group">
+          <div class="overflow-hidden rounded-[2px] bg-card">
+            <!-- IMAGE SLOT: note-tansy.png -->
+            <img src="assets/note-tansy.jpg" width="900" height="640"
+              alt="A field of blue tansy in low Moroccan light"
+              class="aspect-[9/6] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+              style="background:linear-gradient(150deg,#3f5563,#222b2f 80%);" loading="lazy" onerror="this.style.opacity=0;" />
+          </div>
+          <p class="mt-4 text-[11px] uppercase tracking-[0.14em] text-clay">On botanicals · 5 min read</p>
+          <h3 class="mt-2 font-serif text-xl font-normal leading-snug tracking-tightish">Chasing blue tansy in Morocco</h3>
+          <p class="mt-2 text-[14px] leading-relaxed text-mute">A growing season with the family farm that presses the indigo note at the heart of No. 01.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── LITERARY PULL-QUOTE (Aesop's Ada Lovelace close, no dark CTA band) ───────────────────────── -->
+  <section aria-labelledby="quote-h" class="bg-paper">
+    <div class="mx-auto max-w-3xl px-6 py-24 text-center md:py-32">
+      <h2 id="quote-h" class="sr-only">In closing</h2>
+      <blockquote data-reveal>
+        <p class="font-serif text-[clamp(1.6rem,3.4vw,2.4rem)] font-light italic leading-snug tracking-tightish text-ink">
+          &ldquo;To care for the skin at the day&rsquo;s edge is not vanity. It is the smallest way we keep
+          a promise to ourselves.&rdquo;
+        </p>
+        <cite data-reveal style="--i:1" class="mt-7 block text-[12px] uppercase not-italic tracking-editorial text-faint">Mira Halloran · Founder, Lumira</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── THE BUY MOMENT (single product, inline — the actual close) ───────────────────────── -->
+  <section id="buy" aria-labelledby="buy-h" class="bg-olive text-paper">
+    <div class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-12 md:py-28">
+      <figure data-reveal class="md:col-span-6">
+        <div class="overflow-hidden rounded-[2px]">
+          <!-- IMAGE SLOT: bottle-final.png -->
+          <img src="assets/bottle-final.jpg" width="1200" height="1200"
+            alt="The Lumira Hour Serum bottle, amber glass and dropper, centred in soft botanical light"
+            class="aspect-square w-full object-cover"
+            style="background:linear-gradient(150deg,#5a5e3c,#2a2e1c 78%);" loading="lazy" onerror="this.style.opacity=0;" />
+        </div>
+      </figure>
+      <div data-reveal style="--i:1" class="md:col-span-6">
+        <p class="text-[12px] uppercase tracking-editorial text-paper/55">The Hour Serum · No. 01</p>
+        <h2 id="buy-h" class="mt-5 font-serif text-[clamp(2rem,4.5vw,3.4rem)] font-light leading-[1.04] tracking-tightish">
+          One bottle. One ritual. Begin tonight.
+        </h2>
+        <p class="mt-6 max-w-md text-[15px] leading-relaxed text-paper/80">
+          30&nbsp;ml of small-batch botanical serum, decanted by hand and numbered. Returnable glass,
+          refill at a kinder price, and your first evening starts the day it arrives.
+        </p>
+        <div class="mt-8 flex flex-wrap items-baseline gap-x-6 gap-y-2">
+          <span class="font-serif text-3xl font-light tnum">$68</span>
+          <span class="text-[13px] text-paper/65 tnum">30&nbsp;ml · ~8 weeks of evenings</span>
+        </div>
+        <a href="#" data-magnetic class="mt-8 inline-flex items-center gap-3 rounded-[2px] bg-paper px-8 py-4 text-[13px] uppercase tracking-[0.16em] text-olive transition-colors hover:bg-white">
+          Shop the serum
+          <span aria-hidden="true">→</span>
+        </a>
+        <p class="mt-4 text-[12px] text-paper/55 tnum">Free carbon-neutral shipping · Ships within 2 days · 60-night return</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ───────────────────────── FOOTER (Aesop's rich footer w/ newsletter + service row) ───────────────────────── -->
+<footer class="bg-dark text-darkink/80">
+  <!-- service row -->
+  <div class="border-b border-white/10">
+    <div class="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 py-7 text-[13px] sm:grid-cols-3">
+      <p class="flex items-center gap-3"><span class="inline-block h-1.5 w-1.5 rounded-full bg-clay"></span> Secure checkout &mdash; Shop Pay &amp; Apple Pay</p>
+      <p class="flex items-center gap-3"><span class="inline-block h-1.5 w-1.5 rounded-full bg-clay"></span> Two complimentary samples with every order</p>
+      <p class="flex items-center gap-3"><span class="inline-block h-1.5 w-1.5 rounded-full bg-clay"></span> Hand-wrapped in seed paper, gift-ready</p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-6 py-16">
+    <div class="grid gap-12 lg:grid-cols-12">
+      <!-- newsletter -->
+      <div class="lg:col-span-5">
+        <p class="font-serif text-2xl font-light tracking-tightish text-darkink">Letters from the press room</p>
+        <p class="mt-3 max-w-sm text-[14px] leading-relaxed text-darkink/65">
+          A note when a new batch is decanted, plus the occasional field essay. No more than once a month.
+        </p>
+        <form class="mt-6 flex max-w-sm items-center gap-3 border-b border-white/25 pb-2" onsubmit="return false;">
+          <label for="email" class="sr-only">Email address</label>
+          <input id="email" type="email" required placeholder="you@example.com"
+            class="w-full bg-transparent text-[14px] text-darkink placeholder:text-darkink/35 focus:outline-none" />
+          <button type="submit" class="shrink-0 text-[12px] uppercase tracking-[0.14em] text-darkink hover:text-clay">Subscribe</button>
+        </form>
+        <p class="mt-3 text-[11px] leading-relaxed text-darkink/40">By subscribing you agree to our privacy policy. Unsubscribe in a click.</p>
+      </div>
+
+      <!-- link columns -->
+      <nav class="grid grid-cols-2 gap-8 text-[13px] sm:grid-cols-3 lg:col-span-7">
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.14em] text-darkink/40">The serum</p>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="#serum" class="hover:text-darkink">The Hour Serum</a></li>
+            <li><a href="#specimens" class="hover:text-darkink">Botanicals</a></li>
+            <li><a href="#ritual" class="hover:text-darkink">The ritual</a></li>
+            <li><a href="#" class="hover:text-darkink">Refills</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.14em] text-darkink/40">House</p>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="#" class="hover:text-darkink">Our making</a></li>
+            <li><a href="#field" class="hover:text-darkink">Field notes</a></li>
+            <li><a href="#" class="hover:text-darkink">Sustainability</a></li>
+            <li><a href="#" class="hover:text-darkink">Stockists</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.14em] text-darkink/40">Care</p>
+          <ul class="mt-4 space-y-2.5">
+            <li><a href="#" class="hover:text-darkink">Contact</a></li>
+            <li><a href="#" class="hover:text-darkink">Shipping &amp; returns</a></li>
+            <li><a href="#" class="hover:text-darkink">Skin questions</a></li>
+            <li><a href="#" class="hover:text-darkink">Full ingredients</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- baseline -->
+    <div class="mt-16 flex flex-col gap-5 border-t border-white/10 pt-7 text-[12px] text-darkink/45 sm:flex-row sm:items-center sm:justify-between">
+      <p class="font-serif text-lg tracking-tightish text-darkink/70">Lumira</p>
+      <p class="tnum">&copy; 2026 Lumira Botanicals · Pressed in Portland, Oregon</p>
+      <div class="flex gap-5">
+        <a href="#" class="hover:text-darkink">Instagram</a>
+        <a href="#" class="hover:text-darkink">Journal</a>
+        <a href="#" class="hover:text-darkink">Privacy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // blur-in reveal
+  (function(){
+    var els = document.querySelectorAll('[data-reveal]');
+    if(!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      els.forEach(function(e){ e.classList.add('is-visible'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold:0.15, rootMargin:'0px 0px -8% 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // magnetic primary CTA (subtle, <=8px)
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('[data-magnetic]').forEach(function(b){
+      b.style.transition = 'transform .3s cubic-bezier(.2,.7,.2,1)';
+      b.addEventListener('mousemove', function(e){
+        var r = b.getBoundingClientRect();
+        b.style.transform = 'translate(' + (e.clientX - r.left - r.width/2)*0.18 + 'px,' + (e.clientY - r.top - r.height/2)*0.18 + 'px)';
+      });
+      b.addEventListener('mouseleave', function(){ b.style.transform = ''; });
+    });
+  })();
+</script>
+</body>
+</html>
