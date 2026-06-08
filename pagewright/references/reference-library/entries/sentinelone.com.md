@@ -5,15 +5,15 @@
 - **niche:** security
 - **mood:** technical-dark
 - **style:** gradient, dark, cinematic
-- **palette:** bg `#3A2E7A` · ink `#FFFFFF` · accent `#6A3FF0` — primary 'Secure AI' CTA pill, circular arrow buttons, sidebar nav highlight and metric icons inside the product dashboard
-- **type:** display *Geometric humanist sans (single-story 'a', wide tracking) — SentinelOne brand sans in the spirit of Gilroy/Circular* · body *Same family at lighter weight, generous letter-spacing* — Calm, confident, oversized-but-friendly — enterprise authority softened by rounded warmth rather than hard military edge
+- **palette:** bg `#3A2E7A` · ink `#FFFFFF` · accent `#6A3FF0` — pílula CTA primária 'Secure AI', botões de seta circulares, destaque de nav na sidebar e ícones de métrica dentro do dashboard de produto
+- **type:** display *Sans humanista geométrica ('a' de um andar, tracking largo) — a brand sans da SentinelOne no espírito de Gilroy/Circular* · body *Mesma família em peso mais leve, espaçamento de letras generoso* — Calma, confiante, superdimensionada-mas-amigável — autoridade enterprise suavizada por calor arredondado em vez de uma aresta militar dura
 - **sections:** announcement-bar › hero › feature-stop-threats › feature-amplify-humans › feature-simplify-ops › how-it-works › news-events › testimonials › logos › cta › footer
-- **signature:** A purple-to-violet gradient haze for the whole hero instead of the obligatory black/neon-green "hacker" aesthetic — the dark security category rendered as a soft, premium dusk rather than a terminal. A real, legible product dashboard (MCP/Agentic-AI metrics) is collaged at the fold so the screen IS the proof.
-- **imagery:** Photorealistic, lightly-shadowed product UI screenshot tilted into the gradient background — a working dashboard with sidebar nav, KPI cards (Active MCP Servers 30, Active users 180, 2,026 interactions) and dual-line trend charts. No abstract shields, locks, or matrix-rain clichés; the interface itself is the hero image.
-- **copy:** Punchy 3-4 word power statements with a competitive/military undertone — hero (facts): "Built to Secure. Engineered for Advantage."; live variant: "Secure AI At Scale" + subhead "One platform. Every AI touchpoint. Full visibility and control."
+- **signature:** Uma névoa em gradiente roxo-para-violeta em todo o hero em vez da obrigatória estética "hacker" preto/verde-neon — a categoria escura de segurança renderizada como um entardecer suave e premium em vez de um terminal. Um dashboard de produto real e legível (métricas de MCP/Agentic-AI) é colado na dobra para que a tela SEJA a prova.
+- **imagery:** Screenshot fotorrealista de UI de produto com sombra leve, inclinado para dentro do fundo em gradiente — um dashboard funcional com nav de sidebar, cards de KPI (Active MCP Servers 30, Active users 180, 2.026 interactions) e gráficos de tendência de linha dupla. Sem escudos abstratos, cadeados ou clichês de chuva-de-matrix; a própria interface é a imagem do hero.
+- **copy:** Declarações de força contundentes de 3-4 palavras com um tom competitivo/militar — hero (fatos): "Built to Secure. Engineered for Advantage."; variante ao vivo: "Secure AI At Scale" + subhead "One platform. Every AI touchpoint. Full visibility and control."
 
-**Takeaways (steal as ideas, don't copy):**
-- Render a 'dark' technical category as a warm violet gradient dusk instead of black-and-neon — instantly differentiates from every competitor's terminal aesthetic
-- Use staccato 4-word headlines ('Stop Threats Before They Start', 'Amplify Humans. Empower Teams.') as section anchors — confident, scannable, ownable phrasing
-- Pair a solid-fill primary CTA pill with a ghost/outline secondary that carries its OWN filled circular-arrow chip — two distinct CTA weights without color clash
-- Let the actual product dashboard be the hero image, collaged at the fold edge — concrete metrics (real numbers, real charts) sell capability better than abstract shield iconography
+**Takeaways (roube como ideias, não copie):**
+- Renderize uma categoria técnica 'dark' como um entardecer em gradiente violeta quente em vez de preto-e-neon — diferencia instantaneamente da estética de terminal de todo concorrente
+- Use headlines staccato de 4 palavras ('Stop Threats Before They Start', 'Amplify Humans. Empower Teams.') como âncoras de seção — frases confiantes, escaneáveis, apropriáveis
+- Combine uma pílula CTA primária de preenchimento sólido com uma secundária ghost/outline que carrega seu PRÓPRIO chip de seta circular preenchida — dois pesos distintos de CTA sem conflito de cor
+- Deixe o dashboard de produto real ser a imagem do hero, colado na borda da dobra — métricas concretas (números reais, gráficos reais) vendem capacidade melhor do que iconografia abstrata de escudo

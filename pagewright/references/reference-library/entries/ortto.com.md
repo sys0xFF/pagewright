@@ -5,15 +5,15 @@
 - **niche:** marketing
 - **mood:** technical-dark
 - **style:** dark, minimal, mono-type
-- **palette:** bg `#161B22` · ink `#FFFFFF` · accent `#1F6FFF` — primary CTA buttons (Start trial), top announcement bar, and product-UI mock accents (email/SMS node icons)
-- **type:** display *Geometric grotesque sans (heavy weight, tight tracking — Aktiv/Founders Grotesk feel)* · body *Clean humanist sans, regular weight* — Confident and editorial — an oversized two-tone headline (one word bold, one word lighter) reads like a magazine cover rather than a typical SaaS hero
+- **palette:** bg `#161B22` · ink `#FFFFFF` · accent `#1F6FFF` — botões de CTA primários (Start trial), barra de anúncio no topo e acentos do mock de UI do produto (ícones de nó de email/SMS)
+- **type:** display *sans grotesca geométrica (peso pesado, tracking apertado — vibe Aktiv/Founders Grotesk)* · body *sans humanista limpa, peso regular* — Confiante e editorial — uma manchete superdimensionada bicolor (uma palavra bold, uma palavra mais leve) se lê como a capa de uma revista em vez de um hero SaaS típico
 - **sections:** hero › feature-marketing-automation › feature-customer-data-analytics › feature-support › feature-security-privacy › cta › footer
-- **signature:** The hero hands the entire right half of the screen to a live, layered product mock — a real journey-builder canvas with an "Add shape" panel floating in front of an "Welcome journey" flowchart. Instead of a flat hero illustration, it stacks two overlapping UI surfaces with soft shadows so the tool literally appears mid-edit, breaking the convention of a single clean screenshot.
-- **imagery:** Photoreal product UI rendered as floating, overlapping cards (panel + canvas) with rounded corners, drop shadows, and colorful per-feature icon chips (email/SMS/push/AI nodes). The bright white UI cards pop hard against the near-black hero, doing the visual heavy-lifting in place of photography or abstract art.
-- **copy:** Bold two-tone benefit headline plus an underlined-keyword subhead listing the product pillars — "Build journeys that drive revenue" / "Your marketing automation, analytics, customer data and support. Together."
+- **signature:** O hero entrega toda a metade direita da tela a um mock de produto vivo e em camadas — um canvas real de construtor de jornadas com um painel "Add shape" flutuando à frente de um fluxograma "Welcome journey". Em vez de uma ilustração de hero chapada, ele empilha duas superfícies de UI sobrepostas com sombras suaves para que a ferramenta literalmente apareça no meio da edição, quebrando a convenção de um único screenshot limpo.
+- **imagery:** UI de produto fotorrealista renderizada como cards flutuantes e sobrepostos (painel + canvas) com cantos arredondados, drop shadows e chips de ícone coloridos por recurso (nós de email/SMS/push/IA). Os cards de UI brancos e brilhantes saltam forte contra o hero quase preto, fazendo o trabalho visual pesado no lugar de fotografia ou arte abstrata.
+- **copy:** Manchete de benefício bicolor em negrito mais um subtítulo com palavras-chave sublinhadas listando os pilares do produto — "Build journeys that drive revenue" / "Your marketing automation, analytics, customer data and support. Together."
 
-**Takeaways (steal as ideas, don't copy):**
-- Two-tone headline: render the verb/key noun in heavy bold and the rest in a lighter weight on the next line, so the hero has built-in hierarchy with one typeface.
-- Turn the subhead into a feature index — underline each product pillar word (marketing automation, analytics, customer data, support) as inline links so the value prop doubles as navigation.
-- Stack two overlapping product surfaces (a modal panel over a canvas) with soft shadows to suggest the tool is live and in-use, not a static screenshot.
-- Pin a micro-reassurance line directly under the CTAs ('14 day free trial - Onboard in 2 minutes') to kill friction at the click moment.
+**Takeaways (roube como ideias, não copie):**
+- Manchete bicolor: renderize o verbo/substantivo-chave em bold pesado e o resto num peso mais leve na linha seguinte, para que o hero tenha hierarquia embutida com uma única fonte.
+- Transforme o subtítulo num índice de recursos — sublinhe cada palavra de pilar do produto (marketing automation, analytics, customer data, support) como links inline para que a proposta de valor também sirva de navegação.
+- Empilhe duas superfícies de produto sobrepostas (um painel modal sobre um canvas) com sombras suaves para sugerir que a ferramenta está viva e em uso, não um screenshot estático.
+- Fixe uma linha de microrreasseguramento logo abaixo dos CTAs ('14 day free trial - Onboard in 2 minutes') para matar o atrito no momento do clique.

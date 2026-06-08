@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** clean-light
 - **style:** minimal, photographic, mono-type
-- **palette:** bg `#FBFAF8` · ink `#0A0A0A` · accent `#E8643C` — tiny 'Build' badge, 'Continue' CTA button, and diff +/- counts inside the product screenshot — never on the primary page chrome
-- **type:** display *Geometric/grotesque sans (custom Cursor type, near-Inter/SF in feel)* · body *Same neutral sans for marketing copy; monospace for all in-app code, filenames, and CLI output* — Quiet, almost OS-native — a tool that looks like the system it lives in, not a brand shouting at you
+- **palette:** bg `#FBFAF8` · ink `#0A0A0A` · accent `#E8643C` — minúsculo badge 'Build', botão CTA 'Continue' e as contagens de diff +/- dentro da captura de tela do produto — nunca no chrome principal da página
+- **type:** display *Sans geométrico/grotesque (tipo Cursor sob medida, com sensação próxima de Inter/SF)* · body *Mesmo sans neutro para a copy de marketing; monospace para todo código in-app, nomes de arquivo e saída de CLI* — Quieto, quase nativo do SO — uma ferramenta que parece o sistema em que vive, não uma marca gritando com você
 - **sections:** hero › product-screenshot › logos › feature-agents › feature-autonomous › feature-integrations › feature-autocomplete › feature-models › feature-codebase › how-it-works › changelog › cta › footer
-- **signature:** The hero's product shot is not a slick marketing mockup — it's a fully live, dense IDE screenshot (real task queue, real chat thread mid-conversation, real CLI diffs) framed in a macOS window whose rounded corners reveal a classical oil-painting landscape behind it. A dev tool literally showing itself doing the boring real work, with a fine-art texture as the backdrop — the opposite of the usual gradient-glow abstraction.
-- **imagery:** One hero-dominating, hyper-detailed screenshot of the actual application (file tree, agent task list with status pills, multi-pane chat, monospace terminal diffs). No icons, no 3D, no illustration. The only non-UI image is a muted painterly landscape used as ambient wallpaper bleeding from behind the app window, giving warmth to an otherwise sterile light canvas.
-- **copy:** Plain-spoken superlative claim, lowercase confidence — hero reads "Built to make you extraordinarily productive, Cursor is the best coding agent."
+- **signature:** A imagem de produto da hero não é um mockup de marketing polido — é uma captura de tela de IDE totalmente ao vivo e densa (fila de tarefas real, thread de chat real no meio de uma conversa, diffs de CLI reais) emoldurada numa janela macOS cujos cantos arredondados revelam uma paisagem clássica em pintura a óleo por trás. Uma ferramenta de dev literalmente se mostrando fazendo o trabalho real e chato, com uma textura de belas-artes ao fundo — o oposto da habitual abstração de gradiente-com-brilho.
+- **imagery:** Uma captura de tela hiperdetalhada do aplicativo real dominando a hero (árvore de arquivos, lista de tarefas do agente com pílulas de status, chat multi-painel, diffs de terminal em monospace). Nenhum ícone, nenhum 3D, nenhuma ilustração. A única imagem não-UI é uma paisagem pictórica suave usada como wallpaper ambiente vazando de trás da janela do app, dando calor a uma tela clean-light de resto estéril.
+- **copy:** Reivindicação superlativa direta, confiança em minúsculas — a hero diz "Built to make you extraordinarily productive, Cursor is the best coding agent."
 
-**Takeaways (steal as ideas, don't copy):**
-- Sell with a real, intimidatingly dense product screenshot instead of a sanitized mockup — show the tool mid-task (queued jobs, live chat, actual diffs) to signal it genuinely works.
-- Hide ALL color in the product UI, not the page chrome: a single warm orange survives only on micro-elements (Build badge, Continue button, +/- counts) so the eye lands exactly where action happens.
-- Bleed a soft painterly/fine-art texture from behind the app window to warm up a clean-light dev page without resorting to gradients or glow.
-- Localize the CTA to the visitor's OS ('Download for Linux') — a small detail that makes the page feel built for the exact person reading it.
+**Takeaways (roube como ideias, não copie):**
+- Venda com uma captura de tela de produto real e intimidadoramente densa em vez de um mockup higienizado — mostre a ferramenta no meio da tarefa (jobs na fila, chat ao vivo, diffs reais) para sinalizar que ela genuinamente funciona.
+- Esconda TODA a cor na UI do produto, não no chrome da página: um único laranja caloroso sobrevive apenas em microelementos (badge Build, botão Continue, contagens +/-) para que o olho pouse exatamente onde a ação acontece.
+- Faça uma textura suave de belas-artes/pintura vazar de trás da janela do app para aquecer uma página de dev clean-light sem recorrer a gradientes ou brilho.
+- Localize o CTA para o SO do visitante ('Download for Linux') — um detalhe pequeno que faz a página parecer construída para a pessoa exata que está lendo.

@@ -5,15 +5,15 @@
 - **niche:** dev-tools (browser infrastructure / agent automation API)
 - **mood:** clean-light
 - **style:** minimal, mono-type, photographic
-- **palette:** bg `#FFFFFF` · ink `#0A0A0A` · accent `#FF4D1A` — Solid orange highlight block behind the hero headline text (marker-highlighter effect); also bleeds into the dithered mountain artwork as orange/yellow pixels
-- **type:** display *Geometric grotesk sans (Browserbase-style, near Aeonik/Founders Grotesk), tight-set and bold* · body *Same neutral grotesk at regular weight; small-caps/uppercase mono accents for section labels* — Engineered and matter-of-fact but warm — heavy weights and tight tracking give confidence without shouting, softened by the playful dithered imagery
+- **palette:** bg `#FFFFFF` · ink `#0A0A0A` · accent `#FF4D1A` — Bloco laranja sólido de destaque atrás do texto do título do hero (efeito de marca-texto); também invade a arte da montanha em dithering como pixels laranja/amarelos
+- **type:** display *sans grotesca geométrica (estilo Browserbase, próxima de Aeonik/Founders Grotesk), bem apertada e em bold* · body *mesma grotesca neutra em peso regular; acentos em versalete/maiúsculas mono para os rótulos de seção* — Engenheirada e direta, mas calorosa — pesos pesados e tracking apertado dão confiança sem gritar, suavizados pela imagem brincalhona em dithering
 - **sections:** nav › hero › logos › feature-showcase › feature-api › feature-capabilities › templates › how-it-works › scale-stats › cta › footer
-- **signature:** The hero headline is wrapped in a solid orange highlighter block — like a physical marker swiped across text on white paper — instead of the obligatory dark gradient/glow hero that dev-infra sites default to. It treats the page like a printed zine, not a terminal.
-- **imagery:** A large 1-bit / Atkinson-dithered halftone illustration of a mountain range against a flat pale-blue sky — coarse black, orange and yellow pixels rendering rock and foliage. It reads as retro-print / risograph texture rather than 3D renders, abstract gradients, or product UI shots. Imagery is decorative and tonal, not literal product screenshots.
-- **copy:** Imperative, agent-centric and slightly cheroic — sells reach and reliability over features. Hero: "Give your agents access to the whole web." with subline "Browserbase makes the web as reliable and programmable as APIs."
+- **signature:** O título do hero vem envolto em um bloco sólido de marca-texto laranja — como se um marcador físico tivesse passado sobre o texto em papel branco — em vez do obrigatório hero de gradiente/glow escuro que os sites de dev-infra adotam por padrão. Trata a página como um fanzine impresso, não como um terminal.
+- **imagery:** Uma grande ilustração em meio-tom dithered de 1-bit / Atkinson de uma cadeia de montanhas contra um céu chapado azul-pálido — pixels grossos pretos, laranjas e amarelos renderizando rocha e folhagem. Lê como textura de impressão retrô / risografia em vez de renders 3D, gradientes abstratos ou screenshots de UI. A imagem é decorativa e tonal, não screenshots literais de produto.
+- **copy:** Imperativa, centrada no agente e levemente heroica — vende alcance e confiabilidade acima dos recursos. Hero: "Give your agents access to the whole web." com a sublinha "Browserbase makes the web as reliable and programmable as APIs."
 
-**Takeaways (steal as ideas, don't copy):**
-- Use a physical highlighter-marker block (solid accent rectangle behind text) to spotlight the hero line — far more memorable than a gradient on a white page.
-- Replace the default dev-infra 3D/terminal aesthetic with dithered/risograph halftone art for an analog, zine-like texture that still feels technical.
-- Lean on declarative, web-scale verbs in headings ('Don't use the web. Scale it.', 'Watch the whole web at once') to give a B2B API product an almost manifesto voice.
-- Pair tightly-set heavy grotesk type with a coarse pixel illustration so the precise type and the rough texture create deliberate tension.
+**Takeaways (roube como ideias, não copie):**
+- Use um bloco físico de marca-texto (retângulo sólido na cor de acento atrás do texto) para destacar a linha do hero — muito mais memorável do que um gradiente em uma página branca.
+- Troque a estética padrão de dev-infra (3D/terminal) por arte em meio-tom dithered/risografia, para uma textura analógica de fanzine que ainda parece técnica.
+- Apoie-se em verbos declarativos de escala web nos títulos ('Don't use the web. Scale it.', 'Watch the whole web at once') para dar a um produto B2B de API uma voz quase de manifesto.
+- Combine a tipografia grotesca pesada e bem apertada com uma ilustração grosseira em pixel, de modo que a tipografia precisa e a textura áspera criem uma tensão deliberada.

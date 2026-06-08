@@ -5,15 +5,15 @@
 - **niche:** consumer (browser / productivity software)
 - **mood:** warm-playful
 - **style:** colorful, gradient, photographic
-- **palette:** bg `#F4F1F7` · ink `#1A1A2E` · accent `#3D3DF5` — Full-bleed electric-blue header bar and a second blue band lower down that holds the giant white pull-quote; also the dark Try Dia CTA pill anchored center stage
-- **type:** display *Marlin Soft SQ* · body *Space Mono* — Bold rounded-yet-squared humanist serif/sans display with real character (ligature-feel 'Meet Dia') paired against a nerdy monospace for body — friendly software warmth crossed with terminal credibility
+- **palette:** bg `#F4F1F7` · ink `#1A1A2E` · accent `#3D3DF5` — Barra de cabeçalho azul-elétrico full-bleed e uma segunda faixa azul mais abaixo que segura a gigante pull-quote branca; também a pílula escura de CTA Try Dia ancorada no centro do palco
+- **type:** display *Marlin Soft SQ* · body *Space Mono* — Display em serif/sans humanista arredondado-porém-quadrado, em bold e com caráter real (sensação de ligadura em 'Meet Dia') pareado contra uma monospace nerd para o body — calor de software amigável cruzado com credibilidade de terminal
 - **sections:** hero › feature-product-demo › testimonial-pullquote
-- **signature:** The torn/zig-zag deckle edges that slice between every color band — the page is cut like construction paper rather than stacked in clean rectangular sections, turning section transitions into a tactile, scrapbook gesture instead of the flat dividers every browser/SaaS site uses
-- **imagery:** A realistic, softly-shadowed product UI screenshot (the Dia chat browser) floated on a pale pastel-to-white gradient; the chrome is shown mid-conversation with a real query and answer, so the image doubles as the demo. Backgrounds lean on airy rainbow-pastel washes against saturated cobalt blocks
-- **copy:** Confident, human, first-person endorsement voice — leads with a forward-looking product reveal ("Meet Dia, the next evolution of Arc") and closes on a borrowed-credibility hero quote: "Arc is the Chrome replacement I've been waiting for."
+- **signature:** As bordas rasgadas/zigue-zague em deckle que fatiam entre cada faixa de cor — a página é cortada como papel cartão em vez de empilhada em seções retangulares limpas, transformando as transições de seção num gesto tátil de scrapbook em vez das divisórias planas que todo site de browser/SaaS usa
+- **imagery:** Um screenshot realista de UI de produto, com sombra suave (o browser de chat Dia), flutuando sobre um gradiente pastel-pálido-para-branco; o chrome é mostrado no meio de uma conversa com uma pergunta e resposta reais, de modo que a imagem funciona também como o demo. Os fundos se apoiam em lavagens arejadas pastel-arco-íris contra blocos cobalto saturados
+- **copy:** Voz de endosso confiante, humana, em primeira pessoa — começa com uma revelação de produto voltada ao futuro ("Meet Dia, the next evolution of Arc") e fecha numa citação-herói de credibilidade emprestada: "Arc is the Chrome replacement I've been waiting for."
 
-**Takeaways (steal as ideas, don't copy):**
-- Use torn-paper / zig-zag deckle edges as section dividers to make a digital page feel handmade and tactile instead of gridded
-- Pair a warm rounded display face with a cold monospace body — the friction between friendly and technical reads as 'crafted software with a soul'
-- Render a giant testimonial as the hero of its own full-bleed color band in display type, so social proof becomes a graphic centerpiece, not a small grey card
-- Let the product screenshot carry a live, specific query+answer so the demo image sells the use-case without a separate explainer
+**Takeaways (roube como ideias, não copie):**
+- Use bordas de papel-rasgado / zigue-zague em deckle como divisórias de seção para fazer uma página digital parecer feita à mão e tátil em vez de baseada em grade
+- Pareie uma face display arredondada e quente com um body em monospace fria — o atrito entre amigável e técnico lê-se como 'software feito com alma'
+- Renderize um depoimento gigante como o hero de sua própria faixa de cor full-bleed em tipografia display, para que a prova social vire uma peça gráfica central, não um pequeno card cinza
+- Deixe o screenshot do produto carregar uma pergunta+resposta ao vivo e específica para que a imagem do demo venda o caso de uso sem um explicativo à parte

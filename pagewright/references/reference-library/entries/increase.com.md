@@ -5,15 +5,15 @@
 - **niche:** fintech (banking infrastructure / financial APIs)
 - **mood:** technical-dark
 - **style:** gradient, bold, mono-type, colorful
-- **palette:** bg `#FFFFFF` · ink `#1A2330` · accent `#16E0A0` — the dominant move is a giant prismatic gradient sheet (lime-yellow to emerald to cyan to electric blue) slicing diagonally across the right two-thirds of the hero; teal also tints the code-card focus ring and the source/destination connector dots
-- **type:** display *Helvetica Neue / Inter-style grotesque, ultra-bold, extremely tight tracking* · body *same neutral grotesque at regular weight* — Swiss banker-meets-engineer: heavyweight, no-nonsense, the spaced-out 'INCREASE' wordmark and tight headline signal precision and institutional weight
+- **palette:** bg `#FFFFFF` · ink `#1A2330` · accent `#16E0A0` — o movimento dominante é uma gigantesca lâmina de gradiente prismático (amarelo-lima a esmeralda a ciano a azul elétrico) fatiando diagonalmente os dois terços direitos do hero; o teal também tinge o anel de foco do code-card e os pontos conectores de origem/destino
+- **type:** display *grotesca estilo Helvetica Neue / Inter, ultra-bold, tracking extremamente apertado* · body *mesma grotesca neutra em peso regular* — Banqueiro suíço encontra engenheiro: peso-pesado, sem rodeios; o wordmark 'INCREASE' espaçado e o título apertado sinalizam precisão e peso institucional
 - **sections:** hero › feature-code-demo › feature-interactive-widget
-- **signature:** A literal prism of light: instead of fintech's usual flat navy + single-blue palette, the entire hero is dominated by a sharp-edged, full-spectrum gradient shard (lime to cyan) angled like a beam of refracted light cutting through the page — banking rendered as something luminous and alive rather than safe and corporate.
-- **imagery:** No photography or illustration. Two functional UI artifacts float over the gradient: a dark terminal card showing real API code (await increase.achTransfers.create) and a white 'Send an ACH transfer' form widget with an animated source-to-destination progress track. The product literally demos itself; the geometric color-sheet is the only decorative element.
-- **copy:** Confident, plain-spoken engineering register — names the audience and the verbs directly. Hero: "Enterprise-grade banking APIs" / sub: "Modern banking infrastructure that enables technology companies to programmatically store, move, and reconcile money."
+- **signature:** Um prisma de luz literal: em vez da paleta usual da fintech de azul-marinho chapado + azul-único, o hero inteiro é dominado por um caco de gradiente de espectro completo e bordas afiadas (lima a ciano) angulado como um feixe de luz refratada cortando a página — banco renderizado como algo luminoso e vivo em vez de seguro e corporativo.
+- **imagery:** Nenhuma fotografia ou ilustração. Dois artefatos funcionais de UI flutuam sobre o gradiente: um card de terminal escuro mostrando código real de API (await increase.achTransfers.create) e um widget de formulário branco 'Send an ACH transfer' com uma trilha de progresso animada de origem-a-destino. O produto literalmente demonstra a si mesmo; a lâmina-de-cor geométrica é o único elemento decorativo.
+- **copy:** Registro de engenharia confiante e falado de forma simples — nomeia o público e os verbos diretamente. Hero: "Enterprise-grade banking APIs" / sub: "Modern banking infrastructure that enables technology companies to programmatically store, move, and reconcile money."
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair a near-monochrome ink-on-white layout with ONE oversized, hard-edged spectral gradient shard — let that single beam carry all the color so the type stays severe and serious.
-- Make the hero prove the product: a real code snippet beside a working-looking interactive form (with an animated transfer track) beats any stock graphic for a developer/infra audience.
-- Use spaced-out, letter-spaced uppercase for the wordmark against a tightly-tracked ultra-bold headline — the tension between airy logo and dense headline reads as precision.
-- Dual CTA hierarchy done right: solid dark 'Sign up' for self-serve devs, outlined 'Contact sales' for enterprise — both with a chevron to imply forward motion.
+**Takeaways (roube como ideias, não copie):**
+- Emparelhe um layout quase-monocromático de texto-sobre-branco com UM único caco de gradiente espectral superdimensionado e de bordas duras — deixe esse único feixe carregar toda a cor para que a tipografia permaneça severa e séria.
+- Faça o hero provar o produto: um trecho de código real ao lado de um formulário interativo com cara de funcional (com uma trilha de transferência animada) ganha de qualquer gráfico de banco de imagens para um público de desenvolvedor/infra.
+- Use caixa-alta espaçada com letter-spacing para o wordmark contra um título ultra-bold de tracking apertado — a tensão entre o logo arejado e o título denso se lê como precisão.
+- Hierarquia de CTA duplo bem feita: 'Sign up' escuro sólido para devs self-serve, 'Contact sales' com contorno para enterprise — ambos com um chevron para sugerir movimento para frente.

@@ -5,15 +5,15 @@
 - **niche:** design
 - **mood:** bold-loud
 - **style:** colorful, photographic
-- **palette:** bg `#FFFFFF` · ink `#1E1E1E` · accent `#4C4CFF` — Primary CTA buttons (Get started / Get started for free) and inline link underlines; deliberately the ONLY saturated solid color in the chrome, so the rainbow comes from the showcased work, not the UI.
-- **type:** display *Custom grotesque sans (Figma's 'Whyte'-style geometric grotesque) — tight tracking, large optical size* · body *Same family at regular weight / system-grotesque fallback* — Neutral, confident, Swiss-grotesque; intentionally quiet so the colorful canvases carry all the loudness
+- **palette:** bg `#FFFFFF` · ink `#1E1E1E` · accent `#4C4CFF` — Botões de CTA principais (Get started / Get started for free) e sublinhados de links inline; deliberadamente a ÚNICA cor sólida saturada no chrome, então o arco-íris vem do trabalho exibido, não da UI.
+- **type:** display *Sem serifa grotesca customizada (grotesca geométrica estilo 'Whyte' da Figma) — tracking apertado, tamanho óptico grande* · body *Mesma família em peso regular / fallback grotesco do sistema* — Neutra, confiante, grotesca suíça; intencionalmente quieta para que os canvas coloridos carreguem toda a estridência
 - **sections:** hero › logos › feature-use-cases › feature-roles › feature-organizations › how-it-works › feature-learn › feature-ai-first-idea-to-product › feature-systems-that-scale › feature-ship-any-way › community-gallery › templates › social › footer
-- **signature:** The hero headline lives inside a floating white "card" with its own Get-started button, parked ON TOP of a live carousel of real customer canvases scrolling behind it — the marketing copy is literally a Figma object sitting on the design surface, so the page IS the product demo.
-- **imagery:** A horizontal carousel of real, wildly-different Figma canvases (a weather-app UI, a "Rhythm Dance" poster, a maximalist "Food Works" zine, an archival photo site) — product-as-proof, showing the tool's range rather than the tool's chrome. Play/pause + arrow controls signal it autoplays.
-- **copy:** Three-word imperative promise that fuses brand into the claim — "Make anything possible, all in Figma" — confident, expansive, product-as-canvas voice.
+- **signature:** A manchete do hero vive dentro de um "card" branco flutuante com seu próprio botão Get-started, estacionado EM CIMA de um carrossel ao vivo de canvas reais de clientes rolando atrás dele — o texto de marketing é literalmente um objeto Figma pousado sobre a superfície de design, então a página É a demo do produto.
+- **imagery:** Um carrossel horizontal de canvas Figma reais e radicalmente diferentes (uma UI de app de clima, um pôster "Rhythm Dance", um zine maximalista "Food Works", um site de fotos de arquivo) — produto-como-prova, mostrando o alcance da ferramenta em vez do chrome dela. Controles de play/pause + setas sinalizam que faz autoplay.
+- **copy:** Promessa imperativa de três palavras que funde a marca na afirmação — "Make anything possible, all in Figma" — voz confiante, expansiva, de produto-como-canvas.
 
-**Takeaways (steal as ideas, don't copy):**
-- Let the UI chrome go nearly monochrome (white bg, near-black ink, ONE electric accent) and outsource all the 'colorful/loud' energy to the embedded product content — the contrast makes both read louder.
-- Make the hero a literal artifact of your product: put the headline+CTA in a draggable-looking card floating over a live work surface, so visitors see the tool by reading the pitch.
-- Use a moving carousel of maximally-different real outputs (weather app, dance poster, zine, archive site) as social proof of RANGE — variety itself becomes the selling point, with visible play/pause controls inviting control.
-- Stack feature headings as plain-spoken outcome statements ('Create one source of truth for devs and designers', 'Ship products, any way you want') rather than feature names — the H2/H3 ladder reads as a value narrative.
+**Takeaways (roube como ideias, não copie):**
+- Deixe o chrome da UI quase monocromático (bg branco, tinta quase preta, UM destaque elétrico) e terceirize toda a energia 'colorida/estridente' para o conteúdo de produto embutido — o contraste faz os dois lerem mais alto.
+- Faça do hero um artefato literal do seu produto: coloque a manchete+CTA num card com cara de arrastável flutuando sobre uma superfície de trabalho ao vivo, para que os visitantes vejam a ferramenta enquanto leem o pitch.
+- Use um carrossel em movimento de resultados reais maximamente diferentes (app de clima, pôster de dança, zine, site de arquivo) como prova social de ALCANCE — a própria variedade vira o argumento de venda, com controles visíveis de play/pause convidando ao controle.
+- Empilhe os títulos de funcionalidades como afirmações de resultado em linguagem direta ('Create one source of truth for devs and designers', 'Ship products, any way you want') em vez de nomes de funcionalidades — a escada de H2/H3 se lê como uma narrativa de valor.

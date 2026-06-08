@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** clean-light
 - **style:** gradient, illustrated, minimal
-- **palette:** bg `#2E7D8E` · ink `#FFFFFF` · accent `#16A34A` — logo mark, 'NEW' pill badge, active sidebar item, link/heading highlights in the embedded docs mockup, illustrated cloud highlights
-- **type:** display *Geometric humanist sans (Aeonik / GT-style grotesque)* · body *Same family, lighter weight* — Soft, rounded, confident — friendly-technical rather than sharp-engineering. Big tracking-tight display headline reads editorial, not terminal.
+- **palette:** bg `#2E7D8E` · ink `#FFFFFF` · accent `#16A34A` — marca do logo, badge em pílula 'NEW', item ativo da barra lateral, destaques de link/título no mockup de docs embutido, destaques das nuvens ilustradas
+- **type:** display *Sans humanista geométrica (Aeonik / grotesque estilo GT)* · body *Mesma família, peso mais leve* — Suave, arredondada, confiante — amigável-técnica em vez de afiada-de-engenharia. O grande título display de tracking apertado é lido como editorial, não como terminal.
 - **sections:** hero › feature-built-for-the-intelligence-age › logos › feature-people-and-ai › feature-self-updating-knowledge › feature-enterprise-knowledge › testimonial-anthropic-case-study › cta › footer
-- **signature:** A painterly, hand-illustrated sky-and-clouds landscape as the full-bleed hero background — atmospheric fine-art scenery where dev-tool sites default to grids, terminals, or code. The product UI then 'floats' up from the bottom into that sky like a horizon.
-- **imagery:** Soft watercolor/gouache illustration of cumulus clouds over a teal-to-blue gradient sky, with a real product screenshot (the docs editor with left sidebar, tabs, and 'Ask AI') overlapping the lower edge so the chrome breaks the hero boundary. Inside the mockup, line-art mono-green spot illustrations sit in dotted-grid placeholder cards.
-- **copy:** Calm, declarative category-claim voice — names the platform, not the feature. Hero: "The Intelligent Knowledge Platform" / sub: "Helping teams create and maintain world-class documentation built for both humans and AI."
+- **signature:** Uma paisagem de céu-e-nuvens pictórica, ilustrada à mão, como fundo de página inteira do hero — cenário atmosférico de belas-artes onde sites de ferramentas-dev adotam por padrão grades, terminais ou código. A UI do produto então 'flutua' de baixo para cima dentro desse céu como um horizonte.
+- **imagery:** Ilustração suave em aquarela/guache de nuvens cúmulos sobre um céu em gradiente de turquesa-para-azul, com um screenshot real de produto (o editor de docs com barra lateral à esquerda, abas e 'Ask AI') sobrepondo-se à borda inferior, de modo que o chrome quebra o limite do hero. Dentro do mockup, ilustrações pontuais de line-art em verde monocromático ficam em cards de placeholder de grade pontilhada.
+- **copy:** Voz calma e declarativa de afirmação de categoria — nomeia a plataforma, não a funcionalidade. Hero: "The Intelligent Knowledge Platform" / sub: "Helping teams create and maintain world-class documentation built for both humans and AI."
 
-**Takeaways (steal as ideas, don't copy):**
-- Replace the obligatory code/terminal hero with painterly atmospheric illustration — a gradient sky instead of a dark IDE instantly differentiates a dev tool.
-- Let the live product screenshot overlap and break the hero's bottom edge so the UI rises like a horizon line, fusing scenery and software.
-- Pair an email-capture input directly with a single pill CTA inside the hero, but keep a separate 'Start for free' in the nav — two on-ramps, one frictionless.
-- Use a single saturated green as the only accent across an otherwise tonal teal palette — confine it to the logo, a 'NEW' pill, and the active doc state so it reads as brand, not decoration.
+**Takeaways (roube como ideias, não copie):**
+- Substitua o obrigatório hero de código/terminal por ilustração atmosférica pictórica — um céu em gradiente em vez de uma IDE escura diferencia instantaneamente uma ferramenta-dev.
+- Deixe o screenshot ao vivo do produto sobrepor e quebrar a borda inferior do hero, para que a UI suba como uma linha do horizonte, fundindo cenário e software.
+- Combine um input de captura de e-mail diretamente com um único CTA em pílula dentro do hero, mas mantenha um 'Start for free' separado na navegação — duas rampas de entrada, uma sem atrito.
+- Use um único verde saturado como o único acento numa paleta de resto tonal turquesa — confine-o ao logo, a uma pílula 'NEW' e ao estado ativo de doc, para que seja lido como marca, não decoração.

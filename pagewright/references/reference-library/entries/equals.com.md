@@ -5,15 +5,15 @@
 - **niche:** ai-analytics
 - **mood:** editorial-minimal
 - **style:** minimal, mono-type, photographic
-- **palette:** bg `#F7F6F1` · ink `#111111` · accent `#B98FD9` — CTA buttons (pill-shaped 'Get a demo'), plus soft gradient swatch motifs (cyan/yellow) bleeding in from the page edges
-- **type:** display *High-contrast serif (Times/Tiempos-style transitional serif) for the giant hero headline* · body *Geometric/grotesque sans-serif for subhead, nav, and logo wordmark* — Old-money confidence meets software precision: a literary serif that signals trust and permanence, paired with a clean engineering sans for legibility
+- **palette:** bg `#F7F6F1` · ink `#111111` · accent `#B98FD9` — Botões CTA (em formato de pílula, 'Get a demo'), mais motivos de amostra de gradiente suave (ciano/amarelo) sangrando a partir das bordas da página
+- **type:** display *High-contrast serif (Times/Tiempos-style transitional serif) for the giant hero headline* · body *Geometric/grotesque sans-serif for subhead, nav, and logo wordmark* — Confiança de dinheiro-antigo encontra precisão de software: uma serifa literária que sinaliza confiança e permanência, combinada com um sans de engenharia limpo para legibilidade
 - **sections:** hero › feature-single-source-of-truth › feature-build-once-iterate › feature-system-not-artifact › feature-managed-warehouse › testimonials › cta › footer
-- **signature:** The hero headline is set in a massive, editorial high-contrast SERIF that nearly fills the viewport width — a deliberate rejection of the gradient-sans, neon-dark aesthetic every other AI/data tool defaults to. It reads like the cover of The Economist, not a dev tool.
-- **imagery:** Almost no literal product imagery above the fold. Instead, abstract pastel gradient "swatch" blocks (cyan-blue on the left, warm yellow on the right) bleed in from the page margins like paint chips or spectrum samples — a quiet nod to spreadsheet cells/color scales. The logo wall is monochrome black-on-cream, treating customer brands as a uniform typographic grid.
-- **copy:** Authoritative, contrarian one-liner that stakes a trust claim — hero: "AI for the numbers that can't be wrong." with a punchy triadic subhead "Build expert workbooks. Trust every answer. Run it everywhere."
+- **signature:** O headline do hero é composto numa SERIFA editorial massiva de alto contraste que quase preenche a largura da viewport — uma rejeição deliberada da estética gradient-sans, neon-dark que toda outra ferramenta de IA/dados adota por padrão. Lê-se como a capa do The Economist, não uma ferramenta de dev.
+- **imagery:** Quase nenhuma imagem literal de produto acima da dobra. Em vez disso, blocos abstratos de "amostra" de gradiente pastel (azul-ciano à esquerda, amarelo quente à direita) sangram a partir das margens da página como cartões de tinta ou amostras de espectro — um aceno discreto a células de planilha/escalas de cor. A parede de logos é monocromática preto-sobre-creme, tratando as marcas de clientes como uma grade tipográfica uniforme.
+- **copy:** One-liner autoritário e contrário que crava uma alegação de confiança — hero: "AI for the numbers that can't be wrong." com um subhead triádico marcante "Build expert workbooks. Trust every answer. Run it everywhere."
 
-**Takeaways (steal as ideas, don't copy):**
-- Use a true editorial serif at billboard scale for the hero to instantly signal trust and gravitas — the opposite of the default AI gradient-sans, and it makes a data product feel like an institution.
-- Warm off-white (#F7F6F1) cream canvas instead of pure white or dark mode reads premium and calm, letting a single soft lavender CTA carry all the color energy.
-- Triadic, period-punctuated subhead ('Build X. Trust Y. Run Z.') gives three crisp value props in one breath — rhythmic and memorable.
-- Bleed abstract pastel gradient blocks in from the screen edges as ambient brand texture instead of stock screenshots or 3D renders — keeps the fold airy and abstract.
+**Takeaways (roube como ideias, não copie):**
+- Use uma verdadeira serifa editorial em escala de outdoor no hero para sinalizar instantaneamente confiança e gravidade — o oposto do padrão gradient-sans de IA, e faz um produto de dados parecer uma instituição.
+- Um canvas creme off-white quente (#F7F6F1) em vez de branco puro ou modo escuro lê-se premium e calmo, deixando um único CTA lavanda suave carregar toda a energia de cor.
+- Subhead triádico, pontuado por pontos ('Build X. Trust Y. Run Z.') entrega três propostas de valor nítidas num só fôlego — rítmico e memorável.
+- Sangre blocos abstratos de gradiente pastel a partir das bordas da tela como textura ambiente de marca em vez de capturas de tela de banco ou renders 3D — mantém a dobra arejada e abstrata.

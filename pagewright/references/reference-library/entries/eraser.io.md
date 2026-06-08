@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** technical-dark
 - **style:** dark, 3d, bold
-- **palette:** bg `#0A0A0C` · ink `#EDEDED` · accent `#5CC8F5` — Cyan ignites the word 'AI' in the headline and the diagram-node logo mark; a secondary red chip and a blue 'Share' button echo the product UI palette
-- **type:** display *Slab serif (heavy, condensed — Roboto Slab / Zilla Slab family)* · body *Geometric sans-serif (clean grotesque, e.g. Inter/Roboto)* — Engineering-blueprint confidence — chunky slab headlines feel hand-drawn-meets-CAD, paired with a neutral sans for utilitarian legibility
+- **palette:** bg `#0A0A0C` · ink `#EDEDED` · accent `#5CC8F5` — O ciano acende a palavra 'AI' no headline e a marca-logo de nó-de-diagrama; um chip vermelho secundário e um botão azul 'Share' ecoam a paleta da UI do produto
+- **type:** display *Slab serif (heavy, condensed — Roboto Slab / Zilla Slab family)* · body *Geometric sans-serif (clean grotesque, e.g. Inter/Roboto)* — Confiança de planta-de-engenharia — headlines slab encorpadas parecem desenhadas-à-mão-encontra-CAD, combinadas com um sans neutro para legibilidade utilitária
 - **sections:** hero › logos › feature-diagrams › feature-documentation › feature-versioning › feature-performance › feature-commandbar › integrations › feature-export-github › security › compliance › cta › footer
-- **signature:** The hero is wrapped in floating, draggable-looking diagram primitives — an oval 'Diagram as Code' node, a diamond 'AI Diagrams' decision shape, a sticky-note 'Documents & Diagrams' card — turning the landing page itself into a live whiteboard canvas instead of a flat marketing layout.
-- **imagery:** Hyper-real product UI as hero: a dark code-canvas editor showing an AWS architecture diagram (S3, Lambda, color-coded process groups) beside an 'AI Prompts' panel with plain-language edit commands and a multiplayer 'Steve K.' cursor — sells the actual workflow, not an abstraction.
-- **copy:** Plain-spoken outcome promise in a heavy slab voice — hero reads "AI for technical design and documentation" with the subhead "Deliver accurate, consistent designs faster."
+- **signature:** O hero é envolto em primitivos de diagrama flutuantes, de aparência arrastável — um nó oval 'Diagram as Code', uma forma de decisão em losango 'AI Diagrams', um cartão tipo post-it 'Documents & Diagrams' — transformando a própria landing page num canvas de quadro-branco ao vivo em vez de um layout de marketing plano.
+- **imagery:** UI de produto hiper-realista como hero: um editor de canvas-de-código escuro mostrando um diagrama de arquitetura AWS (S3, Lambda, grupos de processo codificados por cor) ao lado de um painel 'AI Prompts' com comandos de edição em linguagem simples e um cursor multiplayer 'Steve K.' — vende o fluxo de trabalho real, não uma abstração.
+- **copy:** Promessa de resultado direta numa voz slab encorpada — o hero diz "AI for technical design and documentation" com o subhead "Deliver accurate, consistent designs faster."
 
-**Takeaways (steal as ideas, don't copy):**
-- Decorate the hero with the product's own UI vocabulary — float actual node/decision/sticky shapes around the headline so the page demonstrates the canvas metaphor instead of describing it.
-- Tint a single semantic word in the headline (here 'AI') with the brand accent so the value-prop verb pops without adding a colored badge.
-- Bake collaboration proof into the screenshot — a named teammate cursor and natural-language AI prompts inside the product shot do the 'multiplayer + AI' selling silently.
-- Pair a heavy slab-serif display with a neutral sans body to read as 'serious engineering tool' while staying warm and hand-drawn, breaking the cold geometric-sans default of dev-tools sites.
+**Takeaways (roube como ideias, não copie):**
+- Decore o hero com o próprio vocabulário de UI do produto — faça formas reais de nó/decisão/post-it flutuarem ao redor do headline para que a página demonstre a metáfora do canvas em vez de descrevê-la.
+- Tinja uma única palavra semântica no headline (aqui 'AI') com o acento da marca para que o verbo da proposta-de-valor salte sem adicionar um badge colorido.
+- Embuta a prova de colaboração na captura de tela — um cursor de colega nomeado e prompts de IA em linguagem natural dentro da foto do produto fazem a venda 'multiplayer + IA' silenciosamente.
+- Combine um display slab-serif encorpado com um corpo sans neutro para se ler como 'ferramenta séria de engenharia' enquanto se mantém caloroso e desenhado-à-mão, quebrando o padrão frio de geometric-sans dos sites de dev-tools.

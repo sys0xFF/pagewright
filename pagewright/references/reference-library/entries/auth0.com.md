@@ -5,15 +5,15 @@
 - **niche:** dev-tools (identity / auth infrastructure)
 - **mood:** technical-dark
 - **style:** dark, gradient, cinematic, mono-type
-- **palette:** bg `#0B0614` · ink `#FFFFFF` · accent `#7C4DFF` — Full-bleed purple nebula gradient washing the entire hero from violet (top) to near-black (bottom); also tints the primary CTA gradient and the 'NEW' pill
-- **type:** display *Aeonik (geometric grotesque, used at very large weight for the hero)* · body *Space Grotesk (mono-flavored grotesque for body, nav, eyebrows)* — Engineered and confident — wide geometric letterforms with a slightly technical, terminal-adjacent feel; warm enough to avoid coldness
+- **palette:** bg `#0B0614` · ink `#FFFFFF` · accent `#7C4DFF` — Gradiente de nebulosa roxa de sangria completa banhando o hero inteiro do violeta (topo) ao quase-preto (base); também tinge o gradiente do CTA principal e a pílula 'NEW'
+- **type:** display *Aeonik (grotesca geométrica, usada em peso bem grande para o hero)* · body *Space Grotesk (grotesca com sabor mono para corpo, nav, eyebrows)* — Engenhosa e confiante — letras geométricas largas com uma sensação levemente técnica, próxima de terminal; calorosa o suficiente para evitar a frieza
 - **sections:** topbar-announcement › nav › hero › value-prop › feature-grid › feature-ai-agents › feature-internal-tools › feature-enterprise › feature-signups › logos › resources › cta › footer
-- **signature:** The hero ditches the obligatory dev-tool code-block / dashboard screenshot entirely and goes full cinematic: a smoky violet nebula gradient as a pure atmospheric backdrop, with nothing but huge centered display type floating in space. An infra/security product choosing mood and vapor over a product UI shot is the genre-break.
-- **imagery:** No product screenshots, illustrations, or icons in the hero — just a soft-focus volumetric purple gradient field (smoke/aurora aesthetic) used as full-bleed background. Trust is signaled typographically via a laurel-wreath award lockup ('Most Innovative AI Infrastructure Security Solution 2026') rendered in thin engraved strokes rather than a badge graphic.
-- **copy:** Punchy developer-empathy positioning that names the pain and the speed payoff; hero reads "Production auth in minutes, not sprints" (deeper page leans into "Secure AI agents, humans, and whatever comes next").
+- **signature:** O hero descarta o obrigatório bloco de código / screenshot de dashboard das ferramentas de dev por completo e vai totalmente cinematográfico: um gradiente de nebulosa violeta esfumaçada como pano de fundo puramente atmosférico, com nada além de uma enorme tipografia display centralizada flutuando no espaço. Um produto de infra/segurança escolhendo clima e vapor em vez de uma captura de UI do produto é a quebra de gênero.
+- **imagery:** Nenhum screenshot de produto, ilustração ou ícone no hero — apenas um campo de gradiente roxo volumétrico desfocado (estética de fumaça/aurora) usado como fundo de sangria completa. A confiança é sinalizada tipograficamente via um lockup de premiação em coroa de louros ('Most Innovative AI Infrastructure Security Solution 2026') renderizado em traços finos gravados em vez de um gráfico de selo.
+- **copy:** Posicionamento impactante de empatia com o desenvolvedor que nomeia a dor e o ganho de velocidade; o hero diz "Production auth in minutes, not sprints" (mais adiante na página, apoia-se em "Secure AI agents, humans, and whatever comes next").
 
-**Takeaways (steal as ideas, don't copy):**
-- Replace the default dev-tool hero screenshot with a full-bleed atmospheric gradient and let oversized type carry the whole frame — confidence through restraint.
-- Use a parenthetical, rhythm-driven headline contrast ('X in minutes, not sprints') to make a speed claim feel like a slogan, not a spec.
-- Render awards/trust as thin engraved laurel-wreath typography instead of plastic badges — keeps the premium-dark mood intact.
-- Pair two grotesks (geometric display + mono-flavored body) so the page reads 'engineered' without resorting to a literal code font.
+**Takeaways (roube como ideias, não copie):**
+- Substitua o screenshot de hero padrão das ferramentas de dev por um gradiente atmosférico de sangria completa e deixe a tipografia de tamanho exagerado carregar o quadro inteiro — confiança através da contenção.
+- Use um contraste de headline parentético e movido a ritmo ('X in minutes, not sprints') para fazer uma alegação de velocidade soar como um slogan, não uma especificação.
+- Renderize prêmios/confiança como uma tipografia fina gravada em coroa de louros em vez de selos plásticos — mantém intacto o clima premium-escuro.
+- Combine duas grotescas (display geométrica + corpo com sabor mono) para que a página se leia 'engenhosa' sem recorrer a uma fonte de código literal.

@@ -5,15 +5,15 @@
 - **niche:** design
 - **mood:** clean-light
 - **style:** minimal, mono-type, bento, photographic
-- **palette:** bg `#F4F8E8` · ink `#141414` · accent `#C6F542` — logo mark, primary CTA button fill, and brand highlights against the pale wash
-- **type:** display *Heavy grotesque sans (Inter/Söhne-style black weight, very tight tracking)* · body *Neutral humanist sans (Inter-like), regular weight, generous line-height* — Confident and editorial: an oversized ultra-bold display headline sets a poster-like tone, balanced by quiet, readable body text and tiny uppercase eyebrow labels
+- **palette:** bg `#F4F8E8` · ink `#141414` · accent `#C6F542` — símbolo do logo, preenchimento do botão de CTA principal, e destaques de marca contra o banho pálido
+- **type:** display *Grotesca pesada sans (peso black no estilo Inter/Söhne, tracking bem apertado)* · body *Humanista neutra sans (estilo Inter), peso regular, entrelinha generosa* — Confiante e editorial: uma headline display ultra-bold de tamanho exagerado define um tom de pôster, equilibrada por um corpo de texto quieto e legível e minúsculos rótulos de eyebrow em caixa alta
 - **sections:** nav › hero › feature-tabs › gallery-grid › feature-iphone › feature-tshirt › feature-book › feature-poster › feature-businesscard › feature-box › feature-laptop › feature-desktop › feature-categories › cta › footer
-- **signature:** The product showcase IS the page: instead of marketing screenshots, the hero pours straight into a live filterable grid of all-white, neutral product mockups (devices, apparel, packaging) shot like a catalog — the empty-template aesthetic becomes the brand, inviting you to imagine your own art dropped in.
-- **imagery:** Studio-lit, blank-white 3D product renders (iPhones, tees, books, posters) floating on soft neutral cards in a bento-style grid; deliberately content-free so the mockups read as canvases. Crisp shadows, no color, no props — pure form against the pale-green wash.
-- **copy:** Plainspoken benefit-first claim in a huge poster headline — hero: "Mockups to present your designs like a pro" — followed by a dense, concrete capabilities paragraph (no fluff, lists actual categories).
+- **signature:** A vitrine do produto É a página: em vez de screenshots de marketing, o hero desemboca direto numa grade filtrável ao vivo de mockups de produtos totalmente brancos e neutros (dispositivos, vestuário, embalagens) fotografados como um catálogo — a estética do template vazio vira a marca, convidando você a imaginar a sua própria arte ali dentro.
+- **imagery:** Renders 3D de produtos brancos e vazios, iluminados em estúdio (iPhones, camisetas, livros, pôsteres) flutuando sobre cards neutros e suaves numa grade estilo bento; deliberadamente sem conteúdo para que os mockups se leiam como telas em branco. Sombras nítidas, sem cor, sem adereços — pura forma contra o banho verde-pálido.
+- **copy:** Afirmação direta que prioriza o benefício, numa headline de pôster gigante — hero: "Mockups to present your designs like a pro" — seguida de um parágrafo de capacidades denso e concreto (sem enrolação, lista categorias reais).
 
-**Takeaways (steal as ideas, don't copy):**
-- Pick an unexpected base canvas — a barely-tinted lime-cream wash instead of pure white — so the page feels designed without using color anywhere else.
-- Let one acid-green accent do ALL the work: logo, single CTA, nothing else. Scarcity makes the highlight pop harder than a full palette.
-- Turn your product catalog into the hero: a filterable tab bar (Most Popular / Device / Apparel / Packaging) sitting directly under the fold lets users browse the actual goods as the primary selling moment.
-- Set a genuinely oversized black grotesque headline at poster scale with tight tracking, then keep everything else whisper-quiet — the contrast alone signals craft.
+**Takeaways (roube como ideias, não copie):**
+- Escolha uma tela-base inesperada — um banho lima-creme mal tingido em vez do branco puro — para que a página pareça projetada sem usar cor em nenhum outro lugar.
+- Deixe um único acento verde-ácido fazer TODO o trabalho: logo, um único CTA, nada mais. A escassez faz o destaque saltar mais forte do que uma paleta completa.
+- Transforme o seu catálogo de produtos no hero: uma barra de abas filtrável (Most Popular / Device / Apparel / Packaging) logo abaixo da dobra deixa os usuários navegarem pelos produtos reais como o momento principal de venda.
+- Defina uma headline grotesca preta genuinamente exagerada em escala de pôster com tracking apertado, e então mantenha todo o resto num sussurro — só o contraste já sinaliza ofício.

@@ -5,15 +5,15 @@
 - **niche:** dev-tools / realtime-collaboration-infra
 - **mood:** technical-dark
 - **style:** dark, mono-type, photographic, bento
-- **palette:** bg `#000000` · ink `#FFFFFF` · accent `#E8338A` — saturated magenta/pink tie-dye bleeds behind the product UI mockup and on the avatar/comment chips inside the demo; the dark canvas stays pure black so the pink reads as the single hero color
-- **type:** display *Custom geometric grotesque (Söhne/GT-America-style sans, single-story a, tight tracking, heavy weight)* · body *Matching humanist-grotesque sans, regular weight, generous size* — Confident engineering-grade sans — dense, oversized, and matter-of-fact; reads like infrastructure, not marketing
+- **palette:** bg `#000000` · ink `#FFFFFF` · accent `#E8338A` — tie-dye magenta/rosa saturado sangra atrás do mockup de UI do produto e nos chips de avatar/comentário dentro do demo; o canvas escuro permanece preto puro para que o rosa leia como a única cor de hero
+- **type:** display *Grotesca geométrica customizada (sans estilo Söhne/GT-America, 'a' de um andar, tracking apertado, peso pesado)* · body *Sans humanista-grotesca correspondente, peso regular, tamanho generoso* — Sans confiante de grau de engenharia — densa, superdimensionada e direta; lê como infraestrutura, não como marketing
 - **sections:** hero › logos › feature-secret-sauce › feature-collaborative-ai › feature-grid-infra › feature-ready-to-ship › feature-developer-experience › feature-scale-trust › cta › footer
-- **signature:** Handwritten white marker annotations with curved arrows ("Your app with Liveblocks", "Multiplayer undo/redo") scrawled directly onto the product screenshot — a designer's-whiteboard layer pointing at live UI, breaking the sterile dark-infra convention with a human, sketched hand.
-- **imagery:** A single large, ultra-realistic product UI mockup (a multiplayer doc editor with live cursors, presence avatars, inline comments and an AI Copilot thread) rendered inside a browser frame, floated on a soft pink tie-dye/aurora wash. The actual feature set is shown as a working app rather than abstract diagrams — show, don't tell.
-- **copy:** Plainspoken infrastructure framing with an AI-era hook; hero reads "Realtime infrastructure for multiplayer apps and agents" with subhead promising people AND AI agents can collaborate "without breaking your app."
+- **signature:** Anotações manuscritas em marcador branco com setas curvas ("Your app with Liveblocks", "Multiplayer undo/redo") rabiscadas diretamente sobre o screenshot do produto — uma camada de quadro-branco-de-designer apontando para a UI ao vivo, quebrando a estéril convenção de infra-escura com uma mão humana e esboçada.
+- **imagery:** Um único mockup grande e ultrarrealista de UI de produto (um editor de documento multiplayer com cursores ao vivo, avatares de presença, comentários inline e uma thread de Copilot de IA) renderizado dentro de uma moldura de navegador, flutuando sobre uma suave lavagem rosa tie-dye/aurora. O conjunto real de features é mostrado como um app funcionando em vez de diagramas abstratos — mostre, não conte.
+- **copy:** Enquadramento de infraestrutura em linguagem direta com um gancho da era da IA; o hero diz "Realtime infrastructure for multiplayer apps and agents" com um subtítulo prometendo que pessoas E agentes de IA podem colaborar "without breaking your app."
 
-**Takeaways (steal as ideas, don't copy):**
-- Annotate a real product screenshot with hand-drawn marker labels + arrows to teach the value props in-context instead of bullet lists
-- Pin the entire page to pure black, then let ONE saturated pink wash leak from behind the hero mockup so the product image becomes the only color source
-- Make the hero demo an actual working multiplayer scene (live cursors, presence avatars, comment threads, AI Copilot reply) — the screenshot IS the feature tour
-- Dual CTA pairing a primary button with an 'Install with AI' dropdown signals the agent-native audience right in the hero
+**Takeaways (roube como ideias, não copie):**
+- Anote um screenshot de produto real com rótulos e setas desenhados à mão de marcador para ensinar as propostas de valor em contexto em vez de listas com marcadores
+- Fixe a página inteira em preto puro, depois deixe UMA lavagem rosa saturada vazar de trás do mockup do hero para que a imagem do produto se torne a única fonte de cor
+- Faça o demo do hero ser uma cena multiplayer realmente funcionando (cursores ao vivo, avatares de presença, threads de comentários, resposta de Copilot de IA) — o screenshot É o tour de features
+- Um par de CTAs duplo combinando um botão primário com um dropdown 'Install with AI' sinaliza o público agent-native bem no hero

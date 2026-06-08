@@ -5,15 +5,15 @@
 - **niche:** ai-data-analytics
 - **mood:** clean-light
 - **style:** minimal, bento, mono-type
-- **palette:** bg `#FAFAF8` · ink `#161616` · accent `#C99A4E` — data-viz only: line-chart series, donut-chart segments, and the active Pro Customers row in the product UI screenshot — never on buttons or nav
-- **type:** display *Neue Haas / Helvetica-style grotesque (tight, near-condensed)* · body *same humanist grotesque at lighter weight* — engineering-precise, almost terminal-like; large tight-leading display with low-contrast strokes signals 'tool, not toy'
+- **palette:** bg `#FAFAF8` · ink `#161616` · accent `#C99A4E` — apenas em data-viz: séries de gráfico de linha, segmentos de gráfico de rosca e a linha ativa Pro Customers no screenshot de UI do produto — nunca em botões ou na nav
+- **type:** display *grotesca estilo Neue Haas / Helvetica (apertada, quase-condensada)* · body *mesma grotesca humanista em peso mais leve* — precisão de engenharia, quase com cara de terminal; display grande de entrelinha apertada com traços de baixo contraste sinaliza 'ferramenta, não brinquedo'
 - **sections:** announcement-bar › nav › hero › product-tabs-screenshot › feature-ask-anything › feature-teams › feature-security › feature-ship-like-code › feature-enterprise-control › testimonials › cta › footer
-- **signature:** The hero sits inside a literal dashed/dotted technical drafting frame with crop ticks, and the product screenshot bleeds out from behind a faint engineering grid — the page is framed like a CAD blueprint rather than a glossy SaaS marketing canvas.
-- **imagery:** High-fidelity real product UI as the hero asset (analytics dashboard with line/donut charts plus an AI chat panel answering 'How many active users in USA?'), set on dotted graph-paper guides; tiny pixel-art video thumbnail and stacked-avatar 'Book demo' chips add a hand-built, low-gloss texture.
-- **copy:** Confident category-claim headline with a two-tone gray-to-black emphasis: 'The Analytics Platform built for the AI era' — voice is declarative, developer-peer ('Ship analytics like you ship code'), zero hype adjectives.
+- **signature:** O hero fica dentro de uma moldura técnica de desenho tracejada/pontilhada literal com marcas de corte, e o screenshot do produto sangra por trás de uma tênue grade de engenharia — a página é emoldurada como um blueprint de CAD em vez de um canvas de marketing SaaS reluzente.
+- **imagery:** UI real de produto em alta fidelidade como o ativo do hero (dashboard de analytics com gráficos de linha/rosca mais um painel de chat de IA respondendo 'How many active users in USA?'), posto sobre guias de papel-quadriculado pontilhado; uma diminuta thumbnail de vídeo em pixel-art e chips 'Book demo' com avatares empilhados adicionam uma textura feita-à-mão, de baixo brilho.
+- **copy:** Título confiante de reivindicação-de-categoria com uma ênfase em dois tons de cinza-para-preto: 'The Analytics Platform built for the AI era' — a voz é declarativa, par-de-desenvolvedor ('Ship analytics like you ship code'), zero adjetivos de hype.
 
-**Takeaways (steal as ideas, don't copy):**
-- Use the accent color ONLY inside the data visualization, leaving the entire chrome black/white — the muted ochre reads as 'real data' instead of decoration
-- Wrap the hero in a dashed drafting frame with corner crop-ticks to telegraph 'precision tool' before a single word is read
-- Two-tone the headline (gray secondary clause, black keyword) to direct the eye to 'AI era' without bold/size tricks
-- Put the actual AI-chat-answering-a-question screenshot front and center as proof, tabbed Dashboard vs Data Studio, instead of an abstract illustration
+**Takeaways (roube como ideias, não copie):**
+- Use a cor de acento APENAS dentro da visualização de dados, deixando todo o chrome preto/branco — o ocre suave se lê como 'dados reais' em vez de decoração
+- Envolva o hero numa moldura de desenho tracejada com marcas de corte nos cantos para telegrafar 'ferramenta de precisão' antes que uma única palavra seja lida
+- Dê dois tons ao título (oração secundária em cinza, palavra-chave em preto) para direcionar o olhar para 'AI era' sem truques de negrito/tamanho
+- Coloque o screenshot real do chat de IA respondendo uma pergunta bem à frente e ao centro como prova, com abas Dashboard vs Data Studio, em vez de uma ilustração abstrata

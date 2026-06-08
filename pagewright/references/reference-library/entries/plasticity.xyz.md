@@ -5,15 +5,15 @@
 - **niche:** design (3D/CAD modeling software for artists)
 - **mood:** technical-dark
 - **style:** dark, mono-type, 3d, colorful
-- **palette:** bg `#000000` · ink `#FFFFFF` · accent `#3FC7F4` — primary CTA pill (Download for Linux), nav Old Versions swatch; but accent is really a full rainbow swatch set — green/magenta/orange/yellow/cyan/white chips beside every nav and feature-tab label
-- **type:** display *Humanist geometric sans (Gilroy/Poppins-like, rounded terminals) for the H1* · body *Monospace (JetBrains Mono / Berkeley Mono-like) for all UI labels, nav, buttons, tab chrome* — Engineering toolbar meets artist studio — clinical mono labels carrying a friendly rounded headline, the literal feel of a CAD app's own interface.
+- **palette:** bg `#000000` · ink `#FFFFFF` · accent `#3FC7F4` — pílula de CTA principal (Download for Linux), swatch de Old Versions na nav; mas o acento na verdade é um conjunto completo de swatches arco-íris — chips verde/magenta/laranja/amarelo/ciano/branco ao lado de cada rótulo de nav e de aba de recurso
+- **type:** display *Sans geométrica humanista (estilo Gilroy/Poppins, terminais arredondados) para o H1* · body *Monospace (estilo JetBrains Mono / Berkeley Mono) para todos os rótulos de UI, nav, botões, chrome de abas* — Barra de ferramentas de engenharia encontra estúdio de artista — rótulos mono clínicos carregando uma headline arredondada e amigável, a sensação literal da própria interface de um app CAD.
 - **sections:** nav › hero › feature-tabs › why-plasticity › feature-boolean › feature-surfacing › feature-fillets › feature-dimensions › feature-direct-editing › enterprise › community › no-subscription › pricing › cta-creativity › testimonials › faq › cta-getstarted › footer
-- **signature:** Every nav item and feature tab is prefixed with a tiny solid-color square swatch — a literal CAD layer/material-palette legend baked into the site chrome. The marketing page wears the app's own color-coded toolbar UI instead of generic SaaS nav links.
-- **imagery:** A real, interactive-looking 3D viewport as the hero canvas: pure-black scene, faint perspective floor grid, RGB world-axis gizmo (red/green/blue lines), and a glossy light-blue rounded-corner solid mid-model. Imagery is the product surface itself — no illustration, no marketing render, just the tool doing the thing.
-- **copy:** Benefit-and-objection headline that leads with the business model, not the feature — anti-subscription positioning aimed at burned creatives. Hero H1: "Powerful solid and surface modeling, no subscription"
+- **signature:** Cada item de nav e aba de recurso é prefixado com um pequeno quadradinho de cor sólida — uma legenda literal de paleta de camadas/materiais de CAD embutida no chrome do site. A página de marketing veste a própria UI de barra de ferramentas codificada por cores do app em vez de links de nav genéricos de SaaS.
+- **imagery:** Um viewport 3D real e de aparência interativa como a tela do hero: cena preto-puro, grade de chão em perspectiva tênue, gizmo de eixo-mundo RGB (linhas vermelha/verde/azul) e um sólido envernizado azul-claro de cantos arredondados no meio da modelagem. A imagem é a própria superfície do produto — sem ilustração, sem render de marketing, só a ferramenta fazendo o que faz.
+- **copy:** Headline de benefício-e-objeção que começa pelo modelo de negócio, não pelo recurso — posicionamento anti-assinatura voltado a criativos cansados. H1 do hero: "Powerful solid and surface modeling, no subscription"
 
-**Takeaways (steal as ideas, don't copy):**
-- Encode your product's domain into the chrome: color-coded swatch icons next to every nav/tab item mirror a CAD layer palette, making the site feel like an extension of the app.
-- Put 'no subscription' IN the H1 — sell the pricing philosophy as the headline benefit when your audience is fatigued by competitors' rentier model.
-- Use a live-looking product viewport (grid + RGB axis gizmo + a real model) as the hero instead of a hero illustration; let the tool be its own screenshot.
-- Pair clinical monospace UI labels with a single warm rounded-sans headline so the page reads as 'precision instrument with a human creative streak.'
+**Takeaways (roube como ideias, não copie):**
+- Codifique o domínio do seu produto no chrome: ícones de swatch coloridos ao lado de cada item de nav/aba espelham uma paleta de camadas de CAD, fazendo o site parecer uma extensão do app.
+- Coloque 'no subscription' NO H1 — venda a filosofia de preços como o benefício de destaque quando seu público está fatigado pelo modelo rentista dos concorrentes.
+- Use um viewport de produto de aparência ao vivo (grade + gizmo de eixo RGB + um modelo real) como hero em vez de uma ilustração de hero; deixe a ferramenta ser seu próprio screenshot.
+- Combine rótulos de UI em monospace clínico com uma única headline em sans arredondada e quente para que a página seja lida como 'instrumento de precisão com uma veia criativa humana.'

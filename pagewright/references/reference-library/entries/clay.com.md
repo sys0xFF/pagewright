@@ -5,15 +5,15 @@
 - **niche:** data
 - **mood:** editorial-minimal
 - **style:** minimal, 3d, illustrated
-- **palette:** bg `#F4F2EE` · ink `#0A0A0A` · accent `#1A8CFF` — Logo dot and small product/3D highlights; the page leans monochrome — primary CTAs are solid black pills, so the blue reads as a sparing brand spark rather than the action color
-- **type:** display *Inter (or near-geometric grotesque) at heavy/black weight, very tight tracking* · body *Inter regular* — Confident, modern, neutral — oversized black headline letterforms do the talking; restrained editorial body
+- **palette:** bg `#F4F2EE` · ink `#0A0A0A` · accent `#1A8CFF` — Ponto do logo e pequenos destaques de produto/3D; a página pende para o monocromático — os CTAs primários são pílulas pretas sólidas, então o azul lê como uma centelha de marca contida, não como a cor de ação
+- **type:** display *Inter (ou grotesca quase-geométrica) em peso heavy/black, tracking bem apertado* · body *Inter regular* — Confiante, moderna, neutra — letras superdimensionadas do título em preto é que falam; corpo de texto editorial e contido
 - **sections:** hero › logos › feature-data › feature-ai › feature-orchestrate › feature-workflows › security › testimonials › cta › footer
-- **signature:** Stacked-stone "clay" mascots: glossy 3D balanced-rock sculptures in candy primaries, one bare and one on a little wooden board, bracketing the hero like zen-garden bookends — literalizing the brand name as a tactile toy.
-- **imagery:** Playful abstract-3d: glossy stacked "clay" pebbles (zen rock balance) in primary colors, paired with hand-sketched pencils/notebook doodles. Whimsical, tactile, mascot-like 3D objects flanking the hero rather than product UI; a real product screenshot (filters/sort toolbar) starts peeking in below the fold.
-- **copy:** Outcome-led, plainspoken declarative. Real hero H1: "Go to market with unique data — and the ability to act on it." Subhead names the product trio (AI agents, enrichment, intent data) then promises action — benefit before features.
+- **signature:** Mascotes de "clay" em pedras empilhadas: esculturas 3D brilhantes de rochas equilibradas em cores primárias de doce, uma nua e outra sobre uma tabuinha de madeira, ladeando o hero como apoios de livros de jardim zen — literalizando o nome da marca como um brinquedo tátil.
+- **imagery:** 3D abstrato e brincalhão: pedrinhas brilhantes de "clay" empilhadas (equilíbrio de rochas zen) em cores primárias, combinadas com lápis desenhados à mão / rabiscos de caderno. Objetos 3D lúdicos, táteis e estilo mascote ladeando o hero em vez de UI de produto; um screenshot real do produto (barra de filtros/ordenação) começa a espiar logo abaixo da dobra.
+- **copy:** Liderada por resultado, declarativa e em linguagem franca. H1 real do hero: "Go to market with unique data — and the ability to act on it." O subhead nomeia o trio do produto (AI agents, enrichment, intent data) e então promete ação — benefício antes dos recursos.
 
-**Takeaways (steal as ideas, don't copy):**
-- Literalize your brand name as a 3D mascot prop: clay.com builds glossy balanced-stone sculptures from the word 'clay' and uses them as hero bookends — turn an abstract product into a touchable object.
-- Warm off-white canvas (#F4F2EE) inside a rounded panel instead of stark white — softens a data/B2B product and gives an editorial, paper-like calm.
-- Go nearly monochrome: solid-black pill CTAs + black headline, reserve a single saturated blue only for the logo accent — makes the action obvious and the brand pop without color noise.
-- Hero headline that pairs the noun ('unique data') with the verb ('the ability to act on it') via an em-dash — sells the differentiator and the payoff in one breath.
+**Takeaways (roube como ideias, não copie):**
+- Literalize o nome da sua marca como um adereço-mascote 3D: a clay.com constrói esculturas brilhantes de pedras equilibradas a partir da palavra 'clay' e as usa como apoios de livros no hero — transforme um produto abstrato em um objeto tocável.
+- Tela off-white quente (#F4F2EE) dentro de um painel arredondado em vez de branco cru — suaviza um produto de dados/B2B e dá uma calma editorial, de papel.
+- Vá quase monocromático: CTAs em pílula preta sólida + título preto, reservando um único azul saturado apenas para o acento do logo — torna a ação óbvia e a marca chamativa sem ruído de cor.
+- Título de hero que combina o substantivo ('unique data') com o verbo ('the ability to act on it') via um travessão — vende o diferencial e a recompensa em um só fôlego.

@@ -5,16 +5,16 @@
 - **niche:** productivity
 - **mood:** warm-playful
 - **style:** gradient, colorful
-- **palette:** bg `#C9A9C6` · ink `#2B1B3D` · accent `#7B3FF2` — Logo mark, primary 'Sign up' button, 'Share' chip and node fills inside the product canvas; the dark plum CTA button anchors the hero while purple stays the brand signal
-- **type:** display *Agrandir* · body *Manrope* — Rounded geometric grotesque display with soft warmth — confident, friendly, slightly retro; paired with a clean neutral humanist sans for body that keeps it legible and modern
+- **palette:** bg `#C9A9C6` · ink `#2B1B3D` · accent `#7B3FF2` — Marca no logo, botão primário 'Sign up', chip 'Share' e preenchimentos de nós dentro do canvas do produto; o botão de CTA roxo-ameixa escuro ancora o hero enquanto o roxo permanece como o sinal da marca.
+- **type:** display *Agrandir* · body *Manrope* — Display em grotesca geométrica arredondada com calor suave — confiante, amigável, levemente retrô; combinada com uma sans humanista neutra e limpa no corpo que a mantém legível e moderna.
 - **sections:** hero › feature-diagrams › feature-wireframes › feature-infinite-canvas › feature-grid › cta › footer
-- **signature:** The hero gradient is a literal sunrise-over-mountains scene — a lavender-to-coral atmospheric haze with dark navy ridge silhouettes at the lower corners — rendered as soft painterly mesh rather than a flat brand gradient, then the giant product screenshot tilts in 3D from the bottom edge as if rising into that sky.
-- **imagery:** Product-screenshot-led: a large, tilted, perspective-skewed canvas screenshot showing a real technical diagram (color-coded service nodes, mind map, sticky notes, wireframes) sits as the hero proof. It floats over a painterly gradient-mesh sky (lavender→pink→coral) with low navy mountain silhouettes. Imagery treatment is high-realism app shots set against soft, dreamy, low-saturation atmospheric backgrounds.
-- **copy:** Aspirational + plain-spoken: a poetic 4-word promise on top of a precise one-line positioner. Hero h1: "Where great ideas take shape" with subhead "Whimsical is a purpose-built whiteboard for technical teams and agents."
+- **signature:** O gradiente do hero é uma cena literal de nascer-do-sol-sobre-montanhas — uma neblina atmosférica de lavanda-para-coral com silhuetas de cumeada azul-marinho escuro nos cantos inferiores — renderizada como malha pictórica suave em vez de um gradiente chapado de marca; então o gigantesco screenshot do produto se inclina em 3D a partir da borda inferior, como se estivesse subindo para aquele céu.
+- **imagery:** Conduzida por screenshot de produto: um grande screenshot de canvas, inclinado e com perspectiva enviesada, mostrando um diagrama técnico real (nós de serviço codificados por cor, mapa mental, notas adesivas, wireframes) fica como a prova do hero. Ele flutua sobre um céu de malha de gradiente pictórica (lavanda→rosa→coral) com silhuetas baixas de montanhas azul-marinho. O tratamento da imagem é de shots de app de alto realismo postos contra fundos atmosféricos suaves, sonhadores e de baixa saturação.
+- **copy:** Aspiracional + direta: uma promessa poética de 4 palavras sobre um posicionador preciso de uma linha. H1 do hero: "Where great ideas take shape" com subordinada "Whimsical is a purpose-built whiteboard for technical teams and agents."
 
-**Takeaways (steal as ideas, don't copy):**
-- Render your brand gradient as a recognizable place, not an abstract blur — lavender sky + coral horizon + dark ridge corners reads as 'sunrise' and gives the hero an emotional setting that a default mesh gradient never earns.
-- Let the headline be poetry and the subhead do the work: 4 evocative words up top ('Where great ideas take shape'), then one literal sentence naming exactly who it's for ('technical teams and agents').
-- Pair a warm rounded display face (Agrandir) with a neutral body sans (Manrope) so personality lives only in headlines and the rest stays crisp — warmth without sacrificing readability.
-- Make the hero product shot do the selling: tilt a real, dense, color-coded canvas in 3D rising from the page bottom so the screenshot itself proves the product is powerful, not a staged empty state.
-- Stack the CTA contrast: a near-black plum pill button with a white arrow chip sits on the pastel sky, so the one action you want is the single darkest element on screen.
+**Takeaways (roube como ideias, não copie):**
+- Renderize o gradiente da sua marca como um lugar reconhecível, não como um borrão abstrato — céu lavanda + horizonte coral + cantos de cumeada escura lê-se como 'nascer do sol' e dá ao hero um cenário emocional que um gradiente de malha padrão nunca conquista.
+- Deixe a headline ser poesia e a subordinada fazer o trabalho: 4 palavras evocativas no topo ('Where great ideas take shape'), depois uma frase literal nomeando exatamente para quem é ('technical teams and agents').
+- Combine uma fonte de display quente e arredondada (Agrandir) com uma sans neutra de corpo (Manrope) para que a personalidade viva apenas nas headlines e o resto fique nítido — calor sem sacrificar a legibilidade.
+- Faça o shot do produto no hero vender: incline um canvas real, denso e codificado por cor em 3D, subindo a partir do fim da página, para que o próprio screenshot prove que o produto é poderoso, não um estado vazio encenado.
+- Empilhe o contraste do CTA: uma pílula ameixa quase-preta com um chip de seta branca fica sobre o céu pastel, então a única ação que você quer é o elemento mais escuro da tela.

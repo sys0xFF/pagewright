@@ -5,15 +5,15 @@
 - **niche:** data
 - **mood:** technical-dark
 - **style:** photographic, cinematic, dark, minimal
-- **palette:** bg `#1B2A33` · ink `#F2F0EB` · accent `#FFFFFF` — Solid white 'Get Started' pill button top-right; white wordmark, icons, and the off-white serif headline reversed out of the photographic overlay
-- **type:** display *Light humanist old-style serif (Palantir custom serif, in the spirit of a soft transitional/Plantin-like face)* · body *Neutral grotesque sans-serif (system/Helvetica-like) for nav, banner, and UI labels* — Quietly literary and institutional — the soft serif reads like a manifesto or a book cover, not a dashboard. Stoic, confident, deliberately un-techy.
+- **palette:** bg `#1B2A33` · ink `#F2F0EB` · accent `#FFFFFF` — botão em pílula branco sólido 'Get Started' no canto superior direito; o logotipo branco, os ícones e a headline serifada off-white vazada da sobreposição fotográfica
+- **type:** display *Light humanist old-style serif (Palantir custom serif, in the spirit of a soft transitional/Plantin-like face)* · body *Neutral grotesque sans-serif (system/Helvetica-like) for nav, banner, and UI labels* — discretamente literário e institucional — a serifa suave lê como um manifesto ou a capa de um livro, não um dashboard. Estoica, confiante, deliberadamente pouco tecnológica.
 - **sections:** promo-banner › hero › cookie-consent
-- **signature:** A defense/data-infrastructure company leads with a giant, soft, almost romantic light-weight SERIF headline over a real-world aerial photo of physical infrastructure — rejecting the entire enterprise-SaaS playbook of geometric sans + abstract gradient/mesh graphics. The type feels like the cover of a book, not a product page.
-- **imagery:** Full-bleed, edge-to-edge documentary aerial photography of actual built environment (industrial rooftops, solar arrays, a factory/campus) shot from a drone, graded with a cool dark blue-teal overlay for contrast and gravitas. No icons, no 3D product mockups, no illustration — the imagery insists the software acts on the real, physical world.
-- **copy:** Sweeping, absolutist manifesto voice — abstract ambition over feature lists. Hero headline (verbatim): "AI-Powered Automation for Every Decision". Top banner: "Read CEO Alex Karp's Letter to Shareholders".
+- **signature:** Uma empresa de infraestrutura de defesa/dados abre com uma headline SERIFADA gigante, suave e quase romântica, de peso leve, sobre uma foto aérea real de infraestrutura física — rejeitando todo o manual do SaaS empresarial de sans geométrica + gráficos de gradiente/malha abstratos. A tipografia parece a capa de um livro, não uma página de produto.
+- **imagery:** Fotografia aérea documental full-bleed, de borda a borda, de um ambiente construído de verdade (telhados industriais, painéis solares, uma fábrica/campus) capturada por drone, tratada com uma sobreposição azul-petróleo fria e escura para contraste e gravidade. Sem ícones, sem mockups de produto em 3D, sem ilustração — a imagem insiste que o software age sobre o mundo real e físico.
+- **copy:** Voz de manifesto arrebatadora e absolutista — ambição abstrata acima de listas de recursos. Headline do hero (verbatim): "AI-Powered Automation for Every Decision". Banner do topo: "Read CEO Alex Karp's Letter to Shareholders".
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair a giant LIGHT-weight serif at near-poster scale with tight leading and reverse it out of a real photograph — the contrast of literary type over gritty documentary imagery signals seriousness without a single icon.
-- Replace abstract tech gradients with true-to-life aerial/drone photography of physical infrastructure to argue your software touches the real world, not just screens.
-- Strip the hero to almost nothing: wordmark, one white pill CTA, two icons, one sentence. The restraint itself reads as authority and scale.
-- Use a slim top promo banner to surface a thought-leadership artifact (a CEO letter) — positioning the brand as a voice/institution above a vendor.
+**Takeaways (roube como ideias, não copie):**
+- Combine uma serifa gigante de peso LEVE em escala quase de pôster com entrelinha apertada e a vaze de uma fotografia real — o contraste de tipografia literária sobre imagem documental crua sinaliza seriedade sem um único ícone.
+- Substitua gradientes tecnológicos abstratos por fotografia aérea/de drone fiel à realidade, de infraestrutura física, para argumentar que seu software toca o mundo real, não apenas telas.
+- Reduza o hero a quase nada: logotipo, um CTA em pílula branca, dois ícones, uma frase. A contenção em si lê como autoridade e escala.
+- Use uma barra promocional fina no topo para destacar um artefato de liderança de pensamento (uma carta do CEO) — posicionando a marca como uma voz/instituição acima de um fornecedor.

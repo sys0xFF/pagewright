@@ -5,15 +5,15 @@
 - **niche:** marketing
 - **mood:** warm-playful
 - **style:** photographic, colorful, editorial
-- **palette:** bg `#A48A1E` · ink `#1C1C1A` · accent `#A48A1E` — Mustard/ochre owns the top nav bar and primary CTA button fill ('Start your free 30-day trial'); echoed in the duotone collage tints. Hero canvas itself is a muted warm grey (#9E9C95) so ink-black headline carries contrast.
-- **type:** display *Large neo-grotesque sans (tight-set, low-contrast, near-Söhne/GT America) for the h1; plus a hand-drawn script wordmark for the 'Podia' logo* · body *Humanist sans-serif (Inter / system-grotesque feel) at generous line-height* — Confident editorial sans paired with a personal handwritten signature — gallery-poster meets handwritten note
+- **palette:** bg `#A48A1E` · ink `#1C1C1A` · accent `#A48A1E` — O mostarda/ocre domina a barra de nav superior e o preenchimento do botão de CTA principal ('Start your free 30-day trial'); ecoado nos tons duotone da colagem. A própria tela do hero é um cinza quente apagado (#9E9C95) para que a headline preto-tinta carregue o contraste.
+- **type:** display *Sans neo-grotesca grande (apertada, baixo contraste, próxima de Söhne/GT America) para o h1; mais um wordmark em script desenhado à mão para o logo 'Podia'* · body *Sans-serif humanista (sensação de Inter / grotesca de sistema) com entrelinha generosa* — Sans editorial confiante combinada com uma assinatura manuscrita pessoal — pôster de galeria encontra bilhete escrito à mão
 - **sections:** hero › problem › feature-tour › how-it-works › testimonials › feature-grid › cta › footer
-- **signature:** The torn-paper photo collage: a full-color cutout portrait layered over duotone editorial fragments and a ripped handwritten-letter scrap — an analog scrapbook feel that makes a SaaS tool read as warm and human rather than slick.
-- **imagery:** Photography-led collage: a real, warmly-lit human portrait (woman in glasses) cut out and layered over duotone editorial photo fragments (sage-green, mustard) plus a torn handwritten-manuscript scrap. Risograph/halftone grain on supporting images; full-color hero subject. Magazine cut-and-paste treatment, not stock-screenshot.
-- **copy:** Anti-tech, pro-human positioning. Hero headline (real): "Build an online business that still feels human" — warm, reassuring, creator-to-creator voice that names the problem ("The internet is starting to feel less human") before the pitch.
+- **signature:** A colagem fotográfica de papel rasgado: um retrato recortado em cores plenas sobreposto a fragmentos editoriais em duotone e a um pedaço de carta manuscrita rasgada — uma sensação de álbum de recortes analógico que faz uma ferramenta de SaaS ser lida como quente e humana em vez de polida.
+- **imagery:** Colagem conduzida por fotografia: um retrato humano real e com iluminação quente (mulher de óculos) recortado e sobreposto a fragmentos editoriais de foto em duotone (verde-sálvia, mostarda) mais um pedaço rasgado de manuscrito à mão. Grão risográfico/meio-tom nas imagens de apoio; o sujeito do hero em cores plenas. Tratamento de recorte-e-cole de revista, não screenshot de banco de imagens.
+- **copy:** Posicionamento anti-tech, pró-humano. Headline do hero (real): "Build an online business that still feels human" — voz quente, tranquilizadora, de criador-para-criador, que nomeia o problema ("The internet is starting to feel less human") antes do pitch.
 
-**Takeaways (steal as ideas, don't copy):**
-- Lead with the enemy, not the product: an h2 like 'The internet is starting to feel less human' frames the whole page as a stance before any feature appears.
-- Use a muted desaturated background (warm grey) so a single saturated accent (mustard) and pure-black type do all the contrast work — restraint reads as premium-warm.
-- Mix media deliberately: one full-color real portrait + duotone photo fragments + a torn handwritten scrap = scrapbook texture that humanizes a software product.
-- Pair a clean grotesque display face with a genuine handwritten-script logo to signal 'made by people' without sacrificing legibility.
+**Takeaways (roube como ideias, não copie):**
+- Comece pelo inimigo, não pelo produto: um h2 como 'The internet is starting to feel less human' enquadra a página inteira como uma postura antes de qualquer recurso aparecer.
+- Use um fundo apagado e dessaturado (cinza quente) para que um único acento saturado (mostarda) e o tipo preto-puro façam todo o trabalho de contraste — a contenção é lida como premium-quente.
+- Misture mídias deliberadamente: um retrato real em cores plenas + fragmentos de foto em duotone + um pedaço manuscrito rasgado = textura de álbum de recortes que humaniza um produto de software.
+- Combine uma face display grotesca limpa com um logo genuinamente em script manuscrito para sinalizar 'feito por pessoas' sem sacrificar a legibilidade.

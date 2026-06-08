@@ -5,15 +5,15 @@
 - **niche:** crm
 - **mood:** premium-luxe
 - **style:** dark, cinematic, gradient
-- **palette:** bg `#0C0A0A` · ink `#F4F1EC` · accent `#7FB7D9` — iridescent thread-of-light arc sweeping across the lower hero; faint prismatic glints on the orbital line and product-UI edges
-- **type:** display *High-contrast transitional serif (Didone-adjacent, e.g. Canela / Ogg style)* · body *Matching old-style book serif with bracketed serifs* — Literary, editorial, human-warm — a serif system in a category that defaults to geometric sans, signaling memory, intimacy, and craft over software-utility
+- **palette:** bg `#0C0A0A` · ink `#F4F1EC` · accent `#7FB7D9` — arco iridescente de fio-de-luz cruzando a parte inferior do hero; leves brilhos prismáticos na linha orbital e nas bordas da UI do produto
+- **type:** display *Serifa transicional de alto contraste (próxima de Didone, ex.: estilo Canela / Ogg)* · body *Serifa de livro old-style combinando, com serifas em colchete* — Literária, editorial, calorosa e humana — um sistema serifado numa categoria que adota por padrão sans geométrica, sinalizando memória, intimidade e ofício acima da utilidade-software
 - **sections:** hero › feature-never-miss › feature-network-control › feature-team › testimonials › logos › cta › footer
-- **signature:** An all-serif voice on a near-black, photographic-dark canvas — the headline glows like backlit text and a single iridescent filament of light arcs through the void. It rejects the bright, geometric-sans, screenshot-grid look every CRM/relationship tool uses, reading instead like a film title card or a luxury fragrance ad.
-- **imagery:** A floating, tilted product UI panel rendered in matching dark mode (so it dissolves into the page rather than sitting in a white browser chrome), warmed by amber/peach gradient bleed at the corners. Behind it, an abstract orbital arc of dotted light and a wispy prismatic thread suggest a network/constellation without literal node diagrams. Real human avatars inside the UI add intimacy.
-- **copy:** Two-word emotional promise in serif — hero reads "Every relationship, searchable." (facts variant "Every relationship, remembered.") — warm, declarative, human-first rather than feature-first.
+- **signature:** Uma voz totalmente serifada sobre uma tela quase preta, de escuridão fotográfica — o título brilha como texto retroiluminado e um único filamento iridescente de luz arqueia pelo vazio. Rejeita o visual claro, de sans geométrica e grade de screenshots que toda ferramenta de CRM/relacionamento usa, lendo-se mais como uma cartela de título de filme ou um anúncio de perfume de luxo.
+- **imagery:** Um painel flutuante e inclinado da UI do produto renderizado em dark mode combinando (de modo que se dissolve na página em vez de ficar dentro de um chrome de navegador branco), aquecido por um vazamento de gradiente âmbar/pêssego nos cantos. Atrás dele, um arco orbital abstrato de luz pontilhada e um tênue fio prismático sugerem uma rede/constelação sem diagramas literais de nós. Avatares humanos reais dentro da UI somam intimidade.
+- **copy:** Promessa emocional de duas palavras em serifa — o hero diz "Every relationship, searchable." (variante factual "Every relationship, remembered.") — calorosa, declarativa, humana antes de orientada a recursos.
 
-**Takeaways (steal as ideas, don't copy):**
-- Set your entire type system in a high-contrast serif to humanize a data/CRM product — memory and relationships feel literary, not transactional.
-- Render the product screenshot in true dark mode so it melts into a black canvas instead of floating in white browser chrome, then warm the edges with a single amber gradient glow.
-- Use one thin iridescent thread of light as the only color on a monochrome page — it carries the 'network/connection' metaphor without a literal node graph.
-- Treat the rename as a hero feature: a quiet pill ('New name — Clay is now Mesh, same team same mission') turns a rebrand into a trust signal instead of hiding it.
+**Takeaways (roube como ideias, não copie):**
+- Defina todo o seu sistema tipográfico em uma serifa de alto contraste para humanizar um produto de dados/CRM — memória e relacionamentos passam a parecer literários, não transacionais.
+- Renderize o screenshot do produto em dark mode de verdade para que ele se funda numa tela preta em vez de flutuar num chrome de navegador branco, e então aqueça as bordas com um único brilho de gradiente âmbar.
+- Use um único fio fino e iridescente de luz como a única cor numa página monocromática — ele carrega a metáfora de 'rede/conexão' sem um grafo literal de nós.
+- Trate a mudança de nome como um recurso de destaque: uma pílula discreta ('New name — Clay is now Mesh, same team same mission') transforma um rebrand em sinal de confiança em vez de escondê-lo.

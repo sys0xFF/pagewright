@@ -5,15 +5,15 @@
 - **niche:** consumer (creator tools / link-in-bio)
 - **mood:** warm-playful
 - **style:** colorful, photographic, illustrated
-- **palette:** bg `#D2FF59` · ink `#1C4032` · accent `#254F1A` — dark-green primary CTA buttons, the asterisk logo mark, headline ink, and the 'Get started for free' button on the lime field
-- **type:** display *Custom geometric grotesque (rounded, near-circular 'o' and 'b'), likely a bespoke 'Yerk'-named face* · body *Same humanist sans family at text weight* — Friendly, rounded, confident — playground energy with grown-up restraint; big lowercase headlines feel approachable not corporate
+- **palette:** bg `#D2FF59` · ink `#1C4032` · accent `#254F1A` — botões de CTA primários em verde-escuro, a marca do logo em asterisco, a tinta do título e o botão 'Get started for free' sobre o campo lima
+- **type:** display *Grotesca geométrica customizada (arredondada, 'o' e 'b' quase circulares, provavelmente uma face sob medida nomeada 'Yerk')* · body *Mesma família sans humanista em peso de texto* — Amigável, arredondada, confiante — energia de playground com contenção adulta; grandes títulos em minúsculas soam acessíveis, não corporativos
 - **sections:** promo-banner › nav › hero › how-it-works (create/customize) › feature-share › feature-monetize › feature-analytics › social-proof (70M+ trusted) › value-prop › logos (as featured in) › testimonials › faq › cta › footer
-- **signature:** The hero abandons the SaaS product-screenshot convention entirely: instead of a dashboard, it floods the frame with full-bleed editorial portraits of real, named creators (Nico & Fran of Pistakio, Zay Dante) styled like a magazine fashion shoot — the product appears only as a phone in their hands. It sells the person, not the UI.
-- **imagery:** Vibrant, art-directed lifestyle photography of named creators in saturated monochrome sets (green velvet curtains, lime crates), each holding/standing beside an oversized phone rendering their actual Linktree. Real captions name the subjects. Documentary-meets-editorial treatment, warm and human, zero stock or vector UI.
-- **copy:** Second-person, plain-spoken and intimate — sells belonging over features. Hero: "A link in bio built for you." with subhead "One link to help you... sell from your Instagram... media profiles."
+- **signature:** O hero abandona inteiramente a convenção SaaS de screenshot-de-produto: em vez de um dashboard, inunda o quadro com retratos editoriais full-bleed de criadores reais e nomeados (Nico & Fran do Pistakio, Zay Dante) estilizados como um editorial de moda de revista — o produto aparece apenas como um celular nas mãos deles. Vende a pessoa, não a UI.
+- **imagery:** Fotografia de lifestyle vibrante e dirigida artisticamente de criadores nomeados em cenários monocromáticos saturados (cortinas de veludo verde, caixotes lima), cada um segurando/ao lado de um celular superdimensionado renderizando seu Linktree real. Legendas reais nomeiam os retratados. Tratamento documental-encontra-editorial, caloroso e humano, zero stock ou UI vetorial.
+- **copy:** Segunda pessoa, em linguagem direta e íntima — vende pertencimento sobre features. Hero: "A link in bio built for you." com subtítulo "One link to help you... sell from your Instagram... media profiles."
 
-**Takeaways (steal as ideas, don't copy):**
-- Replace the hero product screenshot with art-directed portraits of named real users — show WHO uses it, not WHAT it looks like, and caption them by name for authenticity.
-- Commit hard to a single ultra-saturated brand color (lime #D2FF59) as the full-bleed canvas, then pair it with one deep-green for ink AND CTAs so the palette is two colors total — radical restraint reads as confidence.
-- Use big lowercase, rounded-grotesque headlines in second person ('built for you') to make a tool feel like a personal companion rather than enterprise software.
-- Let each feature section own a different saturated photo-world (green curtain, lime crates) so scrolling feels like flipping a fashion magazine, not reading a feature list.
+**Takeaways (roube como ideias, não copie):**
+- Substitua o screenshot de produto do hero por retratos dirigidos artisticamente de usuários reais nomeados — mostre QUEM usa, não COMO se parece, e legende-os pelo nome para autenticidade.
+- Comprometa-se firme com uma única cor de marca ultrassaturada (lima #D2FF59) como o canvas full-bleed, depois combine-a com um único verde-profundo para a tinta E os CTAs, de modo que a paleta tenha duas cores no total — a contenção radical lê como confiança.
+- Use grandes títulos em minúsculas e grotesca arredondada em segunda pessoa ('built for you') para fazer uma ferramenta parecer um companheiro pessoal em vez de software corporativo.
+- Deixe cada seção de feature dominar um mundo-foto saturado diferente (cortina verde, caixotes lima) para que rolar a página pareça folhear uma revista de moda, não ler uma lista de features.

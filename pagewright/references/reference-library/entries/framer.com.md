@@ -5,15 +5,15 @@
 - **niche:** design
 - **mood:** technical-dark
 - **style:** dark, bento, mono-type
-- **palette:** bg `#0A0A0A` · ink `#FFFFFF` · accent `#FFFFFF` — Inverted: the primary 'Start for free' CTA is a solid white pill with black text against the black page; white is also the headline ink, so emphasis comes from value-inversion (white-on-black pills, grey-dimmed subcopy) rather than a chromatic accent. Color lives only inside the customer-site cards.
-- **type:** display *Framer Sans (geometric grotesque, likely the in-house 'Inter'-adjacent variable face)* · body *Same grotesque at regular weight, dimmed to grey* — Tall, tight, confident; near-mono spacing on nav; oversized hero set in heavy weight for a clean technical-Swiss feel
+- **palette:** bg `#0A0A0A` · ink `#FFFFFF` · accent `#FFFFFF` — Invertido: o CTA principal 'Start for free' é uma pílula branca sólida com texto preto contra a página preta; o branco também é a tinta da manchete, então a ênfase vem da inversão de valor (pílulas branco-no-preto, subtexto esmaecido em cinza) em vez de um destaque cromático. A cor vive apenas dentro dos cards dos sites de clientes.
+- **type:** display *Framer Sans (grotesca geométrica, provavelmente a fonte variável interna próxima da 'Inter')* · body *Mesma grotesca em peso regular, esmaecida para cinza* — Alta, apertada, confiante; espaçamento quase mono na navegação; hero superdimensionado em peso pesado para uma sensação suíça-técnica limpa
 - **sections:** hero › feature-create-collaborate › feature-scale › feature-ai › feature-design › feature-cms › feature-collaborate › logos › testimonials › news › footer
-- **signature:** The hero ends not with a static screenshot but with a row of real, live customer sites peeking up from the fold as oversized browser cards — Framer demonstrates the product by showing what people built with it, turning the hero into a living showcase that scrolls.
-- **imagery:** Product-screenshot gallery: a horizontal, edge-bleeding carousel of real customer sites (algo, ELLE editorial, Cartesia voice-AI, design-studio) rendered as floating browser cards on pure black — the work itself is the imagery, no abstract 3D or stock photography.
-- **copy:** Blunt outcome-promise headline in massive type — real hero: "Build better sites, faster" — backed by social-proof subcopy naming "leading startups and Fortune 500 companies."
+- **signature:** O hero termina não com um screenshot estático, mas com uma fileira de sites de clientes reais e ao vivo espiando para cima a partir da dobra como cards de navegador superdimensionados — a Framer demonstra o produto mostrando o que as pessoas construíram com ele, transformando o hero numa vitrine viva que rola.
+- **imagery:** Galeria de screenshots de produto: um carrossel horizontal sangrando nas bordas de sites reais de clientes (algo, editorial da ELLE, Cartesia voice-AI, estúdio de design) renderizados como cards de navegador flutuantes em preto puro — o próprio trabalho é a imagem, sem 3D abstrato ou fotografia genérica.
+- **copy:** Manchete de promessa de resultado direta em tipografia massiva — hero real: "Build better sites, faster" — sustentada por subtexto de prova social nomeando "leading startups and Fortune 500 companies."
 
-**Takeaways (steal as ideas, don't copy):**
-- Prove the product with the product: instead of a single hero mockup, bleed a horizontal carousel of REAL customer sites off both edges so the fold itself is the demo — credibility through artifacts, not claims.
-- Go fully achromatic and let emphasis come from inversion: pure-black page, white solid CTA pill, grey-dimmed subcopy. Save every saturated color for inside the showcase cards, so the customer work is the only thing that pops.
-- Set the hero headline enormous (≈9-10rem) in a heavy geometric grotesque, two tight lines centered, with a comma break ('Build better sites, faster') to add cadence — the type does the design work, no graphic needed.
-- Pair a single benefit headline with a one-sentence proof subline that name-drops the customer tier ('leading startups and Fortune 500 companies') — concrete authority beats adjectives.
+**Takeaways (roube como ideias, não copie):**
+- Prove o produto com o produto: em vez de um único mockup de hero, faça um carrossel horizontal de sites REAIS de clientes sangrar para fora das duas bordas para que a própria dobra seja a demo — credibilidade através de artefatos, não de afirmações.
+- Vá totalmente acromático e deixe a ênfase vir da inversão: página preto puro, pílula de CTA branca sólida, subtexto esmaecido em cinza. Guarde toda cor saturada para dentro dos cards da vitrine, para que o trabalho do cliente seja a única coisa que se destaca.
+- Monte a manchete do hero enorme (≈9-10rem) numa grotesca geométrica pesada, duas linhas apertadas centralizadas, com uma quebra de vírgula ('Build better sites, faster') para adicionar cadência — a tipografia faz o trabalho de design, sem nenhum gráfico necessário.
+- Combine uma única manchete de benefício com uma sublinha de prova de uma frase que cita o nível de cliente ('leading startups and Fortune 500 companies') — autoridade concreta vence adjetivos.

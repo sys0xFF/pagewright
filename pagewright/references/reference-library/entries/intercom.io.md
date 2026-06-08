@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** editorial-minimal
 - **style:** minimal, clean, colorful
-- **palette:** bg `#F7F6F2` · ink `#1A1A1A` · accent `#3B43F0` — Tiny square corner markers framing the hero, the active feature-tab underline, the inline 'Fin' text link, the chat bubbles in the product UI, and the 'Fin AI Agent' button outline
-- **type:** display *GT Walsheim / geometric grotesque (Intercom's custom sans, single-weight regular)* · body *Georgia-style transitional serif (used for subhead and body paragraphs)* — Confident, oversized, near-thin headlines paired with a quiet bookish serif — editorial calm, not startup-loud
+- **palette:** bg `#F7F6F2` · ink `#1A1A1A` · accent `#3B43F0` — Pequenos marcadores quadrados de canto emoldurando o hero, o sublinhado da aba de feature ativa, o link de texto inline 'Fin', os balões de chat na UI do produto e o contorno do botão 'Fin AI Agent'
+- **type:** display *GT Walsheim / grotesca geométrica (a sans customizada da Intercom, peso regular único)* · body *Serifa transitional no estilo Georgia (usada no subtítulo e nos parágrafos de corpo)* — Headlines confiantes, gigantes e quase finas combinadas com uma serifa quieta e livresca — calma editorial, não barulho de startup
 - **sections:** hero › feature-tabs › feature-complete-solution › feature-helpdesk › feature-insights › feature-self-improving › feature-fin-agent › feature-channels › feature-engagement › feature-monitoring › problem-trust › feature-expert-support › how-it-works › pricing › cta › footer
-- **signature:** A hand-drawn, scratchy black ink peony bloom floating loose in the hero's right margin — an analog botanical illustration colliding with an AI-helpdesk pitch. It signals craft and warmth where competitors default to abstract 3D blobs.
-- **imagery:** Real product-screenshot UI as the centerpiece, but staged on a soft lavender-to-peach gradient-mesh backdrop so the chrome feels airy rather than boxy. Layered floating cards (chat thread, guidance panel, billing chart) overlap at depth. Punctuated by sparse hand-inked line illustrations.
-- **copy:** Singular authority claim in plain language — "The only helpdesk designed for the AI Agent era" — backed by a serif subhead that argues the mechanism ("every customer conversation improves the next one"). Voice: declarative, category-owning, unhurried.
+- **signature:** Uma peônia em flor desenhada à mão, riscada em nanquim preto, flutuando solta na margem direita do hero — uma ilustração botânica analógica colidindo com um pitch de helpdesk de IA. Sinaliza ofício e calor onde os concorrentes recorrem por padrão a blobs 3D abstratos.
+- **imagery:** UI de screenshot real do produto como peça central, mas encenada sobre um fundo de gradiente-mesh lavanda-a-pêssego suave para que o chrome pareça arejado em vez de encaixotado. Cards flutuantes em camadas (thread de chat, painel de orientação, gráfico de cobrança) se sobrepõem em profundidade. Pontuado por ilustrações de linha esparsas feitas à mão em nanquim.
+- **copy:** Reivindicação singular de autoridade em linguagem simples — "The only helpdesk designed for the AI Agent era" — sustentada por um subtítulo em serifa que argumenta o mecanismo ("every customer conversation improves the next one"). Voz: declarativa, dona da categoria, sem pressa.
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair a huge near-thin geometric-sans headline with a small transitional SERIF body block — the serif does the persuading and reads as editorial confidence, a deliberate counter to the all-sans SaaS default.
-- Frame the hero with four tiny accent-colored square corner ticks instead of a box or full-bleed image — a minimal 'crop mark' device that adds structure on an off-white canvas with almost no ink.
-- Drop one loose hand-drawn ink illustration into white margin space to inject warmth/craft into a technical product and break the screenshot monotony.
-- Make features a horizontal tabbed switcher above a single live product canvas (active tab gets the accent underline), so one screenshot region does the work of four stacked sections.
+**Takeaways (roube como ideias, não copie):**
+- Combine uma headline enorme em sans geométrica quase fina com um pequeno bloco de corpo em SERIFA transitional — a serifa faz a persuasão e se lê como confiança editorial, um contraponto deliberado ao padrão SaaS all-sans.
+- Emoldure o hero com quatro pequenos cantos em forma de ticks quadrados na cor de acento em vez de uma caixa ou imagem full-bleed — um recurso minimalista de 'marca de corte' que adiciona estrutura a um canvas off-white com quase nenhuma tinta.
+- Solte uma única ilustração em nanquim feita à mão no espaço de margem branca para injetar calor/ofício num produto técnico e quebrar a monotonia dos screenshots.
+- Transforme as features num seletor horizontal por abas acima de um único canvas de produto ao vivo (a aba ativa ganha o sublinhado de acento), para que uma única região de screenshot faça o trabalho de quatro seções empilhadas.

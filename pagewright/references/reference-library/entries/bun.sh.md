@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** technical-dark
 - **style:** dark, gradient, mono-type
-- **palette:** bg `#0B0B0F` · ink `#FBF0DF` · accent `#FF6AC1` — the word 'fast' in the hero, the 'Build' nav pill, the active 'Linux & macOS' tab, the install command border, and the Bun benchmark bar (a pink that nods to the cartoon-bun mascot)
-- **type:** display *Geometric grotesque (heavy black weight, with the italicized 'fast' as a slanted accent)* · body *System / Helvetica-like sans for prose; monospace for install command and version labels* — Confident, chunky, a little playful — heavy display weight reads bold and almost toy-like, while mono details keep it credibly technical
+- **palette:** bg `#0B0B0F` · ink `#FBF0DF` · accent `#FF6AC1` — a palavra 'fast' no hero, a pílula de nav 'Build', a aba ativa 'Linux & macOS', a borda do comando de instalação e a barra de benchmark do Bun (um rosa que faz alusão ao mascote-pãozinho cartoon)
+- **type:** display *grotesca geométrica (peso black pesado, com o 'fast' em itálico como acento inclinado)* · body *sans no estilo sistema / Helvetica para o texto corrido; monoespaçada para o comando de instalação e os rótulos de versão* — Confiante, encorpada, um pouco brincalhona — o peso pesado do display lê como ousado e quase de brinquedo, enquanto os detalhes em mono o mantêm credivelmente técnico
 - **sections:** announcement-bar › hero › feature-benchmark-tabs › logos › feature-four-tools › testimonials › feature-whats-different › feature-runtime › feature-package-manager › feature-test-runner › feature-apis › how-it-works › testimonials › footer
-- **signature:** A live, animated bar-chart benchmark sits inside the hero itself (tabbed: Bundler / Express / Postgres / WebSockets) — instead of a stock product screenshot or abstract 3D, the hero's right column IS the proof: a real performance race where Bun's bar finishes first in pink.
-- **imagery:** Almost no photography or illustration — the visual language is data and code. A cute rounded-bun mascot logo provides warmth; the rest is functional UI: animated benchmark bars with version labels, a copy-paste install terminal block, and grayscale customer wordmarks. Dark near-black canvas with a faint dotted/grid texture.
-- **copy:** Plainspoken confident-dev voice with a wink; hero: "Bun is a fast JavaScript all-in-one toolkit" (with a blinking caret), backed by punchy claims like "a test runner that makes the rest look like test walkers."
+- **signature:** Um benchmark animado e ao vivo, em gráfico de barras, fica dentro do próprio hero (com abas: Bundler / Express / Postgres / WebSockets) — em vez de um screenshot de produto genérico ou um 3D abstrato, a coluna direita do hero É a prova: uma corrida real de performance em que a barra do Bun cruza a linha de chegada primeiro, em rosa.
+- **imagery:** Quase nenhuma fotografia ou ilustração — a linguagem visual é dados e código. Um fofo logo-mascote de pãozinho arredondado dá calor; o resto é UI funcional: barras de benchmark animadas com rótulos de versão, um bloco de terminal de instalação para copiar e colar, e wordmarks de clientes em escala de cinza. Tela preta-quase-total com uma tênue textura pontilhada/de grade.
+- **copy:** Voz franca de dev confiante, com uma piscadela; hero: "Bun is a fast JavaScript all-in-one toolkit" (com um cursor piscando), apoiada por afirmações de impacto como "a test runner that makes the rest look like test walkers."
 
-**Takeaways (steal as ideas, don't copy):**
-- Make the hero's right column an animated, tabbed live benchmark — let measurable proof replace the usual product screenshot.
-- Render the primary CTA as a real copy-to-clipboard terminal command with OS tabs (Linux/macOS vs Windows) instead of a generic button.
-- Italicize one word in a heavy display headline as the single chromatic accent ('fast' in pink) to create motion and emphasis cheaply.
-- Pull a mascot-derived accent color (pink bun) through to functional UI — nav pill, active tabs, winning chart bar — so brand warmth and product proof share one hue.
+**Takeaways (roube como ideias, não copie):**
+- Transforme a coluna direita do hero em um benchmark ao vivo, animado e com abas — deixe a prova mensurável substituir o screenshot de produto de sempre.
+- Renderize o CTA primário como um comando de terminal real para copiar para a área de transferência, com abas de SO (Linux/macOS vs Windows), em vez de um botão genérico.
+- Coloque em itálico uma única palavra de um título display pesado, como o único acento cromático ('fast' em rosa), para criar movimento e ênfase a baixo custo.
+- Puxe uma cor de acento derivada do mascote (rosa do pãozinho) para dentro da UI funcional — pílula de nav, abas ativas, barra vencedora do gráfico — para que o calor da marca e a prova do produto compartilhem um mesmo tom.

@@ -5,15 +5,15 @@
 - **niche:** dev-tools (serverless Postgres / backend platform for AI agents)
 - **mood:** technical-dark
 - **style:** dark, gradient, cinematic, mono-type
-- **palette:** bg `#0A0A0B` · ink `#FFFFFF` · accent `#00E599` — neon-green appears in the logo mark, the EARLY ACCESS pills, and saturates the audio-equalizer hero visualization; deliberately rationed against the near-black canvas
-- **type:** display *Inter (tight, near-display weight)* · body *Inter* — Engineered and matter-of-fact — a single neutral grotesk pulling double duty, with the oversized hero set in dense letter-spacing so the type itself reads as the brand rather than any decorative face
+- **palette:** bg `#0A0A0B` · ink `#FFFFFF` · accent `#00E599` — o verde-neon aparece na logomarca, nas pílulas EARLY ACCESS e satura a visualização de equalizador de áudio do hero; deliberadamente racionado contra o canvas quase-preto
+- **type:** display *Inter (apertada, peso quase de display)* · body *Inter* — Engenhada e objetiva — uma única grotesca neutra fazendo dois papéis, com o hero superdimensionado num espaçamento de letras denso para que a própria tipografia leia como a marca, em vez de qualquer fonte decorativa
 - **sections:** topbar-announcement › hero › feature-grid › feature-cloud-primitives › feature-autoscaling › feature-branching › feature-no-platform-fees › how-it-works › stats › logos › cta › footer
-- **signature:** The hero "image" is a literal data-equalizer — vertical neon-green frequency bars rendered against black, so the visual reads as a live database/throughput signal rather than the usual abstract gradient blob or product screenshot. The brand color IS the data.
-- **imagery:** No product screenshots or stock photography up top. Instead a generative, audio-spectrum-style field of glowing green vertical bars fading from solid to black — connotes signal, scale, and "alive" infrastructure. Feature row uses tiny monochrome line icons + lime "EARLY ACCESS" status pills, keeping the surface flat, technical, and dashboard-like.
-- **copy:** Confident, plain-spoken infra promise aimed at builders of AI agents — hero reads "Ship faster on the backend platform for apps and agents."; sub-copy leans into the "AI Engineering era" framing ("Integrate with a single command and the LLM does the hard work.").
+- **signature:** A "imagem" do hero é um equalizador de dados literal — barras verticais de frequência em verde-neon renderizadas contra o preto, então o visual lê como um sinal de banco de dados/throughput ao vivo em vez do habitual blob de gradiente abstrato ou screenshot de produto. A cor da marca É o dado.
+- **imagery:** Sem screenshots de produto ou fotografia de banco de imagens no topo. Em vez disso, um campo generativo no estilo espectro de áudio de barras verticais verdes brilhantes esmaecendo do sólido ao preto — conota sinal, escala e infraestrutura "viva". A fileira de features usa minúsculos ícones de linha monocromáticos + pílulas de status "EARLY ACCESS" verde-limão, mantendo a superfície plana, técnica e parecida com um dashboard.
+- **copy:** Promessa de infra confiante e direta voltada a quem constrói agentes de IA — o hero diz "Ship faster on the backend platform for apps and agents."; o subtexto se apoia no enquadramento da "AI Engineering era" ("Integrate with a single command and the LLM does the hard work.").
 
-**Takeaways (steal as ideas, don't copy):**
-- Turn your accent color into a data visualization: render the hero as a signal/equalizer in your brand hue against near-black so the imagery doubles as a product metaphor (throughput, scale, liveness).
-- Use small status pills ('EARLY ACCESS') inline in the feature grid to signal roadmap momentum and let one page advertise shipped + upcoming primitives at once.
-- Pair an enormous, tightly-tracked single-grotesk headline with a barely-visible parent-company eyebrow ('A DATABRICKS COMPANY') — the type carries the brand so no logo lockup is needed.
-- Lead the feature grid with named primitives (Database, Auth, Compute, Storage, AI Gateway) as a 5-up row — frame the product as composable infrastructure, not a single tool.
+**Takeaways (roube como ideias, não copie):**
+- Transforme sua cor de destaque numa visualização de dados: renderize o hero como um sinal/equalizador no tom da sua marca contra o quase-preto para que a imagem funcione também como metáfora do produto (throughput, escala, vivacidade).
+- Use pequenas pílulas de status ('EARLY ACCESS') inline na grade de features para sinalizar momentum de roadmap e deixar uma página anunciar primitivos entregues + futuros de uma vez.
+- Combine um headline enorme de grotesca única com tracking apertado com um eyebrow quase-invisível de empresa-mãe ('A DATABRICKS COMPANY') — a tipografia carrega a marca, então nenhum lockup de logo é necessário.
+- Lidere a grade de features com primitivos nomeados (Database, Auth, Compute, Storage, AI Gateway) numa fileira de 5 — enquadre o produto como infraestrutura componível, não uma ferramenta única.

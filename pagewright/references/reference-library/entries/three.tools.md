@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** technical-dark
 - **style:** dark, 3d, minimal, cinematic
-- **palette:** bg `#070707` · ink `#E8E8E8` · accent `#F03A1E` — the giant 3D rendered logo sculpture (the hero's entire visual mass), plus the small '+' badge inside the 'Get access' CTA pill
-- **type:** display *Geometric grotesque (heavy weight, condensed-ish, likely a custom/Druk- or Inter-Display-adjacent face)* · body *Neutral sans-serif (bold weight for subhead), close to Inter/Helvetica* — Loud, blocky, almost poster-like headlines that feel hand-set; tight, no-nonsense engineering tone underneath
+- **palette:** bg `#070707` · ink `#E8E8E8` · accent `#F03A1E` — A gigantesca escultura de logo renderizada em 3D (toda a massa visual do hero), mais o pequeno badge de '+' dentro da pílula de CTA 'Get access'
+- **type:** display *Grotesca geométrica (peso heavy, meio condensada, provavelmente uma face custom adjacente a Druk ou Inter-Display)* · body *Sans-serif neutra (peso bold para o subtítulo), próxima de Inter/Helvetica* — Headlines altos, em blocos, quase como pôster, que parecem compostos à mão; tom de engenharia apertado e sem rodeios por baixo
 - **sections:** hero › feature-grid › credibility › testimonials › faq › cta › footer
-- **signature:** The hero is a single colossal 3D-rendered glossy logomark (an inflated balloon 'Y/three' sculpture) sitting in negative space — with actual Three.js transform gizmos and wireframe-mesh selection boxes overlaid ON the object. The product (a scene inspector) is demonstrated by literally editing its own logo, instead of the usual UI-screenshot-in-a-browser-frame hero that every dev tool ships.
-- **imagery:** High-fidelity ray-traced 3D render: soft-body, balloon-like inflated geometry with wet-clay specular highlights in molten orange-red, floating on pure black. Layered with literal editor chrome — dashed selection handles, transform gizmos, and dark wireframe UV-grid panels — so the static image reads as a frozen frame of the tool in use.
-- **copy:** Confident, slightly cheeky product voice with an asterisk-as-joke; hero reads "A beautiful Three.js editor that works on every project*." followed by the plain promise "Inspect and tweak any Three.js website."
+- **signature:** O hero é um único logomark colossal renderizado em 3D, brilhante (uma escultura inflada estilo balão 'Y/three') situado em espaço negativo — com gizmos de transformação reais do Three.js e caixas de seleção de malha-wireframe sobrepostos SOBRE o objeto. O produto (um inspetor de cena) é demonstrado editando literalmente o próprio logo, em vez do habitual hero de screenshot-de-UI-numa-moldura-de-navegador que toda dev tool lança.
+- **imagery:** Render 3D ray-traced de alta fidelidade: geometria inflada de corpo-mole, estilo balão, com realces especulares de barro-úmido em laranja-vermelho derretido, flutuando sobre preto puro. Sobreposta com moldura de editor literal — alças de seleção tracejadas, gizmos de transformação e painéis de grade-UV em wireframe escuro — para que a imagem estática se leia como um quadro congelado da ferramenta em uso.
+- **copy:** Voz de produto confiante e ligeiramente atrevida com um asterisco-como-piada; o hero diz "A beautiful Three.js editor that works on every project*." seguido pela promessa direta "Inspect and tweak any Three.js website."
 
-**Takeaways (steal as ideas, don't copy):**
-- Demo the product ON its own brand mark: overlay the actual app's tool chrome (gizmos, selection boxes, wireframes) onto your 3D logo so the hero IS a live usage screenshot, no laptop mockup needed.
-- Let one oversized glossy 3D object carry 70% of the viewport on pure black — push the headline far below the fold so the render gets full cinematic breathing room.
-- Use a single saturated molten-orange against near-black and nowhere else; the restraint makes the one accent feel like a spotlight rather than decoration.
-- Plant a typographic in-joke (the trailing asterisk on 'every project*') to signal a maker-built tool with personality and pre-empt the 'does it really work everywhere?' objection.
+**Takeaways (roube como ideias, não copie):**
+- Demonstre o produto SOBRE a própria marca: sobreponha a moldura de ferramenta do app real (gizmos, caixas de seleção, wireframes) ao seu logo 3D para que o hero SEJA um screenshot de uso ao vivo, sem precisar de mockup de laptop.
+- Deixe um único objeto 3D brilhante e superdimensionado carregar 70% da viewport sobre preto puro — empurre o headline bem abaixo da dobra para que o render ganhe pleno espaço cinematográfico para respirar.
+- Use um único laranja-derretido saturado contra o quase-preto e em nenhum outro lugar; a restrição faz o único acento parecer um holofote em vez de decoração.
+- Plante uma piada interna tipográfica (o asterisco final em 'every project*') para sinalizar uma ferramenta feita por maker com personalidade e antecipar a objeção 'será que funciona mesmo em todo lugar?'.

@@ -5,15 +5,15 @@
 - **niche:** productivity
 - **mood:** warm-playful
 - **style:** minimal, bento
-- **palette:** bg `#FCE2C4` · ink `#1A1A1A` · accent `#111111` — Near-black fills carry the primary CTA button (Get started for free), the top-right Get started pill, and the bold ink headline; the only true color pops are the green/yellow/red emoji reactions and the macOS window dots inside the product shot.
-- **type:** display *Replica LL / heavy grotesque (very bold, tight, near-condensed sans)* · body *Inter-like neutral grotesque (subhead, nav, UI labels)* — Confident and chunky up top, calm and utilitarian below — the contrast is the personality
+- **palette:** bg `#FCE2C4` · ink `#1A1A1A` · accent `#111111` — Preenchimentos quase pretos carregam o botão de CTA principal (Get started for free), a pílula Get started no canto superior direito e o título em ink pesado; os únicos verdadeiros toques de cor são as reações emoji verde/amarelo/vermelho e os pontos da janela macOS dentro do screenshot do produto.
+- **type:** display *Replica LL / grotesca pesada (bem bold, apertada, sans quase condensada)* · body *Grotesca neutra tipo Inter (subtítulo, navegação, rótulos de UI)* — Confiante e robusta no topo, calma e utilitária abaixo — o contraste é a personalidade
 - **sections:** hero › problem › feature-overview › feature-writeups › feature-hubs › feature-trackers › feature-applications › feature-ai › how-it-works › use-case-product › use-case-sales › use-case-engineering › use-case-design › use-case-marketing › use-case-hr › pricing › cta › footer
-- **signature:** A single warm peach wash floods the entire hero — no gradient, no hero image band — so the only thing with visual weight is the oversized near-black headline and one realistic product doc floating below it; the page sells calm by withholding color rather than adding it.
-- **imagery:** Product-screenshot first: a single large, rounded-corner browser-chrome mock of a live Coda doc (avatars, emoji reactions, inline highlights) floating on the warm peach field — feels like a real shared workspace, not a stock UI.
-- **copy:** Benefit-led, plain-spoken; real hero headline "Your all-in-one collaborative workspace." with subhead "Coda brings teams and tools together for a more organized work day."
+- **signature:** Uma única lavagem pêssego quente inunda todo o hero — sem gradiente, sem faixa de imagem de hero — de modo que a única coisa com peso visual é o título superdimensionado quase preto e um doc realista do produto flutuando abaixo; a página vende calma ao reter cor em vez de adicioná-la.
+- **imagery:** Screenshot do produto em primeiro plano: um único mock grande de chrome de navegador com cantos arredondados de um doc Coda ao vivo (avatares, reações emoji, destaques inline) flutuando sobre o campo pêssego quente — parece um workspace compartilhado de verdade, não uma UI de banco de imagens.
+- **copy:** Liderada por benefício, em tom simples; título real do hero "Your all-in-one collaborative workspace." com subtítulo "Coda brings teams and tools together for a more organized work day."
 
-**Takeaways (steal as ideas, don't copy):**
-- Tint the whole hero one warm pastel (peach #FCE2C4) and keep CTAs/text monochrome black — warmth comes from the field, not from accent buttons.
-- Make the headline do the shouting: set it in an ultra-bold tight grotesque at ~3x the subhead size, then drop to a quiet neutral sans for everything else so the size contrast carries hierarchy.
-- Anchor the hero with ONE high-fidelity product screenshot showing humans collaborating (overlapping avatars, emoji reaction counts, inline text highlights) instead of an abstract dashboard — the emoji are the only saturated color on the screen.
-- Structure the body as a role-based grid ('For product / sales / engineering / design / marketing / HR teams'), each closing with a repeated 'Want to know more about running your X team on Coda?' prompt — same template, swapped audience, scales the page without new layouts.
+**Takeaways (roube como ideias, não copie):**
+- Tinja todo o hero com um único pastel quente (pêssego #FCE2C4) e mantenha CTAs/texto em preto monocromático — o calor vem do campo, não de botões de destaque.
+- Faça o título gritar: componha-o numa grotesca ultra-bold e apertada a ~3x o tamanho do subtítulo, depois caia para uma sans neutra e quieta em todo o resto para que o contraste de tamanho carregue a hierarquia.
+- Ancore o hero com UM screenshot de produto de alta fidelidade mostrando humanos colaborando (avatares sobrepostos, contagens de reação emoji, destaques de texto inline) em vez de um dashboard abstrato — os emoji são a única cor saturada na tela.
+- Estruture o corpo como uma grade baseada em papéis ('For product / sales / engineering / design / marketing / HR teams'), cada uma fechando com um repetido prompt 'Want to know more about running your X team on Coda?' — mesmo template, público trocado, escala a página sem novos layouts.

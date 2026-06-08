@@ -5,15 +5,15 @@
 - **niche:** customer-service / CX platform (dev-adjacent ops, AI-powered support)
 - **mood:** technical-dark
 - **style:** dark, gradient, bold
-- **palette:** bg `#2A1245` · ink `#FFFFFF` · accent `#E6FF4F` — primary CTA pill (Request demo), highest-contrast call-to-action; secondary CTA is a thin lilac-outlined ghost button
-- **type:** display *Grotesque/geometric sans (heavy weight, tight tracking — likely a custom or GT-America/Aeonik-style grotesk)* · body *Same humanist-grotesk family at regular weight* — Confident and editorial — oversized headline dominates the viewport, almost magazine-cover scale, calm authority rather than playful
+- **palette:** bg `#2A1245` · ink `#FFFFFF` · accent `#E6FF4F` — pílula de CTA principal (Request demo), a chamada para ação de maior contraste; o CTA secundário é um botão fantasma fino contornado em lilás
+- **type:** display *Sem serifa grotesca/geométrica (peso pesado, tracking apertado — provavelmente uma grotesca custom ou estilo GT-America/Aeonik)* · body *Mesma família humanista-grotesca em peso regular* — Confiante e editorial — a manchete superdimensionada domina a viewport, quase em escala de capa de revista, autoridade calma em vez de brincalhona
 - **sections:** hero › feature-cross-team › logos › feature-unify-stack › problem › feature-one-view › feature-ai › feature-resolution › how-it-works › industries › cta › footer
-- **signature:** A near-black aubergine/violet field used as the ENTIRE hero canvas with a single acid-lime pill CTA — the niche (helpdesk/CX) almost universally ships clean-light, blue-accented, friendly pages; Front goes dark-luxe and punches one toxic-yellow button as the only color event on screen.
-- **imagery:** Real product UI rendered as layered, rounded-corner glass cards (inbox conversation, sidebar app rail, status chips like "Open"/"Marcello Smith") floating on the violet ground with soft purple glow; tab-switcher above the screenshot (Cross-team coordination / Multi-step workflows / AI command center) implies the hero image swaps per tab. Product-as-hero, no stock photography or abstract 3D.
-- **copy:** Combative, category-defining voice that names the enemy ("AI for simple support is everywhere. Complex customer operations demand Front." / hero render reads "Meet the AI command center built for complex customer operations") — confrontational headlines like "Alt+Tab isn't a workflow."
+- **signature:** Um campo berinjela/violeta quase preto usado como TODO o canvas do hero com uma única pílula de CTA verde-limão ácido — o nicho (helpdesk/CX) quase universalmente entrega páginas clean-light, com destaque azul e amigáveis; a Front vai de dark-luxe e crava um botão amarelo-tóxico como o único evento de cor na tela.
+- **imagery:** UI real do produto renderizada como cards de vidro em camadas com cantos arredondados (conversa de inbox, trilho de apps na barra lateral, chips de status como "Open"/"Marcello Smith") flutuando sobre o fundo violeta com um brilho roxo suave; um seletor de abas acima do screenshot (Cross-team coordination / Multi-step workflows / AI command center) sugere que a imagem do hero troca por aba. Produto-como-herói, sem fotografia genérica ou 3D abstrato.
+- **copy:** Voz combativa, definidora de categoria, que nomeia o inimigo ("AI for simple support is everywhere. Complex customer operations demand Front." / o render do hero lê "Meet the AI command center built for complex customer operations") — manchetes confrontadoras como "Alt+Tab isn't a workflow."
 
-**Takeaways (steal as ideas, don't copy):**
-- Anchor a dark page on ONE saturated accent (acid lime on aubergine) used solely for the primary CTA — color becomes the click instruction, not decoration.
-- Set the H1 at near-poster scale (~80px) so the headline alone fills the first viewport; the subhead and dual CTAs stay quiet beneath it.
-- Put a tabbed sub-nav directly under the hero copy (with tiny line-icons + progress underlines) to preview multiple product angles without leaving the fold.
-- Write headlines that name the rival behavior you replace ('Alt+Tab isn't a workflow', 'AI for simple support is everywhere') — positioning as copy, not feature lists.
+**Takeaways (roube como ideias, não copie):**
+- Ancore uma página escura em UM destaque saturado (verde-limão ácido sobre berinjela) usado exclusivamente para o CTA principal — a cor se torna a instrução de clique, não decoração.
+- Monte a H1 em escala quase de pôster (~80px) para que a manchete sozinha preencha a primeira viewport; o subtítulo e os dois CTAs ficam quietos abaixo dela.
+- Coloque uma sub-navegação por abas diretamente sob o texto do hero (com pequenos ícones de linha + sublinhados de progresso) para prévia de múltiplos ângulos do produto sem deixar a dobra.
+- Escreva manchetes que nomeiam o comportamento rival que você substitui ('Alt+Tab isn't a workflow', 'AI for simple support is everywhere') — posicionamento como copy, não como listas de funcionalidades.

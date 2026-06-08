@@ -5,15 +5,15 @@
 - **niche:** data-analytics (business intelligence / Power BI consultancy)
 - **mood:** clean-light
 - **style:** minimal, mono-type, bento
-- **palette:** bg `#F4F2EF` · ink `#1A1A1A` · accent `#8C6D34` — single underlined hero keyword ('croissance') in warm bronze/gold; echoed faintly in the dashboard chart strokes (coral/orange data lines)
-- **type:** display *Inter (tight, near-display weight at large sizes)* · body *Inter* — Geometric grotesque pushed to an oversized, low-contrast display register — the same neutral workhorse font carries both headline and body, so hierarchy comes from scale and the lone gold underline rather than from a second typeface
+- **palette:** bg `#F4F2EF` · ink `#1A1A1A` · accent `#8C6D34` — única palavra-chave sublinhada no hero ('croissance') num bronze/dourado quente; ecoada sutilmente nos traços dos gráficos do dashboard (linhas de dados coral/laranja).
+- **type:** display *Inter (apertada, peso quase de display em tamanhos grandes)* · body *Inter* — Grotesca geométrica levada a um registro de display superdimensionado e de baixo contraste — a mesma fonte neutra de trabalho carrega tanto a headline quanto o corpo, então a hierarquia vem da escala e do solitário sublinhado dourado, e não de uma segunda fonte.
 - **sections:** hero › logos › feature-grid (services: visualization, data engineering, governance, UI/UX, apps & automation, data agents, helpdesk) › feature (Microsoft tech / certified) › how-it-works (data as organizational asset) › cta › footer
-- **signature:** A single hero keyword ('croissance') is the ONLY colored element on an otherwise grayscale page — hand-underlined in warm bronze gold instead of the obligatory electric-blue/cyan that BI and data dashboards default to. The warm, almost editorial neutral palette quietly rejects the cold corporate-tech aesthetic of the entire Power BI/Azure niche.
-- **imagery:** Floating, layered product-UI cards (bento-style) of mock BI dashboards — a finance line chart, a sales figure card with sparkline, a profitability donut ring — rendered in soft cream/coral on white with drop shadows and little orbiting avatar/status chips. Imagery is the product itself, abstracted into clean tiles rather than screenshots, signalling 'data made calm and legible'.
-- **copy:** Outcome-first, French, confident-consultant voice that sells growth over tooling — hero: "Solutions analytiques de votre croissance" (analytics solutions for your growth)
+- **signature:** Uma única palavra-chave no hero ('croissance') é o ÚNICO elemento colorido numa página que, fora isso, é em tons de cinza — sublinhada à mão num dourado bronze quente em vez do obrigatório azul-elétrico/ciano que os dashboards de BI e dados adotam por padrão. A paleta neutra quente, quase editorial, rejeita silenciosamente a estética fria de tech corporativa de todo o nicho Power BI/Azure.
+- **imagery:** Cards flutuantes e em camadas de UI de produto (estilo bento) de dashboards de BI fictícios — um gráfico de linha financeiro, um card de número de vendas com sparkline, um anel de rosca de rentabilidade — renderizados em creme/coral suave sobre branco, com sombras projetadas e pequenos chips de avatar/status orbitando. A imagem é o próprio produto, abstraído em ladrilhos limpos em vez de screenshots, sinalizando 'dados tornados calmos e legíveis'.
+- **copy:** Voz de consultor confiante, em francês, com o resultado em primeiro lugar, que vende crescimento em vez de ferramentas — hero: "Solutions analytiques de votre croissance" (soluções analíticas para o seu crescimento).
 
-**Takeaways (steal as ideas, don't copy):**
-- Color a single word, not a section: keep the whole page neutral and let one hand-underlined keyword in an unexpected warm hue carry all the brand emotion.
-- Use one typeface for everything (Inter here) and manufacture hierarchy purely through dramatic size jumps — the H1 dwarfs the body to near-poster scale.
-- Swap the cold blue cliché of the data/BI niche for a warm cream + bronze palette to feel like a boutique consultancy, not enterprise software.
-- Float product dashboards as separated bento cards with orbiting avatar/status chips so the UI reads as 'living' without a real screenshot.
+**Takeaways (roube como ideias, não copie):**
+- Colora uma única palavra, não uma seção: mantenha a página toda neutra e deixe uma palavra-chave sublinhada à mão num tom quente inesperado carregar toda a emoção da marca.
+- Use uma única fonte para tudo (Inter aqui) e fabrique hierarquia puramente por meio de saltos dramáticos de tamanho — o H1 ofusca o corpo até quase a escala de pôster.
+- Troque o clichê do azul frio do nicho de dados/BI por uma paleta de creme quente + bronze para parecer uma consultoria boutique, não software corporativo.
+- Faça dashboards de produto flutuarem como cards bento separados, com chips de avatar/status orbitando, para que a UI pareça 'viva' sem um screenshot real.

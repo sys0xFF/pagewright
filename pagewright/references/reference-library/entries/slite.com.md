@@ -5,15 +5,15 @@
 - **niche:** productivity
 - **mood:** warm-playful
 - **style:** minimal, illustrated, mono-type
-- **palette:** bg `#F7EDE2` · ink `#3A3A3A` · accent `#2F6BFF` — hand-drawn marker strikethrough/underline on the hero word and the italic 'thrives'; NEW pill, link underlines
-- **type:** display *Recoleta (or similar high-contrast humanist serif)* · body *Recoleta / matching serif at lighter weight* — Bookish and editorial — a friendly serif that reads like a well-set print book rather than a typical sans-serif SaaS, signalling 'documentation' and craft
+- **palette:** bg `#F7EDE2` · ink `#3A3A3A` · accent `#2F6BFF` — riscado/sublinhado de marcador desenhado à mão sobre a palavra do hero e o itálico 'thrives'; pílula NEW, sublinhados de link
+- **type:** display *Recoleta (ou serifa humanista de alto contraste similar)* · body *Recoleta / serifa correspondente em peso mais leve* — Livresca e editorial — uma serifa amigável que lê como um livro impresso bem composto em vez de um SaaS típico em sans-serif, sinalizando 'documentação' e craft
 - **sections:** hero › problem › feature-docs › logos › testimonials › feature-scale › feature-ai-search › cta › footer
-- **signature:** The hero headline performs its own edit: 'goes to die' is struck through with a hand-drawn blue marker and replaced by a handwritten italic 'thrives' — a literal proofreading gesture that turns the H1 into a tracked-change, perfectly on-brand for a docs tool
-- **imagery:** Warm cream canvas with a realistic product UI screenshot (Slite editor, sidebar, 'Ask' button) anchored bottom-center; loose pencil-style doodle illustrations inside docs (a factory line drawing); floating glassy testimonial card with a real headshot overlapping the product shot for social proof
-- **copy:** Provocative self-aware promise that names the pain then crosses it out — hero reads 'Where knowledge goes to die thrives' (strikethrough on 'goes to die')
+- **signature:** A headline do hero executa sua própria edição: 'goes to die' é riscado com um marcador azul desenhado à mão e substituído por um 'thrives' em itálico manuscrito — um gesto literal de revisão que transforma o H1 numa alteração rastreada, perfeitamente alinhado à marca de uma ferramenta de docs
+- **imagery:** Tela cor de creme quente com um screenshot realista de UI de produto (editor Slite, sidebar, botão 'Ask') ancorado na base-centro; ilustrações soltas estilo doodle a lápis dentro dos docs (um desenho de linha de fábrica); card de depoimento glassy flutuante com uma foto de rosto real sobrepondo-se ao print do produto para prova social
+- **copy:** Promessa provocativa e autoconsciente que nomeia a dor e então a risca — o hero diz 'Where knowledge goes to die thrives' (riscado em 'goes to die')
 
-**Takeaways (steal as ideas, don't copy):**
-- Make the headline DO the product's job: use a marker strikethrough + handwritten replacement so the H1 literally demonstrates editing/version control
-- Swap the default SaaS sans for a bookish high-contrast serif on a cream paper bg to signal 'documentation' and warmth instead of cold tech
-- Pair one clean product screenshot with hand-drawn doodles inside it — the contrast of polished UI + loose sketch reads human and approachable
-- Overlap a glassy testimonial card with a real face onto the product shot so proof and product share one frame
+**Takeaways (roube como ideias, não copie):**
+- Faça a headline FAZER o trabalho do produto: use um riscado de marcador + substituição manuscrita para que o H1 literalmente demonstre edição/controle de versão
+- Troque a sans padrão de SaaS por uma serifa livresca de alto contraste sobre um fundo de papel creme para sinalizar 'documentação' e calor em vez de tech frio
+- Combine um screenshot de produto limpo com doodles desenhados à mão dentro dele — o contraste de UI polida + esboço solto lê humano e acessível
+- Sobreponha um card de depoimento glassy com um rosto real sobre o print do produto para que prova e produto compartilhem um único quadro

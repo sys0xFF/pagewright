@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** technical-dark
 - **style:** dark, glass, minimal
-- **palette:** bg `#0B1020` · ink `#C7D2E8` · accent `#9DB8F0` — The huge gradient 'AuthKit' wordmark (top-lit pale-blue), the spotlight glow, faint blueprint guide-lines, and small focus/link highlights like 'Sign up' and provider icons; everything else stays muted slate on near-black.
-- **type:** display *Untitled Sans / Inter-like grotesk (geometric humanist sans)* · body *Inter* — clean, neutral, engineer-trustworthy; the display weight is heavy and tightly set for the wordmark, body stays light and roomy
+- **palette:** bg `#0B1020` · ink `#C7D2E8` · accent `#9DB8F0` — O enorme wordmark em gradiente 'AuthKit' (azul-claro iluminado por cima), o brilho do holofote, tênues linhas-guia de blueprint, e pequenos destaques de foco/link como 'Sign up' e os ícones de provedores; todo o resto fica num ardósia abafado sobre o quase-preto.
+- **type:** display *Untitled Sans / grotesca estilo Inter (geométrica humanista sans)* · body *Inter* — limpa, neutra, confiável para engenheiros; o peso display é pesado e bem apertado para o wordmark, o corpo fica leve e espaçoso
 - **sections:** hero › feature-branding › feature-platform › feature-flexibility › feature-radix › feature-enterprise › cta › footer
-- **signature:** The hero shows the actual auth widget rendered three times, fanned and stacked like a deck of cards under a stage spotlight — it demos the product (a themeable login box) as the visual instead of mocking it up, with the foreground card fully interactive.
-- **imagery:** Product-screenshot as hero subject: a stack of three real, layered glass login cards (a live "Sign in to SuperApp" component on top) floated over a dark cosmic gradient-mesh with starfield specks and a top-down volumetric spotlight beam. The product IS the art.
-- **copy:** Confident, superlative product-name-as-hero: tiny "Introducing" eyebrow over a giant "AuthKit" wordmark, then the claim "The world's best login box, powered by WorkOS + Radix." — playful bravado in dev-tools deadpan.
+- **signature:** O hero mostra o widget de autenticação real renderizado três vezes, em leque e empilhado como um baralho de cartas sob o holofote de um palco — ele demonstra o produto (uma caixa de login customizável por tema) como o visual em vez de simulá-lo, com o card em primeiro plano totalmente interativo.
+- **imagery:** Screenshot de produto como tema do hero: uma pilha de três cards de login de vidro reais e em camadas (um componente "Sign in to SuperApp" ao vivo no topo) flutuando sobre um gradiente cósmico escuro em malha com pontinhos de campo estelar e um feixe de holofote volumétrico de cima para baixo. O produto É a arte.
+- **copy:** Nome-do-produto-como-hero confiante e superlativo: um minúsculo eyebrow "Introducing" sobre um gigante wordmark "AuthKit", e então a afirmação "The world's best login box, powered by WorkOS + Radix." — bravata divertida no deadpan das ferramentas de dev.
 
-**Takeaways (steal as ideas, don't copy):**
-- Light the hero like a stage: a single top-down volumetric spotlight cone behind the centered product makes a flat dark page feel three-dimensional and draws the eye to one focal object.
-- Use the product as the hero image — render your real UI component (not a fake mockup), duplicate and stack it at slight offsets/opacity to imply 'works for any app / infinitely themeable'.
-- Build the wordmark from a top-lit gradient (pale blue fading to mid-tone) on a heavy grotesk so the brand name itself reads as the brightest element on a near-black canvas.
-- Layer faint blueprint/CAD guide-lines and a sparse starfield over the background to signal 'technical/engineered' without adding noisy imagery.
+**Takeaways (roube como ideias, não copie):**
+- Ilumine o hero como um palco: um único cone de holofote volumétrico de cima para baixo atrás do produto centralizado faz uma página escura e chapada parecer tridimensional e atrai o olhar para um único objeto focal.
+- Use o produto como a imagem do hero — renderize o seu componente de UI real (não um mockup falso), duplique-o e empilhe-o com leves deslocamentos/opacidade para sugerir 'funciona para qualquer app / infinitamente customizável por tema'.
+- Construa o wordmark a partir de um gradiente iluminado por cima (azul-claro esmaecendo para meio-tom) sobre uma grotesca pesada para que o próprio nome da marca se leia como o elemento mais brilhante numa tela quase-preta.
+- Sobreponha tênues linhas-guia de blueprint/CAD e um campo estelar esparso sobre o fundo para sinalizar 'técnico/engenhoso' sem adicionar imagens ruidosas.

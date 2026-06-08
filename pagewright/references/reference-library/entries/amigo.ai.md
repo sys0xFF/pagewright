@@ -5,15 +5,15 @@
 - **niche:** healthcare-ai
 - **mood:** editorial-minimal
 - **style:** editorial-minimal, photographic, mono-type
-- **palette:** bg `#FFFFFF` · ink `#1A1A1A` · accent `#B4502E` — Book a Demo CTA buttons (solid terracotta fill), quote bar accent, and the 'New' status dot in the announcement bar
-- **type:** display *High-contrast transitional/Didone-leaning serif (e.g. Newsreader / Source Serif style) for the oversized H1* · body *Same serif family at smaller sizes for supporting copy; labels set in spaced uppercase mono/grotesk* — Literary and clinical at once — bookish authority that reads more like a medical journal masthead than a typical AI startup
+- **palette:** bg `#FFFFFF` · ink `#1A1A1A` · accent `#B4502E` — botões de CTA Book a Demo (preenchimento terracota sólido), destaque da barra de citação e o ponto de status 'New' na barra de anúncio
+- **type:** display *Serif de alto contraste transitional/de inclinação Didone (p.ex. estilo Newsreader / Source Serif) para o H1 superdimensionado* · body *A mesma família serif em tamanhos menores para o texto de apoio; labels compostos em mono/grotesca em maiúsculas espaçadas* — Literário e clínico ao mesmo tempo — autoridade livresca que lê mais como o cabeçalho de um periódico médico do que uma típica startup de IA
 - **sections:** announcement-bar › hero › logos › feature-specialty-workflows › feature-digital-residency › feature-care-model › feature-virtual-patients › feature-security-integration › how-it-works-define › partnership-time-to-value › insights › infrastructure-cta › footer
-- **signature:** An interactive flow diagram embedded in a dim, cinematic patient portrait: "Your Clinician → Amigo Clinical Agent → Patient" rendered as small-caps mono labels with arrows, while a vertically scrolling ticker of 20+ real clinical use-cases (Pre-Op Prep, Care Gap Closures, Urgent Care Triage…) streams beside it — turning the hero image into a live capability index instead of a static photo.
-- **imagery:** A single muted, defocused human face (patient/clinician) bled to near-black inside a large rounded rectangle, used as a dark canvas for overlaid mono-type system diagrams and a scrolling list — photography as backdrop for UI, not as standalone hero shot.
-- **copy:** Plain-spoken benefit framed in journal-serif authority. Hero: "The trusted platform for building, training, and deploying clinical agents." Subhead leans on a vivid promise — "Make your care team feel 10x bigger while meeting the safety and reliability standards of healthcare."
+- **signature:** Um diagrama de fluxo interativo embutido num retrato de paciente escuro e cinematográfico: "Your Clinician → Amigo Clinical Agent → Patient" renderizado como labels mono em small-caps com setas, enquanto um ticker rolando verticalmente com mais de 20 casos de uso clínicos reais (Pre-Op Prep, Care Gap Closures, Urgent Care Triage…) flui ao lado — transformando a imagem do hero num índice de capacidades ao vivo em vez de uma foto estática.
+- **imagery:** Um único rosto humano abafado e desfocado (paciente/clínico) esvaecido para quase-preto dentro de um grande retângulo arredondado, usado como uma tela escura para diagramas de sistema em mono-type sobrepostos e uma lista rolante — fotografia como pano de fundo para UI, não como tomada de hero independente.
+- **copy:** Benefício em linguagem direta enquadrado na autoridade do serif de periódico. Hero: "The trusted platform for building, training, and deploying clinical agents." O subhead se apoia numa promessa vívida — "Make your care team feel 10x bigger while meeting the safety and reliability standards of healthcare."
 
-**Takeaways (steal as ideas, don't copy):**
-- Lead with an oversized Didone-style serif headline to signal trust/gravitas in a category drowning in geometric-sans AI clones
-- Make the hero photo a functional canvas: overlay a small-caps mono process diagram + an auto-scrolling list of real use-cases so the image proves breadth, not just vibe
-- Use a single warm terracotta accent sparingly (CTAs + status dot) against pure white/near-black for a restrained, premium-clinical feel
-- Set micro-labels and trust lines in wide-tracked uppercase mono to contrast the bookish serif and read as 'infrastructure-grade'
+**Takeaways (roube como ideias, não copie):**
+- Comece com um headline serif estilo Didone superdimensionado para sinalizar confiança/gravidade numa categoria afogada em clones de IA em sans geométrica
+- Faça da foto do hero uma tela funcional: sobreponha um diagrama de processo em mono small-caps + uma lista de casos de uso reais que rola automaticamente para que a imagem prove amplitude, não só vibe
+- Use um único destaque terracota quente com parcimônia (CTAs + ponto de status) contra branco puro/quase-preto para uma sensação contida e premium-clínica
+- Componha micro-labels e linhas de confiança em mono maiúsculo de tracking aberto para contrastar com o serif livresco e ler como 'nível-infraestrutura'

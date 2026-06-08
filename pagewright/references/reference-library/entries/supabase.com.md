@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** clean-light
 - **style:** minimal, mono-type, bento
-- **palette:** bg `#FFFFFF` · ink `#1C1C1C` · accent `#3ECF8E` — the second hero headline line, primary CTA button fill, logo mark, and small UI affordances
-- **type:** display *Custom Sans (Supabase-flavored grotesque, close to a humanist sans)* · body *Same family / system sans* — Engineer-clean and unfussy — wide tracking-free headlines, generous line-height, no decorative weights. Reads like documentation that learned to be confident.
+- **palette:** bg `#FFFFFF` · ink `#1C1C1C` · accent `#3ECF8E` — a segunda linha do título do hero, o preenchimento do botão de CTA principal, o símbolo do logo e pequenas affordances de UI
+- **type:** display *Custom Sans (grotesca com sabor Supabase, próxima de uma sans humanista)* · body *Mesma família / sans do sistema* — Limpa de engenheiro e sem firulas — títulos largos sem tracking, entrelinha generosa, sem pesos decorativos. Lê-se como documentação que aprendeu a ser confiante.
 - **sections:** hero › logos › feature-postgres-database › feature-authentication › feature-edge-functions › feature-storage › feature-realtime › feature-vector › feature-data-apis › feature-open-source › how-it-works › cta › footer
-- **signature:** Splitting the H1 into two emotional registers via color: "Build in a weekend" in black, "Scale to millions" in the brand green — one headline that performs both the promise and the payoff, with the accent color doing the narrative work instead of decoration.
-- **imagery:** Near-zero photography. Faded grayscale customer wordmarks (Mozilla, GitHub, 1Password) in a quiet trust strip, plus monoline outline icons heading each bento feature card. Visual language is restrained line-art and product-dashboard fragments rather than illustration or 3D.
-- **copy:** Outcome-first, two-beat value prop in plain dev vernacular — hero: "Build in a weekend / Scale to millions" backed by the flat declarative "Supabase is the Postgres development platform."
+- **signature:** Dividir o H1 em dois registros emocionais via cor: "Build in a weekend" em preto, "Scale to millions" no verde da marca — um único título que executa tanto a promessa quanto o pagamento, com a cor de acento fazendo o trabalho narrativo em vez de decoração.
+- **imagery:** Fotografia quase zero. Wordmarks de clientes em escala de cinza esmaecida (Mozilla, GitHub, 1Password) numa faixa de confiança silenciosa, mais ícones de contorno monoline encabeçando cada cartão de recurso bento. A linguagem visual é line-art contida e fragmentos de dashboard do produto em vez de ilustração ou 3D.
+- **copy:** Com o resultado à frente, proposta de valor em duas batidas no vernáculo simples de dev — hero: "Build in a weekend / Scale to millions" respaldada pela declaração chapada "Supabase is the Postgres development platform."
 
-**Takeaways (steal as ideas, don't copy):**
-- Use ONE accent color as a storytelling device, not paint: color-code a two-line headline so the hue carries the before/after arc.
-- Anchor a buzzy promise to a concrete, trusted noun — leading with 'Postgres' instead of vague 'backend' makes the audacious 'scale to millions' feel earned.
-- Bento grid of one-feature-per-card (Database, Auth, Edge Functions, Storage, Realtime, Vector) lets a broad platform feel modular and scannable instead of bloated.
-- Keep the canvas aggressively white and let monoline icons + faded logos do all the texturing — restraint reads as engineering confidence in dev-tools.
+**Takeaways (roube como ideias, não copie):**
+- Use UMA cor de acento como dispositivo narrativo, não como tinta: codifique por cor um título de duas linhas para que o matiz carregue o arco antes/depois.
+- Ancore uma promessa chamativa a um substantivo concreto e confiável — começar por 'Postgres' em vez do vago 'backend' faz o audacioso 'scale to millions' parecer conquistado.
+- Uma grade bento de um-recurso-por-cartão (Database, Auth, Edge Functions, Storage, Realtime, Vector) deixa uma plataforma ampla parecer modular e escaneável em vez de inchada.
+- Mantenha a tela agressivamente branca e deixe ícones monoline + logos esmaecidos fazerem toda a texturização — a contenção se lê como confiança de engenharia em dev-tools.

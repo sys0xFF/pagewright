@@ -5,15 +5,15 @@
 - **niche:** data-ai
 - **mood:** clean-light
 - **style:** minimal, mono-type, illustrated
-- **palette:** bg `#FFFFFF` · ink `#1B3139` · accent `#FF3621` — logo mark, the highlighted word 'database' in the hero headline, primary 'Try Databricks' / 'Explore the product' CTA buttons
-- **type:** display *DM Sans* · body *DM Sans / Inter* — Geometric humanist sans with a tight, confident hero set; DM Mono used for small-caps eyebrow labels ('AUTOSCALING PROJECT', 'TRUSTED BY DATA + AI TEAMS') gives an engineering, terminal-adjacent texture against the soft sans body
+- **palette:** bg `#FFFFFF` · ink `#1B3139` · accent `#FF3621` — o símbolo do logo, a palavra destacada 'database' no título da hero, botões CTA primários 'Try Databricks' / 'Explore the product'
+- **type:** display *DM Sans* · body *DM Sans / Inter* — Sans geométrico humanista com um set de hero apertado e confiante; DM Mono usado nos rótulos eyebrow em versalete ('AUTOSCALING PROJECT', 'TRUSTED BY DATA + AI TEAMS') dá uma textura de engenharia, próxima de terminal, contra o corpo macio em sans
 - **sections:** hero › logos › feature-platform › feature-lakebase › feature-agents › feature-analytics › feature-governance › feature-warehouse › feature-pipelines › testimonials › awards › cta › footer
-- **signature:** A near-photoreal product UI replica sits in the hero instead of an abstract gradient or hero photo: a fully-rendered "Project Dashboard" mock (branches, monitoring chart, SQL editor nav) that literally shows the Postgres-style app the copy promises, turning the visual into proof rather than decoration.
-- **imagery:** Flat, high-fidelity product-UI mockups rendered as clean cropped panels bleeding off the right edge; monochrome customer wordmark logos (Michelin, Mercedes-Benz, Santander, Siemens) on a single trust row; subtle dotted-grid texture connecting hero text to the UI panel. No photography of people, no 3D, no stock.
-- **copy:** Provocative, anthropomorphic product claim that flatters the buyer's ambition; hero reads "The database your AI agents deserve" with subhead "Lakebase is serverless Postgres for applications that scale."
+- **signature:** Uma réplica quase fotorrealista da UI do produto fica na hero em vez de um gradiente abstrato ou foto de hero: um mock totalmente renderizado de "Project Dashboard" (branches, gráfico de monitoramento, nav de editor SQL) que literalmente mostra o app estilo Postgres que a copy promete, transformando o visual em prova em vez de decoração.
+- **imagery:** Mockups de UI de produto chapados e de alta fidelidade, renderizados como painéis limpos e recortados vazando pela borda direita; logotipos monocromáticos de clientes (Michelin, Mercedes-Benz, Santander, Siemens) numa única fileira de confiança; sutil textura de grade pontilhada conectando o texto da hero ao painel de UI. Nenhuma foto de pessoas, nenhum 3D, nenhum banco de imagens.
+- **copy:** Reivindicação de produto provocadora e antropomórfica que lisonjeia a ambição do comprador; a hero diz "The database your AI agents deserve" com subhead "Lakebase is serverless Postgres for applications that scale."
 
-**Takeaways (steal as ideas, don't copy):**
-- Color-isolate ONE word in a long black headline (here 'database' in brand red) to carry the entire brand accent and the message in one move.
-- Pair a soft geometric sans body with a mono-spaced small-caps eyebrow label to signal 'engineering credibility' without going fully dark/technical.
-- Let the hero product mock bleed off the right edge and crop it mid-component, so it reads as a real live app window rather than a centered marketing illustration.
-- Use a desaturated single-row logo wall right under the fold with a mono 'TRUSTED BY' label to anchor enterprise trust before any feature copy.
+**Takeaways (roube como ideias, não copie):**
+- Isole por cor UMA palavra num título longo e preto (aqui 'database' em vermelho de marca) para carregar todo o acento da marca e a mensagem num só gesto.
+- Combine um corpo em sans geométrico macio com um rótulo eyebrow em versalete monoespaçado para sinalizar 'credibilidade de engenharia' sem ir totalmente escuro/técnico.
+- Deixe o mock de produto da hero vazar pela borda direita e recorte-o no meio de um componente, para que leia como uma janela de app real e ao vivo em vez de uma ilustração de marketing centralizada.
+- Use um muro de logos dessaturado de uma única fileira logo abaixo da dobra com um rótulo mono 'TRUSTED BY' para ancorar a confiança enterprise antes de qualquer copy de feature.

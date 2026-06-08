@@ -5,15 +5,15 @@
 - **niche:** security
 - **mood:** clean-light
 - **style:** minimal, 3d, mono-type
-- **palette:** bg `#FFFFFF` · ink `#0A0A0A` · accent `#1A4BFF` — secondary half of the headline in light grey, plus the electric-blue 3D logo hub and a handful of the orbiting coin-tokens
-- **type:** display *Inter (heavy weight, very tight tracking)* · body *Inter* — Single-typeface discipline pushed to extremes — the hero runs Inter at near-display black weight with condensed spacing so it reads almost like a custom grotesk, while body drops to calm regular weight. Confident, engineered, no-nonsense.
+- **palette:** bg `#FFFFFF` · ink `#0A0A0A` · accent `#1A4BFF` — a metade secundária do título em cinza claro, mais o hub do logo 3D em azul-elétrico e um punhado dos coin-tokens em órbita
+- **type:** display *Inter (peso pesado, tracking bem apertado)* · body *Inter* — Disciplina de tipografia única levada ao extremo — o hero roda Inter em peso quase black de display com espaçamento condensado para se ler quase como uma grotesca custom, enquanto o corpo cai para um peso regular calmo. Confiante, engenheirada, sem rodeios.
 - **sections:** hero › logos › problem › feature-platform › feature-what-it-secures › how-it-works › feature-approach › how-it-works › testimonials › cta › footer
-- **signature:** A photoreal 3D "control hub" centerpiece: a glossy extruded logo disc on a soft drop-shadow plinth, encircled by a ring of floating black/blue physical coin-tokens (each a vendor/agent icon). It turns the abstract idea of governing non-human identities into a tactile orrery — breaking the flat-diagram-and-dashboard cliché that dominates security SaaS.
-- **imagery:** Rendered 3D product iconography on pure white: chunky beveled coins/chips with realistic specular highlights and contact shadows, arranged in a planetary orbit around a hero logo monolith. No screenshots, no stock photos, no people — just clean physical-object renders that read as both premium and technical.
-- **copy:** Staccato triad headline that names the threat surface in three beats — "Every Identity. Every Agent. Every Secret." — then a plainspoken subhead ("Discover, Govern, and Secure Your Entire Non-Human Attack Surface. Cloud to code to AI"); authoritative, category-defining voice.
+- **signature:** Uma peça central 3D fotorrealista de "control hub": um disco extrudado e brilhante do logo sobre um pedestal com sombra suave, cercado por um anel de coin-tokens físicos flutuantes pretos/azuis (cada um um ícone de fornecedor/agente). Transforma a ideia abstrata de governar identidades não-humanas num orrery tátil — quebrando o clichê de diagrama-plano-e-dashboard que domina o SaaS de segurança.
+- **imagery:** Iconografia de produto renderizada em 3D sobre branco puro: moedas/chips chanfrados e robustos com realces especulares realistas e sombras de contato, dispostos numa órbita planetária ao redor de um monólito-logo do hero. Sem screenshots, sem fotos de banco de imagens, sem pessoas — apenas renders limpos de objetos físicos que se leem como premium e técnicos ao mesmo tempo.
+- **copy:** Título em tríade staccato que nomeia a superfície de ameaça em três batidas — "Every Identity. Every Agent. Every Secret." — seguido de um subtítulo direto ("Discover, Govern, and Secure Your Entire Non-Human Attack Surface. Cloud to code to AI"); voz autoritária, que define a categoria.
 
-**Takeaways (steal as ideas, don't copy):**
-- Split a single headline into present-tense ink and ghosted grey to encode two thoughts in one line without a second font or color
-- Use the rhythm of three short full-stopped phrases ('Every X. Every Y. Every Z.') to make a category feel exhaustive and inevitable
-- Replace the standard security flat-diagram with a tactile 3D 'orbit of objects' so an invisible concept (non-human identities) becomes something you can picture
-- Lead the problem section with a punchy paradox ('They Exist Everywhere. They're Managed Nowhere.') instead of a feature list
+**Takeaways (roube como ideias, não copie):**
+- Divida um único título entre ink no presente e cinza fantasma para codificar dois pensamentos numa só linha sem uma segunda fonte ou cor
+- Use o ritmo de três frases curtas com ponto final ('Every X. Every Y. Every Z.') para fazer uma categoria parecer exaustiva e inevitável
+- Substitua o diagrama-plano padrão de segurança por uma 'órbita de objetos' 3D tátil para que um conceito invisível (identidades não-humanas) se torne algo que você consegue visualizar
+- Lidere a seção de problema com um paradoxo de impacto ('They Exist Everywhere. They're Managed Nowhere.') em vez de uma lista de recursos

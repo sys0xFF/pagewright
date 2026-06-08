@@ -5,15 +5,15 @@
 - **niche:** dev-tools / no-code website builder (Notion-to-site)
 - **mood:** clean-light
 - **style:** minimal, mono-type, photographic
-- **palette:** bg `#FFFFFF` · ink `#2E2E33` · accent `#FBB034` — Primary CTA button fill (Get started free / Get started for free), the lightning-bolt logo mark, and the 'Made with Super' floating badge
-- **type:** display *Heavy grotesque sans (rounded geometric, likely a custom/Gilroy-Poppins-style bold)* · body *Neutral humanist sans (system-ui / Inter-like)* — Friendly-confident: a chunky rounded headline weight that feels approachable and toy-like, paired with quiet utilitarian body text so the voice stays warm but not childish
+- **palette:** bg `#FFFFFF` · ink `#2E2E33` · accent `#FBB034` — preenchimento do botão de CTA principal (Get started free / Get started for free), o símbolo do logo em raio e o selo flutuante 'Made with Super'
+- **type:** display *grotesca sans pesada (geométrica arredondada, provavelmente uma bold custom estilo Gilroy-Poppins)* · body *sans humanista neutra (system-ui / tipo Inter)* — Amigável-confiante: um peso de título arredondado e robusto que parece acessível e quase de brinquedo, combinado a um corpo de texto utilitário e silencioso para que a voz permaneça calorosa, mas não infantil
 - **sections:** hero › how-it-works › logos › feature-content-in-notion › feature-branding › feature-performance › feature-seo › feature-templates › feature-capabilities › showcase › testimonial-meta › support › cta › faq › footer
-- **signature:** The hero's main visual IS the product demo: a literal side-by-side of the raw Notion editor (left) and the polished published website (right) of the same page, joined by an arrow — the before/after transformation is the hero image instead of an abstract dashboard mockup.
-- **imagery:** Realistic flat browser/app screenshots rendered with subtle drop shadows on pure white, showing real Notion UI chrome (sidebar, page icons) transforming into a styled site. A faint diagonal architectural photo ghosts behind the hero headline at very low opacity for texture. No 3D, no illustration, no gradients — just honest product UI as proof.
-- **copy:** Bold claim-first, plain-spoken: headline "The #1 tool for turning a Notion document into a website" with a reassuring "No credit card required" microcopy under the CTA.
+- **signature:** O visual principal do hero É a demonstração do produto: um lado-a-lado literal do editor cru do Notion (à esquerda) e do site publicado e polido (à direita) da mesma página, unidos por uma seta — a transformação antes/depois é a imagem do hero em vez de um mockup abstrato de dashboard.
+- **imagery:** Capturas de tela realistas e chapadas de navegador/app renderizadas com sombras sutis sobre branco puro, mostrando o chrome real da UI do Notion (barra lateral, ícones de página) se transformando num site estilizado. Uma foto arquitetônica diagonal tênue fica fantasmagórica atrás do título do hero com opacidade muito baixa para dar textura. Sem 3D, sem ilustração, sem gradientes — apenas UI honesta do produto como prova.
+- **copy:** Com a alegação à frente, ousada e direta: título "The #1 tool for turning a Notion document into a website" com um microcopy tranquilizador "No credit card required" sob o CTA.
 
-**Takeaways (steal as ideas, don't copy):**
-- Make the hero image the literal before/after of your product's core transformation, joined by a connecting arrow — show the input and the output of the same artifact side by side instead of a generic dashboard.
-- Pair a chunky rounded ultra-bold display headline with totally neutral body text: the personality lives entirely in one heavyweight typeface, keeping the rest quiet.
-- Use a single warm amber accent (#FBB034) reserved only for the logo, primary CTA, and a watermark badge — everything else stays black-on-white so the accent reads as the brand instant.
-- Ship a persistent 'Made with Super' badge in the corner as both proof and viral loop — turn the page itself into a self-referential demo of the product.
+**Takeaways (roube como ideias, não copie):**
+- Faça da imagem do hero o antes/depois literal da transformação central do seu produto, unidos por uma seta de ligação — mostre a entrada e a saída do mesmo artefato lado a lado em vez de um dashboard genérico.
+- Combine um título display ultra-bold robusto e arredondado com um corpo de texto totalmente neutro: a personalidade vive inteiramente numa única tipografia de peso pesado, mantendo o resto silencioso.
+- Use um único acento âmbar quente (#FBB034) reservado apenas para o logo, o CTA principal e um selo de marca d'água — todo o resto permanece preto-no-branco para que o acento se leia como a marca instantânea.
+- Lance um selo persistente 'Made with Super' no canto, ao mesmo tempo prova e loop viral — transforme a própria página numa demonstração autorreferente do produto.

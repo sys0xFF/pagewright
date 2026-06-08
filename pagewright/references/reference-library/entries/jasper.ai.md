@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** editorial-minimal
 - **style:** editorial, mono-type, illustrated, colorful
-- **palette:** bg `#F1F0EE` · ink `#1A1B3A` · accent `#FF4D1C` — logo wordmark, primary CTA buttons (Get A Demo), small notification-card info icon, and a stray geometric block in the hero collage
-- **type:** display *High-contrast transitional serif (Tiempos / Canela-like) with tight optical tracking* · body *Neo-grotesque sans-serif (close to a custom Inter/Aktiv Grotesk)* — Literary-meets-utilitarian: an old-world publishing serif paired with a clean modern sans signals craft and editorial authority, not typical AI-tool futurism
+- **palette:** bg `#F1F0EE` · ink `#1A1B3A` · accent `#FF4D1C` — logotipo, botões de CTA primários (Get A Demo), pequeno ícone de informação do card de notificação e um bloco geométrico avulso na colagem do hero
+- **type:** display *Serifa transitional de alto contraste (no estilo Tiempos / Canela) com tracking óptico apertado* · body *Sans-serif neo-grotesca (próxima de uma Inter/Aktiv Grotesk customizada)* — Literário encontra utilitário: uma serifa de publicação do velho mundo combinada com uma sans moderna e limpa sinaliza ofício e autoridade editorial, e não o futurismo típico de ferramentas de IA
 - **sections:** hero › logos › feature-platform › feature-why-choose › feature-solutions › testimonials › feature-security › feature-resources › cta › faq › footer
-- **signature:** A photographic human head (a smiling marketer) collaged on a hand-drawn neon-pink graph-paper grid with cut-paper geometric shapes — a scrapbook/zine aesthetic dropped into an enterprise AI page, the opposite of glowing-gradient AI tropes
-- **imagery:** Mixed-media editorial collage: real cut-out photography of people layered over flat pink ruled-grid backdrops and yellow/orange paper cutouts, with floating UI notification cards (rounded white chips with an orange info dot) that mimic product alerts. Tactile, handmade, magazine-spread feel rather than rendered screenshots
-- **copy:** Confident imperative command that names the new paradigm — hero reads "Put AI agents to work for marketing", subhead promises "speed, control, and measurable impact"; voice is plainspoken, outcome-driven, enterprise-credible
+- **signature:** Uma cabeça humana fotográfica (um profissional de marketing sorrindo) colada sobre uma grade de papel quadriculado neon-rosa desenhada à mão, com formas geométricas de papel recortado — uma estética de scrapbook/zine inserida numa página de IA corporativa, o oposto dos clichês de IA com gradientes brilhantes
+- **imagery:** Colagem editorial em técnica mista: fotografia real recortada de pessoas em camadas sobre fundos planos de grade pautada rosa e recortes de papel amarelo/laranja, com cards flutuantes de notificação de UI (chips brancos arredondados com um ponto de info laranja) que imitam alertas de produto. Sensação tátil, feita à mão, de spread de revista, em vez de screenshots renderizados
+- **copy:** Comando imperativo confiante que nomeia o novo paradigma — o hero diz "Put AI agents to work for marketing", o subtítulo promete "speed, control, and measurable impact"; a voz é direta, orientada a resultados, com credibilidade corporativa
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair a high-contrast publishing serif at huge display size with a plain grotesque body — the serif does all the brand personality work and instantly reads 'craft', not 'AI startup'
-- Anchor the hero on a warm off-white (#F1F0EE) instead of dark/gradient, then let a single hot accent (orange) carry every CTA — restraint makes the one accent louder
-- Build hero imagery from collage primitives (graph-paper grids, cut-paper shapes, real photo cutouts, floating alert chips) instead of product screenshots — it shows the product in use as a feeling, not a UI tour
-- Float fake-but-real product notification cards (e.g. 'Scale a launch campaign into 8 markets, within days') over the collage to telegraph outcomes without showing the interface
+**Takeaways (roube como ideias, não copie):**
+- Combine uma serifa de publicação de alto contraste em tamanho display gigante com um corpo em grotesca simples — a serifa faz todo o trabalho de personalidade da marca e se lê na hora como 'ofício', não 'startup de IA'.
+- Ancore o hero num off-white quente (#F1F0EE) em vez de escuro/gradiente, depois deixe um único acento vibrante (laranja) carregar todos os CTAs — a contenção torna o único acento mais alto.
+- Construa a imagética do hero a partir de primitivas de colagem (grades de papel quadriculado, formas de papel recortado, recortes de fotos reais, chips de alerta flutuantes) em vez de screenshots de produto — mostra o produto em uso como um sentimento, não como um tour de UI.
+- Faça flutuar cards de notificação de produto falsos-mas-realistas (ex.: 'Scale a launch campaign into 8 markets, within days') sobre a colagem para telegrafar resultados sem mostrar a interface.

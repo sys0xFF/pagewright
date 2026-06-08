@@ -5,15 +5,15 @@
 - **niche:** fintech
 - **mood:** bold-loud
 - **style:** colorful, minimal, 3d
-- **palette:** bg `#5game` · ink `#FFFFFF` · accent `#F7C04A` — Promo announcement bar across the very top, the lemon logo mark, and small in-dashboard data accents; deliberately rationed so it pops against the saturated purple.
-- **type:** display *JetBrains Mono* · body *JetBrains Mono* — Monospace, technical, founder-to-founder; mechanical letterforms made warm by huge scale and tight leading
+- **palette:** bg `#5game` · ink `#FFFFFF` · accent `#F7C04A` — Barra de anúncio promocional no topo absoluto, a marca do logo de limão e pequenos acentos de dados dentro do dashboard; deliberadamente racionado para que salte contra o roxo saturado.
+- **type:** display *JetBrains Mono* · body *JetBrains Mono* — Monoespaçada, técnica, de fundador para fundador; formas de letra mecânicas tornadas calorosas pela escala gigantesca e pelo entrelinhamento apertado
 - **sections:** hero › logos › feature-buying-experience › feature-marketing-tools › feature-analytics › feature-developers › testimonials › faq › cta › footer
-- **signature:** A coding-monospace typeface (JetBrains Mono) blown up to massive display size for a fintech headline — the developer-tool font worn as a fashion statement, signaling "built by devs" before you read a word.
-- **imagery:** Product-screenshot as hero: a real analytics dashboard floated on a tablet, dramatically tilted in 3D perspective and bleeding off the right edge so it reads as object-in-space rather than flat UI. Logo wall in monochrome white knockout below.
-- **copy:** Plain-spoken benefit stack in the headline, reassuring sub-voice that names the pain. Hero H1: "Payments, tax & subscriptions for software companies"; subhead "As your merchant of record, we handle the tax compliance burden so you can focus on more revenue and less headache."
+- **signature:** Uma tipografia monoespaçada de programação (JetBrains Mono) ampliada para um tamanho de display gigantesco em um título de fintech — a fonte de ferramenta de dev usada como peça de moda, sinalizando "feito por devs" antes de você ler uma palavra.
+- **imagery:** Screenshot do produto como hero: um dashboard de analytics real flutuando sobre um tablet, dramaticamente inclinado em perspectiva 3D e sangrando para fora da borda direita, de modo que lê como objeto-no-espaço em vez de UI plana. Parede de logos em branco monocromático knockout abaixo.
+- **copy:** Pilha de benefícios em linguagem direta no título, com uma subvoz tranquilizadora que nomeia a dor. Hero H1: "Payments, tax & subscriptions for software companies"; subtítulo "As your merchant of record, we handle the tax compliance burden so you can focus on more revenue and less headache."
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair one hyper-saturated brand color (electric indigo) covering ~90% of the viewport with a single warm accent rationed to the promo bar and logo — confidence through restraint, not a rainbow.
-- Use a developer/monospace font as the DISPLAY face, not just for code blocks, when your audience is technical — it telegraphs credibility instantly.
-- Tilt the product screenshot in 3D and let it bleed off-canvas so the hero feels like a physical object in space, giving depth without abstract 3D blobs.
-- Stack the value prop as a literal noun list in the headline ('Payments, tax & subscriptions') so the offer is legible in under a second, then soften with an empathetic 'less headache' subhead.
+**Takeaways (roube como ideias, não copie):**
+- Combine uma única cor de marca hipersaturada (índigo elétrico) cobrindo ~90% da viewport com um único acento caloroso racionado à barra promocional e ao logo — confiança pela contenção, não por um arco-íris.
+- Use uma fonte de desenvolvedor/monoespaçada como a face de DISPLAY, não só para blocos de código, quando seu público é técnico — ela telegrafa credibilidade instantaneamente.
+- Incline o screenshot do produto em 3D e deixe-o sangrar para fora do canvas para que o hero pareça um objeto físico no espaço, dando profundidade sem blobs 3D abstratos.
+- Empilhe a proposta de valor como uma lista literal de substantivos no título ('Payments, tax & subscriptions') para que a oferta seja legível em menos de um segundo, depois suavize com um subtítulo empático de 'less headache'.

@@ -5,15 +5,15 @@
 - **niche:** education
 - **mood:** clean-light
 - **style:** photographic, friendly, illustrative-accents
-- **palette:** bg `#FFFFFF` · ink `#21242C` · accent `#1865F2` — The blue is split-duty: a saturated royal-blue fills the solid "Sign up" pill top-right and underlines the "Log in" link, while a softer powder-blue tints the three stacked persona selector cards ("I'm a learner / teacher / parent"). Accent = navigation + decision, never decoration.
-- **type:** display *humanist sans, Proxima Nova / "Lato" feel, semibold at large size* · body *same family, regular, mid-gray* — Approachable and rounded, not corporate; warm grade-school register, zero Swiss severity.
+- **palette:** bg `#FFFFFF` · ink `#21242C` · accent `#1865F2` — O azul tem dupla função: um azul-royal saturado preenche o pill sólido "Sign up" no canto superior direito e sublinha o link "Log in", enquanto um azul-poeira mais suave tinge os três cards empilhados do seletor de persona ("I'm a learner / teacher / parent"). Acento = navegação + decisão, nunca decoração.
+- **type:** display *sans humanista, com pegada de Proxima Nova / "Lato", semibold em tamanho grande* · body *mesma família, regular, cinza médio* — Acessível e arredondada, não corporativa; registro caloroso de escola primária, zero severidade suíça.
 - **sections:** hero › persona-paths › subject-catalog (Math, Test prep…) › how-it-works › teacher/parent-tools › testimonials › donate-cta › footer
-- **signature:** The hero photo of a smiling kid in teal glasses is masked into a hand-drawn-feeling angular polygon (not a rectangle, not a circle) and then surrounded by loose doodle marks — a yellow asterisk-spark, a green outlined diamond, and a scribbled violet ballpoint squiggle underneath. It deliberately mimics a student's own margin sketches, turning a stock-style portrait into something that feels drawn by a kid in a notebook.
-- **imagery:** Editorial photography (real student, candid, natural light) cropped into an irregular hand-cut shape, layered with childlike vector doodles in primary-adjacent colors. No 3D, no product-UI; the warmth comes from the photo-plus-scribble collage.
-- **copy:** Plain, encouraging, outcome-first — headline "Khan Academy boosts scores!" with subhead "Learn with millions of people worldwide by exploring videos, tackling practice problems and getting AI-powered support." The right rail eyebrow reads "Start learning today by signing up!" Exclamation marks do real tonal work.
+- **signature:** A foto de hero de uma criança sorridente de óculos turquesa é mascarada dentro de um polígono angular com cara de desenhado à mão (não um retângulo, não um círculo) e então cercada por marcas soltas de rabisco — uma estrela-asterisco amarela, um losango verde só com contorno e um garrancho violeta de caneta esferográfica embaixo. Imita propositalmente os rabiscos de margem do próprio aluno, transformando um retrato com cara de banco de imagens em algo que parece desenhado por uma criança num caderno.
+- **imagery:** Fotografia editorial (aluno real, espontâneo, luz natural) recortada numa forma irregular feita à mão, sobreposta por rabiscos vetoriais infantis em cores próximas das primárias. Sem 3D, sem UI de produto; o calor vem da colagem foto-mais-rabisco.
+- **copy:** Simples, encorajadora, resultado-primeiro — headline "Khan Academy boosts scores!" com subtítulo "Learn with millions of people worldwide by exploring videos, tackling practice problems and getting AI-powered support." O eyebrow da coluna direita diz "Start learning today by signing up!" Os pontos de exclamação fazem trabalho tonal de verdade.
 
-**Takeaways (steal as ideas, don't copy):**
-- Mask a hero portrait into a hand-cut polygon and ring it with loose doodles to make a polished photo feel kid-made and inviting.
-- Split the single accent color into a "strong" shade for the primary action and a "soft" tint for selectable cards — one hue, two jobs, clear hierarchy.
-- Replace one generic CTA with a persona-router: three stacked cards ("I'm a learner / teacher / parent") that segment the visitor before they even scroll.
-- Lead with the outcome ("boosts scores!") in the headline, then back-fill the mechanism (videos, practice, AI support) in the subhead.
+**Takeaways (roube como ideias, não copie):**
+- Mascare um retrato de hero dentro de um polígono feito à mão e cerque-o com rabiscos soltos para fazer uma foto polida parecer feita por criança e convidativa.
+- Divida a única cor de acento em um tom "forte" para a ação primária e um tom "suave" para cards selecionáveis — um matiz, dois trabalhos, hierarquia clara.
+- Substitua um CTA genérico por um roteador de persona: três cards empilhados ("I'm a learner / teacher / parent") que segmentam o visitante antes mesmo de ele rolar a página.
+- Abra com o resultado ("boosts scores!") na headline, depois preencha o mecanismo (vídeos, prática, suporte de IA) no subtítulo.

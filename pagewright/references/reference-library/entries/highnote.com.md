@@ -5,15 +5,15 @@
 - **niche:** fintech
 - **mood:** bold-loud
 - **style:** gradient, colorful, mono-type
-- **palette:** bg `#C6F23A` · ink `#0A0A0A` · accent `#16E0C8` — The accent is the gradient itself — lime bg sweeps into teal/cyan (#16E0C8) at the lower-right; black is used for ink, the primary CTA pill, and the Highnote logo mark
-- **type:** display *Neue Haas Grotesk / Helvetica Now-style grotesque (geometric-leaning, very tight tracking, lining a/g)* · body *Same grotesque sans, regular weight* — Clean Swiss neo-grotesque, tightly set, confident and quiet — type stays neutral so the loud gradient does the shouting
+- **palette:** bg `#C6F23A` · ink `#0A0A0A` · accent `#16E0C8` — O acento é o próprio gradiente — o bg lima desliza para teal/ciano (#16E0C8) no canto inferior direito; o preto é usado para o texto, a pílula de CTA principal e o símbolo do logo da Highnote
+- **type:** display *grotesca estilo Neue Haas Grotesk / Helvetica Now (com pendor geométrico, tracking bem apertado, a/g de linha)* · body *Mesma sans grotesca, peso regular* — Neo-grotesca suíça limpa, composta de forma apertada, confiante e quieta — a tipografia permanece neutra para que o gradiente barulhento faça a gritaria
 - **sections:** hero › logos › feature-platform › feature-use-cases › feature-customers › how-it-works › cta › footer
-- **signature:** The hero is a giant radial gradient of concentric rings — acid lime at center bleeding to cyan at the edges — that visualizes a literal "high note" / sound wave radiating outward, with pure-black headline type sitting directly on top (no card, no panel).
-- **imagery:** No product screenshots above the fold — the hero IS a full-bleed gradient-mesh: concentric acid-lime-to-cyan rings radiating like sonar/sound waves (a literal "high note"). Below, mono-style monochrome partner logos on a near-white band.
-- **copy:** Two-word manifesto headline stacked huge — "Issuing / Built for You." — declarative, confident, you-centric; subhead lists the platform breadth (issuing, acquiring, credit, money movement, real-time ledgering).
+- **signature:** O hero é um gigantesco gradiente radial de anéis concêntricos — lima ácido no centro sangrando para ciano nas bordas — que visualiza uma literal "nota alta" / onda sonora irradiando para fora, com o título em preto puro pousado diretamente em cima (sem card, sem painel).
+- **imagery:** Nenhum screenshot de produto acima da dobra — o hero É uma malha de gradiente sangrada de borda a borda: anéis concêntricos de lima-ácido-a-ciano irradiando como ondas de sonar/som (uma literal "nota alta"). Abaixo, logos de parceiros monocromáticos de estilo mono sobre uma faixa quase branca.
+- **copy:** Título-manifesto de duas palavras empilhado gigante — "Issuing / Built for You." — declarativo, confiante, centrado em você; o subtítulo lista a amplitude da plataforma (emissão, captura/acquiring, crédito, movimentação de dinheiro, ledger em tempo real).
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair a screaming, high-chroma gradient background with dead-neutral black grotesque type and zero decoration — the color carries all the energy, the typography stays disciplined.
-- Make the gradient mean something: concentric sonar rings literally illustrate the brand name (Highnote = sound radiating), instead of a generic mesh blob.
-- Set the hero headline as a 2-word vertical stack at near-display-cap size so it reads as a slogan/manifesto, then ground it with a one-line plain-language subhead listing the actual capabilities.
-- Black pill CTA + ghost-outline secondary CTA on a vivid background — the solid-black button becomes the single highest-contrast object on the page, pulling the eye to 'Explore the Platform.'
+**Takeaways (roube como ideias, não copie):**
+- Combine um fundo de gradiente gritante e de alta cromaticidade com tipografia grotesca preta totalmente neutra e decoração zero — a cor carrega toda a energia, a tipografia permanece disciplinada.
+- Faça o gradiente significar algo: anéis concêntricos de sonar ilustram literalmente o nome da marca (Highnote = som irradiando), em vez de um blob de malha genérico.
+- Componha o título do hero como uma pilha vertical de 2 palavras em tamanho próximo de display-cap para que se leia como um slogan/manifesto, depois aterre-o com um subtítulo de uma linha em linguagem simples listando as capacidades reais.
+- Pílula de CTA preta + CTA secundário com contorno fantasma sobre um fundo vívido — o botão preto sólido torna-se o único objeto de mais alto contraste na página, puxando o olhar para 'Explore the Platform.'

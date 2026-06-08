@@ -2,18 +2,18 @@
 
 ![rive.app](../thumbs/rive.app.jpg)
 
-- **niche:** dev-tools / design (interactive animation engine for designers + engineers)
+- **niche:** dev-tools / design (motor de animação interativa para designers + engenheiros)
 - **mood:** technical-dark
 - **style:** dark, mono-type, bento, cinematic
-- **palette:** bg `#0A0A0B` · ink `#FFFFFF` · accent `#A35E1E` — primary CTA button fill (bronze/amber gradient), 'GET STARTED' nav pill border, and the logotype's stylized letterforms; otherwise the page is near-monochrome black
-- **type:** display *Industrial / techno geometric sans with stencil-cut strokes (condensed all-caps, e.g. a custom or Eurostile/Bank-Gothic-adjacent face)* · body *Neutral humanist sans (Inter/Helvetica-like) at modest weight, muted grey* — Engineered, sci-fi precision — wide-tracked uppercase headlines feel like a spec sheet or a HUD, contrasted with calm, readable grey body copy
+- **palette:** bg `#0A0A0B` · ink `#FFFFFF` · accent `#A35E1E` — preenchimento do botão CTA primário (gradiente bronze/âmbar), borda da pílula 'GET STARTED' na nav e as formas estilizadas das letras do logotipo; fora isso, a página é quase monocromática preta
+- **type:** display *Sans geométrica industrial / techno com traços tipo stencil (caixa-alta condensada, ex.: um tipo custom ou próximo de Eurostile/Bank-Gothic)* · body *Sans humanista neutra (estilo Inter/Helvetica) em peso modesto, cinza suave* — Engenheirada, com precisão sci-fi — headlines em caixa-alta com tracking largo parecem uma folha de spec ou um HUD, contrastadas com um corpo de texto cinza calmo e legível
 - **sections:** hero › feature-design-code-animate › feature-build-once-ship-anywhere › logos-reach-2billion › newsletter-cta › footer
-- **signature:** The hero stage is fenced by a horizontal filmstrip of live, looping Rive animations — each tile labeled by use-case (GAME UI, MOBILE APPS, FILM + TV, WEBSITES) in its own vivid color world (magenta globe, acid-green phone, cinematic film grid). The product literally demos itself as the page furniture, instead of a static screenshot.
-- **imagery:** Edge-to-edge bento row of self-running product animations rendered in-engine, each card a different saturated palette against the black canvas; a tiny floating red playhead/cursor accent ('SCRIPTING IS LIVE') hints at motion. Imagery IS the product output — no stock photos, no abstract gradients, just real interactive artifacts framed like a showreel.
-- **copy:** Bold category-defining claim backed by household-name proof. Hero h1: "THE INTERACTIVE EXPERIENCE ENGINE"; subhead "Powering Spotify Wrapped, Duolingo, and products reaching 2 billion users. Design, animate, and code in one place. Ship everywhere."
+- **signature:** O palco do hero é cercado por uma tira de filme horizontal de animações Rive ao vivo em loop — cada tile rotulado por caso de uso (GAME UI, MOBILE APPS, FILM + TV, WEBSITES) em seu próprio mundo de cor vívido (globo magenta, telefone verde-ácido, grade de filme cinematográfica). O produto literalmente se demonstra como mobília da página, em vez de um screenshot estático.
+- **imagery:** Fileira bento de ponta a ponta de animações de produto auto-executáveis renderizadas no próprio motor, cada card com uma paleta saturada diferente contra a tela preta; um minúsculo acento de cursor/playhead vermelho flutuante ('SCRIPTING IS LIVE') sugere movimento. A imagética É a saída do produto — sem fotos de banco, sem gradientes abstratos, apenas artefatos interativos reais enquadrados como um showreel.
+- **copy:** Afirmação ousada que define categoria, respaldada por prova de nomes famosos. H1 do hero: "THE INTERACTIVE EXPERIENCE ENGINE"; subhead "Powering Spotify Wrapped, Duolingo, and products reaching 2 billion users. Design, animate, and code in one place. Ship everywhere."
 
-**Takeaways (steal as ideas, don't copy):**
-- Let the product be the decoration: ring the hero with a labeled row of LIVE looping demos instead of one hero screenshot — proof-of-capability replaces a feature list.
-- Borrow credibility numerically and by name: '2 billion users' + Spotify Wrapped/Duolingo in the subhead does more trust-building than a logo wall.
-- Go near-monochrome and spend your one accent (bronze/amber) only on the primary CTA so it reads instantly against pure black.
-- Use a wide-tracked, stencil-cut techno display face in all-caps to signal 'engine/tooling', then pair with calm grey humanist body for legibility contrast.
+**Takeaways (roube como ideias, não copie):**
+- Deixe o produto ser a decoração: cerque o hero com uma fileira rotulada de demos AO VIVO em loop em vez de um único screenshot de hero — prova-de-capacidade substitui uma lista de features.
+- Tome credibilidade emprestada por números e por nomes: '2 billion users' + Spotify Wrapped/Duolingo no subhead constrói mais confiança do que um mural de logos.
+- Vá quase monocromático e gaste seu único acento (bronze/âmbar) apenas no CTA primário para que ele se destaque instantaneamente contra o preto puro.
+- Use um tipo display techno com tracking largo e recorte stencil em caixa-alta para sinalizar 'motor/ferramenta', depois combine com um corpo humanista cinza calmo para contraste de legibilidade.

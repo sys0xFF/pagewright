@@ -5,15 +5,15 @@
 - **niche:** design
 - **mood:** editorial-minimal
 - **style:** minimal, gradient, photographic, colorful
-- **palette:** bg `#EAD9F0` · ink `#1A1A1A` · accent `#F23E6E` — ring/glow outline on the primary CTA button, plus the pink-to-violet wash in the hero gradient backdrop and inline 'Learn more' link
-- **type:** display *Sectra / high-contrast serif (large editorial headline)* · body *Geometric sans-serif (system/Inter-like)* — Literary-meets-utilitarian: an oversized warm serif headline signals craft and welcome, while the clean sans body keeps the tool-marketing legible and modern
+- **palette:** bg `#EAD9F0` · ink `#1A1A1A` · accent `#F23E6E` — contorno de anel/glow no botão CTA primário, mais a lavagem rosa-para-violeta no pano de fundo em gradiente do hero e o link inline 'Learn more'
+- **type:** display *Sectra / serifa de alto contraste (headline editorial grande)* · body *Sans-serif geométrica (estilo system/Inter)* — Literário-encontra-utilitário: uma headline serifada quente e superdimensionada sinaliza craft e boas-vindas, enquanto o corpo sans limpo mantém o marketing-de-ferramenta legível e moderno
 - **sections:** hero › feature-beta-callout › feature-product-ui › feature-design › feature-prototype › feature-collaborate › feature-discover › feature-updates › pricing › cta › footer
-- **signature:** A serif-heavy, emotional headline ("Designers, welcome home.") on a soft iridescent pastel gradient makes the page read like a literary book cover instead of a technical dev tool — deliberately rejecting the dark-mode UI-screenshot aesthetic its competitors default to.
-- **imagery:** Pearlescent pink-violet aurora gradient as the full-bleed backdrop; below the fold a realistic, true-color screenshot of the actual app canvas (TV dashboard mockup + inspector panels) shown at a slight scale, bleeding off the bottom edge. Product is shown honestly rather than abstracted into icons.
-- **copy:** Warm, human, second-person welcome over feature-speak — hero reads "Designers, welcome home." with subhead "Sketch is a toolkit made by designers, for designers."
+- **signature:** Uma headline emocional carregada de serifa ("Designers, welcome home.") sobre um gradiente pastel iridescente suave faz a página ler como uma capa de livro literário em vez de uma ferramenta dev técnica — rejeitando deliberadamente a estética de screenshot-de-UI em modo escuro que seus concorrentes adotam por padrão.
+- **imagery:** Gradiente de aurora rosa-violeta perolado como pano de fundo full-bleed; abaixo da dobra, um screenshot realista em cor fiel da tela real do app (mockup de dashboard de TV + painéis de inspetor) mostrado numa escala leve, sangrando para fora da borda inferior. O produto é mostrado honestamente em vez de abstraído em ícones.
+- **copy:** Boas-vindas quentes, humanas, em segunda pessoa em vez de feature-speak — o hero diz "Designers, welcome home." com subhead "Sketch is a toolkit made by designers, for designers."
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair an oversized high-contrast serif headline with a clean sans subhead to make a software product feel crafted and human, not corporate
-- Use a soft iridescent pastel gradient (pink->violet->blue) as the whole canvas instead of flat white or dark mode to telegraph a creative/design audience
-- Add a subtle colored glow ring around the single primary CTA so it pops without a loud solid fill on the busy gradient
-- Drop a slim inset 'See what's next in our beta' callout card with a product icon to surface freshness and changelog energy right under the fold
+**Takeaways (roube como ideias, não copie):**
+- Combine uma headline serifada de alto contraste e superdimensionada com um subhead sans limpo para fazer um produto de software parecer trabalhado e humano, não corporativo
+- Use um gradiente pastel iridescente suave (rosa->violeta->azul) como tela inteira em vez de branco chapado ou modo escuro para telegrafar um público criativo/de design
+- Adicione um sutil anel de glow colorido ao redor do único CTA primário para que ele se destaque sem um preenchimento sólido berrante sobre o gradiente movimentado
+- Largue um slim card de chamada embutido 'See what's next in our beta' com um ícone de produto para destacar frescor e energia de changelog logo abaixo da dobra

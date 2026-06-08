@@ -5,15 +5,15 @@
 - **niche:** education
 - **mood:** warm-playful
 - **style:** illustrated, rounded, friendly, mascot-led
-- **palette:** bg `#FFFFFF` · ink `#3C3C3C` · accent `#58CC02` — The signature Duolingo grass-green is reserved for the wordmark and the chunky primary CTA pill; the secondary "I already have an account" button is a white pill with a green outline + green caps label, so green carries 100% of the action-color load.
-- **type:** display *geometric rounded sans à la "Feather Bold" / Nunito Bold (Duolingo's house typeface)* · body *same rounded family, lighter weight* — Soft, bouncy, kid-safe; rounded terminals make even the headline feel approachable rather than corporate.
+- **palette:** bg `#FFFFFF` · ink `#3C3C3C` · accent `#58CC02` — O verde-grama característico da Duolingo é reservado para o logotipo e a pílula CTA primária encorpada; o botão secundário "I already have an account" é uma pílula branca com contorno verde + rótulo em caixa alta verde, então o verde carrega 100% da carga de cor de ação.
+- **type:** display *geometric rounded sans à la "Feather Bold" / Nunito Bold (Duolingo's house typeface)* · body *same rounded family, lighter weight* — Suave, saltitante, seguro para crianças; os terminais arredondados fazem até o headline parecer acessível em vez de corporativo.
 - **sections:** hero › language-picker-bar › how-it-works › science-backed-method › gamification-streaks › social-proof › app-download-cta › footer
-- **signature:** A loose, off-grid pile of cartoon characters — the green owl Duo mid-gesture, a pink bear, a costumed astronaut figure, diverse human learners, gold coins spilling out of a phone — is dropped to the LEFT of the copy, not centered or framed. There's no device mockup, no UI, no photo: the entire visual argument is a tumble of mascots that says "this is play, not study." The composition is deliberately asymmetric with huge white margins, letting the character cluster breathe like a sticker sheet.
-- **imagery:** Flat vector illustration only — rounded, high-saturation characters with thick implied volume and zero outlines. No product screenshots, no 3D renders, no photography. Gold coins and the phone shape hint at the gamified app without ever showing the actual interface.
-- **copy:** Warm, plainspoken, benefit-first with an exclamation point — headline reads "The free, fun, and effective way to learn a language!" The triple-adjective rhythm (free / fun / effective) front-loads the three objections learners have, and the CTA is a confident "GET STARTED" in caps.
+- **signature:** Uma pilha solta e fora-da-grade de personagens de desenho — o coruja verde Duo no meio de um gesto, um urso rosa, uma figura fantasiada de astronauta, aprendizes humanos diversos, moedas de ouro derramando de um celular — é dropada à ESQUERDA da copy, não centralizada nem emoldurada. Não há mockup de dispositivo, nem UI, nem foto: todo o argumento visual é um amontoado de mascotes que diz "isto é brincadeira, não estudo." A composição é deliberadamente assimétrica com margens brancas enormes, deixando o aglomerado de personagens respirar como uma folha de adesivos.
+- **imagery:** Apenas ilustração vetorial flat — personagens arredondados e de alta saturação com volume implícito espesso e zero contorno. Sem capturas de tela de produto, sem renders 3D, sem fotografia. Moedas de ouro e a forma do celular insinuam o app gamificado sem nunca mostrar a interface real.
+- **copy:** Calorosa, direta e benefício-primeiro com um ponto de exclamação — o headline diz "The free, fun, and effective way to learn a language!" O ritmo de três adjetivos (free / fun / effective) antecipa as três objeções que os aprendizes têm, e o CTA é um confiante "GET STARTED" em caixa alta.
 
-**Takeaways (steal as ideas, don't copy):**
-- Replace the product screenshot with a personality cast: a pile of brand characters can carry the hero better than UI when the promise is emotional ("fun"), not feature-based.
-- Knock down the three biggest objections in the headline itself with a parallel adjective triplet ("free, fun, and effective") before the noun.
-- Let the secondary action be a low-contrast outlined pill so the single saturated-green CTA owns all the visual urgency.
-- Stage the visual off-center against generous white space so the illustration reads like a playful sticker rather than a boxed banner.
+**Takeaways (roube como ideias, não copie):**
+- Substitua a captura de tela do produto por um elenco de personalidade: uma pilha de personagens da marca pode carregar o hero melhor que a UI quando a promessa é emocional ("diversão"), não baseada em recursos.
+- Derrube as três maiores objeções no próprio headline com um tripleto de adjetivos paralelos ("free, fun, and effective") antes do substantivo.
+- Deixe a ação secundária ser uma pílula contornada de baixo contraste para que o único CTA verde-saturado seja dono de toda a urgência visual.
+- Posicione o visual fora do centro contra um espaço branco generoso para que a ilustração se leia como um adesivo brincalhão em vez de um banner enquadrado.

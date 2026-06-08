@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** other
 - **style:** gradient, photographic, cinematic
-- **palette:** bg `#6FB0E8` · ink `#FFFFFF` · accent `#2563EB` — primary CTA pill button ('Get for Mac'), the in-app send button, and small UI accents inside the product screenshot
-- **type:** display *Transitional serif (high-contrast, Times/Tiempos-like) for the hero H1* · body *Neutral humanist sans-serif for subhead, nav, and UI* — Editorial-meets-utility: a literary, almost magazine-cover serif headline grounding an otherwise functional product UI — confident, premium, a little cheeky
+- **palette:** bg `#6FB0E8` · ink `#FFFFFF` · accent `#2563EB` — pílula de CTA principal ('Get for Mac'), o botão de enviar dentro do app e pequenos detalhes de UI dentro do screenshot do produto
+- **type:** display *Serifa transicional (alto contraste, tipo Times/Tiempos) para o H1 do hero* · body *Sans-serif humanista neutra para subtítulo, navegação e UI* — Editorial-encontra-utilidade: um título serifado literário, quase de capa de revista, ancorando uma UI de produto de resto funcional — confiante, premium, um pouco atrevido
 - **sections:** hero › how-it-works › feature-instant-notes › feature-undetectable › feature-participants › feature-transcription › faq › cta › footer
-- **signature:** A serene, photographic sunrise-over-mountains landscape as the full-bleed hero backdrop — sky blue fading into golden dawn with a literal rising sun — paired with a high-contrast serif headline. It rejects the dark-mode, neon-grid, glassmorphic cliche of AI tools entirely; the vibe is calm and aspirational rather than technical, while the product screenshot crashes in from the bottom edge.
-- **imagery:** Full-bleed cinematic landscape photo (blue sky to orange sunrise over layered mountain silhouettes) anchors the hero. The product is shown as a realistic, chrome-accurate macOS app window with a translucent floating assistant bar over a live two-person video call, half-bleeding off the bottom of the viewport so the UI feels caught mid-use rather than staged.
-- **copy:** Provocative one-liner positioning that leans into taboo: serif hero reads "#1 Undetectable AI for Meetings" with subhead "Cluely takes perfect meeting notes and gives real-time answers, all while completely undetectable" — blunt, confident, slightly transgressive voice.
+- **signature:** Uma paisagem fotográfica serena de nascer do sol sobre montanhas como pano de fundo full-bleed do hero — céu azul desbotando em alvorada dourada com um sol literalmente nascendo — combinada com um título serifado de alto contraste. Rejeita inteiramente o clichê dark-mode, grade neon e glassmórfico das ferramentas de IA; o clima é calmo e aspiracional em vez de técnico, enquanto o screenshot do produto irrompe pela borda inferior.
+- **imagery:** Uma foto de paisagem cinematográfica full-bleed (céu azul até nascer do sol laranja sobre silhuetas de montanhas em camadas) ancora o hero. O produto é mostrado como uma janela de app macOS realista e fiel ao chrome, com uma barra de assistente translúcida flutuante sobre uma videochamada ao vivo entre duas pessoas, sangrando parcialmente para fora da base do viewport para que a UI pareça flagrada em pleno uso em vez de encenada.
+- **copy:** Posicionamento provocador de uma só linha que se apoia no tabu: o hero serifado diz "#1 Undetectable AI for Meetings" com subtítulo "Cluely takes perfect meeting notes and gives real-time answers, all while completely undetectable" — voz direta, confiante, levemente transgressora.
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair an editorial serif headline with a calm photographic nature backdrop to make an AI product feel premium and human instead of cold and technical.
-- Bleed the real product UI off the bottom edge of the hero so the demo reads as 'live, in use' and pulls the eye into a scroll.
-- Use a warm sunrise gradient (cool sky -> golden horizon) as the emotional through-line instead of the default dark/neon AI palette.
-- Build trust with a single sky-blue brand-accent CTA pill that visually matches the in-app send button, tying the marketing site directly to the product.
+**Takeaways (roube como ideias, não copie):**
+- Combine um título serifado editorial com um pano de fundo fotográfico calmo de natureza para fazer um produto de IA parecer premium e humano em vez de frio e técnico.
+- Sangre a UI real do produto para fora da borda inferior do hero para que a demo se leia como 'ao vivo, em uso' e puxe o olhar para um scroll.
+- Use um gradiente quente de nascer do sol (céu frio -> horizonte dourado) como o fio condutor emocional em vez da paleta padrão escura/neon de IA.
+- Construa confiança com uma única pílula de CTA no azul-céu da marca que combina visualmente com o botão de enviar dentro do app, ligando o site de marketing diretamente ao produto.

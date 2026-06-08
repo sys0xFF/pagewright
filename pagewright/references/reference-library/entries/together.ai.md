@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** clean-light
 - **style:** gradient, 3d, mono-type
-- **palette:** bg `#FFFFFF` · ink `#0A0A0A` · accent `#7C4DFF` — iridescent purple-to-orange gradient in the floating 3D hero sculpture; soft pastel tints (blue/pink/peach) as feature-card backgrounds; the H1 second line fades to a cool grey
-- **type:** display *PP Neue Montreal Mono* · body *PP Neue Montreal Mono* — A single monospaced grotesque does the whole job — engineered, terminal-adjacent, research-lab credibility, but set huge and tight it reads as confident editorial rather than nerdy
+- **palette:** bg `#FFFFFF` · ink `#0A0A0A` · accent `#7C4DFF` — gradiente iridescente de roxo para laranja na escultura 3D flutuante do hero; tons pastel suaves (azul/rosa/pêssego) como fundos dos cards de recursos; a segunda linha do H1 desbota para um cinza frio
+- **type:** display *PP Neue Montreal Mono* · body *PP Neue Montreal Mono* — Uma única grotesque monoespaçada faz todo o trabalho — credibilidade de engenharia, próxima ao terminal, de laboratório de pesquisa, mas composta enorme e apertada lê como editorial confiante, não como algo nerd
 - **sections:** announcement-bar › hero › logos › feature-intro › feature-full-stack › feature-research › testimonials › blog-news › cta › footer
-- **signature:** A literal 3D-rendered exploded diagram floating in the hero — a translucent glass disc pierced by an iridescent gradient blade and an opaque orange shard — annotated with tiny monospace labels (OPTIMIZED TRAINING / PRODUCTION INFERENCE / CUTTING-EDGE RESEARCH) like a physics textbook figure. It turns the product architecture into a tactile sculpture instead of the usual abstract gradient blob.
-- **imagery:** High-fidelity 3D CGI rendering with mixed materials — frosted/translucent glass, chrome-iridescent gradient surfaces, and matte solids — lit airy on white. Paired with engineering-style callout lines and monospace annotation labels. Customer logos are greyed-out monochrome for a quiet trust strip.
-- **copy:** Plain-spoken, builder-to-builder confidence — short imperative hero with a research flex; H1: "Build what's next on the AI Native Cloud" (sub: "Full-stack AI platform, powered by cutting-edge research.")
+- **signature:** Um diagrama explodido literalmente renderizado em 3D flutuando no hero — um disco de vidro translúcido perfurado por uma lâmina de gradiente iridescente e um estilhaço opaco laranja — anotado com pequenos rótulos em monospace (OPTIMIZED TRAINING / PRODUCTION INFERENCE / CUTTING-EDGE RESEARCH) como uma figura de livro de física. Transforma a arquitetura do produto em uma escultura tátil em vez do habitual blob de gradiente abstrato.
+- **imagery:** Renderização CGI 3D de alta fidelidade com materiais mistos — vidro fosco/translúcido, superfícies cromadas-iridescentes de gradiente e sólidos foscos — iluminados de forma arejada sobre branco. Combinados com linhas de chamada em estilo de engenharia e rótulos de anotação em monospace. Os logos de clientes ficam em tons de cinza monocromático para uma faixa de confiança discreta.
+- **copy:** Confiança direta, de construtor para construtor — hero curto e imperativo com um flex de pesquisa; H1: "Build what's next on the AI Native Cloud" (sub: "Full-stack AI platform, powered by cutting-edge research.")
 
-**Takeaways (steal as ideas, don't copy):**
-- Carry ONE monospaced typeface across display and body — set the H1 enormous and tight so the mono reads as bold editorial, not code, instantly signaling engineering credibility
-- Render your architecture as a real lit 3D object with textbook-style annotation lines + tiny mono labels, instead of defaulting to a glowing gradient orb
-- Color-code feature cards with soft pastel tints (cool blue / pink / peach) and pair each with a directional arrow glyph + ALL-CAPS mono label to make benefits scannable as a triptych
-- Lead with a hard, specific benchmark in the announcement bar ('up to 1.3x faster than cuDNN on NVIDIA Blackwell') — concrete numbers > vague claims for a technical audience
+**Takeaways (roube como ideias, não copie):**
+- Use UMA fonte monoespaçada em todo o display e corpo — componha o H1 enorme e apertado para que o mono leia como editorial ousado, não código, sinalizando instantaneamente credibilidade de engenharia
+- Renderize sua arquitetura como um objeto 3D real e iluminado, com linhas de anotação em estilo de livro didático + pequenos rótulos em mono, em vez de recorrer ao previsível orbe de gradiente brilhante
+- Codifique os cards de recursos por cor com tons pastel suaves (azul frio / rosa / pêssego) e combine cada um com um glifo de seta direcional + rótulo em mono CAIXA-ALTA para tornar os benefícios escaneáveis como um tríptico
+- Lidere com um benchmark concreto e específico na barra de anúncios ('up to 1.3x faster than cuDNN on NVIDIA Blackwell') — números concretos > alegações vagas para um público técnico

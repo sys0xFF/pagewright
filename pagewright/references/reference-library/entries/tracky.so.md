@@ -5,15 +5,15 @@
 - **niche:** productivity
 - **mood:** warm-playful
 - **style:** illustrated, colorful, mono-type
-- **palette:** bg `#F1F0EE` · ink `#1B2030` · accent `#FF5C5C` — the second half of the hero headline ('actually love.'), with secondary green (#5FD0A6) on the play button and scattered hand-drawn blob doodles
-- **type:** display *Rounded geometric grotesk (heavy weight, large x-height — Quicksand / Baloo-like)* · body *Clean humanist sans (Inter / system-ui-like)* — Chunky and friendly — the fat rounded display reads as toy-like and approachable, deliberately the opposite of corporate PM-tool seriousness; a hand-drawn script ('start -> stop -> continue') adds a sketchbook layer on top
+- **palette:** bg `#F1F0EE` · ink `#1B2030` · accent `#FF5C5C` — a segunda metade do título do hero ('actually love.'), com verde secundário (#5FD0A6) no botão de play e rabiscos de blobs espalhados desenhados à mão
+- **type:** display *Rounded geometric grotesk (heavy weight, large x-height — Quicksand / Baloo-like)* · body *Clean humanist sans (Inter / system-ui-like)* — Encorpada e amigável — o display gordo e arredondado lê como brinquedo e acessível, deliberadamente o oposto da seriedade corporativa de ferramentas de PM; um script desenhado à mão ('start -> stop -> continue') adiciona uma camada de caderno de rascunhos por cima
 - **sections:** promo-banner › hero › problem › feature-overview › feature-notes › feature-todos › feature-tasks › feature-tables-invoices › feature-summary › testimonials › pricing › roadmap › footer
-- **signature:** The hero text physically wraps AROUND a live product widget and a doodled llama mascot — the headline is split into fragments ('A new project [llama] management / tool you'll actually love') interrupted mid-sentence by a working timer card and a peeking hand-drawn animal, so the UI and the copy are collaged into one composition instead of stacked in tidy rows.
-- **imagery:** Hand-drawn doodle illustration language: a sketchy llama/alpaca mascot in sunglasses, scribbled sticky-note shapes, clover/splat blobs in coral and blue-green, a cartoon mouse cursor, and a handwritten marker script. Mixed with one crisp real UI chip (the timer/Get-started card) — naive sketchbook art colliding with clean product screenshots.
-- **copy:** Disarming, anti-enterprise voice that names the pain directly — hero reads "A new project management tool you'll actually love." with 'actually love' set in coral as the emotional payoff.
+- **signature:** O texto do hero literalmente envolve EM TORNO de um widget de produto ao vivo e de um mascote lhama rabiscado — o título é dividido em fragmentos ('A new project [llama] management / tool you'll actually love') interrompidos no meio da frase por um card de timer funcional e um animal desenhado à mão espiando, de modo que a UI e o texto são colados em uma única composição em vez de empilhados em fileiras organizadas.
+- **imagery:** Linguagem de ilustração de rabiscos desenhados à mão: um mascote lhama/alpaca esboçado de óculos escuros, formas de post-it rabiscadas, blobs de trevo/respingo em coral e azul-esverdeado, um cursor de mouse cartoon e um script de marcador manuscrito. Misturado com um chip de UI real e nítido (o card de timer/Get-started) — arte de caderno de rascunhos ingênua colidindo com screenshots de produto limpos.
+- **copy:** Voz desarmante e anti-empresarial que nomeia a dor diretamente — o hero diz "A new project management tool you'll actually love." com 'actually love' em coral como a recompensa emocional.
 
-**Takeaways (steal as ideas, don't copy):**
-- Split a single headline into fragments and let a product widget + mascot physically interrupt it mid-line — the copy and the UI become one collage, not stacked blocks.
-- Color only the emotional payoff: keep the whole headline in dark ink and flip just the two key words ('actually love') to a hot coral so the eye lands on the promise.
-- Pair one crisp, real product chip against loose hand-drawn doodles (sticky notes, blobs, a sketched mascot) so the page feels human and toy-like while still proving the product is real.
-- Use a fat, rounded display type against a warm off-white (#F1F0EE) instead of pure white to deliberately read as the friendly opposite of a serious enterprise PM tool.
+**Takeaways (roube como ideias, não copie):**
+- Divida um único título em fragmentos e deixe um widget de produto + mascote interrompê-lo fisicamente no meio da linha — o texto e a UI viram uma colagem só, não blocos empilhados.
+- Colora apenas a recompensa emocional: mantenha todo o título em tinta escura e troque só as duas palavras-chave ('actually love') para um coral quente para que o olhar pouse na promessa.
+- Combine um chip de produto real e nítido contra rabiscos soltos desenhados à mão (post-its, blobs, um mascote esboçado) para que a página pareça humana e tipo brinquedo, ao mesmo tempo provando que o produto é real.
+- Use uma fonte de display gorda e arredondada contra um off-white quente (#F1F0EE) em vez de branco puro para ler deliberadamente como o oposto amigável de uma ferramenta de PM empresarial séria.

@@ -5,15 +5,15 @@
 - **niche:** design
 - **mood:** bold-loud
 - **style:** colorful, bento
-- **palette:** bg `#ECECEC` · ink `#1A1A1A` · accent `#E8442C` — Borrowed from the screenshot tiles themselves (the red/orange Japanese site cards and purple Welgee tile) rather than a fixed brand color — the page palette is set by the showcased work; UI chrome stays near-black (Sign Up button, Start For Free CTA) on light gray.
-- **type:** display *Helvetica Neue / Akzidenz-style grotesk (heavy weight)* · body *Same neo-grotesque at regular weight* — Swiss, neutral, oversized — lets the colorful tiles carry the loudness while type stays calm and authoritative
+- **palette:** bg `#ECECEC` · ink `#1A1A1A` · accent `#E8442C` — Emprestado dos próprios blocos de captura de tela (os cartões vermelho/laranja de sites japoneses e o bloco roxo da Welgee) em vez de uma cor de marca fixa — a paleta da página é definida pelo trabalho exibido; o chrome da UI permanece quase preto (botão Sign Up, CTA Start For Free) sobre cinza claro.
+- **type:** display *Helvetica Neue / grotesca estilo Akzidenz (peso pesado)* · body *A mesma neo-grotesca em peso regular* — Suíça, neutra, superdimensionada — deixa os blocos coloridos carregarem a intensidade enquanto o tipo permanece calmo e autoritário
 - **sections:** hero › logos › feature-showcase › how-it-works › pricing › faq › cta › footer
-- **signature:** The hero IS a wall of customer sites — overlapping, color-clashing real screenshots tiled behind the text instead of one polished mockup. The tool proves itself by showing the loud, diverse work it produces, with a small "Created in ⁄S" credit badge stamped on a tile.
-- **imagery:** Product-screenshot collage — real customer sites (Japanese editorial pages, illustrated worlds, portfolio layouts) tiled as overlapping cards in a loose, slightly rotated grid. Treatment is "showroom wall": full-bleed thumbnails crammed edge-to-edge as the hero's visual proof, no device frames.
-- **copy:** Bold statement headline that talks to the user, not about the product: "Say Hello To Your New Site." — confident, conversational, second-person; subhead reframes the pitch as freedom ("No code. All creative freedom.")
+- **signature:** O hero É uma parede de sites de clientes — capturas de tela reais sobrepostas e com cores em conflito, dispostas em mosaico atrás do texto em vez de um único mockup polido. A ferramenta se prova mostrando o trabalho ruidoso e diverso que produz, com um pequeno selo de crédito "Created in ⁄S" estampado num bloco.
+- **imagery:** Colagem de capturas de tela de produto — sites reais de clientes (páginas editoriais japonesas, mundos ilustrados, layouts de portfólio) dispostos em mosaico como cartões sobrepostos numa grade frouxa e levemente girada. O tratamento é de "parede de showroom": miniaturas full-bleed amontoadas de borda a borda como prova visual do hero, sem molduras de dispositivo.
+- **copy:** Título de afirmação ousada que fala com o usuário, não sobre o produto: "Say Hello To Your New Site." — confiante, conversacional, na segunda pessoa; o subtítulo reformula a proposta como liberdade ("No code. All creative freedom.")
 
-**Takeaways (steal as ideas, don't copy):**
-- Let your customers' work be the loud part: keep type and chrome Swiss-neutral on light gray, and source ALL the color from a collage of real product screenshots — the page palette becomes whatever your users made.
-- Tile the hero proof as overlapping, slightly-rotated cards that bleed off every edge instead of one centered mockup; it reads as 'endless gallery' and implies scale.
-- Pair an oversized neo-grotesque headline (talking TO the user: 'Say Hello To Your New Site.') with a tiny stamped credit badge on a tile ('Created in ⁄S') so the brand signs its own showroom.
-- Anchor the conversion column off to one side (subhead + single black 'Start For Free ↗' button) so the visual collage owns the canvas and the CTA reads as a quiet, decisive endpoint.
+**Takeaways (roube como ideias, não copie):**
+- Deixe o trabalho dos seus clientes ser a parte ruidosa: mantenha o tipo e o chrome suíço-neutros sobre cinza claro e tire TODA a cor de uma colagem de capturas de tela reais de produto — a paleta da página vira o que quer que seus usuários tenham feito.
+- Disponha a prova do hero em mosaico como cartões sobrepostos, levemente girados e sangrando por todas as bordas em vez de um único mockup centralizado; lê-se como 'galeria sem fim' e sugere escala.
+- Combine um título neo-grotesco superdimensionado (falando COM o usuário: 'Say Hello To Your New Site.') com um minúsculo selo de crédito estampado num bloco ('Created in ⁄S') para que a marca assine seu próprio showroom.
+- Ancore a coluna de conversão para um dos lados (subtítulo + único botão preto 'Start For Free ↗') para que a colagem visual domine a tela e o CTA se leia como um ponto final silencioso e decisivo.

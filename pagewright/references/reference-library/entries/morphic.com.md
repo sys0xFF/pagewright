@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** technical-dark
 - **style:** dark, cinematic, bento, photographic
-- **palette:** bg `#0A0B0D` · ink `#FFFFFF` · accent `#2D7FF9` — primary 'Start for free' CTA pill and the small 'New' tag in the announcement chip; everything else is white/grey on near-black
-- **type:** display *Geometric grotesque sans (Inter/SF-like, heavy weight)* · body *Same grotesque sans, regular weight* — Confident and clean; the headline leans on weight contrast (solid white line over a dimmed grey line) rather than a decorative typeface to create drama
+- **palette:** bg `#0A0B0D` · ink `#FFFFFF` · accent `#2D7FF9` — pílula de CTA principal 'Start for free' e a pequena tag 'New' no chip de anúncio; todo o resto é branco/cinza sobre o quase-preto
+- **type:** display *Geometric grotesque sans (estilo Inter/SF, peso pesado)* · body *Mesma grotesque sans, peso regular* — Confiante e limpa; o headline se apoia no contraste de peso (uma linha branca sólida sobre uma linha cinza apagada) em vez de uma fonte decorativa para criar drama
 - **sections:** nav › hero › announcement-chip › feature-gallery › testimonial
-- **signature:** The hero copy is pushed to a narrow left column while a sprawling two-row carousel of actual AI-generated film stills becomes the real hero — the product output IS the visual, so the page reads like a streaming-service shelf rather than a typical centered SaaS hero with a UI screenshot.
-- **imagery:** Wall-to-wall cinematic AI-generated frames — climbers, dragons, noir city scenes, portraits, the Eiffel Tower, war scenes — in saturated, film-graded color, each a rounded card. A faint moody portrait bleeds behind the headline for atmosphere. Imagery does all the persuading; there are no UI screenshots or diagrams.
-- **copy:** Aspirational two-line value statement with weight-contrast emphasis; voice is creative-empowering, not technical. Hero: "Smart storytelling / For every creative."
+- **signature:** O texto do hero é empurrado para uma coluna estreita à esquerda enquanto um carrossel amplo de duas fileiras com frames de filme de fato gerados por IA se torna o verdadeiro hero — o output do produto É o visual, então a página lê como uma prateleira de serviço de streaming em vez do típico hero centralizado de SaaS com screenshot de UI.
+- **imagery:** Frames cinematográficos gerados por IA de ponta a ponta — alpinistas, dragões, cenas de cidade noir, retratos, a Torre Eiffel, cenas de guerra — em cor saturada e gradada como filme, cada um um card arredondado. Um retrato sombrio e tênue sangra atrás do headline para criar atmosfera. A imagem faz toda a persuasão; não há screenshots de UI nem diagramas.
+- **copy:** Declaração de valor aspiracional em duas linhas com ênfase por contraste de peso; a voz é criativa-empoderadora, não técnica. Hero: "Smart storytelling / For every creative."
 
-**Takeaways (steal as ideas, don't copy):**
-- Split the hero: keep a tight text column on the left and let a horizontally-scrolling shelf of real outputs occupy 60%+ of the fold — proof-by-portfolio instead of a UI mockup.
-- Build drama with weight, not color: a solid-white line stacked over a dimmed-grey second line gives a single sans-serif headline a cinematic two-tone hierarchy.
-- Drop a single embedded testimonial right under the gallery with stacked avatars and a creator handle ('0xFramer, AI Artist') to anchor credibility in the target community without a full section.
-- Reserve one bright accent (electric blue) for exactly one primary CTA against an otherwise monochrome dark canvas so the conversion path is unmissable.
+**Takeaways (roube como ideias, não copie):**
+- Divida o hero: mantenha uma coluna de texto estreita à esquerda e deixe uma prateleira de outputs reais com rolagem horizontal ocupar 60%+ da dobra — prova-por-portfólio em vez de um mockup de UI.
+- Construa drama com peso, não cor: uma linha branca sólida empilhada sobre uma segunda linha cinza apagada dá a um único headline sans-serif uma hierarquia cinematográfica em dois tons.
+- Encaixe um único depoimento embutido logo abaixo da galeria com avatares empilhados e um handle de criador ('0xFramer, AI Artist') para ancorar credibilidade na comunidade-alvo sem uma seção inteira.
+- Reserve um único destaque brilhante (azul elétrico) para exatamente um CTA principal contra um canvas escuro de resto monocromático, para que o caminho de conversão seja impossível de não ver.

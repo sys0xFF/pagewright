@@ -5,15 +5,15 @@
 - **niche:** food
 - **mood:** warm-playful
 - **style:** photographic, lifestyle, retro-grocery, bold
-- **palette:** bg `#A8AFA6` · ink `#1F2A18` · accent `#C7E04A` — The chartreuse lime-green is pulled straight from the olive-oil bottle's cap and label, then echoed in the pill-shaped "SHOP NOW" button at the bottom-left; it's the single saturated note against a muted greige kitchen scene.
-- **type:** display *editorial italic serif (Caslon / Freight Big style, lowercase, slight slant)* · body *small caps geometric sans for nav (Maison Neue / GT America)* — Warm, conversational, kitchen-table; the serif italic feels like a recipe card handwritten by a friend.
+- **palette:** bg `#A8AFA6` · ink `#1F2A18` · accent `#C7E04A` — O verde-limão chartreuse é tirado direto da tampa e do rótulo da garrafa de azeite, e depois ecoado no botão em forma de pílula "SHOP NOW" no canto inferior esquerdo; é a única nota saturada contra uma cena de cozinha em greige discreto.
+- **type:** display *serifa itálica editorial (estilo Caslon / Freight Big, caixa-baixa, leve inclinação)* · body *sans geométrica em small caps para a nav (Maison Neue / GT America)* — Caloroso, conversacional, de mesa de cozinha; a serifa itálica parece um cartão de receita escrito à mão por um amigo.
 - **sections:** hero › why-squeeze-bottle › drizzle-vs-sizzle-product-split › ingredients-sourcing › reviews › refills-subscription › cta › footer
-- **signature:** A real, candid kitchen photo — a hand squeezing the iconic dark-green Graza bottle with the bright lime spout — IS the hero, shot on a concrete countertop with shallow depth of field, not a sterile studio packshot. The product label itself carries hand-drawn illustration ("Sizzle" Extra Virgin Olive Oil, a little doodled figure) so the packaging does double duty as the brand's visual voice. The whole frame reads like a still from a cooking moment, not an ad.
-- **imagery:** Lifestyle product photography — warm, slightly desaturated, naturalistic kitchen light, human hand in frame for scale and intimacy. The squeeze bottle is the hero object; no 3D, no illustration except what lives printed on the label.
-- **copy:** Plainspoken and cheeky-confident. Headline in lowercase italic serif: "Extra Virgin Olive Oil makes everything better." Bottle label copy visible: "Sizzle" / Extra Virgin Olive Oil / "COOKING OIL" / GRAZA. CTA pill reads "SHOP NOW".
+- **signature:** Uma foto real e espontânea de cozinha — uma mão apertando a icônica garrafa verde-escura da Graza, com o bico verde-limão brilhante — É o hero, fotografada sobre uma bancada de concreto com profundidade de campo rasa, não um packshot estéril de estúdio. O próprio rótulo do produto carrega ilustração desenhada à mão ("Sizzle" Extra Virgin Olive Oil, uma figurinha rabiscada), então a embalagem faz dupla função como voz visual da marca. O quadro inteiro se lê como um still de um momento de cozinhar, não como um anúncio.
+- **imagery:** Fotografia de produto em lifestyle — quente, levemente dessaturada, luz de cozinha naturalista, mão humana no quadro para escala e intimidade. A garrafa de aperto é o objeto-herói; sem 3D, sem ilustração além do que vive impresso no rótulo.
+- **copy:** Direta e atrevida-confiante. Headline em serifa itálica caixa-baixa: "Extra Virgin Olive Oil makes everything better." Copy visível no rótulo da garrafa: "Sizzle" / Extra Virgin Olive Oil / "COOKING OIL" / GRAZA. A pílula de CTA diz "SHOP NOW".
 
-**Takeaways (steal as ideas, don't copy):**
-- Make a candid in-use photo (a hand squeezing the bottle) the hero instead of a clean packshot — it sells the ritual, not just the SKU.
-- Pull your one accent color directly out of the physical product (the cap/label green) so the brand and the package feel like one object.
-- Put hand-drawn illustration ON the packaging, then let the photographed package carry that personality into the hero — no separate illustration system needed.
-- Set the headline in a lowercase italic serif over a muted greige scene so the single saturated CTA pill pops without any extra contrast tricks.
+**Takeaways (roube como ideias, não copie):**
+- Faça de uma foto espontânea de uso (uma mão apertando a garrafa) o hero, em vez de um packshot limpo — vende o ritual, não apenas o SKU.
+- Tire sua única cor de destaque diretamente do produto físico (o verde da tampa/rótulo) para que a marca e a embalagem pareçam um só objeto.
+- Coloque ilustração desenhada à mão SOBRE a embalagem e deixe a embalagem fotografada levar essa personalidade até o hero — sem precisar de um sistema de ilustração separado.
+- Componha o headline numa serifa itálica caixa-baixa sobre uma cena em greige discreto, para que a única pílula saturada de CTA salte sem nenhum truque extra de contraste.

@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** technical-dark
 - **style:** dark, mono-type, minimal, bento
-- **palette:** bg `#0A0A0A` · ink `#FFFFFF` · accent `#FFFFFF` — Inverted white primary button (Get Started) against near-black; secondary CTA is a charcoal pill. There is no chromatic accent — contrast itself is the accent.
-- **type:** display *Geometric grotesque sans (Polar's custom/near-monoline grotesque, reminiscent of a tightened Helvetica/Neue Haas)* · body *Same grotesque sans at lighter weight, muted grey for the subhead* — Engineered, confident, near-brutalist restraint — oversized lowercase-feel headline with tight tracking that reads more like industrial signage than typical SaaS marketing copy.
+- **palette:** bg `#0A0A0A` · ink `#FFFFFF` · accent `#FFFFFF` — Botão principal invertido em branco (Get Started) contra o quase-preto; o CTA secundário é uma pílula carvão. Não há acento cromático — o próprio contraste é o acento.
+- **type:** display *Sans grotesca geométrica (a grotesca customizada/quase-monolinear da Polar, lembrando uma Helvetica/Neue Haas apertada)* · body *Mesma sans grotesca em peso mais leve, cinza apagado para a subhead* — Engenheirada, confiante, com contenção quase brutalista — headline gigante com sensação de caixa-baixa e tracking apertado que é lida mais como sinalização industrial do que como copy de marketing de SaaS típico.
 - **sections:** announcement-bar › hero › logos › feature-pricing-models › feature-revenue-dashboard › feature-built-for-ai › testimonials › pricing › cta › footer
-- **signature:** A colossal two-line hero headline that nearly bleeds edge-to-edge (display type at ~200px, dwarfing the logo and nav) — the page leads with monumental typography as the hero image, refusing the dev-tool convention of a product screenshot or terminal animation above the fold.
-- **imagery:** No photography and no hero screenshot. The visual language is pure typography plus monochrome partner logos (tailwindcss, speakeasy, Stilla, midday) rendered in flat white. Below the fold it shifts to a bento grid of dark product cards. Everything is grayscale — depth comes from subtle elevation between #0A0A0A panels, not color.
-- **copy:** Punchy, declarative, outcome-first developer voice — hero reads "Turn Usage Into Revenue" with the subhead "A billing platform for the intelligence era"; secondary heads like "Any pricing model. Ships in an afternoon." sell speed and AI-native positioning.
+- **signature:** Uma headline de hero colossal de duas linhas que quase sangra de borda a borda (display type a ~200px, fazendo o logo e a nav parecerem minúsculos) — a página começa com tipografia monumental como a imagem do hero, recusando a convenção de dev-tool de um screenshot de produto ou animação de terminal acima da dobra.
+- **imagery:** Sem fotografia e sem screenshot no hero. A linguagem visual é tipografia pura mais logos de parceiros monocromáticos (tailwindcss, speakeasy, Stilla, midday) renderizados em branco chapado. Abaixo da dobra, muda para um grid bento de cards de produto escuros. Tudo é em escala de cinza — a profundidade vem da sutil elevação entre painéis #0A0A0A, não da cor.
+- **copy:** Voz de desenvolvedor enérgica, declarativa, com o resultado em primeiro lugar — o hero diz "Turn Usage Into Revenue" com a subhead "A billing platform for the intelligence era"; títulos secundários como "Any pricing model. Ships in an afternoon." vendem velocidade e posicionamento AI-native.
 
-**Takeaways (steal as ideas, don't copy):**
-- Make the headline the hero: set display type so large it spans the viewport and skip the product screenshot entirely above the fold — let the words carry the weight.
-- Go fully monochrome and let figure/ground contrast do an accent color's job — invert one CTA to solid white against near-black so the primary action pops without any hue.
-- Pair a monumental claim ('Turn Usage Into Revenue') with a tiny, quietly confident grey subhead ('billing platform for the intelligence era') — the scale jump is the whole rhetorical move.
-- Anchor positioning to the moment: 'Built for the shape of AI' / 'intelligence era' frames a billing tool as AI-native infrastructure rather than another payments SaaS.
+**Takeaways (roube como ideias, não copie):**
+- Faça da headline o hero: defina o display type tão grande que ele atravesse o viewport e pule totalmente o screenshot de produto acima da dobra — deixe as palavras carregarem o peso.
+- Vá totalmente monocromático e deixe o contraste figura/fundo fazer o trabalho de uma cor de acento — inverta um CTA para branco sólido contra o quase-preto para que a ação principal salte sem nenhum matiz.
+- Combine uma afirmação monumental ('Turn Usage Into Revenue') com uma subhead cinza pequena e silenciosamente confiante ('billing platform for the intelligence era') — o salto de escala é toda a jogada retórica.
+- Ancore o posicionamento ao momento: 'Built for the shape of AI' / 'intelligence era' enquadra uma ferramenta de cobrança como infraestrutura AI-native em vez de mais um SaaS de pagamentos.

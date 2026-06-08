@@ -5,15 +5,15 @@
 - **niche:** data-tools
 - **mood:** warm-playful
 - **style:** mono-type, illustrated, colorful
-- **palette:** bg `#F2EDE6` · ink `#1A1A1A` · accent `#FFE800` — full-width top announcement bar; secondary blue (#9FD2F2) fill on the primary CTA button
-- **type:** display *Monospace (geometric mono, JetBrains/IBM-Plex-Mono character), all-caps, wide letterspacing* · body *Inter* — Engineer's terminal meets a children's storybook — the mono caps headline reads like a CLI prompt, while warm cream paper and a cartoon duck soften the technical edge
+- **palette:** bg `#F2EDE6` · ink `#1A1A1A` · accent `#FFE800` — barra de anúncio no topo em largura total; azul secundário (#9FD2F2) preenchendo o botão de CTA principal
+- **type:** display *Monoespaçada (mono geométrica, caráter JetBrains/IBM-Plex-Mono), tudo em caixa-alta, espaçamento largo entre letras* · body *Inter* — O terminal de um engenheiro encontra um livro de histórias infantil — o headline em mono caixa-alta lê como um prompt de CLI, enquanto o papel creme quente e um pato de desenho suavizam a aresta técnica
 - **sections:** announcement-bar › hero › logos › feature-book-offer › feature-warehouse-ai › audience › use-cases › how-it-works › ecosystem › cta-community › newsletter › footer
-- **signature:** A live in-page AI analytics demo widget anchored to the bottom of the hero ("CHOOSE A REPORT TO START" / "3 QUESTIONS LEFT"), where a hand-drawn cartoon duck literally floats up on a cloud and points at a speech bubble saying "LIVE DEMO, QUACK A QUESTION!" — the mascot is functionally wired to the product trial, not decorative.
-- **imagery:** Hand-drawn marker-style cartoon illustrations (a white duck mascot, fluffy outline clouds, a paper airplane, floating primitive shapes — cube, triangle, blob) scattered loosely across a warm cream canvas. Logo wall is monochrome grayscale with tiny orange dot accents. Deliberately low-fidelity, sketchbook aesthetic that rejects the polished-3D-gradient norm of data infra sites.
-- **copy:** Punchy, declarative, slightly cheretical for the category — leads with the benefit not the tech. Hero: "INFRASTRUCTURE FOR ANSWERS"; subhead reframes a data warehouse around natural-language answers ("built for answers, in SQL or natural language").
+- **signature:** Um widget de demo de analytics com IA ao vivo na página, ancorado à base do hero ("CHOOSE A REPORT TO START" / "3 QUESTIONS LEFT"), onde um pato de desenho à mão literalmente flutua para cima numa nuvem e aponta para um balão de fala dizendo "LIVE DEMO, QUACK A QUESTION!" — o mascote está funcionalmente ligado ao trial do produto, não é decorativo.
+- **imagery:** Ilustrações de desenho estilo marcador feitas à mão (um mascote pato branco, nuvens com contorno fofo, um avião de papel, formas primitivas flutuantes — cubo, triângulo, mancha) espalhadas soltas por um canvas creme quente. O mural de logos é monocromático em escala de cinza com minúsculos detalhes de ponto laranja. Estética deliberadamente de baixa fidelidade, de caderno de esboços, que rejeita a norma de 3D-gradiente polido dos sites de infra de dados.
+- **copy:** Direta, declarativa, levemente herética para a categoria — lidera com o benefício, não com a tecnologia. Hero: "INFRASTRUCTURE FOR ANSWERS"; o subtítulo reformula um data warehouse em torno de respostas em linguagem natural ("built for answers, in SQL or natural language").
 
-**Takeaways (steal as ideas, don't copy):**
-- Set a CLI-style monospace ALL-CAPS headline on warm paper cream instead of cold white — instantly reads 'built by engineers' without a single screenshot of a UI.
-- Wire your mascot into the product: don't park a cartoon in the corner, make it gesture toward a live, interactive demo embedded in the hero so the playfulness does real conversion work.
-- Use one screaming high-saturation accent (taxi-yellow) in a single full-bleed strip at the very top, then go near-monochrome everywhere else — the restraint makes the one color hit harder.
-- Reframe a commodity category noun ('data warehouse') as a human outcome in the H1 ('Answers') — sell the result, relegate the tech (DuckDB) to the subhead.
+**Takeaways (roube como ideias, não copie):**
+- Coloque um headline em monoespaçada estilo CLI em CAIXA-ALTA sobre papel creme quente em vez de branco frio — lê instantaneamente como 'feito por engenheiros' sem um único screenshot de UI.
+- Conecte seu mascote ao produto: não estacione um desenho no canto, faça-o gesticular em direção a uma demo interativa ao vivo embutida no hero para que o lúdico faça trabalho real de conversão.
+- Use um único destaque berrante de alta saturação (amarelo-táxi) numa única faixa full-bleed bem no topo, depois fique quase monocromático em todo o resto — a contenção faz a única cor bater mais forte.
+- Reformule o substantivo de categoria commodity ('data warehouse') como um resultado humano no H1 ('Answers') — venda o resultado, relegue a tecnologia (DuckDB) ao subtítulo.

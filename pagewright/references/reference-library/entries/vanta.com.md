@@ -5,15 +5,15 @@
 - **niche:** security
 - **mood:** clean-light
 - **style:** minimal, illustrated, colorful
-- **palette:** bg `#E2DAF7` · ink `#1A1033` · accent `#6D28D9` — primary CTA pills (Get a demo), purple top announcement bar, navigation logo wordmark, in-product UI chrome accents and the send-arrow button
-- **type:** display *High-contrast serif (transitional/Didone-like, e.g. Tiempos/Canela family)* · body *Geometric/grotesque sans-serif (Inter-like)* — Editorial gravitas meets engineered calm — the serif lends an old-money 'trust/institution' authority while the clean sans keeps the product feeling modern and legible
+- **palette:** bg `#E2DAF7` · ink `#1A1033` · accent `#6D28D9` — pílulas de CTA primário (Get a demo), barra de anúncio roxa no topo, wordmark do logo na navegação, acentos de cromo na UI do produto e o botão de seta de envio.
+- **type:** display *Serifa de alto contraste (transicional/estilo Didone, ex. família Tiempos/Canela)* · body *Sem serifa geométrica/grotesca (estilo Inter)* — Gravidade editorial encontra calma engenheirada — a serifa empresta uma autoridade de 'confiança/instituição' de dinheiro antigo, enquanto a sans limpa mantém o produto moderno e legível.
 - **sections:** hero › logos › feature-it's-all-here › testimonials › feature-frameworks › feature-built-for-you › feature-proof › awards › resources › cta › footer
-- **signature:** A giant high-contrast SERIF hero headline ("Trust is everything") on a soft lavender wash — security/compliance SaaS almost universally defaults to cold blue-grey gradients and clinical sans-serif; Vanta instead reaches for editorial-magazine typography and a warm pastel field, dressing a deeply technical GRC product as something trustworthy and human rather than enterprise-sterile.
-- **imagery:** A floating, drop-shadowed product UI panel (the Vanta Agent "Thinking..." chat connecting AWS, Google Workspace + 15 others, building toward an ISO cert) bleeds off the right edge to imply depth and ongoing automation. Tiny real integration logos (AWS, Google, GitHub) and a sparkle/AI glyph signal live agentic work. Below, a monochrome customer logo row (ramp, Cursor, Snowflake, Clay, Lovable, Samsara) anchors credibility.
-- **copy:** Aphoristic, three-word brand-promise headline backed by a plain imperative subline — confident and human, not feature-led. Hero: "Trust is everything" / "Earn and prove it with Vanta."
+- **signature:** Uma gigantesca headline SERIFADA de alto contraste ("Trust is everything") sobre uma lavanda suave — SaaS de segurança/compliance quase sempre recorre por padrão a gradientes azul-cinza frios e sans-serif clínicas; a Vanta, em vez disso, busca tipografia de revista editorial e um campo pastel quente, vestindo um produto de GRC profundamente técnico como algo confiável e humano, e não estéril como software corporativo.
+- **imagery:** Um painel flutuante de UI do produto com sombra projetada (o Vanta Agent em estado "Thinking..." conectando AWS, Google Workspace + 15 outros, avançando rumo a uma certificação ISO) sangra pela borda direita para sugerir profundidade e automação contínua. Pequenos logos reais de integração (AWS, Google, GitHub) e um glifo de brilho/IA sinalizam trabalho agêntico ao vivo. Abaixo, uma fileira monocromática de logos de clientes (ramp, Cursor, Snowflake, Clay, Lovable, Samsara) ancora a credibilidade.
+- **copy:** Headline aforística de três palavras que entrega a promessa da marca, sustentada por uma subordinada imperativa e direta — confiante e humana, não orientada a recursos. Hero: "Trust is everything" / "Earn and prove it with Vanta."
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair a near-Didone display serif with a clean sans body to inject 'institutional trust' into a technical category without going corporate-cold.
-- Wash the whole hero in a single soft pastel (lavender) instead of a gradient — calmer, warmer, and lets one saturated purple accent do all the CTA work.
-- Make the product shot DO something: an in-progress agent 'Thinking...' state mid-task sells live automation far better than a static dashboard.
-- Drop an email-capture field directly into the hero next to the primary CTA so the convert action lives above the fold, not buried.
+**Takeaways (roube como ideias, não copie):**
+- Combine uma serifa de display quase-Didone com um corpo sem serifa limpo para injetar 'confiança institucional' numa categoria técnica sem ficar corporativo e frio.
+- Banhe todo o hero numa única pastel suave (lavanda) em vez de um gradiente — mais calmo, mais quente, e deixa que um único roxo saturado faça todo o trabalho do CTA.
+- Faça o shot do produto FAZER algo: um estado de agente em andamento, 'Thinking...' no meio de uma tarefa, vende automação ao vivo muito melhor do que um dashboard estático.
+- Coloque um campo de captura de e-mail diretamente no hero, ao lado do CTA primário, para que a ação de conversão fique acima da dobra, não enterrada.

@@ -5,15 +5,15 @@
 - **niche:** dev-tools (API documentation platform)
 - **mood:** technical-dark
 - **style:** dark, gradient, mono-type
-- **palette:** bg `#0A0F4D` · ink `#FFFFFF` · accent `#2D4BFF` — Get started CTA buttons (pill), underlined keyword links in subhead (docs/developers/AI), the New badge pill, and the readme wordmark/book logo mark
-- **type:** display *High-contrast transitional serif (Tiempos/Canela-like) with a true italic for the emphasis word* · body *Geometric/grotesque sans-serif (Inter-like) for nav, subhead and UI chrome* — Editorial-literary headline voice colliding with clean engineering sans — bookish authority meets shipping-ready tooling
+- **palette:** bg `#0A0F4D` · ink `#FFFFFF` · accent `#2D4BFF` — Botões CTA 'Get started' (pill), links de palavras-chave sublinhados no subtítulo (docs/developers/AI), o pill do badge 'New' e o wordmark/logo de livro do readme
+- **type:** display *Serifada transicional de alto contraste (estilo Tiempos/Canela) com um itálico verdadeiro para a palavra de ênfase* · body *Sans-serif geométrica/grotesca (estilo Inter) para nav, subtítulo e chrome de UI* — Voz de título editorial-literária colidindo com uma sans de engenharia limpa — autoridade livresca encontra ferramental pronto para produção
 - **sections:** nav › hero › logos › feature-product-preview › docs-ui-embed
-- **signature:** A live, interactive documentation UI (Guides / Recipes / API Reference tabs, sidebar, Ask AI) is half-pasted over the hero's bottom edge as a giant rounded-card 'product window' — the page literally becomes the product, bleeding the real app chrome up into the marketing fold instead of showing a flat screenshot.
-- **imagery:** No photography or illustration. The visual language is the product itself: a real, rounded-corner documentation interface rendered as an oversized device-less window with View/Edit toggle tabs and a faux-IDE sidebar. Deep navy canvas with a soft radial glow behind the headline does all the atmospheric work; UI realism replaces stock art.
-- **copy:** Editorial, outcome-led one-liner that reframes docs as a growth lever — hero reads 'Docs that drive adoption' with 'adoption' set in italic serif, subhead 'Build docs loved by developers and understood by AI'.
+- **signature:** Uma UI de documentação ao vivo e interativa (abas Guides / Recipes / API Reference, sidebar, Ask AI) está colada pela metade sobre a borda inferior da hero como uma gigante 'janela de produto' em card arredondado — a página literalmente se torna o produto, sangrando o chrome real do app para dentro do fold de marketing em vez de mostrar um screenshot plano.
+- **imagery:** Sem fotografia ou ilustração. A linguagem visual é o próprio produto: uma interface de documentação real, de cantos arredondados, renderizada como uma janela superdimensionada sem dispositivo, com abas de toggle View/Edit e uma sidebar de pseudo-IDE. Um canvas azul-marinho profundo com um brilho radial suave atrás do título faz todo o trabalho atmosférico; o realismo da UI substitui a arte de banco.
+- **copy:** One-liner editorial, guiado por resultado, que ressignifica docs como alavanca de crescimento — a hero diz 'Docs that drive adoption' com 'adoption' em serifada itálica, subtítulo 'Build docs loved by developers and understood by AI'.
 
-**Takeaways (steal as ideas, don't copy):**
-- Set the single most important word ('adoption') in a contrasting italic serif while the rest stays roman — turns a headline into a thesis statement without changing fonts.
-- Inline-underline only the load-bearing nouns in the subhead (docs, developers, AI) in the accent color so the value prop scans as three keywords, not a sentence.
-- Bleed the actual product UI up over the hero's curved bottom edge as one huge rounded window — let the marketing fold and the app screenshot be the same object.
-- Pair a literary high-contrast serif headline with a plain engineering sans for everything else to signal 'docs are craft, the tool is precise.'
+**Takeaways (roube como ideias, não copie):**
+- Coloque a única palavra mais importante ('adoption') numa serifada itálica contrastante enquanto o resto permanece romano — transforma um título numa declaração de tese sem trocar de fonte.
+- Sublinhe inline apenas os substantivos que sustentam o sentido no subtítulo (docs, developers, AI) na cor de acento, para que a proposta de valor seja lida como três palavras-chave, não uma frase.
+- Sangre a UI real do produto sobre a borda inferior curva da hero como uma única janela enorme arredondada — deixe o fold de marketing e o screenshot do app serem o mesmo objeto.
+- Combine um título em serifada literária de alto contraste com uma sans de engenharia simples para todo o resto, sinalizando 'docs são artesanato, a ferramenta é precisa.'

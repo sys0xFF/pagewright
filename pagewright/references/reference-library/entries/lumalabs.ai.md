@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** premium-luxe
 - **style:** photographic, cinematic, minimal
-- **palette:** bg `#E9E3DA` · ink `#FFFFFF` · accent `#C0392B` — carried entirely by the fashion photography itself — the rust-red couture gown and jewel-toned dresses act as the accent, not a UI color
-- **type:** display *Rounded humanist sans (Luma's geometric-rounded brand face, akin to a softened Circular/SF Rounded)* · body *Same rounded sans family, lighter weight* — Soft, warm, approachable-premium — the rounded terminals undercut the cold-tech default of AI brands and read more like a luxury fashion house than a model lab
+- **palette:** bg `#E9E3DA` · ink `#FFFFFF` · accent `#C0392B` — carregado inteiramente pela própria fotografia de moda — o vestido de alta-costura vermelho-ferrugem e os vestidos em tons de joia atuam como o acento, não uma cor de UI
+- **type:** display *Sans humanista arredondada (a face de marca geométrica-arredondada da Luma, semelhante a uma Circular/SF Rounded suavizada)* · body *Mesma família sans arredondada, peso mais leve* — Suave, calorosa, premium-acessível — os terminais arredondados minam o default frio-tech das marcas de IA e lêem mais como uma casa de moda de luxo do que um laboratório de modelos
 - **sections:** hero › feature-prompt-input › feature-product-platform › feature-research › news › team-community › footer
-- **signature:** The entire hero IS a live product demo dressed as an editorial fashion shoot: a 'Generating…' status pill sits above three full-bleth couture model shots, so the page proves the product (image generation) by being the artifact, with zero diagram, dashboard, or screenshot-of-a-UI.
-- **imagery:** Full-bleed, magazine-grade generated fashion photography — three runway models in couture gowns on a warm putty backdrop, plus a turntable character grid and a fashion contact-sheet bleeding in below. Treatment is photoreal and gallery-lit; the AI output is presented as finished creative work, never as a tech sample.
-- **copy:** Aspirational benefit-as-identity, not feature-listing — names the user's transformation. Hero: "Creative agents that make you prolific."
+- **signature:** O hero inteiro É um demo de produto ao vivo vestido como um editorial de moda: uma pílula de status 'Generating…' fica acima de três fotos full-bleed de modelos de alta-costura, de modo que a página prova o produto (geração de imagem) sendo o artefato, com zero diagrama, dashboard ou screenshot-de-uma-UI.
+- **imagery:** Fotografia de moda gerada full-bleed e de qualidade de revista — três modelos de passarela em vestidos de alta-costura sobre um fundo bege-quente, mais uma grade de personagens em turntable e uma contact-sheet de moda sangrando logo abaixo. O tratamento é fotorrealista e iluminado como galeria; a saída da IA é apresentada como trabalho criativo finalizado, nunca como uma amostra de tech.
+- **copy:** Benefício-como-identidade aspiracional, não listagem de features — nomeia a transformação do usuário. Hero: "Creative agents that make you prolific."
 
-**Takeaways (steal as ideas, don't copy):**
-- Make your hero the product's OUTPUT at full editorial quality, not a UI screenshot — let the artifact carry the proof.
-- Use a literal 'Generating…' status pill floating over the work to imply liveness and motion without an actual video.
-- Drop a real, usable prompt box ('Type a prompt below. See what's possible.') directly in the hero so the page is the demo — try-before-signup with zero friction.
-- Borrow luxury-fashion art direction (warm putty bg, couture subjects, rounded warm type) to escape the cold blue/dark-mode AI cliché entirely.
+**Takeaways (roube como ideias, não copie):**
+- Faça seu hero ser a SAÍDA do produto em qualidade editorial plena, não um screenshot de UI — deixe o artefato carregar a prova.
+- Use uma pílula de status literal 'Generating…' flutuando sobre o trabalho para implicar vivacidade e movimento sem um vídeo de verdade.
+- Coloque uma caixa de prompt real e usável ('Type a prompt below. See what's possible.') diretamente no hero para que a página seja o demo — experimente-antes-do-cadastro com zero atrito.
+- Tome emprestada a direção de arte de moda de luxo (bg bege quente, sujeitos de alta-costura, tipo arredondado e caloroso) para escapar inteiramente do clichê frio azul/dark-mode de IA.

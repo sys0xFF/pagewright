@@ -5,15 +5,15 @@
 - **niche:** healthtech (remote patient monitoring / digital health API infra)
 - **mood:** bold-loud
 - **style:** bold, colorful, dark, illustrated
-- **palette:** bg `#4338E0` · ink `#FFFFFF` · accent `#3EE0F0` — the single emphasized word 'personalized.' in the headline, plus dashboard metric values (BP '117/72') and chart data points
-- **type:** display *Gilroy (geometric sans, heavy/black weight, rounded terminals)* · body *Gilroy (regular weight)* — Friendly-confident: rounded geometric letterforms at massive scale read warm and human rather than clinical, softening a B2B medical-infra pitch
+- **palette:** bg `#4338E0` · ink `#FFFFFF` · accent `#3EE0F0` — a única palavra enfatizada 'personalized.' no título, mais os valores de métrica do dashboard (PA '117/72') e os pontos de dados dos gráficos
+- **type:** display *Gilroy (sans geométrica, peso heavy/black, terminais arredondados)* · body *Gilroy (peso regular)* — Amigável-confiante: formas de letra geométricas arredondadas em escala massiva se leem como quentes e humanas em vez de clínicas, suavizando um pitch de B2B de infra-médica
 - **sections:** hero › feature-product-dashboard › logos › feature-grid › how-it-works › cta › footer
-- **signature:** Drenching an entire healthcare page in saturated electric indigo instead of the obligatory sterile white/teal-on-white — then making the hero a single giant word ('personalized.') set inside a dotted-outline 'fill-in-the-blank' box, as if the brand promise is being handwritten into a form.
-- **imagery:** Wireframe line-art of medical devices (BP cuff, stethoscope, tablet) ghosted at low opacity into the left bleed as ambient outline illustration; the right side anchors a realistic product UI mockup of the patient-monitoring dashboard (patient card, vitals tabs, BP chart) for credibility.
-- **copy:** Plain-spoken benefit framing with one emphasized payoff word — hero reads 'Making at home healthcare personalized.' over the subhead 'Remote care logistics and patient support with unified data management.'
+- **signature:** Encharcar uma página inteira de saúde num índigo elétrico saturado em vez do obrigatório branco/teal-sobre-branco estéril — depois fazer do hero uma única palavra gigante ('personalized.') posta dentro de uma caixa de 'preencha-a-lacuna' com contorno pontilhado, como se a promessa da marca estivesse sendo escrita à mão num formulário.
+- **imagery:** Line-art de wireframe de dispositivos médicos (manguito de pressão, estetoscópio, tablet) fantasmados em baixa opacidade no sangramento esquerdo como ilustração de contorno ambiente; o lado direito ancora um mockup realista de UI de produto do dashboard de monitoramento de pacientes (card de paciente, abas de sinais vitais, gráfico de pressão) para dar credibilidade.
+- **copy:** Enquadramento de benefício falado de forma simples com uma palavra de recompensa enfatizada — o hero diz 'Making at home healthcare personalized.' sobre o subtítulo 'Remote care logistics and patient support with unified data management.'
 
-**Takeaways (steal as ideas, don't copy):**
-- Pick one ownable saturated brand color and flood the whole canvas with it — committing to monochrome indigo makes a single cyan accent word detonate.
-- Use a dotted-outline 'blank field' container around the key word so the headline feels like a form being completed — turns a static tagline into an interactive-feeling fill-in.
-- Pair ghosted low-opacity line-art of your physical product (device wireframes) with a high-fidelity UI mockup: poetry on one side, proof on the other.
-- Let display type go genuinely huge and heavy in a rounded geometric sans (Gilroy) to make a clinical/B2B category feel human and approachable.
+**Takeaways (roube como ideias, não copie):**
+- Escolha uma única cor de marca saturada e apropriável e inunde o canvas inteiro com ela — comprometer-se com um índigo monocromático faz uma única palavra de acento ciano detonar.
+- Use um container de 'campo em branco' com contorno pontilhado em torno da palavra-chave para que o título pareça um formulário sendo preenchido — transforma um slogan estático num preenchimento com cara de interativo.
+- Emparelhe um line-art fantasmado de baixa opacidade do seu produto físico (wireframes de dispositivo) com um mockup de UI de alta fidelidade: poesia de um lado, prova do outro.
+- Deixe a tipografia de display ficar genuinamente gigante e pesada numa sans geométrica arredondada (Gilroy) para fazer uma categoria clínica/B2B parecer humana e acessível.

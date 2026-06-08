@@ -5,15 +5,15 @@
 - **niche:** devops
 - **mood:** clean-light
 - **style:** gradient, bento, mono-type
-- **palette:** bg `#FFFFFF` · ink `#1F1E24` · accent `#FC6D26` — Mesh-gradient hero wash (pink-to-orange) bleeding behind the headline, plus the GitLab tanuki logo, the '19.0' label, and security/icon glyphs on the dark bento cards
-- **type:** display *GitLab Sans* · body *GitLab Sans* — Single-family system: a humanist geometric sans pushed to extreme weight at hero scale — heavy, condensed-feeling, almost slab-confident. Tight tracking and a period after each phrase give it a declarative, no-nonsense engineer's voice.
+- **palette:** bg `#FFFFFF` · ink `#1F1E24` · accent `#FC6D26` — Banho de mesh-gradient no hero (rosa-para-laranja) sangrando atrás do headline, mais o logo do tanuki da GitLab, o rótulo '19.0' e os glifos de segurança/ícone nos cards bento escuros
+- **type:** display *GitLab Sans* · body *GitLab Sans* — Sistema de família única: uma sans geométrica humanista levada a peso extremo na escala do hero — pesada, com cara de condensada, quase com a confiança de uma slab. O tracking apertado e o ponto final após cada frase lhe dão a voz declarativa e sem rodeios de um engenheiro.
 - **sections:** announcement-bar › nav › hero › feature-bento › feature-how-it-works › feature-industries › pricing-tiers › social-proof › cta › footer
-- **signature:** The hero abandons the obligatory dev-tool product screenshot/terminal entirely. Instead it goes ENORMOUS type-only over a soft pink-to-orange mesh gradient — a warm, almost consumer-brand wash where competitors default to dark IDE chrome. The proof (the dark bento cards) is shoved BELOW the fold, so the first screen is pure brand confidence, not feature demo.
-- **imagery:** Near-imageless above the fold: the hero is a diffuse radial mesh gradient (white center blooming into coral, peach and orange at the edges) used as the only 'art'. Real content lives in dark charcoal bento cards with rounded corners, each carrying a single colored glyph (cube, shield) or an oversized version-number label. Product UI is implied, never shown.
-- **copy:** Two-word punch-clauses with hard periods — confidence over explanation. Hero: "Ship faster. With trust." / subhead "Your intelligent orchestration platform for DevSecOps."
+- **signature:** O hero abandona por completo o obrigatório screenshot/terminal de produto das dev-tools. Em vez disso, vai para um tipo ENORME e sozinho sobre um suave mesh gradient de rosa-para-laranja — um banho quente, quase de marca de consumo, onde os concorrentes recorrem ao chrome escuro de IDE. A prova (os cards bento escuros) é empurrada para BAIXO da dobra, de modo que a primeira tela seja pura confiança de marca, não demo de feature.
+- **imagery:** Quase sem imagens acima da dobra: o hero é um mesh gradient radial difuso (centro branco desabrochando em coral, pêssego e laranja nas bordas), usado como única 'arte'. O conteúdo real vive em cards bento cinza-carvão com cantos arredondados, cada um carregando um único glifo colorido (cubo, escudo) ou um rótulo gigante de número de versão. A UI do produto é implícita, nunca mostrada.
+- **copy:** Frases de impacto de duas palavras com pontos finais duros — confiança em vez de explicação. Hero: "Ship faster. With trust." / subtítulo "Your intelligent orchestration platform for DevSecOps."
 
-**Takeaways (steal as ideas, don't copy):**
-- Replace the mandatory product screenshot with type-as-hero: one giant declarative line on a warm gradient earns more trust than a UI demo, and defers proof to bento cards below.
-- Use staccato sentence fragments with terminal periods ('Ship faster. With trust.') — the punctuation does the rhetorical work, making short copy feel certain rather than thin.
-- Pair a warm consumer-grade pink/orange gradient with hard, technical charcoal cards — the temperature clash signals 'serious tool, human brand' at once.
-- Commit to ONE typeface across display and body but let weight + scale carry all the hierarchy; a single bespoke family reads as a brand asset, not a font choice.
+**Takeaways (roube como ideias, não copie):**
+- Substitua o screenshot obrigatório do produto por tipo-como-herói: uma única linha declarativa gigante sobre um gradiente quente conquista mais confiança do que uma demo de UI, e adia a prova para os cards bento abaixo.
+- Use fragmentos de frase em staccato com pontos finais ('Ship faster. With trust.') — a pontuação faz o trabalho retórico, fazendo a copy curta soar certeira em vez de rasa.
+- Combine um gradiente rosa/laranja quente, de nível consumo, com cards técnicos e duros em cinza-carvão — o choque de temperatura sinaliza 'ferramenta séria, marca humana' de uma vez.
+- Comprometa-se com UMA tipografia em display e body, mas deixe peso + escala carregarem toda a hierarquia; uma única família sob medida soa como ativo de marca, não como escolha de fonte.

@@ -2,18 +2,18 @@
 
 ![shortcut.com](../thumbs/shortcut.com.jpg)
 
-- **niche:** dev-tools (project management / issue tracking for software teams)
+- **niche:** dev-tools (gestão de projetos / rastreamento de issues para times de software)
 - **mood:** clean-light
 - **style:** minimal, mono-type, bold
-- **palette:** bg `#FFFFFF` · ink `#111114` · accent `#5A4FE0` — the second headline line 'Plan & Build Products', primary CTA buttons, in-product UI chrome accents, and the X logo mark
-- **type:** display *Heavy grotesque sans (compressed, near-black weight — reads like a tightly-tracked Helvetica/Akzidenz-style grotesque)* · body *Neutral humanist sans, light-to-regular weight* — Loud, condensed, almost poster-like headline contrasted against airy thin body copy — a magazine-cover voice wearing a dev-tool uniform
+- **palette:** bg `#FFFFFF` · ink `#111114` · accent `#5A4FE0` — a segunda linha da headline 'Plan & Build Products', os botões CTA primários, os acentos de chrome de UI dentro do produto e o símbolo do logo X
+- **type:** display *Sans grotesca heavy (comprimida, peso quase-black — lê como uma grotesca estilo Helvetica/Akzidenz com tracking apertado)* · body *Sans humanista neutra, peso light-a-regular* — Headline alta, condensada, quase de pôster, contrastada com um corpo de texto fino e arejado — uma voz de capa de revista vestindo o uniforme de uma ferramenta dev
 - **sections:** hero › feature-create-track-work › feature-daily-progress › feature-connect-work-to-goals › feature-work-your-way › feature-ai-agent › feature-integrations › feature-scale-security › testimonials › cta › footer
-- **signature:** The hero headline's second line ('Plan & Build Products') sits inside a hand-torn, slightly-rotated paper-strip highlight in accent purple — an analog, ripped-paper texture dropped into an otherwise crisp digital SaaS layout, breaking the genre's flat-vector convention.
-- **imagery:** A single oversized, realistic product screenshot of the Kanban board (with macOS browser chrome and traffic-light dots) anchored directly under the hero on a faint dotted-grid backdrop; product-as-hero rather than illustration. No mascots or abstract 3D — the real UI carries the visual weight.
-- **copy:** Plainspoken benefit promise in a giant two-tone display headline — hero reads 'Where Software Teams Plan & Build Products,' subhead 'Shortcut is a fast and enjoyable project management platform with issue tracking, sprints and roadmaps.'
+- **signature:** A segunda linha da headline do hero ('Plan & Build Products') fica dentro de um destaque de tira de papel rasgada à mão e levemente rotacionada em roxo de acento — uma textura analógica de papel rasgado largada num layout de SaaS digital de resto nítido, quebrando a convenção de vetor chapado do gênero.
+- **imagery:** Um único screenshot de produto realista e superdimensionado do quadro Kanban (com chrome de navegador macOS e pontos de farol) ancorado diretamente sob o hero num pano de fundo discreto de grade pontilhada; produto-como-hero em vez de ilustração. Sem mascotes ou 3D abstrato — a UI real carrega o peso visual.
+- **copy:** Promessa de benefício direta numa headline display gigante em dois tons — o hero diz 'Where Software Teams Plan & Build Products,' subhead 'Shortcut is a fast and enjoyable project management platform with issue tracking, sprints and roadmaps.'
 
-**Takeaways (steal as ideas, don't copy):**
-- Split a headline into two type treatments: heavy black ink for the setup line, accent color inside a torn-paper highlight for the payoff line — instant emphasis hierarchy without a second font.
-- Lead with a faint dotted-grid field behind a realistic, chrome-framed product screenshot so the actual UI becomes the hero image instead of stock illustration.
-- Pair an oversized condensed-grotesque display face with deliberately thin, roomy body copy — the weight contrast does the 'bold' work while keeping the page calm and legible.
-- Stack a 'New — Try [feature]' pill above the H1 as a low-friction product-news teaser that doubles as a secondary CTA without crowding the primary button.
+**Takeaways (roube como ideias, não copie):**
+- Divida uma headline em dois tratamentos de tipo: tinta black heavy para a linha de preparação, cor de acento dentro de um destaque de papel rasgado para a linha de desfecho — hierarquia de ênfase instantânea sem uma segunda fonte.
+- Comece com um campo discreto de grade pontilhada atrás de um screenshot de produto realista emoldurado por chrome para que a UI real vire a imagem do hero em vez de ilustração de banco.
+- Combine um tipo display grotesco condensado e superdimensionado com um corpo de texto deliberadamente fino e espaçoso — o contraste de peso faz o trabalho do 'bold' mantendo a página calma e legível.
+- Empilhe uma pílula 'New — Try [feature]' acima do H1 como uma chamada de baixa fricção de notícias de produto que também serve de CTA secundário sem lotar o botão primário.

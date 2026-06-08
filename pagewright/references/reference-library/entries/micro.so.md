@@ -5,15 +5,15 @@
 - **niche:** productivity
 - **mood:** clean-light
 - **style:** editorial-minimal, gradient, photographic
-- **palette:** bg `#7FB9EE` · ink `#FFFFFF` · accent `#221F1C` — near-black pill buttons (Sign up), the wordmark, and product-UI chrome that sits on the white app screenshot below the fold
-- **type:** display *High-contrast transitional/Didone serif (Times-like ditalic-feel, e.g. Canela / Tiempos / Times-style)* · body *Humanist geometric sans-serif (e.g. Aeonik / GT Walsheim / Circular-like)* — Literary, warm authority meets soft modern utility — the serif romanticizes a category (everything-app) that normally screams in bold sans.
+- **palette:** bg `#7FB9EE` · ink `#FFFFFF` · accent `#221F1C` — botões em pílula quase pretos (Sign up), o wordmark, e o chrome de UI de produto que fica sobre o screenshot branco do app abaixo da dobra
+- **type:** display *Serif transicional/Didone de alto contraste (com pegada itálica estilo Times, ex.: Canela / Tiempos / estilo Times)* · body *Sans-serif geométrica humanista (ex.: Aeonik / GT Walsheim / estilo Circular)* — Autoridade literária e quente encontra utilidade moderna e suave — a serif romantiza uma categoria (app-para-tudo) que normalmente grita em sans pesada.
 - **sections:** nav › hero › video-badge › subhead › cta › product-screenshot › music-player-widget
-- **signature:** A full-bleed photographic sky-to-grass-field gradient as the hero background — a real landscape horizon, not a UI mesh — so an enterprise everything-app feels like open air instead of a dashboard. The white product window then docks into the grass like the horizon line itself.
-- **imagery:** Real photographic environment: a sky-blue gradient at top dissolving into a soft-focus green meadow at the fold, used as ambient backdrop. Floating glass UI chips (Watch the launch video badge, a now-playing music widget bottom-right) layer over it. The hero hands off to a large, realistic in-app product screenshot showing an AI home screen ("Good morning, Sarah"), CRM sidebar, and automation feed — selling breadth through fidelity rather than abstract illustration.
-- **copy:** Warm second-person promise in an oversized serif: "One place for work that works for you" — aspirational and human, with a plainspoken sub that lists the breadth (email, social, CRM, PM, AI) so the romance is backed by specifics.
+- **signature:** Um gradiente fotográfico de página inteira, de céu-para-campo-de-grama, como fundo do hero — um horizonte de paisagem real, não uma malha de UI — para que um app-para-tudo corporativo pareça ar livre em vez de um dashboard. A janela branca do produto então atraca na grama como se fosse a própria linha do horizonte.
+- **imagery:** Ambiente fotográfico real: um gradiente azul-céu no topo dissolvendo num prado verde de foco suave na dobra, usado como pano de fundo ambiente. Chips de UI de vidro flutuantes (badge Watch the launch video, um widget de música tocando agora no canto inferior direito) sobrepõem-se a ele. O hero passa o bastão para um grande screenshot realista de produto in-app mostrando uma home screen de IA ("Good morning, Sarah"), barra lateral de CRM e feed de automação — vendendo amplitude por meio de fidelidade em vez de ilustração abstrata.
+- **copy:** Promessa quente em segunda pessoa numa serif superdimensionada: "One place for work that works for you" — aspiracional e humana, com um sub de fala simples que lista a amplitude (e-mail, social, CRM, PM, IA) para que o romance seja respaldado por especificidades.
 
-**Takeaways (steal as ideas, don't copy):**
-- Swap the obligatory UI-mesh/grid hero for a literal photographic horizon (sky-to-field) — instant calm, instant differentiation in a crowded SaaS category.
-- Set the hero headline in a large high-contrast editorial serif while keeping body + buttons in a neutral sans; the type contrast alone reads premium and un-templated.
-- Dock the product screenshot so its top edge aligns with the photo's horizon line — the app appears to grow out of the landscape instead of floating in a generic device frame.
-- Add an off-brand ambient detail (a now-playing music widget) to make the page feel like a lived-in workspace, not a marketing render.
+**Takeaways (roube como ideias, não copie):**
+- Troque o obrigatório hero de malha/grade de UI por um horizonte fotográfico literal (céu-para-campo) — calma instantânea, diferenciação instantânea numa categoria SaaS lotada.
+- Coloque o título do hero numa serif editorial grande e de alto contraste, mantendo o corpo + botões numa sans neutra; só o contraste de tipo já é lido como premium e fora-do-template.
+- Atraque o screenshot do produto de modo que sua borda superior se alinhe com a linha do horizonte da foto — o app parece crescer da paisagem em vez de flutuar num frame de dispositivo genérico.
+- Adicione um detalhe ambiente fora-da-marca (um widget de música tocando agora) para fazer a página parecer um espaço de trabalho vivido, não um render de marketing.

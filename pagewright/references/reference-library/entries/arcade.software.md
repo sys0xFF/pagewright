@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** clean-light
 - **style:** gradient, minimal, clean
-- **palette:** bg `#FFFFFF` · ink `#0A0F1C` · accent `#1E4FE0` — Primary CTA fill (Sign up for free), the hero's electric-blue gradient wash, the circular submit-arrow button, segmented toggle active state, and the underlined '30k companies' / link highlights.
-- **type:** display *Recoleta (or similar humanist slab/serif-ish geometric; soft-cornered display)* · body *Inter / neutral grotesque sans* — Rounded, friendly, confident headline voice paired with a clean utilitarian body — warm authority, not corporate-cold.
+- **palette:** bg `#FFFFFF` · ink `#0A0F1C` · accent `#1E4FE0` — Preenchimento do CTA principal (Sign up for free), o banho de gradiente azul-elétrico do hero, o botão circular de seta de envio, o estado ativo do toggle segmentado, e os destaques sublinhados de '30k companies' / links.
+- **type:** display *Recoleta (ou similar humanista slab/serif-ish geométrica; display de cantos suaves)* · body *Inter / grotesca neutra sans* — Voz de headline arredondada, amigável e confiante, combinada com um corpo limpo e utilitário — autoridade calorosa, não a frieza corporativa.
 - **sections:** hero › logos › feature-formats › feature-ai-brand › feature-speed › how-it-works › feature-gtm-roles › integrations › testimonials › cta › footer
-- **signature:** A working product input baked directly into the hero: a Demo/Video toggle above a 'https://yourwebsite.com' field with a glowing submit arrow — the page lets you try the product (paste a URL) before scrolling, turning the headline into an interactive demo rather than a button-to-signup.
-- **imagery:** Gradient-mesh as the hero's primary visual language: a soft white-to-electric-blue radial bloom that floods from the lower-left, framed inside a large rounded-rectangle 'card' that floats on white. No product screenshot up top — the gradient and the live input ARE the imagery. Logo wall renders partner brands in muted grayscale for calm credibility.
-- **copy:** Outcome-first, AI-as-shortcut voice with a confident two-line serif headline — 'Your product story, built by AI in minutes.' — followed by a triple-negation subhead ('No designers. No agencies. No waiting.') that names the pain by erasing it.
+- **signature:** Um input funcional do produto embutido diretamente no hero: um toggle Demo/Video acima de um campo 'https://yourwebsite.com' com uma seta de envio brilhante — a página deixa você experimentar o produto (colar uma URL) antes de rolar, transformando a headline em uma demo interativa em vez de um botão-para-cadastro.
+- **imagery:** Gradiente em malha como a linguagem visual principal do hero: um suave florescer radial de branco para azul-elétrico que inunda a partir do canto inferior esquerdo, emoldurado dentro de um grande 'card' retangular de cantos arredondados que flutua sobre o branco. Nenhum screenshot do produto no topo — o gradiente e o input ao vivo SÃO a imagem. O mural de logos renderiza as marcas parceiras em escala de cinza dessaturada para uma credibilidade tranquila.
+- **copy:** Voz que prioriza o resultado, com a IA-como-atalho, e uma headline serifada confiante de duas linhas — 'Your product story, built by AI in minutes.' — seguida de um subtítulo de tripla negação ('No designers. No agencies. No waiting.') que nomeia a dor ao apagá-la.
 
-**Takeaways (steal as ideas, don't copy):**
-- Make the hero playable: drop the product's real input (here a URL field + Demo/Video toggle) into the fold so visitors experience value before they scroll, not just read about it.
-- Contain the gradient. Instead of a full-bleed blue background, paint the radial mesh inside one giant rounded-corner card on white — the bezel keeps the saturated color feeling premium and modern rather than loud.
-- Use triple-negation rhythm for the subhead ('No designers. No agencies. No waiting.') to define the product by the friction it removes — punchier than listing features.
-- Organize the mid-page around personas as parallel H3s ('Arcade for marketing / sales / customer success / enablement / product') so each GTM buyer self-selects without separate pages.
+**Takeaways (roube como ideias, não copie):**
+- Torne o hero jogável: coloque o input real do produto (aqui um campo de URL + toggle Demo/Video) na primeira dobra para que os visitantes experimentem o valor antes de rolar, em vez de apenas ler sobre ele.
+- Contenha o gradiente. Em vez de um fundo azul de sangria completa, pinte a malha radial dentro de um único card gigante de cantos arredondados sobre o branco — a moldura mantém a cor saturada com uma sensação premium e moderna em vez de berrante.
+- Use o ritmo de tripla negação no subtítulo ('No designers. No agencies. No waiting.') para definir o produto pelo atrito que ele remove — mais impactante do que listar funcionalidades.
+- Organize o miolo da página em torno de personas como H3s paralelos ('Arcade for marketing / sales / customer success / enablement / product') para que cada comprador de GTM se autosselecione sem páginas separadas.

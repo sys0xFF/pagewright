@@ -5,15 +5,15 @@
 - **niche:** consumer
 - **mood:** premium-luxe
 - **style:** photographic, dark
-- **palette:** bg `#0B0E0E` · ink `#FFFFFF` · accent `#5E8E3E` — Restrained — only the Shopify bag logo mark is the signature green; CTAs and UI are monochrome (white pill on dark). Accent is brand-identity, not button-system.
-- **type:** display *Shopify Sans (custom grotesque, near-Helvetica/Inter)* · body *Shopify Sans* — Tall, tight, optically-large grotesque — confident, neutral, editorial; headlines set at near-poster scale with snug leading
+- **palette:** bg `#0B0E0E` · ink `#FFFFFF` · accent `#5E8E3E` — Contido — apenas o símbolo da sacola do logo da Shopify é o verde de assinatura; CTAs e UI são monocromáticos (pílula branca sobre escuro). O acento é identidade de marca, não sistema de botões.
+- **type:** display *Shopify Sans (grotesca custom, próxima de Helvetica/Inter)* · body *Shopify Sans* — Grotesca alta, justa, opticamente-grande — confiante, neutra, editorial; headlines compostas em escala quase de pôster com entrelinha apertada
 - **sections:** hero › feature-sell-everywhere › feature-brand-ai › feature-sidekick-ai › feature-why-build-here › cta-build-fast › feature-sell-more-places › feature-grow-global › feature-segments › feature-commerce-ai › feature-analytics › feature-apps-customize › feature-ai-core › feature-checkout › feature-performance › feature-support › footer
-- **signature:** The full-bleed cinematic hero photo is dimmed and graded into near-blackness so the white type sits ON the photograph rather than in a box — the image and the dark background are the same value, making the headline feel printed onto the scene instead of layered over it.
-- **imagery:** Documentary photography, not product screenshots: a real person (mother with a baby on her lap at a laptop) shot in warm, low-key natural light, heavily darkened toward the edges. Treatment is filmic — moody, intimate, candid-aspirational. Product UI is withheld from the fold entirely.
-- **copy:** Aspirational second-person identity statement, not a feature pitch — visible hero reads 'Be the next solo-preneur' (A/B variant 'Be the next AI all-star'); subhead 'Dream big and build fast on Shopify. The world's best commerce platform.' Voice: punchy, coined-word ('solo-preneur'), big-promise.
+- **signature:** A foto cinematográfica do hero em full-bleed é escurecida e graduada até quase a escuridão total para que o tipo branco fique SOBRE a fotografia em vez de numa caixa — a imagem e o fundo escuro têm o mesmo valor, fazendo a headline parecer impressa na cena em vez de sobreposta a ela.
+- **imagery:** Fotografia documental, não screenshots de produto: uma pessoa real (mãe com um bebê no colo diante de um laptop) fotografada em luz natural quente e low-key, fortemente escurecida nas bordas. O tratamento é fílmico — atmosférico, íntimo, candid-aspiracional. A UI do produto é totalmente omitida da dobra.
+- **copy:** Declaração aspiracional de identidade em segunda pessoa, não um pitch de feature — o hero visível diz 'Be the next solo-preneur' (variante A/B 'Be the next AI all-star'); subhead 'Dream big and build fast on Shopify. The world's best commerce platform.' Voz: contundente, com palavra cunhada ('solo-preneur'), grande promessa.
 
-**Takeaways (steal as ideas, don't copy):**
-- Flatten the hero: grade the background photo down to the same near-black value as the page so type sits directly on the image with no card or scrim box — image becomes the canvas, not a banner.
-- Use a two-tone section opener: lead a section with a bright-white sentence, then continue the SAME sentence in mid-gray ('Sell everywhere people shop. Online and in person.') so one giant paragraph self-emphasizes without bold or accent color.
-- Spend your brand color on exactly one element (the logo) and run every CTA in monochrome — proves premium restraint and makes the dark palette read as luxury, not default.
-- Sell the customer's future identity in the H1 ('Be the next ___') with a coined compound word, and demote all product/feature language to subhead and below-fold.
+**Takeaways (roube como ideias, não copie):**
+- Achate o hero: gradue a foto de fundo até o mesmo valor quase-preto da página para que o tipo fique diretamente sobre a imagem sem card ou caixa de scrim — a imagem vira a tela, não um banner.
+- Use uma abertura de seção em dois tons: comece uma seção com uma frase branco-brilhante, depois continue a MESMA frase em cinza-médio ('Sell everywhere people shop. Online and in person.') para que um parágrafo gigante se autoenfatize sem negrito ou cor de acento.
+- Gaste sua cor de marca em exatamente um elemento (o logo) e rode todo CTA em monocromático — prova contenção premium e faz a paleta escura ler como luxo, não como padrão.
+- Venda a identidade futura do cliente no H1 ('Be the next ___') com uma palavra composta cunhada, e rebaixe toda a linguagem de produto/feature para o subhead e abaixo da dobra.

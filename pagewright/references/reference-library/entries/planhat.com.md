@@ -5,15 +5,15 @@
 - **niche:** crm
 - **mood:** premium-luxe
 - **style:** dark, cinematic, photographic, editorial-minimal
-- **palette:** bg `#1a1308` · ink `#f4f1ea` · accent `#c8761f` — warm amber/sunset glow bleeding through the fluted-glass hero photo; the only saturated color on an otherwise near-black, monochrome page
-- **type:** display *large serif (transitional/Times-like, e.g. a refined editorial serif)* · body *neutral grotesque sans-serif* — literary and assured — a publishing-house serif headline paired with quiet sans body reads as institutional confidence, not startup hustle
+- **palette:** bg `#1a1308` · ink `#f4f1ea` · accent `#c8761f` — brilho âmbar/pôr-do-sol quente sangrando através da foto de vidro canelado do hero; a única cor saturada numa página de resto quase preta e monocromática
+- **type:** display *serifa grande (transicional/estilo Times, ex. uma serifa editorial refinada)* · body *sans-serif grotesca neutra* — literária e segura — uma headline serifada de editora combinada com um corpo sans discreto é lida como confiança institucional, não como correria de startup
 - **sections:** hero › problem › feature-platform › how-it-works › feature-services › feature-automation › feature-software › careers › feature-mcp-server › cta
-- **signature:** Trades the entire customer-success/CRM playbook (blue gradients, product dashboards, smiling avatars) for a cinematic sunset-through-fluted-glass photograph + a giant editorial serif headline — the page feels like a luxury brand campaign, not B2B software.
-- **imagery:** Atmospheric, abstract photography seen through textured/reeded glass: a warm natural scene (sun, water, foliage) diffused into vertical glass ribbons, heavily darkened. No product UI, no people, no icons in the hero — pure mood and texture.
-- **copy:** Calm, authoritative enterprise voice led by a serif promise — hero: "Deploy AI with confidence across the customer lifecycle"; eyebrow positions it as "The Agentic Customer Platform."
+- **signature:** Troca todo o manual de customer-success/CRM (gradientes azuis, dashboards de produto, avatares sorridentes) por uma fotografia cinematográfica de pôr-do-sol-através-de-vidro-canelado + uma headline editorial serifada gigante — a página parece a campanha de uma marca de luxo, não software B2B.
+- **imagery:** Fotografia atmosférica e abstrata vista através de vidro texturizado/canelado: uma cena natural quente (sol, água, folhagem) difundida em fitas verticais de vidro, fortemente escurecida. Sem UI de produto, sem pessoas, sem ícones no hero — puro clima e textura.
+- **copy:** Voz enterprise calma e autoritária, conduzida por uma promessa em serifa — hero: "Deploy AI with confidence across the customer lifecycle"; o eyebrow a posiciona como "The Agentic Customer Platform."
 
-**Takeaways (steal as ideas, don't copy):**
-- Use a single textured-glass/refraction photo as the hero so one warm light source becomes your entire color story against near-black.
-- Pair a large editorial serif headline with a quiet sans eyebrow and body to signal institutional weight instead of typical SaaS sans-everything.
-- Keep chrome to almost nothing — letter-spaced eyebrow, one serif h1, one line of body, a single pill CTA ('Request a Demo') — letting the image carry the page.
-- Let the accent be ambient (light leaking through the photo) rather than a button or badge, so the brand reads premium and restrained.
+**Takeaways (roube como ideias, não copie):**
+- Use uma única foto de vidro texturizado/refração como hero para que uma única fonte de luz quente se torne toda a sua narrativa de cor contra o quase-preto.
+- Combine uma grande headline editorial serifada com um eyebrow e corpo em sans discreto para sinalizar peso institucional, em vez do típico tudo-em-sans de SaaS.
+- Mantenha o chrome quase inexistente — eyebrow com letter-spacing, um h1 serifado, uma linha de corpo, um único CTA em pílula ('Request a Demo') — deixando a imagem carregar a página.
+- Deixe o acento ser ambiente (luz vazando através da foto) em vez de um botão ou selo, para que a marca seja lida como premium e contida.

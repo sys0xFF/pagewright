@@ -5,15 +5,15 @@
 - **niche:** fintech
 - **mood:** clean-light
 - **style:** minimal, photographic, editorial-minimal
-- **palette:** bg `#FFFFFF` · ink `#1A1A1A` · accent `#0F7A4D` — primary CTA buttons (filled green + green-outlined ghost), logo mark, play button, and inline links
-- **type:** display *Grotesque sans-serif (Aktiv/Founders-Grotesk style), tight-tracked, near-black weight at huge scale* · body *Same humanist grotesque, regular weight, generous size* — Warm-confident and human; oversized centered display feels editorial and reassuring rather than corporate-fintech-slick
+- **palette:** bg `#FFFFFF` · ink `#1A1A1A` · accent `#0F7A4D` — botões de CTA primário (verde preenchido + ghost com contorno verde), o logo, o botão de play e os links inline
+- **type:** display *Grotesca sem serifa (estilo Aktiv/Founders-Grotesk), tracking apertado, peso quase preto em escala enorme* · body *Mesma grotesca humanista, peso regular, tamanho generoso* — Calorosa, confiante e humana; o display centralizado em tamanho gigante soa editorial e tranquilizador, em vez do fintech corporativo e polido de praxe
 - **sections:** hero › logos › feature-financial-world › how-it-works › feature-system › testimonials › pricing › cta › faq › footer
-- **signature:** A full-bleed talking-head video of a real Guide (a person, not a dashboard) anchors the hero — fintech almost never leads with a human face over product UI; here the human IS the product, signaling 1-on-1 coaching over software.
-- **imagery:** Cinematic, warm-lit candid portrait video with a soft beige/skin-tone backdrop and an embossed "Watch how Fruitful works -1 min" pill overlay. People-first, documentary feel — no charts, app screens, or 3D abstractions in the hero.
-- **copy:** Reassuring, plain-spoken outcome promise that names the user's pain — hero: "Your money, finally figured out."
+- **signature:** Um vídeo full-bleed de um Guia real falando à câmera (uma pessoa, não um dashboard) ancora o hero — fintech quase nunca abre com um rosto humano sobre a UI do produto; aqui o humano É o produto, sinalizando coaching 1-a-1 acima de software.
+- **imagery:** Vídeo cinematográfico de retrato espontâneo, com luz quente, fundo bege/tom de pele suave e um selo em relevo "Watch how Fruitful works -1 min". Estética people-first, com toque documental — nenhum gráfico, tela de app ou abstração 3D no hero.
+- **copy:** Promessa de resultado tranquilizadora e direta, que nomeia a dor do usuário — hero: "Your money, finally figured out."
 
-**Takeaways (steal as ideas, don't copy):**
-- Lead with a human face on video instead of product UI when the differentiator is a person/service, not features — reframes the whole category
-- Pair a filled accent CTA with an accent-outlined ghost CTA (same green family) so both feel on-brand yet clearly primary/secondary
-- Set the display headline enormous and centered with tight tracking, then drop the supporting copy to calm body size — let scale alone carry the emotional weight
-- Use a 'final-state' verb framing ('finally figured out') to sell the after-feeling, not the mechanism
+**Takeaways (roube como ideias, não copie):**
+- Abra com um rosto humano em vídeo em vez da UI do produto quando o diferencial for uma pessoa/serviço, não as features — reenquadra a categoria inteira
+- Combine um CTA preenchido na cor de destaque com um CTA ghost de contorno na mesma família de verde, para que ambos pareçam da marca e ainda fiquem claramente primário/secundário
+- Coloque o headline display enorme e centralizado, com tracking apertado, e baixe a copy de apoio para um corpo calmo — deixe a escala sozinha carregar o peso emocional
+- Use um enquadramento de verbo de 'estado final' ('finally figured out') para vender a sensação posterior, não o mecanismo

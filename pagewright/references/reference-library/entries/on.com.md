@@ -5,15 +5,15 @@
 - **niche:** fitness
 - **mood:** bold-loud
 - **style:** photographic, full-bleed, athletic, editorial
-- **palette:** bg `#A8421C` · ink `#FFFFFF` · accent `#FF5436` — There is no graphic accent layer; the color comes entirely from the photo itself — the burnt clay-court orange floods the whole frame and the neon-coral tennis racquet is the single pop of saturated red against the athlete's purple-to-white kit.
-- **type:** display *neo-grotesque sans, tight and bold (Helvetica Now / On's custom grotesque)* · body *same grotesque family, regular* — Confident and clipped; type stays out of the photo's way and lets the moment carry the emotion.
+- **palette:** bg `#A8421C` · ink `#FFFFFF` · accent `#FF5436` — Não há camada de acento gráfico; a cor vem inteiramente da própria foto — o laranja-barro queimado do saibro inunda o quadro inteiro e a raquete de tênis coral-neon é o único estouro de vermelho saturado contra o kit roxo-para-branco do atleta.
+- **type:** display *sans neo-grotesca, apertada e bold (Helvetica Now / a grotesca custom da On)* · body *mesma família grotesca, regular* — Confiante e econômica; a tipografia sai do caminho da foto e deixa o momento carregar a emoção.
 - **sections:** hero › athlete-story › featured-product-grid › technology (CloudTec / cushioning) › activities › sustainability › cta › footer
-- **signature:** The fold is a single un-staged sports-photography frame — Flavio Cobolli mid fist-pump on a Roland-Garros clay court, shot full-bleed so the saturated orange clay becomes the entire background and palette. No product cut-out, no studio gradient, no marketing graphics; the headline 'Bravo, Flavio' sits tiny in the bottom-left like a caption, letting the athlete's raw celebration be the whole hero. It treats a moment of sport, not a shoe, as the selling argument.
-- **imagery:** Documentary action photography, full-bleed and color-graded warm — real match moment with motion in the kit and a slight in-frame energy. Zero illustration, zero 3D, no product hero shot above the fold; the shoes and apparel are present only because the athlete is wearing them.
-- **copy:** Warm, first-name and human — congratulatory rather than salesy. Visible headline 'Bravo, Flavio' with two pill buttons 'Shop tennis gear' and 'Read his story'.
+- **signature:** A dobra é um único quadro de fotografia esportiva não encenada — Flavio Cobolli no meio de uma comemoração de punho cerrado numa quadra de saibro de Roland-Garros, fotografado em full-bleed para que o laranja saturado do saibro se torne todo o fundo e a paleta. Sem recorte de produto, sem gradiente de estúdio, sem gráficos de marketing; a manchete 'Bravo, Flavio' fica minúscula no canto inferior esquerdo como uma legenda, deixando a comemoração crua do atleta ser todo o hero. Trata um momento do esporte, não um tênis, como o argumento de venda.
+- **imagery:** Fotografia de ação documental, full-bleed e graduada quente — momento real de partida com movimento no kit e uma leve energia dentro do quadro. Zero ilustração, zero 3D, nenhuma foto de produto como hero acima da dobra; os tênis e roupas estão presentes apenas porque o atleta os está usando.
+- **copy:** Quente, com o primeiro nome e humana — de congratulação em vez de venda. Manchete visível 'Bravo, Flavio' com dois botões em pílula 'Shop tennis gear' e 'Read his story'.
 
-**Takeaways (steal as ideas, don't copy):**
-- Let a single documentary action photo BE the palette — grade the whole hero to one dominant environmental color (clay orange) instead of layering brand graphics on top.
-- Caption-style headline: drop a tiny bottom-left title like a photo credit so the image, not the words, owns the fold.
-- Pair an emotional CTA ('Read his story') beside the commercial one ('Shop tennis gear') to sell the narrative before the product.
-- Make the product implicit — show it worn in a real moment rather than as a cut-out, so the gear inherits the athlete's credibility.
+**Takeaways (roube como ideias, não copie):**
+- Deixe uma única foto de ação documental SER a paleta — gradue o hero inteiro para uma cor ambiental dominante (laranja do saibro) em vez de sobrepor gráficos de marca por cima.
+- Manchete estilo legenda: solte um título minúsculo no canto inferior esquerdo como um crédito de foto para que a imagem, não as palavras, seja dona da dobra.
+- Combine um CTA emocional ('Read his story') ao lado do comercial ('Shop tennis gear') para vender a narrativa antes do produto.
+- Torne o produto implícito — mostre-o sendo usado num momento real em vez de como um recorte, para que o equipamento herde a credibilidade do atleta.

@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** technical-dark
 - **style:** dark, mono-type, bold-loud
-- **palette:** bg `#1A1A1D` · ink `#FFFFFF` · accent `#FFC93C` — hand-drawn scribble over the headline, primary CTA buttons, announcement banner, logo mark dots, and syntax highlighting in code blocks
-- **type:** display *High-contrast serif (Didone-style, e.g. GT Sectra / Tiempos-like)* · body *Neutral grotesque sans-serif (e.g. Inter / Source Sans), monospace for code* — Editorial gravitas (serif) deliberately collided with engineer-honest monospace and a handwritten marker scribble — academic authority meets hacker workbench
+- **palette:** bg `#1A1A1D` · ink `#FFFFFF` · accent `#FFC93C` — rabisco desenhado à mão sobre a headline, botões de CTA primário, banner de anúncio, pontos da marca no logo e realce de sintaxe nos blocos de código.
+- **type:** display *Serifa de alto contraste (estilo Didone, ex. GT Sectra / estilo Tiempos)* · body *Sem serifa grotesca neutra (ex. Inter / Source Sans), monoespaçada para código* — Gravidade editorial (serifa) deliberadamente colidida com monoespaçada honesta de engenheiro e um rabisco de marcador feito à mão — autoridade acadêmica encontra bancada de hacker.
 - **sections:** nav › announcement-banner › hero › feature-dual-code-demo › cta-pair
-- **signature:** The hero headline literally edits itself: "AI is hard to productionize" with "hard" struck through and a hand-drawn marker "easy" scrawled above it in accent yellow — a self-correcting sentence that turns the value prop into a visible gesture, breaking the polished gradient-deck convention of AI SaaS.
-- **imagery:** No photography or 3D. The "imagery" is functional product proof: two side-by-side terminal/IDE windows with macOS traffic-light dots and real, syntax-highlighted Python (import weave / import wandb). Diegetic interface chrome stands in for a hero illustration — code IS the visual.
-- **copy:** Confrontational problem-first headline that corrects itself in real time — real hero: "AI is hard [easy] to productionize", subtitled "The AI developer platform to build AI agents, applications, and models with confidence."
+- **signature:** A headline do hero literalmente se edita: "AI is hard to productionize" com "hard" riscado e um "easy" desenhado à mão com marcador rabiscado acima, em amarelo de acento — uma frase que se autocorrige e transforma a proposta de valor num gesto visível, quebrando a convenção do deck-de-gradiente polido do SaaS de IA.
+- **imagery:** Nenhuma fotografia ou 3D. A "imagem" é prova funcional do produto: duas janelas de terminal/IDE lado a lado com pontos de semáforo do macOS e Python real, com sintaxe realçada (import weave / import wandb). O cromo de interface diegético substitui uma ilustração de hero — o código É o visual.
+- **copy:** Headline confrontadora com o problema primeiro, que se corrige em tempo real — hero real: "AI is hard [easy] to productionize", com subtítulo "The AI developer platform to build AI agents, applications, and models with confidence."
 
-**Takeaways (steal as ideas, don't copy):**
-- Annotate your own headline: strike a word and overlay a hand-drawn correction in the accent color to dramatize a before/after promise without a single illustration.
-- Split the hero into two real code windows (one per product line) so prospects self-select by use case and see the API surface as proof in the first scroll.
-- Pair a high-contrast editorial serif display with monospace code and a marker scribble — three voices (authority, engineering, human) to escape flat sans uniformity.
-- Lean into near-black charcoal + a single warm marigold accent reserved only for CTAs and the one signature gesture, keeping the dark UI calm but pointed.
+**Takeaways (roube como ideias, não copie):**
+- Anote sua própria headline: risque uma palavra e sobreponha uma correção desenhada à mão na cor de acento para dramatizar uma promessa de antes/depois sem uma única ilustração.
+- Divida o hero em duas janelas de código reais (uma por linha de produto) para que os prospects se autosselecionem por caso de uso e vejam a superfície da API como prova logo no primeiro scroll.
+- Combine uma serifa editorial de display de alto contraste com código monoespaçado e um rabisco de marcador — três vozes (autoridade, engenharia, humano) para escapar da uniformidade chapada das sans.
+- Aposte no quase-preto carvão + um único acento âmbar-cravo reservado apenas para os CTAs e o único gesto assinatura, mantendo a UI escura calma mas pontual.

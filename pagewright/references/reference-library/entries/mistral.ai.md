@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** bold-loud
 - **style:** bold, colorful, mono-type
-- **palette:** bg `#FAFAF5` · ink `#0A0A0A` · accent `#FA5111` — full-bleed pixel-mosaic block of oranges/reds/crimson filling the lower hero; tiny brand mark; the 'Contact sales' button is inverted black
-- **type:** display *Grotesque sans (heavy, near-Helvetica/Neue Haas-style) set ultra-large* · body *Same grotesque family at regular weight; mono-style ALL-CAPS micro labels (FEATURED NEWS)* — Engineering-grade neutrality scaled to monumental size; the typeface stays plain so the SIZE and the color do all the shouting
+- **palette:** bg `#FAFAF5` · ink `#0A0A0A` · accent `#FA5111` — bloco de mosaico de pixels em página inteira de laranjas/vermelhos/carmesim preenchendo a parte inferior do hero; minúscula marca da marca; o botão 'Contact sales' é preto invertido
+- **type:** display *Grotesque sans (pesada, quase estilo Helvetica/Neue Haas) disposta ultragrande* · body *Mesma família grotesque em peso regular; micro-rótulos ALL-CAPS em estilo mono (FEATURED NEWS)* — Neutralidade de nível de engenharia escalada a tamanho monumental; a fonte permanece simples para que o TAMANHO e a cor façam todo o grito
 - **sections:** hero › feature-products › feature-solutions › problem-why › footer-legal
-- **signature:** The hero is split: huge calm black headline on near-white above, and a full-bleed flickering PIXEL-GRID MOSAIC of fire-tones (orange/red/crimson squares + tilted diamonds) below — an AI homepage that uses a retro low-res tapestry instead of the obligatory gradient orb, neural mesh, or 3D render.
-- **imagery:** No photography, no abstract 3D. A generative tile mosaic of saturated warm squares and rotated diamond accents reading like an 8-bit flag or thermal map; thin technical hairline guides/registration marks overlaid suggest a design-system blueprint. A small inset news card sits in a clean side rail.
-- **copy:** Declarative, sovereignty-flavored three-word punch — hero literally reads "Frontier AI. In your hands." with subhead "We help organizations build tailored AI systems to solve the world's hardest problems."
+- **signature:** O hero é dividido: enorme título preto calmo sobre quase-branco em cima, e um MOSAICO DE GRADE DE PIXELS tremeluzente em página inteira de tons de fogo (quadrados laranja/vermelho/carmesim + losangos inclinados) embaixo — uma homepage de IA que usa uma tapeçaria retrô de baixa resolução em vez do obrigatório orbe de gradiente, malha neural ou render 3D.
+- **imagery:** Sem fotografia, sem 3D abstrato. Um mosaico generativo de tiles de quadrados quentes e saturados e acentos de losangos rotacionados, lido como uma bandeira de 8 bits ou mapa térmico; finas guias técnicas de espessura mínima/marcas de registro sobrepostas sugerem um blueprint de design system. Um pequeno card de notícia em encaixe fica numa barra lateral limpa.
+- **copy:** Soco declarativo de três palavras com sabor de soberania — o hero diz literalmente "Frontier AI. In your hands." com o subtítulo "We help organizations build tailored AI systems to solve the world's hardest problems."
 
-**Takeaways (steal as ideas, don't copy):**
-- Split the hero into a quiet typographic top and a loud full-bleed generative-art bottom, so the color block carries the energy instead of the words.
-- Build brand imagery from your logo's DNA — Mistral's pixel-mosaic echoes its blocky tricolor mark, making the art feel inevitable rather than decorative.
-- Pair monumental neutral-grotesque headlines with tiny mono ALL-CAPS labels (FEATURED NEWS) for an engineering-document register.
-- Use an off-white #FAFAF5 paper ground + pure-black ink so a single fire-orange accent reads as maximally loud without a gradient.
+**Takeaways (roube como ideias, não copie):**
+- Divida o hero entre um topo tipográfico quieto e uma base ruidosa de arte generativa em página inteira, para que o bloco de cor carregue a energia em vez das palavras.
+- Construa a imagem da marca a partir do DNA do seu logo — o mosaico de pixels da Mistral ecoa sua marca tricolor em blocos, fazendo a arte parecer inevitável em vez de decorativa.
+- Combine títulos monumentais em grotesque neutra com minúsculos rótulos mono ALL-CAPS (FEATURED NEWS) para um registro de documento de engenharia.
+- Use um fundo de papel off-white #FAFAF5 + tinta preta pura, para que um único acento laranja-fogo seja lido como maximamente ruidoso sem um gradiente.

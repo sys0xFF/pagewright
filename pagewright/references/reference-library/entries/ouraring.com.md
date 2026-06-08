@@ -5,15 +5,15 @@
 - **niche:** health
 - **mood:** premium-luxe
 - **style:** photographic, editorial, minimal, product-hero
-- **palette:** bg `#D8D9D6` · ink `#3B3A36` · accent `#2F6BFF` — A cool blue used only on the small "Explore" pill CTA floating over the photo; everywhere else is warm greige and the metallic gold/black of the ring itself, so the single blue button is the only saturated mark on the page.
-- **type:** display *high-contrast editorial serif (Canela / GT Sectra feel) — "Subtle. Power." set huge with full stops as deliberate beats* · body *humanist sans (Brown / Akkurat-ish) for the subhead and nav* — Restrained, confident, jewelry-catalogue cadence; the serif does the talking, the sans gets out of the way.
+- **palette:** bg `#D8D9D6` · ink `#3B3A36` · accent `#2F6BFF` — Um azul frio usado apenas no pequeno CTA em pílula "Explore" flutuando sobre a foto; em todo o resto há um greige quente e o dourado/preto metálico do próprio anel, de modo que o único botão azul é a única marca saturada da página.
+- **type:** display *serifa editorial de alto contraste (vibe Canela / GT Sectra) — "Subtle. Power." em tamanho enorme com pontos finais como pausas deliberadas* · body *sans humanista (tipo Brown / Akkurat) para o subtítulo e a nav* — Contida, confiante, com a cadência de um catálogo de joias; a serifa fala, a sans sai do caminho.
 - **sections:** hero › value-props (sleep / readiness / activity) › ring-detail-and-materials › membership-app › science-and-accuracy › testimonials › comparison › cta › footer
-- **signature:** The hero is a macro product still-life shot, not a render: the gold-and-black Oura ring sits balanced on rough black volcanic rock, and a real ladybug is perched climbing the rim — a tiny living thing scaled against the ring to dramatize "the world's smallest smart ring." That single insect does all the storytelling about size and delicacy without a callout or a spec.
-- **imagery:** Editorial macro photography on a soft greige seamless backdrop. Shallow depth of field, natural soft light, real textures (matte volcanic stone, polished metal, the ladybug's gloss). Zero UI, zero 3D, zero illustration — the object is treated like a luxury watch in a magazine.
-- **copy:** Sparse, declarative, luxury-goods voice. Eyebrow "Oura Ring 5" (with a small circled "5"), headline "Subtle. Power." (two one-word sentences), subhead "The world's smallest smart ring is here." A promo bar up top reads "Free trial offer at checkout: Natural Cycles non-hormonal birth control."
+- **signature:** O hero é uma foto macro de natureza-morta do produto, não um render: o anel Oura dourado-e-preto está equilibrado sobre uma rocha vulcânica preta e áspera, e uma joaninha real está empoleirada escalando a borda — um pequeno ser vivo em escala contra o anel para dramatizar "o menor anel inteligente do mundo". Esse único inseto faz toda a narrativa sobre tamanho e delicadeza sem um callout ou uma especificação.
+- **imagery:** Fotografia macro editorial sobre um fundo greige suave e contínuo. Profundidade de campo rasa, luz natural suave, texturas reais (pedra vulcânica fosca, metal polido, o brilho da joaninha). Zero UI, zero 3D, zero ilustração — o objeto é tratado como um relógio de luxo numa revista.
+- **copy:** Esparsa, declarativa, voz de artigo de luxo. Eyebrow "Oura Ring 5" (com um pequeno "5" circulado), manchete "Subtle. Power." (duas frases de uma palavra), subtítulo "The world's smallest smart ring is here." Uma barra de promoção no topo diz "Free trial offer at checkout: Natural Cycles non-hormonal birth control."
 
-**Takeaways (steal as ideas, don't copy):**
-- Prove a product claim ("smallest") with scale-against-life — put a real small living thing next to the object instead of writing dimensions.
-- Punctuate a two-word headline into two full sentences ("Subtle. Power.") so each word lands as its own beat.
-- Keep the entire frame desaturated greige + metal and reserve one saturated blue only for the lone CTA pill, so the eye goes straight to the action.
-- Shoot the product as luxury still-life on textured natural material (volcanic rock) to push a tech device into jewelry territory.
+**Takeaways (roube como ideias, não copie):**
+- Prove uma afirmação sobre o produto ("o menor") com escala-contra-vida — coloque um pequeno ser vivo real ao lado do objeto em vez de escrever dimensões.
+- Pontue uma manchete de duas palavras em duas frases completas ("Subtle. Power.") para que cada palavra caia como sua própria batida.
+- Mantenha o quadro inteiro em greige dessaturado + metal e reserve um único azul saturado apenas para a pílula de CTA solitária, para que o olho vá direto à ação.
+- Fotografe o produto como natureza-morta de luxo sobre material natural texturizado (rocha vulcânica) para empurrar um dispositivo de tech para o território das joias.

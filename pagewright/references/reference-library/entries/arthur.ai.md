@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** bold-loud
 - **style:** illustrated, colorful, dark
-- **palette:** bg `#2B0A2E` · ink `#FFFFFF` · accent `#7FE03A` — hero illustration machine, the dark green 'Get started' button pill, and the triangular logo mark
-- **type:** display *Grotesque sans (Helvetica/Arial-style neo-grotesque, heavy weight)* · body *Same grotesque sans, regular weight* — Plainspoken industrial confidence — no serifs, no flourish, tight headline that lets the illustration carry the personality
+- **palette:** bg `#2B0A2E` · ink `#FFFFFF` · accent `#7FE03A` — a máquina da ilustração do hero, a pílula verde-escura do botão 'Get started', e o símbolo triangular do logo
+- **type:** display *Grotesca sans (neo-grotesca estilo Helvetica/Arial, peso pesado)* · body *A mesma grotesca sans, peso regular* — Confiança industrial e direta — sem serifas, sem floreios, uma headline apertada que deixa a ilustração carregar a personalidade
 - **sections:** banner › hero › feature-lifecycle-platform › feature-evaluate-performance › feature-agent-discovery-governance › feature-guardrails › feature-model-support › feature-deployment › feature-engine-toolkit › logos › problem-stat › blog › studio › values-cta › footer
-- **signature:** A hand-drawn, comic-book-style illustration of a giant lime-and-purple industrial machine being operated by a crowd of diverse people — replacing the abstract gradient/3D-render cliche that nearly every AI governance startup defaults to. The page treats AI as a literal, tangible factory machine.
-- **imagery:** Editorial vector illustration with visible ink outlines, flat fills, cartoon clouds and smokestacks. A single large hero scene (people + machine on a pastel-blue ground against a deep aubergine sky) does the heavy lifting; tech is anthropomorphized as physical infrastructure rather than shown as UI screenshots.
-- **copy:** Blunt imperative fragments with hard periods for rhythm; confident and outcome-led. Hero: "Ship Reliable AI Agents. Fast."
+- **signature:** Uma ilustração desenhada à mão, no estilo de história em quadrinhos, de uma máquina industrial gigante em lima e roxo sendo operada por uma multidão de pessoas diversas — substituindo o clichê do gradiente abstrato / render 3D que quase toda startup de governança de IA adota por padrão. A página trata a IA como uma máquina de fábrica literal e tangível.
+- **imagery:** Ilustração vetorial editorial com contornos de tinta visíveis, preenchimentos chapados, nuvens e chaminés de desenho animado. Uma única grande cena do hero (pessoas + máquina sobre um chão azul-pastel contra um céu berinjela profundo) faz o trabalho pesado; a tecnologia é antropomorfizada como infraestrutura física em vez de ser mostrada como screenshots de UI.
+- **copy:** Fragmentos imperativos diretos com pontos finais marcantes para criar ritmo; confiante e orientado a resultado. Hero: "Ship Reliable AI Agents. Fast."
 
-**Takeaways (steal as ideas, don't copy):**
-- Punctuate a short headline as staccato fragments ('Ship Reliable AI Agents. Fast.') so each word lands like a separate promise.
-- Anthropomorphize the abstract product as a literal machine + human crowd illustration to dodge the AI-gradient sameness and signal 'people stay in control'.
-- Pair a near-black aubergine sky with a single high-voltage lime accent so the illustration glows without a busy palette.
-- Lead a problem section with a concrete, contrarian stat ('Only 25% of AI projects return investment.') to justify the whole product.
+**Takeaways (roube como ideias, não copie):**
+- Pontue uma headline curta como fragmentos em staccato ('Ship Reliable AI Agents. Fast.') para que cada palavra aterrisse como uma promessa separada.
+- Antropomorfize o produto abstrato como uma ilustração literal de máquina + multidão humana para escapar da mesmice do gradiente-de-IA e sinalizar 'as pessoas seguem no controle'.
+- Combine um céu berinjela quase preto com um único acento lima de alta-voltagem para que a ilustração brilhe sem uma paleta atravancada.
+- Inicie uma seção de problema com uma estatística concreta e contrária ('Only 25% of AI projects return investment.') para justificar o produto inteiro.

@@ -5,15 +5,15 @@
 - **niche:** recruiting / job-search platform (tech hiring)
 - **mood:** clean-light
 - **style:** minimal, gradient, mono-type
-- **palette:** bg `#F2F6FB` · ink `#13294B` · accent `#3E7BFA` — logo wordmark, nav 'Get started' CTA pill (blue gradient), 'For finding work' label, search-bar focus, active 'Tech' chip outline
-- **type:** display *Geometric grotesque / heavy rounded sans (Gilroy or Poppins ExtraBold lineage)* · body *Humanist sans (same family lighter weight, ~Poppins/Inter)* — Friendly-confident: oversized ultra-bold lowercase headline reads warm and human rather than corporate; tight optical sizing makes the two-line hero the whole stage
+- **palette:** bg `#F2F6FB` · ink `#13294B` · accent `#3E7BFA` — logotipo, CTA em pílula 'Get started' na nav (gradiente azul), rótulo 'For finding work', foco da barra de busca, contorno do chip ativo 'Tech'
+- **type:** display *Geometric grotesque / heavy rounded sans (linhagem Gilroy ou Poppins ExtraBold)* · body *Humanist sans (mesma família em peso mais leve, ~Poppins/Inter)* — Amigável e confiante: o título minúsculo ultra-bold em tamanho descomunal soa caloroso e humano em vez de corporativo; o ajuste óptico apertado faz da hero de duas linhas o palco inteiro
 - **sections:** nav › hero › mode-toggle › hero-search › category-filter-chips
-- **signature:** A binary segmented toggle ('For finding work / For hiring') planted directly above the headline turns the homepage into a two-audience switch instead of forcing a niche or a split landing page — the hero literally rewrites itself for seeker vs employer.
-- **imagery:** Near-imageless. No people, no product mockups. The visual language is a soft cool-blue radial gradient wash behind type, plus a tactile floating search field and a horizontally-scrolling row of icon+label filter chips. A rounded-top white 'panel' rises from the bottom suggesting an app surface peeking up.
-- **copy:** Plainspoken, human-first promise over jargon — hero: 'Match with people hiring', subhead 'The #1 AI-Powered Job Search Platform for people in tech'.
+- **signature:** Um toggle binário segmentado ('For finding work / For hiring') plantado bem acima do título transforma a homepage num seletor de duas audiências, em vez de forçar um nicho ou uma landing page dividida — a hero literalmente se reescreve para candidato vs. empregador.
+- **imagery:** Quase sem imagens. Nenhuma pessoa, nenhum mockup de produto. A linguagem visual é uma suave lavagem de gradiente radial azul-frio atrás do tipo, mais um campo de busca tátil flutuante e uma fileira de chips de filtro (ícone+rótulo) com rolagem horizontal. Um 'painel' branco com topo arredondado sobe do rodapé, sugerindo uma superfície de app espiando para cima.
+- **copy:** Promessa direta e centrada no humano em vez de jargão — hero: 'Match with people hiring', subhead 'The #1 AI-Powered Job Search Platform for people in tech'.
 
-**Takeaways (steal as ideas, don't copy):**
-- Lead with a search box, not a 'Sign up' wall — a live count ('Search 13,560 positions') plus a Ctrl+K hint frames the whole product as a fast tool and proves marketplace liquidity instantly.
-- Use a single audience toggle above the fold to serve two opposite users from one hero instead of building separate landing pages.
-- Let one giant ultra-bold lowercase headline carry the entire viewport — no imagery needed when the type is the hero.
-- Turn taxonomy into a scannable, scrollable chip rail (Tech, Start-ups, Remote-first, AI-Powered) with tiny icons to telegraph breadth and invite exploration right under the fold.
+**Takeaways (roube como ideias, não copie):**
+- Comece com uma caixa de busca, não um muro de 'Sign up' — uma contagem ao vivo ('Search 13,560 positions') mais uma dica de Ctrl+K enquadra todo o produto como uma ferramenta rápida e prova instantaneamente a liquidez do marketplace.
+- Use um único toggle de audiência acima da dobra para servir dois usuários opostos a partir de uma só hero, em vez de construir landing pages separadas.
+- Deixe um único título gigante ultra-bold minúsculo carregar a viewport inteira — nenhuma imagem é necessária quando o tipo é a hero.
+- Transforme a taxonomia numa trilha de chips escaneável e rolável (Tech, Start-ups, Remote-first, AI-Powered) com ícones minúsculos para telegrafar amplitude e convidar à exploração logo abaixo da dobra.

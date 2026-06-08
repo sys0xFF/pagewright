@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** editorial-minimal
 - **style:** editorial, mono-type, minimal
-- **palette:** bg `#F0EEE6` · ink `#181818` · accent `#141414` — near-black is the only 'accent' — used in the solid Try Claude pill button, the dark Project Glasswing card, and hand-drawn underlines beneath the words research and products in the hero
-- **type:** display *Heavy geometric/grotesk sans for the H1 (chunky, tight-set, near-black weight)* · body *Transitional old-style serif for sub-copy and card titles (Project Glasswing set in a high-contrast serif)* — An intentional grotesk-sans + book-serif clash: industrial confidence in the headline, humanist literary warmth in the prose — feels like a research journal, not a product page
+- **palette:** bg `#F0EEE6` · ink `#181818` · accent `#141414` — o quase-preto é o único 'destaque' — usado no botão sólido em pílula Try Claude, no card escuro Project Glasswing e nos sublinhados desenhados à mão sob as palavras research e products no hero
+- **type:** display *Sans geométrica/grotesca pesada para o H1 (encorpada, composta justa, peso quase preto)* · body *Serif old-style transitional para o sub-texto e títulos de card (Project Glasswing composto num serif de alto contraste)* — Um choque intencional de grotesca-sans + serif de livro: confiança industrial no headline, calor literário humanista na prosa — parece um periódico de pesquisa, não uma página de produto
 - **sections:** hero › feature-spotlight › feature-latest-releases › mission-statement › footer
-- **signature:** Refusing the AI-lab dark/neon trope entirely: a warm paper-cream canvas with a serif body voice and a wordmark that swaps the I for a backslash (ANTHROP\C), reading like an academic press imprint rather than a Silicon Valley AI company
-- **imagery:** Almost no photography or product UI above the fold. The single hero visual is a dark card carrying a generative, organic Voronoi/cellular mesh — hand-of-the-machine line work over a dithered texture — signaling 'frontier science' without literal robots or glowing orbs
-- **copy:** Mission-first, plainspoken-but-weighty: leads with values over features. Hero: "AI research and products that put safety at the frontier" (research and products underlined for emphasis)
+- **signature:** Recusando inteiramente o clichê dark/neon de laboratório de IA: uma tela cor de papel-creme quente com uma voz de body em serif e um wordmark que troca o I por uma barra invertida (ANTHROP\C), lendo-se como o selo de uma editora acadêmica em vez de uma empresa de IA do Vale do Silício
+- **imagery:** Quase nenhuma fotografia ou UI de produto acima da dobra. O único visual do hero é um card escuro carregando uma malha Voronoi/celular generativa e orgânica — traço com a-mão-da-máquina sobre uma textura ditherizada — sinalizando 'ciência de fronteira' sem robôs literais ou orbes brilhantes
+- **copy:** Missão-primeiro, em linguagem direta-mas-peso: começa com valores acima de features. Hero: "AI research and products that put safety at the frontier" (research e products sublinhados para ênfase)
 
-**Takeaways (steal as ideas, don't copy):**
-- Pair a heavy grotesk display headline with an old-style serif body to read as 'institution' instead of 'startup' — the tension is the brand
-- Use a warm paper-cream (#F0EEE6) instead of white or dark to set a calm, editorial, trustworthy tone in a niche that defaults to black/neon
-- Make near-black your only accent: a solid pill CTA, one dark feature card, and hand-drawn underlines carry all the emphasis with zero color
-- Replace the obligatory hero screenshot with one abstract generative texture (organic mesh) that signals research depth rather than showing the product
+**Takeaways (roube como ideias, não copie):**
+- Pareie um headline display em grotesca pesada com um body em serif old-style para ler como 'instituição' em vez de 'startup' — a tensão é a marca
+- Use um papel-creme quente (#F0EEE6) em vez de branco ou escuro para definir um tom calmo, editorial e confiável numa categoria que recorre por padrão a preto/neon
+- Faça do quase-preto seu único destaque: um CTA sólido em pílula, um card de feature escuro e sublinhados desenhados à mão carregam toda a ênfase com zero cor
+- Substitua o obrigatório screenshot de hero por uma única textura generativa abstrata (malha orgânica) que sinaliza profundidade de pesquisa em vez de mostrar o produto

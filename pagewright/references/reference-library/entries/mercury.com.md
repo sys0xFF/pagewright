@@ -5,15 +5,15 @@
 - **niche:** fintech
 - **mood:** premium-luxe
 - **style:** photographic, cinematic, minimal, gradient
-- **palette:** bg `#D9C4B8` · ink `#FFFFFF` · accent `#5B6CFF` — Open account CTA pills (header + hero form button) and the 'Open account' primary button; the only saturated color in an otherwise muted, naturalistic scene
-- **type:** display *Söhne / grotesk-style sans (large, tight, low-contrast)* · body *Same humanist grotesk at lighter weight* — Calm, confident, understated-modern; no decorative serifs, no flourish — the restraint is the statement
+- **palette:** bg `#D9C4B8` · ink `#FFFFFF` · accent `#5B6CFF` — pílulas de CTA "Open account" (cabeçalho + botão do formulário do hero) e o botão principal 'Open account'; a única cor saturada numa cena de resto contida e naturalista
+- **type:** display *sans estilo Söhne / grotesk (grande, apertada, de baixo contraste)* · body *Mesma grotesque humanista em peso mais leve* — Calma, confiante, moderna-discreta; sem serifas decorativas, sem firula — a contenção é a declaração
 - **sections:** hero › logos › problem › feature-revenue-proof › feature-funding-proof › feature-award-proof › how-it-works › feature-business › feature-personal › cta › footer
-- **signature:** A full-bleed cinematic landscape photo — a misty forest valley at golden hour with a single office desk, chair and laptop planted on a grassy ridge — replaces the dashboard-screenshot hero that every fintech defaults to. Banking is sold as serenity and vista, not numbers and UI.
-- **imagery:** One hero-dominating photoreal scene: soft atmospheric haze, layered ridgelines, warm dusty-rose-to-sage gradient sky. A surreal product placement (the lone desk in the wild) carries the brand metaphor instead of any screenshot. UI is conspicuously absent above the fold.
-- **copy:** Bold, plainspoken claim that picks a fight with the category — hero: "Radically different banking" / sub: "Apply online in 10 minutes to experience banking unlike anything that's come before."
+- **signature:** Uma foto de paisagem cinematográfica em página inteira — um vale de floresta enevoado na golden hour com uma única mesa de escritório, cadeira e laptop plantados num cume gramado — substitui o hero de screenshot-de-dashboard que toda fintech adota por padrão. Banco é vendido como serenidade e vista, não como números e UI.
+- **imagery:** Uma única cena fotorrealista dominando o hero: névoa atmosférica suave, cristas de montanha em camadas, céu em gradiente quente de rosa-empoeirado para sálvia. Um posicionamento de produto surreal (a mesa solitária no meio do mato) carrega a metáfora da marca em vez de qualquer screenshot. A UI está visivelmente ausente acima da dobra.
+- **copy:** Afirmação ousada e de fala simples que compra briga com a categoria — hero: "Radically different banking" / sub: "Apply online in 10 minutes to experience banking unlike anything that's come before."
 
-**Takeaways (steal as ideas, don't copy):**
-- Lead with an emotional, photographic vista instead of a product dashboard — let one cinematic image carry the entire mood and reserve the UI for lower sections.
-- Constrain saturation to a single periwinkle accent so the only blue on the page is the CTA — the eye goes straight to 'Open account.'
-- Embed the email-capture field directly in the hero as a pill (input + accent button) so the primary conversion action lives above the fold, no scrolling.
-- Sequence social proof as standalone H2 headlines ('$650M in annual revenue', 'Series C', 'Most Innovative') turning credibility into a narrative spine rather than a logo strip.
+**Takeaways (roube como ideias, não copie):**
+- Comece com uma vista fotográfica e emocional em vez de um dashboard de produto — deixe uma única imagem cinematográfica carregar todo o clima e reserve a UI para as seções mais abaixo.
+- Restrinja a saturação a um único acento periwinkle, para que o único azul da página seja o CTA — o olho vai direto para 'Open account.'
+- Embuta o campo de captura de e-mail diretamente no hero como uma pílula (input + botão de acento), para que a ação principal de conversão viva acima da dobra, sem rolagem.
+- Sequencie a prova social como manchetes H2 autônomas ('$650M in annual revenue', 'Series C', 'Most Innovative'), transformando a credibilidade em uma espinha narrativa em vez de uma faixa de logos.

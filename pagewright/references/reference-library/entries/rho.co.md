@@ -5,15 +5,15 @@
 - **niche:** fintech
 - **mood:** clean-light
 - **style:** minimal, mono-type, photographic
-- **palette:** bg `#FFFFFF` · ink `#1A1A1A` · accent `#19E69C` — primary CTA button (Open Account / Submit), the NEW announcement pill background tint, and small product-UI highlights
-- **type:** display *Reckless / high-contrast serif-grotesque (transitional display)* · body *Neue-grotesque sans (Aktiv/Helvetica-class)* — Confident and editorial — the oversized low-contrast display headline reads more like a magazine cover than a banking app, lending grown-up gravitas without stuffiness
+- **palette:** bg `#FFFFFF` · ink `#1A1A1A` · accent `#19E69C` — botão CTA primário (Open Account / Submit), o tom de fundo do pill de anúncio NEW e pequenos destaques na UI do produto
+- **type:** display *Reckless / serifada-grotesca de alto contraste (display transicional)* · body *Sans neue-grotesque (classe Aktiv/Helvetica)* — Confiante e editorial — o título display superdimensionado de baixo contraste lê-se mais como uma capa de revista do que um app bancário, conferindo gravidade adulta sem ser empolado
 - **sections:** hero › logos › feature-why-teams-choose › feature-one-platform › how-it-works-up-and-running › feature-intelligent-finance › testimonials › cta › footer
-- **signature:** The hero leads with a massive, centered, near-poster-scale wordmark-style headline (display type spanning the full column at ~130px) on a stark white field — banking sites almost always open on a dashboard screenshot or dense value-prop grid; Rho instead treats the headline itself as the hero image and lets whitespace do the selling.
-- **imagery:** Real product-UI screenshots of the Rho dashboard, slightly angled/cropped and bleeding off the bottom edge of the viewport so the interface reads as a peek rather than a flat hero shot. Paired with a wall of round-avatar founder testimonials (real headshots) and grayscale customer logos (Perplexity, Product Hunt, Dune, Spark). Treatment is light, airy, product-forward — UI in real color against white, logos desaturated.
-- **copy:** Aspirational outgrow-proof promise in plain confident prose — hero: "The financial platform you'll never outgrow." with subhead reframing breadth as simplicity ("easy to start and powerful to scale").
+- **signature:** A hero abre com um título massivo, centralizado, em escala quase de pôster no estilo wordmark (tipografia display ocupando toda a coluna a ~130px) sobre um campo branco austero — sites bancários quase sempre abrem com um screenshot de dashboard ou uma grade densa de proposta de valor; a Rho, em vez disso, trata o próprio título como a imagem da hero e deixa o espaço em branco fazer a venda.
+- **imagery:** Screenshots reais da UI do produto do dashboard da Rho, levemente angulados/cortados e sangrando pela borda inferior da viewport para que a interface seja lida como uma espiada em vez de uma foto plana de hero. Combinados com um muro de depoimentos de fundadores em avatares redondos (headshots reais) e logos de clientes em escala de cinza (Perplexity, Product Hunt, Dune, Spark). O tratamento é leve, arejado, focado no produto — UI em cor real contra o branco, logos dessaturados.
+- **copy:** Promessa aspiracional à prova de superação em prosa simples e confiante — hero: "The financial platform you'll never outgrow." com subtítulo ressignificando a abrangência como simplicidade ("easy to start and powerful to scale").
 
-**Takeaways (steal as ideas, don't copy):**
-- Make the headline the hero: set display type at poster scale (~120-130px), centered on white, and skip the obligatory dashboard screenshot above the fold — let typography carry the brand.
-- Single high-saturation accent (mint #19E69C) used with extreme restraint — only the CTA and one announcement pill — so the green reads as 'the action color' against an otherwise grayscale page.
-- Pair the email-capture field directly with a softer secondary link ('Request Demo') and a compliance microcopy line right beneath, converting both PLG self-serve and sales-led buyers in one block.
-- Anchor a banking product in human trust by carpeting the lower page with real founder headshots + named testimonials instead of abstract feature icons.
+**Takeaways (roube como ideias, não copie):**
+- Faça do título a hero: defina a tipografia display em escala de pôster (~120-130px), centralizada no branco, e pule o screenshot de dashboard obrigatório acima do fold — deixe a tipografia carregar a marca.
+- Um único acento de alta saturação (mint #19E69C) usado com contenção extrema — apenas o CTA e um pill de anúncio — para que o verde seja lido como 'a cor da ação' contra uma página que de resto é escala de cinza.
+- Combine o campo de captura de e-mail diretamente com um link secundário mais suave ('Request Demo') e uma linha de microcopy de compliance logo abaixo, convertendo tanto compradores PLG self-serve quanto guiados por vendas num só bloco.
+- Ancore um produto bancário na confiança humana cobrindo a parte inferior da página com headshots reais de fundadores + depoimentos nomeados em vez de ícones abstratos de feature.

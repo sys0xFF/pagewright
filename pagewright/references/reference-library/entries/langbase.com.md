@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** technical-dark
 - **style:** dark, gradient, mono-type
-- **palette:** bg `#000000` · ink `#FFFFFF` · accent `#E08A4A` — grainy sunset gradient blocks (amber/orange/violet/pink) tiled into the hero grid on the right; otherwise the UI is strictly black-and-white
-- **type:** display *Geometric grotesque sans (rounded-terminal, Circular/Aeonik-like) for the oversized hero headline* · body *Same humanist grotesque at smaller weight for subhead and body; monospace for the // section labels* — Confident, engineered, developer-native — soft rounded letterforms keep the all-black canvas from feeling cold
+- **palette:** bg `#000000` · ink `#FFFFFF` · accent `#E08A4A` — blocos de gradiente granulado de pôr do sol (âmbar/laranja/violeta/rosa) ladrilhados na grade do hero à direita; no resto, a UI é estritamente preto-e-branco
+- **type:** display *Sans grotesca geométrica (terminal arredondado, no estilo Circular/Aeonik) para a headline gigante do hero* · body *A mesma grotesca humanista em peso menor para subtítulo e corpo; monospace para os labels de seção //* — Confiante, engenhada, nativa para desenvolvedores — formas de letra suaves e arredondadas impedem que o canvas todo preto pareça frio
 - **sections:** hero › logos › feature-command › feature-memory › feature-agents › feature-workflows › feature-ops-evals › community › cta › footer
-- **signature:** The hero lives inside a literal blueprint/CAD canvas — a faint dashed selection box with square corner handles frames the whole viewport, and grainy sunset-gradient swatches are dropped into grid cells like color samples on a design tool artboard. It treats the landing page as a developer's workspace, not a marketing poster.
-- **imagery:** No product screenshots or 3D in the hero. Instead: abstract grainy duotone gradient rectangles (sunset amber-to-violet, film-grain texture) tiled into an invisible blueprint grid. Mono-color partner logos sit in a bordered grid of cells. The visual language is "design-tool canvas" — selection handles, grid lines, swatch blocks.
-- **copy:** Terse engineer-poetry: a category claim, not a feature list — hero reads "AI Cloud in one line of code." with subhead "The most powerful serverless platform for building AI agents. Build. Deploy. Scale."
+- **signature:** O hero vive dentro de um canvas literal de blueprint/CAD — uma caixa de seleção tracejada sutil com alças quadradas de canto emoldura todo o viewport, e swatches de gradiente granulado de pôr do sol são soltos em células da grade como amostras de cor numa prancheta de ferramenta de design. Trata a landing page como o espaço de trabalho de um desenvolvedor, não como um pôster de marketing.
+- **imagery:** Sem screenshots de produto ou 3D no hero. Em vez disso: retângulos de gradiente duotone abstratos e granulados (pôr do sol âmbar-a-violeta, textura de grão de filme) ladrilhados numa grade de blueprint invisível. Logos de parceiros monocromáticos ficam numa grade de células com bordas. A linguagem visual é "canvas de ferramenta de design" — alças de seleção, linhas de grade, blocos de swatch.
+- **copy:** Poesia-de-engenheiro concisa: uma afirmação de categoria, não uma lista de features — o hero diz "AI Cloud in one line of code." com subtítulo "The most powerful serverless platform for building AI agents. Build. Deploy. Scale."
 
-**Takeaways (steal as ideas, don't copy):**
-- Label every section with a monospace code-comment header (// memory, // agents, // workflows) so the page reads like an annotated source file — instant developer credibility.
-- Confine all color to grainy gradient swatches dropped into an otherwise pure black-and-white grid; the restraint makes the sunset pops feel like deliberate samples, not decoration.
-- Frame the hero in a CAD-style dashed selection box with corner handles to signal 'this is a builder's tool,' turning the whole viewport into an artboard.
-- Lead with a one-line category claim ('AI Cloud in one line of code') plus a punchy three-verb promise (Build. Deploy. Scale.) instead of a feature dump.
+**Takeaways (roube como ideias, não copie):**
+- Rotule cada seção com um cabeçalho monospace em estilo comentário de código (// memory, // agents, // workflows) para que a página se leia como um arquivo-fonte anotado — credibilidade instantânea junto a desenvolvedores.
+- Confine toda a cor a swatches de gradiente granulado soltos numa grade que de resto é puro preto-e-branco; a contenção faz os estouros de pôr do sol parecerem amostras deliberadas, não decoração.
+- Emoldure o hero numa caixa de seleção tracejada estilo CAD com alças de canto para sinalizar 'esta é a ferramenta de um construtor', transformando todo o viewport numa prancheta.
+- Abra com uma afirmação de categoria de uma linha ('AI Cloud in one line of code') mais uma promessa enérgica de três verbos (Build. Deploy. Scale.) em vez de um despejo de features.

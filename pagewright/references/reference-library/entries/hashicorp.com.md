@@ -5,15 +5,15 @@
 - **niche:** devops
 - **mood:** technical-dark
 - **style:** dark, gradient, minimal, cinematic
-- **palette:** bg `#1B0E3D` · ink `#FFFFFF` · accent `#C9A8FF` — diagonal light-leak/prism streak across the hero, the announcement pill border, and the soft pink-violet glow bleeding from the top-right corner
-- **type:** display *serif (high-contrast transitional, e.g. a Tiempos/Times-like face)* · body *humanist sans-serif (geometric-leaning, e.g. an Inter/HashiCorp-system sans)* — an old-world serif headline against clean infra-sans body — gravitas meets engineering precision
+- **palette:** bg `#1B0E3D` · ink `#FFFFFF` · accent `#C9A8FF` — um vazamento de luz/listra de prisma diagonal atravessando o hero, a borda da pílula de anúncio e o brilho suave rosa-violeta sangrando a partir do canto superior direito
+- **type:** display *serifa (transicional de alto contraste, ex. uma fonte tipo Tiempos/Times)* · body *sans-serif humanista (com pendor geométrico, ex. uma sans Inter/sistema-HashiCorp)* — um título com serifa do velho mundo contra um corpo de texto infra-sans limpo — gravidade encontra precisão de engenharia
 - **sections:** nav › hero › logos
-- **signature:** A giant editorial SERIF headline ('Do cloud right') in a category where every competitor defaults to bold geometric sans — pairing literary gravitas with a dark prism-lit infrastructure backdrop instead of the usual diagram screenshot.
-- **imagery:** No product screenshots or 3D diagrams above the fold. The hero is pure atmosphere: a deep indigo-to-black field cut by a single razor-sharp diagonal light beam and a soft pink/violet prism bloom in the top corner — abstract 'computational light' rather than literal infrastructure. Customer logos rendered in flat monochrome grey for restraint.
-- **copy:** Confident three-word imperative as hero ('Do cloud right'), backed by a precise enterprise subhead — declarative, authoritative, zero hype. Announcement pill ('Agentic runtime security, explained') ties the brand to the AI moment.
+- **signature:** Um gigantesco título editorial com SERIFA ('Do cloud right') em uma categoria onde todo concorrente recorre por padrão à sans geométrica em negrito — combinando gravidade literária com um fundo de infraestrutura iluminado por prisma escuro em vez do habitual screenshot de diagrama.
+- **imagery:** Nenhum screenshot de produto ou diagrama 3D acima da dobra. O hero é pura atmosfera: um campo índigo-profundo-ao-preto cortado por um único feixe de luz diagonal afiado como navalha e um suave desabrochar de prisma rosa/violeta no canto superior — 'luz computacional' abstrata em vez de infraestrutura literal. Logos de clientes renderizados em cinza monocromático chapado, por contenção.
+- **copy:** Imperativo confiante de três palavras como hero ('Do cloud right'), apoiado por um subtítulo enterprise preciso — declarativo, autoritário, hype zero. A pílula de anúncio ('Agentic runtime security, explained') amarra a marca ao momento da IA.
 
-**Takeaways (steal as ideas, don't copy):**
-- Break category convention with type: a high-contrast editorial serif headline reads as premium and human in a sea of dev-tool geometric sans.
-- Replace the obligatory product screenshot with atmosphere — one sharp diagonal light beam + a corner prism glow carries the whole hero and keeps focus on the words.
-- Anchor the hero with a tiny pill-shaped announcement banner above the headline to surface a timely topic (AI/agentic security) without cluttering the main message.
-- Keep enterprise trust signals quiet: logo wall in flat monochrome grey under an all-caps 'TRUSTED BY' label lets it recede until you look for it.
+**Takeaways (roube como ideias, não copie):**
+- Quebre a convenção da categoria com a tipografia: um título editorial com serifa de alto contraste se lê como premium e humano num mar de sans geométricas de ferramentas de dev.
+- Substitua o screenshot de produto obrigatório por atmosfera — um único feixe de luz diagonal afiado + um brilho de prisma no canto sustentam o hero inteiro e mantêm o foco nas palavras.
+- Ancore o hero com um diminuto banner de anúncio em formato de pílula acima do título para destacar um tema oportuno (segurança de IA/agêntica) sem poluir a mensagem principal.
+- Mantenha os sinais de confiança enterprise discretos: um mural de logos em cinza monocromático chapado sob um rótulo em caixa-alta 'TRUSTED BY' deixa-o recuar até que você o procure.

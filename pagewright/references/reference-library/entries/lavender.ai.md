@@ -5,15 +5,15 @@
 - **niche:** ai-sales (email coaching / sales productivity)
 - **mood:** bold-loud
 - **style:** gradient, 3d, colorful, dark
-- **palette:** bg `#3a1d8a` · ink `#ffffff` · accent `#b794f6` — lavender-purple glow on 3D email/heart icons, floating sticker labels, chat-prompt pills, and the gradient backdrop itself
-- **type:** display *Grotesque/condensed-leaning geometric sans (heavy weight, tight tracking) — reads like a Druk/Founders Grotesk-style face* · body *Neutral humanist sans (Inter-like) for sub-copy and UI* — Loud and declarative up top, calm and functional below — a confident headline voice paired with quiet utility text
+- **palette:** bg `#3a1d8a` · ink `#ffffff` · accent `#b794f6` — brilho roxo-lavanda nos ícones 3D de e-mail/coração, labels de adesivo flutuantes, pills de prompt de chat e o próprio fundo em gradiente
+- **type:** display *Sans geométrica grotesca/com pegada condensada (peso pesado, tracking apertado) — lê-se como uma fonte no estilo Druk/Founders Grotesk* · body *Sans humanista neutra (no estilo Inter) para a sub-copy e a UI* — Barulhenta e declarativa em cima, calma e funcional embaixo — uma voz de headline confiante combinada com um texto utilitário quieto
 - **sections:** hero › feature-ora-agent › logos › how-it-works › feature-generative-ai › feature-security › newsletter-the-lavender-letter › community-lavenderland › certification-cta › footer
-- **signature:** A full-bleed saturated purple gradient as the entire canvas (not a white SaaS page with purple accents) — the brand color IS the background, with chunky 3D claymorphic email/heart/chat icons and hand-drawn ribbon banners ("Loved by 30k+ email wizards") torn across the layout, leaning all-in on a playful "magic/wizard" theme instead of the sterile blue-on-white B2B-sales convention.
-- **imagery:** Soft-shaded 3D claymorphic objects (open envelope with a glowing heart, rounded chat bubbles, magnifying glass) floating over the gradient, annotated with skeuomorphic "sticker" labels (Outreach Upgraded, Product Info, Case Studies, Automated research) and tilted ribbon/banner graphics. An inline chat-prompt mockup ("Hi there, What do you want to learn about?") doubles as a product demo. Wizard/magic motifs (hats) reinforce the playful brand.
-- **copy:** Provocative, contrarian hero that names the buyer's pain and flips it — voice is cheeky, confident, anti-generic-AI; hero reads "Your buyers hate AI cold emails. They won't hate Ora's."
+- **signature:** Um gradiente roxo saturado full-bleed como o canvas inteiro (não uma página SaaS branca com acentos roxos) — a cor da marca É o fundo, com ícones 3D claymórficos robustos de e-mail/coração/chat e faixas de fita desenhadas à mão ("Loved by 30k+ email wizards") rasgadas ao longo do layout, apostando totalmente num tema lúdico de "magia/feiticeiro" em vez da convenção estéril de B2B-sales azul-no-branco.
+- **imagery:** Objetos 3D claymórficos com sombreamento suave (envelope aberto com um coração brilhante, balões de chat arredondados, lupa) flutuando sobre o gradiente, anotados com labels de "adesivo" esqueumórficos (Outreach Upgraded, Product Info, Case Studies, Automated research) e gráficos de fita/faixa inclinados. Um mockup inline de prompt de chat ("Hi there, What do you want to learn about?") funciona também como uma demo de produto. Motivos de feiticeiro/magia (chapéus) reforçam a marca lúdica.
+- **copy:** Hero provocativo e contrário que nomeia a dor do comprador e a inverte — a voz é debochada, confiante, anti-IA-genérica; o hero diz "Your buyers hate AI cold emails. They won't hate Ora's."
 
-**Takeaways (steal as ideas, don't copy):**
-- Make the brand color the full canvas, not an accent — a saturated gradient background reads as a confident point of view in a category drowning in blue-on-white.
-- Use claymorphic 3D icons + skeuomorphic 'sticker' labels to annotate abstract product capabilities, turning a feature list into a tactile object scene.
-- Lean a whole metaphor (wizards/magic) end-to-end — ribbon banners, hat icons, 'Email Wizard Certified', 'LavenderLand' — so personality compounds instead of being decorative.
-- Open with a contrarian, buyer-side pain statement and resolve it in the same breath ('hate AI cold emails / won't hate Ora's') to earn attention before pitching.
+**Takeaways (roube como ideias, não copie):**
+- Faça da cor da marca o canvas inteiro, não um acento — um fundo de gradiente saturado se lê como um ponto de vista confiante numa categoria afogada em azul-no-branco.
+- Use ícones 3D claymórficos + labels de 'adesivo' esqueumórficos para anotar capacidades abstratas do produto, transformando uma lista de features numa cena de objetos tátil.
+- Leve uma metáfora inteira (feiticeiros/magia) de ponta a ponta — faixas de fita, ícones de chapéu, 'Email Wizard Certified', 'LavenderLand' — para que a personalidade se acumule em vez de ser decorativa.
+- Abra com uma declaração de dor contrária, do lado do comprador, e resolva-a no mesmo fôlego ('hate AI cold emails / won't hate Ora's') para conquistar a atenção antes de fazer o pitch.

@@ -5,15 +5,15 @@
 - **niche:** gtm-data / sales-intelligence (dev-tools-adjacent ops automation)
 - **mood:** clean-light
 - **style:** minimal, 3d, illustrated, mono-type
-- **palette:** bg `#F4F2EC` · ink `#0A0A0A` · accent `#FF8A3D` — playful 3d clay/stone stack mascots flanking the hero (orange, pink, purple, blue, teal blobs); also tints brand logos in the trust row
-- **type:** display *Sans-serif grotesque, very tight tracking, heavy weight (custom/Aeonik-like)* · body *Neutral humanist sans (same family, regular weight)* — Confident, oversized, near-edge-to-edge headline that reads like a magazine cover statement rather than a product tagline
+- **palette:** bg `#F4F2EC` · ink `#0A0A0A` · accent `#FF8A3D` — mascotes lúdicos 3D de pilhas de argila/pedra ladeando o hero (blobs laranja, rosa, roxo, azul, teal); também tinge os logos das marcas na fileira de confiança
+- **type:** display *Sans-serif grotesca, tracking bem apertado, peso pesado (custom/estilo Aeonik)* · body *Sans humanista neutra (mesma família, peso regular)* — Confiante, em escala enorme, com título quase de margem a margem que se lê como afirmação de capa de revista em vez de tagline de produto
 - **sections:** hero › logos › feature-data-platform › feature-ai › feature-orchestration › feature-workflows › feature-security › testimonials › cta › footer
-- **signature:** The data-tooling category screams charts and dashboards; Clay instead anchors the hero with tactile, hand-rendered 3D clay/stone-stacking sculptures (literally illustrating the brand name) on a warm paper-grain canvas — toy-like physicality where competitors show grids and graphs.
-- **imagery:** Stylized 3D clay-render mascots (balanced pebble/blob stacks) plus desk objects (pencil, sketch pad, eraser) sit on a soft off-white textured paper background; downstream sections shift to real product UI (filter/sort table chrome peeking at bottom). Mixes playful craft renders with literal app screenshots.
-- **copy:** Bold outcome-led promise, plain confident voice — hero: "Go to market with unique data — and the ability to act on it"; sub: "Bring AI agents, enrichment, and intent data together and turn insights into relevant, timely action."
+- **signature:** A categoria de ferramentas de dados grita gráficos e dashboards; a Clay, em vez disso, ancora o hero com esculturas táteis de pilhas de argila/pedra 3D feitas à mão (ilustrando literalmente o nome da marca) sobre uma tela de papel com textura quente — fisicalidade de brinquedo onde os concorrentes mostram grades e gráficos.
+- **imagery:** Mascotes em render 3D de argila estilizado (pilhas equilibradas de seixos/blobs) mais objetos de mesa (lápis, bloco de esboço, borracha) sobre um fundo de papel texturizado off-white suave; seções seguintes mudam para a UI real do produto (chrome de tabela com filtro/ordenação espreitando na parte de baixo). Mistura renders artesanais lúdicos com screenshots literais do app.
+- **copy:** Promessa ousada liderada por resultado, voz simples e confiante — hero: "Go to market with unique data — and the ability to act on it"; sub: "Bring AI agents, enrichment, and intent data together and turn insights into relevant, timely action."
 
-**Takeaways (steal as ideas, don't copy):**
-- Render your product metaphor as a physical 3D object (clay = clay-stack sculptures) instead of abstract iconography — instantly memorable and on-brand
-- Use a warm paper-grain off-white canvas instead of clinical pure-white/dark to feel crafted and human in an analytical category
-- Let the headline run huge and near edge-to-edge with tight tracking so it reads as an editorial statement, not a label
-- Frame the trust row with personality: 'TRUSTED BY 500,000+ GTM TEAMS... BUILT WITH LOVE, INSPIRED BY OUR CUSTOMERS' plus review-star ratings, not just a silent logo wall
+**Takeaways (roube como ideias, não copie):**
+- Renderize a metáfora do seu produto como um objeto físico 3D (clay = esculturas de pilhas de argila) em vez de iconografia abstrata — instantaneamente memorável e fiel à marca
+- Use uma tela off-white de papel com textura quente em vez de branco-puro clínico/escuro para parecer artesanal e humano numa categoria analítica
+- Deixe o título correr enorme e quase de margem a margem com tracking apertado para que se leia como uma afirmação editorial, não um rótulo
+- Emoldure a fileira de confiança com personalidade: 'TRUSTED BY 500,000+ GTM TEAMS... BUILT WITH LOVE, INSPIRED BY OUR CUSTOMERS' mais avaliações em estrelas, não apenas um mural silencioso de logos

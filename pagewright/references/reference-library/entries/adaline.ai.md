@@ -5,15 +5,15 @@
 - **niche:** ai
 - **mood:** editorial-minimal
 - **style:** 3d, minimal, editorial
-- **palette:** bg `#EFEBE0` · ink `#1C2419` · accent `#2C4A1E` — Solid dark-forest-green pill CTA (START FOR FREE), the WATCH DEMO play button, logo mark, and small accent glyphs in the trusted-by row; deep green reads as the brand signal against the warm bone background
-- **type:** display *Geometric grotesque with a slight squared/condensed feel (in the vein of a tightened Neue Machina or Sharp Grotesk), set tight and bold for the h1; brand wordmark 'Adaline' is a contrasting italic serif* · body *Clean neutral sans-serif (Inter / Söhne family), small-caps tracked-out labels for eyebrows like TRUSTED BY* — Editorial, composed, quietly premium — bold condensed sans paired with an italic serif wordmark for a literary, almost-magazine signature
+- **palette:** bg `#EFEBE0` · ink `#1C2419` · accent `#2C4A1E` — CTA em pílula sólida verde-floresta-escuro (START FOR FREE), o botão de play WATCH DEMO, a marca do logo e pequenos glifos de destaque na linha de trusted-by; o verde profundo funciona como o sinal da marca contra o fundo bone quente
+- **type:** display *Grotesca geométrica com uma leve sensação quadrada/condensada (na linha de uma Neue Machina ou Sharp Grotesk apertada), composta justa e em bold no h1; o wordmark da marca 'Adaline' é um serif itálico contrastante* · body *Sans-serif neutra e limpa (família Inter / Söhne), labels em small-caps com tracking aberto para eyebrows como TRUSTED BY* — Editorial, composta, discretamente premium — sans condensada em bold pareada com um wordmark serif itálico para uma assinatura literária, quase de revista
 - **sections:** hero › logos › problem › feature-speed › feature-security › feature-scale › testimonials › blog-library › cta › footer
-- **signature:** A photoreal 3D zen-garden landscape under sepia fog as the full-bleed hero backdrop — an AI ops tool that opens with tranquil nature instead of dashboards, gradients, or node graphs.
-- **imagery:** Photoreal abstract-3D render of a serene Japanese-garden landscape (lake, manicured hills, lone bench, sculpted trees) under a warm sepia haze; full-bleed behind the hero, dreamlike and calm rather than techy — the antithesis of typical AI gradient-mesh.
-- **copy:** Plainspoken capability stack as headline — "The single platform to iterate, evaluate, deploy, and monitor AI agents" — verbs do the selling, no hype adjectives, confident and declarative.
+- **signature:** Uma paisagem fotorrealista de jardim zen em 3D sob névoa sépia como o fundo full-bleed do hero — uma ferramenta de ops de IA que abre com natureza tranquila em vez de dashboards, gradientes ou grafos de nós.
+- **imagery:** Render abstrato-3D fotorrealista de uma serena paisagem de jardim japonês (lago, colinas aparadas, banco solitário, árvores esculpidas) sob uma neblina sépia quente; full-bleed atrás do hero, onírico e calmo em vez de techy — a antítese da típica malha de gradiente de IA.
+- **copy:** Pilha de capacidades em linguagem direta como headline — "The single platform to iterate, evaluate, deploy, and monitor AI agents" — os verbos fazem a venda, sem adjetivos de hype, confiante e declarativo.
 
-**Takeaways (steal as ideas, don't copy):**
-- Reframe the trio of feature pillars as one-word virtues (Speed / Security / Scale) instead of feature names — abstract nouns feel more enterprise-confident than 'real-time logs'.
-- Pair a bold condensed geometric sans headline with a contrasting italic serif wordmark; the serif logo becomes the brand's only ornament against an otherwise utilitarian type system.
-- Use a warm bone/oat background (#EFEBE0) with a single deep-forest-green accent — a muted, almost-earthy palette that signals calm reliability and dodges the cliched blue-purple AI gradient.
-- Let a calming, non-literal hero image (zen garden, fog) carry the emotional register while the copy stays strictly functional — mood and message split across image vs text rather than competing.
+**Takeaways (roube como ideias, não copie):**
+- Reenquadre o trio de pilares de feature como virtudes de uma palavra (Speed / Security / Scale) em vez de nomes de features — substantivos abstratos soam mais confiantes em nível enterprise do que 'logs em tempo real'.
+- Pareie um headline em sans geométrica condensada em bold com um wordmark serif itálico contrastante; o logo serif vira o único ornamento da marca contra um sistema tipográfico de resto utilitário.
+- Use um fundo bone/aveia quente (#EFEBE0) com um único destaque verde-floresta-profundo — uma paleta abafada, quase terrosa, que sinaliza confiabilidade calma e desvia do clichê do gradiente azul-roxo de IA.
+- Deixe uma imagem de hero calmante e não literal (jardim zen, névoa) carregar o registro emocional enquanto o texto se mantém estritamente funcional — clima e mensagem se dividem entre imagem e texto em vez de competir.

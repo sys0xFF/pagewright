@@ -5,15 +5,15 @@
 - **niche:** productivity
 - **mood:** bold-loud
 - **style:** gradient, colorful, dark
-- **palette:** bg `#4B22C8` · ink `#FFFFFF` · accent `#C6F24E` — Reserved almost exclusively for the top-right 'Sign up' CTA button — a single lime-green chip that pops against the all-purple field; everything else (nav, headline, subhead, prompt UI) stays white-on-purple.
-- **type:** display *Custom grotesque sans (Pitch's brand face) — geometric, very heavy weight, tight tracking, perfectly circular bowls on C/e/a* · body *Same family at regular/medium weight* — Bold, rounded, confident, modern-grotesque — friendly heft without being playful
+- **palette:** bg `#4B22C8` · ink `#FFFFFF` · accent `#C6F24E` — Reservado quase exclusivamente ao botão de CTA 'Sign up' no canto superior direito — um único chip verde-limão que salta contra o campo todo roxo; todo o resto (nav, headline, subhead, UI do prompt) permanece branco-sobre-roxo.
+- **type:** display *Sans grotesca customizada (a face da marca Pitch) — geométrica, peso muito pesado, tracking apertado, bojos perfeitamente circulares em C/e/a* · body *Mesma família em peso regular/medium* — Bold, arredondada, confiante, grotesca-moderna — peso amigável sem ser brincalhão
 - **sections:** hero › feature-workspace › problem › how-it-works › feature-toolkit › feature-integrations › testimonials › templates › cta › footer
-- **signature:** Oversized white headline that bleeds past the viewport edges, set over a wall of blurred purple deck thumbnails — the product's own output becomes the wallpaper, and a single crisp white AI prompt box punches a hole through the haze as the one place your eye lands.
-- **imagery:** Product-screenshot driven, but treated as a faded collage: dozens of real deck thumbnails (Editorial, Bloom, Business Model Canvas, Partnership Proposal) blurred and tinted purple, tiled behind the hero so they read as texture/atmosphere rather than focal UI. A live AI prompt box ("Generate a sales presentation for a digital marketplace") sits center as the only sharp, white element.
-- **copy:** Punchy outcome-promise headline. Hero reads "Create slides that win." — short, verb-first, sales-victory framing; subhead "From prompt to presentation, 4M+ teams create and deliver winning slides together in Pitch." Confident, results-over-features voice.
+- **signature:** Headline branca gigantesca que sangra para além das bordas do viewport, posta sobre uma parede de miniaturas de decks roxas e desfocadas — o próprio output do produto vira o papel de parede, e uma única caixa de prompt de IA branca e nítida abre um buraco na névoa como o único ponto onde o olho pousa.
+- **imagery:** Conduzida por screenshots de produto, mas tratada como uma colagem esmaecida: dezenas de miniaturas de decks reais (Editorial, Bloom, Business Model Canvas, Partnership Proposal) desfocadas e com tom roxo, ladrilhadas atrás do hero para que sejam lidas como textura/atmosfera em vez de UI focal. Uma caixa de prompt de IA ao vivo ("Generate a sales presentation for a digital marketplace") fica no centro como o único elemento nítido e branco.
+- **copy:** Headline enérgica que promete um resultado. O hero diz "Create slides that win." — curta, começando pelo verbo, com enquadramento de vitória em vendas; a subhead "From prompt to presentation, 4M+ teams create and deliver winning slides together in Pitch." Voz confiante, de resultados-acima-de-recursos.
 
-**Takeaways (steal as ideas, don't copy):**
-- Build the hero background from your own product's output, then blur + monochrome-tint it into a single brand color so it reads as ambient texture, not competing UI.
-- Spend your entire saturation budget on ONE element: here a lone lime CTA in a sea of purple. Scarcity makes the click target unmissable.
-- Set the headline larger than the safe zone so letterforms clip the screen edges — it signals confidence and forces the eye to complete the word.
-- Drop the live product (the AI prompt box) directly into the hero as the only crisp, high-contrast object, turning the first impression into an interactive try-it-now moment instead of a static pitch.
+**Takeaways (roube como ideias, não copie):**
+- Construa o fundo do hero a partir do output do seu próprio produto, depois desfoque + aplique um tom monocromático numa única cor da marca para que ele seja lido como textura ambiente, não como UI concorrente.
+- Gaste todo o seu orçamento de saturação em UM único elemento: aqui, um CTA limão solitário num mar de roxo. A escassez torna o alvo do clique impossível de ignorar.
+- Defina a headline maior do que a zona segura para que as letras toquem as bordas da tela — isso sinaliza confiança e força o olho a completar a palavra.
+- Coloque o produto ao vivo (a caixa de prompt de IA) diretamente no hero como o único objeto nítido e de alto contraste, transformando a primeira impressão num momento interativo de experimente-agora em vez de um pitch estático.

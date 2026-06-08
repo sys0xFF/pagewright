@@ -5,15 +5,15 @@
 - **niche:** dev-tools
 - **mood:** technical-dark
 - **style:** gradient, mono-type, minimal
-- **palette:** bg `#FFFFFF` · ink `#1A1A1A` · accent `#C04CF5` — the third headline word in a magenta-to-violet gradient, the primary 'Sign in to FloxHub' CTA fill, and sparkle emoji accents next to the H1
-- **type:** display *Reckless / high-contrast serif-influenced grotesque (heavy slab-ish weight)* · body *Geometric humanist sans-serif* — Confident and editorial up top, engineer-credible below — the chunky display weight reads almost editorial-magazine, an unusual choice for a package-manager tool
+- **palette:** bg `#FFFFFF` · ink `#1A1A1A` · accent `#C04CF5` — a terceira palavra da manchete num gradiente magenta-para-violeta, o preenchimento do CTA principal 'Sign in to FloxHub' e acentos de emoji de brilho ao lado da H1
+- **type:** display *Grotesca de influência serifada e alto contraste estilo Reckless (peso pesado, quase slab)* · body *Sem serifa humanista geométrica* — Confiante e editorial no topo, com credibilidade de engenheiro abaixo — o peso robusto do display se lê quase como revista editorial, uma escolha incomum para uma ferramenta de gerenciamento de pacotes
 - **sections:** hero › logos › feature-built-for-workflow › testimonials › feature-for-teams › cta › footer
-- **signature:** A live terminal session card as the hero visual — not a product screenshot or 3D render, but actual `% flox init` / `% flox install` shell commands with real success output, the CLI itself shown as the hero. It trusts the audience to read code instead of marketing chrome.
-- **imagery:** Almost no decorative imagery. The hero pairs a clean white canvas with a single floating terminal card (macOS traffic-light dots, monospace prompt, pink-tinted directory name, syntax-colored output). Logo wall in desaturated grayscale. Sparkle emoji used as a literal typographic flourish on the headline.
-- **copy:** Bold three-word thesis statement that borrows a security-engineering term of art — hero reads "Secure Software by Construction." with the payoff word in gradient + sparkles; subcopy is plainspoken and benefit-dense ("Onboard instantly, and work consistently across the entire software lifecycle").
+- **signature:** Um card de sessão de terminal ao vivo como visual do hero — não um screenshot de produto nem um render 3D, mas comandos de shell `% flox init` / `% flox install` de verdade com saída real de sucesso, a própria CLI mostrada como herói. Confia que o público vai ler código em vez de chrome de marketing.
+- **imagery:** Quase nenhuma imagem decorativa. O hero combina um canvas branco limpo com um único card de terminal flutuante (pontinhos de semáforo do macOS, prompt monoespaçado, nome de diretório tingido de rosa, saída colorida por sintaxe). Parede de logos dessaturada em escala de cinza. Emoji de brilho usado como floreio tipográfico literal na manchete.
+- **copy:** Tese ousada de três palavras que toma emprestado um termo técnico de engenharia de segurança — o hero lê "Secure Software by Construction." com a palavra-chave em gradiente + brilhos; o subtexto é direto e denso em benefícios ("Onboard instantly, and work consistently across the entire software lifecycle").
 
-**Takeaways (steal as ideas, don't copy):**
-- Use the actual CLI transcript as the hero art — real commands with colorized success output sell credibility to developers better than any abstract illustration
-- Apply a vivid magenta-violet gradient to a SINGLE headline word so the bright accent lands once, hard, against an otherwise monochrome page
-- Drop a literal sparkle emoji into the H1 as a typographic accent — a warm, slightly playful break from sterile dev-tool seriousness
-- Segment the audience explicitly in one section (Platform Engineers / Developers / AI Agents) so each persona self-selects without diluting the headline
+**Takeaways (roube como ideias, não copie):**
+- Use a transcrição real da CLI como arte do hero — comandos reais com saída de sucesso colorizada vendem credibilidade a desenvolvedores melhor do que qualquer ilustração abstrata
+- Aplique um gradiente magenta-violeta vívido a UMA ÚNICA palavra da manchete para que o destaque brilhante caia uma vez, com força, contra uma página que, de resto, é monocromática
+- Solte um emoji de brilho literal na H1 como acento tipográfico — uma quebra quente e levemente brincalhona da seriedade estéril das ferramentas de dev
+- Segmente o público explicitamente numa seção (Platform Engineers / Developers / AI Agents) para que cada persona se auto-selecione sem diluir a manchete
