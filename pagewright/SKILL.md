@@ -140,13 +140,15 @@ These override any individual instruction. When a choice is unclear, optimize fo
   gradient, three icon cards, mono eyebrows, soft shadows, pure black/white — *is* what "AI-made" looks
   like in 2025-26. Reach for current faces (Geist, a serif-display + grotesque pairing), tinted neutrals
   (`#09090B` not `#000`), real product UI, grain. Follow the do/avoid lists in design-dna.md literally.
-- **Anchor on ONE, then vary the skin.** The convergence you're fighting is *structural* — pages rhyme
-  because they share a skeleton (eyebrow pill → accent headline → dual CTA → three stats → three cards),
-  even with different colours. Beat it by building from a real page's bones: Read your references'
-  thumbnails (the .jpgs), pick ONE anchor, **transcribe its section sequence in writing before any markup**,
-  build that spine, and remix the skin (palette/type/texture) from the *other* references. Rotate the anchor
-  every build, then self-diff your skeleton against the generic stack — if you can't say how it differs
-  structurally, you reverted. (Full procedure in design-dna.md.)
+- **Anchor on ONE real page, then vary the skin.** The convergence you're fighting is *structural* — pages
+  rhyme because they share a skeleton (accent-word headline → dual CTA → 3-up → testimonial → pricing → dark
+  CTA band), even with different colours, because that skeleton is the model's *average of all landings*.
+  Beat it by building from a **real page's actual bones**: pick ONE anchor and **open its full-page capture
+  (`reference-library/full/<domain>.jpg`)** — transcribe its REAL section sequence before any markup and
+  copy it faithfully, *even when it isn't the expected arc* (Linear has no pricing and no problem-reframe).
+  Remix the skin from the *other* references. Rotate the anchor every build; keep the **DTC reflexes**
+  (design-dna.md) default-OFF; then self-diff against the generic stack — if you can't say how it differs
+  structurally, you reverted. (Full procedure in design-dna.md; page shapes in section-patterns.md.)
 - **Real words.** Write copy a founder would actually ship. Concrete nouns, real benefits, a voice that
   matches the product's mood. No lorem ipsum in anything you show the user.
 - **Say less.** Real product landings are concise — aim for ~5–7 sections, one idea each, hero subhead of a

@@ -5,9 +5,11 @@
 ## How to use
 1. Find your **niche** in **By niche** and your **mood** in **By mood**; take the 3–5 sites at that intersection. *Niche not here?* Route by **composition** instead (see the composition archetypes in design-dna.md) — a non-tech brief can faithfully borrow the bones of any page with the right shape.
 2. **LOOK at the thumbnails** (`Read` the `.jpg`s) — the pixels calibrate you far better than the prose.
-3. **Anchor on ONE** for structure (transcribe its section sequence), and remix the **skin** from the others. Structure from one (faithfully), skin from the rest — clone nobody. Rotate the anchor so two pages never share a spine.
+3. **Anchor on ONE** for structure, and remix the **skin** from the others. Prefer an **anchor-grade** site (one with a full-page capture, listed below): open `full/<domain>.jpg`, see the WHOLE real page, and copy its actual section sequence — quirks and all, even when it isn't the "expected" SaaS arc. Structure from one (faithfully), skin from the rest — clone nobody. Rotate the anchor so two pages never share a spine.
 
 Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genre-breaking signature, imagery, copy voice, and steal-able takeaways, with a thumbnail.
+
+**Anchor-grade sites (46 — full-page capture in `full/<domain>.jpg`, so you can copy the *real* structure, not the template):** aesop.com, allbirds.com, anthropic.com, arc.net, attio.com, brilliant.org, calm.com, clickhouse.com, cluely.com, cohere.com, dailyharvest.com, default.com, duolingo.com, eightsleep.com, framer.com, glossier.com, graza.co, gymshark.com, headspace.com, jenis.com, linear.app, liquiddeath.com, lithic.com, magicspoon.com, masterclass.com, mavenclinic.com, mercury.com, monos.com, morphic.com, mux.com, neon.tech, notpla.com, opendoor.com, ouraring.com, oxide.computer, palantir.com, patagonia.com, polar.sh, railway.app, raycast.com, retool.com, sentry.io, stripe.com, supabase.com, tonal.com, vercel.com. *(They span every composition archetype and most niches — when in doubt, anchor here.)*
 
 ## By mood
 

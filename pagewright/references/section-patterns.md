@@ -24,6 +24,36 @@ Two classic copy frameworks to lean on when stuck:
 You rarely use every section. A focused page (hero → proof → 3 feature beats → how-it-works → testimonial
 → pricing → FAQ → CTA → footer) beats an everything-page. Cut anything that doesn't move the argument.
 
+## Page archetypes — the arc above is ONE shape, not the only one
+
+The narrative arc is the *classic conversion scroll* — and if every page you build follows it, every page
+rhymes, no matter how you skin it. Real top landing pages take **structurally different shapes**. Pick one
+deliberately per build (and rotate across builds), driven by the product and — above all — by **your
+anchor's actual full page** (open `reference-library/full/<domain>.jpg` when it exists and copy the real
+sequence, quirks and all; don't normalise it back to the arc).
+
+- **Product tour** — hero (real product UI) → feature after feature, each anchored by its own UI panel,
+  alternating sides → a proof/changelog beat → CTA. Often **no problem-reframe and no pricing**.
+  e.g. linear.app, attio.com, retool.com.
+- **One-screen statement** — a single viewport does the whole job: headline + one strong visual + one
+  action. Little or no scroll. e.g. minimalist launch pages, cohere.com, bun.sh.
+- **Editorial long-read** — a magazine story: full-bleed photography, long-form prose sections, pull-quotes,
+  generous air. e.g. aesop.com, patagonia.com, palantir.com.
+- **Catalog / product-grid** — the products *are* the page; a shelf/grid, shop-forward, minimal marketing
+  copy. e.g. publicgoods.com, glossier.com, gymshark.com.
+- **Manifesto** — an argument or attitude, type-driven, voice over feature-lists; the product appears late.
+  e.g. liquiddeath.com, oatly.com.
+- **Spec sheet** — dense and technical: tables, figures, an engineering-bench framing, numbered figures.
+  e.g. oxide.computer, lithic.com.
+- **Demo-led** — a live, working/interactive demo is the hero and carries most of the page. e.g. cal.com,
+  arcade.software.
+- **Comparison-led** — built around a before/after or a vs-table as the central beat.
+- **Classic conversion scroll** — the arc above (hero → problem → features → proof → pricing → CTA). Still
+  great — just *one* option chosen on purpose, not the autopilot default.
+
+Rule: **name your page archetype before you write markup**, make it different from your last build, and let
+the anchor's real structure — not this list or the arc — dictate the actual sections.
+
 ## Length & restraint — real product pages are SHORT
 
 The default failure mode is a long everything-page that explains every feature in three-card grids. Real,

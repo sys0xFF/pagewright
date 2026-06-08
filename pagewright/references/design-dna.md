@@ -53,11 +53,18 @@ it every time. The one thing that beats a prior is building from a *specific rea
 
 **3. Pick ONE anchor and transcribe its skeleton — in writing, before any markup.** Choose the single
    site whose *structure* fits this product best (and that you haven't just used — see the ledger below).
-   Open its entry, read its `sections:` line, and **write out the section sequence you will build**, in
-   order, as your page's spine. This transcription *is* the forcing function: you are now building to a
-   real 2025 page's bones, not to your average.
-   > e.g. anchor = stripe.com → spine = `hero(offset-gradient-ribbon) › logo-wall › product-canvas ›
-   > 3-up-capability › scale-section › pricing-teaser › cta › footer`. You build THAT spine, re-skinned.
+   **If it has a full-page capture (`reference-library/full/<domain>.jpg`), OPEN IT** — that's the whole
+   real page, top to bottom, not just the hero. Read off its **actual** section sequence and its structural
+   quirks (an asymmetric beat, a changelog, no pricing at all, a weird order) and **write out the spine
+   you'll build**, copying what the real page genuinely does — *even when it isn't the "expected" arc.*
+   (No full capture? Fall back to the entry's `sections:` line, but know it's terse and the invented detail
+   is exactly where you drift back to the template.) This transcription *is* the forcing function: you
+   build to a real page's bones, not to your average — and your average IS the generic template you're
+   fighting.
+   > e.g. anchor = linear.app → its real spine (from the full capture) is `hero(live app UI) › logo-wall ›
+   > 3-up › feature(UI) › feature(UI) › feature(code) › feature(chart) › changelog › 2-up-testimonial ›
+   > cta › footer` — note there is **no problem-reframe and no pricing**. You build THAT, re-skinned — not
+   > the template your prior wants to emit.
 
 **4. Skin from the others — never from the anchor.** Pull palette, type, texture and motif from the
    *other* shortlisted sites + your vibe. This resolves the apparent contradiction in this skill:
@@ -69,8 +76,11 @@ it every time. The one thing that beats a prior is building from a *specific rea
    you anchored on recently; if it's the same site *or the same composition archetype*, switch. Within a
    niche especially: not every fintech page anchors on Stripe, not every health page on Oura — spread the
    load across the shortlist. **Building several at once (a batch / parallel agents)?** Parallel builders
-   are blind to each other, so they collide on the trendy default (everyone reaches for Geist). Assign each
-   a *different* **anchor, display-font family, AND accent** up front — don't let two siblings share a face.
+   are blind to each other, so they collide on the trendy default (everyone reaches for Geist, the
+   accent-word headline, the dark CTA band). Assign each one a *different* **anchor, page archetype
+   (section-patterns.md), display-font family, accent, and hero grammar** up front — and explicitly
+   **forbid the shared DTC reflexes** so two siblings don't both ship the one-accent-word headline or the
+   contrarian reframe. Distinct inputs in, distinct pages out.
 
 This is how you escape the prior: you build from a real page's bones, not from memory.
 
@@ -223,3 +233,36 @@ one-word-accent headline → filled-+-ghost CTA → row-of-exactly-three-stats �
 cards** + 16px-rounded everything + faint soft shadow + hero-left/image-right + mono eyebrows + Corporate
 Memphis mascots (Humaaans/unDraw/Storyset) + stock "diverse team at laptops". If two or more of these are
 present, you've reverted to the prior — redo the vibe.
+
+---
+
+## The DTC reflexes — the model's defaults; default them OFF
+
+Even after the kicker fix, an audit of pages built by this skill found they STILL rhymed — because the
+model has a second, deeper set of "modern DTC/SaaS landing" reflexes it reaches for *every single time*.
+None is wrong on its own; using the **whole set on every page IS the convergence**, and it's why output
+"doesn't look like it's based on a real page" — it's based on the model's average of all pages. Treat each
+as **default-OFF**: a given build may use **at most one or two**, picked deliberately, and must vary *which*
+across builds. When in doubt, do the thing the reflex replaces.
+
+1. **The one-accent-word headline** — a headline with exactly one word italicised or recoloured
+   (*"the chai you **actually** miss"*, *"your air, finally **felt**"*). The single most repeated tell —
+   it shows up in every hero AND every section heading. Most headlines should have **zero** accent words.
+2. **The dual CTA (filled + ghost-with-arrow)** — one solid button beside one outline "→" button. Often a
+   single CTA, an inline email field, or a text link is truer to the product. Vary it.
+3. **The contrarian problem-reframe** — *"You don't have an X problem. You have a Y problem."* / *"A teabag
+   is the ghost of chai."* A real persuasive move, now a tic. Don't open the second section this way by reflex.
+4. **The dark full-bleed CTA band at the end** — a near-black closing section with an accent-word headline
+   and a button. Fine occasionally; not the default ending. A footer-integrated CTA, a quiet inline close,
+   or no separate CTA section are all valid.
+5. **The hero stat/spec strip** — a row of 3–4 figures pinned under the hero. Earns its place sometimes;
+   reflexive the rest.
+6. **The arc itself** — `hero → problem → 3-up → testimonial → pricing → dark-CTA → footer`. This is the
+   model's one true landing shape, and following it is how every page ends up the same. **Real pages don't
+   all share it** (look at a full-page capture — Linear has no pricing and no problem-reframe; it's a
+   feature-by-feature product tour ending in a changelog). Take your structure from your *anchor's real
+   page*, not from this arc. See **section-patterns.md → Page archetypes**.
+
+Self-check: if your page has the accent-word headline **and** the dual CTA **and** the contrarian reframe
+**and** the dark CTA band, you didn't design a page — you printed the template. Strip it back to what your
+anchor actually does.
