@@ -108,7 +108,7 @@ PALETTE:
   - neutrals: <TINTED, not pure — dark e.g. #09090B/#18181B/#27272A/#3F3F46 · light #FAFAFA/warm off-white>
   - accent:  <ONE or two SHARP saturated accents (can be electric); where it's allowed — NOT indigo/violet>
   - mode:    <light | dark | warm-light>
-TYPE (pick a real 2025 pairing — see vocabulary below; NOT Inter-only, NOT mono-everywhere):
+TYPE (pick a real 2025 pairing — see vocabulary below; NOT Inter-only, NO mono as a brand/UI face):
   - display: <characterful grotesque OR editorial serif + why it fits the motif>
   - body:    <neutral groteske workhorse>
   - move:    <extreme weight contrast / serif-display+sans / oversized condensed / optical sizing>
@@ -146,14 +146,19 @@ as 2021-23 crypto/AI templates. The current move is a **characterful display + a
 **Body workhorses (replace Inter/Open Sans/Lato/Roboto):** **Geist**, Hanken Grotesk, Schibsted Grotesk,
 Plus Jakarta Sans, Albert Sans, Instrument Sans, Inter *only* as a quiet body under a distinctive display.
 
-**Mono — ONLY for genuinely technical content** (code, latency, data tables): Geist Mono, Berkeley Mono,
-JetBrains Mono, Commit Mono. **Never** as decorative eyebrows/labels/buttons — that's the dead giveaway.
+**Mono — banned as a design choice.** It's ugly and dated (a 2021-23 crypto/AI-template tell). Do NOT use a
+monospace face for eyebrows, labels, captions, nav, buttons, **numbers, stats, data, or table cells** — for
+figures use the grotesque body with `font-variant-numeric: tabular-nums`, which reads far better. The ONLY
+place monospacing is permitted is inside a **literal code/terminal snippet** (code is monospaced by nature) —
+and even there keep it to one small surface, never the page's texture. If you're reaching for mono to add
+"technical flavour," stop: that flavour *is* the generic look we're killing.
 
 **Moves that read 2025:** extreme weight contrast (100/200 vs 800/900), optical sizing + negative
 tracking on big display, tabular numerals for figures, variable-font axes, a real type scale.
 
 **Do NOT use** (dated tells): Inter for everything incl. headings · Space Grotesk / Space Mono · Poppins
-/ Montserrat · Playfair Display · Open Sans / Lato / Roboto as the brand face · mono microcopy everywhere.
+/ Montserrat · Playfair Display · Open Sans / Lato / Roboto as the brand face · **any monospace font outside
+a literal code block** (no mono eyebrows, labels, numbers, or data — it's banned, see above).
 
 → Loading recipes (Google Fonts / Fontshare / Geist CDN) are in **build-system.md**.
 

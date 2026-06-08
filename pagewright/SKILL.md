@@ -90,6 +90,9 @@ and accessibility.
 
 → Read **[references/build-system.md](references/build-system.md)** — Tailwind + current-font loading,
 tinted-neutral tokens, texture (grain/grid), components, responsive/a11y/perf.
+→ Read **[references/product-ui.md](references/product-ui.md)** — **before hand-building any product UI**
+(dashboard, table, chart, log, card, nav, form, code surface): the per-component craft from real top sites,
+the generic anti-pattern to avoid, and variety levers so your components don't come out samey.
 → Read **[references/motion.md](references/motion.md)** — the 2025-26 motion vocabulary (blur-in,
 scroll-driven, marquee, magnetic) with copy-paste snippets.
 → Use **[scripts/new_site.py](scripts/new_site.py)** to scaffold the output folder.
@@ -146,6 +149,13 @@ These override any individual instruction. When a choice is unclear, optimize fo
   structurally, you reverted. (Full procedure in design-dna.md.)
 - **Real words.** Write copy a founder would actually ship. Concrete nouns, real benefits, a voice that
   matches the product's mood. No lorem ipsum in anything you show the user.
+- **Say less.** Real product landings are concise — aim for ~5–7 sections, one idea each, hero subhead of a
+  single sentence. A long everything-page with three-card grids reads as AI-generated; cut sections and copy
+  to the bone and let whitespace + one strong visual carry the argument. When unsure, cut. (See
+  section-patterns.md → Length & restraint.)
+- **No decorative mono.** Monospace is banned as a design face (eyebrows, labels, numbers, data, UI chrome)
+  — it's an ugly, dated tell; use the grotesque body with tabular-nums for figures. Mono only ever appears
+  inside a literal code/terminal snippet. (See design-dna.md.)
 - **Build the product, don't placeholder it — but build interfaces, not objects.** The fastest path to a
   "real product" look is to build the product UI/dashboard/chart/code/chat **in HTML/CSS/SVG** (like Linear,
   Stripe, Attio do) — a gray placeholder hero is why AI pages look like wireframes. But this applies to

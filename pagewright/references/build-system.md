@@ -33,7 +33,7 @@ fonts — never default to Inter-only or system-ui. Pick from the vocabulary in 
     },
     fontFamily: {            // from the DNA pairing
       display:['Fraunces','Geist','serif'], sans:['"Hanken Grotesk"','Geist','system-ui','sans-serif'],
-      mono:['"Geist Mono"','ui-monospace','monospace'],   // ONLY for real technical content
+      mono:['"Geist Mono"','ui-monospace','monospace'],   // ONLY inside a literal code/terminal snippet — never decorative (see design-dna.md)
     },
   } } }
 </script>

@@ -24,6 +24,23 @@ Two classic copy frameworks to lean on when stuck:
 You rarely use every section. A focused page (hero → proof → 3 feature beats → how-it-works → testimonial
 → pricing → FAQ → CTA → footer) beats an everything-page. Cut anything that doesn't move the argument.
 
+## Length & restraint — real product pages are SHORT
+
+The default failure mode is a long everything-page that explains every feature in three-card grids. Real,
+confident product landings are **concise** — they say less, trust whitespace, and let one strong visual
+carry the argument. A wall of sections and copy reads as "AI-generated", not "shipped by a senior team."
+
+- **Aim for ~5–7 sections, not 11.** Hero → one proof beat → 2–3 feature beats → CTA → footer is already a
+  complete page; add pricing + FAQ and you're done. More sections is almost never the fix.
+- **One idea per section.** If a section makes two arguments, keep the stronger and cut the other.
+- **Cut copy to the bone.** A hero subhead is ONE sentence, not three. A feature blurb is 1–2 lines. If a
+  sentence won't change the reader's mind, delete it. Founders ship *"Issue cards. Decide every swipe."* —
+  not a paragraph. Whitespace + a real visual persuade more than more words.
+- **No filler beats.** Skip the generic "Why choose us", the redundant benefit grid, the second testimonial
+  wall, the over-explained how-it-works. Every section must earn its scroll.
+- **When unsure, cut.** The strongest pages are often one screen plus a little. Shorter almost always reads
+  as more confident.
+
 ## Current section menu (from a ~670-example survey of live SaaS sites)
 
 Real modern pages assemble from these, roughly in this order of frequency. For any section you're about to

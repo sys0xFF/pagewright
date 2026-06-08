@@ -17,7 +17,9 @@ as a *real shipped product* instead of a mockup.
 diagram → BUILD IT in HTML/CSS/SVG.** Real-looking data, crisp micro-typography (~11–13px), 1px hairline
 borders, status pills, avatars (CSS gradient tiles), tabular numerals; frame it in browser/app chrome. This
 is usually the page's signature and costs nothing but care. (Open a library thumbnail like linear.app or
-attio.com and rebuild its surface faithfully.)
+attio.com and rebuild its surface faithfully.) **→ Read [product-ui.md](product-ui.md) before you build it**
+— it has the per-component craft (dashboards, tables, charts, logs, cards, nav, forms) so the surface comes
+out specific and current, not the generic "dark panel + hairline box + mono numbers" default.
 
 **Reserve image placeholders + generation for what you genuinely CAN'T build in code:** photography,
 3D/sculptural renders, illustration, brand logos. For those, ship a dimensioned placeholder AND (preferably)
