@@ -266,3 +266,51 @@ across builds. When in doubt, do the thing the reflex replaces.
 Self-check: if your page has the accent-word headline **and** the dual CTA **and** the contrarian reframe
 **and** the dark CTA band, you didn't design a page — you printed the template. Strip it back to what your
 anchor actually does.
+
+---
+
+## Micro-grammar — ASSIGN it, don't just forbid it
+
+Hard-won lesson: a *forbid* list ("default these OFF") is still advice, and **advice loses to the prior**.
+A blind audit of pages built with the reflex-list above still scored them "one studio's house system" — the
+agents dropped some reflexes but quietly re-emitted the kicker, the accent word, the dual CTA and the same
+footer anyway. The fix is the same one that worked for typeface and page-archetype: stop forbidding and
+start **assigning a concrete micro-grammar up front**, like a ticket the build must fill.
+
+**Before building (and ALWAYS when building several at once), write a one-line grammar ticket per page** and
+hold to it. Make the choices *concrete* and *different per page*:
+
+- **Hero grammar:** kicker? (yes/no) · accent word in the headline? (no, by default) · headline register
+  (declarative / question / single-word / two-clause) · CTA pattern (single solid / single text-link /
+  inline field / none-above-the-fold).
+- **Proof:** logo wall / one pull-quote / a stat line / a live metric / none.
+- **Closing:** dark CTA band / footer-integrated CTA / quiet inline / an oversized wordmark — pick one, and
+  not the same as your last page.
+- **Footer:** the model defaults to "brand + one-liner + three label-capped columns" every time — that
+  itself is a tell. Vary it: a minimal two-line footer, a fat sitemap, a single-row footer, a footer that's
+  mostly a newsletter, a near-empty one.
+- **Hue family:** name the actual hue (not "an accent") and keep sibling pages in *different* families
+  (don't ship two oranges).
+
+For a batch, run a **convergence linter** before you ship: lay the pages side by side and list what they
+share (hero grammar, section order, CTA shape, footer, the same rhetorical move). Anything shared by 2+
+pages that wasn't deliberate → change it on all but one. Treat shared-by-default as a bug.
+
+## Copy the IDENTITY with real tokens, not from a screenshot
+
+Why faithful "copy this site" still drifts generic: the library gives you a *picture* and *prose* of the
+reference, never its real CSS — so you re-derive the fonts, spacing, colour and shadows from memory, and
+memory is the generic prior. Close that gap by pulling the anchor's **real computed tokens** and building to
+them literally:
+
+- Use **`scripts/extract_tokens.py`** (opt-in; needs a browser) on the anchor's URL to read its *actual*
+  font families/sizes/weights/tracking, colour palette, border-radii, the exact card `box-shadow`, button
+  anatomy and container width. Build with **those literal values** — e.g. Stripe's
+  real card shadow is `rgba(50,50,93,.25) 0 30px 60px -10px, rgba(0,0,0,.1) 0 18px 36px -18px`; Mercury's
+  buttons are 32px-radius pills in a periwinkle `#5266EB`; Vercel's display is Geist at `-2.4px` tracking.
+  Those specifics ARE the identity — a screenshot can't give them to you, and guessing reverts to the prior.
+- Proprietary faces (Söhne, Arcadia, sohne-var) won't load — name the intent and substitute the closest free
+  match (design-dna typography list), but keep the real *size / weight / tracking / line-height*.
+- One great page beats four rushed ones: pull the tokens, copy the real structure (full-page capture), build,
+  **screenshot it, compare to the anchor, and iterate** until the identity actually reads — don't ship the
+  first draft.

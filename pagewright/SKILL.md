@@ -67,7 +67,10 @@ surface — before building.
 → Read **[references/design-dna.md](references/design-dna.md)** — Vibe Discovery, the anchor-on-one forcing
 function, composition archetypes, the current typography & palette vocabulary, and the anti-convergence rules.
 → Library: **[references/reference-library/INDEX.md](references/reference-library/INDEX.md)** — current
-   SaaS **and consumer-brand** sites by niche/mood/style; **each entry has a thumbnail to LOOK at**.
+   SaaS **and consumer-brand** sites by niche/mood/style; **each entry has a thumbnail to LOOK at**, and
+   46 **anchor-grade** sites also have a full-page capture in `full/<domain>.jpg` (copy the real structure).
+→ Optional power tool: **[scripts/extract_tokens.py](scripts/extract_tokens.py)** — pull the anchor's REAL
+   fonts/colours/radii/shadows from its live CSS, so you copy its *identity* literally instead of from memory.
 
 ### Step 2 — Structure & storytelling: a page is a narrative
 
