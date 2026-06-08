@@ -1,316 +1,318 @@
-# Design DNA — discover a vibe, then build a CURRENT visual system
+# Design DNA — descubra um clima e construa um sistema visual ATUAL
 
-Skipping this step is the #1 reason AI pages look generic: the model falls back to its average prior —
-**Inter everywhere, an indigo→purple gradient, three icon cards, soft shadows, mono eyebrow labels.**
-That exact stack is what "AI-generated" looks like in 2025-26. This file exists to get you off the prior
-and onto a current, specific, committed direction.
+Pular esta etapa é o motivo #1 de páginas de IA parecerem genéricas: o modelo recai sobre seu padrão médio —
+**Inter em tudo, um gradiente índigo→roxo, três cards com ícones, sombras suaves, eyebrows em fonte mono.**
+Essa pilha exata é a cara do "gerado por IA" em 2025-26. Este arquivo existe para tirar você do padrão
+e colocá-lo numa direção atual, específica e comprometida.
 
-Work in three moves: **(1) Discover a vibe → (2) Look at the real references and copy faithfully →
-(3) Lock a Design DNA in today's vocabulary.** Anti-convergence rules run through all three.
-
----
-
-## Move 1 — Vibe Discovery (no vague adjectives)
-
-"Clean and modern" produces the prior. Force a *specific* direction instead. Write these down:
-
-- **MOTIF** — one concrete metaphor the whole page can embody (a control room, a ledger, a darkroom,
-  a blueprint, a night drive, a printed spec sheet, a trading terminal, a garden). The motif drives
-  palette, type, imagery, and the signature.
-- **BRAND-COORDINATE** — "**X meets Y**" using two real brands/worlds the user would admire
-  ("Aesop meets Linear", "Bloomberg terminal meets Teenage Engineering", "a Kinfolk spread meets Vercel").
-  This triangulates a point in style-space instead of a cliché.
-- **SENSORY + EMOTION** — 2-3 concrete sensory words (matte, tactile, humming, glacial, warm-paper)
-  and the ONE feeling a visitor should get in 5 seconds (reassured / in-command / excited / understood).
-- **AVOID-LIST (mandatory)** — write 4-6 things THIS page will NOT do, to pre-empt the prior. Always
-  include the AI tells; add project-specific ones. Example:
-  `no Inter headings · no indigo/purple gradient · no three-equal-icon-cards · no mono eyebrow labels ·
-   no hero-left-text / image-right default · no centered timid hero`
-
-Carry the MOTIF, COORDINATE, and AVOID-LIST forward — they're as important as the palette.
+Trabalhe em três movimentos: **(1) Descubra um clima → (2) Olhe as referências reais e copie fielmente →
+(3) Fixe um Design DNA no vocabulário de hoje.** Regras anticonvergência permeiam os três.
 
 ---
 
-## Move 2 — Anchor on ONE real reference (the forcing function)
+## Movimento 1 — Descoberta de clima (sem adjetivos vagos)
 
-This is the step that actually stops convergence — and it only works if you run it as a hard procedure,
-not as advice. The model's landing-page prior (**eyebrow pill → one-word-accent headline → two CTAs →
-a row of three stats → logo wall → three feature cards**) is a deep attractor; "try to vary it" loses to
-it every time. The one thing that beats a prior is building from a *specific real page's bones*. So:
+"Limpo e moderno" produz o padrão. Force uma direção *específica* no lugar. Anote o seguinte:
 
-**1. Route by niche → a shortlist.** Open `reference-library/INDEX.md`. Find your niche/context in the
-   **By niche** list and your mood in **By mood**; take the 3–5 sites at that intersection.
-   - *Niche not in the library?* (it covers health, fintech, dev-tools, nature, food, education, beauty,
-     fitness, home, travel and more — but not everything.) Then **route by composition, not industry**:
-     pick the **composition archetype** (below) that fits the mood and grab sites that use it, whatever
-     their sector. A meditation app can faithfully borrow the bones of an editorial-photo fashion page; a
-     farm co-op can borrow a warm-minimal CPG page. Match the *shape*, not the industry.
+- **MOTIF** — uma metáfora concreta que a página inteira possa encarnar (uma sala de controle, um livro-razão,
+  um quarto escuro de revelação, uma planta baixa, uma viagem noturna de carro, uma ficha técnica impressa,
+  um terminal de trading, um jardim). O motif comanda paleta, tipografia, imagens e a assinatura.
+- **BRAND-COORDINATE** — "**X meets Y**" usando dois mundos/marcas reais que o usuário admiraria
+  ("Aesop meets Linear", "terminal Bloomberg meets Teenage Engineering", "uma página da Kinfolk meets Vercel").
+  Isso triangula um ponto no espaço de estilo em vez de um clichê.
+- **SENSORY + EMOTION** — 2-3 palavras sensoriais concretas (fosco, tátil, zumbindo, glacial, papel-quente)
+  e a ÚNICA sensação que um visitante deve ter em 5 segundos (tranquilizado / no comando / animado / compreendido).
+- **AVOID-LIST (obrigatória)** — escreva 4-6 coisas que ESTA página NÃO vai fazer, para antecipar o padrão. Sempre
+  inclua os vícios de IA; adicione os específicos do projeto. Exemplo:
+  `sem títulos em Inter · sem gradiente índigo/roxo · sem três-cards-com-ícone-iguais · sem eyebrows em mono ·
+   sem o padrão hero-texto-à-esquerda / imagem-à-direita · sem hero tímido centralizado`
 
-**2. LOOK at the pixels — mandatory.** `Read` the thumbnail `.jpg` of every shortlisted site. The text
-   entry is a map; the image is the territory. Your eye calibrates to current execution — real type,
-   spacing, colour temperature, how the visual is staged — in a way prose never gives you. Skipping this
-   is the single most common way a build silently reverts to the prior.
+Leve o MOTIF, o COORDINATE e a AVOID-LIST adiante — são tão importantes quanto a paleta.
 
-**3. Pick ONE anchor and transcribe its skeleton — in writing, before any markup.** Choose the single
-   site whose *structure* fits this product best (and that you haven't just used — see the ledger below).
-   **If it has a full-page capture (`reference-library/full/<domain>.jpg`), OPEN IT** — that's the whole
-   real page, top to bottom, not just the hero. Read off its **actual** section sequence and its structural
-   quirks (an asymmetric beat, a changelog, no pricing at all, a weird order) and **write out the spine
-   you'll build**, copying what the real page genuinely does — *even when it isn't the "expected" arc.*
-   (No full capture? Fall back to the entry's `sections:` line, but know it's terse and the invented detail
-   is exactly where you drift back to the template.) This transcription *is* the forcing function: you
-   build to a real page's bones, not to your average — and your average IS the generic template you're
-   fighting.
-   > e.g. anchor = linear.app → its real spine (from the full capture) is `hero(live app UI) › logo-wall ›
+---
+
+## Movimento 2 — Ancore em UMA referência real (a função forçante)
+
+Esta é a etapa que de fato estanca a convergência — e ela só funciona se você a executar como um procedimento
+rígido, não como conselho. O padrão de landing page do modelo (**pílula de eyebrow → título com uma palavra de
+destaque → dois CTAs → uma fileira de três estatísticas → mural de logos → três cards de feature**) é um atrator
+profundo; "tente variar" perde para ele toda vez. A única coisa que vence um padrão é construir a partir dos
+*ossos de uma página real específica*. Então:
+
+**1. Roteie por nicho → uma shortlist.** Abra `reference-library/INDEX.md`. Encontre seu nicho/contexto na
+   lista **By niche** e seu clima em **By mood**; pegue os 3–5 sites naquela interseção.
+   - *Nicho não está na biblioteca?* (ela cobre health, fintech, dev-tools, nature, food, education, beauty,
+     fitness, home, travel e mais — mas não tudo.) Então **roteie por composição, não por indústria**:
+     escolha o **arquétipo de composição** (abaixo) que combina com o clima e pegue sites que o usem, qualquer
+     que seja o setor. Um app de meditação pode pegar emprestado fielmente os ossos de uma página de moda
+     editorial-photo; uma cooperativa rural pode pegar emprestado uma página de CPG warm-minimal. Combine a
+     *forma*, não a indústria.
+
+**2. OLHE os pixels — obrigatório.** Dê `Read` no thumbnail `.jpg` de cada site da shortlist. A entrada de texto
+   é um mapa; a imagem é o território. Seu olho se calibra à execução atual — tipografia real, espaçamento,
+   temperatura de cor, como o visual é encenado — de um jeito que a prosa nunca dá. Pular isto é a forma mais
+   comum de um build reverter silenciosamente ao padrão.
+
+**3. Escolha UMA âncora e transcreva seu esqueleto — por escrito, antes de qualquer markup.** Escolha o único
+   site cuja *estrutura* serve melhor a este produto (e que você não acabou de usar — veja o ledger abaixo).
+   **Se ele tem uma captura de página inteira (`reference-library/full/<domain>.jpg`), ABRA-A** — é a página
+   real inteira, de cima a baixo, não só o hero. Leia a sequência **real** de seções e suas peculiaridades
+   estruturais (uma batida assimétrica, um changelog, nenhum pricing, uma ordem estranha) e **escreva a espinha
+   que você vai construir**, copiando o que a página real genuinamente faz — *mesmo quando não é o arco "esperado".*
+   (Sem captura inteira? Recorra à linha `sections:` da entrada, mas saiba que ela é seca e o detalhe inventado
+   é exatamente onde você deriva de volta para o template.) Esta transcrição *é* a função forçante: você constrói
+   sobre os ossos de uma página real, não sobre sua média — e sua média É o template genérico que você está
+   combatendo.
+   > ex.: âncora = linear.app → sua espinha real (da captura inteira) é `hero(UI do app ao vivo) › logo-wall ›
    > 3-up › feature(UI) › feature(UI) › feature(code) › feature(chart) › changelog › 2-up-testimonial ›
-   > cta › footer` — note there is **no problem-reframe and no pricing**. You build THAT, re-skinned — not
-   > the template your prior wants to emit.
+   > cta › footer` — note que não há **problem-reframe nem pricing**. Você constrói AQUILO, com nova pele — não
+   > o template que seu padrão quer emitir.
 
-**4. Skin from the others — never from the anchor.** Pull palette, type, texture and motif from the
-   *other* shortlisted sites + your vibe. This resolves the apparent contradiction in this skill:
-   **structure from ONE (faithfully), skin from the rest (remixed).** The result clones no one — its
-   surface is recombined — yet has a real spine, because its structure is faithfully one page's. Remix
-   ≥3, clone 0, and copy structure boldly from the one. *Even when copying, be faithful.*
+**4. Tire a pele dos outros — nunca da âncora.** Pegue paleta, tipografia, textura e motif dos *outros* sites da
+   shortlist + seu clima. Isto resolve a aparente contradição desta skill: **estrutura de UM (fielmente), pele
+   do resto (remixada).** O resultado não clona ninguém — sua superfície é recombinada — e ainda assim tem uma
+   espinha real, porque sua estrutura é fielmente a de uma página. Remixe ≥3, clone 0 e copie a estrutura com
+   ousadia a partir de uma. *Mesmo ao copiar, seja fiel.*
 
-**5. Rotate the anchor (ledger).** Two pages must never share an anchor. Before you commit, recall what
-   you anchored on recently; if it's the same site *or the same composition archetype*, switch. Within a
-   niche especially: not every fintech page anchors on Stripe, not every health page on Oura — spread the
-   load across the shortlist. **Building several at once (a batch / parallel agents)?** Parallel builders
-   are blind to each other, so they collide on the trendy default (everyone reaches for Geist, the
-   accent-word headline, the dark CTA band). Assign each one a *different* **anchor, page archetype
-   (section-patterns.md), display-font family, accent, and hero grammar** up front — and explicitly
-   **forbid the shared DTC reflexes** so two siblings don't both ship the one-accent-word headline or the
-   contrarian reframe. Distinct inputs in, distinct pages out.
+**5. Rotacione a âncora (ledger).** Duas páginas jamais devem compartilhar uma âncora. Antes de se comprometer,
+   lembre em que você ancorou recentemente; se for o mesmo site *ou o mesmo arquétipo de composição*, troque.
+   Dentro de um nicho especialmente: nem toda página de fintech ancora na Stripe, nem toda página de health na
+   Oura — distribua a carga pela shortlist. **Construindo várias de uma vez (um batch / agentes paralelos)?**
+   Builders paralelos são cegos uns aos outros, então colidem no default da moda (todo mundo recorre ao Geist,
+   ao título com palavra de destaque, à faixa de CTA escura). Atribua a cada um uma **âncora, arquétipo de página
+   (section-patterns.md), família de display-font, accent e gramática de hero** *diferentes* logo de cara — e
+   explicitamente **proíba os reflexos DTC compartilhados** para que dois irmãos não entreguem ambos o título
+   com uma-palavra-de-destaque ou o reframe contrarian. Entradas distintas entram, páginas distintas saem.
 
-This is how you escape the prior: you build from a real page's bones, not from memory.
-
----
-
-## Composition archetypes — rotate the SKELETON, not just the skin
-
-Convergence is mostly *structural*: even with a fresh palette and font, two pages rhyme because they share
-one skeleton. So choose the hero/page composition **deliberately**, and rotate it across builds. Each
-archetype below has real exemplars in the library — anchor on one (and remember the shape is
-industry-agnostic: a non-tech brief borrows these freely):
-
-- **split-screen** — text one side, visual the other (the default — use it *least*). e.g. attio, framer
-- **centered-editorial** — big centered headline, generous air, visual below. e.g. vercel, cohere
-- **full-bleed-photo / cinematic** — a photo or render fills the hero, text overlaid. e.g. palantir,
-  cluely, index.inc, spellbook  (← the slot Unsplash photography fills — see image-strategy.md)
-- **bento-grid** — the hero *is* a grid of unequal product tiles. e.g. supabase, raycast, default
-- **poster / coverline** — magazine-cover energy: oversized condensed type, minimal chrome. e.g. mux, polar
-- **asymmetric-canvas** — copy in a narrow column, a sprawling visual field beside it. e.g. morphic
-- **product-diorama** — a single staged 3D/photoreal object as the whole hero. e.g. lithic, oxide, three.tools
-- **app-frame** — a faithful rebuild of the product UI in browser/app chrome is the hero. e.g. linear, amie
-- **oversized-type** — type itself is the image; little or no graphic. e.g. clickhouse, juicebox, pipe
-- **diptych / triptych** — repeated panels showing states or variants. e.g. authkit, rive
-
-Rule of thumb: **if your last page was split-screen with three cards, this one is not.**
+É assim que você escapa do padrão: você constrói a partir dos ossos de uma página real, não da memória.
 
 ---
 
-## Move 3 — Lock the Design DNA (today's vocabulary)
+## Arquétipos de composição — rotacione o ESQUELETO, não só a pele
+
+A convergência é majoritariamente *estrutural*: mesmo com paleta e fonte novas, duas páginas rimam porque
+compartilham um esqueleto. Então escolha a composição do hero/página **deliberadamente** e rotacione-a entre
+builds. Cada arquétipo abaixo tem exemplares reais na biblioteca — ancore em um (e lembre que a forma é
+agnóstica de indústria: um briefing fora de tech pode pegar estes emprestado livremente):
+
+- **split-screen** — texto de um lado, visual do outro (o default — use *o mínimo*). ex.: attio, framer
+- **centered-editorial** — título grande centralizado, ar generoso, visual abaixo. ex.: vercel, cohere
+- **full-bleed-photo / cinematic** — uma foto ou render preenche o hero, texto sobreposto. ex.: palantir,
+  cluely, index.inc, spellbook  (← o slot que a fotografia da Unsplash preenche — veja image-strategy.md)
+- **bento-grid** — o hero *é* um grid de tiles de produto desiguais. ex.: supabase, raycast, default
+- **poster / coverline** — energia de capa de revista: tipografia condensada superdimensionada, chrome mínimo. ex.: mux, polar
+- **asymmetric-canvas** — texto numa coluna estreita, um campo visual amplo ao lado. ex.: morphic
+- **product-diorama** — um único objeto 3D/fotorrealista encenado como o hero inteiro. ex.: lithic, oxide, three.tools
+- **app-frame** — uma reconstrução fiel da UI do produto em chrome de browser/app é o hero. ex.: linear, amie
+- **oversized-type** — a tipografia em si é a imagem; pouco ou nenhum gráfico. ex.: clickhouse, juicebox, pipe
+- **diptych / triptych** — painéis repetidos mostrando estados ou variantes. ex.: authkit, rive
+
+Regra prática: **se sua última página foi split-screen com três cards, esta não é.**
+
+---
+
+## Movimento 3 — Fixe o Design DNA (vocabulário de hoje)
 
 ```
-MOTIF + COORDINATE: <e.g. "control room" · "Bloomberg terminal meets Teenage Engineering">
-AVOID-LIST:         <4-6 things this page won't do>
+MOTIF + COORDINATE: <ex. "sala de controle" · "terminal Bloomberg meets Teenage Engineering">
+AVOID-LIST:         <4-6 coisas que esta página não vai fazer>
 PALETTE:
-  - neutrals: <TINTED, not pure — dark e.g. #09090B/#18181B/#27272A/#3F3F46 · light #FAFAFA/warm off-white>
-  - accent:  <ONE or two SHARP saturated accents (can be electric); where it's allowed — NOT indigo/violet>
+  - neutrals: <TINGIDOS, não puros — escuro ex. #09090B/#18181B/#27272A/#3F3F46 · claro #FAFAFA/off-white quente>
+  - accent:  <UM ou dois accents saturados e AFIADOS (podem ser elétricos); onde é permitido — NÃO índigo/violeta>
   - mode:    <light | dark | warm-light>
-TYPE (pick a real 2025 pairing — see vocabulary below; NOT Inter-only, NO mono as a brand/UI face):
-  - display: <characterful grotesque OR editorial serif + why it fits the motif>
-  - body:    <neutral groteske workhorse>
-  - move:    <extreme weight contrast / serif-display+sans / oversized condensed / optical sizing>
+TYPE (escolha um par real de 2025 — veja o vocabulário abaixo; NÃO só Inter, NADA de mono como face de brand/UI):
+  - display: <grotesque cheia de caráter OU serifa editorial + por que combina com o motif>
+  - body:    <grotesque neutra de trabalho pesado>
+  - move:    <contraste de peso extremo / serif-display+sans / condensada superdimensionada / optical sizing>
 DENSITY:   <airy-editorial | balanced | dense-terminal>
-MOTION:    <pick from motion.md — at least a blur-in reveal + one signature motion; match the brand>
-TEXTURE:   <grain (SVG 15-30%) / dot or blueprint grid / stepped luminance / none — choose deliberately>
-IMAGERY:   <real product UI / sculptural 3D (Spline) / editorial photo / custom illustration — see image-strategy.md>
-SIGNATURE: <the ONE genre-breaking move (see below). Must surprise; must fit the motif.>
+MOTION:    <escolha de motion.md — pelo menos um reveal blur-in + um movimento de assinatura; combine com a brand>
+TEXTURE:   <grão (SVG 15-30%) / grid de pontos ou blueprint / luminância em degraus / nenhuma — escolha deliberadamente>
+IMAGERY:   <UI real do produto / 3D escultural (Spline) / foto editorial / ilustração custom — veja image-strategy.md>
+SIGNATURE: <o ÚNICO movimento que quebra o gênero (veja abaixo). Deve surpreender; deve combinar com o motif.>
 ```
 
-→ Then carry tokens into **build-system.md**, motion into **motion.md**, imagery into **image-strategy.md**.
-→ Run the **Anti-Convergence checklist** (bottom of this file) before you build.
+→ Depois leve os tokens para **build-system.md**, o motion para **motion.md**, as imagens para **image-strategy.md**.
+→ Rode o **checklist Anticonvergência** (no fim deste arquivo) antes de construir.
 
 ---
 
-## CURRENT typography (use this, not the prior)
+## Tipografia ATUAL (use esta, não o padrão)
 
-Inter-as-the-whole-system is the literal AI/early-stage default; mono-everywhere and Space Grotesk read
-as 2021-23 crypto/AI templates. The current move is a **characterful display + a neutral grotesque body**.
+Inter como o sistema inteiro é o default literal de IA/early-stage; mono-em-tudo e Space Grotesk leem como
+templates de cripto/IA de 2021-23. O movimento atual é um **display cheio de caráter + um corpo grotesque neutro**.
 
-**Display / headline (pick to fit the motif):**
-- *Characterful grotesques* — **Geist**, Schibsted Grotesk, Bricolage Grotesque, Host Grotesk, Hanken
-  Grotesk (free); Söhne, ABC Diatype, PP Neue Montreal, Aeonik, GT America/Walsheim, Monument Grotesk,
-  TWK Lausanne, Suisse Int'l (paid — name as the intent / use closest free match).
-- *Editorial serif display* (the 2025-26 signature, used sparingly at large size) — **Fraunces** (variable
-  opsz/SOFT/WONK), **Instrument Serif**, DM Serif Display, Newsreader (free); PP Editorial New, GT Super,
-  Reckless, Signifier, Tiempos Headline, Canela (paid).
-  > ⚠ **Over-reflex warning:** an editorial *serif headline on dark* has become this skill's default for
-  > anything "premium/authoritative". It is NOT the only premium move and it's now a tell. For at least
-  > half your pages, make the headline a **characterful heavy grotesque** instead (Bricolage, Geist,
-  > Aeonik, Monument, Druk-condensed) — equally premium, and it varies the output. Don't reach for Fraunces
-  > on autopilot.
-- *Condensed power display* — Druk, Right Grotesk, Hatton, Anton (free-ish) for magazine-coverline heroes.
+**Display / headline (escolha para combinar com o motif):**
+- *Grotesques cheias de caráter* — **Geist**, Schibsted Grotesk, Bricolage Grotesque, Host Grotesk, Hanken
+  Grotesk (gratuitas); Söhne, ABC Diatype, PP Neue Montreal, Aeonik, GT America/Walsheim, Monument Grotesk,
+  TWK Lausanne, Suisse Int'l (pagas — nomeie como a intenção / use a alternativa gratuita mais próxima).
+- *Serifa editorial de display* (a assinatura de 2025-26, usada com parcimônia em tamanho grande) — **Fraunces**
+  (variável opsz/SOFT/WONK), **Instrument Serif**, DM Serif Display, Newsreader (gratuitas); PP Editorial New, GT Super,
+  Reckless, Signifier, Tiempos Headline, Canela (pagas).
+  > ⚠ **Aviso de reflexo excessivo:** um *headline em serifa editorial sobre escuro* virou o default desta skill
+  > para qualquer coisa "premium/autoritativa". NÃO é o único movimento premium e agora é um vício. Para pelo menos
+  > metade das suas páginas, faça o headline ser uma **grotesque pesada e cheia de caráter** no lugar (Bricolage, Geist,
+  > Aeonik, Monument, Druk-condensada) — igualmente premium, e varia o output. Não recorra ao Fraunces
+  > no piloto automático.
+- *Display condensada de impacto* — Druk, Right Grotesk, Hatton, Anton (mais ou menos gratuitas) para heros de coverline de revista.
 
-**Body workhorses (replace Inter/Open Sans/Lato/Roboto):** **Geist**, Hanken Grotesk, Schibsted Grotesk,
-Plus Jakarta Sans, Albert Sans, Instrument Sans, Inter *only* as a quiet body under a distinctive display.
+**Corpos de trabalho pesado (substituem Inter/Open Sans/Lato/Roboto):** **Geist**, Hanken Grotesk, Schibsted Grotesk,
+Plus Jakarta Sans, Albert Sans, Instrument Sans, Inter *apenas* como um corpo discreto sob um display distintivo.
 
-**Mono — banned as a design choice.** It's ugly and dated (a 2021-23 crypto/AI-template tell). Do NOT use a
-monospace face for eyebrows, labels, captions, nav, buttons, **numbers, stats, data, or table cells** — for
-figures use the grotesque body with `font-variant-numeric: tabular-nums`, which reads far better. The ONLY
-place monospacing is permitted is inside a **literal code/terminal snippet** (code is monospaced by nature) —
-and even there keep it to one small surface, never the page's texture. If you're reaching for mono to add
-"technical flavour," stop: that flavour *is* the generic look we're killing.
+**Mono — banida como escolha de design.** É feia e datada (um vício de template de cripto/IA de 2021-23). NÃO use uma
+face monospace para eyebrows, labels, captions, nav, botões, **números, estatísticas, dados ou células de tabela** — para
+algarismos use o corpo grotesque com `font-variant-numeric: tabular-nums`, que lê muito melhor. O ÚNICO lugar em que
+monospaçamento é permitido é dentro de um **snippet literal de código/terminal** (código é monospaçado por natureza) —
+e mesmo ali mantenha em uma pequena superfície, nunca como a textura da página. Se você está recorrendo a mono para
+adicionar "sabor técnico", pare: esse sabor *é* o visual genérico que estamos matando.
 
-**Moves that read 2025:** extreme weight contrast (100/200 vs 800/900), optical sizing + negative
-tracking on big display, tabular numerals for figures, variable-font axes, a real type scale.
+**Movimentos que leem 2025:** contraste de peso extremo (100/200 vs 800/900), optical sizing + tracking negativo
+em display grande, numerais tabulares para algarismos, eixos de fonte variável, uma escala tipográfica de verdade.
 
-**Do NOT use** (dated tells): Inter for everything incl. headings · Space Grotesk / Space Mono · Poppins
-/ Montserrat · Playfair Display · Open Sans / Lato / Roboto as the brand face · **any monospace font outside
-a literal code block** (no mono eyebrows, labels, numbers, or data — it's banned, see above).
+**NÃO use** (vícios datados): Inter em tudo, inclusive títulos · Space Grotesk / Space Mono · Poppins
+/ Montserrat · Playfair Display · Open Sans / Lato / Roboto como face de brand · **qualquer fonte monospace fora
+de um bloco de código literal** (sem eyebrows, labels, números ou dados em mono — é banida, veja acima).
 
-→ Loading recipes (Google Fonts / Fontshare / Geist CDN) are in **build-system.md**.
+→ Receitas de carregamento (Google Fonts / Fontshare / Geist CDN) estão em **build-system.md**.
 
-## CURRENT palette & surface
+## Paleta & superfície ATUAIS
 
-- **Tinted neutrals, never pure.** Dark: `#09090B → #18181B → #27272A → #3F3F46` (zinc/stepped luminance);
-  light: `#FAFAFA` or a warm off-white. Pure `#000`/`#FFF`/`#2563EB` read flat and templated.
-- **One neutral + 1-2 SHARP accents.** Accents can be electric. Steal palettes from culture or IDE themes
-  (e.g. a film, a city at night, a Tokyo Night / Catppuccin editor theme). **Forbidden default: indigo/
-  violet, and the purple→blue hero gradient — the single strongest AI tell.**
-- **Gradients only when functional** — a faint heading gradient, a blurred ambient glow behind product
-  UI, a subtle mesh. Not a full purple-to-blue wash.
-- **Texture as craft** — restrained SVG grain (`feTurbulence`, 15-30% opacity), 1px hairline borders,
-  faint blueprint/dot grid, stepped-luminance surfaces over heavy drop-shadows and glassmorphism.
+- **Neutros tingidos, nunca puros.** Escuro: `#09090B → #18181B → #27272A → #3F3F46` (zinc/luminância em degraus);
+  claro: `#FAFAFA` ou um off-white quente. `#000`/`#FFF`/`#2563EB` puros leem chapados e templatizados.
+- **Um neutro + 1-2 accents AFIADOS.** Accents podem ser elétricos. Roube paletas da cultura ou de temas de IDE
+  (ex.: um filme, uma cidade à noite, um tema de editor Tokyo Night / Catppuccin). **Default proibido: índigo/
+  violeta, e o gradiente de hero roxo→azul — o vício de IA mais forte que existe.**
+- **Gradientes só quando funcionais** — um gradiente sutil em um heading, um glow ambiente desfocado atrás da
+  UI do produto, um mesh discreto. Não uma lavagem inteira de roxo-para-azul.
+- **Textura como ofício** — grão SVG comedido (`feTurbulence`, 15-30% de opacidade), bordas de 1px hairline,
+  grid sutil de blueprint/pontos, superfícies de luminância em degraus em vez de drop-shadows pesadas e glassmorphism.
 
-## The signature must break the genre
+## A assinatura precisa quebrar o gênero
 
-The ONE memorable move pages in this niche usually DON'T do — driven by the motif. If it's a genre trope
-(dark dev-tool's live-console+sparkline; fintech's floating phone; the editorial-serif-on-dark that even
-*this skill* now overuses), it's not a signature. Push past it: an unexpected layout archetype, a tactile
-texture, a bold color block, real product UI staged unusually, a typographic punchline, a physical metaphor.
-
----
-
-## Anti-Convergence — mandatory variety (run before building)
-
-Convergence is the enemy even after you escape the obvious prior. It bites at two levels — **structure**
-(the skeleton) and **surface** (the skin) — and the structural one is what makes pages rhyme even when the
-colours differ. Check both; rotate so two pages by this skill never share a spine.
-
-**Structure — the skeleton (the part everyone forgets to vary):**
-- [ ] **Composition archetype** — a *deliberate* pick from the list above, different from your last build.
-      Not reflexively split-screen / hero-left-text + image-right.
-- [ ] **Section sequence** — transcribed from your anchor (Move 2), driven by the story — not the generic
-      hook → logos → 3-cards → CTA boilerplate on autopilot.
-- [ ] **Hero grammar** — break the prior chain. You do NOT need a kicker/eyebrow label, *and* a
-      one-word-accent headline, *and* two CTAs (filled + ghost-with-arrow), *and* a row of exactly three
-      stats. Drop or reshape **at least two** of these every build.
-- [ ] **The kicker is not mandatory** — a small tracked label above the H1 (`A SLEEP & RECOVERY RING`) is
-      the most reflexive opener there is, and it quietly survives even when everything else varies. For at
-      least **half** your pages, lead with something else: open straight on the headline, a nav-adjacent
-      one-liner, a date/price/stat, a single product word, or a question. If you *do* use one, make it do
-      real work — a place, a provocation, a spec — never just restate the category in caps.
-- [ ] **Feature layout** — not always three equal cards in a row. Consider a vertical alternating zigzag,
-      a bento, one deep showcase, a numbered walkthrough, a comparison table.
-
-**Surface — the skin:**
-- [ ] **Typeface** — not the same display face you'd reflexively pick; does it fit THIS motif specifically?
-- [ ] **Accent** — a different hue/strategy than the last build; not indigo/violet.
-- [ ] **Texture** — grain / grid / flat / none — a deliberate, varied choice.
-- [ ] **Icons** — a multi-weight set (Phosphor, Iconoir, Hugeicons), matched to the shape language — not
-      raw single-weight Lucide/Feather.
-- [ ] **Corner radius & density** — sharp+dense vs soft+airy is a real lever; don't default to 16px-rounded.
-- [ ] **Signature** — present, genre-breaking, and different from your last page.
-
-**Then self-diff before you ship.** Lay your page's skeleton next to the AI-generic stack below. If you
-can't state plainly how yours differs *structurally* (not just in colour/font), you reverted — go back to
-Move 2 and rebuild on a different anchor.
-
-**Never ship the AI-generic stack:** Inter headings + indigo/purple gradient + **eyebrow-pill →
-one-word-accent headline → filled-+-ghost CTA → row-of-exactly-three-stats → logo wall → three equal icon
-cards** + 16px-rounded everything + faint soft shadow + hero-left/image-right + mono eyebrows + Corporate
-Memphis mascots (Humaaans/unDraw/Storyset) + stock "diverse team at laptops". If two or more of these are
-present, you've reverted to the prior — redo the vibe.
+O ÚNICO movimento memorável que as páginas deste nicho geralmente NÃO fazem — guiado pelo motif. Se for um clichê
+do gênero (o live-console+sparkline da dev-tool escura; o telefone flutuante da fintech; a serifa-editorial-sobre-escuro
+que até *esta skill* agora usa demais), não é uma assinatura. Vá além: um arquétipo de layout inesperado, uma
+textura tátil, um bloco de cor ousado, UI real do produto encenada de forma incomum, um trocadilho tipográfico, uma metáfora física.
 
 ---
 
-## The DTC reflexes — the model's defaults; default them OFF
+## Anticonvergência — variedade obrigatória (rode antes de construir)
 
-Even after the kicker fix, an audit of pages built by this skill found they STILL rhymed — because the
-model has a second, deeper set of "modern DTC/SaaS landing" reflexes it reaches for *every single time*.
-None is wrong on its own; using the **whole set on every page IS the convergence**, and it's why output
-"doesn't look like it's based on a real page" — it's based on the model's average of all pages. Treat each
-as **default-OFF**: a given build may use **at most one or two**, picked deliberately, and must vary *which*
-across builds. When in doubt, do the thing the reflex replaces.
+A convergência é o inimigo mesmo depois que você escapa do padrão óbvio. Ela morde em dois níveis — **estrutura**
+(o esqueleto) e **superfície** (a pele) — e a estrutural é o que faz as páginas rimarem mesmo quando as cores
+diferem. Confira ambos; rotacione para que duas páginas desta skill nunca compartilhem uma espinha.
 
-1. **The one-accent-word headline** — a headline with exactly one word italicised or recoloured
-   (*"the chai you **actually** miss"*, *"your air, finally **felt**"*). The single most repeated tell —
-   it shows up in every hero AND every section heading. Most headlines should have **zero** accent words.
-2. **The dual CTA (filled + ghost-with-arrow)** — one solid button beside one outline "→" button. Often a
-   single CTA, an inline email field, or a text link is truer to the product. Vary it.
-3. **The contrarian problem-reframe** — *"You don't have an X problem. You have a Y problem."* / *"A teabag
-   is the ghost of chai."* A real persuasive move, now a tic. Don't open the second section this way by reflex.
-4. **The dark full-bleed CTA band at the end** — a near-black closing section with an accent-word headline
-   and a button. Fine occasionally; not the default ending. A footer-integrated CTA, a quiet inline close,
-   or no separate CTA section are all valid.
-5. **The hero stat/spec strip** — a row of 3–4 figures pinned under the hero. Earns its place sometimes;
-   reflexive the rest.
-6. **The arc itself** — `hero → problem → 3-up → testimonial → pricing → dark-CTA → footer`. This is the
-   model's one true landing shape, and following it is how every page ends up the same. **Real pages don't
-   all share it** (look at a full-page capture — Linear has no pricing and no problem-reframe; it's a
-   feature-by-feature product tour ending in a changelog). Take your structure from your *anchor's real
-   page*, not from this arc. See **section-patterns.md → Page archetypes**.
+**Estrutura — o esqueleto (a parte que todo mundo esquece de variar):**
+- [ ] **Arquétipo de composição** — uma escolha *deliberada* da lista acima, diferente do seu último build.
+      Não reflexivamente split-screen / hero-texto-à-esquerda + imagem-à-direita.
+- [ ] **Sequência de seções** — transcrita da sua âncora (Movimento 2), guiada pela história — não o boilerplate
+      genérico gancho → logos → 3-cards → CTA no piloto automático.
+- [ ] **Gramática do hero** — quebre a corrente do padrão. Você NÃO precisa de um kicker/eyebrow, *e* de um
+      título com uma-palavra-de-destaque, *e* de dois CTAs (preenchido + ghost-com-seta), *e* de uma fileira de exatamente três
+      estatísticas. Descarte ou remodele **pelo menos dois** desses a cada build.
+- [ ] **O kicker não é obrigatório** — um pequeno label com tracking acima do H1 (`UM ANEL DE SONO & RECUPERAÇÃO`) é
+      a abertura mais reflexiva que existe, e ele sobrevive discretamente mesmo quando todo o resto varia. Para pelo
+      menos **metade** das suas páginas, comece com outra coisa: vá direto no headline, uma frase adjacente à nav,
+      uma data/preço/estatística, uma única palavra de produto ou uma pergunta. Se você *usar* um, faça-o trabalhar
+      de verdade — um lugar, uma provocação, um spec — nunca apenas reafirmar a categoria em caixa-alta.
+- [ ] **Layout de features** — nem sempre três cards iguais numa fileira. Considere um zigue-zague vertical alternado,
+      um bento, um showcase profundo, um passo a passo numerado, uma tabela comparativa.
 
-Self-check: if your page has the accent-word headline **and** the dual CTA **and** the contrarian reframe
-**and** the dark CTA band, you didn't design a page — you printed the template. Strip it back to what your
-anchor actually does.
+**Superfície — a pele:**
+- [ ] **Tipografia** — não a mesma face de display que você escolheria reflexivamente; ela combina com ESTE motif especificamente?
+- [ ] **Accent** — uma matiz/estratégia diferente do último build; não índigo/violeta.
+- [ ] **Textura** — grão / grid / chapado / nenhuma — uma escolha deliberada e variada.
+- [ ] **Ícones** — um set multi-peso (Phosphor, Iconoir, Hugeicons), combinado com a linguagem de forma — não
+      Lucide/Feather cru de peso único.
+- [ ] **Raio de canto & densidade** — afiado+denso vs suave+arejado é uma alavanca real; não recaia no 16px-arredondado.
+- [ ] **Assinatura** — presente, quebrando o gênero e diferente da sua última página.
+
+**Depois faça um self-diff antes de entregar.** Coloque o esqueleto da sua página ao lado da pilha genérica de IA abaixo. Se você
+não conseguir dizer com clareza como a sua difere *estruturalmente* (não só em cor/fonte), você reverteu — volte ao
+Movimento 2 e reconstrua sobre uma âncora diferente.
+
+**Nunca entregue a pilha genérica de IA:** títulos em Inter + gradiente índigo/roxo + **pílula de eyebrow →
+título com uma-palavra-de-destaque → CTA preenchido-+-ghost → fileira de exatamente três estatísticas → mural de logos → três cards de ícone
+iguais** + tudo 16px-arredondado + sombra suave sutil + hero-esquerda/imagem-direita + eyebrows em mono + mascotes Corporate
+Memphis (Humaaans/unDraw/Storyset) + stock "time diverso em laptops". Se dois ou mais destes estiverem
+presentes, você reverteu ao padrão — refaça o clima.
 
 ---
 
-## Micro-grammar — ASSIGN it, don't just forbid it
+## Os reflexos DTC — os defaults do modelo; deixe-os DESLIGADOS por padrão
 
-Hard-won lesson: a *forbid* list ("default these OFF") is still advice, and **advice loses to the prior**.
-A blind audit of pages built with the reflex-list above still scored them "one studio's house system" — the
-agents dropped some reflexes but quietly re-emitted the kicker, the accent word, the dual CTA and the same
-footer anyway. The fix is the same one that worked for typeface and page-archetype: stop forbidding and
-start **assigning a concrete micro-grammar up front**, like a ticket the build must fill.
+Mesmo depois da correção do kicker, uma auditoria de páginas construídas por esta skill descobriu que elas AINDA rimavam — porque o
+modelo tem um segundo conjunto, mais profundo, de reflexos de "landing DTC/SaaS moderna" que ele recorre *toda vez*.
+Nenhum está errado isoladamente; usar o **conjunto inteiro em toda página É a convergência**, e é por isso que o output
+"não parece baseado numa página real" — é baseado na média do modelo de todas as páginas. Trate cada um
+como **DESLIGADO por padrão**: um dado build pode usar **no máximo um ou dois**, escolhidos deliberadamente, e deve variar *quais*
+entre builds. Na dúvida, faça o que o reflexo substitui.
 
-**Before building (and ALWAYS when building several at once), write a one-line grammar ticket per page** and
-hold to it. Make the choices *concrete* and *different per page*:
+1. **O título com uma-palavra-de-destaque** — um título com exatamente uma palavra em itálico ou recolorida
+   (*"o chai que você **realmente** sente falta"*, *"seu ar, finalmente **sentido**"*). O vício mais repetido de todos —
+   ele aparece em todo hero E em todo título de seção. A maioria dos títulos deveria ter **zero** palavras de destaque.
+2. **O CTA duplo (preenchido + ghost-com-seta)** — um botão sólido ao lado de um botão "→" em outline. Muitas vezes um
+   único CTA, um campo de email inline ou um link de texto é mais fiel ao produto. Varie.
+3. **O problem-reframe contrarian** — *"Você não tem um problema de X. Você tem um problema de Y."* / *"Um saquinho de chá
+   é o fantasma do chai."* Um movimento persuasivo real, hoje um tique. Não abra a segunda seção assim por reflexo.
+4. **A faixa de CTA escura full-bleed no fim** — uma seção de fechamento quase preta com um título com palavra de destaque
+   e um botão. Tudo bem ocasionalmente; não é o final default. Um CTA integrado ao footer, um fechamento inline discreto,
+   ou nenhuma seção de CTA separada são todos válidos.
+5. **A faixa de estatísticas/specs do hero** — uma fileira de 3–4 algarismos fixados sob o hero. Às vezes merece o lugar;
+   reflexiva no resto.
+6. **O arco em si** — `hero → problema → 3-up → testimonial → pricing → CTA-escuro → footer`. Esta é a única forma
+   verdadeira de landing do modelo, e segui-la é como toda página acaba igual. **Páginas reais não
+   compartilham todas ele** (olhe uma captura de página inteira — a Linear não tem pricing nem problem-reframe; é um
+   tour de produto feature-por-feature terminando num changelog). Tire sua estrutura da *página real da sua
+   âncora*, não deste arco. Veja **section-patterns.md → Page archetypes**.
 
-- **Hero grammar:** kicker? (yes/no) · accent word in the headline? (no, by default) · headline register
-  (declarative / question / single-word / two-clause) · CTA pattern (single solid / single text-link /
-  inline field / none-above-the-fold).
-- **Proof:** logo wall / one pull-quote / a stat line / a live metric / none.
-- **Closing:** dark CTA band / footer-integrated CTA / quiet inline / an oversized wordmark — pick one, and
-  not the same as your last page.
-- **Footer:** the model defaults to "brand + one-liner + three label-capped columns" every time — that
-  itself is a tell. Vary it: a minimal two-line footer, a fat sitemap, a single-row footer, a footer that's
-  mostly a newsletter, a near-empty one.
-- **Hue family:** name the actual hue (not "an accent") and keep sibling pages in *different* families
-  (don't ship two oranges).
+Autoverificação: se sua página tem o título com palavra de destaque **e** o CTA duplo **e** o reframe contrarian
+**e** a faixa de CTA escura, você não desenhou uma página — você imprimiu o template. Reduza ao que sua
+âncora de fato faz.
 
-For a batch, run a **convergence linter** before you ship: lay the pages side by side and list what they
-share (hero grammar, section order, CTA shape, footer, the same rhetorical move). Anything shared by 2+
-pages that wasn't deliberate → change it on all but one. Treat shared-by-default as a bug.
+---
 
-## Copy the IDENTITY with real tokens, not from a screenshot
+## Micro-gramática — ATRIBUA-a, não apenas proíba
 
-Why faithful "copy this site" still drifts generic: the library gives you a *picture* and *prose* of the
-reference, never its real CSS — so you re-derive the fonts, spacing, colour and shadows from memory, and
-memory is the generic prior. Close that gap by pulling the anchor's **real computed tokens** and building to
-them literally:
+Lição cara: uma lista de *proibições* ("deixe estes DESLIGADOS por padrão") ainda é conselho, e **conselho perde para o padrão**.
+Uma auditoria cega de páginas construídas com a lista de reflexos acima ainda as classificou como "o house system de um estúdio" — os
+agentes descartaram alguns reflexos mas discretamente reemitiram o kicker, a palavra de destaque, o CTA duplo e o mesmo
+footer mesmo assim. A correção é a mesma que funcionou para tipografia e page-archetype: pare de proibir e
+comece a **atribuir uma micro-gramática concreta de cara**, como um ticket que o build deve preencher.
 
-- Use **`scripts/extract_tokens.py`** (opt-in; needs a browser) on the anchor's URL to read its *actual*
-  font families/sizes/weights/tracking, colour palette, border-radii, the exact card `box-shadow`, button
-  anatomy and container width. Build with **those literal values** — e.g. Stripe's
-  real card shadow is `rgba(50,50,93,.25) 0 30px 60px -10px, rgba(0,0,0,.1) 0 18px 36px -18px`; Mercury's
-  buttons are 32px-radius pills in a periwinkle `#5266EB`; Vercel's display is Geist at `-2.4px` tracking.
-  Those specifics ARE the identity — a screenshot can't give them to you, and guessing reverts to the prior.
-- Proprietary faces (Söhne, Arcadia, sohne-var) won't load — name the intent and substitute the closest free
-  match (design-dna typography list), but keep the real *size / weight / tracking / line-height*.
-- One great page beats four rushed ones: pull the tokens, copy the real structure (full-page capture), build,
-  **screenshot it, compare to the anchor, and iterate** until the identity actually reads — don't ship the
-  first draft.
+**Antes de construir (e SEMPRE ao construir várias de uma vez), escreva um ticket de gramática de uma linha por página** e
+mantenha-o. Faça as escolhas *concretas* e *diferentes por página*:
+
+- **Gramática do hero:** kicker? (sim/não) · palavra de destaque no título? (não, por padrão) · registro do título
+  (declarativo / pergunta / palavra-única / duas-orações) · padrão de CTA (único sólido / único link-de-texto /
+  campo inline / nenhum acima da dobra).
+- **Prova:** mural de logos / um pull-quote / uma linha de estatística / uma métrica ao vivo / nenhuma.
+- **Fechamento:** faixa de CTA escura / CTA integrado ao footer / inline discreto / um wordmark superdimensionado — escolha um, e
+  não o mesmo da sua última página.
+- **Footer:** o modelo recai em "brand + frase + três colunas com labels em caixa-alta" toda vez — isso
+  em si é um vício. Varie: um footer minimalista de duas linhas, um sitemap robusto, um footer de fileira única, um footer que é
+  basicamente uma newsletter, um quase vazio.
+- **Família de matiz:** nomeie a matiz real (não "um accent") e mantenha páginas irmãs em famílias *diferentes*
+  (não entregue dois laranjas).
+
+Para um batch, rode um **linter de convergência** antes de entregar: coloque as páginas lado a lado e liste o que elas
+compartilham (gramática de hero, ordem de seções, forma de CTA, footer, o mesmo movimento retórico). Qualquer coisa compartilhada por 2+
+páginas que não foi deliberada → mude em todas menos uma. Trate o compartilhado-por-padrão como um bug.
+
+## Copie a IDENTIDADE com tokens reais, não de um screenshot
+
+Por que o fiel "copie este site" ainda deriva para o genérico: a biblioteca te dá uma *imagem* e *prosa* da
+referência, nunca seu CSS real — então você rededuz as fontes, espaçamento, cor e sombras de memória, e
+a memória é o padrão genérico. Feche essa lacuna puxando os **tokens computados reais** da âncora e construindo
+para eles literalmente:
+
+- Use **`scripts/extract_tokens.py`** (opt-in; precisa de um browser) na URL da âncora para ler as *reais*
+  famílias/tamanhos/pesos/tracking de fonte, paleta de cores, border-radii, o exato `box-shadow` dos cards, anatomia de botão
+  e largura de container. Construa com **aqueles valores literais** — ex.: a
+  sombra real de card da Stripe é `rgba(50,50,93,.25) 0 30px 60px -10px, rgba(0,0,0,.1) 0 18px 36px -18px`; os botões da Mercury
+  são pílulas de 32px de raio num periwinkle `#5266EB`; o display da Vercel é Geist com tracking `-2.4px`.
+  Esses detalhes específicos SÃO a identidade — um screenshot não consegue te dá-los, e adivinhar reverte ao padrão.
+- Faces proprietárias (Söhne, Arcadia, sohne-var) não vão carregar — nomeie a intenção e substitua pela alternativa gratuita
+  mais próxima (lista de tipografia do design-dna), mas mantenha o real *tamanho / peso / tracking / line-height*.
+- Uma página excelente vence quatro apressadas: puxe os tokens, copie a estrutura real (captura de página inteira), construa,
+  **tire um screenshot, compare com a âncora e itere** até a identidade de fato ler — não entregue o
+  primeiro rascunho.

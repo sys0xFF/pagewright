@@ -1,87 +1,87 @@
-# Intake — capturing intent without overwhelming
+# Intake — capturando a intenção sem sobrecarregar
 
-The goal of intake is to learn *just enough* to make a distinctive page, then get out of the way.
-Two failure modes to avoid: (a) interrogating someone who wanted you to just build it, and
-(b) inventing a product you don't understand. The mode switch below handles both.
+O objetivo do intake é descobrir *o suficiente* para criar uma página marcante e, então, sair do caminho.
+Há dois modos de falhar que você deve evitar: (a) interrogar alguém que só queria que você construísse, e
+(b) inventar um produto que você não entende. A troca de modo abaixo resolve os dois.
 
-## Always start here
+## Sempre comece aqui
 
-Open with the control question, in the user's language, casually:
+Abra com a pergunta de controle, no idioma do usuário, de forma casual:
 
 > "Quick one before I design: do you want to **guide the look** (I'll ask a few questions), or should
 > **I just decide** and show you something to react to? Either's great."
 
-Then branch.
+Depois ramifique.
 
 ---
 
-## Mode A — "You decide"
+## Modo A — "Você decide"
 
-Gather only the irreducible minimum, then commit. You need three things; infer or invent the rest.
+Reúna apenas o mínimo irredutível e então comprometa-se. Você precisa de três coisas; infira ou invente o resto.
 
-1. **What is it?** — the product in one or two sentences (what it does, for whom).
-2. **Who's it for?** — the primary visitor (developers? founders? clinicians? parents? athletes? shoppers?).
-3. **One action** — the single thing you want a visitor to do (start free, book a demo, join waitlist,
-   download). This becomes the primary CTA and shapes the whole page.
+1. **O que é?** — o produto em uma ou duas frases (o que faz, para quem).
+2. **Para quem é?** — o visitante principal (desenvolvedores? founders? médicos? pais e mães? atletas? consumidores?).
+3. **Uma ação** — a única coisa que você quer que um visitante faça (começar grátis, agendar uma demo, entrar na lista de espera,
+   baixar). Isso vira o CTA principal e molda a página inteira.
 
-You also need a fourth thing you can usually *infer* without asking: the **niche / context** — the world
-this product lives in (health, fintech, dev-tools, nature/outdoors, food & beverage, education, beauty,
-fitness, real estate, travel…). You don't ask for it, you *name* it — because it's the routing key that
-picks which reference you anchor on in Design DNA. A health brand and a dev-tool should never start from
-the same reference. Write it down.
+Você também precisa de uma quarta coisa que normalmente dá para *inferir* sem perguntar: o **nicho / contexto** — o mundo
+em que esse produto vive (health, fintech, dev-tools, natureza/outdoors, comidas & bebidas, educação, beauty,
+fitness, imóveis, viagens…). Você não pergunta por ele, você o *nomeia* — porque é a chave de roteamento que
+escolhe em qual referência você se ancora no Design DNA. Uma marca de health e uma dev-tool jamais deveriam partir
+da mesma referência. Anote isso.
 
-If the user gave you a product description already, you may have all three — don't re-ask. Confirm your
-read in one line ("Got it — a *X* for *Y* in the *<niche>* space, goal is *Z*. Designing now.") and
-proceed to Design DNA.
+Se o usuário já te deu uma descrição do produto, talvez você já tenha as três — não pergunte de novo. Confirme sua
+leitura em uma linha ("Got it — a *X* for *Y* in the *<niche>* space, goal is *Z*. Designing now.") e
+prossiga para o Design DNA.
 
-In this mode, **make bold, specific choices**. A confident opinionated page the user can react to beats
-a safe generic one. Pick a clear mood and commit to it.
-
----
-
-## Mode B — "Guide me"
-
-Run the interview in **tiers**. Ask tier 1, design enough to have something concrete, and only go
-deeper into tiers 2–3 if the user wants more control or the design needs it. Never fire all of these at
-once — that's a form, not a conversation.
-
-### Tier 1 — essentials (always ask)
-- **Product & audience** — what it is, who it's for (as in Mode A). From this, *name the niche/context*
-  yourself (health, fintech, nature, food, education, dev-tools…) — it's the reference-routing key, so
-  don't leave it vague. If the product straddles two worlds, pick the one whose *aesthetic* should win.
-- **Primary action** — the one CTA.
-- **Vibe in 2–3 words** — e.g. "clean and trustworthy", "bold and loud", "playful", "technical",
-  "premium/luxury", "friendly". This seeds the mood; if they're unsure, offer 3 options with a
-  one-line description each and let them point.
-
-### Tier 2 — brand & content (ask if guiding closely)
-- **Brand assets** — existing logo, brand colors, fonts? (If yes, the Design DNA respects them; if no,
-  you invent a fitting system.)
-- **Proof** — any real logos, metrics, testimonials, or screenshots to feature? (Real proof >
-  invented. If none, plan tasteful placeholders and say they're swappable.)
-- **Must-have sections** — anything specific (pricing tiers, integrations, a comparison table, FAQ)?
-- **Reference sites they love** — if they name some, treat as *additional* DNA inputs (still remix,
-  don't clone).
-
-### Tier 3 — fine control (only if they're clearly hands-on)
-- Section order preferences, copy tone samples, specific colors to use/avoid, length (one-screen vs
-  long-form), light/dark, motion appetite.
-
-### Smart defaults (use silently when not specified)
-- **Theme:** choose light or dark from the mood, not a coin flip (technical/AI → dark often reads
-  premium; warm/consumer → light).
-- **Length:** one strong long-scroll page (hero → proof → 2–3 feature blocks → secondary CTA → FAQ →
-  footer). Trim if the product is simple.
-- **CTA copy:** action-specific ("Start building", "Get a demo"), never generic "Sign up" unless asked.
-- **Audience tone:** match the reader — terse and precise for developers, warm and benefit-led for
-  consumers, ROI-framed for business buyers.
+Nesse modo, **faça escolhas ousadas e específicas**. Uma página confiante e com opinião, à qual o usuário pode reagir, vence
+uma página segura e genérica. Escolha um mood claro e comprometa-se com ele.
 
 ---
 
-## Before you leave intake
+## Modo B — "Me guie"
 
-You should be able to fill this in one breath. If you can't, ask one more targeted question; if you can,
-move to Design DNA.
+Conduza a entrevista em **camadas**. Pergunte a camada 1, projete o suficiente para ter algo concreto, e só vá
+mais fundo nas camadas 2–3 se o usuário quiser mais controle ou se o design exigir. Nunca dispare tudo de uma
+vez — isso é um formulário, não uma conversa.
+
+### Camada 1 — essenciais (sempre pergunte)
+- **Produto & público** — o que é, para quem é (como no Modo A). A partir disso, *nomeie o nicho/contexto*
+  você mesmo (health, fintech, natureza, comida, educação, dev-tools…) — é a chave de roteamento de referência, então
+  não deixe vago. Se o produto fica entre dois mundos, escolha aquele cuja *estética* deve prevalecer.
+- **Ação principal** — o único CTA.
+- **Vibe em 2–3 palavras** — ex.: "clean e confiável", "ousado e barulhento", "divertido", "técnico",
+  "premium/luxo", "amigável". Isso planta a semente do mood; se estiverem em dúvida, ofereça 3 opções com uma
+  descrição de uma linha para cada e deixe que apontem.
+
+### Camada 2 — marca & conteúdo (pergunte se for guiar de perto)
+- **Ativos de marca** — logo existente, cores de marca, fontes? (Se sim, o Design DNA os respeita; se não,
+  você inventa um sistema que se encaixe.)
+- **Prova** — algum logo real, métrica, depoimento ou screenshot para destacar? (Prova real >
+  inventada. Se não houver, planeje placeholders com bom gosto e diga que são substituíveis.)
+- **Seções obrigatórias** — algo específico (planos de preço, integrações, uma tabela comparativa, FAQ)?
+- **Sites de referência que adoram** — se citarem alguns, trate como entradas *adicionais* de DNA (ainda assim remixe,
+  não clone).
+
+### Camada 3 — controle fino (só se forem claramente mão na massa)
+- Preferências de ordem das seções, amostras de tom de copy, cores específicas a usar/evitar, comprimento (uma tela vs
+  formato longo), light/dark, apetite por movimento.
+
+### Defaults inteligentes (use em silêncio quando não especificado)
+- **Tema:** escolha light ou dark a partir do mood, não no cara ou coroa (technical/IA → dark muitas vezes parece
+  premium; warm/consumidor → light).
+- **Comprimento:** uma página forte de scroll longo (hero → prova → 2–3 blocos de features → CTA secundário → FAQ →
+  footer). Encurte se o produto for simples.
+- **Copy do CTA:** específico da ação ("Start building", "Get a demo"), nunca um genérico "Sign up" a não ser que peçam.
+- **Tom para o público:** combine com o leitor — direto e preciso para desenvolvedores, caloroso e voltado a benefícios para
+  consumidores, enquadrado em ROI para compradores corporativos.
+
+---
+
+## Antes de sair do intake
+
+Você deveria conseguir preencher isto em um só fôlego. Se não conseguir, faça mais uma pergunta direcionada; se conseguir,
+vá para o Design DNA.
 
 ```
 Product:        <one line>
@@ -94,4 +94,4 @@ Assets on hand (logos/metrics/screens): <or "none — placeholders">
 Control mode:   <you-decide | guide>
 ```
 
-Carry this into **design-dna.md** — the **niche/context** drives reference selection there.
+Leve isto para o **design-dna.md** — o **niche/context** orienta a seleção de referência lá.

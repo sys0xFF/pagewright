@@ -1,15 +1,15 @@
-# Reference Library — index
+# Biblioteca de Referência — índice
 
-**267 curated landing pages — SaaS *and* consumer brands** (health, nature, food, education, beauty, fitness, home, travel), distilled into design intelligence to remix. This is reference material, not copy-paste source — see [../design-dna.md](../design-dna.md) for the anti-copy rule.
+**267 landing pages selecionadas a dedo — SaaS *e* marcas de consumo** (saúde, natureza, comida, educação, beleza, fitness, casa, viagem), destiladas em inteligência de design para remixar. Isto é material de referência, não fonte para copiar e colar — veja [../design-dna.md](../design-dna.md) para a regra anti-cópia.
 
-## How to use
-1. Find your **niche** in **By niche** and your **mood** in **By mood**; take the 3–5 sites at that intersection. *Niche not here?* Route by **composition** instead (see the composition archetypes in design-dna.md) — a non-tech brief can faithfully borrow the bones of any page with the right shape.
-2. **LOOK at the thumbnails** (`Read` the `.jpg`s) — the pixels calibrate you far better than the prose.
-3. **Anchor on ONE** for structure, and remix the **skin** from the others. Prefer an **anchor-grade** site (one with a full-page capture, listed below): open `full/<domain>.jpg`, see the WHOLE real page, and copy its actual section sequence — quirks and all, even when it isn't the "expected" SaaS arc. Structure from one (faithfully), skin from the rest — clone nobody. Rotate the anchor so two pages never share a spine.
+## Como usar
+1. Encontre seu **niche** em **By niche** e seu **mood** em **By mood**; pegue os 3–5 sites naquele cruzamento. *Niche não está aqui?* Roteie por **composition** em vez disso (veja os arquétipos de composição em design-dna.md) — um briefing fora do mundo tech pode tomar emprestado fielmente o esqueleto de qualquer página com o formato certo.
+2. **OLHE as miniaturas** (`Read` nos `.jpg`s) — os pixels te calibram muito melhor do que a prosa.
+3. **Ancore em UM** para a estrutura, e remixe a **pele** dos outros. Prefira um site **anchor-grade** (um com captura de página inteira, listado abaixo): abra `full/<domain>.jpg`, veja a página real INTEIRA, e copie sua sequência de seções de verdade — manias e tudo, mesmo quando não é o arco SaaS "esperado". Estrutura de um (fielmente), pele do resto — não clone ninguém. Faça rodízio da âncora para que duas páginas nunca compartilhem a mesma espinha.
 
-Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genre-breaking signature, imagery, copy voice, and steal-able takeaways, with a thumbnail.
+Cada entrada (`entries/<domain>.md`) tem paleta, tipografia, sequência de seções, a assinatura que quebra o gênero, imagens, tom de copy e aprendizados aproveitáveis, com uma miniatura.
 
-**Anchor-grade sites (46 — full-page capture in `full/<domain>.jpg`, so you can copy the *real* structure, not the template):** aesop.com, allbirds.com, anthropic.com, arc.net, attio.com, brilliant.org, calm.com, clickhouse.com, cluely.com, cohere.com, dailyharvest.com, default.com, duolingo.com, eightsleep.com, framer.com, glossier.com, graza.co, gymshark.com, headspace.com, jenis.com, linear.app, liquiddeath.com, lithic.com, magicspoon.com, masterclass.com, mavenclinic.com, mercury.com, monos.com, morphic.com, mux.com, neon.tech, notpla.com, opendoor.com, ouraring.com, oxide.computer, palantir.com, patagonia.com, polar.sh, railway.app, raycast.com, retool.com, sentry.io, stripe.com, supabase.com, tonal.com, vercel.com. *(They span every composition archetype and most niches — when in doubt, anchor here.)*
+**Sites anchor-grade (46 — captura de página inteira em `full/<domain>.jpg`, então você pode copiar a estrutura *real*, não o template):** aesop.com, allbirds.com, anthropic.com, arc.net, attio.com, brilliant.org, calm.com, clickhouse.com, cluely.com, cohere.com, dailyharvest.com, default.com, duolingo.com, eightsleep.com, framer.com, glossier.com, graza.co, gymshark.com, headspace.com, jenis.com, linear.app, liquiddeath.com, lithic.com, magicspoon.com, masterclass.com, mavenclinic.com, mercury.com, monos.com, morphic.com, mux.com, neon.tech, notpla.com, opendoor.com, ouraring.com, oxide.computer, palantir.com, patagonia.com, polar.sh, railway.app, raycast.com, retool.com, sentry.io, stripe.com, supabase.com, tonal.com, vercel.com. *(Eles cobrem todos os arquétipos de composição e a maioria dos niches — na dúvida, ancore aqui.)*
 
 ## By mood
 
@@ -17,303 +17,303 @@ Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genr
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
-| [auth0.com](entries/auth0.com.md) | q9 | dev-tools (identity / auth infrastructure) | dark, gradient, cinematic, mono-type | The hero ditches the obligatory dev-tool code-block / dashboard scr... |
-| [dovetail.com](entries/dovetail.com.md) | q9 | ai | dark, 3d, mono-type, gradient | A glossy 3D pixel-art keyboard keycap (with a peace-sign hand curso... |
-| [frame.io](entries/frame.io.md) | q9 | design | dark, minimal, cinematic | The hero gives the right ~55% of the canvas to a pixel-real, fully-... |
-| [framer.com](entries/framer.com.md) | q9 | design | dark, bento, mono-type | The hero ends not with a static screenshot but with a row of real, ... |
-| [huly.io](entries/huly.io.md) | q9 | productivity | dark, gradient | The hero's central vertical light beam — a luminous blue/violet sha... |
-| [increase.com](entries/increase.com.md) | q9 | fintech (banking infrastructure / financial APIs) | gradient, bold, mono-type, colorful | A literal prism of light: instead of fintech's usual flat navy + si... |
-| [langbase.com](entries/langbase.com.md) | q9 | ai | dark, gradient, mono-type | The hero lives inside a literal blueprint/CAD canvas — a faint dash... |
-| [linear.app](entries/linear.app.md) | q9 | productivity | dark, minimal | The hero pairs a flat, oversized text headline with a pixel-perfect... |
-| [lithic.com](entries/lithic.com.md) | q9 | fintech | dark, 3d, cinematic, mono-type | The hero is a single cinematic 3D scene: a spiral cascade of matte-... |
-| [liveblocks.io](entries/liveblocks.io.md) | q9 | dev-tools / realtime-collaboration-infra | dark, mono-type, photographic, bento | Handwritten white marker annotations with curved arrows ("Your app ... |
-| [metaview.ai](entries/metaview.ai.md) | q9 | ai recruiting / hr-tech (agentic SaaS) | dark, gradient, cinematic | A black-hole / planetary horizon: the hero sits over a dark sphere ... |
-| [monologue.to](entries/monologue.to.md) | q9 | dev-tools | dark, editorial, 3d, mono-type | A photoreal 3D retro-radio / hardware gadget renders the product as... |
-| [mux.com](entries/mux.com.md) | q9 | dev-tools (video infrastructure / API) | mono-type, minimal, bold, illustrated | The headline is set in a wide all-caps MONOSPACE banner ("VIDEO FOR... |
-| [neon.tech](entries/neon.tech.md) | q9 | dev-tools (serverless Postgres / backend platform for AI agents) | dark, gradient, cinematic, mono-type | The hero "image" is a literal data-equalizer — vertical neon-green ... |
-| [notion.so](entries/notion.so.md) | q9 | productivity | dark, illustrated, colorful | The "night shift" concept made literal: a near-black gradient sky w... |
-| [oxide.computer](entries/oxide.computer.md) | q9 | infra | dark, mono-type, photographic, minimal | A literal photoreal product hero: a full-height rack of their actua... |
-| [palantir.com](entries/palantir.com.md) | q9 | data | photographic, cinematic, dark, minimal | A defense/data-infrastructure company leads with a giant, soft, alm... |
-| [passionfroot.me](entries/passionfroot.me.md) | q9 | marketing | gradient, cinematic, illustrated, dark | A 3D claymation-style purple fruit mascot ("Zest") physically perch... |
-| [plaid.com](entries/plaid.com.md) | q9 | fintech | gradient, cinematic, dark, colorful | A photorealistic engraved $100-bill Benjamin Franklin portrait, rec... |
-| [polar.sh](entries/polar.sh.md) | q9 | dev-tools | dark, mono-type, minimal, bento | A colossal two-line hero headline that nearly bleeds edge-to-edge (... |
-| [railway.app](entries/railway.app.md) | q9 | devops | dark, gradient, photographic | A serif hero headline ("Ship software peacefully") set huge over a ... |
-| [reflect.app](entries/reflect.app.md) | q9 | productivity | dark, gradient, glass | A glowing violet black-hole / event-horizon gradient sits dead cent... |
-| [retool.com](entries/retool.com.md) | q9 | dev-tools | dark, 3d, gradient, cinematic | The hero centers a live, editable AI prompt box ("Build me a manufa... |
-| [rive.app](entries/rive.app.md) | q9 | dev-tools / design (interactive animation engine for designers + engineers) | dark, mono-type, bento, cinematic | The hero stage is fenced by a horizontal filmstrip of live, looping... |
-| [sentry.io](entries/sentry.io.md) | q9 | dev-tools | dark, bold-loud, illustrated, mono-type | A "Marketing Mode: ON" toggle pinned top-right of the hero — a self... |
-| [superlist.com](entries/superlist.com.md) | q9 | productivity | dark, gradient, bold, cinematic | The hero headline is split into two colors stacked as a single over... |
-| [trunk.io](entries/trunk.io.md) | q9 | dev-tools | illustrated, mono-type, cinematic, dark | A hand-drawn pencil-sketch isometric landscape — a winding pipeline... |
-| [unicorn.studio](entries/unicorn.studio.md) | q9 | design-tools | dark, minimal, cinematic, mono-type | The hero swaps a single word ('Magic') into a high-contrast serif i... |
-| [1password.com](entries/1password.com.md) | q8 | security | dark, minimal, mono-type, cinematic | The audience toggle floating directly above the H1 (Business / Pers... |
-| [agentql.com](entries/agentql.com.md) | q8 | dev-tools | dark, gradient, 3d, mono-type | The hero is a live triptych of cause-and-effect: a real e-commerce ... |
-| [authkit.com](entries/authkit.com.md) | q8 | dev-tools | dark, glass, minimal | The hero shows the actual auth widget rendered three times, fanned ... |
-| [basedash.com](entries/basedash.com.md) | q8 | ai / data (AI-native business intelligence, dashboards & analytics) | dark, mono-type, cinematic, 3d | The H1 is set in a glowing dot-matrix/LED-segment display typeface ... |
-| [betterstack.com](entries/betterstack.com.md) | q8 | devops | dark, gradient | A single product screenshot rendered in dramatic 3D perspective — t... |
-| [bun.sh](entries/bun.sh.md) | q8 | dev-tools | dark, gradient, mono-type | A live, animated bar-chart benchmark sits inside the hero itself (t... |
-| [clickhouse.com](entries/clickhouse.com.md) | q8 | dev-tools | dark, mono-type, minimal | A single horizontal slab of electric-chartreuse yellow pinned acros... |
-| [coder.com](entries/coder.com.md) | q8 | dev-tools | minimal, mono-type, photographic | The hero refuses the dev-tool dark-mode cliche: it's a stark all-wh... |
-| [codex.io](entries/codex.io.md) | q8 | data-infra (blockchain/crypto data API for dev-tools) | dark, 3d, mono-type, bold | The lime-green photoreal 3D glass cube hovering over the hero, orbi... |
-| [crowdstrike.com](entries/crowdstrike.com.md) | q8 | security | dark, gradient, bold, cinematic | The hero stages a real Gartner Magic Quadrant chart — a literal ana... |
-| [default.com](entries/default.com.md) | q8 | ai | dark, bento | The hero swaps the usual centered-headline + abstract render for an... |
-| [eraser.io](entries/eraser.io.md) | q8 | dev-tools | dark, 3d, bold | The hero is wrapped in floating, draggable-looking diagram primitiv... |
-| [fiberplane.com](entries/fiberplane.com.md) | q8 | dev-tools | minimal, mono-type, bento | The product-card bottoms ARE the demo: each app's actual icon/glyph... |
-| [fireworks.ai](entries/fireworks.ai.md) | q8 | ai | minimal, gradient, mono-type | The hero ditches the obligatory product screenshot/3D render for a ... |
-| [flox.dev](entries/flox.dev.md) | q8 | dev-tools | gradient, mono-type, minimal | A live terminal session card as the hero visual — not a product scr... |
-| [front.com](entries/front.com.md) | q8 | customer-service / CX platform (dev-adjacent ops, AI-powered support) | dark, gradient, bold | A near-black aubergine/violet field used as the ENTIRE hero canvas ... |
-| [hashicorp.com](entries/hashicorp.com.md) | q8 | devops | dark, gradient, minimal, cinematic | A giant editorial SERIF headline ('Do cloud right') in a category w... |
-| [huggingface.co](entries/huggingface.co.md) | q8 | ai | dark, mono-type, minimal | The hero isn't a polished marketing mockup — it's a tilted, live-fe... |
-| [index.inc](entries/index.inc.md) | q8 | dev-tools | dark, gradient, cinematic | A cinematic photographic mountain-range landscape bleeds full-bleed... |
-| [juicebox.ai](entries/juicebox.ai.md) | q8 | ai-recruiting (HR tech / dev-tools-adjacent AI platform) | mono-type, gradient, minimal | The entire UI chrome is rendered in uppercase letter-spaced MONOSPA... |
-| [modal.com](entries/modal.com.md) | q8 | ai-infra / dev-tools (serverless GPU compute) | dark, minimal, mono-type, gradient | The split-color headline: the literal product category ("AI infrast... |
-| [morphic.com](entries/morphic.com.md) | q8 | ai | dark, cinematic, bento, photographic | The hero copy is pushed to a narrow left column while a sprawling t... |
-| [mural.co](entries/mural.co.md) | q8 | productivity | dark, editorial, colorful | A two-tone serif headline where the first half ('Sync up. Speed up.... |
-| [ortto.com](entries/ortto.com.md) | q8 | marketing | dark, minimal, mono-type | The hero hands the entire right half of the screen to a live, layer... |
-| [pipe.com](entries/pipe.com.md) | q8 | fintech | dark, photographic, editorial-minimal, mono-type | Setting the entire page in a monospaced font (SFMono) at display si... |
-| [plasticity.xyz](entries/plasticity.xyz.md) | q8 | design (3D/CAD modeling software for artists) | dark, mono-type, 3d, colorful | Every nav item and feature tab is prefixed with a tiny solid-color ... |
-| [readme.com](entries/readme.com.md) | q8 | dev-tools (API documentation platform) | dark, gradient, mono-type | A live, interactive documentation UI (Guides / Recipes / API Refere... |
-| [sentinelone.com](entries/sentinelone.com.md) | q8 | security | gradient, dark, cinematic | A purple-to-violet gradient haze for the whole hero instead of the ... |
-| [snyk.io](entries/snyk.io.md) | q8 | security | dark, gradient, 3d | A particle-nebula of magenta-to-violet dots bleeding diagonally fro... |
-| [spellbook.legal](entries/spellbook.legal.md) | q8 | legal-ai (contract review & drafting for legal teams) | dark, editorial, photographic, cinematic | A wide cinematic photo of an empty stadium as the hero image — lega... |
-| [status.app](entries/status.app.md) | q8 | crypto / web3 (privacy-first super app — messenger + wallet + browser) | dark, minimal, 3d, photographic | The hero uses a near-life-size, slightly-off-frame product render: ... |
-| [temporal.io](entries/temporal.io.md) | q8 | dev-tools | dark, gradient, mono-type, 3d | A friendly 3D blob mascot (here co-branded in a Crystal Palace FC s... |
-| [three.tools](entries/three.tools.md) | q8 | dev-tools | dark, 3d, minimal, cinematic | The hero is a single colossal 3D-rendered glossy logomark (an infla... |
-| [twingate.com](entries/twingate.com.md) | q8 | security | dark, mono-type, gradient | The headline turns a tired engineering trade-off into a punchline: ... |
-| [wandb.ai](entries/wandb.ai.md) | q8 | ai | dark, mono-type, bold-loud | The hero headline literally edits itself: "AI is hard to production... |
-| [wope.com](entries/wope.com.md) | q8 | dev-tools / SEO analytics (marketing SaaS) | dark, gradient, 3d, glass | The hero stages a glowing 3D "horizon" — a purple light source erup... |
+| [auth0.com](entries/auth0.com.md) | q9 | dev-tools (identity / auth infrastructure) | dark, gradient, cinematic, mono-type | O hero abandona o obrigatório bloco de código / dashboard scr... |
+| [dovetail.com](entries/dovetail.com.md) | q9 | ai | dark, 3d, mono-type, gradient | Uma keycap de teclado em pixel-art 3D brilhante (com um cursor-mão fazendo sinal de paz... |
+| [frame.io](entries/frame.io.md) | q9 | design | dark, minimal, cinematic | O hero entrega os ~55% à direita do canvas a um produto pixel-real, totalmente-... |
+| [framer.com](entries/framer.com.md) | q9 | design | dark, bento, mono-type | O hero termina não com um screenshot estático, mas com uma fileira de elementos reais... |
+| [huly.io](entries/huly.io.md) | q9 | productivity | dark, gradient | O feixe de luz vertical central do hero — uma sombra azul/violeta luminosa... |
+| [increase.com](entries/increase.com.md) | q9 | fintech (banking infrastructure / financial APIs) | gradient, bold, mono-type, colorful | Um prisma de luz literal: em vez do habitual azul-marinho fintech chapado + si... |
+| [langbase.com](entries/langbase.com.md) | q9 | ai | dark, gradient, mono-type | O hero vive dentro de um canvas literal de blueprint/CAD — um traço tracejado fraco... |
+| [linear.app](entries/linear.app.md) | q9 | productivity | dark, minimal | O hero combina um título em texto chapado e superdimensionado com um pixel-perfect... |
+| [lithic.com](entries/lithic.com.md) | q9 | fintech | dark, 3d, cinematic, mono-type | O hero é uma única cena 3D cinematográfica: uma cascata em espiral de matte-... |
+| [liveblocks.io](entries/liveblocks.io.md) | q9 | dev-tools / realtime-collaboration-infra | dark, mono-type, photographic, bento | Anotações brancas escritas à mão a marcador com setas curvas ("Your app ... |
+| [metaview.ai](entries/metaview.ai.md) | q9 | ai recruiting / hr-tech (agentic SaaS) | dark, gradient, cinematic | Um buraco-negro / horizonte planetário: o hero repousa sobre uma esfera escura... |
+| [monologue.to](entries/monologue.to.md) | q9 | dev-tools | dark, editorial, 3d, mono-type | Um rádio-retrô / gadget de hardware em 3D fotorrealista renderiza o produto como... |
+| [mux.com](entries/mux.com.md) | q9 | dev-tools (video infrastructure / API) | mono-type, minimal, bold, illustrated | O título é composto num banner MONOSPACE largo em caixa-alta ("VIDEO FOR... |
+| [neon.tech](entries/neon.tech.md) | q9 | dev-tools (serverless Postgres / backend platform for AI agents) | dark, gradient, cinematic, mono-type | A "imagem" do hero é um equalizador de dados literal — verticais neon-green... |
+| [notion.so](entries/notion.so.md) | q9 | productivity | dark, illustrated, colorful | O conceito "turno da noite" levado ao pé da letra: um céu em gradiente quase-preto c... |
+| [oxide.computer](entries/oxide.computer.md) | q9 | infra | dark, mono-type, photographic, minimal | Um hero de produto fotorrealista literal: um rack de altura total dos seus próprios... |
+| [palantir.com](entries/palantir.com.md) | q9 | data | photographic, cinematic, dark, minimal | Uma empresa de defesa/infraestrutura-de-dados abre com um gigante, suave, quase... |
+| [passionfroot.me](entries/passionfroot.me.md) | q9 | marketing | gradient, cinematic, illustrated, dark | Um mascote de fruta roxa em estilo claymation 3D ("Zest") fisicamente empolei... |
+| [plaid.com](entries/plaid.com.md) | q9 | fintech | gradient, cinematic, dark, colorful | Um retrato fotorrealista gravado do Benjamin Franklin da nota de $100, rec... |
+| [polar.sh](entries/polar.sh.md) | q9 | dev-tools | dark, mono-type, minimal, bento | Um título de hero colossal em duas linhas que quase sangra de ponta a ponta (... |
+| [railway.app](entries/railway.app.md) | q9 | devops | dark, gradient, photographic | Um título de hero em serifa ("Ship software peacefully") composto enorme sobre um... |
+| [reflect.app](entries/reflect.app.md) | q9 | productivity | dark, gradient, glass | Um gradiente violeta brilhante de buraco-negro / horizonte-de-eventos fica bem no centro... |
+| [retool.com](entries/retool.com.md) | q9 | dev-tools | dark, 3d, gradient, cinematic | O hero centraliza uma caixa de prompt de IA ao vivo e editável ("Build me a manufa... |
+| [rive.app](entries/rive.app.md) | q9 | dev-tools / design (interactive animation engine for designers + engineers) | dark, mono-type, bento, cinematic | O palco do hero é cercado por uma tira de filme horizontal ao vivo, em loop... |
+| [sentry.io](entries/sentry.io.md) | q9 | dev-tools | dark, bold-loud, illustrated, mono-type | Um toggle "Marketing Mode: ON" fixado no topo-direito do hero — um auto... |
+| [superlist.com](entries/superlist.com.md) | q9 | productivity | dark, gradient, bold, cinematic | O título do hero é dividido em duas cores empilhadas como um único super... |
+| [trunk.io](entries/trunk.io.md) | q9 | dev-tools | illustrated, mono-type, cinematic, dark | Uma paisagem isométrica desenhada à mão a lápis — um pipeline sinuoso... |
+| [unicorn.studio](entries/unicorn.studio.md) | q9 | design-tools | dark, minimal, cinematic, mono-type | O hero troca uma única palavra ('Magic') por um itálico serifado de alto contraste... |
+| [1password.com](entries/1password.com.md) | q8 | security | dark, minimal, mono-type, cinematic | O toggle de público flutuando diretamente acima do H1 (Business / Pers... |
+| [agentql.com](entries/agentql.com.md) | q8 | dev-tools | dark, gradient, 3d, mono-type | O hero é um tríptico ao vivo de causa-e-efeito: um e-commerce real... |
+| [authkit.com](entries/authkit.com.md) | q8 | dev-tools | dark, glass, minimal | O hero mostra o widget de auth de verdade renderizado três vezes, espalhado em leque... |
+| [basedash.com](entries/basedash.com.md) | q8 | ai / data (AI-native business intelligence, dashboards & analytics) | dark, mono-type, cinematic, 3d | O H1 é composto numa tipografia de display matricial/LED-segmentado brilhante... |
+| [betterstack.com](entries/betterstack.com.md) | q8 | devops | dark, gradient | Um único screenshot de produto renderizado em perspectiva 3D dramática — t... |
+| [bun.sh](entries/bun.sh.md) | q8 | dev-tools | dark, gradient, mono-type | Um benchmark de gráfico de barras animado ao vivo fica dentro do próprio hero (t... |
+| [clickhouse.com](entries/clickhouse.com.md) | q8 | dev-tools | dark, mono-type, minimal | Uma única laje horizontal de amarelo-chartreuse elétrico fixada cruzando... |
+| [coder.com](entries/coder.com.md) | q8 | dev-tools | minimal, mono-type, photographic | O hero recusa o clichê dark-mode de dev-tool: é um gritante todo-branco... |
+| [codex.io](entries/codex.io.md) | q8 | data-infra (blockchain/crypto data API for dev-tools) | dark, 3d, mono-type, bold | O cubo de vidro 3D fotorrealista verde-limão pairando sobre o hero, orbi... |
+| [crowdstrike.com](entries/crowdstrike.com.md) | q8 | security | dark, gradient, bold, cinematic | O hero encena um gráfico real do Gartner Magic Quadrant — uma analy... literal |
+| [default.com](entries/default.com.md) | q8 | ai | dark, bento | O hero troca o habitual título-centralizado + render abstrato por um... |
+| [eraser.io](entries/eraser.io.md) | q8 | dev-tools | dark, 3d, bold | O hero é envolto em primitivos de diagrama flutuantes, com aparência de arrastáveis... |
+| [fiberplane.com](entries/fiberplane.com.md) | q8 | dev-tools | minimal, mono-type, bento | As partes de baixo dos product-cards SÃO a demo: o ícone/glifo real de cada app... |
+| [fireworks.ai](entries/fireworks.ai.md) | q8 | ai | minimal, gradient, mono-type | O hero abandona o obrigatório screenshot/render 3D de produto por um... |
+| [flox.dev](entries/flox.dev.md) | q8 | dev-tools | gradient, mono-type, minimal | Um card de sessão de terminal ao vivo como o visual do hero — não um produto scr... |
+| [front.com](entries/front.com.md) | q8 | customer-service / CX platform (dev-adjacent ops, AI-powered support) | dark, gradient, bold | Um campo berinjela/violeta quase-preto usado como o canvas INTEIRO do hero... |
+| [hashicorp.com](entries/hashicorp.com.md) | q8 | devops | dark, gradient, minimal, cinematic | Um título editorial gigante em SERIFA ('Do cloud right') numa categoria w... |
+| [huggingface.co](entries/huggingface.co.md) | q8 | ai | dark, mono-type, minimal | O hero não é um mockup de marketing polido — é um feed inclinado, ao vivo... |
+| [index.inc](entries/index.inc.md) | q8 | dev-tools | dark, gradient, cinematic | Uma paisagem cinematográfica fotográfica de cadeia de montanhas sangra full-bleed... |
+| [juicebox.ai](entries/juicebox.ai.md) | q8 | ai-recruiting (HR tech / dev-tools-adjacent AI platform) | mono-type, gradient, minimal | Todo o chrome da UI é renderizado em MONOSPACE em caixa-alta com letter-spacing... |
+| [modal.com](entries/modal.com.md) | q8 | ai-infra / dev-tools (serverless GPU compute) | dark, minimal, mono-type, gradient | O título em cor-dividida: a categoria literal do produto ("AI infrastructure"... |
+| [morphic.com](entries/morphic.com.md) | q8 | ai | dark, cinematic, bento, photographic | A copy do hero é empurrada para uma coluna estreita à esquerda enquanto um espalhado t... |
+| [mural.co](entries/mural.co.md) | q8 | productivity | dark, editorial, colorful | Um título em serifa de dois tons onde a primeira metade ('Sync up. Speed up.'... |
+| [ortto.com](entries/ortto.com.md) | q8 | marketing | dark, minimal, mono-type | O hero entrega toda a metade direita da tela a uma layer ao vivo... |
+| [pipe.com](entries/pipe.com.md) | q8 | fintech | dark, photographic, editorial-minimal, mono-type | Compor a página inteira numa fonte monospace (SFMono) em tamanho de display... |
+| [plasticity.xyz](entries/plasticity.xyz.md) | q8 | design (3D/CAD modeling software for artists) | dark, mono-type, 3d, colorful | Cada item de nav e tab de feature é prefixado com um pequeno solid-color... |
+| [readme.com](entries/readme.com.md) | q8 | dev-tools (API documentation platform) | dark, gradient, mono-type | Uma UI de documentação interativa ao vivo (Guides / Recipes / API Refere... |
+| [sentinelone.com](entries/sentinelone.com.md) | q8 | security | gradient, dark, cinematic | Uma névoa em gradiente roxo-para-violeta para o hero inteiro em vez do... |
+| [snyk.io](entries/snyk.io.md) | q8 | security | dark, gradient, 3d | Uma nebulosa de partículas de pontos magenta-para-violeta sangrando na diagonal a partir... |
+| [spellbook.legal](entries/spellbook.legal.md) | q8 | legal-ai (contract review & drafting for legal teams) | dark, editorial, photographic, cinematic | Uma foto cinematográfica larga de um estádio vazio como imagem do hero — legal... |
+| [status.app](entries/status.app.md) | q8 | crypto / web3 (privacy-first super app — messenger + wallet + browser) | dark, minimal, 3d, photographic | O hero usa um render de produto quase em tamanho real, ligeiramente fora-de-quadro: ... |
+| [temporal.io](entries/temporal.io.md) | q8 | dev-tools | dark, gradient, mono-type, 3d | Um mascote blob 3D simpático (aqui co-branded num Crystal Palace FC s... |
+| [three.tools](entries/three.tools.md) | q8 | dev-tools | dark, 3d, minimal, cinematic | O hero é um único logomark colossal renderizado em 3D brilhante (um infla... |
+| [twingate.com](entries/twingate.com.md) | q8 | security | dark, mono-type, gradient | O título transforma um trade-off de engenharia batido numa piada: ... |
+| [wandb.ai](entries/wandb.ai.md) | q8 | ai | dark, mono-type, bold-loud | O título do hero literalmente se edita: "AI is hard to production... |
+| [wope.com](entries/wope.com.md) | q8 | dev-tools / SEO analytics (marketing SaaS) | dark, gradient, 3d, glass | O hero encena um "horizonte" 3D brilhante — uma fonte de luz roxa irromp... |
 
 ### clean-light (80)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
-| [brex.com](entries/brex.com.md) | q9 | fintech | minimal, photographic, mono-type | The hero leads with a tactile, oversized product photograph of the ... |
-| [campsite.co](entries/campsite.co.md) | q9 | productivity | minimal, mono-type, photographic | A near-empty white poster hero — the entire top viewport is just a ... |
-| [clay.run](entries/clay.run.md) | q9 | gtm-data / sales-intelligence (dev-tools-adjacent ops automation) | minimal, 3d, illustrated, mono-type | The data-tooling category screams charts and dashboards; Clay inste... |
-| [cursor.com](entries/cursor.com.md) | q9 | dev-tools | minimal, photographic, mono-type | The hero's product shot is not a slick marketing mockup — it's a fu... |
-| [deno.com](entries/deno.com.md) | q9 | dev-tools | minimal, illustrated, gradient | A hand-drawn, lo-fi-anime dinosaur mascot in a cozy nighttime room ... |
-| [elevenlabs.io](entries/elevenlabs.io.md) | q9 | ai | minimal, gradient, mono-type | A horizontal "orbital" carousel of grainy, planet-like gradient sph... |
-| [ghost.org](entries/ghost.org.md) | q9 | dev-tools | minimal, mono-type, photographic | The hero is almost entirely empty white space wrapped around one en... |
-| [index.app](entries/index.app.md) | q9 | ai-data-analytics | minimal, bento, mono-type | The hero sits inside a literal dashed/dotted technical drafting fra... |
-| [intercom.com](entries/intercom.com.md) | q9 | ai customer-support / helpdesk | minimal, editorial-minimal, mono-type, photographic | A row of unrelated, almost art-gallery photographs — a kite over th... |
-| [micro.so](entries/micro.so.md) | q9 | productivity | editorial-minimal, gradient, photographic | A full-bleed photographic sky-to-grass-field gradient as the hero b... |
-| [mintlify.com](entries/mintlify.com.md) | q9 | dev-tools | gradient, illustrated, minimal | A painterly, hand-illustrated sky-and-clouds landscape as the full-... |
-| [mixpanel.com](entries/mixpanel.com.md) | q9 | analytics | minimal, gradient, bento | A row of five selectable, checkbox-tipped category cards sits direc... |
-| [render.com](entries/render.com.md) | q9 | dev-tools / cloud-infra (PaaS) | minimal, mono-type, bento | The H1 ends in a live-typing animation: 'production for ap|' with a... |
-| [steep.app](entries/steep.app.md) | q9 | analytics | gradient, editorial, minimal | A serif-italic headline floating over a warm pastel aurora gradient... |
-| [stripe.com](entries/stripe.com.md) | q9 | fintech | gradient, minimal, colorful | The single oversized gradient ribbon that enters from the top-right... |
-| [supabase.com](entries/supabase.com.md) | q9 | dev-tools | minimal, mono-type, bento | Splitting the H1 into two emotional registers via color: "Build in ... |
-| [together.ai](entries/together.ai.md) | q9 | ai | gradient, 3d, mono-type | A literal 3D-rendered exploded diagram floating in the hero — a tra... |
-| [vanta.com](entries/vanta.com.md) | q9 | security | minimal, illustrated, colorful | A giant high-contrast SERIF hero headline ("Trust is everything") o... |
-| [vercel.com](entries/vercel.com.md) | q9 | dev-tools | minimal, gradient, mono-type | A monochrome line-art pyramid (the Vercel triangle reconstructed fr... |
-| [amie.so](entries/amie.so.md) | q8 | productivity | minimal, clean, light | A pixel-accurate, fully populated replica of the actual app UI sits... |
-| [amplemarket.com](entries/amplemarket.com.md) | q8 | ai-sales / sales-engagement (AI SaaS for sales teams) | minimal, gradient, mono-type | The hero headline mixes a heavy geometric grotesque with flowing cu... |
-| [arcade.software](entries/arcade.software.md) | q8 | dev-tools | gradient, minimal, clean | A working product input baked directly into the hero: a Demo/Video ... |
-| [artboard.studio](entries/artboard.studio.md) | q8 | design | minimal, mono-type, bento, photographic | The product showcase IS the page: instead of marketing screenshots,... |
-| [asana.com](entries/asana.com.md) | q8 | productivity | minimal, gradient, mono-type | The hero headline mixes inks mid-sentence: black on the framing wor... |
-| [browserbase.com](entries/browserbase.com.md) | q8 | dev-tools (browser infrastructure / agent automation API) | minimal, mono-type, photographic | The hero headline is wrapped in a solid orange highlighter block — ... |
-| [cal.com](entries/cal.com.md) | q8 | productivity | minimal, bento | The hero pairs a giant left-aligned headline with a LIVE, interacti... |
-| [campsite.design](entries/campsite.design.md) | q8 | productivity | minimal, clean, light | Twin stacked pill announcement banners floating dead-center above t... |
-| [cap.so](entries/cap.so.md) | q8 | dev-tools | minimal, clean, light | The hero product shot is a live, interactive-looking editor mock — ... |
-| [clerk.com](entries/clerk.com.md) | q8 | dev-tools | minimal, gradient | A faint circuit-board / PCB trace line-art watermark drawn across t... |
-| [clutch.security](entries/clutch.security.md) | q8 | security | minimal, 3d, mono-type | A photoreal 3D "control hub" centerpiece: a glossy extruded logo di... |
-| [cohere.ai](entries/cohere.ai.md) | q8 | ai | minimal, photographic | The hero is text-only on bare off-white — no graphic — and the prod... |
-| [cord.com](entries/cord.com.md) | q8 | recruiting / job-search platform (tech hiring) | minimal, gradient, mono-type | A binary segmented toggle ('For finding work / For hiring') planted... |
-| [current.com](entries/current.com.md) | q8 | fintech | minimal, photographic, editorial | The hero headline is set bigger than the brand wordmark itself and ... |
-| [databricks.com](entries/databricks.com.md) | q8 | data-ai | minimal, mono-type, illustrated | A near-photoreal product UI replica sits in the hero instead of an ... |
-| [dub.co](entries/dub.co.md) | q8 | analytics | minimal, clean, bento | The hero product screenshot is 'launched' from a notched white tray... |
-| [fruitful.com](entries/fruitful.com.md) | q8 | fintech | minimal, photographic, editorial-minimal | A full-bleed talking-head video of a real Guide (a person, not a da... |
-| [gitlab.com](entries/gitlab.com.md) | q8 | devops | gradient, bento, mono-type | The hero abandons the obligatory dev-tool product screenshot/termin... |
-| [grafana.com](entries/grafana.com.md) | q8 | dev-tools / observability | minimal, gradient, mono-type | An embedded "Ask AI" prompt bar sitting directly under the hero CTA... |
-| [graphy.app](entries/graphy.app.md) | q8 | data (data-viz / charting tool) | minimal, 3d, colorful | The hero headline floats inside a constellation of translucent, fro... |
-| [groq.com](entries/groq.com.md) | q8 | ai (AI inference infrastructure / dev-tools) | minimal, mono-type, cinematic | The hero leads with a live, autoplaying cinematic F1-paddock video ... |
-| [honeycomb.io](entries/honeycomb.io.md) | q8 | observability / dev-tools (developer infrastructure, APM) | minimal, mono-type, clean, illustrated | The hero's "screenshot" is a live, faux-AI agent terminal where a C... |
-| [krepling.com](entries/krepling.com.md) | q8 | ecommerce / commerce platform (no-code store builder) | minimal, 3d, photographic | The hero rejects the standard ecommerce dashboard-screenshot. Inste... |
-| [letters.app](entries/letters.app.md) | q8 | ai (medical documentation / healthtech — AI letter-writing for clinicians) | gradient, minimal, illustrated | A full-bleed daytime-sky gradient (periwinkle fading to pale blue) ... |
-| [merlin.computer](entries/merlin.computer.md) | q8 | ai | minimal, mono-type, illustrated | An inline logo glyph (rounded black app icon with a katakana 'ツ' fa... |
-| [monad.com](entries/monad.com.md) | q8 | security | minimal, mono-type, illustrated | A live, hand-drawn-feeling pipeline schematic as the hero's centerp... |
-| [obviously.ai](entries/obviously.ai.md) | q8 | ai | minimal, illustrated, clean-light | Fuzzy, googly-eyed felt-craft geometric mascots (a green pyramid, b... |
-| [overflow.io](entries/overflow.io.md) | q8 | design | gradient, minimal, mono-type | The hero is a full-bleed diagonal violet-to-cyan gradient with whit... |
-| [pirsch.io](entries/pirsch.io.md) | q8 | analytics | minimal, mono-type, photographic | The hero punchline "See Beyond Clicks" is rendered as a single mass... |
-| [privy.io](entries/privy.io.md) | q8 | crypto-infra / dev-tools (wallet infrastructure API) | minimal, mono-type, photographic | A painterly, soft-focus oil-painting/watercolor texture (sage-green... |
-| [ready.so](entries/ready.so.md) | q8 | productivity | minimal, gradient, photographic | The hero treats the page itself like a live multiplayer document: a... |
-| [relate.so](entries/relate.so.md) | q8 | crm | minimal, gradient | The hero dissolves directly into a giant, pixel-faithful screenshot... |
-| [replay.io](entries/replay.io.md) | q8 | dev-tools | minimal, mono-type, colorful | The hero headline is a two-voice mini-narrative: a flat black state... |
-| [rho.co](entries/rho.co.md) | q8 | fintech | minimal, mono-type, photographic | The hero leads with a massive, centered, near-poster-scale wordmark... |
-| [seline.so](entries/seline.so.md) | q8 | analytics | minimal, illustrated, mono-type | A hand-drawn, slightly melancholic illustrated character (a person ... |
-| [super.so](entries/super.so.md) | q8 | dev-tools / no-code website builder (Notion-to-site) | minimal, mono-type, photographic | The hero's main visual IS the product demo: a literal side-by-side ... |
-| [synthesia.io](entries/synthesia.io.md) | q8 | ai-video | gradient, minimal, colorful | A live, switchable product surface sits directly under the hero: se... |
-| [tailscale.com](entries/tailscale.com.md) | q8 | dev-tools / infra (networking, zero-trust connectivity) | minimal, mono-type, bento | The hero is just centered black text on near-white paper — no produ... |
-| [trustditto.com](entries/trustditto.com.md) | q8 | CSR / ESG compliance SaaS (sustainability reporting copilot) | minimal, colorful, illustrated | The compliance dashboard is dragged half off the right edge of the ... |
-| [tuple.app](entries/tuple.app.md) | q8 | dev-tools | minimal, mono-type, photographic | The hero doesn't show a polished UI — it drops you straight into a ... |
-| [ventriloc.ca](entries/ventriloc.ca.md) | q8 | data-analytics (business intelligence / Power BI consultancy) | minimal, mono-type, bento | A single hero keyword ('croissance') is the ONLY colored element on... |
-| [visitors.now](entries/visitors.now.md) | q8 | analytics | minimal, gradient, bento | Testimonials carry dual identities — a real human name AND a random... |
-| [wayflyer.com](entries/wayflyer.com.md) | q8 | fintech | minimal, gradient, mono-type | The two-sentence hero set as a giant stacked period-punctuated coup... |
-| [wiz.io](entries/wiz.io.md) | q8 | security | minimal, illustrated, colorful | A friendly hand-drawn line illustration as the hero visual — a lite... |
-| [chronosphere.io](entries/chronosphere.io.md) | q7 | observability / devops (Kubernetes monitoring) | clean-light, gradient, cinematic, colorful | The hero is not a product pitch but a full-bleed acquisition announ... |
-| [datadoghq.com](entries/datadoghq.com.md) | q7 | observability / devops monitoring | minimal, photographic, colorful | The hero 'imagery' is a single huge perspective-tilted screenshot o... |
-| [short.io](entries/short.io.md) | q7 | dev-tools | minimal, mono-type | A live interactive product demo embedded directly in the hero — a r... |
-| [shortcut.com](entries/shortcut.com.md) | q7 | dev-tools (project management / issue tracking for software teams) | minimal, mono-type, bold | The hero headline's second line ('Plan & Build Products') sits insi... |
-| [tripsuite.com](entries/tripsuite.com.md) | q7 | dev-tools (vertical SaaS — travel-agency CRM/back-office) | minimal, gradient, photographic | A pure-white, near-empty hero where the giant left-aligned headline... |
-| [whoop.com](entries/whoop.com.md) | new | health | photographic, minimal, lifestyle, product-led | The headline is set in enormous white type that wraps to f... |
-| [calm.com](entries/calm.com.md) | new | health | photographic, serene, rounded, friendly | The fold is split into two distinct halves: the top ~60% i... |
-| [publicgoods.com](entries/publicgoods.com.md) | new | nature | minimal, photographic, editorial, product-forward | The hero is built as two horizontal "glass shelves" with a... |
-| [dailyharvest.com](entries/dailyharvest.com.md) | new | food | editorial, photographic, minimal, warm-neutral | The headline mixes upright and italic inside one phrase —... |
-| [huel.com](entries/huel.com.md) | new | food | clean, photographic, editorial, grid | The hero replaces a single hero image with a row of four e... |
-| [brilliant.org](entries/brilliant.org.md) | new | education | rounded, friendly, photographic, card-based | The hero stages a real photograph of a kid mid-"aha" (mout... |
-| [khanacademy.org](entries/khanacademy.org.md) | new | education | photographic, friendly, illustrative-accents | The hero photo of a smiling kid in teal glasses is masked... |
-| [speak.com](entries/speak.com.md) | new | education | clean, photographic, friendly, product-ui | The hero visual is a staged product moment, not a hero sho... |
-| [glossier.com](entries/glossier.com.md) | new | beauty | minimal, photographic, editorial | The hero is split into two near-full-height photo panels o... |
-| [youthtothepeople.com](entries/youthtothepeople.com.md) | new | beauty | photographic, editorial, sage-toned, minimal | The whole fold is one flat-lay product photograph on a mut... |
-| [opendoor.com](entries/opendoor.com.md) | new | home | photographic, lifestyle, friendly, consumer | The fold is a single edge-to-edge candid photograph of a r... |
-| [awaytravel.com](entries/awaytravel.com.md) | new | travel | photographic, editorial, lifestyle, e-commerce | The hero is a warm, naturalistic lifestyle photograph — ov... |
+| [brex.com](entries/brex.com.md) | q9 | fintech | minimal, photographic, mono-type | O hero abre com uma fotografia de produto tátil e superdimensionada do... |
+| [campsite.co](entries/campsite.co.md) | q9 | productivity | minimal, mono-type, photographic | Um hero pôster branco quase-vazio — toda a viewport superior é só um... |
+| [clay.run](entries/clay.run.md) | q9 | gtm-data / sales-intelligence (dev-tools-adjacent ops automation) | minimal, 3d, illustrated, mono-type | A categoria de data-tooling grita gráficos e dashboards; a Clay em vez disso... |
+| [cursor.com](entries/cursor.com.md) | q9 | dev-tools | minimal, photographic, mono-type | O shot de produto do hero não é um mockup de marketing escorregadio — é um full-... |
+| [deno.com](entries/deno.com.md) | q9 | dev-tools | minimal, illustrated, gradient | Um mascote dinossauro desenhado à mão, lo-fi-anime, num quarto noturno aconchegante... |
+| [elevenlabs.io](entries/elevenlabs.io.md) | q9 | ai | minimal, gradient, mono-type | Um carrossel "orbital" horizontal de esferas em gradiente granulado tipo-planeta... |
+| [ghost.org](entries/ghost.org.md) | q9 | dev-tools | minimal, mono-type, photographic | O hero é quase inteiramente espaço em branco vazio envolvendo um en... |
+| [index.app](entries/index.app.md) | q9 | ai-data-analytics | minimal, bento, mono-type | O hero fica dentro de um quadro de desenho técnico literal tracejado/pontilhado... |
+| [intercom.com](entries/intercom.com.md) | q9 | ai customer-support / helpdesk | minimal, editorial-minimal, mono-type, photographic | Uma fileira de fotografias não relacionadas, quase de galeria de arte — uma pipa sobre o... |
+| [micro.so](entries/micro.so.md) | q9 | productivity | editorial-minimal, gradient, photographic | Um gradiente fotográfico full-bleed céu-para-campo-de-grama como o b... do hero |
+| [mintlify.com](entries/mintlify.com.md) | q9 | dev-tools | gradient, illustrated, minimal | Uma paisagem pictórica de céu-e-nuvens ilustrada à mão como o full-... |
+| [mixpanel.com](entries/mixpanel.com.md) | q9 | analytics | minimal, gradient, bento | Uma fileira de cinco cards de categoria selecionáveis, com checkbox, fica diretamente... |
+| [render.com](entries/render.com.md) | q9 | dev-tools / cloud-infra (PaaS) | minimal, mono-type, bento | O H1 termina numa animação de digitação ao vivo: 'production for ap|' com um... |
+| [steep.app](entries/steep.app.md) | q9 | analytics | gradient, editorial, minimal | Um título serifa-itálico flutuando sobre um gradiente aurora pastel quente... |
+| [stripe.com](entries/stripe.com.md) | q9 | fintech | gradient, minimal, colorful | A única fita em gradiente superdimensionada que entra pelo topo-direito... |
+| [supabase.com](entries/supabase.com.md) | q9 | dev-tools | minimal, mono-type, bento | Dividir o H1 em dois registros emocionais via cor: "Build in ... |
+| [together.ai](entries/together.ai.md) | q9 | ai | gradient, 3d, mono-type | Um diagrama explodido renderizado em 3D literal flutuando no hero — um tra... |
+| [vanta.com](entries/vanta.com.md) | q9 | security | minimal, illustrated, colorful | Um título de hero gigante em SERIFA de alto contraste ("Trust is everything") o... |
+| [vercel.com](entries/vercel.com.md) | q9 | dev-tools | minimal, gradient, mono-type | Uma pirâmide em line-art monocromática (o triângulo da Vercel reconstruído a partir... |
+| [amie.so](entries/amie.so.md) | q8 | productivity | minimal, clean, light | Uma réplica pixel-accurate e totalmente populada da UI real do app fica... |
+| [amplemarket.com](entries/amplemarket.com.md) | q8 | ai-sales / sales-engagement (AI SaaS for sales teams) | minimal, gradient, mono-type | O título do hero mistura uma grotesca geométrica pesada com cursivas fluidas... |
+| [arcade.software](entries/arcade.software.md) | q8 | dev-tools | gradient, minimal, clean | Um input de produto funcional integrado diretamente no hero: um Demo/Video... |
+| [artboard.studio](entries/artboard.studio.md) | q8 | design | minimal, mono-type, bento, photographic | A vitrine de produto É a página: em vez de screenshots de marketing,... |
+| [asana.com](entries/asana.com.md) | q8 | productivity | minimal, gradient, mono-type | O título do hero mistura tintas no meio da frase: preto nas palavras de moldura... |
+| [browserbase.com](entries/browserbase.com.md) | q8 | dev-tools (browser infrastructure / agent automation API) | minimal, mono-type, photographic | O título do hero é envolto num bloco marca-texto laranja sólido — ... |
+| [cal.com](entries/cal.com.md) | q8 | productivity | minimal, bento | O hero combina um título gigante alinhado à esquerda com um AO VIVO, interati... |
+| [campsite.design](entries/campsite.design.md) | q8 | productivity | minimal, clean, light | Banners de anúncio em pílula gêmeos empilhados flutuando bem no centro acima do... |
+| [cap.so](entries/cap.so.md) | q8 | dev-tools | minimal, clean, light | O shot de produto do hero é um mock de editor ao vivo, com aparência interativa — ... |
+| [clerk.com](entries/clerk.com.md) | q8 | dev-tools | minimal, gradient | Uma marca d'água em line-art de circuito / trilha de PCB fraca desenhada por toda... |
+| [clutch.security](entries/clutch.security.md) | q8 | security | minimal, 3d, mono-type | Uma peça central de "control hub" fotorrealista em 3D: um logo extrudado brilhante di... |
+| [cohere.ai](entries/cohere.ai.md) | q8 | ai | minimal, photographic | O hero é só texto sobre off-white puro — sem gráfico — e o produto... |
+| [cord.com](entries/cord.com.md) | q8 | recruiting / job-search platform (tech hiring) | minimal, gradient, mono-type | Um toggle segmentado binário ('For finding work / For hiring') plantado... |
+| [current.com](entries/current.com.md) | q8 | fintech | minimal, photographic, editorial | O título do hero é composto maior que o próprio wordmark da marca e... |
+| [databricks.com](entries/databricks.com.md) | q8 | data-ai | minimal, mono-type, illustrated | Uma réplica de UI de produto quase-fotorrealista fica no hero em vez de um... |
+| [dub.co](entries/dub.co.md) | q8 | analytics | minimal, clean, bento | O screenshot de produto do hero é 'lançado' a partir de uma bandeja branca entalhada... |
+| [fruitful.com](entries/fruitful.com.md) | q8 | fintech | minimal, photographic, editorial-minimal | Um vídeo talking-head full-bleed de um Guide real (uma pessoa, não um da... |
+| [gitlab.com](entries/gitlab.com.md) | q8 | devops | gradient, bento, mono-type | O hero abandona o obrigatório screenshot/terminal de produto de dev-tool... |
+| [grafana.com](entries/grafana.com.md) | q8 | dev-tools / observability | minimal, gradient, mono-type | Uma barra de prompt "Ask AI" embutida ficando diretamente sob o CTA do hero... |
+| [graphy.app](entries/graphy.app.md) | q8 | data (data-viz / charting tool) | minimal, 3d, colorful | O título do hero flutua dentro de uma constelação de translúcidas, fro... |
+| [groq.com](entries/groq.com.md) | q8 | ai (AI inference infrastructure / dev-tools) | minimal, mono-type, cinematic | O hero abre com um vídeo cinematográfico de paddock de F1 ao vivo, com autoplay... |
+| [honeycomb.io](entries/honeycomb.io.md) | q8 | observability / dev-tools (developer infrastructure, APM) | minimal, mono-type, clean, illustrated | O "screenshot" do hero é um terminal de agente faux-AI ao vivo onde um C... |
+| [krepling.com](entries/krepling.com.md) | q8 | ecommerce / commerce platform (no-code store builder) | minimal, 3d, photographic | O hero rejeita o screenshot-de-dashboard ecommerce padrão. Em vez disso... |
+| [letters.app](entries/letters.app.md) | q8 | ai (medical documentation / healthtech — AI letter-writing for clinicians) | gradient, minimal, illustrated | Um gradiente full-bleed de céu-diurno (azul-lavanda esmaecendo para azul-pálido)... |
+| [merlin.computer](entries/merlin.computer.md) | q8 | ai | minimal, mono-type, illustrated | Um glifo de logo inline (ícone de app preto arredondado com um 'ツ' katakana fa... |
+| [monad.com](entries/monad.com.md) | q8 | security | minimal, mono-type, illustrated | Um esquemático de pipeline ao vivo, com aparência desenhada à mão, como peça central do hero... |
+| [obviously.ai](entries/obviously.ai.md) | q8 | ai | minimal, illustrated, clean-light | Mascotes geométricos de feltro felpudos e de olhos esbugalhados (uma pirâmide verde, b... |
+| [overflow.io](entries/overflow.io.md) | q8 | design | gradient, minimal, mono-type | O hero é um gradiente diagonal full-bleed violeta-para-ciano com whit... |
+| [pirsch.io](entries/pirsch.io.md) | q8 | analytics | minimal, mono-type, photographic | A frase de efeito do hero "See Beyond Clicks" é renderizada como uma única mass... |
+| [privy.io](entries/privy.io.md) | q8 | crypto-infra / dev-tools (wallet infrastructure API) | minimal, mono-type, photographic | Uma textura pictórica de óleo/aquarela em foco-suave (verde-sálvia... |
+| [ready.so](entries/ready.so.md) | q8 | productivity | minimal, gradient, photographic | O hero trata a própria página como um documento multiplayer ao vivo: a... |
+| [relate.so](entries/relate.so.md) | q8 | crm | minimal, gradient | O hero se dissolve diretamente num screenshot gigante, fiel-ao-pixel... |
+| [replay.io](entries/replay.io.md) | q8 | dev-tools | minimal, mono-type, colorful | O título do hero é uma mini-narrativa de duas vozes: um estado preto chapado... |
+| [rho.co](entries/rho.co.md) | q8 | fintech | minimal, mono-type, photographic | O hero abre com um wordmark massivo, centralizado, em escala quase-pôster... |
+| [seline.so](entries/seline.so.md) | q8 | analytics | minimal, illustrated, mono-type | Um personagem ilustrado desenhado à mão, ligeiramente melancólico (uma pessoa... |
+| [super.so](entries/super.so.md) | q8 | dev-tools / no-code website builder (Notion-to-site) | minimal, mono-type, photographic | O visual principal do hero É a demo do produto: um literal side-by-side... |
+| [synthesia.io](entries/synthesia.io.md) | q8 | ai-video | gradient, minimal, colorful | Uma superfície de produto comutável ao vivo fica diretamente sob o hero: se... |
+| [tailscale.com](entries/tailscale.com.md) | q8 | dev-tools / infra (networking, zero-trust connectivity) | minimal, mono-type, bento | O hero é só texto preto centralizado sobre papel quase-branco — sem produto... |
+| [trustditto.com](entries/trustditto.com.md) | q8 | CSR / ESG compliance SaaS (sustainability reporting copilot) | minimal, colorful, illustrated | O dashboard de compliance é arrastado pela metade para fora da borda direita do... |
+| [tuple.app](entries/tuple.app.md) | q8 | dev-tools | minimal, mono-type, photographic | O hero não mostra uma UI polida — te joga direto num... |
+| [ventriloc.ca](entries/ventriloc.ca.md) | q8 | data-analytics (business intelligence / Power BI consultancy) | minimal, mono-type, bento | Uma única palavra-chave do hero ('croissance') é o ÚNICO elemento colorido em... |
+| [visitors.now](entries/visitors.now.md) | q8 | analytics | minimal, gradient, bento | Os depoimentos carregam identidades duplas — um nome humano real E um aleatório... |
+| [wayflyer.com](entries/wayflyer.com.md) | q8 | fintech | minimal, gradient, mono-type | O hero de duas frases composto como um gigante dístico empilhado pontuado por pontos... |
+| [wiz.io](entries/wiz.io.md) | q8 | security | minimal, illustrated, colorful | Uma ilustração amigável em traço desenhada à mão como visual do hero — um lite... |
+| [chronosphere.io](entries/chronosphere.io.md) | q7 | observability / devops (Kubernetes monitoring) | clean-light, gradient, cinematic, colorful | O hero não é um pitch de produto, mas um anúncio de aquisição full-bleed... |
+| [datadoghq.com](entries/datadoghq.com.md) | q7 | observability / devops monitoring | minimal, photographic, colorful | As 'imagens' do hero são um único screenshot enorme inclinado em perspectiva de... |
+| [short.io](entries/short.io.md) | q7 | dev-tools | minimal, mono-type | Uma demo de produto interativa ao vivo embutida diretamente no hero — um r... |
+| [shortcut.com](entries/shortcut.com.md) | q7 | dev-tools (project management / issue tracking for software teams) | minimal, mono-type, bold | A segunda linha do título do hero ('Plan & Build Products') fica dentro... |
+| [tripsuite.com](entries/tripsuite.com.md) | q7 | dev-tools (vertical SaaS — travel-agency CRM/back-office) | minimal, gradient, photographic | Um hero branco-puro, quase-vazio onde o título gigante alinhado à esquerda... |
+| [whoop.com](entries/whoop.com.md) | new | health | photographic, minimal, lifestyle, product-led | O título é composto em tipografia branca enorme que quebra para f... |
+| [calm.com](entries/calm.com.md) | new | health | photographic, serene, rounded, friendly | A dobra é dividida em duas metades distintas: os ~60% superiores são i... |
+| [publicgoods.com](entries/publicgoods.com.md) | new | nature | minimal, photographic, editorial, product-forward | O hero é construído como duas "prateleiras de vidro" horizontais com a... |
+| [dailyharvest.com](entries/dailyharvest.com.md) | new | food | editorial, photographic, minimal, warm-neutral | O título mistura reto e itálico dentro de uma frase —... |
+| [huel.com](entries/huel.com.md) | new | food | clean, photographic, editorial, grid | O hero substitui uma única imagem de hero por uma fileira de quatro e... |
+| [brilliant.org](entries/brilliant.org.md) | new | education | rounded, friendly, photographic, card-based | O hero encena uma foto real de uma criança no meio do "aha" (mout... |
+| [khanacademy.org](entries/khanacademy.org.md) | new | education | photographic, friendly, illustrative-accents | A foto do hero de uma criança sorrindo de óculos verde-água é mascarada... |
+| [speak.com](entries/speak.com.md) | new | education | clean, photographic, friendly, product-ui | O visual do hero é um momento de produto encenado, não um shot de hero... |
+| [glossier.com](entries/glossier.com.md) | new | beauty | minimal, photographic, editorial | O hero é dividido em dois painéis fotográficos de altura quase-total o... |
+| [youthtothepeople.com](entries/youthtothepeople.com.md) | new | beauty | photographic, editorial, sage-toned, minimal | A dobra inteira é uma fotografia de produto flat-lay sobre um mut... |
+| [opendoor.com](entries/opendoor.com.md) | new | home | photographic, lifestyle, friendly, consumer | A dobra é uma única fotografia espontânea de ponta a ponta de um r... |
+| [awaytravel.com](entries/awaytravel.com.md) | new | travel | photographic, editorial, lifestyle, e-commerce | O hero é uma fotografia de lifestyle quente e naturalista — ov... |
 
 ### editorial-minimal (28)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
-| [anthropic.com](entries/anthropic.com.md) | q9 | ai | editorial, mono-type, minimal | Refusing the AI-lab dark/neon trope entirely: a warm paper-cream ca... |
-| [equals.com](entries/equals.com.md) | q9 | ai-analytics | minimal, mono-type, photographic | The hero headline is set in a massive, editorial high-contrast SERI... |
-| [jasper.ai](entries/jasper.ai.md) | q9 | ai | editorial, mono-type, illustrated, colorful | A photographic human head (a smiling marketer) collaged on a hand-d... |
-| [loops.so](entries/loops.so.md) | q9 | dev-tools | minimal, mono-type, clean-light | A massive book-serif headline ("One platform, every email") set cen... |
-| [maze.design](entries/maze.design.md) | q9 | design (user research & testing platform) | minimal, editorial-minimal, photographic | A massive, tightly-tracked editorial headline ("Research at the pac... |
-| [paddle.com](entries/paddle.com.md) | q9 | fintech | editorial-minimal, mono-type, warm-neutral | A massive high-contrast condensed serif headline ("Sell globally. G... |
-| [paper.design](entries/paper.design.md) | q9 | design-tools | minimal, mono-type, photographic | The skeuomorphic folded-paper dog-ear in the top-right corner — a p... |
-| [sketch.com](entries/sketch.com.md) | q9 | design | minimal, gradient, photographic, colorful | A serif-heavy, emotional headline ("Designers, welcome home.") on a... |
-| [adaline.ai](entries/adaline.ai.md) | q8 | ai | 3d, minimal, editorial | A photoreal 3D zen-garden landscape under sepia fog as the full-ble... |
-| [amigo.ai](entries/amigo.ai.md) | q8 | healthcare-ai | editorial-minimal, photographic, mono-type | An interactive flow diagram embedded in a dim, cinematic patient po... |
-| [antimetal.com](entries/antimetal.com.md) | q8 | devops | minimal, mono-type | A living network-graph constellation occupying the entire right hal... |
-| [attio.com](entries/attio.com.md) | q8 | crm | minimal, clean, mono-type | An interactive tabbed product window pinned right beneath the hero ... |
-| [clay.com](entries/clay.com.md) | q8 | data | minimal, 3d, illustrated | Stacked-stone "clay" mascots: glossy 3D balanced-rock sculptures in... |
-| [clear.bank](entries/clear.bank.md) | q8 | fintech | minimal, 3d, colorful | The hero copy is set as three one-word sentences stacked on their o... |
-| [equals.app](entries/equals.app.md) | q8 | data | minimal, mono-type, colorful | The hero headline is set in a massive, tightly-leaded book serif (t... |
-| [fabric.so](entries/fabric.so.md) | q8 | productivity | minimal, mono-type | The hero defies SaaS convention: instead of one big product screens... |
-| [flim.ai](entries/flim.ai.md) | q8 | ai (creative search / reference engine for filmmakers, designers, agencies) | mono-type, minimal, photographic, bento | The hero IS the product demo: a live scattered grid of real cinemat... |
-| [intercom.io](entries/intercom.io.md) | q8 | dev-tools | minimal, clean, colorful | A hand-drawn, scratchy black ink peony bloom floating loose in the ... |
-| [library.guide](entries/library.guide.md) | q8 | design | mono-type, minimal, colorful | The hero headline is annotated with real Figma layer/style badges —... |
-| [maze.co](entries/maze.co.md) | q8 | design (user research / UX testing platform) | minimal, editorial, photographic, colorful | The hero headline is set newspaper-huge (spanning nearly the full c... |
-| [relace.ai](entries/relace.ai.md) | q8 | dev-tools (AI infrastructure / models for coding agents) | editorial-minimal, photographic, mono-type, warm | Dev-tools pages default to dark terminals and neon-on-black; this o... |
-| [strut.so](entries/strut.so.md) | q8 | productivity | minimal, mono-type, photographic | A giant monospaced headline set on a warm putty-beige paper canvas,... |
-| [levelshealth.com](entries/levelshealth.com.md) | new | health | photographic, dark-overlay, editorial, serif-led | The entire fold is a single de-saturated, heavily darkened... |
-| [patagonia.com](entries/patagonia.com.md) | new | nature | photographic, full-bleed, editorial, minimal-chrome | A single full-bleed editorial photograph fills the entire... |
-| [tentree.com](entries/tentree.com.md) | new | nature | photographic, minimal, editorial, earthy | The hero is a full-bleed, desaturated *moody coastal photo... |
-| [notpla.com](entries/notpla.com.md) | new | nature | photographic, editorial, minimal, organic | The fold inverts the usual hero hierarchy: a tiny centered... |
-| [typology.com](entries/typology.com.md) | new | beauty | minimal, photographic, editorial, macro | The hero is one enormous macro photograph of the actual se... |
-| [meritbeauty.com](entries/meritbeauty.com.md) | new | beauty | minimal, photographic, editorial, off-white | The headline "Spring | Summer 2026 Collection" is set in a... |
+| [anthropic.com](entries/anthropic.com.md) | q9 | ai | editorial, mono-type, minimal | Recusando totalmente o clichê dark/neon de laboratório de IA: um ca... papel-creme quente |
+| [equals.com](entries/equals.com.md) | q9 | ai-analytics | minimal, mono-type, photographic | O título do hero é composto numa SERIFA editorial massiva de alto contraste... |
+| [jasper.ai](entries/jasper.ai.md) | q9 | ai | editorial, mono-type, illustrated, colorful | Uma cabeça humana fotográfica (um marketeiro sorridente) colada num desenhado-à-mão d... |
+| [loops.so](entries/loops.so.md) | q9 | dev-tools | minimal, mono-type, clean-light | Um título massivo em book-serif ("One platform, every email") composto cent... |
+| [maze.design](entries/maze.design.md) | q9 | design (user research & testing platform) | minimal, editorial-minimal, photographic | Um título editorial massivo, com tracking apertado ("Research at the pac... |
+| [paddle.com](entries/paddle.com.md) | q9 | fintech | editorial-minimal, mono-type, warm-neutral | Um título massivo em serifa condensada de alto contraste ("Sell globally. G... |
+| [paper.design](entries/paper.design.md) | q9 | design-tools | minimal, mono-type, photographic | A orelha de papel dobrada esqueumórfica no canto superior-direito — um p... |
+| [sketch.com](entries/sketch.com.md) | q9 | design | minimal, gradient, photographic, colorful | Um título emocional, carregado de serifa ("Designers, welcome home.") sobre um... |
+| [adaline.ai](entries/adaline.ai.md) | q8 | ai | 3d, minimal, editorial | Uma paisagem de jardim-zen fotorrealista em 3D sob névoa sépia como full-ble... |
+| [amigo.ai](entries/amigo.ai.md) | q8 | healthcare-ai | editorial-minimal, photographic, mono-type | Um diagrama de fluxo interativo embutido num portal de paciente escuro, cinematográfico... |
+| [antimetal.com](entries/antimetal.com.md) | q8 | devops | minimal, mono-type | Uma constelação de grafo-de-rede viva ocupando toda a metade direita... |
+| [attio.com](entries/attio.com.md) | q8 | crm | minimal, clean, mono-type | Uma janela de produto interativa com abas fixada logo abaixo do hero... |
+| [clay.com](entries/clay.com.md) | q8 | data | minimal, 3d, illustrated | Mascotes "clay" de pedras empilhadas: esculturas 3D brilhantes de rochas equilibradas em... |
+| [clear.bank](entries/clear.bank.md) | q8 | fintech | minimal, 3d, colorful | A copy do hero é composta como três frases de uma palavra empilhadas na sua o... |
+| [equals.app](entries/equals.app.md) | q8 | data | minimal, mono-type, colorful | O título do hero é composto numa book serif massiva e com leading apertado (t... |
+| [fabric.so](entries/fabric.so.md) | q8 | productivity | minimal, mono-type | O hero desafia a convenção SaaS: em vez de um grande screenshot de produto... |
+| [flim.ai](entries/flim.ai.md) | q8 | ai (creative search / reference engine for filmmakers, designers, agencies) | mono-type, minimal, photographic, bento | O hero É a demo do produto: uma grade espalhada ao vivo de cinema real... |
+| [intercom.io](entries/intercom.io.md) | q8 | dev-tools | minimal, clean, colorful | Uma flor de peônia desenhada à mão em tinta preta riscada flutuando solta no... |
+| [library.guide](entries/library.guide.md) | q8 | design | mono-type, minimal, colorful | O título do hero é anotado com badges reais de layer/style do Figma — ... |
+| [maze.co](entries/maze.co.md) | q8 | design (user research / UX testing platform) | minimal, editorial, photographic, colorful | O título do hero é composto enorme tipo-jornal (atravessando quase toda a c... |
+| [relace.ai](entries/relace.ai.md) | q8 | dev-tools (AI infrastructure / models for coding agents) | editorial-minimal, photographic, mono-type, warm | Páginas de dev-tools recorrem por padrão a terminais escuros e neon-on-black; esta o... |
+| [strut.so](entries/strut.so.md) | q8 | productivity | minimal, mono-type, photographic | Um título monospace gigante composto sobre um canvas de papel bege-massa quente,... |
+| [levelshealth.com](entries/levelshealth.com.md) | new | health | photographic, dark-overlay, editorial, serif-led | A dobra inteira é uma única foto dessaturada e fortemente escurecida... |
+| [patagonia.com](entries/patagonia.com.md) | new | nature | photographic, full-bleed, editorial, minimal-chrome | Uma única fotografia editorial full-bleed preenche todo o... |
+| [tentree.com](entries/tentree.com.md) | new | nature | photographic, minimal, editorial, earthy | O hero é uma full-bleed, dessaturada *foto costeira melancólica... |
+| [notpla.com](entries/notpla.com.md) | new | nature | photographic, editorial, minimal, organic | A dobra inverte a hierarquia de hero usual: um pequeno centralizado... |
+| [typology.com](entries/typology.com.md) | new | beauty | minimal, photographic, editorial, macro | O hero é uma enorme fotografia macro do produto real se... |
+| [meritbeauty.com](entries/meritbeauty.com.md) | new | beauty | minimal, photographic, editorial, off-white | O título "Spring | Summer 2026 Collection" é composto numa... |
 
 ### premium-luxe (21)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
-| [clay.earth](entries/clay.earth.md) | q9 | crm | dark, cinematic, gradient | An all-serif voice on a near-black, photographic-dark canvas — the ... |
-| [evervault.com](entries/evervault.com.md) | q9 | security | gradient, dark, 3d | A photorealistic payment card hovering beside a glowing slit of lig... |
-| [harvey.ai](entries/harvey.ai.md) | q9 | legal | dark, photographic, mono-type | The hero is a cinematic, dimly-lit photograph of a distinguished si... |
-| [lumalabs.ai](entries/lumalabs.ai.md) | q9 | ai | photographic, cinematic, minimal | The entire hero IS a live product demo dressed as an editorial fash... |
-| [mercury.com](entries/mercury.com.md) | q9 | fintech | photographic, cinematic, minimal, gradient | A full-bleed cinematic landscape photo — a misty forest valley at g... |
-| [okta.com](entries/okta.com.md) | q9 | security | cinematic, gradient, photographic, glass | A full-bleed cinematic AI-rendered photo as the hero: a woman in a ... |
-| [outerbase.com](entries/outerbase.com.md) | q9 | data | dark, photographic, 3d | A full-bleed photoreal Earth-from-orbit + satellite hero where the ... |
-| [planhat.com](entries/planhat.com.md) | q9 | crm | dark, cinematic, photographic, editorial-minimal | Trades the entire customer-success/CRM playbook (blue gradients, pr... |
-| [resend.com](entries/resend.com.md) | q9 | dev-tools | dark, minimal, 3d | A massive high-contrast editorial serif headline ("Email for develo... |
-| [shopify.com](entries/shopify.com.md) | q9 | consumer | photographic, dark | The full-bleed cinematic hero photo is dimmed and graded into near-... |
-| [dimension.dev](entries/dimension.dev.md) | q8 | ai | glass, gradient, bento | A scroll-synced split screen: the left rail holds a numbered vertic... |
-| [rootly.com](entries/rootly.com.md) | q8 | devops | photographic, gradient, glass | A full-bleed photographic mountain-at-golden-hour backdrop (lavende... |
-| [superhuman.com](entries/superhuman.com.md) | q8 | productivity | gradient, photographic, dark | The whole page floats inside one continuous twilight gradient-mesh ... |
-| [turn.io](entries/turn.io.md) | q8 | healthtech | dark, photographic, colorful | Floating live-chat UI chips (greeting bubble + PDF prescription pil... |
-| [ouraring.com](entries/ouraring.com.md) | new | health | photographic, editorial, minimal, product-hero | The hero is a macro product still-life shot, not a render:... |
-| [eightsleep.com](entries/eightsleep.com.md) | new | health | photographic, warm, cinematic, minimal | The hero is a real bedroom photograph staged like a furnit... |
-| [aesop.com](entries/aesop.com.md) | new | beauty | photographic, editorial, atmospheric, restrained | The entire fold is a single dim, moody studio photograph o... |
-| [tonal.com](entries/tonal.com.md) | new | fitness | photographic, monochrome, condensed, product-led | The fold is staged as a desaturated, near-monochrome photo... |
-| [aloyoga.com](entries/aloyoga.com.md) | new | fitness | editorial, photographic, minimal, warm-neutral | The hero is built as a triptych of three separate fashion... |
-| [future.co](entries/future.co.md) | new | fitness | photographic, editorial, app-ui, cinematic | A real iPhone mock floats half-out of the fold, screen lit... |
-| [monos.com](entries/monos.com.md) | new | travel | minimal, photographic, monochrome, editorial | The entire hero is one editorial fashion photograph — a mo... |
+| [clay.earth](entries/clay.earth.md) | q9 | crm | dark, cinematic, gradient | Uma voz toda-serifa sobre um canvas escuro-fotográfico quase-preto — o... |
+| [evervault.com](entries/evervault.com.md) | q9 | security | gradient, dark, 3d | Um cartão de pagamento fotorrealista pairando ao lado de uma fenda de luz brilhante... |
+| [harvey.ai](entries/harvey.ai.md) | q9 | legal | dark, photographic, mono-type | O hero é uma fotografia cinematográfica, mal-iluminada, de um distinto si... |
+| [lumalabs.ai](entries/lumalabs.ai.md) | q9 | ai | photographic, cinematic, minimal | O hero inteiro É uma demo de produto ao vivo vestida como uma editorial de moda... |
+| [mercury.com](entries/mercury.com.md) | q9 | fintech | photographic, cinematic, minimal, gradient | Uma foto de paisagem cinematográfica full-bleed — um vale de floresta enevoado ao g... |
+| [okta.com](entries/okta.com.md) | q9 | security | cinematic, gradient, photographic, glass | Uma foto cinematográfica renderizada por IA full-bleed como hero: uma mulher numa... |
+| [outerbase.com](entries/outerbase.com.md) | q9 | data | dark, photographic, 3d | Um hero fotorrealista full-bleed de Terra-da-órbita + satélite onde o... |
+| [planhat.com](entries/planhat.com.md) | q9 | crm | dark, cinematic, photographic, editorial-minimal | Troca toda a cartilha de customer-success/CRM (gradientes azuis, pr... |
+| [resend.com](entries/resend.com.md) | q9 | dev-tools | dark, minimal, 3d | Um título editorial massivo em serifa de alto contraste ("Email for develo... |
+| [shopify.com](entries/shopify.com.md) | q9 | consumer | photographic, dark | A foto de hero cinematográfica full-bleed é escurecida e graduada para quase-... |
+| [dimension.dev](entries/dimension.dev.md) | q8 | ai | glass, gradient, bento | Um split screen sincronizado com o scroll: o trilho esquerdo segura uma vertical numerada... |
+| [rootly.com](entries/rootly.com.md) | q8 | devops | photographic, gradient, glass | Um fundo fotográfico full-bleed de montanha-na-golden-hour (lavanda... |
+| [superhuman.com](entries/superhuman.com.md) | q8 | productivity | gradient, photographic, dark | A página inteira flutua dentro de um único gradiente-mesh contínuo de crepúsculo... |
+| [turn.io](entries/turn.io.md) | q8 | healthtech | dark, photographic, colorful | Chips de UI de live-chat flutuantes (balão de saudação + pílula de prescrição em PDF... |
+| [ouraring.com](entries/ouraring.com.md) | new | health | photographic, editorial, minimal, product-hero | O hero é um shot de natureza-morta macro do produto, não um render:... |
+| [eightsleep.com](entries/eightsleep.com.md) | new | health | photographic, warm, cinematic, minimal | O hero é uma fotografia real de quarto encenada como uma furnit... |
+| [aesop.com](entries/aesop.com.md) | new | beauty | photographic, editorial, atmospheric, restrained | A dobra inteira é uma única fotografia de estúdio escura e melancólica o... |
+| [tonal.com](entries/tonal.com.md) | new | fitness | photographic, monochrome, condensed, product-led | A dobra é encenada como uma foto dessaturada, quase-monocromática... |
+| [aloyoga.com](entries/aloyoga.com.md) | new | fitness | editorial, photographic, minimal, warm-neutral | O hero é construído como um tríptico de três fotos de moda separadas... |
+| [future.co](entries/future.co.md) | new | fitness | photographic, editorial, app-ui, cinematic | Um mock de iPhone real flutua pela metade para fora da dobra, tela acesa... |
+| [monos.com](entries/monos.com.md) | new | travel | minimal, photographic, monochrome, editorial | O hero inteiro é uma única fotografia editorial de moda — um mo... |
 
 ### bold-loud (29)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
-| [cloudflare.com](entries/cloudflare.com.md) | q9 | infra | bold, colorful, mono-type | The entire above-the-fold is flooded edge-to-edge in the brand's sa... |
-| [fal.ai](entries/fal.ai.md) | q9 | ai | bold-loud, brutalist, colorful, mono-type | A vivid cyan canvas with hand-placed 8-bit "pixel blob" illustratio... |
-| [mistral.ai](entries/mistral.ai.md) | q9 | ai | bold, colorful, mono-type | The hero is split: huge calm black headline on near-white above, an... |
-| [raycast.com](entries/raycast.com.md) | q9 | productivity | dark, gradient, minimal | A single sharp diagonal red gradient 'beam' slicing across a pure-b... |
-| [replicate.com](entries/replicate.com.md) | q9 | ai | gradient, colorful, mono-type | The entire hero is one saturated magenta-to-amber gradient with NO ... |
-| [tines.com](entries/tines.com.md) | q9 | ai | mono-type, gradient, minimal, editorial-minimal | The entire viewport is flooded edge-to-edge in a single saturated p... |
-| [arthur.ai](entries/arthur.ai.md) | q8 | ai | illustrated, colorful, dark | A hand-drawn, comic-book-style illustration of a giant lime-and-pur... |
-| [dayos.com](entries/dayos.com.md) | q8 | ai | 3d, colorful, mono-type | The hero visual is a single photoreal 3D totem built from interlock... |
-| [figma.com](entries/figma.com.md) | q8 | design | colorful, photographic | The hero headline lives inside a floating white "card" with its own... |
-| [highnote.com](entries/highnote.com.md) | q8 | fintech | gradient, colorful, mono-type | The hero is a giant radial gradient of concentric rings — acid lime... |
-| [impilo.health](entries/impilo.health.md) | q8 | healthtech (remote patient monitoring / digital health API infra) | bold, colorful, dark, illustrated | Drenching an entire healthcare page in saturated electric indigo in... |
-| [lavender.ai](entries/lavender.ai.md) | q8 | ai-sales (email coaching / sales productivity) | gradient, 3d, colorful, dark | A full-bleed saturated purple gradient as the entire canvas (not a ... |
-| [lemonsqueezy.com](entries/lemonsqueezy.com.md) | q8 | fintech | colorful, minimal, 3d | A coding-monospace typeface (JetBrains Mono) blown up to massive di... |
-| [pilot.com](entries/pilot.com.md) | q8 | fintech | bold, colorful, photographic | The conversational chat-bubble collage: faux CFO/founder text-messa... |
-| [pitch.com](entries/pitch.com.md) | q8 | productivity | gradient, colorful, dark | Oversized white headline that bleeds past the viewport edges, set o... |
-| [prevalent.ai](entries/prevalent.ai.md) | q8 | security | illustrated, colorful, dark | A hand-drawn, surreal cityscape illustration as the hero backdrop —... |
-| [rig.ai](entries/rig.ai.md) | q8 | dev-tools | brutalist, mono-type, colorful | A fold that flips ideology with color: the hero is an aggressive al... |
-| [snowflake.com](entries/snowflake.com.md) | q8 | data-ai (enterprise data cloud / data warehousing) | dark, photographic, cinematic, mono-type | The hero is built entirely from a low-poly, geometric mountain-rang... |
-| [studio.design](entries/studio.design.md) | q8 | design | colorful, bento | The hero IS a wall of customer sites — overlapping, color-clashing ... |
-| [taxfix.de](entries/taxfix.de.md) | q8 | fintech | colorful, mono-type, minimal | A full-bleed acid-lime canvas owns the entire hero — instead of the... |
-| [liquiddeath.com](entries/liquiddeath.com.md) | new | food | maximal, photographic, heavy-metal, irreverent | A full-bleed split-screen photo hero — wholesome suburban... |
-| [omsom.com](entries/omsom.com.md) | new | food | maximalist, photographic, retro, saturated | The hero isn't a clean studio shot — it's a styled, slight... |
-| [magicspoon.com](entries/magicspoon.com.md) | new | food | vibrant, retro-pop, candy-bright, illustrated | The hero stages an actual tilted cereal box — a vivid char... |
-| [immieats.com](entries/immieats.com.md) | new | food | photographic, saturated, retro-pop, appetite-forward | The whole hero is built on a near-fluorescent taxi-yellow... |
-| [masterclass.com](entries/masterclass.com.md) | new | education | dark, condensed, photographic, editorial | Instead of one hero shot, the right two-thirds is a tiled... |
-| [synthesis.com](entries/synthesis.com.md) | new | education | vivid, gradient, product-ui, friendly | The fold is split: a flat, oversized text promise on the l... |
-| [gymshark.com](entries/gymshark.com.md) | new | fitness | photographic, gritty, athletic, editorial | The hero is a single full-bleed, grainy gym-floor photogra... |
-| [onepeloton.com](entries/onepeloton.com.md) | new | fitness | dark, photographic, product-hero, high-contrast | The fold stages the actual hardware in a dim, moody produc... |
-| [on.com](entries/on.com.md) | new | fitness | photographic, full-bleed, athletic, editorial | The fold is a single un-staged sports-photography frame —... |
+| [cloudflare.com](entries/cloudflare.com.md) | q9 | infra | bold, colorful, mono-type | A above-the-fold inteira é inundada de ponta a ponta na sa... da marca |
+| [fal.ai](entries/fal.ai.md) | q9 | ai | bold-loud, brutalist, colorful, mono-type | Um canvas ciano vívido com ilustrações de "pixel blob" 8-bit posicionadas à mão... |
+| [mistral.ai](entries/mistral.ai.md) | q9 | ai | bold, colorful, mono-type | O hero é dividido: título preto calmo enorme sobre quase-branco em cima, an... |
+| [raycast.com](entries/raycast.com.md) | q9 | productivity | dark, gradient, minimal | Um único 'feixe' em gradiente vermelho diagonal afiado cortando um puro-b... |
+| [replicate.com](entries/replicate.com.md) | q9 | ai | gradient, colorful, mono-type | O hero inteiro é um único gradiente saturado magenta-para-âmbar SEM... |
+| [tines.com](entries/tines.com.md) | q9 | ai | mono-type, gradient, minimal, editorial-minimal | A viewport inteira é inundada de ponta a ponta num único p... saturado |
+| [arthur.ai](entries/arthur.ai.md) | q8 | ai | illustrated, colorful, dark | Uma ilustração desenhada à mão em estilo gibi de um gigante lima-e-pur... |
+| [dayos.com](entries/dayos.com.md) | q8 | ai | 3d, colorful, mono-type | O visual do hero é um único totem 3D fotorrealista construído de interlock... |
+| [figma.com](entries/figma.com.md) | q8 | design | colorful, photographic | O título do hero vive dentro de um "card" branco flutuante com seu próprio... |
+| [highnote.com](entries/highnote.com.md) | q8 | fintech | gradient, colorful, mono-type | O hero é um gigante gradiente radial de anéis concêntricos — lima ácido... |
+| [impilo.health](entries/impilo.health.md) | q8 | healthtech (remote patient monitoring / digital health API infra) | bold, colorful, dark, illustrated | Encharcar uma página de saúde inteira em índigo elétrico saturado in... |
+| [lavender.ai](entries/lavender.ai.md) | q8 | ai-sales (email coaching / sales productivity) | gradient, 3d, colorful, dark | Um gradiente roxo saturado full-bleed como o canvas inteiro (não um... |
+| [lemonsqueezy.com](entries/lemonsqueezy.com.md) | q8 | fintech | colorful, minimal, 3d | Uma tipografia de coding-monospace (JetBrains Mono) ampliada para dimensões massivas... |
+| [pilot.com](entries/pilot.com.md) | q8 | fintech | bold, colorful, photographic | A colagem conversacional de balões-de-chat: mensagens de texto faux de CFO/fundador... |
+| [pitch.com](entries/pitch.com.md) | q8 | productivity | gradient, colorful, dark | Título branco superdimensionado que sangra além das bordas da viewport, composto o... |
+| [prevalent.ai](entries/prevalent.ai.md) | q8 | security | illustrated, colorful, dark | Uma ilustração de paisagem urbana surreal desenhada à mão como pano de fundo do hero —... |
+| [rig.ai](entries/rig.ai.md) | q8 | dev-tools | brutalist, mono-type, colorful | Uma dobra que vira a ideologia de cabeça pra baixo com cor: o hero é um agressivo al... |
+| [snowflake.com](entries/snowflake.com.md) | q8 | data-ai (enterprise data cloud / data warehousing) | dark, photographic, cinematic, mono-type | O hero é construído inteiramente a partir de uma cadeia de montanhas geométrica low-poly... |
+| [studio.design](entries/studio.design.md) | q8 | design | colorful, bento | O hero É uma parede de sites de clientes — sobrepostos, com cores conflitantes... |
+| [taxfix.de](entries/taxfix.de.md) | q8 | fintech | colorful, mono-type, minimal | Um canvas lima-ácido full-bleed domina o hero inteiro — em vez do... |
+| [liquiddeath.com](entries/liquiddeath.com.md) | new | food | maximal, photographic, heavy-metal, irreverent | Um hero split-screen fotográfico full-bleed — saudável suburbano... |
+| [omsom.com](entries/omsom.com.md) | new | food | maximalist, photographic, retro, saturated | O hero não é um shot de estúdio limpo — é um estilizado, ligeira... |
+| [magicspoon.com](entries/magicspoon.com.md) | new | food | vibrant, retro-pop, candy-bright, illustrated | O hero encena uma caixa de cereal inclinada de verdade — um vívido char... |
+| [immieats.com](entries/immieats.com.md) | new | food | photographic, saturated, retro-pop, appetite-forward | O hero inteiro é construído sobre um amarelo-táxi quase-fluorescente... |
+| [masterclass.com](entries/masterclass.com.md) | new | education | dark, condensed, photographic, editorial | Em vez de um único shot de hero, os dois terços à direita são um tiled... |
+| [synthesis.com](entries/synthesis.com.md) | new | education | vivid, gradient, product-ui, friendly | A dobra é dividida: uma promessa de texto chapada e superdimensionada à e... |
+| [gymshark.com](entries/gymshark.com.md) | new | fitness | photographic, gritty, athletic, editorial | O hero é uma única fotografia granulada de chão-de-academia full-bleed... |
+| [onepeloton.com](entries/onepeloton.com.md) | new | fitness | dark, photographic, product-hero, high-contrast | A dobra encena o hardware real num produto escuro, melancólico... |
+| [on.com](entries/on.com.md) | new | fitness | photographic, full-bleed, athletic, editorial | A dobra é um único quadro de fotografia esportiva não-encenado —... |
 
 ### warm-playful (44)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
-| [arc.net](entries/arc.net.md) | q9 | consumer (browser / productivity software) | colorful, gradient, photographic | The torn/zig-zag deckle edges that slice between every color band —... |
-| [granola.ai](entries/granola.ai.md) | q9 | productivity | minimal, mono-type, illustrated | The hero is a literal before/after diptych of the product's own out... |
-| [posthog.com](entries/posthog.com.md) | q9 | analytics | illustrated, colorful, photographic | The entire page is staged as a faux desktop operating system: a tan... |
-| [whimsical.com](entries/whimsical.com.md) | q9 | productivity | gradient, cinematic, minimal | The hero is a literal sunset — a violet-to-coral macOS-wallpaper gr... |
-| [craft.do](entries/craft.do.md) | q8 | productivity | illustrated, colorful | The whole hero is a layered cut-paper diorama — a sky-blue construc... |
-| [deta.surf](entries/deta.surf.md) | q8 | productivity | gradient, photographic, colorful | The entire hero is a literal sky — a photographic blue-to-cloud gra... |
-| [duna.com](entries/duna.com.md) | q8 | fintech | illustrated, colorful, photographic | Leading a hardcore compliance/KYB fintech product with a serene, ha... |
-| [evergreen.so](entries/evergreen.so.md) | q8 | hr-tech (employee recognition / peer-to-peer engagement with ESG/sustainability angle) | editorial, illustrated, colorful | The H1 embeds live photos of real smiling employees inside green pi... |
-| [fly.io](entries/fly.io.md) | q8 | devops | illustrated, colorful, gradient | A single continuous, hand-drawn storybook mural erupts from behind ... |
-| [kindsight.io](entries/kindsight.io.md) | q8 | ai (fundraising/nonprofit intelligence — donor analytics SaaS) | editorial, warm, photographic | Setting a B2B analytics product against a deep olive/army-green can... |
-| [lattice.com](entries/lattice.com.md) | q8 | hr-people-management (HRIS / performance + AI) | gradient, clean, colorful | The hero product screenshot sits inside a candy-rainbow gradient cu... |
-| [linktr.ee](entries/linktr.ee.md) | q8 | consumer (creator tools / link-in-bio) | colorful, photographic, illustrated | The hero abandons the SaaS product-screenshot convention entirely: ... |
-| [motherduck.com](entries/motherduck.com.md) | q8 | data-tools | mono-type, illustrated, colorful | A live in-page AI analytics demo widget anchored to the bottom of t... |
-| [outseta.com](entries/outseta.com.md) | q8 | crm | gradient, colorful, bento | Hand-drawn marker annotations with curved arrows flanking the hero ... |
-| [podia.com](entries/podia.com.md) | q8 | marketing | photographic, colorful, editorial | The torn-paper photo collage: a full-color cutout portrait layered ... |
-| [slite.com](entries/slite.com.md) | q8 | productivity | minimal, illustrated, mono-type | The hero headline performs its own edit: 'goes to die' is struck th... |
-| [statamic.com](entries/statamic.com.md) | q8 | dev-tools (Laravel CMS / content management) | illustrated, photographic, gradient, editorial-minimal | A dev-tools CMS that opens with a tropical sunset photo-collage — p... |
-| [tally.so](entries/tally.so.md) | q8 | productivity | minimal, illustrated, colorful | The hero floats freehand marker doodles — a scribbled speech bubble... |
-| [tedy.app](entries/tedy.app.md) | q8 | hr-tech (employee benefits / compensation & rewards platform) | colorful, photographic, bento | A pastel-lilac rounded card as the hero's left half, paired with a ... |
-| [todoist.com](entries/todoist.com.md) | q8 | productivity | minimal, illustrated, photographic | The hero ditches the productivity-app cliche of feature lists and b... |
-| [toggl.com](entries/toggl.com.md) | q8 | productivity | dark, colorful, mono-type | Deep aubergine/plum dark mode for a time-tracking tool — the catego... |
-| [tracky.so](entries/tracky.so.md) | q8 | productivity | illustrated, colorful, mono-type | The hero text physically wraps AROUND a live product widget and a d... |
-| [whimsical.co](entries/whimsical.co.md) | q8 | productivity | gradient, colorful | The hero gradient is a literal sunrise-over-mountains scene — a lav... |
-| [coda.io](entries/coda.io.md) | q7 | productivity | minimal, bento | A single warm peach wash floods the entire hero — no gradient, no h... |
-| [zoe.com](entries/zoe.com.md) | new | health | photographic, editorial, lifestyle, friendly | The headline is built from mixed weights and a mid-word co... |
-| [headspace.com](entries/headspace.com.md) | new | health | rounded, friendly, photographic, app-led | The hero abandons a single big visual for a TWO-CARD split... |
-| [parsleyhealth.com](entries/parsleyhealth.com.md) | new | health | photographic, editorial, warm, organic | The hero is built on a full-bleed warm-beige seamless back... |
-| [mavenclinic.com](entries/mavenclinic.com.md) | new | health | photographic, warm, editorial, lifestyle | A single word — "healthcare" — is swapped from the clean s... |
-| [allbirds.com](entries/allbirds.com.md) | new | nature | photographic, lifestyle, editorial, earthy | The entire fold is a single edge-to-edge street photograph... |
-| [parksproject.us](entries/parksproject.us.md) | new | nature | photographic, outdoorsy, editorial, lifestyle | The headline "Leave It Better For Birds and People" is set... |
-| [wearewild.com](entries/wearewild.com.md) | new | nature | photographic, friendly, e-commerce, colourful | The fold is staged as a literal lawn: real products (deodo... |
-| [oatly.com](entries/oatly.com.md) | new | food | editorial, hand-lettered, zine, off-beat | The hero swaps the expected glossy carton beauty-shot for... |
-| [graza.co](entries/graza.co.md) | new | food | photographic, lifestyle, retro-grocery, bold | A real, candid kitchen photo — a hand squeezing the iconic... |
-| [olipop.com](entries/olipop.com.md) | new | food | retro, illustrated, soda-shop, nostalgic | The hero is split down the middle: a flat forest-green pan... |
-| [jenis.com](entries/jenis.com.md) | new | food | photographic, warm, retail, appetite-driven | The hero is a tightly cropped lifestyle photo — a bearded... |
-| [duolingo.com](entries/duolingo.com.md) | new | education | illustrated, rounded, friendly, mascot-led | A loose, off-grid pile of cartoon characters — the green o... |
-| [skillshare.com](entries/skillshare.com.md) | new | education | colorful, photographic, friendly, signup-forward | The fold is split: a clean white left column with the head... |
-| [kosas.com](entries/kosas.com.md) | new | beauty | photographic, candy-pastel, editorial, retail-shelf | The "hero" you land on is actually a full-bleed lifestyle... |
-| [mytopicals.com](entries/mytopicals.com.md) | new | beauty | photographic, editorial, candid, warm | The fold is built around a gamified "scratch-to-win" modal... |
-| [floydhome.com](entries/floydhome.com.md) | new | home | photographic, editorial, lifestyle, minimal | The whole fold is one un-styled, sun-flooded room photo sh... |
-| [burrow.com](entries/burrow.com.md) | new | home | photographic, lifestyle, editorial, warm | The whole fold is one immersive outdoor-living lifestyle p... |
-| [article.com](entries/article.com.md) | new | home | photographic, editorial, lifestyle, warm | The headline and CTA sit dead-center, low in the frame, di... |
-| [blockrenovation.com](entries/blockrenovation.com.md) | new | home | photographic, editorial, lifestyle, warm | The headline is set in towering all-caps condensed type la... |
-| [ourplace.com](entries/ourplace.com.md) | new | home | photographic, warm, editorial, lifestyle | The hero is a tight, softly-lit lifestyle photograph of gl... |
+| [arc.net](entries/arc.net.md) | q9 | consumer (browser / productivity software) | colorful, gradient, photographic | As bordas rasgadas/serrilhadas tipo deckle que cortam entre cada faixa de cor —... |
+| [granola.ai](entries/granola.ai.md) | q9 | productivity | minimal, mono-type, illustrated | O hero é um díptico antes/depois literal da própria saída do produto... |
+| [posthog.com](entries/posthog.com.md) | q9 | analytics | illustrated, colorful, photographic | A página inteira é encenada como um sistema operacional de desktop faux: um tan... |
+| [whimsical.com](entries/whimsical.com.md) | q9 | productivity | gradient, cinematic, minimal | O hero é um pôr-do-sol literal — um gradiente violeta-para-coral tipo wallpaper-macOS... |
+| [craft.do](entries/craft.do.md) | q8 | productivity | illustrated, colorful | O hero inteiro é um diorama de papel-recortado em camadas — um construc... azul-céu |
+| [deta.surf](entries/deta.surf.md) | q8 | productivity | gradient, photographic, colorful | O hero inteiro é um céu literal — um gradiente fotográfico azul-para-nuvem... |
+| [duna.com](entries/duna.com.md) | q8 | fintech | illustrated, colorful, photographic | Abrir um produto fintech de compliance/KYB hardcore com uma serena, ha... |
+| [evergreen.so](entries/evergreen.so.md) | q8 | hr-tech (employee recognition / peer-to-peer engagement with ESG/sustainability angle) | editorial, illustrated, colorful | O H1 embute fotos ao vivo de funcionários reais sorridentes dentro de pílulas verdes... |
+| [fly.io](entries/fly.io.md) | q8 | devops | illustrated, colorful, gradient | Um único mural de livro-de-histórias contínuo, desenhado à mão, irrompe de trás de... |
+| [kindsight.io](entries/kindsight.io.md) | q8 | ai (fundraising/nonprofit intelligence — donor analytics SaaS) | editorial, warm, photographic | Compor um produto de analytics B2B contra um canvas verde-oliva/verde-militar profundo... |
+| [lattice.com](entries/lattice.com.md) | q8 | hr-people-management (HRIS / performance + AI) | gradient, clean, colorful | O screenshot de produto do hero fica dentro de um gradiente arco-íris doce cu... |
+| [linktr.ee](entries/linktr.ee.md) | q8 | consumer (creator tools / link-in-bio) | colorful, photographic, illustrated | O hero abandona totalmente a convenção SaaS de screenshot-de-produto:... |
+| [motherduck.com](entries/motherduck.com.md) | q8 | data-tools | mono-type, illustrated, colorful | Um widget de demo de analytics de IA in-page ao vivo ancorado na parte de baixo do... |
+| [outseta.com](entries/outseta.com.md) | q8 | crm | gradient, colorful, bento | Anotações a marcador desenhadas à mão com setas curvas flanqueando o hero... |
+| [podia.com](entries/podia.com.md) | q8 | marketing | photographic, colorful, editorial | A colagem de fotos em papel-rasgado: um retrato recortado em cores plenas em camadas... |
+| [slite.com](entries/slite.com.md) | q8 | productivity | minimal, illustrated, mono-type | O título do hero faz sua própria edição: 'goes to die' está riscado em th... |
+| [statamic.com](entries/statamic.com.md) | q8 | dev-tools (Laravel CMS / content management) | illustrated, photographic, gradient, editorial-minimal | Um CMS de dev-tools que abre com uma colagem de fotos de pôr-do-sol tropical — p... |
+| [tally.so](entries/tally.so.md) | q8 | productivity | minimal, illustrated, colorful | O hero flutua rabiscos a marcador à mão livre — um balão de fala rabiscado... |
+| [tedy.app](entries/tedy.app.md) | q8 | hr-tech (employee benefits / compensation & rewards platform) | colorful, photographic, bento | Um card arredondado lilás-pastel como a metade esquerda do hero, pareado com um... |
+| [todoist.com](entries/todoist.com.md) | q8 | productivity | minimal, illustrated, photographic | O hero abandona o clichê de app-de-produtividade de listas de features e b... |
+| [toggl.com](entries/toggl.com.md) | q8 | productivity | dark, colorful, mono-type | Dark mode berinjela/ameixa profundo para uma ferramenta de time-tracking — a catego... |
+| [tracky.so](entries/tracky.so.md) | q8 | productivity | illustrated, colorful, mono-type | O texto do hero fisicamente embrulha EM TORNO de um widget de produto ao vivo e um d... |
+| [whimsical.co](entries/whimsical.co.md) | q8 | productivity | gradient, colorful | O gradiente do hero é uma cena literal de nascer-do-sol-sobre-montanhas — um lav... |
+| [coda.io](entries/coda.io.md) | q7 | productivity | minimal, bento | Uma única lavagem pêssego quente inunda o hero inteiro — sem gradiente, sem h... |
+| [zoe.com](entries/zoe.com.md) | new | health | photographic, editorial, lifestyle, friendly | O título é construído a partir de pesos mistos e um co... no meio da palavra |
+| [headspace.com](entries/headspace.com.md) | new | health | rounded, friendly, photographic, app-led | O hero abandona um único grande visual por um split de DOIS-CARDS... |
+| [parsleyhealth.com](entries/parsleyhealth.com.md) | new | health | photographic, editorial, warm, organic | O hero é construído sobre um fundo bege-quente full-bleed sem emendas... |
+| [mavenclinic.com](entries/mavenclinic.com.md) | new | health | photographic, warm, editorial, lifestyle | Uma única palavra — "healthcare" — é trocada da limpa s... |
+| [allbirds.com](entries/allbirds.com.md) | new | nature | photographic, lifestyle, editorial, earthy | A dobra inteira é uma única fotografia de rua de ponta a ponta... |
+| [parksproject.us](entries/parksproject.us.md) | new | nature | photographic, outdoorsy, editorial, lifestyle | O título "Leave It Better For Birds and People" é composto... |
+| [wearewild.com](entries/wearewild.com.md) | new | nature | photographic, friendly, e-commerce, colourful | A dobra é encenada como um gramado literal: produtos reais (deodo... |
+| [oatly.com](entries/oatly.com.md) | new | food | editorial, hand-lettered, zine, off-beat | O hero troca o esperado beauty-shot de embalagem brilhante por... |
+| [graza.co](entries/graza.co.md) | new | food | photographic, lifestyle, retro-grocery, bold | Uma foto de cozinha real e espontânea — uma mão apertando o icônico... |
+| [olipop.com](entries/olipop.com.md) | new | food | retro, illustrated, soda-shop, nostalgic | O hero é dividido ao meio: um pan... verde-floresta chapado |
+| [jenis.com](entries/jenis.com.md) | new | food | photographic, warm, retail, appetite-driven | O hero é uma foto de lifestyle com enquadramento apertado — um barbudo... |
+| [duolingo.com](entries/duolingo.com.md) | new | education | illustrated, rounded, friendly, mascot-led | Uma pilha solta, fora-do-grid, de personagens de desenho — a verde o... |
+| [skillshare.com](entries/skillshare.com.md) | new | education | colorful, photographic, friendly, signup-forward | A dobra é dividida: uma coluna esquerda branca limpa com o head... |
+| [kosas.com](entries/kosas.com.md) | new | beauty | photographic, candy-pastel, editorial, retail-shelf | O "hero" no qual você aterrissa é na verdade uma full-bleed lifestyle... |
+| [mytopicals.com](entries/mytopicals.com.md) | new | beauty | photographic, editorial, candid, warm | A dobra é construída em torno de um modal gamificado "scratch-to-win"... |
+| [floydhome.com](entries/floydhome.com.md) | new | home | photographic, editorial, lifestyle, minimal | A dobra inteira é uma foto de quarto não-estilizada, inundada de sol sh... |
+| [burrow.com](entries/burrow.com.md) | new | home | photographic, lifestyle, editorial, warm | A dobra inteira é uma imersiva foto de lifestyle de outdoor-living p... |
+| [article.com](entries/article.com.md) | new | home | photographic, editorial, lifestyle, warm | O título e o CTA ficam bem no centro, embaixo no quadro, di... |
+| [blockrenovation.com](entries/blockrenovation.com.md) | new | home | photographic, editorial, lifestyle, warm | O título é composto em tipografia condensada caixa-alta imponente la... |
+| [ourplace.com](entries/ourplace.com.md) | new | home | photographic, warm, editorial, lifestyle | O hero é uma fotografia de lifestyle apertada, suavemente iluminada, de gl... |
 
 ### other (1)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
-| [cluely.com](entries/cluely.com.md) | q8 | ai | gradient, photographic, cinematic | A serene, photographic sunrise-over-mountains landscape as the full... |
+| [cluely.com](entries/cluely.com.md) | q8 | ai | gradient, photographic, cinematic | Uma paisagem fotográfica serena de nascer-do-sol-sobre-montanhas como o full... |
 
 ## By niche
 

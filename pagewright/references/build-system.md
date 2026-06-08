@@ -1,17 +1,17 @@
-# Build system — HTML + Tailwind, crafted & current
+# Sistema de build — HTML + Tailwind, artesanal e atual
 
-Output is a static site that opens with no build step and looks finished. This file is the technical
-contract: how to wire a CURRENT Design DNA into Tailwind, the structure to emit, and the craft checklist.
+A saída é um site estático que abre sem nenhum passo de build e parece finalizado. Este arquivo é o
+contrato técnico: como conectar um Design DNA ATUAL ao Tailwind, a estrutura a emitir e o checklist de craft.
 
-## Output structure
+## Estrutura de saída
 
-`scripts/new_site.py "<project-name>"` scaffolds `index.html` + `assets/{images,favicon.svg}` + README.
-Single-page by default; add sibling `.html` pages with a shared nav/footer only if needed.
+`scripts/new_site.py "<project-name>"` faz o scaffold de `index.html` + `assets/{images,favicon.svg}` + README.
+Single-page por padrão; adicione páginas `.html` irmãs com nav/footer compartilhados só se for necessário.
 
-## Tailwind + fonts setup
+## Setup de Tailwind + fontes
 
-Default to the **Tailwind Play CDN** (zero build) with the DNA injected as real tokens. Load **current**
-fonts — never default to Inter-only or system-ui. Pick from the vocabulary in design-dna.md; load like so:
+Use por padrão o **Tailwind Play CDN** (zero build) com o DNA injetado como tokens reais. Carregue fontes
+**atuais** — nunca caia no padrão de só Inter ou system-ui. Escolha a partir do vocabulário em design-dna.md; carregue assim:
 
 ```html
 <!-- Editorial serif display + neutral grotesque body (the 2025-26 move). Swap per the DNA. -->
@@ -39,71 +39,72 @@ fonts — never default to Inter-only or system-ui. Pick from the vocabulary in 
 </script>
 ```
 
-Set `<meta name="viewport">`, a real `<title>`, OG/description meta. Light themes: use `#FAFAFA`/warm
-off-white surfaces, not `#FFFFFF`.
+Defina `<meta name="viewport">`, um `<title>` de verdade, meta de OG/description. Temas claros: use superfícies
+`#FAFAFA`/off-white quentes, não `#FFFFFF`.
 
 ## Design tokens → Tailwind
 
-- **Color by role** (`bg/surface/raised/line/ink/muted/faint/accent`) so the palette is swappable and
-  disciplined. Accent maps to the primary CTA + 1-2 focal moments ONLY.
-- **Tinted neutrals + stepped luminance** carry depth (e.g. `#09090B → #18181B → #27272A`) over heavy
-  shadows. Borders are 1px hairlines (`line`).
-- **Type scale** from the DNA. Big confident display with **optical sizing + negative tracking**
-  (`tracking-tight`, `leading-[1.02]`), comfortable body 16-18px, `leading-relaxed`. Use **extreme weight
-  contrast** (e.g. `font-light` display vs `font-bold` accents) — it reads current.
-- **Spacing rhythm** — pick a section padding scale (`py-24 md:py-32`) and reuse it; consistency is most
-  of "polished". Center with `max-w-6xl mx-auto px-6`; let select visuals break wider.
+- **Cor por papel** (`bg/surface/raised/line/ink/muted/faint/accent`) para que a paleta seja trocável e
+  disciplinada. O accent mapeia para o CTA primário + 1-2 momentos focais APENAS.
+- **Neutros tingidos + luminância em degraus** carregam a profundidade (ex.: `#09090B → #18181B → #27272A`) em
+  vez de sombras pesadas. Bordas são hairlines de 1px (`line`).
+- **Escala tipográfica** a partir do DNA. Display grande e confiante com **optical sizing + tracking negativo**
+  (`tracking-tight`, `leading-[1.02]`), corpo de texto confortável 16-18px, `leading-relaxed`. Use **contraste
+  extremo de peso** (ex.: display `font-light` vs. acentos `font-bold`) — passa a sensação de atual.
+- **Ritmo de espaçamento** — escolha uma escala de padding de seção (`py-24 md:py-32`) e reutilize; consistência é
+  a maior parte do "polido". Centralize com `max-w-6xl mx-auto px-6`; deixe visuais selecionados estourarem mais largos.
 
-## Texture (craft signal — use deliberately)
+## Textura (sinal de craft — use deliberadamente)
 
 ```html
 <!-- SVG grain overlay (15-30% opacity), fixed, pointer-events-none -->
 <svg class="pointer-events-none fixed inset-0 -z-10 h-full w-full opacity-[0.04]"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2"/></filter><rect width="100%" height="100%" filter="url(#n)"/></svg>
 ```
-Faint dot/blueprint grid via a CSS `radial-gradient`/`linear-gradient` background on a section; a blurred
-ambient `accent` glow behind product UI. Avoid heavy glassmorphism as structure.
+Um grid sutil de pontos/blueprint via um background `radial-gradient`/`linear-gradient` em uma seção; um glow
+ambiente `accent` desfocado atrás da UI do produto. Evite glassmorphism pesado como estrutura.
 
-## Full-bleed photos & overlays — the `-z-10` gotcha
+## Fotos full-bleed e overlays — a pegadinha do `-z-10`
 
-A full-bleed hero photo (or the grain overlay above) placed *behind* content with **`-z-10`** silently
-**vanishes to black** if its section doesn't form a stacking context: a negative z-index resolves against
-the nearest stacking context, so on a transparent `relative` section it sinks *behind the page's own
-background* (`bg-page` on `<body>`) and disappears. Real, easy-to-miss bug — the `<img>` loads fine, it's
-just painted under the page. Fix with one of:
-- Add **`isolate`** (`isolation:isolate`) to the section → `-z-10` children stay local, behind the content
-  but in front of the page bg. (Simplest.)
-- Or layer explicitly: background `<img>`/overlay at **`z-0`**, content wrapper at **`relative z-10`** — no
-  negative z at all.
+Uma foto de hero full-bleed (ou o grain overlay acima) colocada *atrás* do conteúdo com **`-z-10`**
+silenciosamente **some em preto** se a seção dela não formar um stacking context: um z-index negativo se resolve
+contra o stacking context mais próximo, então numa seção `relative` transparente ele afunda *atrás do próprio
+background da página* (`bg-page` no `<body>`) e desaparece. É um bug real e fácil de não perceber — a `<img>`
+carrega normalmente, ela só é pintada por baixo da página. Corrija com uma destas opções:
+- Adicione **`isolate`** (`isolation:isolate`) à seção → os filhos `-z-10` ficam locais, atrás do conteúdo mas
+  na frente do background da página. (O mais simples.)
+- Ou empilhe explicitamente: `<img>`/overlay de background em **`z-0`**, wrapper de conteúdo em **`relative z-10`**
+  — sem nenhum z negativo.
 
-Then a **light** scrim for legibility (e.g. `from-page/55 via-transparent to-page` + a soft radial pool
-behind the headline) — keep it light so the photo actually reads. A rich anchor shows its hero photo
-prominently; don't bury it under an 85% scrim.
+Depois, um scrim **leve** para legibilidade (ex.: `from-page/55 via-transparent to-page` + um pool radial suave
+atrás do título) — mantenha-o leve para que a foto realmente apareça. Uma âncora rica mostra sua foto de hero com
+destaque; não a soterre sob um scrim de 85%.
 
-## Components (principles, not rigid templates — templates breed sameness)
+## Componentes (princípios, não templates rígidos — templates geram mesmice)
 
-- **Buttons:** primary (accent) + secondary (ghost/outline), real hover/active/focus, specific labels.
-  Consider a `data-magnetic` primary (see motion.md).
-- **Nav:** `<header>` logo + 3-5 links + primary CTA; condense/blur on scroll; working mobile menu.
-- **Icons:** a multi-weight set — **Phosphor / Iconoir / Hugeicons** (CDN or inline SVG) — matched to the
-  shape language. NOT raw single-weight Lucide/Feather, NOT Corporate Memphis mascots.
-- **Cards/bento:** vary size and content; a bento of **real product screenshots** at varied sizes beats
-  three equal icon-blurb boxes (that trio is an AI tell).
-- **Product visual:** frame screenshots intentionally (browser/app chrome, tilt, soft glow) so they read
-  as real product — often the page's signature.
-- **Sections:** semantic `<section aria-labelledby>`; one `<h1>` (hero).
+- **Botões:** primário (accent) + secundário (ghost/outline), hover/active/focus de verdade, labels específicos.
+  Considere um primário `data-magnetic` (veja motion.md).
+- **Nav:** `<header>` logo + 3-5 links + CTA primário; condense/desfoque ao rolar; menu mobile funcional.
+- **Ícones:** um conjunto multi-peso — **Phosphor / Iconoir / Hugeicons** (CDN ou SVG inline) — combinando com a
+  linguagem de forma. NÃO use Lucide/Feather cru de peso único, NÃO use mascotes Corporate Memphis.
+- **Cards/bento:** varie tamanho e conteúdo; um bento de **screenshots reais do produto** em tamanhos variados
+  bate três caixas iguais de ícone-com-texto (esse trio é uma marca registrada de IA).
+- **Visual de produto:** enquadre os screenshots intencionalmente (chrome de browser/app, inclinação, glow suave)
+  para que leiam como produto real — muitas vezes é a assinatura da página.
+- **Seções:** `<section aria-labelledby>` semântico; um único `<h1>` (hero).
 
-## Responsive · A11y · Performance
+## Responsivo · A11y · Performance
 
-- **Mobile-first**, verify 320px → `sm md lg xl`. Hero stacks on mobile; tap targets ≥44px; no horizontal
-  scroll; `clamp()` for the hero headline.
-- **A11y:** semantic landmarks, one `h1`, **alt on every meaningful image** (`alt=""` decorative), WCAG AA
-  contrast (watch `muted` on `surface`), visible focus, keyboard nav, `prefers-reduced-motion` respected.
-- **Perf:** `loading="lazy"` + width/height on below-fold images; SVG for logos/icons; modern formats;
-  cheap CSS-transform motion; minimal vanilla JS. No multi-MB WebGL before paint.
+- **Mobile-first**, verifique 320px → `sm md lg xl`. O hero empilha no mobile; alvos de toque ≥44px; sem scroll
+  horizontal; `clamp()` para o título do hero.
+- **A11y:** landmarks semânticos, um único `h1`, **alt em toda imagem com significado** (`alt=""` para
+  decorativas), contraste WCAG AA (cuidado com `muted` sobre `surface`), foco visível, navegação por teclado,
+  `prefers-reduced-motion` respeitado.
+- **Perf:** `loading="lazy"` + width/height em imagens abaixo da dobra; SVG para logos/ícones; formatos modernos;
+  motion barato via CSS-transform; JS vanilla mínimo. Nada de WebGL de vários MB antes do paint.
 
 ## Motion
 
-See **[motion.md](motion.md)** — at minimum a blur-in reveal + one signature motion, current easing
-(spring/short), gated behind `prefers-reduced-motion`. Do not use AOS.js or fade-up-on-everything.
+Veja **[motion.md](motion.md)** — no mínimo um reveal com blur-in + um motion de assinatura, easing atual
+(spring/curto), protegido por `prefers-reduced-motion`. Não use AOS.js nem fade-up em tudo.
 
-When assembled, go to **image-strategy.md** for visuals, then preview and polish.
+Quando montado, vá para **image-strategy.md** para os visuais, depois faça o preview e o polimento.

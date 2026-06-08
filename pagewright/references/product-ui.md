@@ -1,60 +1,60 @@
-# Product UI — building components that look real, not generic
+# Product UI — construindo componentes que parecem reais, não genéricos
 
-The fastest way to make a landing page look shipped-by-a-senior-team is a **faithful, hand-built product
-surface** (dashboard, table, chart, log, card) in HTML/CSS — see image-strategy.md. But the default way the
-model builds those surfaces is **generic and samey**: one dark panel, a full 1px hairline box, a status
-pill, soft shadow, mono numbers — the same component on every page. This file fixes that. It's distilled
-from how real top product teams (Linear, Stripe, Attio, Retool, Vercel, Mercury, Sentry, Raycast, …) build
-each component, read off their real screenshots.
+O jeito mais rápido de fazer uma landing page parecer entregue-por-um-time-sênior é ter uma **superfície de produto
+fiel e feita à mão** (dashboard, tabela, gráfico, log, card) em HTML/CSS — veja image-strategy.md. Mas o jeito padrão
+como o modelo constrói essas superfícies é **genérico e repetitivo**: um painel escuro, uma caixa com filete de 1px
+fechada, uma pill de status, sombra suave, números em mono — o mesmo componente em toda página. Este arquivo corrige
+isso. Ele é destilado de como times de produto realmente bons (Linear, Stripe, Attio, Retool, Vercel, Mercury, Sentry,
+Raycast, …) constroem cada componente, lido direto dos screenshots reais deles.
 
-**How to use:** before you hand-build any product UI, open the matching section below AND `Read` the
-thumbnail of a named exemplar — then build to that craft, turning the *variety levers* so two of your pages
-never ship the same component.
+**Como usar:** antes de construir qualquer product UI à mão, abra a seção correspondente abaixo E dê `Read` na
+thumbnail de um exemplar citado — então construa naquele nível de acabamento, girando as *alavancas de variedade*
+para que duas das suas páginas nunca entreguem o mesmo componente.
 
-Cross-cutting rules (they apply to every component here):
-- **Dividers, not boxes.** Separate surfaces by lightness + spacing + 1px dividers or an inset top
-  highlight — not a full `border` box with `rounded-xl` + `shadow-2xl` around everything.
-- **Tinted neutrals**, never pure `#000`/`#fff`. Surfaces step in lightness to read as panes.
-- **Ration the accent.** A single status dot / one marker — not accent on every pill, row, and number.
-- **No decorative monospace — ever.** Numbers, data, table cells, captions, labels use the grotesque body
-  with `font-variant-numeric: tabular-nums`. Mono appears ONLY inside a literal code/terminal snippet.
-- **Restraint.** Real product UI is quiet and dense with signal. Small low-contrast labels, real-looking
-  data, a clear hierarchy — not loud chrome.
+Regras transversais (valem para todo componente aqui):
+- **Divisores, não caixas.** Separe superfícies por luminosidade + espaçamento + divisores de 1px ou um realce
+  superior inset — não por uma caixa `border` completa com `rounded-xl` + `shadow-2xl` em volta de tudo.
+- **Neutros tingidos**, nunca `#000`/`#fff` puros. As superfícies escalonam em luminosidade para serem lidas como painéis.
+- **Racione o acento.** Um único ponto de status / um marcador — não acento em toda pill, linha e número.
+- **Nada de monoespaçada decorativa — jamais.** Números, dados, células de tabela, legendas e rótulos usam a grotesca
+  do corpo com `font-variant-numeric: tabular-nums`. Mono aparece SOMENTE dentro de um trecho literal de código/terminal.
+- **Contenção.** Product UI de verdade é silencioso e denso de sinal. Rótulos pequenos de baixo contraste, dados com
+  cara de reais, uma hierarquia clara — não um chrome berrante.
 
-→ Back to **[build-system.md](build-system.md)** for tokens/fonts, **[image-strategy.md](image-strategy.md)**
-for build-vs-photograph, **[design-dna.md](design-dna.md)** for the type/colour vocabulary.
+→ Volte para **[build-system.md](build-system.md)** para tokens/fontes, **[image-strategy.md](image-strategy.md)**
+para construir-vs-fotografar, **[design-dna.md](design-dna.md)** para o vocabulário de tipo/cor.
 
 ---
-## Dashboards & app consoles (the product frame)
+## Dashboards e consoles de app (o product frame)
 
-The "product frame" is the in-page replica of an app shell — sidebar + content + (often) a detail rail. It's the single most-faked component on a SaaS page and the one that most often gives away an AI build, because everyone reaches for the same dark card with a hairline box around it. Real top teams treat the frame as architecture: the *structure* (panes, rails, breadcrumbs, density) does the work, and borders almost disappear.
+O "product frame" é a réplica embutida de um app shell — sidebar + conteúdo + (frequentemente) um trilho de detalhe. É o componente mais imitado numa página SaaS e o que mais entrega uma construção feita por IA, porque todo mundo recorre ao mesmo card escuro com uma caixa de filete em volta. Os melhores times de verdade tratam o frame como arquitetura: a *estrutura* (painéis, trilhos, breadcrumbs, densidade) faz o trabalho, e as bordas quase somem.
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **Linear builds a 3-pane shell, not a card.** Sidebar (~240px) / issue list / detail rail, each a *separate surface* at a slightly different lightness — the divisions read as panes, not as one box with internal lines. The whole frame sits on near-black `#08090A` (never `#000`), and the app surface is one step lighter (`~#0F1011`). The only "border" that matters is a **1px inset top highlight** (`box-shadow: inset 0 1px 0 rgba(255,255,255,.04)`) that catches light like a real window edge — there is no full 1px box around the frame.
-- **Chrome is breadcrumbs and counts, not decoration.** Linear's header carries `02 / 145`, an issue key `ENG-2703`, tiny nav chevrons — quiet wayfinding in ~13px. That positional text is what makes it read as a *real* app mid-task, not a marketing mockup. Set it in the body grotesque with `tabular-nums`, never mono.
-- **Attio proves the light version: dividers, not boxes.** Its console is near-white with grouped sidebar sections and a tab row separated by single **hairline dividers** (`border-bottom`), zero card outline, generous whitespace. Density comes from tight line-height and small labels, not from cramming — restraint is the aesthetic.
-- **Sidebar typography is small and low-contrast.** ~13px labels, ~16px icons, section headers ("Workspace", "Favorites") in an even smaller, dimmer, slightly tracked label. The *active* row gets a faint tinted fill (`bg-white/[.06]`) and full-ink text; everything else sits at 60-70% ink. No accent color on nav — the accent is rationed.
-- **Accent is a single dot, never a flood.** Linear's indigo shows up only as the `In Progress` status dot and one inline link marker — the primary "Sign up" pill is plain white. Status lives in small colored dots + a text label, not in big filled pills everywhere.
-- **Basedash shows the data-viz frame: glow, big tabular figures, tiny deltas.** Vivid multicolor bars on near-black, headline metrics like `4.3k` / `20.5k` set large with a small green `+%` delta beside them. The numbers are the hero; the delta is muted and small. (Again: real grotesque + `tabular-nums`, the green is a semantic state, not branding.)
-- **Elevation is layered, not glowy by default.** Linear floats a secondary agent card *above* the frame with its own soft shadow and a close affordance — depth communicates "this is on top of that," it isn't a uniform drop-shadow on every panel.
+- **A Linear constrói um shell de 3 painéis, não um card.** Sidebar (~240px) / lista de issues / trilho de detalhe, cada um uma *superfície separada* numa luminosidade ligeiramente diferente — as divisões são lidas como painéis, não como uma caixa só com linhas internas. O frame inteiro repousa num quase-preto `#08090A` (nunca `#000`), e a superfície do app é um passo mais clara (`~#0F1011`). A única "borda" que importa é um **realce superior inset de 1px** (`box-shadow: inset 0 1px 0 rgba(255,255,255,.04)`) que pega a luz como a borda de uma janela real — não existe caixa de 1px completa em volta do frame.
+- **O chrome é breadcrumb e contagem, não decoração.** O cabeçalho da Linear carrega `02 / 145`, uma chave de issue `ENG-2703`, pequenos chevrons de navegação — orientação silenciosa em ~13px. Esse texto posicional é o que faz o componente ser lido como um app *real* no meio de uma tarefa, não como um mockup de marketing. Componha-o na grotesca do corpo com `tabular-nums`, nunca em mono.
+- **A Attio prova a versão clara: divisores, não caixas.** O console dela é quase-branco, com seções de sidebar agrupadas e uma fileira de tabs separadas por **divisores de filete** únicos (`border-bottom`), zero contorno de card, espaço em branco generoso. A densidade vem de line-height apertado e rótulos pequenos, não de amontoar — contenção é a estética.
+- **A tipografia da sidebar é pequena e de baixo contraste.** Rótulos de ~13px, ícones de ~16px, cabeçalhos de seção ("Workspace", "Favorites") num rótulo ainda menor, mais apagado e com leve tracking. A linha *ativa* ganha um preenchimento tingido sutil (`bg-white/[.06]`) e texto com tinta cheia; todo o resto fica em 60-70% de tinta. Sem cor de acento na navegação — o acento é racionado.
+- **O acento é um único ponto, nunca uma inundação.** O índigo da Linear aparece só no ponto de status `In Progress` e num marcador de link inline — a pill principal "Sign up" é branca lisa. O status vive em pequenos pontos coloridos + um rótulo de texto, não em pills grandes preenchidas por toda parte.
+- **A Basedash mostra o frame de data-viz: glow, números tabulares grandes, deltas minúsculos.** Barras multicoloridas vívidas sobre quase-preto, métricas de destaque como `4.3k` / `20.5k` grandes com um pequeno delta verde `+%` ao lado. Os números são o herói; o delta é discreto e pequeno. (De novo: grotesca real + `tabular-nums`, o verde é um estado semântico, não branding.)
+- **A elevação é em camadas, não com glow por padrão.** A Linear flutua um card de agente secundário *acima* do frame, com sua própria sombra suave e uma affordance de fechar — a profundidade comunica "isto está em cima daquilo", e não é um drop-shadow uniforme em todo painel.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- The **single dark panel with a full 1px `border border-white/10` box** and `rounded-xl`, one soft `shadow-2xl`, floating in the center. One surface, one border, one shadow — the AI-default frame.
-- **Monospace everywhere** for the issue key, counts, table cells, timestamps, and metric numbers as a "technical" flavor. Banned. It's dated and it's the tell.
-- A **violet/indigo accent on everything** — active nav row, every status pill, the metric, the button — instead of rationing it to one dot.
-- **Uniform medium density**: every row the same height, same `px-4 py-3`, one weight of text, equal-contrast labels — no signal hierarchy, so nothing reads as "the app is mid-task."
+- O **único painel escuro com uma caixa de `border border-white/10` de 1px completa** e `rounded-xl`, um `shadow-2xl` suave, flutuando no centro. Uma superfície, uma borda, uma sombra — o frame-padrão de IA.
+- **Monoespaçada por toda parte** para a chave de issue, contagens, células de tabela, timestamps e números de métrica como um sabor "técnico". Banido. É datado e é o sinal entregue.
+- Um **acento violeta/índigo em tudo** — linha de navegação ativa, toda pill de status, a métrica, o botão — em vez de racioná-lo a um único ponto.
+- **Densidade média uniforme**: toda linha com a mesma altura, mesmo `px-4 py-3`, um peso de texto, rótulos de contraste igual — sem hierarquia de sinal, então nada é lido como "o app está no meio de uma tarefa".
 
-### Variety levers (turn these so two builds don't match)
+### Alavancas de variedade (gire-as para que duas construções não combinem)
 
-- **Light vs dark frame.** Attio-white (hairline dividers, lots of air) vs Linear-near-black (layered panes, inset highlight). Pick per Design DNA, not by reflex-dark.
-- **Border strategy.** (a) *No borders* — separate by surface lightness + spacing; (b) *dividers only* — 1px lines between rows/tabs, no outer box; (c) *inset top highlight* — the window-edge trick. Avoid the full outlined box.
-- **Pane count & framing.** Single content pane / 2-pane (nav + content) / 3-pane (nav + list + detail rail). More panes = more "real app," less marketing.
-- **Density.** Comfortable (≥44px rows, Attio-ish) vs compact (28-32px rows, Linear-ish). Compact reads as a power tool; comfortable as a consumer app.
-- **Accent rationing & elevation.** One accent dot vs a tinted-fill active state; flat panes vs one floating overlay card with its own shadow vs Basedash glow on data viz only.
+- **Frame claro vs. escuro.** Attio-branco (divisores de filete, muito ar) vs. Linear-quase-preto (painéis em camadas, realce inset). Escolha pelo Design DNA, não por reflexo-escuro.
+- **Estratégia de borda.** (a) *Sem bordas* — separe por luminosidade de superfície + espaçamento; (b) *só divisores* — linhas de 1px entre linhas/tabs, sem caixa externa; (c) *realce superior inset* — o truque da borda-de-janela. Evite a caixa contornada completa.
+- **Quantidade de painéis e enquadramento.** Um painel de conteúdo / 2 painéis (nav + conteúdo) / 3 painéis (nav + lista + trilho de detalhe). Mais painéis = mais "app real", menos marketing.
+- **Densidade.** Confortável (linhas ≥44px, estilo Attio) vs. compacta (linhas de 28-32px, estilo Linear). Compacta é lida como ferramenta de poder; confortável como app de consumo.
+- **Racionamento de acento e elevação.** Um ponto de acento vs. um estado ativo de preenchimento tingido; painéis planos vs. um card de overlay flutuante com sua própria sombra vs. glow da Basedash apenas na data viz.
 
-### Copy-pasteable sketch (Linear-flavored 3-pane, no decorative mono)
+### Esboço copiável (estilo Linear de 3 painéis, sem mono decorativa)
 
 ```html
 <!-- tinted near-black frame; surfaces differ by lightness, no full box border -->
@@ -125,40 +125,40 @@ The "product frame" is the in-page replica of an app shell — sidebar + content
 </div>
 ```
 
-Note the craft moves: three surfaces at different lightness (`#0F1011`, `#0B0C0D`) instead of one box; an **inset top highlight** as the only "frame edge"; counts, issue keys and timestamps in the body grotesque with `tabular-nums` (zero mono); active nav as a **tinted fill**, not an accent color; and the indigo rationed to a **single status dot** in the rail. Swap to a white frame with hairline dividers (Attio) or a glow + big-figure metric grid (Basedash) when the Design DNA calls for it — same architecture, different dials.
+Repare nos movimentos de acabamento: três superfícies em luminosidades diferentes (`#0F1011`, `#0B0C0D`) em vez de uma caixa; um **realce superior inset** como a única "borda de frame"; contagens, chaves de issue e timestamps na grotesca do corpo com `tabular-nums` (zero mono); navegação ativa como um **preenchimento tingido**, não uma cor de acento; e o índigo racionado a um **único ponto de status** no trilho. Troque por um frame branco com divisores de filete (Attio) ou por um glow + grade de métricas com números grandes (Basedash) quando o Design DNA pedir — mesma arquitetura, mostradores diferentes.
 
 ---
 
-## Data tables, ledgers & lists
+## Tabelas de dados, ledgers e listas
 
-A table is the single most "default-able" component in product UI — which is exactly why a generic one screams AI. The fix is not more chrome; it's *less*, applied with intent. Real product tables are quiet grids that let the data carry the visual weight.
+Uma tabela é o componente mais "padronizável" de product UI — que é exatamente por que uma genérica grita IA. A correção não é mais chrome; é *menos*, aplicado com intenção. Tabelas de produto de verdade são grades silenciosas que deixam o dado carregar o peso visual.
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **Attio drops the outer box entirely.** There's no `border` around the table — separation comes from a stack of faint horizontal hairlines (`~1px` at roughly `4–6%` ink) between rows and *nothing* on the left/right edges. The table reads as part of the page, not a card sitting on it. Header row is the same width as body rows, set off only by a slightly stronger bottom rule, never a filled grey background bar.
-- **Rows are short and the type is small.** Attio runs body cells at ~13–14px with row heights around 36–40px; the primary cell (record name) is the only one with an icon/avatar, and it's `font-weight: 500`, while every other cell is `400`. Density is the aesthetic — you should see 10+ rows without scrolling.
-- **Outerbase (dark, spreadsheet-style) earns its grid lines.** Because it's a true data grid, it *does* show both vertical and horizontal hairlines — but at very low contrast against a *tinted* dark surface (`~#16181d`, never `#000`). It pairs that with a leading checkbox column, sortable headers with a small chevron that only appears on hover/active, and an `Add row` affordance pinned to the toolbar. Numbers (`open / high / low`) are right-aligned and tabular.
-- **Hover is a tint, not a border.** Across all of them the row hover state is a barely-there background wash (a 4–8% lift of the surface or accent), never a colored outline and never a shadow. Selection is a slightly stronger tint of the *same* hue plus a `2px` accent bar on the leading edge (Outerbase-style), not a checkbox-only signal.
-- **Numbers are a column citizen, not a code block.** Financial/metric columns are right-aligned, use `font-variant-numeric: tabular-nums` on the *body grotesque*, often with a muted unit/currency glyph in a lighter weight. No monospace, ever — the alignment comes from tabular figures, not from a typewriter face.
-- **Status is a quiet dot or low-saturation pill.** The current trend (Linear, Geist, Attio) leans toward a small `6px` filled dot + label rather than a loud filled badge. When a pill is used it's *soft*: tinted background at ~12% of the hue with text at full saturation, `border-radius` modest (6–8px), no border. One accent color total per table — restraint.
-- **The header is whisper-quiet.** Column labels are `12–13px`, often `font-weight: 500`, frequently set in the muted foreground (not full ink), occasionally `letter-spacing` a hair — but **not** uppercase-tracked-out, which now reads dated.
+- **A Attio descarta a caixa externa por completo.** Não há `border` em volta da tabela — a separação vem de uma pilha de filetes horizontais tênues (`~1px` a aproximadamente `4–6%` de tinta) entre as linhas e *nada* nas bordas esquerda/direita. A tabela é lida como parte da página, não como um card pousado sobre ela. A linha de cabeçalho tem a mesma largura das linhas do corpo, destacada só por uma régua inferior ligeiramente mais forte, nunca por uma barra de fundo cinza preenchida.
+- **As linhas são curtas e o tipo é pequeno.** A Attio roda células do corpo em ~13–14px com altura de linha em torno de 36–40px; a célula principal (nome do registro) é a única com ícone/avatar, e é `font-weight: 500`, enquanto toda outra célula é `400`. Densidade é a estética — você deve ver 10+ linhas sem rolar.
+- **O Outerbase (escuro, estilo planilha) merece suas linhas de grade.** Como é uma data grid de verdade, ele *de fato* mostra filetes verticais e horizontais — mas com contraste muito baixo contra uma superfície escura *tingida* (`~#16181d`, nunca `#000`). Combina isso com uma coluna líder de checkbox, cabeçalhos ordenáveis com um pequeno chevron que só aparece no hover/ativo, e uma affordance `Add row` fixada na toolbar. Os números (`open / high / low`) são alinhados à direita e tabulares.
+- **O hover é um tingimento, não uma borda.** Em todas elas o estado de hover da linha é uma leve lavagem de fundo (um realce de 4–8% da superfície ou do acento), nunca um contorno colorido e nunca uma sombra. A seleção é um tingimento ligeiramente mais forte da *mesma* matiz mais uma barra de acento de `2px` na borda líder (estilo Outerbase), não um sinal só de checkbox.
+- **Números são cidadãos de coluna, não bloco de código.** Colunas financeiras/de métrica são alinhadas à direita, usam `font-variant-numeric: tabular-nums` na *grotesca do corpo*, frequentemente com um glifo de unidade/moeda discreto num peso mais leve. Nada de monoespaçada, jamais — o alinhamento vem dos números tabulares, não de uma face de máquina de escrever.
+- **O status é um ponto silencioso ou uma pill de baixa saturação.** A tendência atual (Linear, Geist, Attio) pende para um pequeno ponto preenchido de `6px` + rótulo, em vez de um badge preenchido berrante. Quando uma pill é usada, ela é *suave*: fundo tingido a ~12% da matiz com texto na saturação cheia, `border-radius` modesto (6–8px), sem borda. Uma cor de acento por tabela no total — contenção.
+- **O cabeçalho é sussurrante.** Os rótulos de coluna têm `12–13px`, frequentemente `font-weight: 500`, muitas vezes no foreground apagado (não tinta cheia), ocasionalmente com um fio de `letter-spacing` — mas **não** maiúsculas-espalhadas, o que hoje soa datado.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- A fully boxed table: `border border-white/10 rounded-xl` wrapping everything, with a filled `bg-white/5` header bar and `divide-y divide-white/10` between every row — the "dark panel with a hairline cage."
-- A monospace font on every number, ID, timestamp, or code-like value "to look technical." Banned. Use tabular-nums on the body font instead.
-- A loud status pill in the rightmost column (`bg-green-500/20 text-green-400 border border-green-500/30 rounded-full`) on *every* row, turning the table into a Christmas-light strip.
-- Identical padding everywhere (`px-4 py-3`) with a soft drop-shadow under the card — flat, uniform, and instantly recognizable as a template.
+- Uma tabela totalmente encaixotada: `border border-white/10 rounded-xl` envolvendo tudo, com uma barra de cabeçalho `bg-white/5` preenchida e `divide-y divide-white/10` entre toda linha — a "gaiola de filete no painel escuro".
+- Uma fonte monoespaçada em todo número, ID, timestamp ou valor com cara de código "para parecer técnico". Banido. Use tabular-nums na fonte do corpo no lugar.
+- Uma pill de status berrante na coluna mais à direita (`bg-green-500/20 text-green-400 border border-green-500/30 rounded-full`) em *toda* linha, transformando a tabela numa fileira de luzes de Natal.
+- Padding idêntico por toda parte (`px-4 py-3`) com um drop-shadow suave sob o card — plano, uniforme e instantaneamente reconhecível como template.
 
-### Variety levers (turn these so two builds don't match)
+### Alavancas de variedade (gire-as para que duas construções não combinem)
 
-1. **Border strategy** — borderless-with-hairlines (Attio), full faint grid (Outerbase data grid), or shadow-as-divider where rows sit on subtly alternating surface tints and the only line is under the header. Pick *one* per build.
-2. **Density** — comfortable (44–48px rows, used for a short ledger) vs. compact (32–36px, used when the point is to show volume). Set row height and font size together, don't mix.
-3. **Surface temperature & elevation** — flat-on-page (no card) vs. inset panel (table sits in a recessed well, `bg` one step *darker* than the page, top inset highlight) vs. raised card. Inset wells feel current; raised cards feel 2021.
-4. **Accent role** — accent on the selection bar, OR on a single sparkline/trend cell, OR on one status hue — never all three. Decide the *one* place color is allowed.
-5. **Framing of the leading column** — icon+name (CRM/list feel), checkbox+id (data-grid feel), or rank-number (leaderboard/ledger feel). This single choice changes the whole personality.
+1. **Estratégia de borda** — sem-borda-com-filetes (Attio), grade tênue completa (data grid do Outerbase), ou sombra-como-divisor onde as linhas repousam em tingimentos de superfície sutilmente alternados e a única linha é sob o cabeçalho. Escolha *uma* por construção.
+2. **Densidade** — confortável (linhas de 44–48px, para um ledger curto) vs. compacta (32–36px, quando o ponto é mostrar volume). Defina altura de linha e tamanho de fonte juntos, não misture.
+3. **Temperatura de superfície e elevação** — plano-na-página (sem card) vs. painel inset (a tabela fica num poço recuado, `bg` um passo mais *escuro* que a página, realce superior inset) vs. card elevado. Poços inset parecem atuais; cards elevados parecem 2021.
+4. **Papel do acento** — acento na barra de seleção, OU numa única célula de sparkline/tendência, OU numa matiz de status — nunca os três. Decida o *único* lugar onde a cor é permitida.
+5. **Enquadramento da coluna líder** — ícone+nome (cara de CRM/lista), checkbox+id (cara de data-grid), ou número-de-rank (cara de leaderboard/ledger). Essa escolha única muda toda a personalidade.
 
-### Copy-pasteable sketch (borderless hairline ledger, dark, tabular numbers, no mono)
+### Esboço copiável (ledger de filetes sem borda, escuro, números tabulares, sem mono)
 
 ```html
 <!-- Tinted neutral surface, no outer box; hairlines + hover-tint do the work -->
@@ -252,41 +252,41 @@ A table is the single most "default-able" component in product UI — which is e
 </div>
 ```
 
-Notes on the sketch: no wrapping box, no `divide-y` cage, no card shadow — the structure is hairlines + a single header rule. Numbers use `tabular-nums` on the body grotesque (no monospace). Color is rationed: status dots are the only hues, gains use a desaturated emerald, and the sole accent (`sky`) appears *only* on the selected row's tint and `2px` edge bar. To make a second, different table, flip one lever — e.g. switch to a 32px-dense data grid *with* faint vertical lines and a leading checkbox column, or invert to a flat light surface — rather than reusing this exact look.
+Notas sobre o esboço: sem caixa envolvente, sem gaiola de `divide-y`, sem sombra de card — a estrutura é filetes + uma única régua de cabeçalho. Os números usam `tabular-nums` na grotesca do corpo (sem monoespaçada). A cor é racionada: pontos de status são as únicas matizes, ganhos usam um esmeralda dessaturado, e o único acento (`sky`) aparece *apenas* no tingimento e na barra de borda de `2px` da linha selecionada. Para fazer uma segunda tabela diferente, vire uma alavanca — por exemplo, mude para uma data grid densa de 32px *com* linhas verticais tênues e uma coluna líder de checkbox, ou inverta para uma superfície clara plana — em vez de reusar exatamente este visual.
 
 ---
 
-## Charts & data-viz (line, bar, funnel, cohort, sparkline)
+## Gráficos e data-viz (linha, barra, funil, cohort, sparkline)
 
-Charts are where AI-default UI gives itself away fastest: a boxed canvas, four gridlines, a full x/y axis, a glowing accent line, and a tooltip nobody styled. Real product teams treat a chart as *typography with one shape in it* — the number is the hero, the line is supporting, the gridlines are nearly gone. Study how differently the references solve the same job: Mixpanel's funnel is all soft lilac bars + stacked percentages with no frame; Steep's "Activation" spark is a single thin charcoal line with one end-dot and a giant `46.2%` underneath; Graphy goes the opposite way with glossy rounded 3D bars; PostHog stays flat and utilitarian. None of them look like the same template.
+Gráficos são onde a UI padrão de IA se entrega mais rápido: um canvas encaixotado, quatro gridlines, um eixo x/y completo, uma linha de acento com glow, e um tooltip que ninguém estilizou. Times de produto de verdade tratam um gráfico como *tipografia com uma forma dentro* — o número é o herói, a linha é coadjuvante, as gridlines quase somem. Estude como as referências resolvem o mesmo trabalho de formas tão diferentes: o funil da Mixpanel é só barras lilás suaves + porcentagens empilhadas sem moldura; a spark de "Activation" da Steep é uma única linha fina cor de carvão com um ponto na ponta e um `46.2%` gigante embaixo; a Graphy vai no caminho oposto com barras 3D brilhantes e arredondadas; a PostHog fica plana e utilitária. Nenhuma delas parece o mesmo template.
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **The number leads, the chart supports.** Steep's activation card puts a large `46.2%` figure directly *under* a tiny sparkline — the viz exists to give the number a shape, not the reverse. KPI cards pair one big tabular figure with a small signed delta (`↑ 5.5% vs last week`), where the delta is the only colored element on the card.
-- **Kill the axes and the box.** Sparklines and hero charts ship with *no* y-axis, no chart border, and often no x-axis labels — just the line and maybe a faint baseline. Steep's chart fragment has zero gridlines. When an axis is needed, it's 1px at ~8–10% ink, sitting *under* the plot, never a full rectangle around it.
-- **Gridlines are the quietest layer or absent.** If present, horizontal-only, 1px, dashed or solid at roughly `border` opacity (6–10% ink), and never vertical. The data line is full-strength; the grid is barely perceptible. Hierarchy = line ≫ axis ≫ grid.
-- **Area fill is a fade, not a flood.** Line charts use a vertical gradient under the curve from ~14% accent at the top to 0% at the baseline (Tremor/shadcn do exactly this). The stroke is 1.5–2px; the fill is a whisper. No solid accent block.
-- **Funnels are stacked bars + stacked percentages, no scaffolding.** Mixpanel's funnel is horizontal stepped bars in soft lilac with each step's conversion `82.4% → 61.8% → 41.6%` set directly beneath, an `Overall` total, and faint dotted drop-off connectors between steps — sitting on white with a soft shadow, not inside a charted grid.
-- **Cohort/retention = a tinted heatmap, not a table of digits.** Each cell's *background* carries the value (saturation of the accent encodes magnitude), so the eye reads the gradient before any number. Numbers are small, tabular, and centered; the color does the work.
-- **One accent, restrained; categories via neutral steps.** A single line or bar gets the brand accent. Multi-series charts step through *tints of one hue* or a muted neutral ramp — not a rainbow. Steep's coral, Mixpanel's lilac: one family.
-- **Sparklines round their caps and mark the endpoint.** A `stroke-linecap="round"`, a single filled dot on the last point (Steep), and the whole thing word-sized — it lives inside a card or beside a number, never framed.
+- **O número lidera, o gráfico apoia.** O card de ativação da Steep coloca uma figura grande `46.2%` diretamente *embaixo* de uma sparkline minúscula — a viz existe para dar uma forma ao número, não o contrário. Cards de KPI emparelham uma figura tabular grande com um pequeno delta com sinal (`↑ 5.5% vs last week`), onde o delta é o único elemento colorido do card.
+- **Mate os eixos e a caixa.** Sparklines e gráficos de destaque saem com *nenhum* eixo y, sem borda de gráfico, e frequentemente sem rótulos de eixo x — só a linha e talvez uma linha de base tênue. O fragmento de gráfico da Steep tem zero gridlines. Quando um eixo é necessário, é 1px a ~8–10% de tinta, situado *sob* o plot, nunca um retângulo completo em volta.
+- **Gridlines são a camada mais silenciosa ou ausente.** Se presentes, só horizontais, 1px, tracejadas ou sólidas em aproximadamente a opacidade de `border` (6–10% de tinta), e nunca verticais. A linha de dados é em força total; a grade é quase imperceptível. Hierarquia = linha ≫ eixo ≫ grade.
+- **O preenchimento de área é um fade, não uma inundação.** Gráficos de linha usam um gradiente vertical sob a curva de ~14% de acento no topo a 0% na linha de base (Tremor/shadcn fazem exatamente isso). O traço é 1.5–2px; o preenchimento é um sussurro. Nada de bloco sólido de acento.
+- **Funis são barras empilhadas + porcentagens empilhadas, sem andaime.** O funil da Mixpanel são barras horizontais em degraus, em lilás suave, com a conversão de cada passo `82.4% → 61.8% → 41.6%` posta logo abaixo, um total `Overall`, e conectores pontilhados tênues de queda entre passos — pousados sobre branco com uma sombra suave, não dentro de uma grade de gráfico.
+- **Cohort/retenção = um heatmap tingido, não uma tabela de dígitos.** O *fundo* de cada célula carrega o valor (a saturação do acento codifica a magnitude), então o olho lê o gradiente antes de qualquer número. Os números são pequenos, tabulares e centrados; a cor faz o trabalho.
+- **Um acento, contido; categorias via degraus neutros.** Uma única linha ou barra ganha o acento da marca. Gráficos multi-séries percorrem *tons de uma matiz* ou uma rampa neutra apagada — não um arco-íris. O coral da Steep, o lilás da Mixpanel: uma família.
+- **Sparklines arredondam suas pontas e marcam o endpoint.** Um `stroke-linecap="round"`, um único ponto preenchido no último ponto (Steep), e a coisa toda do tamanho de uma palavra — ela vive dentro de um card ou ao lado de um número, nunca emoldurada.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- A `<div>` with a 1px hairline border, a soft shadow, a 4-line dashed grid, a full x **and** y axis, and a glowing indigo line at full saturation — the "every dashboard" chart.
-- Numbers and axis ticks set in monospace for a "data" feel. **Banned** — use the grotesque body with `tabular-nums`.
-- A solid accent area fill (flat block of color) under the line, plus a status pill floating in the corner because the panel felt empty.
-- Rainbow multi-series (indigo/green/orange/red) where each series fights for attention; legend dots in a row that nobody needs.
+- Um `<div>` com uma borda de filete de 1px, uma sombra suave, uma grade tracejada de 4 linhas, um eixo x **e** y completos, e uma linha índigo com glow em saturação cheia — o gráfico "de todo dashboard".
+- Números e ticks de eixo postos em monoespaçada para uma cara de "dado". **Banido** — use a grotesca do corpo com `tabular-nums`.
+- Um preenchimento de área de acento sólido (bloco plano de cor) sob a linha, mais uma pill de status flutuando no canto porque o painel pareceu vazio.
+- Multi-séries arco-íris (índigo/verde/laranja/vermelho) onde cada série briga por atenção; pontos de legenda numa fileira de que ninguém precisa.
 
-### Variety levers (turn these so two builds differ)
+### Alavancas de variedade (gire-as para que duas construções difiram)
 
-- **Number/chart ratio** — KPI-led (giant figure, sparkline as garnish, Steep) ↔ chart-led (the plot fills the card, number is a caption). Pick one per surface.
-- **Grid & axis strategy** — none (pure sparkline) ↔ baseline-only ↔ faint horizontal grid ↔ labeled axis. Going lighter reads more premium; going fuller reads more "analyst tool" (PostHog).
-- **Fill & stroke** — flat 1px line / no fill ↔ 2px line + gradient fade ↔ glossy rounded bars with soft glow (Graphy). This single dial swings utilitarian↔expressive.
-- **Encoding for categories** — single accent + neutral ramp ↔ monochrome tints of the brand hue ↔ heatmap-tinted cells (cohort). Never default to a categorical rainbow.
-- **Framing** — borderless on tinted surface ↔ inset 1px *top* border only (Linear-style, divider not box) ↔ floating card with soft shadow (Mixpanel). The container says as much as the chart.
+- **Proporção número/gráfico** — liderado-por-KPI (figura gigante, sparkline como guarnição, Steep) ↔ liderado-por-gráfico (o plot preenche o card, o número é uma legenda). Escolha um por superfície.
+- **Estratégia de grade e eixo** — nenhuma (sparkline pura) ↔ só linha de base ↔ grade horizontal tênue ↔ eixo rotulado. Ir mais leve é lido como mais premium; ir mais cheio é lido como mais "ferramenta de analista" (PostHog).
+- **Preenchimento e traço** — linha plana de 1px / sem preenchimento ↔ linha de 2px + fade em gradiente ↔ barras arredondadas brilhantes com glow suave (Graphy). Esse mostrador único oscila utilitário↔expressivo.
+- **Codificação para categorias** — acento único + rampa neutra ↔ tons monocromáticos da matiz da marca ↔ células tingidas de heatmap (cohort). Nunca caia no padrão de um arco-íris categórico.
+- **Enquadramento** — sem borda em superfície tingida ↔ só borda *superior* inset de 1px (estilo Linear, divisor não caixa) ↔ card flutuante com sombra suave (Mixpanel). O contêiner diz tanto quanto o gráfico.
 
-### Copy-pasteable sketch — KPI line card with gradient fade + cohort heatmap
+### Esboço copiável — card de linha de KPI com fade em gradiente + heatmap de cohort
 
 ```html
 <!-- Tinted neutral surface, no hard box. Number leads; chart supports. -->
@@ -355,41 +355,41 @@ Charts are where AI-default UI gives itself away fastest: a boxed canvas, four g
 </div>
 ```
 
-The whole card has one accent (`#E07856`), tabular figures everywhere via `font-feature-settings:'tnum'`, no chart border, no gridlines beyond a 6%-ink baseline, a fade fill instead of a flood, and a cohort grid where *color* — not the digits — carries the trend. To re-skin: drop the area fill and go flat 1px for a utilitarian PostHog read, add an inset top-border-only container for a Linear read, or round the bars and add a soft glow for a Graphy read.
+O card inteiro tem um acento (`#E07856`), figuras tabulares por toda parte via `font-feature-settings:'tnum'`, sem borda de gráfico, sem gridlines além de uma linha de base a 6% de tinta, um preenchimento em fade em vez de inundação, e uma grade de cohort onde a *cor* — não os dígitos — carrega a tendência. Para re-skin: descarte o preenchimento de área e vá para linha plana de 1px para uma leitura utilitária da PostHog, adicione um contêiner só-com-borda-superior-inset para uma leitura Linear, ou arredonde as barras e adicione um glow suave para uma leitura Graphy.
 
 ---
 
 ## Cards — pricing, stat, feature, product
 
-Cards are where the "AI-default panel" is most visible: a box, a border, a pill, a soft shadow, repeat. Real top teams almost never ship that. They pick *one* surface strategy per page and commit to it, then carry signal in spacing, weight, and number formatting — not in chrome.
+Cards são onde o "painel padrão de IA" é mais visível: uma caixa, uma borda, uma pill, uma sombra suave, repetir. Os melhores times quase nunca entregam isso. Eles escolhem *uma* estratégia de superfície por página e comprometem-se com ela, depois carregam o sinal em espaçamento, peso e formatação de número — não em chrome.
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **Linear: the card is a "window," not a "box."** On the near-black canvas (`#08090A`, never `#000`) the product panels read as one continuous surface separated by a single **1px hairline at `rgba(255,255,255,0.06–0.08)`**, often as an *inset top-border or divider* rather than a full 4-sided box. Elevation is a faint top-edge highlight (`inset 0 1px 0 rgba(255,255,255,.04)`), not a drop shadow. The indigo accent appears only as a 6–8px **status dot**, never as a card fill or border.
-- **Stripe: light, editorial, almost border-less.** Feature/stat cards sit on white with **no visible border** — separation comes from generous whitespace and a near-black headline (`#0A2540`) over a muted slate body (`#425466`). When a surface is needed it's a barely-tinted `#F6F9FC` fill with radius ~`8px`, not a stroke. Hierarchy inside a long card is done by *two-tone ink* (dark promise line, slate support line), exactly like their H1.
-- **Vercel / Geist: structural minimalism.** Cards are white-on-white (or `#FAFAFA` raised) with a single **`1px` `#EAEAEA` border** and tight radius (`6–8px`). The defining move is *the grid itself* — cards align to visible faint gridlines and corner ticks, so the layout reads engineered. Numbers and labels are the **grotesque body with `tabular-nums`**, never a code face. CTAs inside cards are solid-black or hairline-outline pills, high contrast, small.
-- **Raycast: dark cards that earn their elevation.** Surfaces are a hair lighter than the page (`#0F0F12` on `#0A0A0C`), separation by **tonal step, not stroke**. A single brand accent (their red) is rationed to one element per card — an icon tile or a hover glow — and the rest stays neutral. Corner radius is generous (`12–16px`) to feel app-like.
-- **Pricing specifically:** the recommended tier is distinguished by **one** lever, not three. Linear/Stripe-class pricing promotes a tier with a subtle tint or a slightly stronger border — *not* border + shadow + glow + scale-up + ribbon all at once. The price is set big in the grotesque with `tabular-nums` and a baseline-aligned `/mo` in muted ink; feature checks are quiet (a thin check glyph in accent-or-muted, never a filled green circle).
-- **Number craft everywhere:** every figure uses `font-variant-numeric: tabular-nums` so columns and stacked prices align. Currency, decimals, and units are de-emphasized (muted color, smaller size) so the magnitude reads first. No monospace — the grotesque carries the data.
+- **Linear: o card é uma "janela", não uma "caixa".** No canvas quase-preto (`#08090A`, nunca `#000`) os painéis de produto são lidos como uma superfície contínua única separada por um único **filete de 1px em `rgba(255,255,255,0.06–0.08)`**, frequentemente como uma *borda superior inset ou divisor* em vez de uma caixa completa de 4 lados. A elevação é um realce tênue de borda superior (`inset 0 1px 0 rgba(255,255,255,.04)`), não um drop shadow. O acento índigo aparece só como um **ponto de status** de 6–8px, nunca como preenchimento ou borda de card.
+- **Stripe: claro, editorial, quase sem borda.** Cards de feature/stat ficam sobre branco com **nenhuma borda visível** — a separação vem de espaço em branco generoso e um título quase-preto (`#0A2540`) sobre um corpo ardósia apagado (`#425466`). Quando uma superfície é necessária, é um preenchimento `#F6F9FC` levemente tingido com raio ~`8px`, não um traço. A hierarquia dentro de um card longo é feita por *tinta de dois tons* (linha de promessa escura, linha de apoio em ardósia), exatamente como o H1 deles.
+- **Vercel / Geist: minimalismo estrutural.** Cards são branco-sobre-branco (ou `#FAFAFA` elevado) com uma única **borda `1px` `#EAEAEA`** e raio apertado (`6–8px`). O movimento definidor é *a própria grade* — os cards se alinham a gridlines tênues visíveis e ticks de canto, então o layout é lido como engenheirado. Números e rótulos são a **grotesca do corpo com `tabular-nums`**, nunca uma face de código. CTAs dentro de cards são pills preto-sólido ou contorno-filete, alto contraste, pequenos.
+- **Raycast: cards escuros que merecem sua elevação.** As superfícies são um fio mais claras que a página (`#0F0F12` sobre `#0A0A0C`), separadas por **degrau tonal, não traço**. Um único acento de marca (o vermelho deles) é racionado a um elemento por card — um tile de ícone ou um glow no hover — e o resto fica neutro. O raio de canto é generoso (`12–16px`) para parecer app.
+- **Pricing especificamente:** o tier recomendado é distinguido por **uma** alavanca, não três. Pricing da classe Linear/Stripe promove um tier com um tingimento sutil ou uma borda ligeiramente mais forte — *não* borda + sombra + glow + scale-up + faixa tudo de uma vez. O preço é posto grande na grotesca com `tabular-nums` e um `/mo` alinhado à base em tinta apagada; os checks de feature são silenciosos (um glifo de check fino em acento-ou-apagado, nunca um círculo verde preenchido).
+- **Acabamento de número por toda parte:** toda figura usa `font-variant-numeric: tabular-nums` para que colunas e preços empilhados se alinhem. Moeda, decimais e unidades são des-enfatizados (cor apagada, tamanho menor) para que a magnitude seja lida primeiro. Sem monoespaçada — a grotesca carrega o dado.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- The **"dark panel kit"**: `bg-neutral-900 + rounded-2xl + border border-white/10 + shadow-lg`, applied identically to every card type on the page.
-- A **status pill on everything** (filled rounded-full chip with dot) used as decoration rather than to convey real state.
-- **Monospace for the number/price/label** to look "technical" — banned. It reads dated and AI-default.
-- **Stacked elevation cues**: border *and* shadow *and* glow *and* a tint, so nothing is actually emphasized and every card shouts equally.
+- O **"kit de painel escuro"**: `bg-neutral-900 + rounded-2xl + border border-white/10 + shadow-lg`, aplicado identicamente a todo tipo de card na página.
+- Uma **pill de status em tudo** (chip rounded-full preenchido com ponto) usada como decoração em vez de transmitir estado real.
+- **Monoespaçada para o número/preço/rótulo** para parecer "técnico" — banido. É lido como datado e padrão de IA.
+- **Pistas de elevação empilhadas**: borda *e* sombra *e* glow *e* um tingimento, de modo que nada é de fato enfatizado e todo card grita igualmente.
 
-### Variety levers (turn these so two builds don't match)
+### Alavancas de variedade (gire-as para que duas construções não combinem)
 
-1. **Surface strategy — pick ONE per page:** (a) hairline-stroke (Vercel/Linear), (b) tonal-step / no border (Raycast), or (c) borderless-on-whitespace (Stripe). Never mix all three.
-2. **Separation medium:** 1px inset border vs. a single divider line vs. pure spacing vs. a one-step background tint. Changing this alone re-skins the whole grid.
-3. **Density:** editorial (28–32px padding, lots of air, Stripe) vs. compact (16–20px padding, dense, Linear product UI). Set it once and hold it.
-4. **Accent rationing:** accent as a 6px status dot · as a single icon tile · as the recommended-tier tint · as a hover-only glow. Use exactly one mode.
-5. **Radius + elevation pairing:** tight `6–8px` flat (engineered) vs. generous `12–16px` with a faint top highlight (app-like). Radius and elevation should agree.
+1. **Estratégia de superfície — escolha UMA por página:** (a) traço-de-filete (Vercel/Linear), (b) degrau-tonal / sem borda (Raycast), ou (c) sem-borda-no-espaço-em-branco (Stripe). Nunca misture as três.
+2. **Meio de separação:** borda inset de 1px vs. uma única linha divisória vs. espaçamento puro vs. um tingimento de fundo de um passo. Mudar só isto re-skinia a grade inteira.
+3. **Densidade:** editorial (padding de 28–32px, muito ar, Stripe) vs. compacta (padding de 16–20px, densa, product UI da Linear). Defina uma vez e mantenha.
+4. **Racionamento de acento:** acento como um ponto de status de 6px · como um único tile de ícone · como o tingimento do tier recomendado · como um glow só no hover. Use exatamente um modo.
+5. **Pareamento raio + elevação:** plano apertado de `6–8px` (engenheirado) vs. generoso de `12–16px` com um realce superior tênue (app). Raio e elevação devem concordar.
 
-### Copy-pasteable sketch — pricing trio, hairline surface, accent as restraint
+### Esboço copiável — trio de pricing, superfície de filete, acento como contenção
 
-Tinted-neutral dark surface, separation by 1px inset border + one-step tonal tint on the recommended tier, accent (teal) rationed to the dot, the check glyph, and the active button. All figures use `tabular-nums`. No mono anywhere.
+Superfície escura de neutro tingido, separação por borda inset de 1px + tingimento tonal de um passo no tier recomendado, acento (teal) racionado ao ponto, ao glifo de check e ao botão ativo. Todas as figuras usam `tabular-nums`. Nada de mono em lugar nenhum.
 
 ```html
 <!-- tokens: bg #0B0C0E · raised #111316 · line rgba(255,255,255,.08) · ink #ECEDEE · muted #9A9DA3 · accent #2DD4BF -->
@@ -451,44 +451,44 @@ Tinted-neutral dark surface, separation by 1px inset border + one-step tonal tin
 </section>
 ```
 
-Why it doesn't read AI-default: separation is a single `gap-px` over a tinted line layer (one hairline system, no per-card boxes), the recommended tier is promoted by **one** lever (a one-step background tint plus the accent dot — no shadow/glow/scale stack), the accent is rationed to three precise spots, and every figure is the grotesque with `tabular-nums` so `$0 / $24 / $96` align optically. To re-skin for a different build, flip the surface strategy (swap the `gap-px` line layer for borderless-on-whitespace, or for a tonal-step with no border) and the density (drop padding to `p-5`) — same markup, a visibly different card system.
+Por que não é lido como padrão de IA: a separação é um único `gap-px` sobre uma camada de linha tingida (um sistema de filete, sem caixas por card), o tier recomendado é promovido por **uma** alavanca (um tingimento de fundo de um passo mais o ponto de acento — sem pilha de sombra/glow/scale), o acento é racionado a três pontos precisos, e toda figura é a grotesca com `tabular-nums` para que `$0 / $24 / $96` se alinhem opticamente. Para re-skin para uma construção diferente, vire a estratégia de superfície (troque a camada de linha `gap-px` por sem-borda-no-espaço-em-branco, ou por um degrau-tonal sem borda) e a densidade (baixe o padding para `p-5`) — mesma marcação, um sistema de card visivelmente diferente.
 
 ---
 
-## Activity feeds, logs, streams & timelines
+## Feeds de atividade, logs, streams e timelines
 
-This component is a vertical list of events over time: an activity feed, an audit log, a deploy stream, a comment thread, a reasoning trace. The failure mode is treating every event as a fully-bordered card. Real tools treat the feed as a *quiet column of text* and spend their whole detail budget on the left edge (icon/dot/rail) and on time formatting.
+Este componente é uma lista vertical de eventos ao longo do tempo: um feed de atividade, um audit log, um stream de deploy, uma thread de comentários, um trace de raciocínio. O modo de falha é tratar todo evento como um card totalmente bordeado. Ferramentas de verdade tratam o feed como uma *coluna silenciosa de texto* e gastam todo o orçamento de detalhe na borda esquerda (ícone/ponto/trilho) e na formatação de tempo.
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **The row is not a box — it hangs off a left column.** Sentry's "Root Cause" reasoning trace gives each step a small leading glyph in a fixed icon gutter and then just runs the text; there is no per-row border, no per-row card, no shadow. Liveblocks' comment feed does the same with an avatar gutter. The list reads as one surface, not fifteen stacked panels. Separation comes from line-height and the icon column, not from 15 hairline boxes.
-- **Timestamps are de-emphasized and usually relative.** Liveblocks shows `now` and `5m ago` in muted gray at the same size as metadata, never bold, never colored. Use relative time for recent events (`now`, `2m`, `1h`) and reserve absolute timestamps (`14:02:31`) for true logs — and when you do show a clock time, set it in the body grotesque with `tabular-nums`, muted, so the column stays vertically aligned without shouting.
-- **Level/severity is a tiny color token, not a big pill.** Better Stack's log table marks level with a small colored dot or a single muted-color word (`ERROR` in a desaturated red), inline, ~11–12px. It does not wrap every line in a filled status badge. Color is the *only* loud thing and it's 6px wide. Datadog likewise uses color purely as data encoding (red/orange/green KPIs), never as decoration.
-- **Density is real and intentional.** Better Stack's log view packs rows at ~28–32px height with ~13px text and tight tracking — dozens of lines visible at once. A log that breathes like a marketing card is wrong. Tighten `leading`, drop vertical padding to `py-1.5`/`py-2`, and let the volume of rows be the texture.
-- **A connector implies sequence; a glyph implies type.** Sentry runs faint horizontal lead-lines off each reasoning step (and a vertical spine would do the same job for a timeline). For a *timeline*, draw one continuous 1px vertical rail behind the icon gutter and let dots sit on it — the line is the structure, so individual rows need no borders at all.
-- **Surfaces are tinted, accent is rationed.** Sentry's panel is a warm dark plum (not `#000`); the active/important step gets the one accent treatment (a brighter link, a filled dot) while every other row stays neutral. One accent per screen, applied to the thing that matters (the error, the current step, the unread item).
-- **Numbers and counts use tabular figures in the body face.** Reaction counts, durations (`128ms`), byte sizes, attempt counts — all grotesque + `tabular-nums`, never a monospace face. They align in their column because of the numeric variant, not because of a typewriter font.
+- **A linha não é uma caixa — ela pende de uma coluna à esquerda.** O trace de raciocínio "Root Cause" do Sentry dá a cada passo um pequeno glifo líder numa calha de ícone fixa e então apenas faz o texto correr; não há borda por linha, nem card por linha, nem sombra. O feed de comentários do Liveblocks faz o mesmo com uma calha de avatar. A lista é lida como uma superfície, não quinze painéis empilhados. A separação vem do line-height e da coluna de ícone, não de 15 caixas de filete.
+- **Timestamps são des-enfatizados e geralmente relativos.** O Liveblocks mostra `now` e `5m ago` em cinza apagado no mesmo tamanho dos metadados, nunca em negrito, nunca colorido. Use tempo relativo para eventos recentes (`now`, `2m`, `1h`) e reserve timestamps absolutos (`14:02:31`) para logs de verdade — e quando você mostrar um horário de relógio, componha-o na grotesca do corpo com `tabular-nums`, apagado, para que a coluna fique alinhada verticalmente sem gritar.
+- **Nível/severidade é um pequeno token de cor, não uma pill grande.** A tabela de log da Better Stack marca o nível com um pequeno ponto colorido ou uma única palavra de cor apagada (`ERROR` num vermelho dessaturado), inline, ~11–12px. Ela não envolve toda linha num badge de status preenchido. A cor é a *única* coisa berrante e tem 6px de largura. O Datadog igualmente usa cor puramente como codificação de dado (KPIs vermelho/laranja/verde), nunca como decoração.
+- **A densidade é real e intencional.** A visão de log da Better Stack empacota linhas a ~28–32px de altura com texto de ~13px e tracking apertado — dezenas de linhas visíveis de uma vez. Um log que respira como um card de marketing está errado. Aperte o `leading`, baixe o padding vertical para `py-1.5`/`py-2`, e deixe o volume de linhas ser a textura.
+- **Um conector implica sequência; um glifo implica tipo.** O Sentry roda linhas-guia horizontais tênues saindo de cada passo de raciocínio (e uma espinha vertical faria o mesmo trabalho numa timeline). Para uma *timeline*, desenhe um trilho vertical de 1px contínuo atrás da calha de ícone e deixe os pontos repousarem nele — a linha é a estrutura, então linhas individuais não precisam de bordas.
+- **As superfícies são tingidas, o acento é racionado.** O painel do Sentry é um ameixa escuro quente (não `#000`); o passo ativo/importante ganha o único tratamento de acento (um link mais brilhante, um ponto preenchido) enquanto toda outra linha fica neutra. Um acento por tela, aplicado à coisa que importa (o erro, o passo atual, o item não lido).
+- **Números e contagens usam figuras tabulares na face do corpo.** Contagens de reação, durações (`128ms`), tamanhos de byte, contagens de tentativa — todos grotesca + `tabular-nums`, nunca uma face monoespaçada. Eles se alinham na coluna por causa da variante numérica, não por causa de uma fonte de máquina de escrever.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- Every event wrapped in its own `rounded-xl border border-white/10 bg-zinc-900 p-4 shadow-sm` card, stacked with `gap-4` — fifteen identical floating panels instead of one dense column.
-- A filled status **pill** (`rounded-full bg-…/15 px-2 py-0.5`) on every single row for the level/type, so severity screams on lines that are routine.
-- Timestamps rendered in a **monospace** face (or as a bold colored chip) to look "technical" — banned. It's the AI-default log tell.
-- Uniform medium padding (`p-4`), generous `leading-relaxed`, and a hairline divider between every row — the result breathes like a blog list, not a stream, and only ~6 events fit on screen.
+- Todo evento envolto no seu próprio card `rounded-xl border border-white/10 bg-zinc-900 p-4 shadow-sm`, empilhado com `gap-4` — quinze painéis flutuantes idênticos em vez de uma coluna densa.
+- Uma **pill** de status preenchida (`rounded-full bg-…/15 px-2 py-0.5`) em toda e cada linha para o nível/tipo, fazendo a severidade gritar em linhas que são rotineiras.
+- Timestamps renderizados numa face **monoespaçada** (ou como um chip colorido em negrito) para parecer "técnico" — banido. É o sinal de log padrão de IA.
+- Padding médio uniforme (`p-4`), `leading-relaxed` generoso, e um divisor de filete entre toda linha — o resultado respira como uma lista de blog, não um stream, e só ~6 eventos cabem na tela.
 
-### Variety levers
+### Alavancas de variedade
 
-Turn at least two of these so two feeds don't look like the same template:
+Gire ao menos duas destas para que dois feeds não pareçam o mesmo template:
 
-- **Structure cue:** icon-gutter list (no rail) · single vertical spine with dots (timeline) · grouped-by-day with sticky date headers · flat dense log table with columns. Pick one per build.
-- **Density:** comfortable activity feed (`py-3`, 14px, relative time) vs. forensic log (`py-1.5`, 13px, absolute `tabular-nums` clock, monochrome).
-- **Border strategy:** zero per-row borders (separation by rhythm) · a single inset top-border per row (Linear style, `border-t border-white/5`) · alternating row tint (`even:bg-white/[0.02]`) — never full boxes.
-- **Severity expression:** 6px leading dot · one muted colored word · a 2px left accent-edge on the row · color the icon only. Don't combine more than one.
-- **Time format & framing:** relative (`2m ago`) for social/activity · absolute monotonic clock for logs · duration deltas (`+340ms`) for traces. The choice signals what kind of stream this is.
+- **Pista de estrutura:** lista com calha de ícone (sem trilho) · espinha vertical única com pontos (timeline) · agrupado-por-dia com cabeçalhos de data sticky · tabela de log densa plana com colunas. Escolha uma por construção.
+- **Densidade:** feed de atividade confortável (`py-3`, 14px, tempo relativo) vs. log forense (`py-1.5`, 13px, relógio `tabular-nums` absoluto, monocromático).
+- **Estratégia de borda:** zero bordas por linha (separação por ritmo) · uma única borda superior inset por linha (estilo Linear, `border-t border-white/5`) · tingimento de linha alternado (`even:bg-white/[0.02]`) — nunca caixas completas.
+- **Expressão de severidade:** ponto líder de 6px · uma palavra colorida apagada · uma borda de acento esquerda de 2px na linha · colorir só o ícone. Não combine mais de uma.
+- **Formato de tempo e enquadramento:** relativo (`2m ago`) para social/atividade · relógio monotônico absoluto para logs · deltas de duração (`+340ms`) para traces. A escolha sinaliza que tipo de stream é este.
 
-### Copy-pasteable sketch
+### Esboço copiável
 
-A deploy / system activity feed: icon-gutter list, no per-row boxes, a faint spine, one accent on the active item, tinted neutral surface, relative time in muted tabular figures.
+Um feed de atividade de deploy / sistema: lista com calha de ícone, sem caixas por linha, uma espinha tênue, um acento no item ativo, superfície de neutro tingido, tempo relativo em figuras tabulares apagadas.
 
 ```html
 <div class="mx-auto max-w-md rounded-xl border border-white/[0.06] bg-[#16151c] p-1.5">
@@ -547,37 +547,37 @@ A deploy / system activity feed: icon-gutter list, no per-row boxes, a faint spi
 </div>
 ```
 
-Notes on why this avoids the default: there are no per-row cards or dividers — the **spine** carries structure; severity is a 6px dot plus one muted word, not a filled badge; every figure (`8.4s`, `3,182`, `12m`) is the grotesque body face with `tabular-nums`, no mono anywhere; the surface is warm `#16151c` rather than pure black; and exactly one row earns the accent (the live deploy). To re-roll the look, swap the spine for `even:bg-white/[0.02]` rows, switch relative time to an absolute `tabular-nums` clock, and tighten to `py-1.5` for a forensic log feel.
+Notas sobre por que isto evita o padrão: não há cards ou divisores por linha — a **espinha** carrega a estrutura; a severidade é um ponto de 6px mais uma palavra apagada, não um badge preenchido; toda figura (`8.4s`, `3,182`, `12m`) é a face de corpo grotesca com `tabular-nums`, sem mono em lugar nenhum; a superfície é um `#16151c` quente em vez de preto puro; e exatamente uma linha merece o acento (o deploy ao vivo). Para re-rolar o visual, troque a espinha por linhas `even:bg-white/[0.02]`, mude o tempo relativo para um relógio `tabular-nums` absoluto, e aperte para `py-1.5` para uma cara de log forense.
 
 ---
 
 ## Navigation — headers, sidebars, tabs
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **Marketing top-nav is featherweight, not a "bar."** Vercel, Linear, Framer and Stripe all run the logo + 5–6 link items + 1–2 right-side actions at ~13px, medium weight (500), in a muted ink (~70% of body color), with generous letter-spacing-0 and ~24–28px gaps. There is **no visible container** — no border, no fill, no shadow. The nav just floats on the page background. The only chrome is the sign-up pill on the right (white/black pill on Vercel, Linear, Framer; the brand-blue solid on Stripe). Restraint is the look.
-- **The pill button is the loudest element, and it's tiny.** On Linear and Framer the primary nav action is a small white pill (~32px tall, ~14–16px horizontal padding, fully rounded), and the *secondary* "Log in" is plain text with no border at all. Vercel ships a black pill + an outlined "Log In" ghost pill. The hierarchy is pill > ghost > plain-text link — never two filled buttons.
-- **In-product sidebar nav = dense, flat, tinted rows.** Linear's app sidebar packs rows at ~28–30px row-height, ~13px label, with a 16px leading icon and ~8px icon-to-label gap. There are **no row borders and no dividers** — sections (Workspace, Favorites) are separated by an 11px uppercase, low-contrast gray section label and whitespace alone. The active row is a **subtle tinted fill** (a few % white over the dark canvas, ~6px radius) — not an accent bar, not a colored background. Hover is an even fainter version of the same fill.
-- **Header dividers are inset hairlines or shadows, not full boxes.** Linear's in-app top bar separates from content with a single 1px **inset** bottom border in a barely-there tint (`rgba(255,255,255,0.06)`-ish), stopping at the content edges — it reads as a seam, not a frame. Where a divider would feel heavy, top teams swap the 1px line for a **1px translucent shadow** so the edge is felt, not drawn.
-- **Tabs are underline-led, low-contrast, tabular counts.** The Linear issue header shows tab/breadcrumb chrome where the active item is full-ink and inactive items drop to ~50% gray; counts like `02 / 145` sit in the body grotesque with `tabular-nums`, never in a pill and never in mono. The active tab marker is a 2px underline the width of the *label* (inset), not a full-width bar.
-- **Accent is reserved for state, not navigation.** Linear's indigo never colors a nav item — it only appears on a status dot or an "In Progress" chip inside content. Nav selection is communicated by ink contrast + a neutral tinted fill. Stripe is the exception that proves the rule: its accent is a marketing brand-blue on the CTA only, while the nav links stay near-black.
+- **A top-nav de marketing é leve como pena, não uma "barra".** Vercel, Linear, Framer e Stripe todos rodam o logo + 5–6 itens de link + 1–2 ações do lado direito a ~13px, peso médio (500), numa tinta apagada (~70% da cor do corpo), com letter-spacing-0 generoso e gaps de ~24–28px. **Não há contêiner visível** — sem borda, sem preenchimento, sem sombra. A nav apenas flutua sobre o fundo da página. O único chrome é a pill de sign-up à direita (pill branca/preta na Vercel, Linear, Framer; o azul-de-marca sólido na Stripe). Contenção é o visual.
+- **O botão pill é o elemento mais berrante, e é minúsculo.** Na Linear e Framer a ação principal de nav é uma pequena pill branca (~32px de altura, ~14–16px de padding horizontal, totalmente arredondada), e o *secundário* "Log in" é texto liso sem nenhuma borda. A Vercel entrega uma pill preta + uma pill ghost contornada "Log In". A hierarquia é pill > ghost > link de texto liso — nunca dois botões preenchidos.
+- **Nav de sidebar in-product = linhas densas, planas e tingidas.** A sidebar de app da Linear empacota linhas a ~28–30px de altura, rótulo de ~13px, com um ícone líder de 16px e um gap de ~8px ícone-para-rótulo. **Não há bordas de linha nem divisores** — as seções (Workspace, Favorites) são separadas por um rótulo de seção em maiúsculas de 11px, cinza de baixo contraste, e só espaço em branco. A linha ativa é um **preenchimento tingido sutil** (alguns % de branco sobre o canvas escuro, raio de ~6px) — não uma barra de acento, não um fundo colorido. O hover é uma versão ainda mais tênue do mesmo preenchimento.
+- **Divisores de cabeçalho são filetes inset ou sombras, não caixas completas.** A top bar in-app da Linear se separa do conteúdo com uma única borda inferior **inset** de 1px num tingimento quase imperceptível (algo como `rgba(255,255,255,0.06)`), parando nas bordas do conteúdo — é lida como uma costura, não uma moldura. Onde um divisor pareceria pesado, os melhores times trocam a linha de 1px por uma **sombra translúcida de 1px** para que a borda seja sentida, não desenhada.
+- **Tabs são lideradas por sublinhado, baixo contraste, contagens tabulares.** O cabeçalho de issue da Linear mostra chrome de tab/breadcrumb onde o item ativo é tinta cheia e os itens inativos caem para ~50% de cinza; contagens como `02 / 145` ficam na grotesca do corpo com `tabular-nums`, nunca numa pill e nunca em mono. O marcador de tab ativa é um sublinhado de 2px da largura do *rótulo* (inset), não uma barra de largura completa.
+- **O acento é reservado para estado, não para navegação.** O índigo da Linear nunca colore um item de nav — ele só aparece num ponto de status ou num chip "In Progress" dentro do conteúdo. A seleção de nav é comunicada por contraste de tinta + um preenchimento tingido neutro. A Stripe é a exceção que confirma a regra: o acento dela é um azul-de-marca de marketing só no CTA, enquanto os links de nav ficam quase-pretos.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- The **"dark panel + 1px hairline box"** sidebar: every nav region wrapped in `border border-white/10 rounded-xl bg-zinc-900` with a `shadow-lg`. Real sidebars have *no border and no shadow* — they're flat surfaces defined by tint and spacing.
-- The **accent-bar active state**: a 3px colored left-border (usually indigo/violet) plus a colored text and a colored background tint, all at once. Top teams pick *one* neutral signal (a faint fill) and let ink contrast do the rest.
-- **Pills for everything**: nav counts, tab labels, and section headers all stuffed into bordered status pills. Counts belong inline with `tabular-nums`; sections belong as quiet uppercase labels.
-- **Mono UI chrome**: monospace eyebrows, mono nav counts, mono breadcrumb separators "to look like a dev tool." Banned — use the grotesque with `tabular-nums` for any figure.
+- A sidebar **"painel escuro + caixa de filete de 1px"**: toda região de nav envolta em `border border-white/10 rounded-xl bg-zinc-900` com um `shadow-lg`. Sidebars de verdade *não têm borda nem sombra* — são superfícies planas definidas por tingimento e espaçamento.
+- O **estado ativo de barra-de-acento**: uma borda esquerda colorida de 3px (geralmente índigo/violeta) mais um texto colorido e um tingimento de fundo colorido, tudo de uma vez. Os melhores times escolhem *um* sinal neutro (um preenchimento tênue) e deixam o contraste de tinta fazer o resto.
+- **Pills para tudo**: contagens de nav, rótulos de tab e cabeçalhos de seção todos enfiados em pills de status bordeadas. Contagens pertencem inline com `tabular-nums`; seções pertencem como rótulos maiúsculos silenciosos.
+- **Chrome de UI em mono**: eyebrows monoespaçadas, contagens de nav em mono, separadores de breadcrumb em mono "para parecer uma dev tool". Banido — use a grotesca com `tabular-nums` para qualquer figura.
 
-### Variety levers (so two builds don't look identical)
+### Alavancas de variedade (para que duas construções não pareçam idênticas)
 
-1. **Border strategy:** (a) no borders at all, selection by tinted fill (Linear); (b) a single inset hairline seam under the header only; (c) shadow-as-divider (1px translucent shadow, zero drawn lines). Pick one — never stack all three.
-2. **Density:** comfortable (~36px rows, 14px labels, marketing feel) vs. dense (~28px rows, 13px labels, app feel). Halve or double the row padding and the whole component changes character.
-3. **Active-state signal:** tinted fill block · inset 2px underline · full-ink-vs-muted contrast only · leading icon swaps from line to filled. Choose exactly one as primary.
-4. **Framing:** floating chrome on page bg (no container) vs. a tinted rail surface (`bg-white/[0.02]`) that's a shade off the canvas with no border. The rail reads more "app," the float reads more "marketing."
-5. **Accent discipline:** keep the accent entirely out of nav (neutral selection) — *or* allow it on exactly one element (a single status dot, or the CTA pill), never on link text and the active row both.
+1. **Estratégia de borda:** (a) nenhuma borda, seleção por preenchimento tingido (Linear); (b) uma única costura de filete inset só sob o cabeçalho; (c) sombra-como-divisor (sombra translúcida de 1px, zero linha desenhada). Escolha uma — nunca empilhe as três.
+2. **Densidade:** confortável (~36px de linha, rótulos de 14px, cara de marketing) vs. densa (~28px de linha, rótulos de 13px, cara de app). Reduza pela metade ou dobre o padding da linha e todo o componente muda de caráter.
+3. **Sinal de estado ativo:** bloco de preenchimento tingido · sublinhado inset de 2px · só contraste tinta-cheia-vs-apagado · ícone líder troca de linha para preenchido. Escolha exatamente um como primário.
+4. **Enquadramento:** chrome flutuante sobre o bg da página (sem contêiner) vs. uma superfície de trilho tingido (`bg-white/[0.02]`) que é um tom fora do canvas sem borda. O trilho é lido como mais "app", o flutuante como mais "marketing".
+5. **Disciplina de acento:** mantenha o acento totalmente fora da nav (seleção neutra) — *ou* permita-o em exatamente um elemento (um único ponto de status, ou a pill de CTA), nunca no texto do link e na linha ativa ao mesmo tempo.
 
-### Copy-pasteable sketch (HTML + Tailwind)
+### Esboço copiável (HTML + Tailwind)
 
 ```html
 <!-- App shell: floating top header (inset hairline seam) + flat tinted sidebar -->
@@ -664,44 +664,44 @@ Notes on why this avoids the default: there are no per-row cards or dividers —
 </div>
 ```
 
-Notes on the sketch: the canvas is a tinted near-black (`#0B0C0E`, not `#000`); the sidebar carries **no border and no shadow** — it's a flat `bg-white/[0.015]` rail with selection shown by a faint tinted fill. The header is a single inset hairline seam, tabs use an inset 2px underline, and every figure (`12`, `02 / 145`, `8`) is the grotesque body with `tabular-nums` — no mono anywhere, no accent on navigation.
+Notas sobre o esboço: o canvas é um quase-preto tingido (`#0B0C0E`, não `#000`); a sidebar carrega **nenhuma borda e nenhuma sombra** — é um trilho plano `bg-white/[0.015]` com a seleção mostrada por um preenchimento tingido tênue. O cabeçalho é uma única costura de filete inset, as tabs usam um sublinhado inset de 2px, e toda figura (`12`, `02 / 145`, `8`) é a grotesca do corpo com `tabular-nums` — sem mono em lugar nenhum, sem acento na navegação.
 
 ---
 
-## Code, terminal & API surfaces
+## Superfícies de código, terminal e API
 
-This covers install snippets, terminal blocks, code samples, request/response panels, and API-reference rows — the components that *contain* mono, but must not *be* styled by it.
+Isto cobre snippets de instalação, blocos de terminal, amostras de código, painéis de request/response e linhas de referência de API — os componentes que *contêm* mono, mas não devem *ser* estilizados por ele.
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **The snippet is a tinted surface, not a black box.** On `bun.sh` the install block sits on a panel only a few percent lighter than the page (a `#16161a`-ish neutral over a near-black page), radius ~10-12px, with a real chrome bar on top holding **OS tabs** ("Linux & macOS" / "Windows") and a "View install script" link. The code itself is one quiet line; the *frame* carries the structure. Don't lean on a 1px border to define the block — the surface step does it.
-- **The command has a prompt glyph, and the glyph is muted.** `bun.sh` writes `$ curl -fSSL https://bun.sh/install | bash` — the `$` is a low-contrast neutral, the command is near-white, and that single contrast step reads as "terminal" far better than any green-on-black skin. The copy icon lives top-right, ghost-styled, only gaining contrast on hover.
-- **Accent is a single highlight, never a wash.** `bun.sh`'s benchmark panel colors *only* the "Bun" bar pink; every competitor bar is grey. The active OS tab gets the same pink underline/fill. One element is hot, everything else is neutral — that's how a product surface signals "this is the answer" without shouting.
-- **Numbers in code-adjacent UI are body-grotesque with tabular figures, right-aligned.** The benchmark times (`269.1 ms`, `494.9 ms`, `1,608 ms`, `2,137 ms`) and version captions (`v1.3.14`) are NOT mono — they're the same sans as everything else, right-aligned in their column so decimal points stack. The unit (`ms`) is split off in muted weight. This is the rule: data near code still uses the grotesque + `tabular-nums`.
-- **Docs/API chrome is hairline-light and lifted by shadow, not boxed.** `readme.com`'s embedded docs window uses faint dividers between the sidebar tree, the toolbar (`Guides · Recipes · API Reference · Changelog`) and the content; the whole window is separated from the dark hero by a **soft drop shadow + radius**, not a heavy outline. The search field shows a `⌘K` hint chip inset on the right.
-- **Method/status semantics come from tinted pills, not raw color.** API rows read best with a small uppercase method tag on a *tinted* background that matches its hue family (GET → muted teal/blue tint, POST → muted green tint, DELETE → muted red tint), low saturation, dark text on light tint. The endpoint path is the grotesque, with only the `:id` segments dimmed — never the whole path in mono-as-decoration.
-- **Vercel/Geist restraint as the ceiling for elevation.** Vercel keeps these surfaces near-flat and near-monochrome; if you add a glow it's a faint top-edge sheen, not a colored halo. When in doubt, flatter and quieter wins.
+- **O snippet é uma superfície tingida, não uma caixa preta.** No `bun.sh` o bloco de instalação fica num painel só alguns por cento mais claro que a página (um neutro estilo `#16161a` sobre uma página quase-preta), raio ~10-12px, com uma barra de chrome de verdade no topo carregando **tabs de SO** ("Linux & macOS" / "Windows") e um link "View install script". O código em si é uma linha silenciosa; o *frame* carrega a estrutura. Não se apoie numa borda de 1px para definir o bloco — o degrau de superfície faz isso.
+- **O comando tem um glifo de prompt, e o glifo é apagado.** O `bun.sh` escreve `$ curl -fSSL https://bun.sh/install | bash` — o `$` é um neutro de baixo contraste, o comando é quase-branco, e esse único degrau de contraste é lido como "terminal" muito melhor que qualquer skin de verde-no-preto. O ícone de copiar fica no topo à direita, estilo ghost, ganhando contraste só no hover.
+- **O acento é um único realce, nunca uma lavagem.** O painel de benchmark do `bun.sh` colore *apenas* a barra "Bun" de rosa; toda barra de concorrente é cinza. A tab de SO ativa ganha o mesmo sublinhado/preenchimento rosa. Um elemento é quente, todo o resto é neutro — é assim que uma superfície de produto sinaliza "esta é a resposta" sem gritar.
+- **Números em UI adjacente a código são grotesca do corpo com figuras tabulares, alinhados à direita.** Os tempos de benchmark (`269.1 ms`, `494.9 ms`, `1,608 ms`, `2,137 ms`) e legendas de versão (`v1.3.14`) NÃO são mono — são a mesma sans que todo o resto, alinhadas à direita na coluna para que os pontos decimais empilhem. A unidade (`ms`) é destacada num peso apagado. Esta é a regra: dados perto de código ainda usam a grotesca + `tabular-nums`.
+- **O chrome de docs/API é leve de filete e levantado por sombra, não encaixotado.** A janela de docs embutida do `readme.com` usa divisores tênues entre a árvore de sidebar, a toolbar (`Guides · Recipes · API Reference · Changelog`) e o conteúdo; a janela inteira é separada do hero escuro por uma **drop shadow suave + raio**, não por um contorno pesado. O campo de busca mostra um chip de dica `⌘K` inset à direita.
+- **Semântica de método/status vem de pills tingidas, não de cor crua.** Linhas de API são lidas melhor com uma pequena tag de método em maiúsculas sobre um fundo *tingido* que combina com sua família de matiz (GET → tingimento teal/azul apagado, POST → tingimento verde apagado, DELETE → tingimento vermelho apagado), baixa saturação, texto escuro sobre tingimento claro. O caminho do endpoint é a grotesca, com só os segmentos `:id` apagados — nunca o caminho inteiro em mono-como-decoração.
+- **Contenção da Vercel/Geist como o teto da elevação.** A Vercel mantém essas superfícies quase-planas e quase-monocromáticas; se você adiciona um glow, é um brilho tênue de borda superior, não um halo colorido. Na dúvida, mais plano e mais silencioso vence.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- The **black box with a red/yellow/green "mac traffic lights"** dot trio in the corner — it's the single most over-used AI default for "this is code." Skip it unless the design genuinely wants an OS-window metaphor; even then, prefer OS *tabs* (bun) over decorative dots.
-- **Mono leaking out of the snippet** into the filename label, the line numbers, the "200 OK" status, the copy tooltip, or the benchmark figures. Mono is allowed *only inside the literal code/terminal text*. Everything else is the grotesque.
-- **Neon syntax highlighting** (bright magenta keywords, lime strings) on pure `#000`. Real product code blocks use a low-contrast, tinted-neutral token palette — most tokens near the same value, one or two gently differentiated.
-- The **1px hairline rectangle + soft shadow + one status pill** treatment applied identically to the snippet, the response panel, and the API row, so all three look like the same empty card.
+- A **caixa preta com o trio de pontos "semáforos do mac"** vermelho/amarelo/verde no canto — é o padrão de IA mais sobre-usado para "isto é código". Pule isso a menos que o design genuinamente queira uma metáfora de janela de SO; mesmo então, prefira *tabs* de SO (bun) a pontos decorativos.
+- **Mono vazando do snippet** para o rótulo de nome de arquivo, os números de linha, o status "200 OK", o tooltip de copiar, ou as figuras de benchmark. Mono é permitido *só dentro do texto literal de código/terminal*. Todo o resto é a grotesca.
+- **Syntax highlighting neon** (keywords magenta brilhante, strings lima) sobre `#000` puro. Blocos de código de produto de verdade usam uma paleta de token de neutro-tingido de baixo contraste — a maioria dos tokens perto do mesmo valor, um ou dois suavemente diferenciados.
+- O tratamento de **retângulo de filete de 1px + sombra suave + uma pill de status** aplicado identicamente ao snippet, ao painel de response e à linha de API, para que os três pareçam o mesmo card vazio.
 
-### Variety levers
+### Alavancas de variedade
 
-Turn at least two of these so two builds don't rhyme:
+Gire ao menos duas destas para que duas construções não rimem:
 
-- **Framing** — bare flush snippet (just a copy button, no chrome) vs. tab-headed panel (OS/language tabs) vs. full docs-window with sidebar. bun and readme sit at opposite ends of this dial.
-- **Border strategy** — surface-step only (tint defines the edge), vs. single inset hairline, vs. shadow-lift with no border. Don't combine all three.
-- **Prompt & gutter** — `$`-prompt terminal style, vs. line-numbered source gutter, vs. no gutter at all. Pick one identity per block.
-- **Accent role** — accent on the active tab, OR on the copy-success state, OR on one highlighted line/bar — not all at once.
-- **Density** — a single hero install line (loose, generous padding) vs. a dense multi-row API table (tight 36-40px rows, hairline dividers). Match density to whether the surface is a showpiece or a reference.
+- **Enquadramento** — snippet nu rente (só um botão de copiar, sem chrome) vs. painel com tabs no topo (tabs de SO/linguagem) vs. janela de docs completa com sidebar. bun e readme ficam em extremos opostos deste mostrador.
+- **Estratégia de borda** — só degrau de superfície (o tingimento define a borda), vs. filete inset único, vs. lift por sombra sem borda. Não combine as três.
+- **Prompt e calha** — estilo de terminal com prompt `$`, vs. calha de fonte com numeração de linha, vs. sem calha nenhuma. Escolha uma identidade por bloco.
+- **Papel do acento** — acento na tab ativa, OU no estado de cópia-com-sucesso, OU numa linha/barra realçada — não tudo de uma vez.
+- **Densidade** — uma única linha de instalação de destaque (solta, padding generoso) vs. uma tabela de API densa multi-linha (linhas apertadas de 36-40px, divisores de filete). Combine a densidade a se a superfície é uma vitrine ou uma referência.
 
-### Copy-pasteable sketch
+### Esboço copiável
 
-A tab-headed install panel beside a benchmark readout — tinted surface, muted prompt glyph, single-accent highlight, tabular figures in the grotesque (no decorative mono outside the snippet).
+Um painel de instalação com tabs no topo ao lado de uma leitura de benchmark — superfície tingida, glifo de prompt apagado, realce de acento único, figuras tabulares na grotesca (sem mono decorativa fora do snippet).
 
 ```html
 <!-- tinted neutrals: page ~#0d0d10, panel ~#17171b, accent a restrained warm amber -->
@@ -759,42 +759,42 @@ A tab-headed install panel beside a benchmark readout — tinted surface, muted 
 </div>
 ```
 
-For an **API-reference row**, reuse the same surface and swap the body: a tinted uppercase method pill (`text-[11px] font-semibold tracking-wide` on `bg-emerald-400/10 text-emerald-300` for POST), the path in the grotesque with `:id` segments in `text-stone-500`, and a right-aligned `tabular-nums` latency/version figure — never the whole row in mono.
+Para uma **linha de referência de API**, reuse a mesma superfície e troque o corpo: uma pill de método tingida em maiúsculas (`text-[11px] font-semibold tracking-wide` sobre `bg-emerald-400/10 text-emerald-300` para POST), o caminho na grotesca com os segmentos `:id` em `text-stone-500`, e uma figura de latência/versão `tabular-nums` alinhada à direita — nunca a linha inteira em mono.
 
 ---
 
-## Forms, inputs, search & command palettes
+## Formulários, inputs, busca e command palettes
 
-Inputs are where AI-default product UI is most obviously fake. Real apps treat the input as a *quiet container that comes alive on focus* and treat the command palette (⌘K) as a first-class surface, not a search box with a magnifying glass. Study the screenshots: Raycast's launcher, Linear's `⌘K` and search-in-panel, Cal.com's stacked auth fields, Clerk's pixel-perfect sign-in card. None of them look like the generic "dark panel + pill + 1px box" the skill currently emits.
+Inputs são onde a product UI padrão de IA é mais obviamente falsa. Apps de verdade tratam o input como um *contêiner silencioso que ganha vida no foco* e tratam o command palette (⌘K) como uma superfície de primeira classe, não como uma caixa de busca com uma lupa. Estude os screenshots: o launcher do Raycast, o `⌘K` e a busca-em-painel da Linear, os campos de auth empilhados do Cal.com, o card de sign-in pixel-perfect do Clerk. Nenhum deles parece o genérico "painel escuro + pill + caixa de 1px" que a skill emite atualmente.
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **The resting input is almost invisible; focus does the work.** Linear and Raycast set a field at rest to a barely-raised surface (`raised` over `surface`, ~6-8% luminance lift) with a *hairline* border — sometimes no border at all, just the fill. The whole expression lives in the **focus state**: border shifts to a lighter neutral or a low-saturation accent and a soft 2-3px ring appears (`ring-2 ring-accent/15`, not a fat glowing 4px halo). At rest, signal off; on focus, signal on.
-- **Search ≠ a bordered box with a centered magnifier.** Raycast's launcher and Linear's `⌘K` are *borderless inputs* sitting at the top of a floating panel, with the icon left-aligned and small (14-16px, `muted` not `ink`), placeholder at `faint`, and a `⌘K` / `Esc` keycap pinned to the right. The search field and its results are **one continuous surface separated by an inset divider**, not two stacked cards. The query line owns the top; results flow beneath it inside the same rounded shell.
-- **Command-palette rows are dense, iconed, and keyboard-first.** Each row is ~36-40px tall: a 16px leading icon, a label at 13-14px medium, an optional dimmed group/breadcrumb on the right, and a keyboard hint. The *active* row is a full-width tinted fill (`raised`/`accent-tint`) with rounded corners inset ~4px from the panel edge — selection is a filled block, never an underline or a left-border stripe. A small group label ("Recent", "Navigation") in `faint` 11-12px uppercase-ish caption breaks the list — set in the **grotesque body, not mono**.
-- **Keycaps are styled chrome, not text.** The `⌘K`, `↵`, `Esc` hints are tiny pill/box badges: ~18px tall, `raised` fill, hairline border, `muted` glyph at 11px, set in the **body grotesque** with `tabular-nums`. They read as physical keys, which is most of the "this is a real tool" signal.
-- **Stacked auth forms are tight and label-led (Cal.com / Clerk).** Real sign-in cards use a clear field label above each input (13px medium, `muted`), ~10-12px vertical gap label-to-field, ~14-16px between fields, and full-width inputs with 10-12px internal padding. Cal.com leads with a black "Sign up with Google" button then an outlined "email" path and a quiet `No credit card required` reassurance line — the form is a short, confident column, not a floating glass panel. Clerk's card sits on a plain off-white surface with a single hairline and one soft shadow; the *restraint* is the polish.
-- **Accent is rationed to one moment.** Linear's primary action in the panel is a plain white pill; the indigo only appears as a tiny status dot. In a form, spend accent on the *focused field ring* OR the submit button — rarely both. Errors are a desaturated red border + a 12px helper line, not a red-flooded field.
-- **Numbers and inline tokens stay in the body face.** When an input shows a value, count, or a `⌘K` hint, it's the grotesque with `font-variant-numeric: tabular-nums`. Linear shows inline pill-tokens (`vehicle_state`) inside body text using a subtle raised chip — *not* a monospace font, just a tinted rounded background.
+- **O input em repouso é quase invisível; o foco faz o trabalho.** Linear e Raycast definem um campo em repouso numa superfície apenas levemente elevada (`raised` sobre `surface`, ~6-8% de realce de luminância) com uma borda de *filete* — às vezes nenhuma borda, só o preenchimento. Toda a expressão vive no **estado de foco**: a borda muda para um neutro mais claro ou um acento de baixa saturação e um anel suave de 2-3px aparece (`ring-2 ring-accent/15`, não um halo gordo com glow de 4px). Em repouso, sinal desligado; no foco, sinal ligado.
+- **Busca ≠ uma caixa bordeada com uma lupa centrada.** O launcher do Raycast e o `⌘K` da Linear são *inputs sem borda* situados no topo de um painel flutuante, com o ícone alinhado à esquerda e pequeno (14-16px, `muted` não `ink`), placeholder em `faint`, e um keycap `⌘K` / `Esc` fixado à direita. O campo de busca e seus resultados são **uma superfície contínua separada por um divisor inset**, não dois cards empilhados. A linha de query manda no topo; os resultados fluem abaixo dela dentro da mesma casca arredondada.
+- **Linhas de command-palette são densas, com ícones, e keyboard-first.** Cada linha tem ~36-40px de altura: um ícone líder de 16px, um rótulo a 13-14px médio, um grupo/breadcrumb opcional apagado à direita, e uma dica de teclado. A linha *ativa* é um preenchimento tingido de largura completa (`raised`/`accent-tint`) com cantos arredondados inset ~4px da borda do painel — a seleção é um bloco preenchido, nunca um sublinhado ou uma faixa de borda esquerda. Um pequeno rótulo de grupo ("Recent", "Navigation") numa legenda quase-maiúscula `faint` de 11-12px quebra a lista — composta na **grotesca do corpo, não em mono**.
+- **Keycaps são chrome estilizado, não texto.** As dicas `⌘K`, `↵`, `Esc` são badges minúsculos de pill/caixa: ~18px de altura, preenchimento `raised`, borda de filete, glifo `muted` a 11px, compostos na **grotesca do corpo** com `tabular-nums`. São lidos como teclas físicas, que é a maior parte do sinal "isto é uma ferramenta de verdade".
+- **Formulários de auth empilhados são apertados e liderados por rótulo (Cal.com / Clerk).** Cards de sign-in de verdade usam um rótulo de campo claro acima de cada input (13px médio, `muted`), gap vertical de ~10-12px rótulo-para-campo, ~14-16px entre campos, e inputs de largura completa com padding interno de 10-12px. O Cal.com lidera com um botão preto "Sign up with Google" depois um caminho "email" contornado e uma linha de reasseguro silenciosa `No credit card required` — o formulário é uma coluna curta e confiante, não um painel de vidro flutuante. O card do Clerk fica numa superfície off-white lisa com um único filete e uma sombra suave; a *contenção* é o polimento.
+- **O acento é racionado a um momento.** A ação principal da Linear no painel é uma pill branca lisa; o índigo só aparece como um pequeno ponto de status. Num formulário, gaste o acento no *anel do campo focado* OU no botão de submit — raramente em ambos. Erros são uma borda vermelha dessaturada + uma linha de ajuda de 12px, não um campo inundado de vermelho.
+- **Números e tokens inline ficam na face do corpo.** Quando um input mostra um valor, contagem ou uma dica `⌘K`, é a grotesca com `font-variant-numeric: tabular-nums`. A Linear mostra pill-tokens inline (`vehicle_state`) dentro de texto de corpo usando um chip elevado sutil — *não* uma fonte monoespaçada, só um fundo arredondado tingido.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- A pure-`#18181B` box with a uniform 1px `#3F3F46` border, `rounded-lg`, a centered grey magnifier icon, and `placeholder:Search...` — identical to every other field on the page.
-- A monospace face on placeholders, keycaps, labels, captions, or any numeric value (the dated "dev-tool" tell). **Mono is banned here** — keycaps and counts go in the grotesque with `tabular-nums`.
-- A command palette built as two stacked cards (a search card + a separate results card) with a heavy drop shadow, results as plain left-aligned text, and the selected row marked by a coloured left-border stripe.
-- A 4px glowing accent halo on focus (`ring-4 ring-accent`) and an indigo/violet accent doing it.
+- Uma caixa `#18181B` pura com uma borda uniforme de 1px `#3F3F46`, `rounded-lg`, um ícone de lupa cinza centrado, e `placeholder:Search...` — idêntica a todo outro campo na página.
+- Uma face monoespaçada em placeholders, keycaps, rótulos, legendas, ou qualquer valor numérico (o datado sinal de "dev-tool"). **Mono é banido aqui** — keycaps e contagens vão na grotesca com `tabular-nums`.
+- Um command palette construído como dois cards empilhados (um card de busca + um card de resultados separado) com uma drop shadow pesada, resultados como texto liso alinhado à esquerda, e a linha selecionada marcada por uma faixa de borda esquerda colorida.
+- Um halo de acento com glow de 4px no foco (`ring-4 ring-accent`) e um acento índigo/violeta fazendo isso.
 
-### Variety levers (turn these so two builds differ)
+### Alavancas de variedade (gire-as para que duas construções difiram)
 
-- **Border strategy:** (a) hairline-on-all-sides at rest, (b) *no* border at rest + fill-only, focus reveals a ring, (c) Linear-style **single inset top-border** or bottom-border underline-field, (d) divider-as-structure (search and results share one shell split by one inset line). Pick one per build; don't always box everything.
-- **Density:** roomy auth column (Cal.com, ~44-48px fields, generous label gaps) vs. dense palette (Raycast, 36px rows, 13px text, tight tracking). Set the row height and font size deliberately.
-- **Elevation:** flat tinted-surface field (no shadow) vs. one soft layered shadow on the floating palette vs. a faint ambient `accent` glow behind it. Never stack a border *and* a heavy shadow on a resting input.
-- **Accent placement:** focused-ring-only / submit-button-only / status-dot-only — choose where the single saturated moment lands.
-- **Framing of the palette:** centered-modal overlay with backdrop blur, vs. inline-in-panel (anchored under a toolbar), vs. full-screen launcher (Raycast). Different frame = different page.
+- **Estratégia de borda:** (a) filete em todos os lados em repouso, (b) *nenhuma* borda em repouso + só preenchimento, o foco revela um anel, (c) estilo Linear **borda superior inset única** ou campo-sublinhado com borda inferior, (d) divisor-como-estrutura (busca e resultados compartilham uma casca dividida por uma linha inset). Escolha uma por construção; não encaixote tudo sempre.
+- **Densidade:** coluna de auth espaçosa (Cal.com, campos de ~44-48px, gaps de rótulo generosos) vs. palette densa (Raycast, linhas de 36px, texto de 13px, tracking apertado). Defina a altura de linha e o tamanho de fonte deliberadamente.
+- **Elevação:** campo de superfície tingida plano (sem sombra) vs. uma sombra suave em camada na palette flutuante vs. um glow `accent` ambiente tênue atrás dela. Nunca empilhe uma borda *e* uma sombra pesada num input em repouso.
+- **Posicionamento do acento:** só anel-focado / só botão-de-submit / só ponto-de-status — escolha onde o único momento saturado pousa.
+- **Enquadramento da palette:** overlay de modal centrado com blur de backdrop, vs. inline-no-painel (ancorado sob uma toolbar), vs. launcher de tela cheia (Raycast). Frame diferente = página diferente.
 
-### Copy-pasteable sketch — command palette (⌘K)
+### Esboço copiável — command palette (⌘K)
 
-One floating shell: a borderless query line, an inset divider, dense keyboard-first rows, real keycaps in the body face. No mono, no fat halo, accent only on the active row.
+Uma casca flutuante: uma linha de query sem borda, um divisor inset, linhas densas keyboard-first, keycaps de verdade na face do corpo. Sem mono, sem halo gordo, acento só na linha ativa.
 
 ```html
 <!-- tokens assumed: surface #18181B · raised #27272A · line #3F3F46 · ink #FAFAFA · muted #A1A1AA · faint #71717A · accent (one sharp non-indigo) -->
@@ -864,45 +864,45 @@ One floating shell: a borderless query line, an inset divider, dense keyboard-fi
 </label>
 ```
 
-Sources: [Raycast](https://www.raycast.com/), [Raycast design notes (awesome-design-md)](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/raycast/DESIGN.md), [Linear ⌘K integration](https://linear.app/integrations/raycast)
+Fontes: [Raycast](https://www.raycast.com/), [Raycast design notes (awesome-design-md)](https://github.com/VoltAgent/awesome-design-md/blob/main/design-md/raycast/DESIGN.md), [Linear ⌘K integration](https://linear.app/integrations/raycast)
 
 ---
 
-## Badges, pills, status, tags & avatars
+## Badges, pills, status, tags e avatares
 
-These are the smallest objects in product UI, which is exactly why they make or break the "real vs. AI-default" read. The bar is: a status reads in one glance, and the chrome around it nearly disappears.
+Estes são os menores objetos de product UI, que é exatamente por que fazem ou quebram a leitura "real vs. padrão de IA". A régua é: um status é lido num único olhar, e o chrome em volta dele quase desaparece.
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **Linear: status is an icon + plain text, not a boxed pill.** In the sidebar ("In Progress", "High", "jori", "Codex") there is no border, no filled chip, no rounded rectangle. A small colored glyph carries the state (a half-filled ring for "In Progress", a colored bar-icon for priority) and the label is just neutral ~13px text at normal weight. The color budget lives in the *icon*, never in a background. This is the single highest-leverage move: **most "statuses" should not be pills at all.**
-- **When it IS a chip, the fill is a tint, not a saturated block.** Real status chips use a low-opacity wash of the accent (roughly 10-15% alpha) with the text in the *full-strength* same hue — green text on a faint green wash, amber on amber. No solid saturated badge with white text unless it's a genuine alert (error/destructive). Solid + white-text is the loud exception, not the default.
-- **A leading 6px dot does the work of a whole border.** Linear's "Issue tracking is dead" chip and most "Live / Active / Degraded" indicators prefix the label with a tiny `currentColor` dot. The dot is the only color; the surface and text stay neutral. This reads as quieter and more current than a fully tinted pill.
-- **Avatars are rounded squares for orgs/workspaces, circles for people.** Attio's "Basepoint" workspace switcher uses a brand glyph in a ~6px-radius rounded square, not a circle. Circles signal a human; squircles signal an entity/app/team. Mixing them deliberately is a craft tell. Avatar stacks overlap at about `-8px` with a 2px ring in the *page* background color to punch a gap, and a "+4" overflow chip matches the avatar size exactly.
-- **Tags are the quietest object on screen.** Attio's labels and Linear's "Performance", "iOS" read as low-contrast text with at most a faint surface — no border, ~12-13px, muted neutral foreground. They sit *behind* the data in the visual hierarchy, never compete with it.
-- **Corner radius is small and consistent, not `rounded-full` everywhere.** Status/tag chips sit around 5-7px radius (matching buttons/inputs), so they feel like part of one system. Reserve `rounded-full` for count badges and dot indicators. A pill-shaped everything is a giveaway.
-- **Numbers in chips use tabular figures and that's it** — `font-variant-numeric: tabular-nums` on the body grotesque. A "+12", a "3 open", a version count: same typeface as the UI, just tabular. No monospace anywhere.
-- **Sentry: severity is encoded by a colored accent edge, not a saturated pill.** The "Root Cause" rows carry state through a small leading icon and a green progress/accent line rather than a chunky badge. Color is a thin signal layered onto an otherwise neutral row.
+- **Linear: o status é um ícone + texto liso, não uma pill encaixotada.** Na sidebar ("In Progress", "High", "jori", "Codex") não há borda, sem chip preenchido, sem retângulo arredondado. Um pequeno glifo colorido carrega o estado (um anel meio-preenchido para "In Progress", um ícone-de-barra colorido para prioridade) e o rótulo é só texto neutro de ~13px em peso normal. O orçamento de cor vive no *ícone*, nunca num fundo. Este é o movimento de maior alavancagem: **a maioria dos "status" não deveria ser pill nenhuma.**
+- **Quando É um chip, o preenchimento é um tingimento, não um bloco saturado.** Chips de status de verdade usam uma lavagem de baixa opacidade do acento (mais ou menos 10-15% de alpha) com o texto na *força cheia* da mesma matiz — texto verde sobre uma lavagem verde tênue, âmbar sobre âmbar. Nada de badge saturado sólido com texto branco a menos que seja um alerta genuíno (erro/destrutivo). Sólido + texto-branco é a exceção berrante, não o padrão.
+- **Um ponto líder de 6px faz o trabalho de uma borda inteira.** O chip "Issue tracking is dead" da Linear e a maioria dos indicadores "Live / Active / Degraded" prefixam o rótulo com um minúsculo ponto `currentColor`. O ponto é a única cor; a superfície e o texto ficam neutros. Isto é lido como mais silencioso e mais atual que uma pill totalmente tingida.
+- **Avatares são quadrados arredondados para orgs/workspaces, círculos para pessoas.** O workspace switcher "Basepoint" da Attio usa um glifo de marca num quadrado arredondado de raio ~6px, não um círculo. Círculos sinalizam um humano; squircles sinalizam uma entidade/app/time. Misturá-los deliberadamente é um sinal de acabamento. Pilhas de avatares se sobrepõem em cerca de `-8px` com um anel de 2px na cor de fundo da *página* para abrir um gap, e um chip de overflow "+4" combina exatamente com o tamanho do avatar.
+- **Tags são o objeto mais silencioso na tela.** Os rótulos da Attio e os "Performance", "iOS" da Linear são lidos como texto de baixo contraste com no máximo uma superfície tênue — sem borda, ~12-13px, foreground neutro apagado. Eles ficam *atrás* do dado na hierarquia visual, nunca competem com ele.
+- **O raio de canto é pequeno e consistente, não `rounded-full` por toda parte.** Chips de status/tag ficam em torno de 5-7px de raio (combinando com botões/inputs), para que pareçam parte de um sistema. Reserve `rounded-full` para badges de contagem e indicadores de ponto. Tudo em formato de pill é um indício.
+- **Números em chips usam figuras tabulares e é isso** — `font-variant-numeric: tabular-nums` na grotesca do corpo. Um "+12", um "3 open", uma contagem de versão: mesma tipografia da UI, só tabular. Sem monoespaçada em lugar nenhum.
+- **Sentry: a severidade é codificada por uma borda de acento colorida, não por uma pill saturada.** As linhas "Root Cause" carregam o estado por um pequeno ícone líder e uma linha de progresso/acento verde em vez de um badge grosso. A cor é um sinal fino sobreposto a uma linha de resto neutra.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- The default dark `inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs` pill — applied to *every* status, tag, and label identically. This is the AI-default fingerprint.
-- A status dot that is *always* `bg-green-500` (or, worse, indigo/violet) regardless of meaning, paired with `text-xs uppercase tracking-wide` — the fake-enterprise look.
-- Boxing things that should be borderless: priority, assignee, and category are text + glyph in real apps, not chips with hairline borders and soft shadows.
-- `rounded-full` on literally everything, saturated solid fills with white text for non-alert states, and pure `#fff`/`#000` foregrounds.
+- A pill padrão escura `inline-flex items-center gap-1 rounded-full border border-white/10 bg-white/5 px-2.5 py-0.5 text-xs` — aplicada a *todo* status, tag e rótulo identicamente. Esta é a impressão digital do padrão de IA.
+- Um ponto de status que é *sempre* `bg-green-500` (ou, pior, índigo/violeta) independentemente do significado, emparelhado com `text-xs uppercase tracking-wide` — o visual de falsa-empresa.
+- Encaixotar coisas que deveriam ser sem borda: prioridade, assignee e categoria são texto + glifo em apps de verdade, não chips com bordas de filete e sombras suaves.
+- `rounded-full` em literalmente tudo, preenchimentos sólidos saturados com texto branco para estados que não são de alerta, e foregrounds `#fff`/`#000` puros.
 
-### Variety levers
+### Alavancas de variedade
 
-Turn at least two of these per build so two screens don't share a fingerprint:
+Gire ao menos duas destas por construção para que duas telas não compartilhem uma impressão digital:
 
-- **Chrome strategy:** borderless icon+text (Linear) vs. tinted-wash chip (10% accent fill, hue-matched text) vs. dot-prefix neutral chip vs. solid only-for-alerts. Pick one as the house style for the screen.
-- **Color encoding:** color in the *icon/dot* vs. color in the *fill* vs. color in an *accent edge/underline* (Sentry). Don't mix all three on one screen.
-- **Radius rhythm:** small uniform radius (~6px, matches inputs) vs. true `rounded-full` pills — commit, don't blend.
-- **Avatar shape language:** circles-for-people vs. squircles-for-entities; flat-colored initials vs. monochrome glyph vs. photo; ring-gap thickness on stacks.
-- **Density:** dense inline labels (Attio, ~2px vertical padding, no border) vs. comfortable standalone chips (~4-6px padding). Tie this to the surrounding table/card density.
+- **Estratégia de chrome:** ícone+texto sem borda (Linear) vs. chip de lavagem tingida (preenchimento de 10% de acento, texto com matiz combinada) vs. chip neutro com prefixo de ponto vs. sólido só-para-alertas. Escolha um como o estilo da casa para a tela.
+- **Codificação de cor:** cor no *ícone/ponto* vs. cor no *preenchimento* vs. cor numa *borda/sublinhado de acento* (Sentry). Não misture as três numa tela.
+- **Ritmo de raio:** raio uniforme pequeno (~6px, combina com inputs) vs. pills `rounded-full` de verdade — comprometa-se, não misture.
+- **Linguagem de forma de avatar:** círculos-para-pessoas vs. squircles-para-entidades; iniciais em cor plana vs. glifo monocromático vs. foto; espessura de gap de anel nas pilhas.
+- **Densidade:** rótulos inline densos (Attio, ~2px de padding vertical, sem borda) vs. chips standalone confortáveis (~4-6px de padding). Atrele isto à densidade da tabela/card ao redor.
 
-### Copy-pasteable sketch
+### Esboço copiável
 
-A status row using the *borderless icon+text* convention for state/assignee, a *dot-prefix* live chip, a quiet tag, and a people avatar stack with a squircle org avatar. Tinted neutrals, no mono, tabular figures.
+Uma linha de status usando a convenção *ícone+texto sem borda* para estado/assignee, um chip live com *prefixo de ponto*, uma tag silenciosa, e uma pilha de avatares de pessoas com um avatar de org em squircle. Neutros tingidos, sem mono, figuras tabulares.
 
 ```html
 <div class="flex items-center gap-4 rounded-lg bg-stone-900/60 px-4 py-3 text-stone-200 ring-1 ring-stone-50/[0.06]">
@@ -945,41 +945,41 @@ A status row using the *borderless icon+text* convention for state/assignee, a *
 </div>
 ```
 
-Note what is *absent*: no hairline-bordered pill on every element, no saturated solid badges, no `uppercase tracking-wide`, no monospace. Color appears in exactly one register per object (icon, dot, or fill), figures are tabular, and human vs. entity avatars use different shapes — the kind of variation that makes the build read as designed rather than generated.
+Repare no que está *ausente*: sem pill de borda de filete em todo elemento, sem badges sólidos saturados, sem `uppercase tracking-wide`, sem monoespaçada. A cor aparece em exatamente um registro por objeto (ícone, ponto ou preenchimento), as figuras são tabulares, e avatares de humano vs. entidade usam formas diferentes — o tipo de variação que faz a construção ser lida como desenhada em vez de gerada.
 
 ---
 
-## Browser/app/device chrome, elevation & framing
+## Chrome de browser/app/dispositivo, elevação e enquadramento
 
-Framing is where "this is a real product" gets sold or lost. The frame is the proscenium around your UI — get the edge, the lift, and the layering right and the screenshot reads as a captured app; get it wrong and it reads as a `<div>` with a border. The four references solve it four different ways, and none of them is the AI-default box.
+O enquadramento é onde "isto é um produto de verdade" se vende ou se perde. O frame é o proscênio em volta da sua UI — acerte a borda, o lift e o empilhamento e o screenshot é lido como um app capturado; erre e é lido como um `<div>` com uma borda. As quatro referências resolvem isso de quatro formas diferentes, e nenhuma delas é a caixa padrão de IA.
 
-### What real top sites actually do
+### O que os melhores sites de verdade fazem
 
-- **Edge is an inset highlight, not a box.** Linear's app mock has no 1px border ringing the whole panel. The top edge is a single ~1px *lighter* line (a top inset highlight, `box-shadow: inset 0 1px 0 rgba(255,255,255,.06)`), which reads as a physical bevel catching light. The bottom and sides dissolve into a large soft shadow. The frame is felt, not outlined.
-- **Surfaces separate by lightness steps, not by dividers.** Inside Linear the sidebar, main column, and detail rail are differentiated by 2-4% lightness jumps on a tinted near-black (`#0d0e11` → `#15161a` → `#1a1b20`), not by hairlines. Stacked panels (the floating "Codex" agent card) lift one more step *and* gain their own shadow. Elevation = a brighter surface + a softer/larger shadow, in tandem.
-- **Real window chrome, used sparingly.** Cap and Arc/Dia render actual chrome: macOS traffic-light dots (12px circles, ~8px apart, muted red/amber/green — not saturated), a short toolbar row with back/forward chevrons, and a centered, quiet title ("Dia / New Chat", "Cap 2025-05-23 ... .cap"). The title is the grotesque body at ~13px in a muted foreground, never mono. Chrome height is tight (~36-40px).
-- **Nested frames signal depth.** Cap is chrome-inside-chrome: an outer app window, then an *inner* preview pane with its own mini controls, then a timeline track. Each inner panel has a smaller radius than its parent (outer ~14px, inner ~10px) and its own subtle shadow — concentric rounding is the tell that you're inside a real composited UI.
-- **Generous outer radius, floated on a contrasting page.** Arc and Cap use ~12-14px on the outer frame and let the whole window *float* on the page with a large, low-opacity shadow (`0 24px 60px -24px rgba(0,0,0,.4)`) plus a single hairline. Framer skips chrome entirely — its template cards bleed a screenshot flush to an ~8px rounded edge and separate by gap + shadow, so contrast (light card on black page) does the framing.
-- **Accent appears once, on the live thing.** Cap's only color is the blue timeline selection and the play button; everything else is neutral. Arc's accent is the selected-sidebar pill. The frame and chrome stay neutral so the accent marks *what's active*, not the decoration.
+- **A borda é um realce inset, não uma caixa.** O mock de app da Linear não tem uma borda de 1px circundando o painel inteiro. A borda superior é uma única linha ~1px *mais clara* (um realce superior inset, `box-shadow: inset 0 1px 0 rgba(255,255,255,.06)`), que é lida como um bisel físico pegando luz. A base e os lados se dissolvem numa grande sombra suave. O frame é sentido, não contornado.
+- **Superfícies se separam por degraus de luminosidade, não por divisores.** Dentro da Linear a sidebar, a coluna principal e o trilho de detalhe são diferenciados por saltos de luminosidade de 2-4% num quase-preto tingido (`#0d0e11` → `#15161a` → `#1a1b20`), não por filetes. Painéis empilhados (o card de agente "Codex" flutuante) sobem mais um degrau *e* ganham sua própria sombra. Elevação = uma superfície mais brilhante + uma sombra mais suave/maior, em conjunto.
+- **Chrome de janela de verdade, usado com parcimônia.** Cap e Arc/Dia renderizam chrome real: pontos de semáforo do macOS (círculos de 12px, ~8px de distância, vermelho/âmbar/verde apagado — não saturado), uma fileira de toolbar curta com chevrons de voltar/avançar, e um título centrado e silencioso ("Dia / New Chat", "Cap 2025-05-23 ... .cap"). O título é a grotesca do corpo a ~13px num foreground apagado, nunca mono. A altura do chrome é apertada (~36-40px).
+- **Frames aninhados sinalizam profundidade.** O Cap é chrome-dentro-de-chrome: uma janela de app externa, depois um painel de preview *interno* com seus próprios mini controles, depois uma trilha de timeline. Cada painel interno tem um raio menor que o pai (externo ~14px, interno ~10px) e sua própria sombra sutil — arredondamento concêntrico é o sinal de que você está dentro de uma UI composta de verdade.
+- **Raio externo generoso, flutuando numa página contrastante.** Arc e Cap usam ~12-14px no frame externo e deixam a janela inteira *flutuar* na página com uma grande sombra de baixa opacidade (`0 24px 60px -24px rgba(0,0,0,.4)`) mais um único filete. A Framer pula o chrome por completo — seus cards de template fazem um screenshot sangrar rente a uma borda arredondada de ~8px e se separam por gap + sombra, então o contraste (card claro sobre página preta) faz o enquadramento.
+- **O acento aparece uma vez, na coisa viva.** A única cor do Cap é a seleção azul da timeline e o botão de play; todo o resto é neutro. O acento do Arc é a pill de sidebar selecionada. O frame e o chrome ficam neutros para que o acento marque *o que está ativo*, não a decoração.
 
-### The generic version to AVOID
+### A versão genérica a EVITAR
 
-- The "screenshot frame" = one `rounded-xl border border-white/10` box with a single uniform shadow, every surface inside the same flat color, separated by `border-t border-white/10` hairlines everywhere.
-- A fake browser bar with three pure-`#ff5f56`/`#ffbd2e`/`#27c93f` dots and a mono URL in the address field. (Saturated dots + mono = instant AI tell.)
-- Mono for the window title, file name, tab labels, or status text in the chrome.
-- One elevation level only: everything sits on the same plane, so nothing reads as nested or active — the "soft shadow on a card" look with no layering logic.
+- O "frame de screenshot" = uma caixa `rounded-xl border border-white/10` com uma única sombra uniforme, toda superfície dentro na mesma cor plana, separada por filetes `border-t border-white/10` por toda parte.
+- Uma barra de browser falsa com três pontos `#ff5f56`/`#ffbd2e`/`#27c93f` puros e uma URL em mono no campo de endereço. (Pontos saturados + mono = sinal instantâneo de IA.)
+- Mono para o título da janela, o nome de arquivo, os rótulos de tab, ou o texto de status no chrome.
+- Um só nível de elevação: tudo fica no mesmo plano, então nada é lido como aninhado ou ativo — o visual de "sombra suave num card" sem lógica de camadas.
 
-### Variety levers
+### Alavancas de variedade
 
-- **Frame type:** real OS window (traffic-light chrome) vs. browser chrome (back/fwd + title) vs. *no chrome* — image bleeding flush to a rounded edge (Framer). Pick one per build; don't always default to the browser bar.
-- **Edge strategy:** inset top-highlight + shadow (Linear, borderless) vs. hairline + float shadow (Arc) vs. pure contrast, no border at all (Framer light-on-dark). These look meaningfully different.
-- **Elevation model:** flat single plane / layered (2-3 lightness steps, concentric radii, nested shadows) / floated-on-page (one big drop shadow). Layered reads most "real."
-- **Radius scale:** tight (8px, dense/technical) vs. generous (14px, consumer/friendly), and whether inner panels step *down* in radius.
-- **Density of chrome:** minimal (just a title) vs. full toolbar with icons/controls. Match it to the product — a dev tool earns a denser toolbar than a consumer recorder.
+- **Tipo de frame:** janela de SO de verdade (chrome de semáforo) vs. chrome de browser (voltar/avançar + título) vs. *sem chrome* — imagem sangrando rente a uma borda arredondada (Framer). Escolha um por construção; não caia sempre no padrão da barra de browser.
+- **Estratégia de borda:** realce-superior-inset + sombra (Linear, sem borda) vs. filete + sombra de flutuação (Arc) vs. contraste puro, sem borda nenhuma (Framer claro-sobre-escuro). Estes parecem significativamente diferentes.
+- **Modelo de elevação:** plano único / em camadas (2-3 degraus de luminosidade, raios concêntricos, sombras aninhadas) / flutuando-na-página (uma grande drop shadow). Em camadas é lido como o mais "real".
+- **Escala de raio:** apertada (8px, denso/técnico) vs. generosa (14px, consumo/amigável), e se os painéis internos descem *de degrau* no raio.
+- **Densidade de chrome:** mínima (só um título) vs. toolbar completa com ícones/controles. Combine-a ao produto — uma dev tool merece uma toolbar mais densa que um gravador de consumo.
 
-### Copy-pasteable sketch
+### Esboço copiável
 
-A floated app window with real-but-quiet macOS chrome, layered surfaces (sidebar steps down, detail panel steps up), inset top-highlight edge, one neutral hairline, accent used only on the active row. No border-box, no mono, tabular figures.
+Uma janela de app flutuante com chrome do macOS real-mas-silencioso, superfícies em camadas (a sidebar desce de degrau, o painel de detalhe sobe), borda de realce-superior-inset, um filete neutro, acento usado só na linha ativa. Sem caixa-de-borda, sem mono, figuras tabulares.
 
 ```html
 <!-- tinted near-black palette; accent is a single teal, used once -->
@@ -1030,4 +1030,4 @@ A floated app window with real-but-quiet macOS chrome, layered surfaces (sidebar
 </div>
 ```
 
-Notes that keep it from going generic: the outer frame has **no full border** — it's a near-invisible `ring` plus an `inset` top-highlight plus a float shadow. The three interior surfaces (`#0c0e11` sidebar, `#101216` chrome, `#13151a` main) are distinct lightness steps on a *tinted* near-black, so depth comes from value, not outlines. The only divider is a single `divide-white/[0.05]` inside the list. Accent (`#3fae9b`) appears exactly once, as the active-row bar. Every figure is `tabular-nums` on the grotesque body — zero mono.
+Notas que evitam que vire genérico: o frame externo não tem **nenhuma borda completa** — é um `ring` quase invisível mais um realce-superior `inset` mais uma sombra de flutuação. As três superfícies interiores (`#0c0e11` sidebar, `#101216` chrome, `#13151a` main) são degraus de luminosidade distintos num quase-preto *tingido*, então a profundidade vem do valor, não de contornos. O único divisor é um único `divide-white/[0.05]` dentro da lista. O acento (`#3fae9b`) aparece exatamente uma vez, como a barra da linha ativa. Toda figura é `tabular-nums` na grotesca do corpo — zero mono.

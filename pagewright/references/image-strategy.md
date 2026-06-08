@@ -1,84 +1,87 @@
-# Image strategy — let images do the heavy lifting
+# Estratégia de imagens — deixe as imagens fazerem o trabalho pesado
 
-The prettiest SaaS sites are not pure CSS. The thing that makes them feel expensive is usually a
-**great visual**: a crisp product shot, an evocative 3D render, a characterful illustration. AI tools
-tend to avoid images and simulate everything with gradients and blobs — which is exactly why their
-output looks generic. This skill does the opposite: **plan the images first, reserve real space for
-them, and either generate them or hand the user ready-to-run prompts.**
+Os sites de SaaS mais bonitos não são puro CSS. O que faz com que pareçam caros geralmente é uma
+**imagem excelente**: um screenshot nítido do produto, um render 3D evocativo, uma ilustração com
+personalidade. Ferramentas de IA tendem a evitar imagens e simular tudo com gradientes e blobs — que é
+exatamente por isso que o resultado parece genérico. Esta skill faz o oposto: **planeje as imagens
+primeiro, reserve espaço real para elas e gere-as ou entregue ao usuário prompts prontos para rodar.**
 
-## Build the product visual in HTML/CSS — don't placeholder it (the #1 fidelity rule)
+## Construa a imagem do produto em HTML/CSS — não deixe um placeholder no lugar (a regra de fidelidade #1)
 
-The single biggest reason AI landing pages look like empty wireframes is dropping a **gray placeholder box**
-where the product should be. The best real sites — Linear, Stripe, Attio, Vercel — do the opposite: they
-**build the product UI in HTML/CSS** right in the page. A faithful hand-built UI is what makes a hero read
-as a *real shipped product* instead of a mockup.
+A maior razão isolada para landing pages de IA parecerem wireframes vazios é largar uma **caixa cinza de
+placeholder** onde o produto deveria estar. Os melhores sites reais — Linear, Stripe, Attio, Vercel — fazem
+o oposto: eles **constroem a UI do produto em HTML/CSS** diretamente na página. Uma UI feita à mão com
+fidelidade é o que faz um hero ser lido como um *produto real lançado* em vez de um mockup.
 
-**If the visual is a product UI, dashboard, data table, chart, code/diff, terminal, chat, map, or
-diagram → BUILD IT in HTML/CSS/SVG.** Real-looking data, crisp micro-typography (~11–13px), 1px hairline
-borders, status pills, avatars (CSS gradient tiles), tabular numerals; frame it in browser/app chrome. This
-is usually the page's signature and costs nothing but care. (Open a library thumbnail like linear.app or
-attio.com and rebuild its surface faithfully.) **→ Read [product-ui.md](product-ui.md) before you build it**
-— it has the per-component craft (dashboards, tables, charts, logs, cards, nav, forms) so the surface comes
-out specific and current, not the generic "dark panel + hairline box + mono numbers" default.
+**Se a imagem é uma UI de produto, dashboard, tabela de dados, gráfico, código/diff, terminal, chat, mapa
+ou diagrama → CONSTRUA EM HTML/CSS/SVG.** Dados com cara de reais, micro-tipografia nítida (~11–13px),
+bordas hairline de 1px, status pills, avatares (tiles com gradiente CSS), numerais tabulares; emoldure tudo
+em chrome de browser/app. Esse costuma ser o elemento assinatura da página e não custa nada além de capricho.
+(Abra um thumbnail da biblioteca como linear.app ou attio.com e reconstrua sua superfície com fidelidade.)
+**→ Leia [product-ui.md](product-ui.md) antes de construir** — ele traz o craft por componente (dashboards,
+tabelas, gráficos, logs, cards, nav, formulários) para que a superfície saia específica e atual, não o
+default genérico de "painel escuro + caixa hairline + números mono".
 
-**Reserve image placeholders + generation for what you genuinely CAN'T build in code:** photography,
-3D/sculptural renders, illustration, brand logos. For those, ship a dimensioned placeholder AND (preferably)
-generate the asset — a filled hero beats an empty one every time.
+**Reserve placeholders de imagem + geração para o que você genuinamente NÃO CONSEGUE construir em código:**
+fotografia, renders 3D/escultóricos, ilustração, logos de marca. Para esses, entregue um placeholder
+dimensionado E (de preferência) gere o asset — um hero preenchido sempre ganha de um vazio.
 
-Quick test: **if your hero is a gray box, you're not done.** Build the UI, or generate the image.
+Teste rápido: **se o seu hero é uma caixa cinza, você não terminou.** Construa a UI ou gere a imagem.
 
-## Build interfaces; photograph or generate OBJECTS (the line that saves you from clip-art)
+## Construa interfaces; fotografe ou gere OBJETOS (a linha que te salva do clip-art)
 
-The rule above is about **interfaces and data** — dashboards, tables, charts, code, chat, diagrams,
-type-driven graphics. There, hand-building is a superpower: divs and SVG read as *real*.
+A regra acima é sobre **interfaces e dados** — dashboards, tabelas, gráficos, código, chat, diagramas,
+gráficos guiados por tipografia. Aí, construir à mão é um superpoder: divs e SVG são lidos como *reais*.
 
-It is **NOT** a licence to hand-draw a **physical object** in SVG. A bottle, a ring, a device, a can with
-condensation, a piece of fruit — modelled from scratch in one pass — almost always comes out as flat,
-slightly-wrong clip-art. A CSS-gradient ring reads as the *wireframe* of a ring, not a ring. This is the
-single most common way a hand-built hero looks "meio pá" (janky).
+Isso **NÃO** é licença para desenhar à mão um **objeto físico** em SVG. Uma garrafa, um anel, um dispositivo,
+uma lata com condensação, uma fruta — modelados do zero numa só tacada — quase sempre saem como clip-art
+chapado e meio errado. Um anel feito de gradiente CSS é lido como o *wireframe* de um anel, não como um anel.
+Essa é a forma mais comum de um hero feito à mão parecer "meio pá" (janky).
 
-Route by what the visual **is**:
-- **Interface / data / diagram / code / type** → BUILD in HTML/CSS/SVG. (A data-viz ring that traces real
-  sleep stages is an *interface* — build it, and invest in it.)
-- **Physical object / material / organic form / 3D / a real scene** → **photograph it (Unsplash, graded —
-  see below) or generate it (Nano Banana)**. A graded real photo or a clean generated render beats a
-  hand-SVG object every time. A flat, rectangular thing (a card, a sticker, a UI window) is far safer to
-  hand-build than a curved, lit, organic one (a bottle, a ring, a can).
+Roteie pelo que a imagem **é**:
+- **Interface / dados / diagrama / código / tipografia** → CONSTRUA em HTML/CSS/SVG. (Um anel de data-viz que
+  traça estágios de sono reais é uma *interface* — construa, e invista nele.)
+- **Objeto físico / material / forma orgânica / 3D / uma cena real** → **fotografe (Unsplash, com grade — veja
+  abaixo) ou gere (Nano Banana)**. Uma foto real com grade ou um render gerado limpo ganha de um objeto em
+  SVG feito à mão toda vez. Uma coisa chapada e retangular (um card, um sticker, uma janela de UI) é muito
+  mais segura de construir à mão do que uma curva, iluminada e orgânica (uma garrafa, um anel, uma lata).
 
-If you DO hand-build an object, clear the bar or don't ship it: real proportions (look at a reference
-photo first), a **material gradient** (not a flat fill), layered specular highlight + core shadow + a
-contact/cast shadow on a surface, and consistent light direction. If you can't clear that bar, ship a
-dimensioned **graded placeholder + a generation/photo prompt** instead — an honest placeholder beats janky
-clip-art, and the photo/generation flow below will fill it properly.
+Se você FOR construir um objeto à mão, atinja o nível ou não publique: proporções reais (olhe uma foto de
+referência primeiro), um **gradiente de material** (não um preenchimento chapado), highlight especular em
+camadas + sombra de núcleo + uma sombra de contato/projetada sobre uma superfície, e direção de luz consistente.
+Se você não consegue atingir esse nível, entregue um **placeholder dimensionado com grade + um prompt de
+geração/foto** — um placeholder honesto ganha de clip-art janky, e o fluxo de foto/geração abaixo vai
+preenchê-lo direito.
 
-## Principle
+## Princípio
 
-For every visual moment, ask: *would a real/generated image say this better than CSS?* If yes, make an
-image slot. Don't fake a product screenshot with stacked divs when a real image (or a generated mock)
-would sing. Don't fill the hero with abstract shapes when a product canvas would prove the value.
+Para cada momento visual, pergunte: *uma imagem real/gerada diria isso melhor do que CSS?* Se sim, crie um
+slot de imagem. Não finja um screenshot de produto com divs empilhadas quando uma imagem real (ou um mock
+gerado) cantaria. Não encha o hero com formas abstratas quando um canvas de produto provaria o valor.
 
-But stay disciplined: a few strong, intentional images beat a page littered with stock. Pick the moments
-that matter (usually: hero visual, one or two feature visuals, maybe an illustration accent).
+Mas mantenha a disciplina: algumas poucas imagens fortes e intencionais ganham de uma página entupida de
+stock. Escolha os momentos que importam (geralmente: imagem do hero, uma ou duas imagens de feature, talvez
+um detalhe de ilustração).
 
-## Where images earn their keep
+## Onde as imagens valem o seu lugar
 
-| Slot | Typical image type | Why |
+| Slot | Tipo típico de imagem | Por quê |
 |---|---|---|
-| Hero visual | product screenshot / live UI / abstract-3D | proves it's real, sets the mood |
-| Feature blocks | focused product shots / diagrams | show, don't tell |
-| How-it-works | simple illustrations / step visuals | makes it concrete & friendly |
-| Social proof | real logos (SVG) | borrowed trust |
-| Testimonials | real avatars | humanizes |
-| Background accents | gradient-mesh / texture / noise | mood, used sparingly |
+| Hero visual | product screenshot / live UI / abstract-3D | prova que é real, define o clima |
+| Feature blocks | product shots focados / diagramas | mostre, não conte |
+| How-it-works | ilustrações simples / imagens de passos | torna concreto e acolhedor |
+| Social proof | logos reais (SVG) | confiança emprestada |
+| Testimonials | avatares reais | humaniza |
+| Background accents | gradient-mesh / textura / ruído | clima, usado com parcimônia |
 
-## Image types & prompt recipes
+## Tipos de imagem & receitas de prompt
 
-When you create an image slot, decide its **type** and write a ready-to-use prompt. Keep prompts
-aligned to the Design DNA (palette, mood). Recipes:
+Quando você cria um slot de imagem, decida o **tipo** dele e escreva um prompt pronto para uso. Mantenha os
+prompts alinhados ao Design DNA (paleta, clima). Receitas:
 
 - **Product screenshot / app UI mock** — *"Clean [product type] dashboard UI, [dark/light] theme,
   [accent] accents, showing [key feature]; realistic SaaS interface, crisp typography, subtle depth,
-  no lorem ipsum — use plausible real labels; 16:10."* Frame it in browser/device chrome in the markup.
+  no lorem ipsum — use plausible real labels; 16:10."* Emoldure em chrome de browser/dispositivo no markup.
 - **Abstract / 3D render** — *"Abstract 3D render, [palette] gradient, soft studio lighting, glass/metal
   forms, premium tech aesthetic, [mood] feel, high detail, 4k, transparent or [bg] background."*
 - **Illustration** — *"[flat/iso/line] illustration of [concept], [palette], consistent stroke,
@@ -88,16 +91,17 @@ aligned to the Design DNA (palette, mood). Recipes:
 - **Gradient-mesh / texture** — *"Soft mesh gradient, [2-3 palette colors], grainy, subtle, abstract
   background; seamless."*
 
-Tip: keep a consistent style descriptor across a page's images so they feel like one set.
+Dica: mantenha um descritor de estilo consistente entre as imagens de uma página para que pareçam um único
+conjunto.
 
-## Placeholders (always ship these)
+## Placeholders (sempre entregue estes)
 
-Every image slot gets a **dimensioned, labeled placeholder** so the page looks intentional with zero
-assets and the user knows exactly what to drop in.
+Todo slot de imagem ganha um **placeholder dimensionado e rotulado** para que a página pareça intencional com
+zero assets e o usuário saiba exatamente o que colocar ali.
 
-Use **`scripts/placeholder.py`** to emit placeholder SVGs/PNGs at the right aspect ratio, labeled with
-the slot name (e.g. "HERO — product screenshot 16:10"). In the markup, give each `<img>` a real
-`width`/`height`, descriptive `alt`, and a comment with the generation prompt so it's swap-ready:
+Use **`scripts/placeholder.py`** para emitir SVGs/PNGs de placeholder na proporção certa, rotulados com o
+nome do slot (ex.: "HERO — product screenshot 16:10"). No markup, dê a cada `<img>` um `width`/`height` real,
+um `alt` descritivo e um comentário com o prompt de geração para que fique pronto para troca:
 
 ```html
 <!-- IMAGE SLOT: hero product screenshot — prompt: "Clean analytics dashboard, dark theme, indigo
@@ -106,70 +110,74 @@ the slot name (e.g. "HERO — product screenshot 16:10"). In the markup, give ea
      alt="Acme dashboard showing conversion funnel" class="rounded-xl border border-surface" />
 ```
 
-## Optional: generate the images (opt-in)
+## Opcional: gerar as imagens (opt-in)
 
-Generation is **off by default**. Offer it; if the user wants it AND a generator is configured, run it.
+A geração vem **desligada por padrão**. Ofereça; se o usuário quiser E um gerador estiver configurado, rode.
 
-- **Gemini "Nano Banana" (Gemini 2.5 Flash Image)** via **`scripts/gen_image.py`**. Needs a
-  `GEMINI_API_KEY` (from Google AI Studio — note: a Gemini *app* subscription is NOT API access; the
-  API has its own free tier with rate limits, and image-gen availability/cost on the free tier varies,
-  so the script fails gracefully and falls back to placeholders + prompts).
-- **Flow:** for each slot, the script takes the prompt + dimensions, writes the result into
-  `assets/images/`, and you wire it into the markup replacing the placeholder.
-- **No key / declined?** Ship placeholders + the prompts list (a small `IMAGE-PROMPTS.md` in the output)
-  so the user can paste them into Nano Banana / Midjourney / their tool of choice and drop the results in.
+- **Gemini "Nano Banana" (Gemini 2.5 Flash Image)** via **`scripts/gen_image.py`**. Precisa de uma
+  `GEMINI_API_KEY` (do Google AI Studio — nota: uma assinatura do *app* Gemini NÃO é acesso à API; a
+  API tem seu próprio tier gratuito com rate limits, e a disponibilidade/custo de geração de imagem no tier
+  gratuito varia, então o script falha de forma elegante e recai em placeholders + prompts).
+- **Fluxo:** para cada slot, o script pega o prompt + dimensões, escreve o resultado em
+  `assets/images/`, e você o conecta ao markup substituindo o placeholder.
+- **Sem chave / recusou?** Entregue placeholders + a lista de prompts (um pequeno `IMAGE-PROMPTS.md` na saída)
+  para que o usuário possa colá-los no Nano Banana / Midjourney / na ferramenta de escolha dele e jogar os
+  resultados ali.
 
-Either way the page is complete and runnable. Generation is an enhancement, never a dependency.
+De qualquer forma, a página fica completa e executável. A geração é um aprimoramento, nunca uma dependência.
 
-## Optional: fetch a real photo — Unsplash (opt-in)
+## Opcional: buscar uma foto real — Unsplash (opt-in)
 
-Some slots want a *real photograph*, not a render: a full-bleed cinematic landscape behind the hero
-(the **full-bleed-photo** composition archetype — see design-dna.md), an organic texture (fog, stone,
-paper, foliage, water), an editorial still life. Generation can fake these but real photography often
-reads truer and costs nothing to generate. Use **`scripts/fetch_unsplash.py`** (off by default; needs a
-free `UNSPLASH_ACCESS_KEY`). It searches by a mood query, downloads a sized JPEG, registers the download
-and writes the required attribution to `UNSPLASH-CREDITS.md`.
+Alguns slots querem uma *fotografia real*, não um render: uma paisagem cinematográfica full-bleed atrás do
+hero (o composition archetype **full-bleed-photo** — veja design-dna.md), uma textura orgânica (neblina, pedra,
+papel, folhagem, água), uma still life editorial. A geração consegue falsificar isso, mas a fotografia real
+muitas vezes é lida como mais verdadeira e não custa nada para gerar. Use **`scripts/fetch_unsplash.py`**
+(desligado por padrão; precisa de uma `UNSPLASH_ACCESS_KEY` gratuita). Ele busca por uma query de clima, baixa
+um JPEG dimensionado, registra o download e escreve a atribuição obrigatória em `UNSPLASH-CREDITS.md`.
 
-**Taste guards (the script can't enforce these — you must):**
-- **Place, object, texture, abstraction — not people.** Landscapes, skies, water, foliage, stone/paper/
-  fabric, macro detail, architecture, hands/craft, ingredients shot editorially. A photo with *people as
-  the subject* almost always reads as stock ("diverse team at laptops") — the exact slop this skill avoids.
-- **Always grade it** so it belongs to the page and not to a stock library: a duotone/colour overlay in
-  the Design DNA palette, a grain layer, and a gradient scrim for text contrast. The script prints a
-  copy-paste grade snippet. An ungraded raw stock photo is a tell; a hard-graded one can be the signature.
-- **Pick deliberately.** Pass a specific, moody query ("low fog over black volcanic rock, muted, no
-  people"), and use `--index` to step past the obvious first result if it's too generic.
-- **Pairs with Nano Banana, doesn't replace it.** Real photo for place/texture; generate for 3D/product/
-  illustration. Build product UI in HTML/CSS as always (the #1 rule above).
+**Guardas de bom gosto (o script não consegue impô-las — você precisa):**
+- **Lugar, objeto, textura, abstração — não pessoas.** Paisagens, céus, água, folhagem, pedra/papel/tecido,
+  detalhe macro, arquitetura, mãos/artesanato, ingredientes fotografados de forma editorial. Uma foto com
+  *pessoas como sujeito* quase sempre é lida como stock ("time diverso em laptops") — exatamente o slop que
+  esta skill evita.
+- **Sempre aplique grade** para que pertença à página e não a uma biblioteca de stock: uma sobreposição
+  duotone/de cor na paleta do Design DNA, uma camada de grão e um scrim de gradiente para contraste do texto.
+  O script imprime um snippet de grade pronto para copiar e colar. Uma foto de stock crua e sem grade é um
+  denúncia; uma com grade pesada pode ser a assinatura.
+- **Escolha deliberadamente.** Passe uma query específica e com clima ("low fog over black volcanic rock, muted,
+  no people"), e use `--index` para pular o resultado óbvio se ele estiver genérico demais.
+- **Combina com o Nano Banana, não o substitui.** Foto real para lugar/textura; gere para 3D/produto/ilustração.
+  Construa a UI do produto em HTML/CSS como sempre (a regra #1 acima).
 
 ```bash
 python scripts/fetch_unsplash.py --query "low fog over pine forest at dawn, muted, no people" \
     --out assets/images/hero-bg.jpg --orientation landscape --width 1600
 ```
 
-No key / declined? The dimensioned placeholder IS the fallback, and you can hand the user the same query
-to grab a photo by hand. The page stays complete and runnable.
+Sem chave / recusou? O placeholder dimensionado É o fallback, e você pode entregar ao usuário a mesma query
+para pegar uma foto na mão. A página continua completa e executável.
 
-## Current asset choices (so it doesn't look dated)
+## Escolhas atuais de assets (para não parecer datado)
 
-- **Icons — use a multi-weight set, matched to the page's shape language:** Phosphor, Iconoir, or
-  Hugeicons (free, many weights), or premium Untitled UI Icons. **Avoid raw single-weight Lucide/Feather**
-  used with no stylistic match — that's the default-template look.
-- **Illustration / 3D — go sculptural, not flat-vector.** Lightweight 3D (Spline embed or pre-rendered
-  Blender) as a hero — sculptural spheres, ribbons, liquid-metal/glass forms — reads premium. If you use
-  illustration, keep it custom and characterful. **Never** Corporate Memphis mascots (Humaaans, unDraw,
-  Open Peeps, Storyset, ManyPixels) or generic isometric "servers & connectivity" tech scenes — both are
-  dead giveaways abandoned by real brands.
-- **Photography — real over stock.** Founder/team/product photos with a consistent grade beat
-  "diverse team at laptops" stock. If none exist, prefer product UI or 3D over a stock *people* photo —
-  but a graded editorial **place/texture** photo (landscape, fog, stone, foliage) is fair game and often
-  beautiful: fetch it with `scripts/fetch_unsplash.py` and grade it (see the Unsplash section above).
-- **Texture beats sheen.** A little grain/noise over a muted background reads more human and current than
-  a hyper-perfect, glossy, shadow-soft AI surface.
+- **Ícones — use um conjunto multi-peso, casado com a linguagem de formas da página:** Phosphor, Iconoir ou
+  Hugeicons (gratuitos, muitos pesos), ou os premium Untitled UI Icons. **Evite Lucide/Feather de peso único
+  e cru** usados sem nenhum casamento estilístico — esse é o visual de template default.
+- **Ilustração / 3D — vá escultórico, não flat-vector.** 3D leve (embed do Spline ou Blender pré-renderizado)
+  como hero — esferas escultóricas, fitas, formas de liquid-metal/vidro — é lido como premium. Se usar
+  ilustração, mantenha-a custom e com personalidade. **Nunca** mascotes Corporate Memphis (Humaaans, unDraw,
+  Open Peeps, Storyset, ManyPixels) ou cenas tech isométricas genéricas de "servidores & conectividade" — ambas
+  são denúncias na hora, abandonadas por marcas de verdade.
+- **Fotografia — real acima de stock.** Fotos de fundador/time/produto com uma grade consistente ganham do
+  stock "time diverso em laptops". Se não houver nenhuma, prefira UI de produto ou 3D em vez de uma foto de
+  *pessoas* de stock — mas uma foto editorial de **lugar/textura** com grade (paisagem, neblina, pedra, folhagem)
+  é jogo limpo e muitas vezes linda: busque com `scripts/fetch_unsplash.py` e aplique a grade (veja a seção
+  Unsplash acima).
+- **Textura ganha de brilho.** Um pouco de grão/ruído sobre um fundo suave é lido como mais humano e atual do
+  que uma superfície de IA hiper-perfeita, lustrosa e de sombras suaves.
 
-## Don't
+## Não faça
 
-- Don't use generic stock or clip-art-y illustrations that say nothing about the product.
-- Don't overload — a page of images with no breathing room is as bad as none.
-- Don't ship broken `<img>` with no fallback; the placeholder IS the fallback.
-- Don't present invented logos/testimonial photos as if real — label placeholders as swappable.
+- Não use stock genérico ou ilustrações com cara de clip-art que não dizem nada sobre o produto.
+- Não sobrecarregue — uma página de imagens sem espaço para respirar é tão ruim quanto nenhuma.
+- Não publique `<img>` quebrado sem fallback; o placeholder É o fallback.
+- Não apresente logos/fotos de depoimento inventados como se fossem reais — rotule placeholders como trocáveis.
