@@ -146,11 +146,13 @@ These override any individual instruction. When a choice is unclear, optimize fo
   structurally, you reverted. (Full procedure in design-dna.md.)
 - **Real words.** Write copy a founder would actually ship. Concrete nouns, real benefits, a voice that
   matches the product's mood. No lorem ipsum in anything you show the user.
-- **Build the product, don't placeholder it.** The fastest path to a "real product" look is to build the
-  product UI/dashboard/chart/code/chat **in HTML/CSS/SVG** (like Linear, Stripe, Attio do) — a gray
-  placeholder hero is why AI pages look like wireframes. Reserve image slots + generation for what you
-  truly can't build in code (photo, 3D, illustration), and fill those too. If your hero is a gray box,
-  you're not done. (See image-strategy.md.)
+- **Build the product, don't placeholder it — but build interfaces, not objects.** The fastest path to a
+  "real product" look is to build the product UI/dashboard/chart/code/chat **in HTML/CSS/SVG** (like Linear,
+  Stripe, Attio do) — a gray placeholder hero is why AI pages look like wireframes. But this applies to
+  *interfaces and data*, not to **physical objects**: a bottle, a ring, a device hand-drawn in SVG comes out
+  as janky clip-art. Those want a **graded photo (Unsplash) or a generated render (Nano Banana)**, not
+  hand-SVG. Reserve image slots + generation for photo/3D/illustration/objects, and fill them. If your hero
+  is a gray box *or a clip-art object*, you're not done. (See image-strategy.md.)
 - **Respect the user's control dial.** "You decide" means decide — show work, don't interrogate.
   "Guide me" means collaborate. Read the room.
 - **Ship something runnable.** Every result opens in a browser with no build step and looks finished —

@@ -187,9 +187,14 @@ colours differ. Check both; rotate so two pages by this skill never share a spin
       Not reflexively split-screen / hero-left-text + image-right.
 - [ ] **Section sequence** — transcribed from your anchor (Move 2), driven by the story — not the generic
       hook → logos → 3-cards → CTA boilerplate on autopilot.
-- [ ] **Hero grammar** — break the prior chain. You do NOT need an eyebrow pill, *and* a one-word-accent
-      headline, *and* two CTAs (filled + ghost-with-arrow), *and* a row of exactly three stats. Drop or
-      reshape **at least two** of these every build.
+- [ ] **Hero grammar** — break the prior chain. You do NOT need a kicker/eyebrow label, *and* a
+      one-word-accent headline, *and* two CTAs (filled + ghost-with-arrow), *and* a row of exactly three
+      stats. Drop or reshape **at least two** of these every build.
+- [ ] **The kicker is not mandatory** — a small tracked label above the H1 (`A SLEEP & RECOVERY RING`) is
+      the most reflexive opener there is, and it quietly survives even when everything else varies. For at
+      least **half** your pages, lead with something else: open straight on the headline, a nav-adjacent
+      one-liner, a date/price/stat, a single product word, or a question. If you *do* use one, make it do
+      real work — a place, a provocation, a spec — never just restate the category in caps.
 - [ ] **Feature layout** — not always three equal cards in a row. Consider a vertical alternating zigzag,
       a bento, one deep showcase, a numbered walkthrough, a comparison table.
 

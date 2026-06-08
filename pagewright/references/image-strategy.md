@@ -25,6 +25,30 @@ generate the asset — a filled hero beats an empty one every time.
 
 Quick test: **if your hero is a gray box, you're not done.** Build the UI, or generate the image.
 
+## Build interfaces; photograph or generate OBJECTS (the line that saves you from clip-art)
+
+The rule above is about **interfaces and data** — dashboards, tables, charts, code, chat, diagrams,
+type-driven graphics. There, hand-building is a superpower: divs and SVG read as *real*.
+
+It is **NOT** a licence to hand-draw a **physical object** in SVG. A bottle, a ring, a device, a can with
+condensation, a piece of fruit — modelled from scratch in one pass — almost always comes out as flat,
+slightly-wrong clip-art. A CSS-gradient ring reads as the *wireframe* of a ring, not a ring. This is the
+single most common way a hand-built hero looks "meio pá" (janky).
+
+Route by what the visual **is**:
+- **Interface / data / diagram / code / type** → BUILD in HTML/CSS/SVG. (A data-viz ring that traces real
+  sleep stages is an *interface* — build it, and invest in it.)
+- **Physical object / material / organic form / 3D / a real scene** → **photograph it (Unsplash, graded —
+  see below) or generate it (Nano Banana)**. A graded real photo or a clean generated render beats a
+  hand-SVG object every time. A flat, rectangular thing (a card, a sticker, a UI window) is far safer to
+  hand-build than a curved, lit, organic one (a bottle, a ring, a can).
+
+If you DO hand-build an object, clear the bar or don't ship it: real proportions (look at a reference
+photo first), a **material gradient** (not a flat fill), layered specular highlight + core shadow + a
+contact/cast shadow on a surface, and consistent light direction. If you can't clear that bar, ship a
+dimensioned **graded placeholder + a generation/photo prompt** instead — an honest placeholder beats janky
+clip-art, and the photo/generation flow below will fill it properly.
+
 ## Principle
 
 For every visual moment, ask: *would a real/generated image say this better than CSS?* If yes, make an
