@@ -63,6 +63,22 @@ off-white surfaces, not `#FFFFFF`.
 Faint dot/blueprint grid via a CSS `radial-gradient`/`linear-gradient` background on a section; a blurred
 ambient `accent` glow behind product UI. Avoid heavy glassmorphism as structure.
 
+## Full-bleed photos & overlays — the `-z-10` gotcha
+
+A full-bleed hero photo (or the grain overlay above) placed *behind* content with **`-z-10`** silently
+**vanishes to black** if its section doesn't form a stacking context: a negative z-index resolves against
+the nearest stacking context, so on a transparent `relative` section it sinks *behind the page's own
+background* (`bg-page` on `<body>`) and disappears. Real, easy-to-miss bug — the `<img>` loads fine, it's
+just painted under the page. Fix with one of:
+- Add **`isolate`** (`isolation:isolate`) to the section → `-z-10` children stay local, behind the content
+  but in front of the page bg. (Simplest.)
+- Or layer explicitly: background `<img>`/overlay at **`z-0`**, content wrapper at **`relative z-10`** — no
+  negative z at all.
+
+Then a **light** scrim for legibility (e.g. `from-page/55 via-transparent to-page` + a soft radial pool
+behind the headline) — keep it light so the photo actually reads. A rich anchor shows its hero photo
+prominently; don't bury it under an 85% scrim.
+
 ## Components (principles, not rigid templates — templates breed sameness)
 
 - **Buttons:** primary (accent) + secondary (ghost/outline), real hover/active/focus, specific labels.
