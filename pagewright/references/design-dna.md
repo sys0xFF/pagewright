@@ -68,7 +68,9 @@ it every time. The one thing that beats a prior is building from a *specific rea
 **5. Rotate the anchor (ledger).** Two pages must never share an anchor. Before you commit, recall what
    you anchored on recently; if it's the same site *or the same composition archetype*, switch. Within a
    niche especially: not every fintech page anchors on Stripe, not every health page on Oura — spread the
-   load across the shortlist. (Building several pages at once? Assign each a *different* anchor up front.)
+   load across the shortlist. **Building several at once (a batch / parallel agents)?** Parallel builders
+   are blind to each other, so they collide on the trendy default (everyone reaches for Geist). Assign each
+   a *different* **anchor, display-font family, AND accent** up front — don't let two siblings share a face.
 
 This is how you escape the prior: you build from a real page's bones, not from memory.
 
