@@ -4,60 +4,60 @@
 
 # Pagewright
 
-**Design-grade landing pages, generated — not templated.**
+**Landing pages de nível design, geradas — não templadas.**
 
-A skill for [Claude Code](https://claude.com/claude-code) that turns a one-line brief into an original,
-modern landing page — static HTML + Tailwind, opens in any browser.
-Built to do the one thing AI website tools fail at: *not look generic.*
+Uma skill para o [Claude Code](https://claude.com/claude-code) que transforma um brief de uma linha numa
+landing page original e moderna — HTML + Tailwind estáticos, abre em qualquer navegador.
+Feita pra fazer a única coisa que as ferramentas de "site com IA" erram: *não parecer genérica.*
 
 </div>
 
 ---
 
-## Gallery
+## Galeria
 
 <table>
 <tr>
-<td width="33%"><img src="examples/atlas/screenshot.jpg" alt="Atlas" /><br/><sub><b>Atlas</b> — treasury & banking</sub></td>
-<td width="33%"><img src="examples/lumira/screenshot.jpg" alt="Lumira" /><br/><sub><b>Lumira</b> — botanical skincare</sub></td>
-<td width="33%"><img src="examples/brule/screenshot.jpg" alt="Brûle" /><br/><sub><b>Brûle</b> — hot sauce</sub></td>
+<td width="33%"><img src="examples/atlas/screenshot.jpg" alt="Atlas" /><br/><sub><b>Atlas</b> — tesouraria & banking</sub></td>
+<td width="33%"><img src="examples/lumira/screenshot.jpg" alt="Lumira" /><br/><sub><b>Lumira</b> — skincare botânico</sub></td>
+<td width="33%"><img src="examples/brule/screenshot.jpg" alt="Brûle" /><br/><sub><b>Brûle</b> — molho picante</sub></td>
 </tr>
 <tr>
-<td><img src="examples/forge/screenshot.jpg" alt="Forge" /><br/><sub><b>Forge</b> — desktop CNC</sub></td>
-<td><img src="examples/northwind/screenshot.jpg" alt="Northwind" /><br/><sub><b>Northwind</b> — support analytics</sub></td>
-<td><img src="examples/pageboard/screenshot.jpg" alt="Pageboard" /><br/><sub><b>Pageboard</b> — visual CMS</sub></td>
+<td><img src="examples/forge/screenshot.jpg" alt="Forge" /><br/><sub><b>Forge</b> — CNC de mesa</sub></td>
+<td><img src="examples/northwind/screenshot.jpg" alt="Northwind" /><br/><sub><b>Northwind</b> — analytics de suporte</sub></td>
+<td><img src="examples/pageboard/screenshot.jpg" alt="Pageboard" /><br/><sub><b>Pageboard</b> — CMS visual</sub></td>
 </tr>
 <tr>
-<td><img src="examples/aegis/screenshot.jpg" alt="Aegis" /><br/><sub><b>Aegis</b> — EDR security</sub></td>
-<td><img src="examples/cortex/screenshot.jpg" alt="Cortex" /><br/><sub><b>Cortex</b> — product analytics</sub></td>
-<td><img src="examples/relay/screenshot.jpg" alt="Relay" /><br/><sub><b>Relay</b> — webhook delivery</sub></td>
+<td><img src="examples/aegis/screenshot.jpg" alt="Aegis" /><br/><sub><b>Aegis</b> — segurança EDR</sub></td>
+<td><img src="examples/cortex/screenshot.jpg" alt="Cortex" /><br/><sub><b>Cortex</b> — analytics de produto</sub></td>
+<td><img src="examples/relay/screenshot.jpg" alt="Relay" /><br/><sub><b>Relay</b> — entrega de webhooks</sub></td>
 </tr>
 </table>
 
-<sub>Each built from a one-line brief. Open any <a href="examples/"><code>examples/&lt;name&gt;/index.html</code></a> in a browser.</sub>
+<sub>Cada uma a partir de um brief de uma linha. Abra qualquer <a href="examples/"><code>examples/&lt;nome&gt;/index.html</code></a> no navegador.</sub>
 
 ---
 
-## How it dodges the slop
+## Como ela escapa do "slop"
 
-🎯 **Anchors on ONE real page** — routes your niche to a curated library of **267 real sites** (with full-page captures) and copies the *real* structure, not the model's average.
+🎯 **Ancora em UMA página real** — roteia o seu nicho para uma biblioteca curada de **267 sites reais** (com capturas de página inteira) e copia a estrutura *de verdade*, não a média do modelo.
 
-🛠️ **Builds the product in HTML/CSS** — dashboards, tables, charts, code, hand-built like Linear, Stripe and Attio. Physical objects and photography are generated (Gemini) or fetched (Unsplash).
+🛠️ **Constrói o produto em HTML/CSS** — dashboards, tabelas, gráficos, código, à mão como Linear, Stripe e Attio fazem. Objetos físicos e fotografia são gerados (Gemini) ou buscados (Unsplash).
 
-🎨 **Fights convergence** — per-build assignment of page archetype, typeface, colour and micro-grammar so two pages never rhyme.
+🎨 **Combate a convergência** — atribuição por build de arquétipo de página, tipografia, cor e micro-gramática, para que duas páginas nunca rimem.
 
-## Install
+## Instalação
 
 ```bash
 cp -r pagewright ~/.claude/skills/pagewright
 ```
 
-Then just describe a product:
+Depois é só descrever um produto:
 
-> Build a landing page for **Atlas**, a treasury & banking platform for startups.
+> Cria uma landing page para a **Atlas**, uma plataforma de tesouraria e banking para startups.
 
-It asks whether to guide the look or just decide, then ships a complete, runnable page.
+Ela pergunta se você quer guiar o visual ou se ela mesma decide, e entrega uma página completa e funcional.
 
-## License
+## Licença
 
-[MIT](LICENSE) · reference thumbnails belong to their respective owners.
+[MIT](LICENSE) · os thumbnails de referência pertencem aos seus respectivos donos.

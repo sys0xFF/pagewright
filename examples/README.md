@@ -1,18 +1,19 @@
-# Examples
+# Exemplos
 
-Landing pages built by Pagewright from a one-line brief — originals, not clones. Open any `index.html`
-directly in a browser. Each anchors on a real reference site and copies its *structure*, then re-skins it.
+Landing pages construídas pela Pagewright a partir de um brief de uma linha — originais, não clones. Abra
+qualquer `index.html` direto no navegador. Cada uma ancora num site de referência real e copia a *estrutura*
+dele, depois re-skinna.
 
-| Page | Brief | Anchor · approach |
+| Página | Brief | Âncora · abordagem |
 |---|---|---|
-| **Atlas** | treasury & banking for startups | mercury.com · cinematic photo hero + a hand-built balance dashboard, rich Mercury-grade density |
-| **Lumira** | small-batch botanical skincare | aesop.com · editorial long-read, full-bleed botanical photography, Newsreader serif |
-| **Brûle** | a hot sauce that refuses to be "artisanal" | liquiddeath.com · bold-loud manifesto, Anton coverline, delayed product reveal |
-| **Forge** | a desktop CNC machine for makers | oxide.computer · technical spec-sheet, generated product render + a built spindle readout |
-| **Northwind** | a support-analytics console | linear.app · app-frame, a hand-built support-ops dashboard (KPIs, chart, CSAT gauge) |
-| **Pageboard** | a visual CMS where the page is the editor | linear.app · product tour, a built live-editor UI as the hero |
-| **Aegis** | an EDR platform for security teams | a dark "war-room" console, attack-path radar + streaming detection feed |
-| **Cortex** | a product-analytics platform for PMs | a warm-light analyst's terminal, funnel + retention cohort grid |
-| **Relay** | a developer platform for webhook delivery | a graphite split-flap event board + request-log + payload inspector |
+| **Atlas** | tesouraria & banking para startups | mercury.com · hero com foto cinematográfica + um dashboard de saldo construído à mão, densidade rica nível Mercury |
+| **Lumira** | skincare botânico em pequenos lotes | aesop.com · editorial long-read, fotografia botânica full-bleed, serif Newsreader |
+| **Brûle** | um molho picante que se recusa a ser "artesanal" | liquiddeath.com · manifesto bold-loud, coverline Anton, revelação atrasada do produto |
+| **Forge** | uma fresadora CNC de mesa para makers | oxide.computer · spec-sheet técnico, render de produto gerado + um leitor de spindle construído |
+| **Northwind** | um console de analytics de suporte | linear.app · app-frame, um dashboard de operações de suporte construído à mão (KPIs, gráfico, gauge de CSAT) |
+| **Pageboard** | um CMS visual onde a página é o editor | linear.app · product tour, uma UI de editor ao vivo construída como hero |
+| **Aegis** | uma plataforma EDR para times de segurança | um console "war-room" escuro, radar de caminho de ataque + feed de detecção em streaming |
+| **Cortex** | uma plataforma de analytics de produto para PMs | um terminal de analista warm-light, funil + grade de cohorts de retenção |
+| **Relay** | uma plataforma de entrega de webhooks para devs | um painel split-flap grafite + log de requisições + inspetor de payload |
 
-Each folder has the generated `index.html`, its `assets/`, and a `screenshot.jpg`.
+Cada pasta tem o `index.html` gerado, seus `assets/` e um `screenshot.jpg`.
