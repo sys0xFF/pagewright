@@ -40,11 +40,11 @@ Feita pra fazer a única coisa que as ferramentas de "site com IA" erram: *não 
 
 ## Como ela escapa do "slop"
 
-🎯 **Ancora em UMA página real** — roteia o seu nicho para uma biblioteca curada de **267 sites reais** (com capturas de página inteira) e copia a estrutura *de verdade*, não a média do modelo.
+**Ancora em UMA página real** — roteia o seu nicho para uma biblioteca curada de **267 sites reais** (com capturas de página inteira) e copia a estrutura *de verdade*, não a média do modelo.
 
-🛠️ **Constrói o produto em HTML/CSS** — dashboards, tabelas, gráficos, código, à mão como Linear, Stripe e Attio fazem. Objetos físicos e fotografia são gerados (Gemini) ou buscados (Unsplash).
+**Constrói o produto em HTML/CSS** — dashboards, tabelas, gráficos, código, à mão como Linear, Stripe e Attio fazem. Objetos físicos e fotografia são gerados (Gemini) ou buscados (Unsplash).
 
-🎨 **Combate a convergência** — atribuição por build de arquétipo de página, tipografia, cor e micro-gramática, para que duas páginas nunca rimem.
+**Combate a convergência** — atribuição por build de arquétipo de página, tipografia, cor e micro-gramática, para que duas páginas nunca rimem.
 
 ## Instalação
 
