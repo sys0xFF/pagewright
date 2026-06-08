@@ -154,10 +154,12 @@ These override any individual instruction. When a choice is unclear, optimize fo
   structurally, you reverted. (Full procedure in design-dna.md; page shapes in section-patterns.md.)
 - **Real words.** Write copy a founder would actually ship. Concrete nouns, real benefits, a voice that
   matches the product's mood. No lorem ipsum in anything you show the user.
-- **Say less.** Real product landings are concise — aim for ~5–7 sections, one idea each, hero subhead of a
-  single sentence. A long everything-page with three-card grids reads as AI-generated; cut sections and copy
-  to the bone and let whitespace + one strong visual carry the argument. When unsure, cut. (See
-  section-patterns.md → Length & restraint.)
+- **No filler — but match the anchor's density.** Restraint means cutting *filler*, not building *few*
+  sections. Length is **anchor-relative**: a minimal anchor (Vercel) gets a minimal page; a rich, dense one
+  (Mercury, Stripe, Aesop — real photography, several distinct visuals, image-card grids, carousels, a stat
+  row) gets a rich page — copy that density, generate the photos, vary the section *type*. Cut redundant
+  copy and filler beats; never strip a lush page down to a flat stack of text panels (that reads as
+  simplistic, and it's half the anchor's height). (See section-patterns.md → Length & density.)
 - **No decorative mono.** Monospace is banned as a design face (eyebrows, labels, numbers, data, UI chrome)
   — it's an ugly, dated tell; use the grotesque body with tabular-nums for figures. Mono only ever appears
   inside a literal code/terminal snippet. (See design-dna.md.)

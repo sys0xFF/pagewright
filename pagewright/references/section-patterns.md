@@ -54,22 +54,31 @@ sequence, quirks and all; don't normalise it back to the arc).
 Rule: **name your page archetype before you write markup**, make it different from your last build, and let
 the anchor's real structure — not this list or the arc — dictate the actual sections.
 
-## Length & restraint — real product pages are SHORT
+## Length & density — match the anchor; cut filler, not richness
 
-The default failure mode is a long everything-page that explains every feature in three-card grids. Real,
-confident product landings are **concise** — they say less, trust whitespace, and let one strong visual
-carry the argument. A wall of sections and copy reads as "AI-generated", not "shipped by a senior team."
+Restraint means **no filler** — NOT **few sections**. The trap cuts both ways, and both are real failures of
+this skill: early builds bloated into a generic everything-page; a later over-correction toward "be short"
+stripped a *rich* anchor (Mercury — a dense ~15-section page with a cinematic photo hero, a detailed product
+dashboard, two 2×2 image-card grids, a testimonial carousel, a stat row, news cards, footnoted disclosures)
+down to a flat 7-section skeleton of text panels that read as **simplistic**, not confident.
 
-- **Aim for ~5–7 sections, not 11.** Hero → one proof beat → 2–3 feature beats → CTA → footer is already a
-  complete page; add pricing + FAQ and you're done. More sections is almost never the fix.
-- **One idea per section.** If a section makes two arguments, keep the stronger and cut the other.
-- **Cut copy to the bone.** A hero subhead is ONE sentence, not three. A feature blurb is 1–2 lines. If a
-  sentence won't change the reader's mind, delete it. Founders ship *"Issue cards. Decide every swipe."* —
-  not a paragraph. Whitespace + a real visual persuade more than more words.
-- **No filler beats.** Skip the generic "Why choose us", the redundant benefit grid, the second testimonial
-  wall, the over-explained how-it-works. Every section must earn its scroll.
-- **When unsure, cut.** The strongest pages are often one screen plus a little. Shorter almost always reads
-  as more confident.
+The rule is **anchor-relative**: a page is as long and as dense as the page it's anchored on — no more, no less.
+
+- **Minimal anchor → minimal page.** Vercel, cohere, a one-screen launch: don't pad it with a problem
+  section, a stat row, and a testimonial wall it doesn't have.
+- **Rich anchor → rich page.** Mercury, Stripe, Aesop are *dense*: real photography, several distinct product
+  visuals, image-backed feature cards, carousels, footnoted detail, varied section treatments. **Copy that
+  density** — generate the photos, build several different visuals, vary the section *type*. A flat stack of
+  text panels is not a faithful copy of a lush page; it's the simplistic tell, and it's half the height.
+- **Cut FILLER, keep RICHNESS.** Filler = a redundant benefit grid, a second testimonial wall, an
+  over-explained step, a sentence that won't change a mind. Richness = real imagery, distinct product
+  surfaces, the proof a real page carries. Cut the first; never strip the second to hit a section count.
+- **Vary the section TYPE, not just the copy.** Each beat should be its own *kind* of thing — a photo beat, a
+  built UI, an image-card grid, a carousel, a stat band, a pull-quote, a news row. The same flat panel
+  repeated reads as simplistic even at the right length.
+
+Self-check: if your page is roughly half the height of its anchor and every section is a flat text panel,
+you **under-built** it — go back and match the anchor's richness.
 
 ## Current section menu (from a ~670-example survey of live SaaS sites)
 
