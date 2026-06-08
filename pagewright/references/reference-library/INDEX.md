@@ -1,11 +1,11 @@
 # Reference Library — index
 
-**213 curated SaaS landing pages**, distilled into design intelligence to remix. This is reference material, not copy-paste source — see [../design-dna.md](../design-dna.md) for the anti-copy rule.
+**267 curated landing pages — SaaS *and* consumer brands** (health, nature, food, education, beauty, fitness, home, travel), distilled into design intelligence to remix. This is reference material, not copy-paste source — see [../design-dna.md](../design-dna.md) for the anti-copy rule.
 
 ## How to use
-1. Match the intake **mood + niche** against the tables below.
-2. Open **3–5 entries** (ideally spanning 2+ moods) and harvest specific cues.
-3. Recombine in your Design DNA — borrow bold moves, never a whole site.
+1. Find your **niche** in **By niche** and your **mood** in **By mood**; take the 3–5 sites at that intersection. *Niche not here?* Route by **composition** instead (see the composition archetypes in design-dna.md) — a non-tech brief can faithfully borrow the bones of any page with the right shape.
+2. **LOOK at the thumbnails** (`Read` the `.jpg`s) — the pixels calibrate you far better than the prose.
+3. **Anchor on ONE** for structure (transcribe its section sequence), and remix the **skin** from the others. Structure from one (faithfully), skin from the rest — clone nobody. Rotate the anchor so two pages never share a spine.
 
 Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genre-breaking signature, imagery, copy voice, and steal-able takeaways, with a thumbnail.
 
@@ -80,7 +80,7 @@ Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genr
 | [wandb.ai](entries/wandb.ai.md) | q8 | ai | dark, mono-type, bold-loud | The hero headline literally edits itself: "AI is hard to production... |
 | [wope.com](entries/wope.com.md) | q8 | dev-tools / SEO analytics (marketing SaaS) | dark, gradient, 3d, glass | The hero stages a glowing 3D "horizon" — a purple light source erup... |
 
-### clean-light (68)
+### clean-light (80)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
@@ -152,8 +152,20 @@ Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genr
 | [short.io](entries/short.io.md) | q7 | dev-tools | minimal, mono-type | A live interactive product demo embedded directly in the hero — a r... |
 | [shortcut.com](entries/shortcut.com.md) | q7 | dev-tools (project management / issue tracking for software teams) | minimal, mono-type, bold | The hero headline's second line ('Plan & Build Products') sits insi... |
 | [tripsuite.com](entries/tripsuite.com.md) | q7 | dev-tools (vertical SaaS — travel-agency CRM/back-office) | minimal, gradient, photographic | A pure-white, near-empty hero where the giant left-aligned headline... |
+| [whoop.com](entries/whoop.com.md) | new | health | photographic, minimal, lifestyle, product-led | The headline is set in enormous white type that wraps to f... |
+| [calm.com](entries/calm.com.md) | new | health | photographic, serene, rounded, friendly | The fold is split into two distinct halves: the top ~60% i... |
+| [publicgoods.com](entries/publicgoods.com.md) | new | nature | minimal, photographic, editorial, product-forward | The hero is built as two horizontal "glass shelves" with a... |
+| [dailyharvest.com](entries/dailyharvest.com.md) | new | food | editorial, photographic, minimal, warm-neutral | The headline mixes upright and italic inside one phrase —... |
+| [huel.com](entries/huel.com.md) | new | food | clean, photographic, editorial, grid | The hero replaces a single hero image with a row of four e... |
+| [brilliant.org](entries/brilliant.org.md) | new | education | rounded, friendly, photographic, card-based | The hero stages a real photograph of a kid mid-"aha" (mout... |
+| [khanacademy.org](entries/khanacademy.org.md) | new | education | photographic, friendly, illustrative-accents | The hero photo of a smiling kid in teal glasses is masked... |
+| [speak.com](entries/speak.com.md) | new | education | clean, photographic, friendly, product-ui | The hero visual is a staged product moment, not a hero sho... |
+| [glossier.com](entries/glossier.com.md) | new | beauty | minimal, photographic, editorial | The hero is split into two near-full-height photo panels o... |
+| [youthtothepeople.com](entries/youthtothepeople.com.md) | new | beauty | photographic, editorial, sage-toned, minimal | The whole fold is one flat-lay product photograph on a mut... |
+| [opendoor.com](entries/opendoor.com.md) | new | home | photographic, lifestyle, friendly, consumer | The fold is a single edge-to-edge candid photograph of a r... |
+| [awaytravel.com](entries/awaytravel.com.md) | new | travel | photographic, editorial, lifestyle, e-commerce | The hero is a warm, naturalistic lifestyle photograph — ov... |
 
-### editorial-minimal (22)
+### editorial-minimal (28)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
@@ -179,8 +191,14 @@ Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genr
 | [maze.co](entries/maze.co.md) | q8 | design (user research / UX testing platform) | minimal, editorial, photographic, colorful | The hero headline is set newspaper-huge (spanning nearly the full c... |
 | [relace.ai](entries/relace.ai.md) | q8 | dev-tools (AI infrastructure / models for coding agents) | editorial-minimal, photographic, mono-type, warm | Dev-tools pages default to dark terminals and neon-on-black; this o... |
 | [strut.so](entries/strut.so.md) | q8 | productivity | minimal, mono-type, photographic | A giant monospaced headline set on a warm putty-beige paper canvas,... |
+| [levelshealth.com](entries/levelshealth.com.md) | new | health | photographic, dark-overlay, editorial, serif-led | The entire fold is a single de-saturated, heavily darkened... |
+| [patagonia.com](entries/patagonia.com.md) | new | nature | photographic, full-bleed, editorial, minimal-chrome | A single full-bleed editorial photograph fills the entire... |
+| [tentree.com](entries/tentree.com.md) | new | nature | photographic, minimal, editorial, earthy | The hero is a full-bleed, desaturated *moody coastal photo... |
+| [notpla.com](entries/notpla.com.md) | new | nature | photographic, editorial, minimal, organic | The fold inverts the usual hero hierarchy: a tiny centered... |
+| [typology.com](entries/typology.com.md) | new | beauty | minimal, photographic, editorial, macro | The hero is one enormous macro photograph of the actual se... |
+| [meritbeauty.com](entries/meritbeauty.com.md) | new | beauty | minimal, photographic, editorial, off-white | The headline "Spring | Summer 2026 Collection" is set in a... |
 
-### premium-luxe (14)
+### premium-luxe (21)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
@@ -198,8 +216,15 @@ Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genr
 | [rootly.com](entries/rootly.com.md) | q8 | devops | photographic, gradient, glass | A full-bleed photographic mountain-at-golden-hour backdrop (lavende... |
 | [superhuman.com](entries/superhuman.com.md) | q8 | productivity | gradient, photographic, dark | The whole page floats inside one continuous twilight gradient-mesh ... |
 | [turn.io](entries/turn.io.md) | q8 | healthtech | dark, photographic, colorful | Floating live-chat UI chips (greeting bubble + PDF prescription pil... |
+| [ouraring.com](entries/ouraring.com.md) | new | health | photographic, editorial, minimal, product-hero | The hero is a macro product still-life shot, not a render:... |
+| [eightsleep.com](entries/eightsleep.com.md) | new | health | photographic, warm, cinematic, minimal | The hero is a real bedroom photograph staged like a furnit... |
+| [aesop.com](entries/aesop.com.md) | new | beauty | photographic, editorial, atmospheric, restrained | The entire fold is a single dim, moody studio photograph o... |
+| [tonal.com](entries/tonal.com.md) | new | fitness | photographic, monochrome, condensed, product-led | The fold is staged as a desaturated, near-monochrome photo... |
+| [aloyoga.com](entries/aloyoga.com.md) | new | fitness | editorial, photographic, minimal, warm-neutral | The hero is built as a triptych of three separate fashion... |
+| [future.co](entries/future.co.md) | new | fitness | photographic, editorial, app-ui, cinematic | A real iPhone mock floats half-out of the fold, screen lit... |
+| [monos.com](entries/monos.com.md) | new | travel | minimal, photographic, monochrome, editorial | The entire hero is one editorial fashion photograph — a mo... |
 
-### bold-loud (20)
+### bold-loud (29)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
@@ -223,8 +248,17 @@ Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genr
 | [snowflake.com](entries/snowflake.com.md) | q8 | data-ai (enterprise data cloud / data warehousing) | dark, photographic, cinematic, mono-type | The hero is built entirely from a low-poly, geometric mountain-rang... |
 | [studio.design](entries/studio.design.md) | q8 | design | colorful, bento | The hero IS a wall of customer sites — overlapping, color-clashing ... |
 | [taxfix.de](entries/taxfix.de.md) | q8 | fintech | colorful, mono-type, minimal | A full-bleed acid-lime canvas owns the entire hero — instead of the... |
+| [liquiddeath.com](entries/liquiddeath.com.md) | new | food | maximal, photographic, heavy-metal, irreverent | A full-bleed split-screen photo hero — wholesome suburban... |
+| [omsom.com](entries/omsom.com.md) | new | food | maximalist, photographic, retro, saturated | The hero isn't a clean studio shot — it's a styled, slight... |
+| [magicspoon.com](entries/magicspoon.com.md) | new | food | vibrant, retro-pop, candy-bright, illustrated | The hero stages an actual tilted cereal box — a vivid char... |
+| [immieats.com](entries/immieats.com.md) | new | food | photographic, saturated, retro-pop, appetite-forward | The whole hero is built on a near-fluorescent taxi-yellow... |
+| [masterclass.com](entries/masterclass.com.md) | new | education | dark, condensed, photographic, editorial | Instead of one hero shot, the right two-thirds is a tiled... |
+| [synthesis.com](entries/synthesis.com.md) | new | education | vivid, gradient, product-ui, friendly | The fold is split: a flat, oversized text promise on the l... |
+| [gymshark.com](entries/gymshark.com.md) | new | fitness | photographic, gritty, athletic, editorial | The hero is a single full-bleed, grainy gym-floor photogra... |
+| [onepeloton.com](entries/onepeloton.com.md) | new | fitness | dark, photographic, product-hero, high-contrast | The fold stages the actual hardware in a dim, moody produc... |
+| [on.com](entries/on.com.md) | new | fitness | photographic, full-bleed, athletic, editorial | The fold is a single un-staged sports-photography frame —... |
 
-### warm-playful (24)
+### warm-playful (44)
 
 | site | q | niche | style | signature |
 |---|---|---|---|---|
@@ -252,6 +286,26 @@ Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genr
 | [tracky.so](entries/tracky.so.md) | q8 | productivity | illustrated, colorful, mono-type | The hero text physically wraps AROUND a live product widget and a d... |
 | [whimsical.co](entries/whimsical.co.md) | q8 | productivity | gradient, colorful | The hero gradient is a literal sunrise-over-mountains scene — a lav... |
 | [coda.io](entries/coda.io.md) | q7 | productivity | minimal, bento | A single warm peach wash floods the entire hero — no gradient, no h... |
+| [zoe.com](entries/zoe.com.md) | new | health | photographic, editorial, lifestyle, friendly | The headline is built from mixed weights and a mid-word co... |
+| [headspace.com](entries/headspace.com.md) | new | health | rounded, friendly, photographic, app-led | The hero abandons a single big visual for a TWO-CARD split... |
+| [parsleyhealth.com](entries/parsleyhealth.com.md) | new | health | photographic, editorial, warm, organic | The hero is built on a full-bleed warm-beige seamless back... |
+| [mavenclinic.com](entries/mavenclinic.com.md) | new | health | photographic, warm, editorial, lifestyle | A single word — "healthcare" — is swapped from the clean s... |
+| [allbirds.com](entries/allbirds.com.md) | new | nature | photographic, lifestyle, editorial, earthy | The entire fold is a single edge-to-edge street photograph... |
+| [parksproject.us](entries/parksproject.us.md) | new | nature | photographic, outdoorsy, editorial, lifestyle | The headline "Leave It Better For Birds and People" is set... |
+| [wearewild.com](entries/wearewild.com.md) | new | nature | photographic, friendly, e-commerce, colourful | The fold is staged as a literal lawn: real products (deodo... |
+| [oatly.com](entries/oatly.com.md) | new | food | editorial, hand-lettered, zine, off-beat | The hero swaps the expected glossy carton beauty-shot for... |
+| [graza.co](entries/graza.co.md) | new | food | photographic, lifestyle, retro-grocery, bold | A real, candid kitchen photo — a hand squeezing the iconic... |
+| [olipop.com](entries/olipop.com.md) | new | food | retro, illustrated, soda-shop, nostalgic | The hero is split down the middle: a flat forest-green pan... |
+| [jenis.com](entries/jenis.com.md) | new | food | photographic, warm, retail, appetite-driven | The hero is a tightly cropped lifestyle photo — a bearded... |
+| [duolingo.com](entries/duolingo.com.md) | new | education | illustrated, rounded, friendly, mascot-led | A loose, off-grid pile of cartoon characters — the green o... |
+| [skillshare.com](entries/skillshare.com.md) | new | education | colorful, photographic, friendly, signup-forward | The fold is split: a clean white left column with the head... |
+| [kosas.com](entries/kosas.com.md) | new | beauty | photographic, candy-pastel, editorial, retail-shelf | The "hero" you land on is actually a full-bleed lifestyle... |
+| [mytopicals.com](entries/mytopicals.com.md) | new | beauty | photographic, editorial, candid, warm | The fold is built around a gamified "scratch-to-win" modal... |
+| [floydhome.com](entries/floydhome.com.md) | new | home | photographic, editorial, lifestyle, minimal | The whole fold is one un-styled, sun-flooded room photo sh... |
+| [burrow.com](entries/burrow.com.md) | new | home | photographic, lifestyle, editorial, warm | The whole fold is one immersive outdoor-living lifestyle p... |
+| [article.com](entries/article.com.md) | new | home | photographic, editorial, lifestyle, warm | The headline and CTA sit dead-center, low in the frame, di... |
+| [blockrenovation.com](entries/blockrenovation.com.md) | new | home | photographic, editorial, lifestyle, warm | The headline is set in towering all-caps condensed type la... |
+| [ourplace.com](entries/ourplace.com.md) | new | home | photographic, warm, editorial, lifestyle | The hero is a tight, softly-lit lifestyle photograph of gl... |
 
 ### other (1)
 
@@ -335,3 +389,11 @@ Each entry (`entries/<domain>.md`) has palette, type, section sequence, the genr
 - **data-tools** (1): [motherduck.com](entries/motherduck.com.md)
 - **dev-tools (Laravel CMS / content management)** (1): [statamic.com](entries/statamic.com.md)
 - **hr-tech (employee benefits / compensation & rewards platform)** (1): [tedy.app](entries/tedy.app.md)
+- **health** (9): [ouraring.com](entries/ouraring.com.md), [eightsleep.com](entries/eightsleep.com.md), [whoop.com](entries/whoop.com.md), [levelshealth.com](entries/levelshealth.com.md), [zoe.com](entries/zoe.com.md), [calm.com](entries/calm.com.md), [headspace.com](entries/headspace.com.md), [parsleyhealth.com](entries/parsleyhealth.com.md), [mavenclinic.com](entries/mavenclinic.com.md)
+- **nature** (7): [patagonia.com](entries/patagonia.com.md), [allbirds.com](entries/allbirds.com.md), [tentree.com](entries/tentree.com.md), [notpla.com](entries/notpla.com.md), [publicgoods.com](entries/publicgoods.com.md), [parksproject.us](entries/parksproject.us.md), [wearewild.com](entries/wearewild.com.md)
+- **food** (10): [oatly.com](entries/oatly.com.md), [liquiddeath.com](entries/liquiddeath.com.md), [graza.co](entries/graza.co.md), [omsom.com](entries/omsom.com.md), [magicspoon.com](entries/magicspoon.com.md), [olipop.com](entries/olipop.com.md), [immieats.com](entries/immieats.com.md), [jenis.com](entries/jenis.com.md), [dailyharvest.com](entries/dailyharvest.com.md), [huel.com](entries/huel.com.md)
+- **education** (7): [duolingo.com](entries/duolingo.com.md), [brilliant.org](entries/brilliant.org.md), [masterclass.com](entries/masterclass.com.md), [khanacademy.org](entries/khanacademy.org.md), [skillshare.com](entries/skillshare.com.md), [synthesis.com](entries/synthesis.com.md), [speak.com](entries/speak.com.md)
+- **beauty** (7): [aesop.com](entries/aesop.com.md), [glossier.com](entries/glossier.com.md), [typology.com](entries/typology.com.md), [meritbeauty.com](entries/meritbeauty.com.md), [kosas.com](entries/kosas.com.md), [youthtothepeople.com](entries/youthtothepeople.com.md), [mytopicals.com](entries/mytopicals.com.md)
+- **fitness** (6): [gymshark.com](entries/gymshark.com.md), [tonal.com](entries/tonal.com.md), [aloyoga.com](entries/aloyoga.com.md), [future.co](entries/future.co.md), [onepeloton.com](entries/onepeloton.com.md), [on.com](entries/on.com.md)
+- **home** (6): [floydhome.com](entries/floydhome.com.md), [burrow.com](entries/burrow.com.md), [article.com](entries/article.com.md), [opendoor.com](entries/opendoor.com.md), [blockrenovation.com](entries/blockrenovation.com.md), [ourplace.com](entries/ourplace.com.md)
+- **travel** (2): [awaytravel.com](entries/awaytravel.com.md), [monos.com](entries/monos.com.md)

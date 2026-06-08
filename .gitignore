@@ -1,6 +1,10 @@
 # research / build pipeline — not part of the shipped skill
 _research/
 
+# one-time thumbnail-capture tooling (Playwright + Edge) — not shipped; only its JPEG output ships
+_authoring/
+_thumbtest/
+
 # raw demo builds (curated copies live in examples/)
 saas-landing-workspace/
 

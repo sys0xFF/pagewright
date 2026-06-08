@@ -95,6 +95,35 @@ Generation is **off by default**. Offer it; if the user wants it AND a generator
 
 Either way the page is complete and runnable. Generation is an enhancement, never a dependency.
 
+## Optional: fetch a real photo — Unsplash (opt-in)
+
+Some slots want a *real photograph*, not a render: a full-bleed cinematic landscape behind the hero
+(the **full-bleed-photo** composition archetype — see design-dna.md), an organic texture (fog, stone,
+paper, foliage, water), an editorial still life. Generation can fake these but real photography often
+reads truer and costs nothing to generate. Use **`scripts/fetch_unsplash.py`** (off by default; needs a
+free `UNSPLASH_ACCESS_KEY`). It searches by a mood query, downloads a sized JPEG, registers the download
+and writes the required attribution to `UNSPLASH-CREDITS.md`.
+
+**Taste guards (the script can't enforce these — you must):**
+- **Place, object, texture, abstraction — not people.** Landscapes, skies, water, foliage, stone/paper/
+  fabric, macro detail, architecture, hands/craft, ingredients shot editorially. A photo with *people as
+  the subject* almost always reads as stock ("diverse team at laptops") — the exact slop this skill avoids.
+- **Always grade it** so it belongs to the page and not to a stock library: a duotone/colour overlay in
+  the Design DNA palette, a grain layer, and a gradient scrim for text contrast. The script prints a
+  copy-paste grade snippet. An ungraded raw stock photo is a tell; a hard-graded one can be the signature.
+- **Pick deliberately.** Pass a specific, moody query ("low fog over black volcanic rock, muted, no
+  people"), and use `--index` to step past the obvious first result if it's too generic.
+- **Pairs with Nano Banana, doesn't replace it.** Real photo for place/texture; generate for 3D/product/
+  illustration. Build product UI in HTML/CSS as always (the #1 rule above).
+
+```bash
+python scripts/fetch_unsplash.py --query "low fog over pine forest at dawn, muted, no people" \
+    --out assets/images/hero-bg.jpg --orientation landscape --width 1600
+```
+
+No key / declined? The dimensioned placeholder IS the fallback, and you can hand the user the same query
+to grab a photo by hand. The page stays complete and runnable.
+
 ## Current asset choices (so it doesn't look dated)
 
 - **Icons — use a multi-weight set, matched to the page's shape language:** Phosphor, Iconoir, or
@@ -106,7 +135,9 @@ Either way the page is complete and runnable. Generation is an enhancement, neve
   Open Peeps, Storyset, ManyPixels) or generic isometric "servers & connectivity" tech scenes — both are
   dead giveaways abandoned by real brands.
 - **Photography — real over stock.** Founder/team/product photos with a consistent grade beat
-  "diverse team at laptops" stock. If none exist, prefer product UI or 3D over a stock photo.
+  "diverse team at laptops" stock. If none exist, prefer product UI or 3D over a stock *people* photo —
+  but a graded editorial **place/texture** photo (landscape, fog, stone, foliage) is fair game and often
+  beautiful: fetch it with `scripts/fetch_unsplash.py` and grade it (see the Unsplash section above).
 - **Texture beats sheen.** A little grain/noise over a muted background reads more human and current than
   a hyper-perfect, glossy, shadow-soft AI surface.
 

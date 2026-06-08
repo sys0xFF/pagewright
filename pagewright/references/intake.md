@@ -20,12 +20,19 @@ Then branch.
 Gather only the irreducible minimum, then commit. You need three things; infer or invent the rest.
 
 1. **What is it?** — the product in one or two sentences (what it does, for whom).
-2. **Who's it for?** — the primary visitor (developers? founders? designers? ops teams? consumers?).
+2. **Who's it for?** — the primary visitor (developers? founders? clinicians? parents? athletes? shoppers?).
 3. **One action** — the single thing you want a visitor to do (start free, book a demo, join waitlist,
    download). This becomes the primary CTA and shapes the whole page.
 
+You also need a fourth thing you can usually *infer* without asking: the **niche / context** — the world
+this product lives in (health, fintech, dev-tools, nature/outdoors, food & beverage, education, beauty,
+fitness, real estate, travel…). You don't ask for it, you *name* it — because it's the routing key that
+picks which reference you anchor on in Design DNA. A health brand and a dev-tool should never start from
+the same reference. Write it down.
+
 If the user gave you a product description already, you may have all three — don't re-ask. Confirm your
-read in one line ("Got it — a *X* for *Y*, goal is *Z*. Designing now.") and proceed to Design DNA.
+read in one line ("Got it — a *X* for *Y* in the *<niche>* space, goal is *Z*. Designing now.") and
+proceed to Design DNA.
 
 In this mode, **make bold, specific choices**. A confident opinionated page the user can react to beats
 a safe generic one. Pick a clear mood and commit to it.
@@ -39,7 +46,9 @@ deeper into tiers 2–3 if the user wants more control or the design needs it. N
 once — that's a form, not a conversation.
 
 ### Tier 1 — essentials (always ask)
-- **Product & audience** — what it is, who it's for (as in Mode A).
+- **Product & audience** — what it is, who it's for (as in Mode A). From this, *name the niche/context*
+  yourself (health, fintech, nature, food, education, dev-tools…) — it's the reference-routing key, so
+  don't leave it vague. If the product straddles two worlds, pick the one whose *aesthetic* should win.
 - **Primary action** — the one CTA.
 - **Vibe in 2–3 words** — e.g. "clean and trustworthy", "bold and loud", "playful", "technical",
   "premium/luxury", "friendly". This seeds the mood; if they're unsure, offer 3 options with a
@@ -77,6 +86,7 @@ move to Design DNA.
 ```
 Product:        <one line>
 Audience:       <who>
+Niche/context:  <health | fintech | dev-tools | nature | food | education | beauty | fitness | … >
 Primary action: <the CTA>
 Mood (2-3 wds): <e.g. technical-dark, editorial-minimal>
 Hard constraints (brand colors/fonts/sections): <or "none — free hand">
@@ -84,4 +94,4 @@ Assets on hand (logos/metrics/screens): <or "none — placeholders">
 Control mode:   <you-decide | guide>
 ```
 
-Carry this into **design-dna.md**.
+Carry this into **design-dna.md** — the **niche/context** drives reference selection there.

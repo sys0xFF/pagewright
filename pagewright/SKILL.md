@@ -54,18 +54,20 @@ have enough — over-constraining the design makes it worse, not better.
 
 This is where pages live or die. Escape the AI prior (Inter + indigo gradient + three icon cards + mono
 eyebrows) by working in three moves: **discover a specific vibe** (a motif + an "X meets Y" brand-coordinate
-+ a per-project AVOID-list — not vague adjectives) → **LOOK at 3–5 real reference screenshots** and copy
-one's structure faithfully → **lock a Design DNA in today's vocabulary** (current fonts, tinted neutrals,
-a genre-breaking signature).
++ a per-project AVOID-list — not vague adjectives) → **route by niche, LOOK at 3–5 real reference
+screenshots, and anchor on ONE** — transcribing its section skeleton in writing before any markup → **lock
+a Design DNA in today's vocabulary** (current fonts, tinted neutrals, a genre-breaking signature).
 
 Crucial: don't just *read* the library's prose — **open the thumbnail images** (`reference-library/thumbs/
-<domain>.jpg`) with the Read tool and let your eyes calibrate to current execution. Then run the
-anti-convergence checklist before building.
+<domain>.jpg`) with the Read tool and let your eyes calibrate to current execution. The anchor's *structure*
+is your spine; the *skin* is remixed from the others (structure from ONE, skin from the rest). Rotate the
+anchor so two pages never share a spine, then run the anti-convergence checklist — structure **and**
+surface — before building.
 
-→ Read **[references/design-dna.md](references/design-dna.md)** — Vibe Discovery, the current typography &
-palette vocabulary, the look-at-real / copy-faithfully method, and the anti-convergence variety rules.
-→ Library: **[references/reference-library/INDEX.md](references/reference-library/INDEX.md)** — 213 current
-   sites by niche/mood/style; **each entry has a thumbnail to LOOK at**.
+→ Read **[references/design-dna.md](references/design-dna.md)** — Vibe Discovery, the anchor-on-one forcing
+function, composition archetypes, the current typography & palette vocabulary, and the anti-convergence rules.
+→ Library: **[references/reference-library/INDEX.md](references/reference-library/INDEX.md)** — current
+   SaaS **and consumer-brand** sites by niche/mood/style; **each entry has a thumbnail to LOOK at**.
 
 ### Step 2 — Structure & storytelling: a page is a narrative
 
@@ -103,6 +105,8 @@ assets directly; otherwise hand them the prompts to run in Nano Banana / Midjour
 prompt recipes per image type, placeholder system, and the opt-in generation flow.
 → **[scripts/gen_image.py](scripts/gen_image.py)** — optional Gemini ("Nano Banana") image generation;
 off by default, needs `GEMINI_API_KEY`.
+→ **[scripts/fetch_unsplash.py](scripts/fetch_unsplash.py)** — optional real-photo fetch (landscape/
+texture/editorial) from Unsplash; off by default, needs `UNSPLASH_ACCESS_KEY`; grade what it returns.
 → **[scripts/placeholder.py](scripts/placeholder.py)** — generate dimensioned placeholder images/SVGs.
 
 ### Step 5 — Preview & polish
@@ -133,9 +137,13 @@ These override any individual instruction. When a choice is unclear, optimize fo
   gradient, three icon cards, mono eyebrows, soft shadows, pure black/white — *is* what "AI-made" looks
   like in 2025-26. Reach for current faces (Geist, a serif-display + grotesque pairing), tinted neutrals
   (`#09090B` not `#000`), real product UI, grain. Follow the do/avoid lists in design-dna.md literally.
-- **Look at the real pixels, then vary.** Open your chosen references' thumbnails (Read the .jpgs) and copy
-  ONE's structure faithfully — fidelity beats a vague "inspired by". Then run the anti-convergence checklist
-  so no two pages rhyme: rotate typeface, accent, layout archetype, texture, icon set, and corner radius.
+- **Anchor on ONE, then vary the skin.** The convergence you're fighting is *structural* — pages rhyme
+  because they share a skeleton (eyebrow pill → accent headline → dual CTA → three stats → three cards),
+  even with different colours. Beat it by building from a real page's bones: Read your references'
+  thumbnails (the .jpgs), pick ONE anchor, **transcribe its section sequence in writing before any markup**,
+  build that spine, and remix the skin (palette/type/texture) from the *other* references. Rotate the anchor
+  every build, then self-diff your skeleton against the generic stack — if you can't say how it differs
+  structurally, you reverted. (Full procedure in design-dna.md.)
 - **Real words.** Write copy a founder would actually ship. Concrete nouns, real benefits, a voice that
   matches the product's mood. No lorem ipsum in anything you show the user.
 - **Build the product, don't placeholder it.** The fastest path to a "real product" look is to build the

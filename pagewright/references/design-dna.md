@@ -31,23 +31,69 @@ Carry the MOTIF, COORDINATE, and AVOID-LIST forward — they're as important as 
 
 ---
 
-## Move 2 — Look at the real references, and copy faithfully
+## Move 2 — Anchor on ONE real reference (the forcing function)
 
-The library (`references/reference-library/`) is 213 of the best current SaaS sites, with full
-screenshots. **Don't just read the prose entries — LOOK at the actual pixels:**
+This is the step that actually stops convergence — and it only works if you run it as a hard procedure,
+not as advice. The model's landing-page prior (**eyebrow pill → one-word-accent headline → two CTAs →
+a row of three stats → logo wall → three feature cards**) is a deep attractor; "try to vary it" loses to
+it every time. The one thing that beats a prior is building from a *specific real page's bones*. So:
 
-1. From the vibe + niche, pick **3-5 references** from `INDEX.md` (span 2+ moods to force synthesis).
-2. **Read their thumbnail images** at `reference-library/thumbs/<domain>.jpg` with the Read tool. Your
-   eyes calibrate to *current* execution far better than from text — absorb the real type, spacing,
-   color temperature, and how product UI is shown.
-3. Pick **ONE primary** reference for **structure** and **copy its bones faithfully** — the section
-   sequence, the hero composition, the grid logic, the specific signature device. Fidelity is the
-   point: a faithful structural copy that you re-skin is far better than a vague "inspired by." (The
-   user's rule: *even when copying, be faithful.*)
-4. Pull the **skin** (palette, type, motif details) from the *other* references + your vibe, so the
-   re-skinned result is nobody's clone. **Remix ≥3, clone 0 — but copy structure boldly from one.**
+**1. Route by niche → a shortlist.** Open `reference-library/INDEX.md`. Find your niche/context in the
+   **By niche** list and your mood in **By mood**; take the 3–5 sites at that intersection.
+   - *Niche not in the library?* (it covers health, fintech, dev-tools, nature, food, education, beauty,
+     fitness, home, travel and more — but not everything.) Then **route by composition, not industry**:
+     pick the **composition archetype** (below) that fits the mood and grab sites that use it, whatever
+     their sector. A meditation app can faithfully borrow the bones of an editorial-photo fashion page; a
+     farm co-op can borrow a warm-minimal CPG page. Match the *shape*, not the industry.
 
-This is how you escape the prior: you're building from a real 2025 page's bones, not from memory.
+**2. LOOK at the pixels — mandatory.** `Read` the thumbnail `.jpg` of every shortlisted site. The text
+   entry is a map; the image is the territory. Your eye calibrates to current execution — real type,
+   spacing, colour temperature, how the visual is staged — in a way prose never gives you. Skipping this
+   is the single most common way a build silently reverts to the prior.
+
+**3. Pick ONE anchor and transcribe its skeleton — in writing, before any markup.** Choose the single
+   site whose *structure* fits this product best (and that you haven't just used — see the ledger below).
+   Open its entry, read its `sections:` line, and **write out the section sequence you will build**, in
+   order, as your page's spine. This transcription *is* the forcing function: you are now building to a
+   real 2025 page's bones, not to your average.
+   > e.g. anchor = stripe.com → spine = `hero(offset-gradient-ribbon) › logo-wall › product-canvas ›
+   > 3-up-capability › scale-section › pricing-teaser › cta › footer`. You build THAT spine, re-skinned.
+
+**4. Skin from the others — never from the anchor.** Pull palette, type, texture and motif from the
+   *other* shortlisted sites + your vibe. This resolves the apparent contradiction in this skill:
+   **structure from ONE (faithfully), skin from the rest (remixed).** The result clones no one — its
+   surface is recombined — yet has a real spine, because its structure is faithfully one page's. Remix
+   ≥3, clone 0, and copy structure boldly from the one. *Even when copying, be faithful.*
+
+**5. Rotate the anchor (ledger).** Two pages must never share an anchor. Before you commit, recall what
+   you anchored on recently; if it's the same site *or the same composition archetype*, switch. Within a
+   niche especially: not every fintech page anchors on Stripe, not every health page on Oura — spread the
+   load across the shortlist. (Building several pages at once? Assign each a *different* anchor up front.)
+
+This is how you escape the prior: you build from a real page's bones, not from memory.
+
+---
+
+## Composition archetypes — rotate the SKELETON, not just the skin
+
+Convergence is mostly *structural*: even with a fresh palette and font, two pages rhyme because they share
+one skeleton. So choose the hero/page composition **deliberately**, and rotate it across builds. Each
+archetype below has real exemplars in the library — anchor on one (and remember the shape is
+industry-agnostic: a non-tech brief borrows these freely):
+
+- **split-screen** — text one side, visual the other (the default — use it *least*). e.g. attio, framer
+- **centered-editorial** — big centered headline, generous air, visual below. e.g. vercel, cohere
+- **full-bleed-photo / cinematic** — a photo or render fills the hero, text overlaid. e.g. palantir,
+  cluely, index.inc, spellbook  (← the slot Unsplash photography fills — see image-strategy.md)
+- **bento-grid** — the hero *is* a grid of unequal product tiles. e.g. supabase, raycast, default
+- **poster / coverline** — magazine-cover energy: oversized condensed type, minimal chrome. e.g. mux, polar
+- **asymmetric-canvas** — copy in a narrow column, a sprawling visual field beside it. e.g. morphic
+- **product-diorama** — a single staged 3D/photoreal object as the whole hero. e.g. lithic, oxide, three.tools
+- **app-frame** — a faithful rebuild of the product UI in browser/app chrome is the hero. e.g. linear, amie
+- **oversized-type** — type itself is the image; little or no graphic. e.g. clickhouse, juicebox, pipe
+- **diptych / triptych** — repeated panels showing states or variants. e.g. authkit, rive
+
+Rule of thumb: **if your last page was split-screen with three cards, this one is not.**
 
 ---
 
@@ -132,20 +178,36 @@ texture, a bold color block, real product UI staged unusually, a typographic pun
 
 ## Anti-Convergence — mandatory variety (run before building)
 
-Convergence is the enemy even after you escape the obvious prior. **Rotate these so two pages by this
-skill never rhyme.** Check each:
+Convergence is the enemy even after you escape the obvious prior. It bites at two levels — **structure**
+(the skeleton) and **surface** (the skin) — and the structural one is what makes pages rhyme even when the
+colours differ. Check both; rotate so two pages by this skill never share a spine.
 
+**Structure — the skeleton (the part everyone forgets to vary):**
+- [ ] **Composition archetype** — a *deliberate* pick from the list above, different from your last build.
+      Not reflexively split-screen / hero-left-text + image-right.
+- [ ] **Section sequence** — transcribed from your anchor (Move 2), driven by the story — not the generic
+      hook → logos → 3-cards → CTA boilerplate on autopilot.
+- [ ] **Hero grammar** — break the prior chain. You do NOT need an eyebrow pill, *and* a one-word-accent
+      headline, *and* two CTAs (filled + ghost-with-arrow), *and* a row of exactly three stats. Drop or
+      reshape **at least two** of these every build.
+- [ ] **Feature layout** — not always three equal cards in a row. Consider a vertical alternating zigzag,
+      a bento, one deep showcase, a numbered walkthrough, a comparison table.
+
+**Surface — the skin:**
 - [ ] **Typeface** — not the same display face you'd reflexively pick; does it fit THIS motif specifically?
 - [ ] **Accent** — a different hue/strategy than the last build; not indigo/violet.
-- [ ] **Layout archetype** — vary it: split-screen / centered-editorial / asymmetric / full-bleed-canvas /
-      bento / poster. Not always "hero-left text, image-right + three cards."
 - [ ] **Texture** — grain / grid / flat / none — a deliberate, varied choice.
 - [ ] **Icons** — a multi-weight set (Phosphor, Iconoir, Hugeicons), matched to the shape language — not
       raw single-weight Lucide/Feather.
 - [ ] **Corner radius & density** — sharp+dense vs soft+airy is a real lever; don't default to 16px-rounded.
 - [ ] **Signature** — present, genre-breaking, and different from your last page.
 
-**Never ship the AI-generic stack:** Inter headings + indigo/purple gradient + three equal icon cards +
-16px rounded everything + faint soft shadow + hero-left/image-right + mono eyebrows + Corporate Memphis
-mascots (Humaaans/unDraw/Storyset) + stock "diverse team at laptops". If two or more of these are present,
-you've reverted to the prior — redo the vibe.
+**Then self-diff before you ship.** Lay your page's skeleton next to the AI-generic stack below. If you
+can't state plainly how yours differs *structurally* (not just in colour/font), you reverted — go back to
+Move 2 and rebuild on a different anchor.
+
+**Never ship the AI-generic stack:** Inter headings + indigo/purple gradient + **eyebrow-pill →
+one-word-accent headline → filled-+-ghost CTA → row-of-exactly-three-stats → logo wall → three equal icon
+cards** + 16px-rounded everything + faint soft shadow + hero-left/image-right + mono eyebrows + Corporate
+Memphis mascots (Humaaans/unDraw/Storyset) + stock "diverse team at laptops". If two or more of these are
+present, you've reverted to the prior — redo the vibe.
